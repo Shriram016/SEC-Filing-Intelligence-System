@@ -207,5 +207,23 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-
 CLAUDE.md
+
+# -----------------------------------------------
+# SEC RAG Project — specific ignores
+# -----------------------------------------------
+
+# Virtual environment (project-specific name)
+rag_env/
+
+# API keys — never commit
+.env
+
+# ChromaDB vector store (generated at runtime, can be rebuilt)
+chroma_db/
+
+# Processed data (generated at runtime from raw files)
+data/processed/
+
+# Test output files
+AAPL_2020_test.htm

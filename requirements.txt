@@ -1,0 +1,88 @@
+# =============================================================
+# SEC Filing Intelligence System — Requirements
+# Python 3.13 compatible
+# =============================================================
+# Install: pip install -r requirements.txt
+# =============================================================
+
+
+# -------------------------------------------------------------
+# Ingestion — downloader.py
+# Pure Python — any recent version works
+# -------------------------------------------------------------
+requests>=2.32.3
+
+
+# -------------------------------------------------------------
+# Ingestion — parser.py
+# PDF text extraction (imported as `fitz`)
+# 1.25.0+ = first release with Python 3.13 wheels
+# -------------------------------------------------------------
+pymupdf>=1.25.0
+
+
+# -------------------------------------------------------------
+# Embeddings — embedder.py
+# BAAI/bge-base-en model
+# 3.3.0+ pulls torch>=2.6 which has Python 3.13 wheels
+# -------------------------------------------------------------
+sentence-transformers>=3.3.0
+
+
+# -------------------------------------------------------------
+# Vector Store — indexer.py, retriever.py
+# Local persistent ChromaDB
+# 0.6.0+ has Python 3.13 support
+# -------------------------------------------------------------
+chromadb>=0.6.0
+
+
+# -------------------------------------------------------------
+# Orchestration — synthesizer.py, citation_extractor.py
+# LlamaIndex core + Groq LLM integration + HuggingFace embeddings
+# Pure Python — latest compatible versions
+# -------------------------------------------------------------
+llama-index-core>=0.12.0
+llama-index-llms-groq>=0.3.0
+llama-index-embeddings-huggingface>=0.5.0
+
+
+# -------------------------------------------------------------
+# LLM API — synthesizer.py, faithfulness_judge.py,
+#            conflict_analyzer.py, citation_extractor.py
+# Groq API client — pure Python
+# -------------------------------------------------------------
+groq>=0.13.0
+
+
+# -------------------------------------------------------------
+# Scoring — confidence_scorer.py, similarity_filter.py
+# 2.0.0+ = first numpy with Python 3.13 wheels
+# 1.6.0+ = first scikit-learn with Python 3.13 wheels
+# -------------------------------------------------------------
+numpy>=2.0.0
+scikit-learn>=1.6.0
+
+
+# -------------------------------------------------------------
+# Evaluation — ragas_evaluator.py
+# 0.2.0+ has Python 3.13 support
+# datasets 3.x has Python 3.13 wheels
+# -------------------------------------------------------------
+ragas>=0.2.0
+datasets>=3.0.0
+
+
+# -------------------------------------------------------------
+# UI — app.py
+# Pure Python — latest stable
+# -------------------------------------------------------------
+streamlit>=1.40.0
+
+
+# -------------------------------------------------------------
+# Utilities — pure Python, no compilation needed
+# -------------------------------------------------------------
+python-dotenv>=1.0.1        # load GROQ_API_KEY from .env file
+pandas>=2.2.3               # 2.2.3+ has Python 3.13 wheels
+tqdm>=4.66.0                # progress bars during batch embedding
