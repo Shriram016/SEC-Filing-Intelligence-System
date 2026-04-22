@@ -75,32 +75,38 @@ def _get(url: str) -> requests.Response | None:
 # Step 1 — Find accession number
 # ---------------------------------------------------------------------------
 
-def _search_filings_block(block: dict, year: int) -> str | None:
+def _search_filings_block(block: dict, year: int) -> tuple[str | None, str | None]:
     """
     Searches a single filings block (recent or a paginated older block)
     for a 10-K whose reportDate starts with the target year.
-    Returns accession number string or None.
+
+    Returns (accession_number, primary_document) tuple.
+    `primary_document` is the filename EDGAR marks as the primary 10-K doc
+    (e.g. 'aapl-20200926.htm'). Reading this field directly avoids guessing
+    which .htm in the directory is the real 10-K body.
     """
-    forms        = block.get("form", [])
-    report_dates = block.get("reportDate", [])
-    accessions   = block.get("accessionNumber", [])
+    forms         = block.get("form", [])
+    report_dates  = block.get("reportDate", [])
+    accessions    = block.get("accessionNumber", [])
+    primary_docs  = block.get("primaryDocument", [])
 
     print(f"    Scanning block: {len(forms)} total filings, looking for 10-K with reportDate {year}-xx-xx")
 
     for i, form in enumerate(forms):
         if form != "10-K":
             continue
-        report_date = report_dates[i]   # e.g. "2023-09-30"
-        print(f"    Found 10-K — reportDate: {report_date}, accession: {accessions[i]}")
+        report_date  = report_dates[i]   # e.g. "2023-09-30"
+        primary_doc  = primary_docs[i] if i < len(primary_docs) else ""
+        print(f"    Found 10-K — reportDate: {report_date}, accession: {accessions[i]}, primaryDoc: {primary_doc}")
         if report_date and report_date.startswith(str(year)):
             print(f"    [MATCH] reportDate {report_date} matches target year {year}")
-            return accessions[i]
+            return accessions[i], primary_doc
 
     print(f"    No matching 10-K found in this block for year {year}")
-    return None
+    return None, None
 
 
-def get_accession_number(cik: str, year: int) -> str | None:
+def get_accession_and_primary_doc(cik: str, year: int) -> tuple[str | None, str | None]:
     """
     Calls EDGAR Submissions API and finds the 10-K whose reportDate year
     matches the target year.
@@ -108,7 +114,9 @@ def get_accession_number(cik: str, year: int) -> str | None:
     Searches the 'recent' block first. If not found, follows pagination
     links in 'filings.files' to fetch older filing batches.
 
-    Returns accession number string (e.g. '0000320193-23-000106') or None.
+    Returns (accession_number, primary_document) — e.g.
+        ('0000320193-20-000096', 'aapl-20200926.htm')
+    Either or both may be None if not found.
     """
     padded_cik = cik.zfill(10)
     url = f"https://data.sec.gov/submissions/CIK{padded_cik}.json"
@@ -116,7 +124,7 @@ def get_accession_number(cik: str, year: int) -> str | None:
     print(f"  Fetching EDGAR submissions for CIK {cik} ...")
     response = _get(url)
     if response is None:
-        return None
+        return None, None
 
     data     = response.json()
     filings  = data.get("filings", {})
@@ -124,9 +132,9 @@ def get_accession_number(cik: str, year: int) -> str | None:
     # --- Search recent block first ---
     print(f"  Searching 'recent' filings block ...")
     recent = filings.get("recent", {})
-    result = _search_filings_block(recent, year)
-    if result:
-        return result
+    accession, primary_doc = _search_filings_block(recent, year)
+    if accession:
+        return accession, primary_doc
 
     # --- Search older paginated blocks ---
     older_files = filings.get("files", [])
@@ -141,12 +149,12 @@ def get_accession_number(cik: str, year: int) -> str | None:
         if older_response is None:
             continue
         older_block = older_response.json()
-        result = _search_filings_block(older_block, year)
-        if result:
-            return result
+        accession, primary_doc = _search_filings_block(older_block, year)
+        if accession:
+            return accession, primary_doc
 
     print(f"  [NOT FOUND] No 10-K found for year {year} across all blocks")
-    return None
+    return None, None
 
 
 # ---------------------------------------------------------------------------
@@ -166,15 +174,20 @@ class _LinkParser(HTMLParser):
                     self.links.append(val)
 
 
-def get_doc_url(cik: str, accession: str) -> str | None:
+def get_doc_url(cik: str, accession: str, primary_doc: str | None = None) -> str | None:
     """
-    Fetches the EDGAR filing directory listing HTML and finds the primary
-    10-K document (.htm).
+    Returns the full URL of the primary 10-K document.
 
-    Priority:
-      1. Link via iXBRL viewer (/ix?doc=...)  — most reliable signal
-      2. Direct .htm in filing dir, no 'exhibit' in filename
-      3. Any .htm in the filing directory     — last resort
+    Preferred path:
+      If `primary_doc` is provided (from EDGAR Submissions API's
+      `primaryDocument` field), build the URL directly — no guessing.
+      This is the authoritative source and avoids picking up exhibits.
+
+    Fallback path (only if primary_doc is missing):
+      Scrape the filing directory listing HTML with a 3-pass heuristic:
+        1. iXBRL viewer link (/ix?doc=...)
+        2. Direct .htm in filing dir, no 'exhibit' in filename
+        3. Any .htm in the filing directory — last resort
 
     Returns full download URL or None if nothing found.
     """
@@ -184,6 +197,15 @@ def get_doc_url(cik: str, accession: str) -> str | None:
     )
     filing_path = f"/Archives/edgar/data/{cik}/{accession_nodashes}/"
 
+    # --- Preferred: use primaryDocument from Submissions API ---
+    if primary_doc:
+        full_url = f"https://www.sec.gov{filing_path}{primary_doc}"
+        print(f"  [PRIMARY DOC] Using EDGAR primaryDocument field: {primary_doc}")
+        print(f"  [URL] {full_url}")
+        return full_url
+
+    # --- Fallback: scrape directory listing ---
+    print(f"  [FALLBACK] No primaryDocument — scraping directory listing")
     print(f"  Fetching filing directory: {dir_url}")
     response = _get(dir_url)
     if response is None:
@@ -292,18 +314,19 @@ def download_all() -> None:
                 skipped += 1
                 continue
 
-            # Step 1 — accession number
+            # Step 1 — accession number + primary document filename
             print(f"  Searching EDGAR submissions ...")
-            accession = get_accession_number(cik, year)
+            accession, primary_doc = get_accession_and_primary_doc(cik, year)
             if not accession:
                 print(f"  [FAIL] No 10-K accession found for {company} {year}")
                 failed += 1
                 continue
-            print(f"  Accession: {accession}")
+            print(f"  Accession   : {accession}")
+            print(f"  Primary doc : {primary_doc or '(missing — will fallback to directory scrape)'}")
 
-            # Step 2 — primary HTM document URL
-            print(f"  Finding primary document ...")
-            doc_url = get_doc_url(cik, accession)
+            # Step 2 — build primary HTM document URL
+            print(f"  Resolving primary document URL ...")
+            doc_url = get_doc_url(cik, accession, primary_doc)
             if not doc_url:
                 print(f"  [NO DOC] No HTM document found for {company} {year} — skipping")
                 no_doc += 1

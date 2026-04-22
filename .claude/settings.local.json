@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rag_env\\\\Scripts\\\\python.exe ingestion/parser.py)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}
