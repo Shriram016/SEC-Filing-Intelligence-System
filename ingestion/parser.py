@@ -54,12 +54,49 @@ YEARS = [2020, 2021, 2022, 2023, 2024]
 # style      — CSS
 REMOVE_TAGS = ["script", "style", "ix:header", "ix:hidden"]
 
+# Legal names as they appear in page headers/footers inside the HTM files.
+# Used to strip standalone company-name header lines (e.g. a lone "Apple Inc." line).
+LEGAL_NAMES = {
+    "AAPL":  "Apple Inc.",
+    "MSFT":  "Microsoft Corporation",
+    "AMZN":  "Amazon.com, Inc.",
+    "GOOGL": "Alphabet Inc.",
+    "META":  "Meta Platforms, Inc.",
+}
+
 
 # ---------------------------------------------------------------------------
 # Core extraction logic
 # ---------------------------------------------------------------------------
 
-def extract_text(htm_path: str) -> str:
+def strip_page_artifacts(text: str, ticker: str) -> str:
+    """
+    Remove two types of page-layout noise injected by the HTM renderer:
+
+    1. Page footers — e.g. "Apple Inc. | 2020 Form 10-K | 4"
+       Pattern: any line containing "| YYYY Form 10-K | <number>"
+       Appears at the bottom of every page across all 5 companies.
+
+    2. Standalone company-name headers — e.g. a lone "Apple Inc." line
+       Appears at the top of some pages as a running header.
+       Matched exactly against the known legal name for this ticker.
+    """
+    legal_name = LEGAL_NAMES.get(ticker, "")
+    footer_pattern = re.compile(r'\|\s*\d{4}\s*Form\s*10-K\s*\|\s*\d+', re.IGNORECASE)
+
+    cleaned = []
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if footer_pattern.search(stripped):
+            continue
+        if legal_name and stripped == legal_name:
+            continue
+        cleaned.append(line)
+
+    return "\n".join(cleaned)
+
+
+def extract_text(htm_path: str, ticker: str) -> str:
     """
     Reads an iXBRL HTM file and returns clean plain text.
 
@@ -67,8 +104,9 @@ def extract_text(htm_path: str) -> str:
       1. Read raw HTML from disk
       2. Parse with BeautifulSoup + lxml
       3. Decompose (fully remove) all REMOVE_TAGS blocks
-      4. Call .get_text(separator=" ") — extracts visible text, strips all tags
-      5. Collapse all whitespace sequences into a single space
+      4. Call .get_text(separator="\n") — extracts visible text, strips all tags
+      5. Collapse spaces/tabs within a line, preserve newlines
+      6. Strip page-layout artifacts (footers + standalone company-name headers)
     """
     print(f"  Reading: {htm_path}")
     with open(htm_path, "r", encoding="utf-8", errors="ignore") as f:
@@ -86,11 +124,16 @@ def extract_text(htm_path: str) -> str:
             removed += 1
     print(f"  Removed {removed} noise blocks ({', '.join(REMOVE_TAGS)})")
 
-    # Extract text — separator=" " prevents adjacent words from merging
-    text = soup.get_text(separator=" ")
+    # Extract text — separator="\n" preserves block-level structure
+    text = soup.get_text(separator="\n")
 
-    # Collapse all whitespace (spaces, tabs, newlines) into single spaces
-    text = re.sub(r'\s+', ' ', text).strip()
+    # Collapse spaces/tabs within a line, but preserve newlines
+    text = re.sub(r'[^\S\n]+', ' ', text)
+    # Collapse 3+ consecutive newlines into 2 (keep paragraph breaks)
+    text = re.sub(r'\n{3,}', '\n\n', text).strip()
+
+    # Strip page footers and standalone company-name header lines
+    text = strip_page_artifacts(text, ticker)
 
     print(f"  Clean text length : {len(text):,} characters")
     return text
@@ -138,7 +181,7 @@ def parse_all() -> None:
                 continue
 
             try:
-                text = extract_text(src_path)
+                text = extract_text(src_path, ticker)
 
                 record = {
                     "ticker":      ticker,

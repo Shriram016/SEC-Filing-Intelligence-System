@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(rag_env\\\\Scripts\\\\python.exe ingestion/parser.py)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(python -c ' *)",
+      "Bash(python test_parser.py)",
+      "Bash(pip install *)",
+      "Bash(python test_section_detector.py)",
+      "Bash(python ingestion/section_detector.py AAPL 2020)",
+      "Bash(python ingestion/section_detector.py)",
+      "Bash(python test_section_detector_output.py)"
     ]
   }
 }

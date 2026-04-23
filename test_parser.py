@@ -14,6 +14,7 @@ Run:  python test_parser.py
 """
 
 import os
+import re
 import json
 from ingestion.parser import extract_text
 
@@ -46,12 +47,15 @@ def main():
         json.dump(record, f, ensure_ascii=False, indent=2)
 
     size_kb = os.path.getsize(OUT_PATH) / 1024
-    print(f"\n[OK] Saved → {OUT_PATH}  ({size_kb:.1f} KB)")
+    print(f"\n[OK] Saved -> {OUT_PATH}  ({size_kb:.1f} KB)")
 
     # --- Verification checks ---
     print(f"\n{'='*60}")
     print(f"  VERIFICATION CHECKS")
     print(f"{'='*60}")
+
+    lines = text.split('\n')
+    item_lines = [l.strip() for l in lines if re.match(r'(?i)^\s*item\s+[0-9]', l.strip())]
 
     checks = {
         "Non-empty text"              : len(text) > 10_000,
@@ -66,6 +70,9 @@ def main():
         "iPhone mentioned"            : "iphone"              in text.lower(),
         "No raw HTML tags leaked"     : "<div" not in text and "<span" not in text and "<p>" not in text,
         "No XBRL namespace leaked"    : "ix:" not in text and "xbrli:" not in text,
+        "Newlines preserved"          : text.count('\n') > 1_000,
+        "No 3+ consecutive newlines"  : '\n\n\n' not in text,
+        "Item headers on own lines"   : len(item_lines) > 5,
     }
 
     all_passed = True
@@ -76,17 +83,26 @@ def main():
         if not result:
             all_passed = False
 
+    # --- Newline structure stats ---
+    print(f"\n{'='*60}")
+    print(f"  NEWLINE STRUCTURE")
+    print(f"{'='*60}")
+    print(f"  Total newlines          : {text.count(chr(10)):,}")
+    print(f"  Item headers on own line: {len(item_lines)}")
+    for l in item_lines[:15]:
+        print(f"    [{l[:80]}]")
+
     # --- Sample text (chars 2000–3500) ---
     print(f"\n{'='*60}")
     print(f"  SAMPLE TEXT (chars 2000–3500)")
     print(f"{'='*60}")
-    print(text[2000:3500])
+    print(text[2000:3500].encode('ascii', errors='replace').decode('ascii'))
 
     # --- Final verdict ---
     print(f"\n{'='*60}")
     if all_passed:
         print(f"  ALL CHECKS PASSED  -  parser logic confirmed")
-        print(f"  Next: delete this test file's output and run parser.py on all 25")
+        print(f"  Parser logic verified. All 25 filings already processed.")
     else:
         print(f"  SOME CHECKS FAILED  -  inspect sample text above")
     print(f"{'='*60}")

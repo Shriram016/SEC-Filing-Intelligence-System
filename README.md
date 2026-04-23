@@ -80,10 +80,32 @@ Conflict Report (what changed, which years, severity)
 
 ---
 
+## Scope: Which Sections We Focus On
+
+A 10-K filing has 15+ sections. This system focuses on **4 high-signal sections** only:
+
+| Section | Name | Why included |
+|---|---|---|
+| Item 1 | Business | Explains what the company does — answers "what/how" questions |
+| Item 1A | Risk Factors | Richest section for cross-year conflict detection — companies quietly add/drop risks |
+| Item 7 | MD&A | Management's narrative on financials — most analyst-relevant section |
+| Item 7A | Market Risk | Quantitative exposure data — comparable across years |
+
+**Why not the other sections?**
+- Item 8 (Financial Statements) — actual numbers live here, but it is almost entirely tables. Table extraction from iXBRL HTML requires special handling beyond plain text parsing and is out of scope for v1.
+- Items 2, 3, 4 (Properties, Legal, Mine Safety) — mostly boilerplate, low signal for meaningful questions.
+- Items 9–15 — procedural disclosures (auditor info, governance, executive compensation) — not relevant to financial analysis questions.
+
+This scoping keeps retrieval sharp and focused.
+
+**Current limitation:** Tables (like Item 8 Financial Statements) are not parsed in v1. Flattening HTML tables to plain text breaks the row-column relationship, making retrieval unreliable for numerical data. Proper table-aware RAG requires converting table rows to natural language sentences or a text-to-SQL approach — planned for v2.
+
+---
+
 ## Key Components
 
 ### 1. Ingestion Pipeline
-Downloads 10-K PDFs from SEC EDGAR, extracts text via PyMuPDF, detects section boundaries (Item 1A, Item 7, Item 7A etc.), and applies hierarchical chunking — section-aware at the top level, fixed-size with overlap within sections. Every chunk is tagged with `{company, year, section, page, chunk_id}`.
+Downloads 10-K filings (HTM/iXBRL HTML) from SEC EDGAR, extracts clean text via BeautifulSoup + lxml, detects section boundaries (Item 1, Item 1A, Item 7, Item 7A), and applies hierarchical chunking — section-aware at the top level, fixed-size with overlap within sections. Every chunk is tagged with `{company, year, section, page, chunk_id}`.
 
 ### 2. Embedding + Indexing
 BAAI/bge-base-en embeds every chunk. ChromaDB stores vectors and metadata. Ingestion runs once and persists locally.
@@ -117,7 +139,7 @@ Two-stage pipeline:
 
 | Layer | Tool |
 |---|---|
-| PDF Parsing | PyMuPDF |
+| HTML Parsing | BeautifulSoup + lxml |
 | Embeddings | BAAI/bge-base-en |
 | Vector Store | ChromaDB |
 | Orchestration | LlamaIndex |
@@ -137,6 +159,7 @@ Two-stage pipeline:
 | Conflict detection | None | Two-stage semantic + LLM pipeline |
 | Evaluation | None | RAGAS + custom eval suite |
 | Chunking | Fixed-size | Hierarchical section-aware |
+
 
 ---
 
@@ -205,3 +228,4 @@ streamlit run ui/app.py
 python evaluation/ragas_evaluator.py
 python evaluation/custom_evaluator.py
 ```
+
