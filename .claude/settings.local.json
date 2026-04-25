@@ -9,7 +9,8 @@
       "Bash(python test_section_detector.py)",
       "Bash(python ingestion/section_detector.py AAPL 2020)",
       "Bash(python ingestion/section_detector.py)",
-      "Bash(python test_section_detector_output.py)"
+      "Bash(python test_section_detector_output.py)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('data/processed/AAPL_2020_embedded.json'\\)\\); c=d[0]; print\\({k: type\\(v\\).__name__ if k != 'embedding' else f'list[float] len={len\\(v\\)}' for k, v in c.items\\(\\)}\\)\")"
     ]
   }
 }
