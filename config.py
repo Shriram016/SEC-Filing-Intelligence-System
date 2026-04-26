@@ -9,7 +9,7 @@ EMBEDDING_BATCH_SIZE = 32
 EMBEDDING_DIMENSION = 768
 
 # LLM
-GROQ_MODEL = "llama3-8b-8192"
+GROQ_MODEL = "llama-3.1-8b-instant"   # llama3-8b-8192 decommissioned April 2025
 
 # Retrieval
 TOP_K = 5                       # TBD — tune after indexer is built

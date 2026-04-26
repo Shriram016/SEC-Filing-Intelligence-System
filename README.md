@@ -39,7 +39,7 @@ User Query
          │
          ▼
 ┌─────────────────┐
-│  Answer         │  LlamaIndex orchestrates context assembly
+│  Answer         │  Chunks assembled into numbered context window
 │  Synthesis      │  Groq API (Llama 3) generates grounded answer
 └────────┬────────┘
          │
@@ -111,10 +111,16 @@ Downloads 10-K filings (HTM/iXBRL HTML) from SEC EDGAR, extracts clean text via 
 BAAI/bge-base-en embeds every chunk. ChromaDB stores vectors and metadata. Ingestion runs once and persists locally.
 
 ### 3. Retrieval Engine
-Embeds the user query, retrieves top-k chunks from ChromaDB with similarity scores. Supports metadata filtering for targeted retrieval by company, year, or section.
+Takes a raw natural language query and returns the most relevant chunks from ChromaDB. No filter dropdowns — the query is understood automatically.
+
+**Query understanding (Groq, temperature=0):** A single LLM call validates whether the query is answerable from SEC 10-K filings, and extracts all mentioned companies, years, and sections as lists. Handles paraphrases naturally (`"fiscal 2023"` → 2023, `"risk factors"` → Item 1A).
+
+**Cartesian product retrieval:** If multiple companies or years are detected, the retriever generates every combination (e.g. AAPL×2020, MSFT×2020) and runs one ChromaDB query per combination — top-k each. This guarantees balanced representation for comparison queries rather than letting one company dominate the results.
+
+**No reranker needed:** Three design choices eliminate the need for a separate reranking step: (1) metadata pre-filtering narrows the candidate pool to the right company/year/section before vector search; (2) BGE's asymmetric retrieval (query prefix at query time only) achieves the same query-document alignment that cross-encoders provide; (3) per-combination top-k means there is never a large noisy pool that needs reordering.
 
 ### 4. Answer Synthesis
-LlamaIndex assembles context from retrieved chunks. Groq API (Llama 3) generates an answer grounded strictly to retrieved context.
+Retrieved chunks are assembled into a numbered context window. Groq API (Llama 3) generates an answer grounded strictly to the provided passages — the system prompt explicitly forbids drawing on training knowledge.
 
 ### 5. Citation Extractor
 Maps the generated answer to the specific retrieved passages it was derived from. Returns source metadata — company, year, section, page — for every citation.
@@ -142,8 +148,7 @@ Two-stage pipeline:
 | HTML Parsing | BeautifulSoup + lxml |
 | Embeddings | BAAI/bge-base-en |
 | Vector Store | ChromaDB |
-| Orchestration | LlamaIndex |
-| LLM | Groq API — Llama 3 |
+| LLM / Synthesis | Groq API — Llama 3 (direct API, no framework) |
 | Evaluation | RAGAS + custom evaluators |
 | UI | Streamlit |
 | Language | Python |
