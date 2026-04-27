@@ -45,8 +45,8 @@ User Query
          │
          ▼
 ┌─────────────────┐
-│  Citation       │  Maps each claim to source chunk
-│  Extractor      │  Returns company, year, section, page metadata
+│  Citation       │  format_citations() on Synthesizer — no separate
+│  Extractor      │  component. Sources already returned by synthesizer.
 └────────┬────────┘
          │
          ▼
@@ -123,7 +123,9 @@ Takes a raw natural language query and returns the most relevant chunks from Chr
 Retrieved chunks are assembled into a numbered context window. Groq API (Llama 3) generates an answer grounded strictly to the provided passages — the system prompt explicitly forbids drawing on training knowledge.
 
 ### 5. Citation Extractor
-Maps the generated answer to the specific retrieved passages it was derived from. Returns source metadata — company, year, section, page — for every citation.
+Built as `format_citations()` inside the `Synthesizer` class — not a standalone component. The synthesizer already returns the source chunks used to generate the answer (`"sources"` field), so no separate extraction step is needed. `format_citations()` reshapes that list into a display-ready format: chunk text, company, year, section, chunk ID, and similarity score.
+
+Source-level citation (which chunks were used) rather than claim-level (which sentence came from which chunk) — claim-level requires an extra LLM call per query and is unreliable for multi-point comparative answers.
 
 ### 6. Confidence Scorer
 Combines two signals into a single weighted score:
@@ -131,13 +133,17 @@ Combines two signals into a single weighted score:
 - **Faithfulness** — LLM-judged score: does the answer stay within the bounds of retrieved passages?
 
 ### 7. Conflict Detector
-Two-stage pipeline:
-- **Stage 1** — semantic similarity comparison across years flags candidate section pairs
-- **Stage 2** — LLM reads flagged pairs and identifies actual contradictions with severity assessment
+The core differentiator of this project. A plain Q&A system answers questions the user knows to ask. The Conflict Detector surfaces what the user didn't know to ask: *did this company say something materially different about this topic in 2020 vs 2023?*
+
+SEC 10-K filings are uniquely suited to this — same company, same structured sections (Item 1A, Item 7), five consecutive years. Companies quietly soften risk language, drop previously disclosed risks, or shift framing between filings. Analysts do this comparison manually today. This automates it.
+
+Two-stage pipeline to keep LLM costs down:
+- **Stage 1 (similarity filter)** — pairwise cosine similarity across years flags only the pairs where language actually shifted. There are up to 200 possible year-pairs across all companies and sections — the filter runs fast vector math to narrow this to a small set of genuine candidates.
+- **Stage 2 (LLM analysis)** — the LLM reads only the flagged pairs and identifies actual contradictions with severity (high / medium / low). Expensive reasoning only on what passed the cheap filter.
 
 ### 8. Evaluation Pipeline
-- **RAGAS** — retrieval precision, faithfulness, hallucination rate
-- **Custom evaluators** — citation accuracy (is the cited passage actually the source?) and conflict detection accuracy (are flagged conflicts real?)
+- **RAGAS** — retrieval precision, faithfulness, answer relevance, hallucination rate across 10 predefined queries with ground truth answers
+- Custom evaluators were considered and dropped — citation accuracy overlaps directly with RAGAS faithfulness, and conflict detection accuracy requires manual ground truth labelling for marginal gain over reading the output directly
 
 ---
 
