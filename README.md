@@ -63,16 +63,13 @@ User Query
 **Conflict Detection runs as a separate pipeline:**
 
 ```
-User selects company + section
+User selects company + section + year range
     │
     ▼
-Retrieve same section across all 5 years
+Read full section text for each year from _sections.json
     │
     ▼
-Pairwise semantic similarity → flag low-similarity year pairs
-    │
-    ▼
-LLM analyzes flagged pairs → identifies actual contradictions
+LLM compares every year pair → identifies actual contradictions
     │
     ▼
 Conflict Report (what changed, which years, severity)
@@ -133,13 +130,17 @@ Combines two signals into a single weighted score:
 - **Faithfulness** — LLM-judged score: does the answer stay within the bounds of retrieved passages?
 
 ### 7. Conflict Detector
-The core differentiator of this project. A plain Q&A system answers questions the user knows to ask. The Conflict Detector surfaces what the user didn't know to ask: *did this company say something materially different about this topic in 2020 vs 2023?*
+The core differentiator of this project — not because it uses a different architecture, but because it solves a different problem.
+
+A Q&A system is **reactive**: it answers questions the user knows to ask. If a user asks "What are Apple's supply chain risks?", the system retrieves the most relevant chunks and answers. It sounds complete. But the user never learns that the 2020 filing said *"significant concentration risk from single-source suppliers"* and the 2023 filing quietly says *"risk is actively managed."* That shift is the story — and a Q&A system buries it, because the user didn't know to ask.
+
+The Conflict Detector is **proactive and systematic**: it scans all possible year-pair combinations automatically, without the user knowing what to look for. Across 5 companies × 4 sections × C(5,2)=10 year pairs, that is 200 comparisons. No analyst would manually type 200 comparison queries into a chat interface. This runs the full scan and surfaces what changed.
 
 SEC 10-K filings are uniquely suited to this — same company, same structured sections (Item 1A, Item 7), five consecutive years. Companies quietly soften risk language, drop previously disclosed risks, or shift framing between filings. Analysts do this comparison manually today. This automates it.
 
-Two-stage pipeline to keep LLM costs down:
-- **Stage 1 (similarity filter)** — pairwise cosine similarity across years flags only the pairs where language actually shifted. There are up to 200 possible year-pairs across all companies and sections — the filter runs fast vector math to narrow this to a small set of genuine candidates.
-- **Stage 2 (LLM analysis)** — the LLM reads only the flagged pairs and identifies actual contradictions with severity (high / medium / low). Expensive reasoning only on what passed the cheap filter.
+For each year pair in the selected range, the LLM reads the full section text from both years side by side and identifies specific contradictions, removals, or reframings — returning up to 3 structured conflicts per pair with severity labels (high / medium / low / none).
+
+A pre-filter based on embedding similarity was considered and rejected — mean-pooled vectors are too coarse to reliably detect whether actual claims conflict, and at 200 total pairs across all companies and sections the LLM call cost is negligible. Every pair is analyzed directly.
 
 ### 8. Evaluation Pipeline
 - **RAGAS** — retrieval precision, faithfulness, answer relevance, hallucination rate across 10 predefined queries with ground truth answers

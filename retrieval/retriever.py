@@ -79,7 +79,7 @@ class Retriever:
     # Private: query understanding
     # -------------------------------------------------------------------
 
-    def _extract_filters(self, query: str) -> dict:
+    def _extract_filters(self, query: str, logger=None) -> dict:
         """
         Single Groq call (temperature=0) that:
           1. Validates the query is answerable from SEC 10-K filings
@@ -94,6 +94,9 @@ class Retriever:
                 "sections":         list[str]    # e.g. ["Item 1A"]
             }
         """
+        if logger:
+            logger.info(f"RETRIEVER | filter_extraction | ENTER | query={query!r}")
+
         prompt = f"""You are a query parser for a SEC 10-K filing RAG system.
 
 The database contains 10-K annual reports for these companies ONLY:
@@ -142,6 +145,9 @@ Return ONLY valid JSON in this exact format. No explanation, no markdown fences:
 
 Query: {query}"""
 
+        if logger:
+            logger.info(f"RETRIEVER | filter_extraction | Groq call | model={GROQ_MODEL}")
+
         response = self.groq_client.chat.completions.create(
             model=GROQ_MODEL,
             messages=[{"role": "user", "content": prompt}],
@@ -150,6 +156,9 @@ Query: {query}"""
         )
 
         raw = response.choices[0].message.content.strip()
+
+        if logger:
+            logger.info(f"RETRIEVER | filter_extraction | Groq response | raw={raw!r}")
 
         # Strip markdown code fences if the LLM added them despite instructions
         if raw.startswith("```"):
@@ -160,6 +169,8 @@ Query: {query}"""
             parsed = json.loads(raw)
         except json.JSONDecodeError:
             # Safe fallback: treat as valid, no filters — never block the user on a parse error
+            if logger:
+                logger.warning("RETRIEVER | filter_extraction | JSON parse failed — falling back to no filters")
             return {
                 "is_valid":         True,
                 "rejection_reason": None,
@@ -172,6 +183,16 @@ Query: {query}"""
         parsed["tickers"]  = [t for t in parsed.get("tickers",  []) if t in TICKER_SET]
         parsed["years"]    = [y for y in parsed.get("years",    []) if y in VALID_YEARS]
         parsed["sections"] = [s for s in parsed.get("sections", []) if s in VALID_SECTIONS]
+
+        if logger:
+            logger.info(
+                f"RETRIEVER | filter_extraction | EXIT | "
+                f"is_valid={parsed.get('is_valid')} "
+                f"tickers={parsed.get('tickers')} "
+                f"years={parsed.get('years')} "
+                f"sections={parsed.get('sections')} "
+                f"rejection_reason={parsed.get('rejection_reason')!r}"
+            )
 
         return parsed
 
@@ -220,13 +241,14 @@ Query: {query}"""
     # Public: retrieve
     # -------------------------------------------------------------------
 
-    def retrieve(self, query: str, top_k: int = TOP_K):
+    def retrieve(self, query: str, top_k: int = TOP_K, logger=None):
         """
         Full retrieval pipeline for a raw user query.
 
         Args:
             query:  natural language question from the user
             top_k:  results per filter combination (default: TOP_K from config)
+            logger: optional logger from logger.py — pass None to disable logging
 
         Returns:
             dict  {"error": str}           — if query is invalid / off-topic
@@ -246,13 +268,17 @@ Query: {query}"""
                 "source_file":      str,
             }
         """
+        if logger:
+            logger.info(f"RETRIEVER | ENTER | query={query!r} top_k={top_k}")
 
         # ── Step 1: validate + extract filters ─────────────────────────
-        filters = self._extract_filters(query)
+        filters = self._extract_filters(query, logger)
         print(f"\nQuery parser output:\n{json.dumps(filters, indent=2)}")
 
         if not filters.get("is_valid", True):
             reason = filters.get("rejection_reason") or "Query not answerable from SEC 10-K filings."
+            if logger:
+                logger.warning(f"RETRIEVER | EXIT | query rejected | reason={reason!r}")
             return {"error": reason}
 
         # ── Step 2: embed query with BGE instruction prefix ────────────
@@ -262,6 +288,9 @@ Query: {query}"""
             normalize_embeddings=True,
         ).tolist()
 
+        if logger:
+            logger.info("RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768")
+
         # ── Step 3: build Cartesian product of filter combinations ─────
         combinations = self._build_combinations(
             filters.get("tickers",  []),
@@ -269,6 +298,9 @@ Query: {query}"""
             filters.get("sections", []),
         )
         print(f"\nFilter combinations ({len(combinations)}): {combinations}")
+
+        if logger:
+            logger.info(f"RETRIEVER | combinations | count={len(combinations)} combos={combinations}")
 
         # ── Step 4: one ChromaDB query per combination ─────────────────
         all_results   = []
@@ -290,12 +322,18 @@ Query: {query}"""
                     else {"$and": conditions}
                 )
 
+            if logger:
+                logger.info(f"RETRIEVER | ChromaDB call | combo={combo} n_results={top_k}")
+
             chroma_result = self.collection.query(**query_kwargs)
 
             documents = chroma_result["documents"][0]
             metadatas = chroma_result["metadatas"][0]
             distances = chroma_result["distances"][0]
             ids       = chroma_result["ids"][0]       # chunk_id stored as ChromaDB doc ID
+
+            if logger:
+                logger.info(f"RETRIEVER | ChromaDB result | combo={combo} chunks_returned={len(documents)}")
 
             for doc, meta, dist, chunk_id in zip(documents, metadatas, distances, ids):
 
@@ -319,6 +357,9 @@ Query: {query}"""
 
         # ── Step 5: sort by similarity descending ─────────────────────
         all_results.sort(key=lambda x: x["similarity_score"], reverse=True)
+
+        if logger:
+            logger.info(f"RETRIEVER | EXIT | total_chunks={len(all_results)} (after dedup)")
 
         return all_results
 

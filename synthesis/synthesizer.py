@@ -82,7 +82,7 @@ class Synthesizer:
     # Public: synthesize
     # ------------------------------------------------------------------
 
-    def synthesize(self, query: str, chunks: list, max_context: int = MAX_CONTEXT_CHUNKS) -> dict:
+    def synthesize(self, query: str, chunks: list, max_context: int = MAX_CONTEXT_CHUNKS, logger=None) -> dict:
         """
         Generate a grounded answer from retrieved chunks.
 
@@ -90,6 +90,7 @@ class Synthesizer:
             query:       raw user question
             chunks:      list of result dicts from Retriever.retrieve()
             max_context: max chunks to include in the LLM context window
+            logger:      optional logger from logger.py — pass None to disable logging
 
         Returns:
             {
@@ -100,10 +101,15 @@ class Synthesizer:
                 "context_chunks": int
             }
         """
+        if logger:
+            logger.info(f"SYNTHESIZER | ENTER | query={query!r} chunks_received={len(chunks)}")
+
         # chunks arrive pre-sorted by similarity desc from the retriever
         selected = chunks[:max_context]
 
         if not selected:
+            if logger:
+                logger.warning("SYNTHESIZER | EXIT | no chunks received — returning refusal string")
             return {
                 "query":          query,
                 "answer":         "The provided context does not contain enough information to answer this question.",
@@ -112,8 +118,19 @@ class Synthesizer:
                 "context_chunks": 0,
             }
 
+        if logger:
+            logger.info(f"SYNTHESIZER | context | chunks_selected={len(selected)} (cap={max_context})")
+            source_labels = [
+                f"{c.get('company','?')} {c.get('year','?')} {c.get('section','?')}"
+                for c in selected
+            ]
+            logger.info(f"SYNTHESIZER | context | sources={source_labels}")
+
         context = self._build_context(selected)
         user_prompt = f"{context}\nQuestion: {query}"
+
+        if logger:
+            logger.info(f"SYNTHESIZER | Groq call | model={GROQ_MODEL} max_tokens=1024 temperature=0")
 
         response = self.groq_client.chat.completions.create(
             model=GROQ_MODEL,
@@ -127,6 +144,13 @@ class Synthesizer:
 
         answer = response.choices[0].message.content.strip()
 
+        if logger:
+            logger.info(f"SYNTHESIZER | Groq response | answer_length={len(answer)} chars")
+            logger.info(f"SYNTHESIZER | Groq response | answer=\n{answer}")
+            logger.info(
+                f"SYNTHESIZER | EXIT | model={GROQ_MODEL} context_chunks={len(selected)}"
+            )
+
         return {
             "query":          query,
             "answer":         answer,
@@ -134,4 +158,3 @@ class Synthesizer:
             "model_used":     GROQ_MODEL,
             "context_chunks": len(selected),
         }
-

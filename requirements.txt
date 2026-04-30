@@ -39,19 +39,10 @@ chromadb>=0.6.0
 
 
 # -------------------------------------------------------------
-# Orchestration — synthesizer.py, citation_extractor.py
-# LlamaIndex core + Groq LLM integration + HuggingFace embeddings
-# Pure Python — latest compatible versions
-# -------------------------------------------------------------
-llama-index-core>=0.12.0
-llama-index-llms-groq>=0.3.0
-llama-index-embeddings-huggingface>=0.5.0
-
-
-# -------------------------------------------------------------
-# LLM API — synthesizer.py, faithfulness_judge.py,
-#            conflict_analyzer.py, citation_extractor.py
+# LLM API — synthesizer.py, scorer.py,
+#            conflict_analyzer.py, retriever.py
 # Groq API client — pure Python
+# LlamaIndex removed: direct Groq API used instead (Component 10)
 # -------------------------------------------------------------
 groq>=0.13.0
 

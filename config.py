@@ -9,7 +9,8 @@ EMBEDDING_BATCH_SIZE = 32
 EMBEDDING_DIMENSION = 768
 
 # LLM
-GROQ_MODEL = "llama-3.1-8b-instant"   # llama3-8b-8192 decommissioned April 2025
+GROQ_MODEL     = "llama-3.1-8b-instant"    # Q&A pipeline — query parsing, synthesis, scoring. Speed matters.
+CONFLICT_MODEL = "llama-3.3-70b-versatile" # Conflict analysis — nuanced reasoning over long legal text. Quality matters.
 
 # Retrieval
 TOP_K = 5                       # TBD — tune after indexer is built

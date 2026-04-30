@@ -227,3 +227,6 @@ data/processed/
 
 # Test output files
 AAPL_2020_test.htm
+
+
+*/settings.local.json

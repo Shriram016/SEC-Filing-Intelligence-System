@@ -117,7 +117,7 @@ class Scorer:
     # Private: call Groq to judge faithfulness
     # ------------------------------------------------------------------
 
-    def _judge_faithfulness(self, answer: str, sources: list) -> float:
+    def _judge_faithfulness(self, answer: str, sources: list, logger=None) -> float:
         """
         Groq call at temperature=0.
         Sends the passages and the answer; asks for a 1–5 integer score.
@@ -126,6 +126,12 @@ class Scorer:
         Normalisation:  faithfulness = (raw_score - 1) / 4
             1 → 0.00,  2 → 0.25,  3 → 0.50,  4 → 0.75,  5 → 1.00
         """
+        if logger:
+            logger.info(
+                f"SCORER | faithfulness_judge | ENTER | "
+                f"answer_length={len(answer)} chars sources={len(sources)}"
+            )
+
         context_block = self._build_judge_context(sources)
 
         prompt = (
@@ -134,6 +140,9 @@ class Scorer:
             f"\"{answer.strip()}\"\n\n"
             f"{FAITHFULNESS_RUBRIC}"
         )
+
+        if logger:
+            logger.info(f"SCORER | faithfulness_judge | Groq call | model={GROQ_MODEL} max_tokens=5 temperature=0")
 
         response = self.groq_client.chat.completions.create(
             model=GROQ_MODEL,
@@ -155,6 +164,9 @@ class Scorer:
 
         raw = response.choices[0].message.content.strip()
 
+        if logger:
+            logger.info(f"SCORER | faithfulness_judge | Groq response | raw={raw!r}")
+
         # Extract the first digit 1–5 from the response — handles any stray text
         match = re.search(r"[1-5]", raw)
         if match:
@@ -162,20 +174,31 @@ class Scorer:
         else:
             # Fallback: can't parse → assume neutral score (3)
             print(f"  [Scorer] WARNING: could not parse faithfulness score from '{raw}'. Defaulting to 3.")
+            if logger:
+                logger.warning(f"SCORER | faithfulness_judge | parse_failed | raw={raw!r} defaulting to 3")
             raw_score = 3
 
-        return round((raw_score - 1) / 4, 4)   # normalise to [0, 1]
+        normalized = round((raw_score - 1) / 4, 4)
+
+        if logger:
+            logger.info(
+                f"SCORER | faithfulness_judge | EXIT | "
+                f"raw_score={raw_score} normalized={normalized}"
+            )
+
+        return normalized
 
     # ------------------------------------------------------------------
     # Public: score
     # ------------------------------------------------------------------
 
-    def score(self, synthesizer_result: dict) -> dict:
+    def score(self, synthesizer_result: dict, logger=None) -> dict:
         """
         Compute faithfulness + confidence for one synthesizer output.
 
         Args:
             synthesizer_result: dict returned by Synthesizer.synthesize()
+            logger:             optional logger from logger.py
 
         Returns:
             {
@@ -192,6 +215,12 @@ class Scorer:
         answer  = synthesizer_result.get("answer", "")
         sources = synthesizer_result.get("sources", [])
 
+        if logger:
+            logger.info(
+                f"SCORER | ENTER | "
+                f"answer_preview={answer[:80]!r} sources={len(sources)}"
+            )
+
         # ── Avg retrieval similarity ────────────────────────────────────
         if sources:
             avg_similarity = round(
@@ -200,23 +229,37 @@ class Scorer:
         else:
             avg_similarity = 0.0
 
+        if logger:
+            logger.info(f"SCORER | avg_retrieval_similarity={avg_similarity}")
+
         # ── Faithfulness score ──────────────────────────────────────────
         # Refusal = perfect faithfulness (model correctly stayed within context)
         if REFUSAL_STRING in answer:
             faithfulness = 1.0
             print("  [Scorer] Refusal detected — faithfulness set to 1.0 (correct grounding behaviour).")
+            if logger:
+                logger.info("SCORER | refusal_detected | faithfulness=1.0 (no Groq call needed)")
         elif not sources:
             faithfulness = 0.0
             print("  [Scorer] No sources and no refusal — faithfulness set to 0.0.")
+            if logger:
+                logger.warning("SCORER | no_sources_no_refusal | faithfulness=0.0")
         else:
             print("  [Scorer] Calling Groq faithfulness judge...")
-            faithfulness = self._judge_faithfulness(answer, sources)
+            faithfulness = self._judge_faithfulness(answer, sources, logger)
 
         # ── Confidence formula ──────────────────────────────────────────
         confidence = round(
             RETRIEVAL_WEIGHT * avg_similarity + FAITHFULNESS_WEIGHT * faithfulness,
             4
         )
+
+        if logger:
+            logger.info(
+                f"SCORER | EXIT | "
+                f"confidence={confidence} faithfulness={faithfulness} "
+                f"avg_retrieval_similarity={avg_similarity}"
+            )
 
         return {
             "confidence_score":         confidence,
