@@ -1,6 +1,6 @@
 # SEC Filing Intelligence System
 
-A RAG-based system that answers natural language questions over real SEC 10-K filings with exact passage-level citations, confidence scores, and cross-year conflict detection. Built to run fully on a local 16GB machine.
+A RAG-based system that answers natural language questions over real SEC 10-K filings with exact passage-level citations, confidence scores, and cross-year conflict detection. Built to run fully on a local 16GB machine with no GPU.
 
 ---
 
@@ -10,8 +10,8 @@ Most RAG systems retrieve documents and generate answers. This system goes furth
 
 - **Answers questions** grounded to specific passages in SEC filings — not just filenames
 - **Scores confidence** using a weighted combination of retrieval similarity and LLM-judged faithfulness
-- **Detects conflicts** across filing years — when a company's statements in 2020 contradict 2023
-- **Evaluates itself** using RAGAS metrics and custom evaluators for citation accuracy and conflict detection
+- **Detects conflicts** across filing years — surfaces when a company's statements in 2020 contradict 2023, systematically, without the user knowing what to look for
+- **Evaluates itself** using 4 LLM-as-judge metrics across 10 predefined queries with extractive ground truths
 
 ---
 
@@ -20,8 +20,10 @@ Most RAG systems retrieve documents and generate answers. This system goes furth
 | Dimension | Detail |
 |---|---|
 | Companies | Apple, Microsoft, Amazon, Google, Meta |
+| Tickers | AAPL, MSFT, AMZN, GOOGL, META |
 | Years | 2020, 2021, 2022, 2023, 2024 |
 | Total Filings | 25 10-K filings from SEC EDGAR |
+| Total Chunks Indexed | 2,835 |
 | Source | Publicly available via EDGAR full-text search |
 
 ---
@@ -33,34 +35,28 @@ User Query
     │
     ▼
 ┌─────────────────┐
-│  Retrieval      │  Embed query → ChromaDB top-k search
-│  Engine         │  Filter by metadata (company, year, section)
+│  Retrieval      │  LLM validates query + extracts filters
+│  Engine         │  Cartesian product ChromaDB search
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
 │  Answer         │  Chunks assembled into numbered context window
-│  Synthesis      │  Groq API (Llama 3) generates grounded answer
+│  Synthesis      │  Groq (llama-3.1-8b-instant) generates grounded answer
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│  Citation       │  format_citations() on Synthesizer — no separate
-│  Extractor      │  component. Sources already returned by synthesizer.
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Confidence     │  Retrieval similarity score (ChromaDB)
-│  Scorer         │  + LLM faithfulness score (prompted judge)
+│  Confidence     │  Retrieval similarity (ChromaDB cosine)
+│  Scorer         │  + LLM faithfulness judge (1–5 rubric, normalised)
 └────────┬────────┘
          │
          ▼
     Final Output
-    Answer + Citations + Confidence Score
+    Answer + Source Citations + Confidence Score
 ```
 
-**Conflict Detection runs as a separate pipeline:**
+**Conflict Detection runs as a separate on-demand pipeline:**
 
 ```
 User selects company + section + year range
@@ -69,15 +65,16 @@ User selects company + section + year range
 Read full section text for each year from _sections.json
     │
     ▼
-LLM compares every year pair → identifies actual contradictions
+For every year pair: LLM (llama-3.3-70b-versatile) reads both years
+side-by-side → identifies contradictions, removals, reframings
     │
     ▼
-Conflict Report (what changed, which years, severity)
+Conflict Report (topic, year A claim, year B claim, severity)
 ```
 
 ---
 
-## Scope: Which Sections We Focus On
+## Scope: Which Sections Are Indexed
 
 A 10-K filing has 15+ sections. This system focuses on **4 high-signal sections** only:
 
@@ -89,62 +86,94 @@ A 10-K filing has 15+ sections. This system focuses on **4 high-signal sections*
 | Item 7A | Market Risk | Quantitative exposure data — comparable across years |
 
 **Why not the other sections?**
-- Item 8 (Financial Statements) — actual numbers live here, but it is almost entirely tables. Table extraction from iXBRL HTML requires special handling beyond plain text parsing and is out of scope for v1.
-- Items 2, 3, 4 (Properties, Legal, Mine Safety) — mostly boilerplate, low signal for meaningful questions.
-- Items 9–15 — procedural disclosures (auditor info, governance, executive compensation) — not relevant to financial analysis questions.
-
-This scoping keeps retrieval sharp and focused.
-
-**Current limitation:** Tables (like Item 8 Financial Statements) are not parsed in v1. Flattening HTML tables to plain text breaks the row-column relationship, making retrieval unreliable for numerical data. Proper table-aware RAG requires converting table rows to natural language sentences or a text-to-SQL approach — planned for v2.
+- Item 8 (Financial Statements) — almost entirely tables. Flattening iXBRL HTML tables destroys row-column relationships, making retrieval unreliable for numerical data. Requires a text-to-SQL or row-to-sentence conversion approach — planned for v2.
+- Items 2–6 — Properties, Legal, Mine Safety — mostly boilerplate, low signal.
+- Items 9–15 — procedural disclosures (auditor, governance, compensation) — not relevant to financial analysis questions.
 
 ---
 
 ## Key Components
 
 ### 1. Ingestion Pipeline
-Downloads 10-K filings (HTM/iXBRL HTML) from SEC EDGAR, extracts clean text via BeautifulSoup + lxml, detects section boundaries (Item 1, Item 1A, Item 7, Item 7A), and applies hierarchical chunking — section-aware at the top level, fixed-size with overlap within sections. Every chunk is tagged with `{company, year, section, page, chunk_id}`.
+Downloads 10-K HTM files from SEC EDGAR using the EDGAR Submissions API (`primaryDocument` field). BeautifulSoup + lxml strips the iXBRL HTML to clean text, preserving newlines for section detection. A regex-based section detector finds Item boundaries and extracts only the 4 target sections. A sentence-aware chunker splits each section into ~300-word chunks with 50-word overlap. A metadata tagger stamps every chunk with `{company, year, section, section_name, filing_type, source_file, chunk_id}`.
 
 ### 2. Embedding + Indexing
-BAAI/bge-base-en embeds every chunk. ChromaDB stores vectors and metadata. Ingestion runs once and persists locally.
+BAAI/bge-base-en (768 dimensions, CPU, ~550MB) embeds every chunk with `normalize_embeddings=True`. ChromaDB stores vectors and all metadata fields. Upsert-based — safe to re-run. **2,835 chunks** total across 25 filings.
 
 ### 3. Retrieval Engine
-Takes a raw natural language query and returns the most relevant chunks from ChromaDB. No filter dropdowns — the query is understood automatically.
+Takes a raw natural language query and returns the most relevant chunks from ChromaDB. No filter dropdowns — the query is parsed automatically.
 
-**Query understanding (Groq, temperature=0):** A single LLM call validates whether the query is answerable from SEC 10-K filings, and extracts all mentioned companies, years, and sections as lists. Handles paraphrases naturally (`"fiscal 2023"` → 2023, `"risk factors"` → Item 1A).
+**Query understanding (Groq `llama-3.1-8b-instant`, temperature=0):** A single LLM call does two things simultaneously — validates whether the query is answerable from SEC 10-K filings (off-topic queries are rejected before any vector search), and extracts all mentioned companies, years, and sections as lists. Handles paraphrases naturally (`"fiscal 2023"` → 2023, `"risk factors"` → Item 1A).
 
-**Cartesian product retrieval:** If multiple companies or years are detected, the retriever generates every combination (e.g. AAPL×2020, MSFT×2020) and runs one ChromaDB query per combination — top-k each. This guarantees balanced representation for comparison queries rather than letting one company dominate the results.
+**Cartesian product retrieval:** If multiple companies or years are detected, the retriever generates every combination (e.g. AAPL×2022, MSFT×2022) and runs one ChromaDB query per combination — top-k each. This guarantees balanced representation for comparison queries rather than letting one company dominate by similarity score alone.
 
-**No reranker needed:** Three design choices eliminate the need for a separate reranking step: (1) metadata pre-filtering narrows the candidate pool to the right company/year/section before vector search; (2) BGE's asymmetric retrieval (query prefix at query time only) achieves the same query-document alignment that cross-encoders provide; (3) per-combination top-k means there is never a large noisy pool that needs reordering.
+**BGE asymmetric retrieval:** The query is embedded with an instruction prefix (`"Represent this sentence for searching relevant passages: "`) at query time only — not at indexing time. This is how the model was trained: query vectors and document vectors live in different regions of embedding space by design.
+
+**No reranker needed:** Metadata pre-filtering narrows the candidate pool to the right company/year/section before vector search. There is no large noisy pool to reorder.
 
 ### 4. Answer Synthesis
-Retrieved chunks are assembled into a numbered context window. Groq API (Llama 3) generates an answer grounded strictly to the provided passages — the system prompt explicitly forbids drawing on training knowledge.
+Retrieved chunks are assembled into a numbered context window (`[1] Apple | 2022 | Risk Factors: "..."`). Groq `llama-3.1-8b-instant` generates an answer grounded strictly to the provided passages — the system prompt explicitly instructs refusal when the context is insufficient rather than drawing on training knowledge. Top-10 chunks by similarity score, capped at `max_tokens=1024`.
 
-### 5. Citation Extractor
-Built as `format_citations()` inside the `Synthesizer` class — not a standalone component. The synthesizer already returns the source chunks used to generate the answer (`"sources"` field), so no separate extraction step is needed. `format_citations()` reshapes that list into a display-ready format: chunk text, company, year, section, chunk ID, and similarity score.
+### 5. Source Citations
+The synthesizer returns the full list of source chunks used as context (`result["sources"]`), including chunk ID, company, year, section, similarity score, and text. No separate citation extraction component is needed — the synthesizer already surfaces this. The UI renders each source in an expandable panel.
 
 Source-level citation (which chunks were used) rather than claim-level (which sentence came from which chunk) — claim-level requires an extra LLM call per query and is unreliable for multi-point comparative answers.
 
 ### 6. Confidence Scorer
-Combines two signals into a single weighted score:
-- **Retrieval similarity** — cosine similarity between query and retrieved chunks
-- **Faithfulness** — LLM-judged score: does the answer stay within the bounds of retrieved passages?
+Combines two signals into a single weighted confidence score:
+
+```
+confidence = 0.4 × avg_retrieval_similarity + 0.6 × faithfulness_score
+```
+
+- **Retrieval similarity** — mean cosine similarity between the query vector and the retrieved chunk vectors (from ChromaDB distances)
+- **Faithfulness** — Groq `llama-3.1-8b-instant` judges whether the answer stays within the retrieved passages on a 1–5 rubric, normalised to 0–1: `(raw - 1) / 4`
+
+Faithfulness is weighted higher (0.6) because a high similarity score alone does not guarantee the LLM stayed within the context.
+
+Special case: if the synthesizer emits the standard refusal string, faithfulness is set to 1.0 without a Groq call — correct refusal is the best possible behaviour.
 
 ### 7. Conflict Detector
+
 The core differentiator of this project — not because it uses a different architecture, but because it solves a different problem.
 
-A Q&A system is **reactive**: it answers questions the user knows to ask. If a user asks "What are Apple's supply chain risks?", the system retrieves the most relevant chunks and answers. It sounds complete. But the user never learns that the 2020 filing said *"significant concentration risk from single-source suppliers"* and the 2023 filing quietly says *"risk is actively managed."* That shift is the story — and a Q&A system buries it, because the user didn't know to ask.
+A Q&A system is **reactive**: it answers questions the user knows to ask. But the user never learns that the 2020 filing said *"significant concentration risk from single-source suppliers"* and the 2023 filing quietly says *"risk is actively managed."* That shift is the story — and a Q&A system buries it, because the user didn't know to ask.
 
-The Conflict Detector is **proactive and systematic**: it scans all possible year-pair combinations automatically, without the user knowing what to look for. Across 5 companies × 4 sections × C(5,2)=10 year pairs, that is 200 comparisons. No analyst would manually type 200 comparison queries into a chat interface. This runs the full scan and surfaces what changed.
+The Conflict Detector is **proactive and systematic**: it scans all year-pair combinations automatically. Across 5 companies × 4 sections × C(5,2)=10 year pairs, that is 200 comparisons. No analyst would manually type 200 comparison queries into a chat interface. This runs the full scan and surfaces what changed.
 
-SEC 10-K filings are uniquely suited to this — same company, same structured sections (Item 1A, Item 7), five consecutive years. Companies quietly soften risk language, drop previously disclosed risks, or shift framing between filings. Analysts do this comparison manually today. This automates it.
+For each year pair, the LLM (`llama-3.3-70b-versatile` — the heavier model, because detecting subtle contradictions requires more reasoning than Q&A) reads the full section text from both years side by side. It returns up to 3 structured conflicts per pair with severity labels (high / medium / low / none), specific claims from each year, and a change description.
 
-For each year pair in the selected range, the LLM reads the full section text from both years side by side and identifies specific contradictions, removals, or reframings — returning up to 3 structured conflicts per pair with severity labels (high / medium / low / none).
-
-A pre-filter based on embedding similarity was considered and rejected — mean-pooled vectors are too coarse to reliably detect whether actual claims conflict, and at 200 total pairs across all companies and sections the LLM call cost is negligible. Every pair is analyzed directly.
+A 65-second delay between calls manages Groq's rate limit. A pre-filter based on embedding similarity was considered and rejected — mean-pooled vectors are too coarse to reliably detect whether actual claims conflict, and at this scale the LLM call cost is negligible.
 
 ### 8. Evaluation Pipeline
-- **RAGAS** — retrieval precision, faithfulness, answer relevance, hallucination rate across 10 predefined queries with ground truth answers
-- Custom evaluators were considered and dropped — citation accuracy overlaps directly with RAGAS faithfulness, and conflict detection accuracy requires manual ground truth labelling for marginal gain over reading the output directly
+
+10 predefined queries with **extractive ground truths** — every ground truth fact was pulled verbatim from the actual `_sections.json` filing text. No manual fabrication.
+
+**4 metrics, all LLM-as-judge via Groq `llama-3.1-8b-instant` at temperature=0:**
+
+| Metric | What it measures |
+|---|---|
+| **Faithfulness** | Does the answer stay within retrieved context? Same 1–5 rubric as Confidence Scorer. |
+| **Answer Relevance** | Does the answer address the question asked? 1–5 rubric, normalised. |
+| **Context Precision** | Of the retrieved chunks, what fraction are genuinely relevant to the query? |
+| **Context Recall** | Does the retrieved context contain enough to derive the ground truth? YES=1.0 / PARTIAL=0.5 / NO=0.0 |
+
+**Results (9 valid queries, 1 correctly rejected):**
+
+| Metric | Score |
+|---|---|
+| Faithfulness | **0.83** |
+| Answer Relevance | **0.94** |
+| Context Precision | **0.68** |
+| Context Recall | **0.83** |
+
+**What the scores mean:**
+- Faithfulness 0.83 — the pipeline stays grounded. Minor inference on cross-year comparison queries (expected — synthesizing across two years' context) but no hallucination.
+- Answer Relevance 0.94 — answers address the question in 9/9 valid queries, with one partial (Q08, see known gap below).
+- Context Precision 0.68 — 32% of retrieved chunks are off-topic within the right section. The metadata filter gets you to the right section; the similarity search can't always distinguish "supply chain risk chunk" from "litigation risk chunk" within the same Item 1A. The LLM filters through the noise.
+- Context Recall 0.83 — retrieved context fully covers the ground truth in 7 of 9 queries.
+
+**Known retrieval gap (Q08 — META headcount):** The query asks for headcount and the year-over-year change. The system correctly retrieves the absolute number (67,317) but not the YoY percentage (−22%), which lives in a separate chunk that doesn't rank in the top-5 by similarity. The system correctly admits it cannot answer the YoY part rather than guessing.
 
 ---
 
@@ -153,12 +182,13 @@ A pre-filter based on embedding similarity was considered and rejected — mean-
 | Layer | Tool |
 |---|---|
 | HTML Parsing | BeautifulSoup + lxml |
-| Embeddings | BAAI/bge-base-en |
-| Vector Store | ChromaDB |
-| LLM / Synthesis | Groq API — Llama 3 (direct API, no framework) |
-| Evaluation | RAGAS + custom evaluators |
+| Embeddings | BAAI/bge-base-en (768-dim, CPU) |
+| Vector Store | ChromaDB (local persistent) |
+| LLM — Q&A pipeline | Groq API — `llama-3.1-8b-instant` |
+| LLM — Conflict analysis | Groq API — `llama-3.3-70b-versatile` |
+| Evaluation | Custom LLM-as-judge via Groq (4 metrics) |
 | UI | Streamlit |
-| Language | Python |
+| Language | Python 3.10+ |
 
 ---
 
@@ -166,27 +196,30 @@ A pre-filter based on embedding similarity was considered and rejected — mean-
 
 | Feature | Vanilla RAG | This System |
 |---|---|---|
-| Citations | Source filename | Exact passage + metadata |
-| Confidence | None | Retrieval + faithfulness weighted score |
-| Conflict detection | None | Two-stage semantic + LLM pipeline |
-| Evaluation | None | RAGAS + custom eval suite |
-| Chunking | Fixed-size | Hierarchical section-aware |
-
+| Query understanding | Keyword match or raw embedding | LLM validates + extracts structured filters |
+| Retrieval | Single similarity search over all docs | Cartesian product per company/year/section combination |
+| Citations | Source filename | Exact passage + company, year, section, similarity score |
+| Confidence | None | Retrieval similarity + LLM faithfulness, weighted |
+| Conflict detection | None | Systematic LLM analysis of every year pair |
+| Evaluation | None | 4 LLM-as-judge metrics, extractive ground truth |
+| Chunking | Fixed-size | Sentence-aware, section-scoped, with overlap |
 
 ---
 
 ## Streamlit UI
 
-The UI exposes three views:
+The UI has two tabs:
 
-**Query View** — submit a natural language question and receive:
-- Answer
-- Citation panel (passages, company, year, section, page)
-- Confidence score with breakdown
+**Query Tab** — submit a natural language question and receive:
+- Answer grounded to retrieved passages
+- Citation panel (chunk text, company, year, section, similarity score)
+- Confidence score with breakdown (retrieval similarity, faithfulness, formula)
 
-**Conflict Explorer** — select a company and section to view a cross-year conflict report
-
-**Eval Dashboard** — RAGAS metrics and custom eval scores as charts
+**Conflict Explorer Tab** — select company, section, and year range:
+- Runs LLM analysis on every year pair in the selected range
+- Displays conflicts with severity badges (high / medium / low)
+- Shows side-by-side claims from each year with change description
+- Summary counts (high / medium / low / no change)
 
 ---
 
@@ -195,8 +228,8 @@ The UI exposes three views:
 ### Prerequisites
 
 - Python 3.10+
-- 16GB RAM (runs fully locally — no GPU required)
-- Groq API key (free tier sufficient)
+- 16GB RAM (no GPU required)
+- Groq API key (free tier is sufficient)
 
 ### Setup
 
@@ -207,25 +240,27 @@ cd sec-rag-intelligence
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate        # Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Set environment variables
-export GROQ_API_KEY=your_key_here
+# Create .env file with your Groq API key
+echo GROQ_API_KEY=your_key_here > .env
 ```
 
-### Run Ingestion (one-time)
+### Run Ingestion (one-time, ~10–15 minutes)
+
+All scripts must be run from the **project root**:
 
 ```bash
-# Download and process all 25 filings
-python ingestion/downloader.py
-python ingestion/parser.py
-python ingestion/chunker.py
-
-# Embed and index into ChromaDB
-python embeddings/indexer.py
+python ingestion/downloader.py       # Download 25 HTM filings from SEC EDGAR
+python ingestion/parser.py           # Extract clean text from iXBRL HTML
+python ingestion/section_detector.py # Detect Item 1, 1A, 7, 7A boundaries
+python ingestion/chunker.py          # Split sections into ~300-word chunks
+python ingestion/metadata_tagger.py  # Tag each chunk with company/year/section
+python embeddings/embedder.py        # Embed all chunks with BAAI/bge-base-en
+python embeddings/indexer.py         # Load into ChromaDB (2,835 chunks)
 ```
 
 ### Run the App
@@ -237,7 +272,23 @@ streamlit run ui/app.py
 ### Run Evaluation
 
 ```bash
-python evaluation/ragas_evaluator.py
-python evaluation/custom_evaluator.py
+python evaluation/ragas_evaluator.py   # ~8–10 min, results saved to eval_results.json
 ```
 
+---
+
+## Logging
+
+Every query and conflict run produces a timestamped log file in `logs/`:
+
+- `logs/query_YYYYMMDD_HHMMSS.log` — full pipeline trace per query (filter extraction, retrieval, synthesis, scoring)
+- `logs/conflict_Company_Section_YYYYMMDD_HHMMSS.log` — conflict analysis trace per run
+
+---
+
+## Known Limitations
+
+- **Financial tables not parsed** — Item 8 (financial statements) is excluded. Tables in iXBRL HTML cannot be reliably flattened to plain text without destroying row-column structure.
+- **Top-k retrieval miss** — for queries where the answer lies in one specific sentence of one specific chunk, dense retrieval may not surface that exact chunk if other chunks in the same section score higher by similarity. See Q08 in evaluation results.
+- **Rate limits** — Groq free tier limits throughput. Conflict analysis enforces a 65-second delay between LLM calls. The evaluation script takes ~8–10 minutes for 10 queries.
+- **Single-user** — Streamlit is not a production server. Built for local use and portfolio demonstration.

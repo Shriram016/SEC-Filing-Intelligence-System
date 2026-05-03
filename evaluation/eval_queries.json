@@ -1,0 +1,102 @@
+[
+  {
+    "query_id": "Q01",
+    "query": "What supply chain risks did Apple disclose regarding component sourcing in its 2022 annual report?",
+    "query_type": "single_factual",
+    "expected_tickers": ["AAPL"],
+    "expected_years": [2022],
+    "expected_sections": ["Item 1A"],
+    "ground_truth": "Apple disclosed that it currently obtains certain components from single or limited sources, making it subject to significant supply and pricing risks. These single-source dependencies expose Apple to potential supply shortages and adverse pricing conditions.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q02",
+    "query": "What artificial intelligence risks did Microsoft identify in its 2023 annual report?",
+    "query_type": "single_factual",
+    "expected_tickers": ["MSFT"],
+    "expected_years": [2023],
+    "expected_sections": ["Item 1A"],
+    "ground_truth": "Microsoft identified that AI algorithms or training methodologies may be flawed, datasets may be overbroad or contain biased information, and AI-generated content may be offensive or harmful. Ineffective AI development could result in legal liability, regulatory action under proposed EU legislation, and reputational or brand harm.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q03",
+    "query": "What were Amazon's total consolidated net sales and AWS revenue for the year ended December 31, 2021?",
+    "query_type": "single_factual",
+    "expected_tickers": ["AMZN"],
+    "expected_years": [2021],
+    "expected_sections": ["Item 7"],
+    "ground_truth": "Amazon's total consolidated net sales for 2021 were $469,822 million ($469.8 billion), a 22% increase compared to 2020. AWS revenue was $62,202 million ($62.2 billion) in 2021, representing 37% growth over the prior year.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q04",
+    "query": "How did Apple's top risk factors change between its 2020 and 2023 annual reports?",
+    "query_type": "cross_year",
+    "expected_tickers": ["AAPL"],
+    "expected_years": [2020, 2023],
+    "expected_sections": ["Item 1A"],
+    "ground_truth": "In 2020, Apple led its risk factors section with COVID-19 as the primary disclosed risk, citing supply chain disruptions, retail store closures, and significant uncertainty about the pandemic's duration and impact. By 2023, COVID-19 was no longer the leading risk; the section opened instead with macroeconomic and industry risks, focusing on global economic conditions and the complexity of Apple's international supply chain.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q05",
+    "query": "How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?",
+    "query_type": "cross_year",
+    "expected_tickers": ["MSFT"],
+    "expected_years": [2022, 2023],
+    "expected_sections": ["Item 1A"],
+    "ground_truth": "Microsoft's 2022 annual report focused its risk factors on competitive risks from platform-based ecosystems and cybersecurity threats, with no dedicated AI risk section. By 2023, Microsoft added an explicit section on AI risks, disclosing that flawed AI algorithms, biased datasets, harmful AI-generated content, and proposed EU AI legislation could result in legal liability, regulatory action, and reputational harm.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q06",
+    "query": "How did Meta's total revenue and operating income change between 2022 and 2023?",
+    "query_type": "cross_year",
+    "expected_tickers": ["META"],
+    "expected_years": [2022, 2023],
+    "expected_sections": ["Item 7"],
+    "ground_truth": "Meta's total revenue increased 16% from $116.61 billion in 2022 to $134.90 billion in 2023, driven by advertising revenue growth. Income from operations increased 62% from $28.94 billion to $46.75 billion in 2023, with operating margin expanding from 25% to 35%.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q07",
+    "query": "Compare how Apple and Microsoft described competitive risks in their 2023 annual reports.",
+    "query_type": "cross_company",
+    "expected_tickers": ["AAPL", "MSFT"],
+    "expected_years": [2023],
+    "expected_sections": ["Item 1A"],
+    "ground_truth": "Both Apple and Microsoft identified intense global technology market competition as a key risk in 2023. Apple emphasized highly competitive markets with aggressive price competition and rapid technological change. Microsoft focused on competition from vertically-integrated models, platform-based ecosystems, and low-barrier-to-entry markets, and additionally identified AI as a new competitive dimension not present in Apple's disclosures.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q08",
+    "query": "What was Meta's headcount as of December 31, 2023, and how did it change compared to the prior year?",
+    "query_type": "single_factual",
+    "expected_tickers": ["META"],
+    "expected_years": [2023],
+    "expected_sections": ["Item 7"],
+    "ground_truth": "Meta's headcount was 67,317 as of December 31, 2023, a decrease of 22% year-over-year.",
+    "is_valid": true
+  },
+  {
+    "query_id": "Q09",
+    "query": "What was the weather forecast for New York City in January 2022?",
+    "query_type": "invalid",
+    "expected_tickers": [],
+    "expected_years": [],
+    "expected_sections": [],
+    "ground_truth": "This question is not answerable from SEC 10-K filings and should be rejected by the system.",
+    "is_valid": false
+  },
+  {
+    "query_id": "Q10",
+    "query": "Did Meta's Reality Labs segment revenue increase or decrease from 2022 to 2023?",
+    "query_type": "conflict_triggering",
+    "expected_tickers": ["META"],
+    "expected_years": [2022, 2023],
+    "expected_sections": ["Item 7"],
+    "ground_truth": "Meta's Reality Labs revenue decreased 12% from $2,159 million in 2022 to $1,896 million in 2023. Additionally, Reality Labs operating losses grew from $13,717 million in 2022 to $16,120 million in 2023, indicating worsening financial performance in this segment despite overall company revenue growth.",
+    "is_valid": true
+  }
+]

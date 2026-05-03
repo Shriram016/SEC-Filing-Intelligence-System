@@ -206,10 +206,10 @@ def render_conflict_tab() -> None:
         st.info("No results returned. Check that the section exists for all selected years.")
         return
 
-    # Summary strip
-    high   = sum(1 for r in results if any(c.get("severity") == "high"   for c in r.get("conflicts", [])))
-    medium = sum(1 for r in results if any(c.get("severity") == "medium" for c in r.get("conflicts", [])))
-    low    = sum(1 for r in results if any(c.get("severity") == "low"    for c in r.get("conflicts", [])))
+    # Summary strip — counts individual conflicts, not pairs
+    high   = sum(1 for r in results for c in r.get("conflicts", []) if c.get("severity") == "high")
+    medium = sum(1 for r in results for c in r.get("conflicts", []) if c.get("severity") == "medium")
+    low    = sum(1 for r in results for c in r.get("conflicts", []) if c.get("severity") == "low")
     none_  = sum(1 for r in results if r.get("conflict_count", 0) == 0)
 
     c1, c2, c3, c4 = st.columns(4)
