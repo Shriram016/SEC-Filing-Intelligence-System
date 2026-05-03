@@ -209,6 +209,7 @@ __marimo__/
 
 CLAUDE.md
 learning.md
+INTERVIEW_PREP.md
 # -----------------------------------------------
 # SEC RAG Project — specific ignores
 # -----------------------------------------------
@@ -230,3 +231,4 @@ AAPL_2020_test.htm
 
 
 */settings.local.json
+
