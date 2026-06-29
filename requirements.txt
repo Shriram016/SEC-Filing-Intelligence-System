@@ -60,9 +60,11 @@ scikit-learn>=1.6.0
 # Evaluation — ragas_evaluator.py
 # 0.2.0+ has Python 3.13 support
 # datasets 3.x has Python 3.13 wheels
+# langchain-groq: Groq LLM backend for RAGAS judges
 # -------------------------------------------------------------
 ragas>=0.2.0
 datasets>=3.0.0
+langchain-groq>=0.3.0
 
 
 # -------------------------------------------------------------
@@ -76,5 +78,6 @@ streamlit>=1.40.0
 # Utilities — pure Python, no compilation needed
 # -------------------------------------------------------------
 python-dotenv>=1.0.1        # load GROQ_API_KEY from .env file
+langfuse>=2.0.0             # LLM observability — traces every pipeline step
 pandas>=2.2.3               # 2.2.3+ has Python 3.13 wheels
 tqdm>=4.66.0                # progress bars during batch embedding

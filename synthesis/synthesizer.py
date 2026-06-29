@@ -32,17 +32,17 @@ import sys
 
 from dotenv import load_dotenv
 from groq import Groq
+from langfuse import observe
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import GROQ_MODEL
+from config import GROQ_MODEL, MAX_CONTEXT_CHUNKS
 
 load_dotenv()
-
-MAX_CONTEXT_CHUNKS = 10
 
 SYSTEM_PROMPT = (
     "You are a financial analyst assistant specialising in SEC 10-K filings. "
     "Answer the question strictly from the provided filing excerpts. "
+    "For comparison queries, synthesize your answer by combining information across passages from different years or companies. "
     "If the answer is not contained in the excerpts, say exactly: "
     "\"The provided context does not contain enough information to answer this question.\" "
     "Do not use any knowledge outside the provided passages."
@@ -67,6 +67,30 @@ class Synthesizer:
 
     @staticmethod
     def _build_context(chunks: list) -> str:
+        has_groups = any(c.get("group") for c in chunks)
+
+        if has_groups:
+            grouped = {}
+            for chunk in chunks:
+                key = chunk.get("group") or ""
+                grouped.setdefault(key, []).append(chunk)
+
+            lines = ["Context passages:\n"]
+            counter = 1
+            for group_name, group_chunks in grouped.items():
+                if group_name:
+                    lines.append(f"=== {group_name} ===\n")
+                for chunk in group_chunks:
+                    label = (
+                        f"[{counter}] {chunk.get('company', chunk.get('ticker'))} | "
+                        f"{chunk.get('year')} | "
+                        f"{chunk.get('section_name', chunk.get('section'))}"
+                    )
+                    lines.append(label)
+                    lines.append(f"\"{chunk['text'].strip()}\"\n")
+                    counter += 1
+            return "\n".join(lines)
+
         lines = ["Context passages:\n"]
         for i, chunk in enumerate(chunks, 1):
             label = (
@@ -82,6 +106,7 @@ class Synthesizer:
     # Public: synthesize
     # ------------------------------------------------------------------
 
+    @observe(name="synthesis", as_type="generation")
     def synthesize(self, query: str, chunks: list, max_context: int = MAX_CONTEXT_CHUNKS, logger=None) -> dict:
         """
         Generate a grounded answer from retrieved chunks.
@@ -119,7 +144,11 @@ class Synthesizer:
             }
 
         if logger:
-            logger.info(f"SYNTHESIZER | context | chunks_selected={len(selected)} (cap={max_context})")
+            dropped = len(chunks) - len(selected)
+            logger.info(
+                f"SYNTHESIZER | context | chunks_received={len(chunks)} "
+                f"chunks_selected={len(selected)} (cap={max_context}) dropped={dropped}"
+            )
             source_labels = [
                 f"{c.get('company','?')} {c.get('year','?')} {c.get('section','?')}"
                 for c in selected
@@ -127,6 +156,9 @@ class Synthesizer:
             logger.info(f"SYNTHESIZER | context | sources={source_labels}")
 
         context = self._build_context(selected)
+        if logger:
+            has_groups = any(c.get("group") for c in selected)
+            logger.info(f"SYNTHESIZER | grouping={'yes' if has_groups else 'no'} | context_preview={context[:300]!r}")
         user_prompt = f"{context}\nQuestion: {query}"
 
         if logger:

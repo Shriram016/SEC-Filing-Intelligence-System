@@ -23,6 +23,7 @@ from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 import chromadb
 from groq import Groq
+from langfuse import observe
 
 # Allow imports from project root regardless of working directory
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -37,6 +38,7 @@ from config import (
     COMPANIES,
     GROQ_MODEL,
 )
+from retrieval.reranker import Reranker
 
 load_dotenv()
 
@@ -44,6 +46,7 @@ load_dotenv()
 # Lookup tables — used to sanitise LLM extraction output
 # -----------------------------------------------------------------------
 COMPANY_TO_TICKER = dict(zip(COMPANIES, TICKERS))   # "Apple" → "AAPL"
+TICKER_TO_COMPANY = {v: k for k, v in COMPANY_TO_TICKER.items()}  # "AAPL" → "Apple"
 TICKER_SET        = set(TICKERS)                     # {"AAPL", "MSFT", ...}
 VALID_YEARS       = set(YEARS)                       # {2020, 2021, ..., 2024}
 VALID_SECTIONS    = set(TARGET_SECTIONS.keys())      # {"Item 1", "Item 1A", ...}
@@ -64,6 +67,9 @@ class Retriever:
         self.chroma_client = chromadb.PersistentClient(path=CHROMA_PERSIST_DIR)
         self.collection    = self.chroma_client.get_collection("sec_filings")
 
+        print("Loading cross-encoder reranker...")
+        self.reranker = Reranker()
+
         print("Initialising Groq client...")
         api_key = os.getenv("GROQ_API_KEY")
         if not api_key:
@@ -79,6 +85,7 @@ class Retriever:
     # Private: query understanding
     # -------------------------------------------------------------------
 
+    @observe(name="filter_extraction", as_type="generation")
     def _extract_filters(self, query: str, logger=None) -> dict:
         """
         Single Groq call (temperature=0) that:
@@ -134,13 +141,26 @@ Your tasks:
    "market risk", "interest rate", "currency" → ["Item 7A"]
    If unclear or spans multiple sections → []
 
+5. SUB-QUERY TEMPLATE: If the query compares across multiple companies OR multiple years,
+   create a short template that captures the core topic of the query.
+   Use <company> and <year> as placeholders — these will be filled for each combination.
+   The template should preserve the specific topic from the original query (e.g., "AI risks",
+   "competitive risks", "headcount") — not generic terms like "data" or "information".
+   If the query targets a single company AND single year, set to null.
+
+   Examples:
+   "How did Microsoft's AI risk evolve from 2022 to 2023?" → "<company> AI risk disclosures in <year>"
+   "Compare Apple and Microsoft's competitive risks in 2023" → "<company> competitive risks in <year>"
+   "What were Apple's risk factors in 2022?" → null
+
 Return ONLY valid JSON in this exact format. No explanation, no markdown fences:
 {{
     "is_valid": true or false,
     "rejection_reason": null or "brief reason",
     "tickers": [],
     "years": [],
-    "sections": []
+    "sections": [],
+    "sub_query_template": null or "template string"
 }}
 
 Query: {query}"""
@@ -152,7 +172,7 @@ Query: {query}"""
             model=GROQ_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0,
-            max_tokens=200,
+            max_tokens=250,
         )
 
         raw = response.choices[0].message.content.strip()
@@ -177,12 +197,25 @@ Query: {query}"""
                 "tickers":          [],
                 "years":            [],
                 "sections":         [],
+                "sub_query_template": None,
             }
 
         # Sanitise — silently drop values outside our bounded dataset
         parsed["tickers"]  = [t for t in parsed.get("tickers",  []) if t in TICKER_SET]
         parsed["years"]    = [y for y in parsed.get("years",    []) if y in VALID_YEARS]
         parsed["sections"] = [s for s in parsed.get("sections", []) if s in VALID_SECTIONS]
+
+        # Validate sub_query_template
+        template = parsed.get("sub_query_template")
+        if isinstance(template, str):
+            template = template.strip()
+            if not template:
+                template = None
+            elif "<company>" not in template and "<year>" not in template:
+                template = None
+        else:
+            template = None
+        parsed["sub_query_template"] = template
 
         if logger:
             logger.info(
@@ -191,6 +224,7 @@ Query: {query}"""
                 f"tickers={parsed.get('tickers')} "
                 f"years={parsed.get('years')} "
                 f"sections={parsed.get('sections')} "
+                f"sub_query_template={parsed.get('sub_query_template')!r} "
                 f"rejection_reason={parsed.get('rejection_reason')!r}"
             )
 
@@ -241,6 +275,7 @@ Query: {query}"""
     # Public: retrieve
     # -------------------------------------------------------------------
 
+    @observe(name="retrieval")
     def retrieve(self, query: str, top_k: int = TOP_K, logger=None):
         """
         Full retrieval pipeline for a raw user query.
@@ -297,13 +332,16 @@ Query: {query}"""
             filters.get("years",    []),
             filters.get("sections", []),
         )
+        sub_query_template = filters.get("sub_query_template")
         print(f"\nFilter combinations ({len(combinations)}): {combinations}")
+        if sub_query_template:
+            print(f"Sub-query template: {sub_query_template}")
 
         if logger:
             logger.info(f"RETRIEVER | combinations | count={len(combinations)} combos={combinations}")
 
         # ── Step 4: one ChromaDB query per combination ─────────────────
-        all_results   = []
+        combo_results  = []
         seen_chunk_ids = set()
 
         for combo in combinations:
@@ -313,9 +351,6 @@ Query: {query}"""
                 "include":          ["documents", "metadatas", "distances"],
             }
             if combo:
-                # ChromaDB requires explicit operators.
-                # Single field → {"field": {"$eq": value}}
-                # Multiple fields → {"$and": [{"field": {"$eq": value}}, ...]}
                 conditions = [{k: {"$eq": v}} for k, v in combo.items()]
                 query_kwargs["where"] = (
                     conditions[0] if len(conditions) == 1
@@ -330,19 +365,18 @@ Query: {query}"""
             documents = chroma_result["documents"][0]
             metadatas = chroma_result["metadatas"][0]
             distances = chroma_result["distances"][0]
-            ids       = chroma_result["ids"][0]       # chunk_id stored as ChromaDB doc ID
+            ids       = chroma_result["ids"][0]
 
             if logger:
                 logger.info(f"RETRIEVER | ChromaDB result | combo={combo} chunks_returned={len(documents)}")
 
+            group = []
             for doc, meta, dist, chunk_id in zip(documents, metadatas, distances, ids):
-
-                # Deduplicate — same chunk can surface across multiple combinations
                 if chunk_id in seen_chunk_ids:
                     continue
                 seen_chunk_ids.add(chunk_id)
 
-                all_results.append({
+                group.append({
                     "text":             doc,
                     "similarity_score": round(1.0 - dist, 4),
                     "chunk_id":         chunk_id,
@@ -355,11 +389,37 @@ Query: {query}"""
                     "source_file":      meta.get("source_file"),
                 })
 
-        # ── Step 5: sort by similarity descending ─────────────────────
-        all_results.sort(key=lambda x: x["similarity_score"], reverse=True)
+            combo_results.append((combo, group))
+
+        # ── Step 5: rerank ────────────────────────────────────────────
+        use_per_combo_rerank = (
+            len(combinations) > 1
+            and sub_query_template is not None
+        )
+
+        if use_per_combo_rerank:
+            all_results = []
+            for combo, group in combo_results:
+                company = TICKER_TO_COMPANY.get(combo.get("ticker", ""), "")
+                year = str(combo.get("year", ""))
+                filled = sub_query_template.replace("<company>", company).replace("<year>", year)
+                print(f"  Reranking combo {combo} with: {filled!r}")
+                if logger:
+                    logger.info(f"RETRIEVER | per-combo rerank | combo={combo} sub_query={filled!r}")
+                reranked = self.reranker.rerank(filled, group, logger)
+                for chunk in reranked:
+                    chunk["group"] = filled
+                all_results.extend(reranked)
+        else:
+            all_results = []
+            for _, group in combo_results:
+                all_results.extend(group)
+            all_results = self.reranker.rerank(query, all_results, logger)
+            for chunk in all_results:
+                chunk["group"] = None
 
         if logger:
-            logger.info(f"RETRIEVER | EXIT | total_chunks={len(all_results)} (after dedup)")
+            logger.info(f"RETRIEVER | EXIT | total_chunks={len(all_results)} (after dedup + rerank)")
 
         return all_results
 

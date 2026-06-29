@@ -25,6 +25,7 @@ from itertools import combinations
 
 from groq import Groq
 from dotenv import load_dotenv
+from langfuse import observe
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -97,6 +98,7 @@ def _load_section_text(company: str, section: str, year: int, logger=None) -> st
 
 # ── Core functions ───────────────────────────────────────────────────────────
 
+@observe(name="analyze_pair", as_type="generation")
 def analyze_pair(
     company: str,
     section: str,
@@ -243,6 +245,7 @@ Return ONLY valid JSON — no text before or after the JSON block:
     }
 
 
+@observe(name="conflict_analysis")
 def analyze_conflicts(
     company: str,
     section: str,

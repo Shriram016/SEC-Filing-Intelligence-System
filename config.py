@@ -9,11 +9,13 @@ EMBEDDING_BATCH_SIZE = 32
 EMBEDDING_DIMENSION = 768
 
 # LLM
-GROQ_MODEL     = "llama-3.1-8b-instant"    # Q&A pipeline — query parsing, synthesis, scoring. Speed matters.
+GROQ_MODEL     = "meta-llama/llama-4-scout-17b-16e-instruct"  # Q&A pipeline — query parsing, synthesis, scoring.
 CONFLICT_MODEL = "llama-3.3-70b-versatile" # Conflict analysis — nuanced reasoning over long legal text. Quality matters.
 
 # Retrieval
-TOP_K = 5                       # TBD — tune after indexer is built
+TOP_K = 10                      # results per filter combination
+RERANKER_MODEL = "BAAI/bge-reranker-base"
+MAX_CONTEXT_CHUNKS = 30
 
 # Conflict detection
 SIMILARITY_THRESHOLD = 0.85     # TBD — tune after retrieval is validated

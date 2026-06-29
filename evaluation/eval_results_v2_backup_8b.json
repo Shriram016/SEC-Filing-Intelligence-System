@@ -1,0 +1,62 @@
+{
+  "run_timestamp": "2026-06-28T23:16:18.519722",
+  "pipeline_model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "judge_model": "llama-3.3-70b-versatile",
+  "eval_framework": "ragas-0.4.3",
+  "eval_set": "evaluation/eval_queries_v2.json",
+  "num_queries": 3,
+  "num_evaluated": 3,
+  "aggregate": {
+    "faithfulness": 0.4762,
+    "answer_relevance": 0.9665,
+    "context_precision": null,
+    "context_recall": null
+  },
+  "results": [
+    {
+      "query_id": "Q16",
+      "query": "What are the biggest risks facing large technology companies?",
+      "query_type": "vague",
+      "is_valid": true,
+      "ground_truth": "",
+      "status": "evaluated",
+      "answer": "The provided context does not contain enough information to provide a comprehensive list, but based on the excerpts, some of the biggest risks facing large technology companies appear to include:\n\n1. **Competition**: All three companies (Google, Microsoft, and Meta) mention intense competition in the technology sector, which may lead to lower revenue or operating margins. (Microsoft [7], [8], [9]; Google [1]; Meta [3], [4], [5], [6])\n\n2. **Acquisitions and Integration Risks**: Google, Meta, and Microsoft mention risks related to acquisitions, including failure to successfully integrate acquired operations, technologies, services, and personnel. (Google [1]; Meta [3], [4], [5], [6]; Microsoft does not explicitly mention acquisition risks but does discuss competitive and strategic risks)\n\n3. **Regulatory and Government Risks**: Meta and Google mention risks related to government regulation and enforcement, including government restrictions on access to their products or services. (Meta [3], [4], [5], [6]; Google [1])\n\n4. **Operational and Supply Chain Risks**: Microsoft and Google mention risks related to maintaining operations infrastructure, supply chain management, and manufacturing. (Microsoft [2], [7], [8], [9]; Google [10])\n\n5. **Cybersecurity and Technical Infrastructure Risks**: Meta and Google mention risks related to building, maintaining, and scaling technical infrastructure, and disruptions in service. (Meta [3], [4], [5], [6]; Google [1])\n\n6. **Reputation and Brand Risks**: Meta, Google, and Microsoft mention risks related to maintaining and enhancing their brands, and unfavorable media coverage. (Meta [3], [4], [5], [6]; Google [10]; Microsoft [2])\n\nThese risks seem to be prevalent across the technology sector and are not exhaustive, as each company faces unique challenges.",
+      "chunks_retrieved": 10,
+      "chunks_used": 10,
+      "faithfulness": 0.4286,
+      "answer_relevance": 0.9982,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "query_id": "Q17",
+      "query": "How have tech companies been affected by macroeconomic conditions?",
+      "query_type": "vague",
+      "is_valid": true,
+      "ground_truth": "",
+      "status": "evaluated",
+      "answer": "Tech companies, such as Apple, Google, and Microsoft, have been affected by macroeconomic conditions in various ways. \n\nAccording to Apple's 2020 Risk Factors, consumer confidence and spending could be adversely affected in response to financial market volatility, negative financial news, and other economic factors. This has been a recurring theme in their risk factors across multiple years (2020, 2021, 2022, 2023, and 2024). \n\nApple's 2023 MD&A section also reported that macroeconomic conditions, including inflation, changes in interest rates, and currency fluctuations, directly and indirectly impacted their results of operations and financial condition. Specifically, they mentioned that their net sales decreased in various regions, including Americas (4% decrease), Europe (1% decrease), Greater China (2% decrease), Japan (7% decrease), and Rest of Asia Pacific (1% increase).\n\nSimilarly, Google's 2020 Risk Factors mentioned that macroeconomic impacts on their business continue to evolve and be unpredictable, which may adversely affect their business, operations, and financial performance. They specifically noted potential significant declines in advertising revenues and other revenues due to economic downturns.\n\nMicrosoft's 2022 and 2023 Risk Factors also highlighted that adverse economic or market conditions may harm their business, causing lower IT spending and adversely affecting their revenue. They mentioned that worsening economic conditions, including inflation, recession, or pandemic, may negatively impact their business.\n\nOverall, macroeconomic conditions have had a significant impact on tech companies, affecting their revenues, operations, and financial performance. These conditions include inflation, recession, changes in interest rates, currency fluctuations, and other economic factors that influence consumer confidence and spending.",
+      "chunks_retrieved": 10,
+      "chunks_used": 10,
+      "faithfulness": 0.25,
+      "answer_relevance": 0.9663,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "query_id": "Q18",
+      "query": "What do companies say about artificial intelligence?",
+      "query_type": "vague",
+      "is_valid": true,
+      "ground_truth": "",
+      "status": "evaluated",
+      "answer": "Companies view artificial intelligence (AI) as a transformative technology that presents both opportunities and risks. \n\nMicrosoft describes AI as a key part of its mission to empower every person and organization on the planet to achieve more. The company believes AI should be broadly available and used responsibly, with safety and security from the outset. \n\nGoogle and Meta also see AI as critical to their businesses, with Google stating that AI already powers many of its core products and Meta expecting its AI initiatives to drive significant investment in infrastructure and headcount.\n\nHowever, all three companies also acknowledge the risks associated with AI, including issues related to harmful content, inaccuracies, discrimination, intellectual property infringement, defamation, data privacy, cybersecurity, and other concerns. \n\nThey note that AI technology and services are highly competitive and rapidly evolving, requiring significant investment in development, operational costs, and technical infrastructure to meet the changing needs and expectations of users.\n\nCompanies also highlight the potential for reputational harm, regulatory action, and legal liability associated with AI, including new and proposed legislation and regulations. For example, Google and Microsoft mention the EU AI Act and the U.S. AI Executive Order as examples of emerging regulatory frameworks.\n\nOverall, companies view AI as a powerful tool that can drive innovation and growth, but also requires careful development, deployment, and regulation to mitigate its risks.",
+      "chunks_retrieved": 10,
+      "chunks_used": 10,
+      "faithfulness": 0.75,
+      "answer_relevance": 0.935,
+      "context_precision": null,
+      "context_recall": null
+    }
+  ]
+}

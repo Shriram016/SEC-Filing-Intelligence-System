@@ -1,0 +1,32 @@
+{
+  "run_timestamp": "2026-06-29T00:08:31.503052",
+  "pipeline_model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "judge_model": "llama-3.3-70b-versatile",
+  "eval_framework": "ragas-0.4.3",
+  "eval_set": "evaluation/eval_queries_v2.json",
+  "num_queries": 1,
+  "num_evaluated": 1,
+  "aggregate": {
+    "faithfulness": 0.9,
+    "answer_relevance": 0.9538,
+    "context_precision": 0.0909,
+    "context_recall": 1.0
+  },
+  "results": [
+    {
+      "query_id": "Q13",
+      "query": "Compare Amazon and Google's revenue growth in their 2023 annual reports.",
+      "query_type": "cross_company",
+      "is_valid": true,
+      "ground_truth": "Amazon's consolidated net sales for 2023 were $574,785 million, a 12% increase compared to 2022. Google's (Alphabet's) consolidated revenues for 2023 were $307,394 million, a 9% increase compared to 2022. Amazon's revenue was nearly double Google's in absolute terms, and Amazon grew at a faster rate (12% vs 9%).",
+      "status": "evaluated",
+      "answer": "To compare Amazon and Google's revenue growth in their 2023 annual reports, we need to look at the sections that discuss their net sales or revenues.\n\nFor Amazon, according to [3], net sales increased 12% in 2023, compared to the prior year. Changes in foreign exchange rates reduced net sales by $71 million in 2023. For a discussion of the effect of foreign exchange rates on sales growth, see “Effect of Foreign Exchange Rates”.\n\nFor Google, according to [15], revenues were $307.4 billion, an increase of 9% year over year, primarily driven by an increase in Google Services revenues of $19.0 billion, or 8%, and an increase in Google Cloud revenues of $6.8 billion, or 26%. Total constant currency revenues, which exclude the effect of hedging, increased 10% year over year.\n\nComparing the two, Amazon's revenue growth was 12% in 2023, while Google's revenue growth was 9% (10% in constant currency). Therefore, Amazon's revenue growth was higher than Google's in 2023.",
+      "chunks_retrieved": 20,
+      "chunks_used": 20,
+      "faithfulness": 0.9,
+      "answer_relevance": 0.9538,
+      "context_precision": 0.0909,
+      "context_recall": 1.0
+    }
+  ]
+}

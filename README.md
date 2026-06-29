@@ -11,7 +11,7 @@ Most RAG systems retrieve documents and generate answers. This system goes furth
 - **Answers questions** grounded to specific passages in SEC filings — not just filenames
 - **Scores confidence** using a weighted combination of retrieval similarity and LLM-judged faithfulness
 - **Detects conflicts** across filing years — surfaces when a company's statements in 2020 contradict 2023, systematically, without the user knowing what to look for
-- **Evaluates itself** using 4 LLM-as-judge metrics across 10 predefined queries with extractive ground truths
+- **Evaluates itself** using RAGAS 0.4.3 with 4 LLM-as-judge metrics across 24 predefined queries with extractive ground truths
 
 ---
 
@@ -35,14 +35,15 @@ User Query
     │
     ▼
 ┌─────────────────┐
-│  Retrieval      │  LLM validates query + extracts filters
+│  Retrieval      │  LLM validates query + extracts filters + sub-query template
 │  Engine         │  Cartesian product ChromaDB search
+│                 │  Per-combo cross-encoder reranking with focused sub-queries
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│  Answer         │  Chunks assembled into numbered context window
-│  Synthesis      │  Groq (llama-3.1-8b-instant) generates grounded answer
+│  Answer         │  Chunks grouped by sub-query in context window
+│  Synthesis      │  Groq (llama-4-scout-17b) generates grounded answer
 └────────┬────────┘
          │
          ▼
@@ -103,16 +104,16 @@ BAAI/bge-base-en (768 dimensions, CPU, ~550MB) embeds every chunk with `normaliz
 ### 3. Retrieval Engine
 Takes a raw natural language query and returns the most relevant chunks from ChromaDB. No filter dropdowns — the query is parsed automatically.
 
-**Query understanding (Groq `llama-3.1-8b-instant`, temperature=0):** A single LLM call does two things simultaneously — validates whether the query is answerable from SEC 10-K filings (off-topic queries are rejected before any vector search), and extracts all mentioned companies, years, and sections as lists. Handles paraphrases naturally (`"fiscal 2023"` → 2023, `"risk factors"` → Item 1A).
+**Query understanding (Groq `llama-4-scout-17b`, temperature=0):** A single LLM call validates whether the query is answerable from SEC 10-K filings, extracts all mentioned companies/years/sections as lists, and generates a sub-query template for multi-hop queries (e.g., `"<company> AI risk disclosures in <year>"`). Handles paraphrases naturally (`"fiscal 2023"` → 2023, `"risk factors"` → Item 1A).
 
 **Cartesian product retrieval:** If multiple companies or years are detected, the retriever generates every combination (e.g. AAPL×2022, MSFT×2022) and runs one ChromaDB query per combination — top-k each. This guarantees balanced representation for comparison queries rather than letting one company dominate by similarity score alone.
 
 **BGE asymmetric retrieval:** The query is embedded with an instruction prefix (`"Represent this sentence for searching relevant passages: "`) at query time only — not at indexing time. This is how the model was trained: query vectors and document vectors live in different regions of embedding space by design.
 
-**No reranker needed:** Metadata pre-filtering narrows the candidate pool to the right company/year/section before vector search. There is no large noisy pool to reorder.
+**Cross-encoder reranking:** After ChromaDB retrieval, a cross-encoder (BAAI/bge-reranker-base) reranks each combination's chunks using focused sub-queries. For a query like "Compare Apple and Microsoft's risks in 2023," each combo's chunks are reranked with a filled sub-query ("Apple risks in 2023", "Microsoft risks in 2023") instead of the original comparison query. This prevents the reranker from scoring chunks near zero when no single chunk discusses "comparison" or "evolution."
 
 ### 4. Answer Synthesis
-Retrieved chunks are assembled into a numbered context window (`[1] Apple | 2022 | Risk Factors: "..."`). Groq `llama-3.1-8b-instant` generates an answer grounded strictly to the provided passages — the system prompt explicitly instructs refusal when the context is insufficient rather than drawing on training knowledge. Top-10 chunks by similarity score, capped at `max_tokens=1024`.
+Retrieved chunks are assembled into a context window. For multi-hop queries, chunks are grouped by sub-query with headers (`=== Apple risks in 2022 ===`) so the LLM clearly sees which facts belong to which company/year. Groq `llama-4-scout-17b` generates an answer grounded strictly to the provided passages — the system prompt explicitly instructs comparison across passages for multi-hop queries, and refusal when the context is insufficient. Capped at `max_tokens=1024`.
 
 ### 5. Source Citations
 The synthesizer returns the full list of source chunks used as context (`result["sources"]`), including chunk ID, company, year, section, similarity score, and text. No separate citation extraction component is needed — the synthesizer already surfaces this. The UI renders each source in an expandable panel.
@@ -127,7 +128,7 @@ confidence = 0.4 × avg_retrieval_similarity + 0.6 × faithfulness_score
 ```
 
 - **Retrieval similarity** — mean cosine similarity between the query vector and the retrieved chunk vectors (from ChromaDB distances)
-- **Faithfulness** — Groq `llama-3.1-8b-instant` judges whether the answer stays within the retrieved passages on a 1–5 rubric, normalised to 0–1: `(raw - 1) / 4`
+- **Faithfulness** — Groq `llama-4-scout-17b` judges whether the answer stays within the retrieved passages on a 1–5 rubric, normalised to 0–1: `(raw - 1) / 4`
 
 Faithfulness is weighted higher (0.6) because a high similarity score alone does not guarantee the LLM stayed within the context.
 
@@ -147,33 +148,38 @@ A 65-second delay between calls manages Groq's rate limit. A pre-filter based on
 
 ### 8. Evaluation Pipeline
 
-10 predefined queries with **extractive ground truths** — every ground truth fact was pulled verbatim from the actual `_sections.json` filing text. No manual fabrication.
+24 predefined queries with **extractive ground truths** — every ground truth fact was pulled verbatim from the actual `_sections.json` filing text. No manual fabrication. Evaluated using RAGAS 0.4.3 with `llama-3.3-70b-versatile` as the LLM judge.
 
-**4 metrics, all LLM-as-judge via Groq `llama-3.1-8b-instant` at temperature=0:**
+**Query types:** 6 single factual, 5 cross-year, 4 cross-company, 3 conflict-triggering, 3 vague, 3 invalid.
+
+**4 metrics via RAGAS 0.4.3:**
 
 | Metric | What it measures |
 |---|---|
-| **Faithfulness** | Does the answer stay within retrieved context? Same 1–5 rubric as Confidence Scorer. |
-| **Answer Relevance** | Does the answer address the question asked? 1–5 rubric, normalised. |
-| **Context Precision** | Of the retrieved chunks, what fraction are genuinely relevant to the query? |
-| **Context Recall** | Does the retrieved context contain enough to derive the ground truth? YES=1.0 / PARTIAL=0.5 / NO=0.0 |
+| **Faithfulness** | Does the answer stay within retrieved context? |
+| **Answer Relevance** | Does the answer address the question asked? |
+| **Context Precision** | Are the relevant chunks ranked near the top? |
+| **Context Recall** | Does the retrieved context contain enough to derive the ground truth? |
 
-**Results (9 valid queries, 1 correctly rejected):**
+**Results by category (21 evaluated, 3 correctly rejected):**
 
-| Metric | Score |
-|---|---|
-| Faithfulness | **0.83** |
-| Answer Relevance | **0.94** |
-| Context Precision | **0.68** |
-| Context Recall | **0.83** |
+| Category | Queries | Faithfulness | Relevance | Precision | Recall |
+|---|---|---|---|---|---|
+| Single Factual | 6 | **0.972** | **0.971** | **0.935** | **1.000** |
+| Cross-Year | 5 | 0.721 | **0.985** | 0.403 | **1.000** |
+| Cross-Company | 4 | 0.673 | **0.950** | 0.173 | **1.000** |
+| Conflict Triggering | 3 | 0.574 | 0.644 | 0.315 | 0.667 |
+| Vague | 3 | 0.719 | **0.955** | N/A | N/A |
+| Invalid | 3 | N/A | N/A | N/A | N/A |
 
 **What the scores mean:**
-- Faithfulness 0.83 — the pipeline stays grounded. Minor inference on cross-year comparison queries (expected — synthesizing across two years' context) but no hallucination.
-- Answer Relevance 0.94 — answers address the question in 9/9 valid queries, with one partial (Q08, see known gap below).
-- Context Precision 0.68 — 32% of retrieved chunks are off-topic within the right section. The metadata filter gets you to the right section; the similarity search can't always distinguish "supply chain risk chunk" from "litigation risk chunk" within the same Item 1A. The LLM filters through the noise.
-- Context Recall 0.83 — retrieved context fully covers the ground truth in 7 of 9 queries.
+- Single factual queries score excellently across all 4 metrics — the core pipeline works.
+- Answer relevance is consistently high (0.95+) across all answerable categories — the system addresses the question asked.
+- Context recall is 1.0 for all categories except conflict triggering — retrieved context covers the ground truth.
+- Faithfulness on multi-hop queries (0.57–0.72) is lower than single factual (0.97). Manual inspection of multiple queries (Q09, Q13, Q15) confirmed the answers were factually correct — the LLM-as-judge penalizes valid cross-source inferences that don't appear verbatim in any single chunk.
+- Context precision is low on multi-hop queries (0.17–0.40) because 20 chunks are retrieved per query but only 3–4 are essential. This does not affect answer quality.
 
-**Known retrieval gap (Q08 — META headcount):** The query asks for headcount and the year-over-year change. The system correctly retrieves the absolute number (67,317) but not the YoY percentage (−22%), which lives in a separate chunk that doesn't rank in the top-5 by similarity. The system correctly admits it cannot answer the YoY part rather than guessing.
+**Evaluation limitations:** LLM-as-judge scores vary across runs due to non-deterministic LLM output on hosted APIs, even at temperature=0. Category averages are more reliable than individual query scores. Full eval report in `evaluation/EVAL_REPORT_V2.md`.
 
 ---
 
@@ -183,10 +189,13 @@ A 65-second delay between calls manages Groq's rate limit. A pre-filter based on
 |---|---|
 | HTML Parsing | BeautifulSoup + lxml |
 | Embeddings | BAAI/bge-base-en (768-dim, CPU) |
+| Reranker | BAAI/bge-reranker-base (cross-encoder) |
 | Vector Store | ChromaDB (local persistent) |
-| LLM — Q&A pipeline | Groq API — `llama-3.1-8b-instant` |
+| LLM — Q&A pipeline | Groq API — `llama-4-scout-17b-16e-instruct` |
 | LLM — Conflict analysis | Groq API — `llama-3.3-70b-versatile` |
-| Evaluation | Custom LLM-as-judge via Groq (4 metrics) |
+| LLM — Eval judge | Groq API — `llama-3.3-70b-versatile` (via RAGAS 0.4.3) |
+| Observability | Langfuse v4 (`@observe()` decorator) |
+| Evaluation | RAGAS 0.4.3 (4 metrics, 24-query eval set) |
 | UI | Streamlit |
 | Language | Python 3.10+ |
 
@@ -196,12 +205,15 @@ A 65-second delay between calls manages Groq's rate limit. A pre-filter based on
 
 | Feature | Vanilla RAG | This System |
 |---|---|---|
-| Query understanding | Keyword match or raw embedding | LLM validates + extracts structured filters |
+| Query understanding | Keyword match or raw embedding | LLM validates + extracts structured filters + sub-query template |
 | Retrieval | Single similarity search over all docs | Cartesian product per company/year/section combination |
+| Reranking | None or single-pass | Per-combo cross-encoder reranking with focused sub-queries |
+| Context presentation | Flat chunk list | Chunks grouped by sub-query with headers for multi-hop |
 | Citations | Source filename | Exact passage + company, year, section, similarity score |
 | Confidence | None | Retrieval similarity + LLM faithfulness, weighted |
 | Conflict detection | None | Systematic LLM analysis of every year pair |
-| Evaluation | None | 4 LLM-as-judge metrics, extractive ground truth |
+| Evaluation | None | RAGAS 0.4.3, 24 queries, 4 metrics, extractive ground truth |
+| Observability | None | Langfuse tracing on all pipeline steps |
 | Chunking | Fixed-size | Sentence-aware, section-scoped, with overlap |
 
 ---
@@ -229,7 +241,7 @@ The UI has two tabs:
 
 - Python 3.10+
 - 16GB RAM (no GPU required)
-- Groq API key (free tier is sufficient)
+- Groq API key (paid tier recommended for eval runs)
 
 ### Setup
 
@@ -272,7 +284,9 @@ streamlit run ui/app.py
 ### Run Evaluation
 
 ```bash
-python evaluation/ragas_evaluator.py   # ~8–10 min, results saved to eval_results.json
+python evaluation/ragas_evaluator.py                        # Full 24-query eval (~20 min)
+python evaluation/ragas_evaluator.py --queries Q01 Q02      # Run specific queries only
+python evaluation/ragas_evaluator.py --queries Q01 --fresh  # Re-score a query (won't overwrite results JSON)
 ```
 
 ---
@@ -289,6 +303,8 @@ Every query and conflict run produces a timestamped log file in `logs/`:
 ## Known Limitations
 
 - **Financial tables not parsed** — Item 8 (financial statements) is excluded. Tables in iXBRL HTML cannot be reliably flattened to plain text without destroying row-column structure.
-- **Top-k retrieval miss** — for queries where the answer lies in one specific sentence of one specific chunk, dense retrieval may not surface that exact chunk if other chunks in the same section score higher by similarity. See Q08 in evaluation results.
-- **Rate limits** — Groq free tier limits throughput. Conflict analysis enforces a 65-second delay between LLM calls. The evaluation script takes ~8–10 minutes for 10 queries.
+- **LLM-as-judge variance** — RAGAS scores vary across runs due to non-deterministic LLM output on Groq's API, even at temperature=0. Category averages are reliable; individual query scores are not. Manual inspection of answers is recommended alongside automated metrics.
+- **Faithfulness on comparative queries** — the faithfulness metric penalizes valid cross-source inferences (e.g., "Company A grew faster than Company B") because no single chunk contains that statement. Manual inspection confirmed answers are correct in cases where the judge scored low.
+- **Context precision on multi-hop** — 20 chunks retrieved per multi-combo query, but only 3–4 are essential. Precision is structurally low. Does not affect answer quality.
+- **Rate limits** — Conflict analysis enforces a 65-second delay between LLM calls. The evaluation script takes ~20 minutes for 24 queries.
 - **Single-user** — Streamlit is not a production server. Built for local use and portfolio demonstration.

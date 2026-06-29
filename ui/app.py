@@ -26,7 +26,7 @@ from config import COMPANIES, YEARS, TARGET_SECTIONS
 from retrieval.retriever import Retriever
 from synthesis.synthesizer import Synthesizer
 from scoring.scorer import Scorer
-from conflict.conflict_analyzer import analyze_conflicts
+from pipeline import run_query_pipeline, run_conflict_pipeline
 from logger import setup_query_logger, setup_conflict_logger
 
 
@@ -93,27 +93,13 @@ def render_query_tab(retriever: Retriever, synthesizer: Synthesizer, scorer: Sco
     log = setup_query_logger(query)
 
     try:
-        # --- Retrieval -------------------------------------------------------
-        with st.spinner("Searching filings..."):
-            chunks = retriever.retrieve(query, logger=log)
+        with st.spinner("Running query pipeline..."):
+            result = run_query_pipeline(query, retriever, synthesizer, scorer)
 
-        if isinstance(chunks, dict) and "error" in chunks:
-            log.warning(f"PIPELINE | query_rejected | reason={chunks['error']!r}")
-            st.error(f"Query rejected: {chunks['error']}")
+        if isinstance(result, dict) and "error" in result:
+            log.warning(f"PIPELINE | query_rejected | reason={result['error']!r}")
+            st.error(f"Query rejected: {result['error']}")
             return
-
-        if not chunks:
-            log.warning("PIPELINE | no_chunks_returned")
-            st.warning("No relevant passages found for this query.")
-            return
-
-        # --- Synthesis -------------------------------------------------------
-        with st.spinner("Generating answer..."):
-            result = synthesizer.synthesize(query, chunks, logger=log)
-
-        # --- Scoring ---------------------------------------------------------
-        with st.spinner("Scoring confidence..."):
-            score = scorer.score(result, logger=log)
 
     except Exception as e:
         log.error(f"PIPELINE | EXCEPTION | {type(e).__name__}: {e}")
@@ -127,14 +113,14 @@ def render_query_tab(retriever: Retriever, synthesizer: Synthesizer, scorer: Sco
     # --- Confidence metrics --------------------------------------------------
     st.subheader("Confidence")
     col1, col2, col3 = st.columns(3)
-    col1.metric("Confidence Score", f"{score['confidence_score']:.2f}")
-    col2.metric("Faithfulness",     f"{score['faithfulness_score']:.2f}")
-    col3.metric("Avg Retrieval Sim",f"{score['avg_retrieval_similarity']:.2f}")
+    col1.metric("Confidence Score", f"{result['confidence_score']:.2f}")
+    col2.metric("Faithfulness",     f"{result['faithfulness_score']:.2f}")
+    col3.metric("Avg Retrieval Sim",f"{result['avg_retrieval_similarity']:.2f}")
 
     with st.expander("Score breakdown"):
-        bd  = score["breakdown"]
-        avg = score["avg_retrieval_similarity"]
-        fth = score["faithfulness_score"]
+        bd  = result["breakdown"]
+        avg = result["avg_retrieval_similarity"]
+        fth = result["faithfulness_score"]
         rw  = bd["retrieval_weight"]
         fw  = bd["faithfulness_weight"]
         st.write(f"- Avg retrieval similarity: **{avg:.4f}** (weight {rw})")
@@ -142,7 +128,7 @@ def render_query_tab(retriever: Retriever, synthesizer: Synthesizer, scorer: Sco
         st.write(f"- Sources used: **{bd['num_sources']}**")
         st.write(
             f"- Formula: `{rw} × {avg:.4f} + {fw} × {fth:.4f}"
-            f" = {score['confidence_score']:.4f}`"
+            f" = {result['confidence_score']:.4f}`"
         )
 
     # --- Citations -----------------------------------------------------------
@@ -196,7 +182,7 @@ def render_conflict_tab() -> None:
         with st.spinner(
             f"Analyzing {company} · {section} from {start_year} to {end_year}…"
         ):
-            results = analyze_conflicts(company, section, start_year, end_year, logger=log)
+            results = run_conflict_pipeline(company, section, start_year, end_year)
     except Exception as e:
         log.error(f"PIPELINE | EXCEPTION | {type(e).__name__}: {e}")
         st.error(f"An unexpected error occurred during conflict analysis: {e}")

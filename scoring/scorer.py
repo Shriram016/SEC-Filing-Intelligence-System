@@ -51,6 +51,7 @@ import re
 
 from dotenv import load_dotenv
 from groq import Groq
+from langfuse import observe
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import GROQ_MODEL, RETRIEVAL_WEIGHT, FAITHFULNESS_WEIGHT
@@ -192,6 +193,7 @@ class Scorer:
     # Public: score
     # ------------------------------------------------------------------
 
+    @observe(name="faithfulness_judge", as_type="generation")
     def score(self, synthesizer_result: dict, logger=None) -> dict:
         """
         Compute faithfulness + confidence for one synthesizer output.
