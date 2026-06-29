@@ -35,9 +35,20 @@ User Query
     │
     ▼
 ┌─────────────────┐
-│  Retrieval      │  LLM validates query + extracts filters + sub-query template
-│  Engine         │  Cartesian product ChromaDB search
-│                 │  Per-combo cross-encoder reranking with focused sub-queries
+│  Query Parser   │  LLM validates query + extracts filters + sub-query template
+│                 │  Groq (llama-4-scout-17b, temperature=0)
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Retrieval      │  Cartesian product of filter combinations
+│  Engine         │  One ChromaDB query per combination (top-k each)
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Reranker       │  Cross-encoder (BAAI/bge-reranker-base)
+│                 │  Per-combo reranking with focused sub-queries
 └────────┬────────┘
          │
          ▼
