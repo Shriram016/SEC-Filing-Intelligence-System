@@ -58,6 +58,9 @@ cover/
 
 # Django stuff:
 *.log
+# Exceptions: evidence and per-run eval logs are committed on purpose (V2 polish 1.8/1.9)
+!evaluation/archive/evidence/*.log
+!evaluation/runs/**/*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal

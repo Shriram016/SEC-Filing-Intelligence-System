@@ -17,9 +17,6 @@ TOP_K = 10                      # results per filter combination
 RERANKER_MODEL = "BAAI/bge-reranker-base"
 MAX_CONTEXT_CHUNKS = 30
 
-# Conflict detection
-SIMILARITY_THRESHOLD = 0.85     # TBD — tune after retrieval is validated
-
 # Confidence scoring
 RETRIEVAL_WEIGHT = 0.4          # TBD — tune after faithfulness judge is built
 FAITHFULNESS_WEIGHT = 0.6       # TBD

@@ -1,83 +1,32 @@
 # =============================================================
 # SEC Filing Intelligence System — Requirements
-# Python 3.13 compatible
-# =============================================================
+# Pinned to the versions the project was built and tested with.
+# Only packages the code imports directly are listed; their own
+# dependencies (torch, transformers, langchain via ragas, ...)
+# are installed automatically by pip.
 # Install: pip install -r requirements.txt
 # =============================================================
 
+# Ingestion
+requests==2.33.1              # downloader.py — SEC EDGAR
+beautifulsoup4==4.14.3        # parser.py — HTML parsing
+lxml==6.1.0                   # parser.py — BeautifulSoup backend
 
-# -------------------------------------------------------------
-# Ingestion — downloader.py
-# Pure Python — any recent version works
-# -------------------------------------------------------------
-requests>=2.32.3
+# Embeddings, reranker, vector store
+sentence-transformers==5.4.1  # BGE embedder + bge-reranker cross-encoder
+chromadb==1.5.8               # indexer.py, retriever.py
 
+# LLM + observability
+groq==0.37.1                  # synthesizer, scorer, retriever, conflict analyzer
+langfuse==4.12.0              # @observe() tracing (v4 API)
+python-dotenv==1.2.2          # loads GROQ_API_KEY from .env
 
-# -------------------------------------------------------------
-# Ingestion — parser.py
-# HTML/iXBRL parsing — strip tags, extract clean text
-# beautifulsoup4: HTML parser; lxml: fastest backend for BS4
-# -------------------------------------------------------------
-beautifulsoup4>=4.12.0
-lxml>=5.0.0
+# Evaluation
+ragas==0.4.3                  # evaluation/ragas_evaluator.py (0.4.x API)
+openai==2.32.0                # Groq via OpenAI-compatible client, used by RAGAS judge
 
+# UI
+streamlit==1.56.0             # ui/app.py
 
-# -------------------------------------------------------------
-# Embeddings — embedder.py
-# BAAI/bge-base-en model
-# 3.3.0+ pulls torch>=2.6 which has Python 3.13 wheels
-# -------------------------------------------------------------
-sentence-transformers>=3.3.0
-
-
-# -------------------------------------------------------------
-# Vector Store — indexer.py, retriever.py
-# Local persistent ChromaDB
-# 0.6.0+ has Python 3.13 support
-# -------------------------------------------------------------
-chromadb>=0.6.0
-
-
-# -------------------------------------------------------------
-# LLM API — synthesizer.py, scorer.py,
-#            conflict_analyzer.py, retriever.py
-# Groq API client — pure Python
-# LlamaIndex removed: direct Groq API used instead (Component 10)
-# -------------------------------------------------------------
-groq>=0.13.0
-
-
-# -------------------------------------------------------------
-# Scoring — confidence_scorer.py, similarity_filter.py
-# 2.0.0+ = first numpy with Python 3.13 wheels
-# 1.6.0+ = first scikit-learn with Python 3.13 wheels
-# -------------------------------------------------------------
-numpy>=2.0.0
-scikit-learn>=1.6.0
-
-
-# -------------------------------------------------------------
-# Evaluation — ragas_evaluator.py
-# 0.2.0+ has Python 3.13 support
-# datasets 3.x has Python 3.13 wheels
-# langchain-groq: Groq LLM backend for RAGAS judges
-# -------------------------------------------------------------
-ragas>=0.2.0
-datasets>=3.0.0
-langchain-groq>=0.3.0
-
-
-# -------------------------------------------------------------
-# UI — app.py
-# Pure Python — latest stable
-# -------------------------------------------------------------
-streamlit>=1.40.0
-
-
-# -------------------------------------------------------------
-# Utilities — pure Python, no compilation needed
-# -------------------------------------------------------------
-python-dotenv>=1.0.1        # load GROQ_API_KEY from .env file
-langfuse>=2.0.0             # LLM observability — traces every pipeline step
-pandas>=2.2.3               # 2.2.3+ has Python 3.13 wheels
-tqdm>=4.66.0                # progress bars during batch embedding
+# Tests
+numpy==2.4.4                  # tests/test_embedder.py

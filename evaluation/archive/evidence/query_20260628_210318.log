@@ -1,0 +1,33 @@
+2026-06-28 21:03:18 [INFO ] ============================================================
+2026-06-28 21:03:18 [INFO ] PIPELINE | query_start | query="[EVAL Q08] How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?"
+2026-06-28 21:03:18 [INFO ] ============================================================
+2026-06-28 21:03:18 [INFO ] RETRIEVER | ENTER | query="How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?" top_k=10
+2026-06-28 21:03:18 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?"
+2026-06-28 21:03:18 [INFO ] RETRIEVER | filter_extraction | Groq call | model=llama-3.1-8b-instant
+2026-06-28 21:03:19 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["MSFT"],\n    "years": [2022, 2023],\n    "sections": ["Item 1A"],\n    "sub_query_template": "<company> risk factor disclosures around artificial intelligence in <year>"\n}'
+2026-06-28 21:03:19 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['MSFT'] years=[2022, 2023] sections=['Item 1A'] sub_query_template='<company> risk factor disclosures around artificial intelligence in <year>' rejection_reason=None
+2026-06-28 21:03:19 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-06-28 21:03:19 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'}]
+2026-06-28 21:03:19 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} n_results=10
+2026-06-28 21:03:19 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} chunks_returned=10
+2026-06-28 21:03:19 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} n_results=10
+2026-06-28 21:03:19 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} chunks_returned=10
+2026-06-28 21:03:19 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} sub_query='Microsoft risk factor disclosures around artificial intelligence in 2022'
+2026-06-28 21:03:19 [INFO ] RERANKER | ENTER | query='Microsoft risk factor disclosures around artificial intelligence in 2022' chunks=10
+2026-06-28 21:03:19 [INFO ] RERANKER | before | top3=['MSFT_2022_Item_1A_chunk_019 cosine=0.8468', 'MSFT_2022_Item_1A_chunk_004 cosine=0.8098', 'MSFT_2022_Item_1A_chunk_001 cosine=0.8091']
+2026-06-28 21:03:22 [INFO ] RERANKER | after | top3=['MSFT_2022_Item_1A_chunk_019 reranker=0.1700', 'MSFT_2022_Item_1A_chunk_018 reranker=0.1340', 'MSFT_2022_Item_1A_chunk_038 reranker=0.1325']
+2026-06-28 21:03:22 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-06-28 21:03:22 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} sub_query='Microsoft risk factor disclosures around artificial intelligence in 2023'
+2026-06-28 21:03:22 [INFO ] RERANKER | ENTER | query='Microsoft risk factor disclosures around artificial intelligence in 2023' chunks=10
+2026-06-28 21:03:22 [INFO ] RERANKER | before | top3=['MSFT_2023_Item_1A_chunk_020 cosine=0.8382', 'MSFT_2023_Item_1A_chunk_021 cosine=0.8369', 'MSFT_2023_Item_1A_chunk_007 cosine=0.8283']
+2026-06-28 21:03:24 [INFO ] RERANKER | after | top3=['MSFT_2023_Item_1A_chunk_020 reranker=0.5831', 'MSFT_2023_Item_1A_chunk_011 reranker=0.0946', 'MSFT_2023_Item_1A_chunk_021 reranker=0.0710']
+2026-06-28 21:03:24 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-06-28 21:03:24 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-06-28 21:03:24 [INFO ] SYNTHESIZER | ENTER | query="How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?" chunks_received=20
+2026-06-28 21:03:24 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-06-28 21:03:24 [INFO ] SYNTHESIZER | context | sources=['Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A']
+2026-06-28 21:03:24 [INFO ] SYNTHESIZER | Groq call | model=llama-3.1-8b-instant max_tokens=1024 temperature=0
+2026-06-28 21:03:25 [INFO ] SYNTHESIZER | Groq response | answer_length=81 chars
+2026-06-28 21:03:25 [INFO ] SYNTHESIZER | Groq response | answer=
+The provided context does not contain enough information to answer this question.
+2026-06-28 21:03:25 [INFO ] SYNTHESIZER | EXIT | model=llama-3.1-8b-instant context_chunks=20
