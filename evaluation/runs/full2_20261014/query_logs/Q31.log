@@ -1,0 +1,32 @@
+2026-10-14 11:53:35 [INFO ] ============================================================
+2026-10-14 11:53:35 [INFO ] PIPELINE | query_start | query='[EVAL Q31] Is Amazon a better investment than Google?'
+2026-10-14 11:53:35 [INFO ] ============================================================
+2026-10-14 11:53:35 [INFO ] RETRIEVER | ENTER | query='Is Amazon a better investment than Google?' top_k=10
+2026-10-14 11:53:35 [INFO ] RETRIEVER | filter_extraction | ENTER | query='Is Amazon a better investment than Google?'
+2026-10-14 11:53:35 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:53:35 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AMZN", "GOOGL"],\n    "years": [],\n    "sections": [],\n    "sub_query_template": null\n}'
+2026-10-14 11:53:35 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AMZN', 'GOOGL'] years=[] sections=[] sub_query_template=None rejection_reason=None
+2026-10-14 11:53:35 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:53:35 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'AMZN'}, {'ticker': 'GOOGL'}]
+2026-10-14 11:53:35 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN'} n_results=10
+2026-10-14 11:53:35 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN'} chunks_returned=10
+2026-10-14 11:53:35 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'GOOGL'} n_results=10
+2026-10-14 11:53:35 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'GOOGL'} chunks_returned=10
+2026-10-14 11:53:35 [INFO ] RERANKER | ENTER | query='Is Amazon a better investment than Google?' chunks=20
+2026-10-14 11:53:35 [INFO ] RERANKER | before | top3=['AMZN_2021_Item_7_chunk_005 cosine=0.8442', 'AMZN_2020_Item_7_chunk_005 cosine=0.8440', 'AMZN_2024_Item_7_chunk_005 cosine=0.8429']
+2026-10-14 11:53:40 [INFO ] RERANKER | after | top3=['AMZN_2022_Item_1_chunk_006 reranker=0.1678', 'GOOGL_2024_Item_1A_chunk_006 reranker=0.1515', 'GOOGL_2020_Item_1_chunk_009 reranker=0.1486']
+2026-10-14 11:53:40 [INFO ] RERANKER | EXIT | chunks=20 positions_changed=18/20
+2026-10-14 11:53:40 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:53:40 [INFO ] SYNTHESIZER | ENTER | query='Is Amazon a better investment than Google?' chunks_received=20
+2026-10-14 11:53:40 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:53:40 [INFO ] SYNTHESIZER | context | sources=['Amazon 2022 Item 1', 'Google 2024 Item 1A', 'Google 2020 Item 1', 'Amazon 2022 Item 7', 'Amazon 2023 Item 7', 'Amazon 2024 Item 7', 'Amazon 2021 Item 1', 'Amazon 2020 Item 1', 'Amazon 2023 Item 1', 'Amazon 2022 Item 1', 'Amazon 2021 Item 7', 'Amazon 2020 Item 7', 'Google 2020 Item 1A', 'Google 2021 Item 1A', 'Google 2022 Item 1A', 'Google 2021 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 7', 'Google 2020 Item 1A', 'Google 2020 Item 1']
+2026-10-14 11:53:40 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Amazon | 2022 | Business\n"Our safety team is dedicated to using the science of safety to solve complex problems and establish new industry best practices. We also provide mentorship and support resources to our employees, and have deployed numerous programs that advance employ'
+2026-10-14 11:53:40 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:53:41 [INFO ] SYNTHESIZER | Groq response | answer_length=81 chars
+2026-10-14 11:53:41 [INFO ] SYNTHESIZER | Groq response | answer=
+The provided context does not contain enough information to answer this question.
+2026-10-14 11:53:41 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:53:41 [INFO ] SCORER | ENTER | answer_preview='The provided context does not contain enough information to answer this question' sources=20
+2026-10-14 11:53:41 [INFO ] SCORER | avg_retrieval_similarity=0.8401
+2026-10-14 11:53:41 [INFO ] SCORER | refusal_detected | faithfulness=1.0 (no Groq call needed)
+2026-10-14 11:53:41 [INFO ] SCORER | EXIT | confidence=0.936 faithfulness=1.0 avg_retrieval_similarity=0.8401

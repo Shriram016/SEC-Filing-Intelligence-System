@@ -1,0 +1,34 @@
+{
+  "run_id": "full1_20261013",
+  "started": "2026-10-13T10:48:40.397372",
+  "pipeline_model": "qwen/qwen3.8-27b",
+  "judge_model": "openai/gpt-oss-120b",
+  "eval_framework": "ragas-0.4.3",
+  "factual_correctness_mode": "recall",
+  "prices_per_million_tokens": {
+    "openai/gpt-oss-120b": [
+      0.15,
+      0.6
+    ],
+    "qwen/qwen3.8-27b": [
+      0.8,
+      4.0
+    ]
+  },
+  "prices_checked": "2026-10-13",
+  "query_file": "evaluation/eval_queries_v2.json",
+  "num_queries_selected": 32,
+  "git": {
+    "commit": "f59e9876c44e274e631b04de6ab4c418e93f55c5",
+    "dirty": true
+  },
+  "args": {
+    "queries": null,
+    "run_id": "full1_20261013",
+    "judge_model": "openai/gpt-oss-120b",
+    "metric_delay": 5,
+    "query_delay": 10,
+    "dry_run": false
+  },
+  "finished": "2026-10-13T11:20:04.898107"
+}

@@ -1,0 +1,69 @@
+{
+  "by_category": {
+    "cross_company": {
+      "n": 1,
+      "n_scored": 1,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q12": 0.7778
+          },
+          "n": 1,
+          "mean": 0.7778
+        },
+        "answer_relevance": {
+          "values": {
+            "Q12": 0.8553
+          },
+          "n": 1,
+          "mean": 0.8553
+        },
+        "context_recall": {
+          "values": {
+            "Q12": 1.0
+          },
+          "n": 1,
+          "mean": 1.0
+        },
+        "ground_truth_coverage": {
+          "values": {
+            "Q12": 0.0
+          },
+          "n": 1,
+          "mean": 0.0
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    }
+  },
+  "overall_answer_categories": {
+    "faithfulness": {
+      "mean": 0.7778,
+      "n": 1
+    },
+    "answer_relevance": {
+      "mean": 0.8553,
+      "n": 1
+    },
+    "context_recall": {
+      "mean": 1.0,
+      "n": 1
+    },
+    "ground_truth_coverage": {
+      "mean": 0.0,
+      "n": 1
+    }
+  },
+  "usage_total": {
+    "calls": 11,
+    "prompt_tokens": 38422,
+    "completion_tokens": 5793,
+    "cost_usd": 0.02035,
+    "unpriced_calls": 0
+  }
+}

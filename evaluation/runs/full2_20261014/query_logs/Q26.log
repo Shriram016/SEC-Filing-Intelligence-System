@@ -1,0 +1,9 @@
+2026-10-14 11:52:36 [INFO ] ============================================================
+2026-10-14 11:52:36 [INFO ] PIPELINE | query_start | query='[EVAL Q26] What did Microsoft say about AI risk in its 2025 10-K?'
+2026-10-14 11:52:36 [INFO ] ============================================================
+2026-10-14 11:52:36 [INFO ] RETRIEVER | ENTER | query='What did Microsoft say about AI risk in its 2025 10-K?' top_k=10
+2026-10-14 11:52:36 [INFO ] RETRIEVER | filter_extraction | ENTER | query='What did Microsoft say about AI risk in its 2025 10-K?'
+2026-10-14 11:52:36 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:52:37 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": false,\n    "rejection_reason": "Year 2025 is not available in the database (available years: 2020-2024)",\n    "tickers": [\n        "MSFT"\n    ],\n    "years": [\n        2025\n    ],\n    "sections": [\n        "Item 1A"\n    ],\n    "sub_query_template": null\n}'
+2026-10-14 11:52:37 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=False tickers=['MSFT'] years=[] sections=['Item 1A'] sub_query_template=None rejection_reason='Year 2025 is not available in the database (available years: 2020-2024)'
+2026-10-14 11:52:37 [WARNING] RETRIEVER | EXIT | query rejected | reason='Year 2025 is not available in the database (available years: 2020-2024)'

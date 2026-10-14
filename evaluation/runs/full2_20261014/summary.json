@@ -1,0 +1,282 @@
+{
+  "by_category": {
+    "single_factual": {
+      "n": 6,
+      "n_scored": 6,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 1.0,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 1.0
+        },
+        "answer_relevance": {
+          "values": {
+            "Q01": 0.9194,
+            "Q02": 0.9223,
+            "Q03": 0.9774,
+            "Q04": 0.899,
+            "Q05": 0.9931,
+            "Q06": 0.9046
+          },
+          "n": 6,
+          "mean": 0.936
+        },
+        "context_precision": {
+          "values": {
+            "Q01": 0.8722,
+            "Q02": 0.8095,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 0.947
+        },
+        "context_recall": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 1.0,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 1.0
+        },
+        "ground_truth_coverage": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 0.3846,
+            "Q03": 1.0,
+            "Q04": 0.8,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 0.8641
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "cross_year": {
+      "n": 8,
+      "n_scored": 8,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q07": 0.8421,
+            "Q08": 0.95,
+            "Q09": 0.8571,
+            "Q10": 1.0,
+            "Q11": 0.9231,
+            "Q22": 1.0,
+            "Q23": 1.0,
+            "Q24": 0.8462
+          },
+          "n": 8,
+          "mean": 0.9273
+        },
+        "answer_relevance": {
+          "values": {
+            "Q07": 0.9388,
+            "Q08": 0.9423,
+            "Q09": 0.8889,
+            "Q10": 0.9149,
+            "Q11": 0.8481,
+            "Q22": 0.9747,
+            "Q23": 0.9728,
+            "Q24": 0.9955
+          },
+          "n": 8,
+          "mean": 0.9345
+        },
+        "context_recall": {
+          "values": {
+            "Q07": 0.5,
+            "Q08": 1.0,
+            "Q09": 1.0,
+            "Q10": 1.0,
+            "Q11": 1.0,
+            "Q22": 1.0,
+            "Q23": 1.0,
+            "Q24": 1.0
+          },
+          "n": 8,
+          "mean": 0.9375
+        },
+        "ground_truth_coverage": {
+          "values": {
+            "Q07": 0.4,
+            "Q08": 0.5,
+            "Q09": 1.0,
+            "Q10": 1.0,
+            "Q11": 0.3333,
+            "Q22": 1.0,
+            "Q23": 0.8,
+            "Q24": 0.7
+          },
+          "n": 8,
+          "mean": 0.7167
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "cross_company": {
+      "n": 4,
+      "n_scored": 4,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q12": 1.0,
+            "Q13": 0.9091,
+            "Q14": 0.8889,
+            "Q15": 1.0
+          },
+          "n": 4,
+          "mean": 0.9495
+        },
+        "answer_relevance": {
+          "values": {
+            "Q12": 0.8242,
+            "Q13": 0.8741,
+            "Q14": 0.9007,
+            "Q15": 0.9194
+          },
+          "n": 4,
+          "mean": 0.8796
+        },
+        "context_recall": {
+          "values": {
+            "Q12": 1.0,
+            "Q13": 1.0,
+            "Q14": 0.3333,
+            "Q15": 1.0
+          },
+          "n": 4,
+          "mean": 0.8333
+        },
+        "ground_truth_coverage": {
+          "values": {
+            "Q12": 0.4167,
+            "Q13": 0.3333,
+            "Q14": 0.3333,
+            "Q15": 0.7778
+          },
+          "n": 4,
+          "mean": 0.4653
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "vague": {
+      "n": 3,
+      "n_scored": 3,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q16": 0.4878,
+            "Q17": 0.8846,
+            "Q18": 0.9592
+          },
+          "n": 3,
+          "mean": 0.7772
+        },
+        "answer_relevance": {
+          "values": {
+            "Q16": 0.997,
+            "Q17": 0.895,
+            "Q18": 0.8495
+          },
+          "n": 3,
+          "mean": 0.9138
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "invalid": {
+      "n": 3,
+      "n_scored": 0,
+      "metrics": {},
+      "outcomes": {
+        "rejected": 3
+      },
+      "passed": 3,
+      "checked": 3,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "should_refuse": {
+      "n": 8,
+      "n_scored": 0,
+      "metrics": {},
+      "outcomes": {
+        "rejected": 4,
+        "refused": 4
+      },
+      "passed": 8,
+      "checked": 8,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    }
+  },
+  "overall_answer_categories": {
+    "faithfulness": {
+      "mean": 0.9309,
+      "n": 21
+    },
+    "answer_relevance": {
+      "mean": 0.9215,
+      "n": 21
+    },
+    "context_precision": {
+      "mean": 0.947,
+      "n": 6
+    },
+    "context_recall": {
+      "mean": 0.9352,
+      "n": 18
+    },
+    "ground_truth_coverage": {
+      "mean": 0.7099,
+      "n": 18
+    }
+  },
+  "usage_total": {
+    "calls": 291,
+    "prompt_tokens": 806487,
+    "completion_tokens": 165097,
+    "cost_usd": 0.451451,
+    "unpriced_calls": 0
+  }
+}

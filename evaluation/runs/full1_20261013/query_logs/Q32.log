@@ -1,0 +1,30 @@
+2026-10-13 11:20:01 [INFO ] ============================================================
+2026-10-13 11:20:01 [INFO ] PIPELINE | query_start | query='[EVAL Q32] How many square feet of office space does Google lease?'
+2026-10-13 11:20:01 [INFO ] ============================================================
+2026-10-13 11:20:01 [INFO ] RETRIEVER | ENTER | query='How many square feet of office space does Google lease?' top_k=10
+2026-10-13 11:20:01 [INFO ] RETRIEVER | filter_extraction | ENTER | query='How many square feet of office space does Google lease?'
+2026-10-13 11:20:01 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-13 11:20:02 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "GOOGL"\n    ],\n    "years": [],\n    "sections": [\n        "Item 1"\n    ],\n    "sub_query_template": null\n}'
+2026-10-13 11:20:02 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['GOOGL'] years=[] sections=['Item 1'] sub_query_template=None rejection_reason=None
+2026-10-13 11:20:02 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-13 11:20:02 [INFO ] RETRIEVER | combinations | count=1 combos=[{'ticker': 'GOOGL', 'section': 'Item 1'}]
+2026-10-13 11:20:02 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'GOOGL', 'section': 'Item 1'} n_results=10
+2026-10-13 11:20:02 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'GOOGL', 'section': 'Item 1'} chunks_returned=10
+2026-10-13 11:20:02 [INFO ] RERANKER | ENTER | query='How many square feet of office space does Google lease?' chunks=10
+2026-10-13 11:20:02 [INFO ] RERANKER | before | top3=['GOOGL_2021_Item_1_chunk_008 cosine=0.8162', 'GOOGL_2023_Item_1_chunk_011 cosine=0.8114', 'GOOGL_2020_Item_1_chunk_007 cosine=0.8103']
+2026-10-13 11:20:04 [INFO ] RERANKER | after | top3=['GOOGL_2024_Item_1_chunk_011 reranker=0.0021', 'GOOGL_2021_Item_1_chunk_001 reranker=0.0018', 'GOOGL_2023_Item_1_chunk_018 reranker=0.0017']
+2026-10-13 11:20:04 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=10/10
+2026-10-13 11:20:04 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | ENTER | query='How many square feet of office space does Google lease?' chunks_received=10
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | context | sources=['Google 2024 Item 1', 'Google 2021 Item 1', 'Google 2023 Item 1', 'Google 2023 Item 1', 'Google 2023 Item 1', 'Google 2021 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2020 Item 1', 'Google 2020 Item 1']
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Google | 2024 | Business\n"Google Cloud\nThrough our Google Cloud Platform and Google Workspace offerings, Google Cloud generates revenues primarily from consumption-based fees and subscriptions for infrastructure, platform, applications, and other cloud services. Customers use '
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | Groq response | answer_length=81 chars
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | Groq response | answer=
+The provided context does not contain enough information to answer this question.
+2026-10-13 11:20:04 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-13 11:20:04 [INFO ] SCORER | ENTER | answer_preview='The provided context does not contain enough information to answer this question' sources=10
+2026-10-13 11:20:04 [INFO ] SCORER | avg_retrieval_similarity=0.8028
+2026-10-13 11:20:04 [INFO ] SCORER | refusal_detected | faithfulness=1.0 (no Groq call needed)
+2026-10-13 11:20:04 [INFO ] SCORER | EXIT | confidence=0.9211 faithfulness=1.0 avg_retrieval_similarity=0.8028

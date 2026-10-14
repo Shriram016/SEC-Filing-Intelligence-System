@@ -1,0 +1,9 @@
+2026-10-13 11:14:35 [INFO ] ============================================================
+2026-10-13 11:14:35 [INFO ] PIPELINE | query_start | query='[EVAL Q19] What was the weather forecast for New York City in January 2022?'
+2026-10-13 11:14:35 [INFO ] ============================================================
+2026-10-13 11:14:35 [INFO ] RETRIEVER | ENTER | query='What was the weather forecast for New York City in January 2022?' top_k=10
+2026-10-13 11:14:35 [INFO ] RETRIEVER | filter_extraction | ENTER | query='What was the weather forecast for New York City in January 2022?'
+2026-10-13 11:14:35 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-13 11:14:36 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": false,\n    "rejection_reason": "Query is about weather forecasts, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.",\n    "tickers": [],\n    "years": [2022],\n    "sections": [],\n    "sub_query_template": null\n}'
+2026-10-13 11:14:36 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=False tickers=[] years=[2022] sections=[] sub_query_template=None rejection_reason='Query is about weather forecasts, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.'
+2026-10-13 11:14:36 [WARNING] RETRIEVER | EXIT | query rejected | reason='Query is about weather forecasts, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.'

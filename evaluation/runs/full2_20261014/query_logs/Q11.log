@@ -1,0 +1,48 @@
+2026-10-14 11:39:57 [INFO ] ============================================================
+2026-10-14 11:39:57 [INFO ] PIPELINE | query_start | query="[EVAL Q11] How did Google's market risk disclosures change between 2021 and 2024?"
+2026-10-14 11:39:57 [INFO ] ============================================================
+2026-10-14 11:39:57 [INFO ] RETRIEVER | ENTER | query="How did Google's market risk disclosures change between 2021 and 2024?" top_k=10
+2026-10-14 11:39:57 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How did Google's market risk disclosures change between 2021 and 2024?"
+2026-10-14 11:39:57 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:39:58 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["GOOGL"],\n    "years": [2021, 2024],\n    "sections": ["Item 7A"],\n    "sub_query_template": "<company> market risk disclosures in <year>"\n}'
+2026-10-14 11:39:58 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['GOOGL'] years=[2021, 2024] sections=['Item 7A'] sub_query_template='<company> market risk disclosures in <year>' rejection_reason=None
+2026-10-14 11:39:58 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:39:58 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'GOOGL', 'year': 2021, 'section': 'Item 7A'}, {'ticker': 'GOOGL', 'year': 2024, 'section': 'Item 7A'}]
+2026-10-14 11:39:58 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'GOOGL', 'year': 2021, 'section': 'Item 7A'} n_results=10
+2026-10-14 11:39:58 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'GOOGL', 'year': 2021, 'section': 'Item 7A'} chunks_returned=6
+2026-10-14 11:39:58 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'GOOGL', 'year': 2024, 'section': 'Item 7A'} n_results=10
+2026-10-14 11:39:58 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'GOOGL', 'year': 2024, 'section': 'Item 7A'} chunks_returned=6
+2026-10-14 11:39:58 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'GOOGL', 'year': 2021, 'section': 'Item 7A'} sub_query='Google market risk disclosures in 2021'
+2026-10-14 11:39:58 [INFO ] RERANKER | ENTER | query='Google market risk disclosures in 2021' chunks=6
+2026-10-14 11:39:58 [INFO ] RERANKER | before | top3=['GOOGL_2021_Item_7A_chunk_001 cosine=0.8327', 'GOOGL_2021_Item_7A_chunk_004 cosine=0.8288', 'GOOGL_2021_Item_7A_chunk_006 cosine=0.8255']
+2026-10-14 11:39:59 [INFO ] RERANKER | after | top3=['GOOGL_2021_Item_7A_chunk_001 reranker=0.1010', 'GOOGL_2021_Item_7A_chunk_006 reranker=0.0418', 'GOOGL_2021_Item_7A_chunk_005 reranker=0.0202']
+2026-10-14 11:39:59 [INFO ] RERANKER | EXIT | chunks=6 positions_changed=3/6
+2026-10-14 11:39:59 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'GOOGL', 'year': 2024, 'section': 'Item 7A'} sub_query='Google market risk disclosures in 2024'
+2026-10-14 11:39:59 [INFO ] RERANKER | ENTER | query='Google market risk disclosures in 2024' chunks=6
+2026-10-14 11:39:59 [INFO ] RERANKER | before | top3=['GOOGL_2024_Item_7A_chunk_001 cosine=0.8340', 'GOOGL_2024_Item_7A_chunk_006 cosine=0.8339', 'GOOGL_2024_Item_7A_chunk_004 cosine=0.8286']
+2026-10-14 11:40:00 [INFO ] RERANKER | after | top3=['GOOGL_2024_Item_7A_chunk_001 reranker=0.4867', 'GOOGL_2024_Item_7A_chunk_005 reranker=0.2867', 'GOOGL_2024_Item_7A_chunk_004 reranker=0.2644']
+2026-10-14 11:40:00 [INFO ] RERANKER | EXIT | chunks=6 positions_changed=3/6
+2026-10-14 11:40:00 [INFO ] RETRIEVER | EXIT | total_chunks=12 (after dedup + rerank)
+2026-10-14 11:40:00 [INFO ] SYNTHESIZER | ENTER | query="How did Google's market risk disclosures change between 2021 and 2024?" chunks_received=12
+2026-10-14 11:40:00 [INFO ] SYNTHESIZER | context | chunks_received=12 chunks_selected=12 (cap=30) dropped=0
+2026-10-14 11:40:00 [INFO ] SYNTHESIZER | context | sources=['Google 2021 Item 7A', 'Google 2021 Item 7A', 'Google 2021 Item 7A', 'Google 2021 Item 7A', 'Google 2021 Item 7A', 'Google 2021 Item 7A', 'Google 2024 Item 7A', 'Google 2024 Item 7A', 'Google 2024 Item 7A', 'Google 2024 Item 7A', 'Google 2024 Item 7A', 'Google 2024 Item 7A']
+2026-10-14 11:40:00 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Google market risk disclosures in 2021 ===\n\n[1] Google | 2021 | Market Risk\n"ITEM 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK\nWe are exposed to financial market risks, including changes in foreign currency exchange rates, interest rates, and equity investmen'
+2026-10-14 11:40:00 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:40:02 [INFO ] SYNTHESIZER | Groq response | answer_length=1928 chars
+2026-10-14 11:40:02 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **Foreign Currency Exposure:** The adverse effect of a 10% exchange rate change on income before taxes decreased from approximately $285 million in 2021 to $135 million in 2024, while the impact on AOCI for cash flow hedges increased from $1.3 billion in 2021 to $1.6 billion in 2024.
+*   **Net Investment Hedges:** The potential decrease in cumulative translation adjustment (CTA) within AOCI due to a 10% U.S. dollar weakening dropped from approximately $1.0 billion in 2021 to $660 million in 2024.
+*   **Interest Rate Risk (VaR):** The estimated one-day loss in fair value of the investment portfolio due to interest rate fluctuations decreased from $139 million in 2021 to $208 million in 2024, while the 12-month average VaR increased from $148 million to $230 million.
+*   **Marketable Equity Securities:** The portfolio value decreased from $7.8 billion in 2021 to $5.1 billion in 2024, resulting in a lower hypothetical 10% adverse price impact of $508 million in 2024 compared to $780 million in 2021.
+*   **Non-Marketable Equity Securities:** The carrying value of these investments increased significantly from $27.6 billion in 2021 to $35.5 billion in 2024.
+*   **Equity Method Investments:** The total carrying value of equity method investments rose from approximately $1.5 billion in 2021 to $2.0 billion in 2024.
+*   **Investment Composition:** The 2024 disclosure lists "interest rate derivatives" as a primary investment vehicle, whereas the 2021 disclosure specifically listed "municipal securities" and "debt instruments issued by foreign governments" without explicitly naming interest rate derivatives in the primary list.
+*   **Consistent Elements:** Both years identified the same principal currencies hedged (Australian dollar, British pound, Canadian dollar, Euro, and Japanese yen) and maintained the use of a 95% confidence interval variance/covariance VaR model for interest rate risk analysis.
+2026-10-14 11:40:02 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=12
+2026-10-14 11:40:02 [INFO ] SCORER | ENTER | answer_preview='*   **Foreign Currency Exposure:** The adverse effect of a 10% exchange rate cha' sources=12
+2026-10-14 11:40:02 [INFO ] SCORER | avg_retrieval_similarity=0.8244
+2026-10-14 11:40:02 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=1928 chars sources=12
+2026-10-14 11:40:02 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:40:03 [INFO ] SCORER | faithfulness_judge | Groq response | raw='4'
+2026-10-14 11:40:03 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=4 normalized=0.75
+2026-10-14 11:40:03 [INFO ] SCORER | EXIT | confidence=0.7798 faithfulness=0.75 avg_retrieval_similarity=0.8244

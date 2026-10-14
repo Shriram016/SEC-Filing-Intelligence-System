@@ -1,0 +1,256 @@
+{
+  "by_category": {
+    "single_factual": {
+      "n": 6,
+      "n_scored": 6,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 1.0,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 1.0
+        },
+        "answer_relevance": {
+          "values": {
+            "Q01": 0.9986,
+            "Q02": 0.9915,
+            "Q03": 0.9774,
+            "Q04": 0.9431,
+            "Q05": 0.9897,
+            "Q06": 0.9664
+          },
+          "n": 6,
+          "mean": 0.9778
+        },
+        "context_precision": {
+          "values": {
+            "Q01": 0.8571,
+            "Q02": 0.8095,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 0.9444
+        },
+        "context_recall": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 1.0,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 1.0
+        },
+        "ground_truth_coverage": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 1.0,
+            "Q03": 1.0,
+            "Q04": 0.5,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 0.9167
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "cross_year": {
+      "n": 8,
+      "n_scored": 8,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q07": 1.0,
+            "Q08": 1.0,
+            "Q09": 1.0,
+            "Q10": 1.0,
+            "Q11": 1.0,
+            "Q22": 1.0,
+            "Q23": 0.9032,
+            "Q24": 0.95
+          },
+          "n": 8,
+          "mean": 0.9817
+        },
+        "answer_relevance": {
+          "values": {
+            "Q07": 0.9311,
+            "Q08": 0.9412,
+            "Q09": 0.9633,
+            "Q10": 0.9453,
+            "Q11": 0.8784,
+            "Q22": 0.9654,
+            "Q23": 1.0,
+            "Q24": 0.9919
+          },
+          "n": 8,
+          "mean": 0.9521
+        },
+        "context_recall": {
+          "values": {
+            "Q07": 1.0,
+            "Q08": 1.0,
+            "Q09": 1.0,
+            "Q10": 1.0,
+            "Q11": 1.0,
+            "Q22": 1.0,
+            "Q23": 1.0,
+            "Q24": 1.0
+          },
+          "n": 8,
+          "mean": 1.0
+        },
+        "ground_truth_coverage": {
+          "values": {
+            "Q07": 0.75,
+            "Q08": 0.7143,
+            "Q09": 1.0,
+            "Q10": 0.6667,
+            "Q11": 0.6667,
+            "Q22": 1.0,
+            "Q23": 1.0,
+            "Q24": 0.5556
+          },
+          "n": 8,
+          "mean": 0.7942
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "cross_company": {
+      "n": 4,
+      "n_scored": 4,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q12": 0.8947,
+            "Q13": 0.9286,
+            "Q14": 1.0,
+            "Q15": 1.0
+          },
+          "n": 4,
+          "mean": 0.9558
+        },
+        "answer_relevance": {
+          "values": {
+            "Q12": 0.9614,
+            "Q13": 0.9124,
+            "Q14": 0.8882,
+            "Q15": 0.8489
+          },
+          "n": 4,
+          "mean": 0.9027
+        },
+        "context_recall": {
+          "values": {
+            "Q12": 1.0,
+            "Q13": 1.0,
+            "Q14": 0.0,
+            "Q15": 1.0
+          },
+          "n": 4,
+          "mean": 0.75
+        },
+        "ground_truth_coverage": {
+          "values": {
+            "Q12": 0.2,
+            "Q13": 1.0,
+            "Q14": 0.0,
+            "Q15": 0.5
+          },
+          "n": 4,
+          "mean": 0.425
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "vague": {
+      "n": 3,
+      "n_scored": 3,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q16": 0.9667,
+            "Q17": 1.0,
+            "Q18": 0.8182
+          },
+          "n": 3,
+          "mean": 0.9283
+        },
+        "answer_relevance": {
+          "values": {
+            "Q16": 0.9416,
+            "Q17": 0.9505,
+            "Q18": 0.8557
+          },
+          "n": 3,
+          "mean": 0.9159
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    }
+  },
+  "overall_answer_categories": {
+    "faithfulness": {
+      "mean": 0.9744,
+      "n": 21
+    },
+    "answer_relevance": {
+      "mean": 0.9449,
+      "n": 21
+    },
+    "context_precision": {
+      "mean": 0.9444,
+      "n": 6
+    },
+    "context_recall": {
+      "mean": 0.9444,
+      "n": 18
+    },
+    "ground_truth_coverage": {
+      "mean": 0.753,
+      "n": 18
+    }
+  },
+  "usage_total": {
+    "calls": 213,
+    "prompt_tokens": 534808,
+    "completion_tokens": 198493,
+    "cost_usd": 0.199317,
+    "unpriced_calls": 0
+  },
+  "rescored_at": "2026-10-14T09:46:59.693536"
+}

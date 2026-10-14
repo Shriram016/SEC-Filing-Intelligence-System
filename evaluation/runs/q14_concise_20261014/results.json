@@ -1,0 +1,441 @@
+{
+  "Q14": {
+    "query_id": "Q14",
+    "query": "How did Meta and Microsoft describe their workforce in their 2023 annual reports?",
+    "query_type": "cross_company",
+    "is_valid": true,
+    "ground_truth": "Meta's headcount was 67,317 as of December 31, 2023, a decrease of 22% year-over-year. Microsoft reduced its overall workforce by approximately 10,000 jobs through the third quarter of fiscal year 2023, representing less than 5% of its total employee base. Both companies reduced headcount in 2023, but Meta's reduction was significantly larger proportionally (22% vs less than 5%).",
+    "expected_tickers": [
+      "META",
+      "MSFT"
+    ],
+    "expected_years": [
+      2023
+    ],
+    "expected_sections": [
+      "Item 7"
+    ],
+    "reject_also_ok": false,
+    "filters": {
+      "is_valid": true,
+      "rejection_reason": null,
+      "tickers": [
+        "META",
+        "MSFT"
+      ],
+      "years": [
+        2023
+      ],
+      "sections": [
+        "Item 1"
+      ],
+      "sub_query_template": "<company> workforce description in <year>"
+    },
+    "status": "evaluated",
+    "answer": "*   **Meta**: Reported a global workforce of 67,317 employees as of December 31, 2023, with offices in approximately 90 cities.\n*   **Microsoft**: Employed approximately 221,000 full-time people as of June 30, 2023, with 120,000 in the U.S. and 101,000 internationally.\n*   **Meta**: Highlighted cost reduction efforts including layoffs, while emphasizing competitive compensation, equity grants, and pay equity across genders and races.\n*   **Microsoft**: Focused on a \"growth mindset\" culture, hybrid work flexibility, and specific progress toward doubling the number of Black and African American leaders by 2025.\n*   **Both**: Described their compensation as market-competitive and committed to diverse, inclusive workplaces with extensive benefits and learning resources.",
+    "refusal": {
+      "exact": false,
+      "tolerant": false,
+      "with_extra_text": false
+    },
+    "app_confidence": {
+      "confidence_score": 0.9243,
+      "faithfulness_score": 1.0,
+      "avg_retrieval_similarity": 0.8107,
+      "breakdown": {
+        "retrieval_weight": 0.4,
+        "faithfulness_weight": 0.6,
+        "num_sources": 20
+      }
+    },
+    "chunks_retrieved": 20,
+    "chunks_used": 20,
+    "groups_retrieved": [
+      "Meta workforce description in 2023",
+      "Microsoft workforce description in 2023"
+    ],
+    "groups_used": [
+      "Meta workforce description in 2023",
+      "Microsoft workforce description in 2023"
+    ],
+    "retrieved_chunks": [
+      {
+        "chunk_id": "META_2023_Item_1_chunk_018",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.8636,
+        "reranker_score": 0.9720717668533325,
+        "used": true,
+        "text": "For additional information about government regulation applicable to our business, see Part I, Item 1A, \"Risk Factors\" in this Annual Report on Form 10-K. Human Capital\nAt Meta, everything we do is about helping people feel connected and closer, and we are proud of our unique company culture. We had a global workforce of 67,317 employees as of December 31, 2023, and we have offices in approximately 90 cities around the world. We are committed to fostering an enriching environment for our workforce and we are focused on supporting our people in doing the best work of their careers. We offer competitive compensation and a wide range of benefits, including many learning and development resources, and we work to build a diverse and inclusive workplace. Beginning in November 2022, we took a number of steps to reduce our expense base. For example, our cost reduction efforts have included scaling back budgets, reducing company perks, shrinking our real estate footprint, and employee layoffs and restructurings. We make it a priority to treat outgoing employees with respect and provide a generous severance package. For U.S. employees, that includes severance of 16 weeks of base pay plus two additional weeks for every year of service, payment for all remaining paid time off, restricted stock unit vesting through their last day on payroll, health insurance, coverage of the cost of healthcare for employees and their families for six months, career services that included three months of career support with an external vendor and early access to unpublished job leads, immigration support that included dedicated immigration specialists to help guide employees based on their needs. We offer similar support for outgoing employees outside of the United States while taking into account local employment laws."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_020",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.7841,
+        "reranker_score": 0.8888156414031982,
+        "used": true,
+        "text": "12\nTable of \nContents\nCompensation, Benefits, Health, and Well-being\nWe offer competitive compensation to attract and retain the best people, and we help care for our people so they can focus on our mission. Our employees' total compensation package includes market-competitive salary, bonuses or sales incentives, and equity. We generally offer full-time employees equity at the time of hire and through annual equity grants because we want them to be owners of the company and committed to our long-term success. We have conducted pay equity analyses for many years, and continue to be committed to pay equity. For example, in July 2023, we announced that our analyses confirm that we continue to have pay equity across genders globally and by race in the United States for people in similar jobs, accounting for factors such as location, role, and level. Through Life@ Meta, our holistic approach to benefits, we continue to provide our employees and their dependents with resources to help them thrive. We offer a wide range of benefits across areas such as health, family, finance, community, and time away, including family building benefits, family care resources, retirement savings plans, access to legal services, Meta Resource Groups to build community at Meta, and health and well-being benefits. Our health and well-being programs are designed to give employees a choice of flexible benefits to help them reach their personal well-being goals. Our programs are tailored to help boost employee physical and mental health, create financial peace of mind, provide support for families, and help employees build a strong community. Programs are designed and funded to support needs like autism care, cancer care, transgender services, holistic well-being, including mental health programs and retirement savings, which represent a few of the ways we support our employees and their dependents."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_019",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.8324,
+        "reranker_score": 0.7105722427368164,
+        "used": true,
+        "text": "We offer similar support for outgoing employees outside of the United States while taking into account local employment laws. Employee Learning and Development\nWe value our investment in growing and keeping a highly skilled workforce. We aim to provide all of our employees with regular performance reviews twice a year as we believe it is an important part of how we support their growth and career development while also recognizing and rewarding their impact at Meta. We also offer career development opportunities and work experience programs that extend beyond the physical and virtual classroom. To do this, we utilize various learning modalities, such as live virtual and in-person learning experiences, on-demand e-learning, self-service resources, learning communities, and coaching engagements. The Pulse of Our Workforce\nEach year, we conduct company-wide employee surveys to help us understand how employees feel about working at Meta and what we can do to improve their experience. Our surveys help us measure company, manager, team, and personal experience over time. Further, our more frequent surveys, such as those that have been administered daily to an ongoing random sample of employees, allow us to measure real-time sentiment around emerging events and company changes. These surveys are designed to invite feedback and actionable suggestions, inform decisions, and drive change across the company. In 2024, we expect to update our listening strategy and product capabilities, based on feedback from key groups, to further improve actionability and impact. 12\nTable of \nContents\nCompensation, Benefits, Health, and Well-being\nWe offer competitive compensation to attract and retain the best people, and we help care for our people so they can focus on our mission. Our employees' total compensation package includes market-competitive salary, bonuses or sales incentives, and equity."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_022",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.8146,
+        "reranker_score": 0.06839243322610855,
+        "used": true,
+        "text": "To aid in this effort, we have taken steps to reduce bias from our hiring processes and performance management systems, as well as offering learning and development courses for our employees. Corporate Information\nWe were incorporated in Delaware in July 2004. We completed our initial public offering in May 2012 and our Class A common stock is currently listed on the Nasdaq Global Select Market under the symbol \"META.\" Our principal executive offices are located at 1 Meta Way, Menlo Park, California 94025, and our telephone number is (650) 543-4800. Meta, the Meta logo, Meta Quest, Meta Horizon, Facebook, FB, Instagram, Oculus, WhatsApp, Reels, and our other registered or common law trademarks, service marks, or trade names appearing in this Annual Report on Form 10-K are the property of Meta Platforms, Inc. or its affiliates. Other trademarks, service marks, or trade names appearing in this Annual Report on Form 10‑K are the property of their respective owners. Available Information\nOur Annual Reports on Form 10-K, Quarterly Reports on Form 10-Q, Current Reports on Form 8-K, and amendments to reports filed pursuant to Sections 13(a) and 15(d) of the Securities Exchange Act of 1934, as amended (Exchange Act), are filed with the U.S. Securities and Exchange Commission (SEC). We are subject to the informational requirements of the Exchange Act and file or furnish reports, proxy statements, and other information with the SEC. Such reports and other information filed by us with the SEC are available free of charge on our website at investor.fb.com when such reports are \n13\nTable of \nContents\navailable on the SEC's website."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_021",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.8042,
+        "reranker_score": 0.053139179944992065,
+        "used": true,
+        "text": "Programs are designed and funded to support needs like autism care, cancer care, transgender services, holistic well-being, including mental health programs and retirement savings, which represent a few of the ways we support our employees and their dependents. Diverse and Inclusive Workplace\nWe work to build a diverse and inclusive workplace where we can leverage our collective cognitive diversity to build the best products and make the best decisions for the global community we serve. In our 2023 Responsible Business Practices Report, we published our global diversity and U.S. ethnic diversity workforce data. As of December 31, 2022, our global employee base was composed of 45.4% underrepresented people, with 47.9% underrepresented people in the U.S., and 43.1% of our leaders in the U.S. being people of color. As published in our 2023 Responsible Business Practices Report, people with disabilities now represent 7.2% of our U.S. workforce, and based on voluntary self-identification, veterans represented 2.3% and members of the LGBTQ+ community make up 9.8% of our U.S. workforce. We want our products to work for people around the world and we need to grow and keep the best talent in order to do that. We also remain committed to having a skilled, inclusive and diverse workforce because we believe cognitive diversity fuels innovation. To aid in this effort, we have taken steps to reduce bias from our hiring processes and performance management systems, as well as offering learning and development courses for our employees. Corporate Information\nWe were incorporated in Delaware in July 2004."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_001",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.799,
+        "reranker_score": 0.025000669062137604,
+        "used": true,
+        "text": "Item 1. Business \nOverview\nOur mission is to give people the power to build community and bring the world closer together. All of our products, including our apps, share the vision of helping to bring the metaverse to life. We build technology that helps people connect and share, find communities, and grow businesses. Our products enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality (VR) and mixed reality (MR) headsets, and wearables. We also help people discover and learn about what is going on in the world around them, enable people to share their experiences, ideas, photos and videos, and other activities with audiences ranging from their closest family members and friends to the public at large, and stay connected everywhere by accessing our products. Meta is moving our offerings beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the metaverse, which we believe is the next evolution in social technology. Our vision for the metaverse does not center on any single product, but rather an entire ecosystem of experiences, devices, and new technologies. While the metaverse is in the very early stages of its development, we believe it will become the next computing platform and the future of social interaction. Across our work, we are innovating in artificial intelligence (AI) technologies to build new experiences that help make our platform more social, useful, and immersive. We report financial results for two segments: Family of Apps (FoA) and Reality Labs (RL). Currently, we generate substantially all of our revenue from selling advertising placements on our family of apps to marketers, which is reflected in FoA. Ads on our platform enable marketers to reach people across a range of marketing objectives, such as generating leads or driving awareness."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_007",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.7826,
+        "reranker_score": 0.00571562722325325,
+        "used": true,
+        "text": "We also compete with companies that develop and deliver consumer hardware and virtual and augmented reality products and services. We also expect to face additional competition as we introduce or acquire new products, as our existing products evolve, or as other companies introduce new products and services, including as part of efforts to develop the metaverse or innovate through the development and application of new technologies such as AI. Technology\nOur product development philosophy centers on continuous innovation in creating and improving products that are social by design, which means that our products are designed to place people and their social interactions at the core of the product experience. As our user base grows, as engagement with products like video, VR, and MR increases, and as we deepen our investment in new technologies, our computing needs continue to expand. We have designed and built our own data centers and key portions of our technical infrastructure, and a substantial portion of our technical infrastructure is also provided by third parties. Our ability to provide and continue to innovate our products and services depends on the continued availability of components, power, and network capacity. We make significant investments in technology both to improve our existing products and services and to develop new ones, as well as for our marketers and developers. We are also investing in protecting the security, privacy, and integrity of our platform by investing in both people and technology to strengthen our systems against abuse."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_003",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.781,
+        "reranker_score": 0.0028083750512450933,
+        "used": true,
+        "text": "We are also making significant investments in our metaverse efforts, including developing virtual and augmented reality devices, software for social platforms, neural interfaces, and other foundational technologies. Our total RL investments were $18.02 billion in 2023 and include expenses relating to headcount and technology development across these efforts. These are fundamentally new technologies that we expect will evolve as the metaverse ecosystem develops, and many products for the metaverse may only be fully realized in the next decade. Although it is inherently difficult to predict when and how the metaverse ecosystem will develop, we expect our RL segment to continue to operate at a loss for the foreseeable future, and our ability to support our metaverse efforts is dependent on generating sufficient profits from other areas of our business. We expect this will be a complex, evolving, and long-term initiative. We are investing now because we believe this is the next chapter of the internet and will unlock monetization opportunities for businesses, developers, and creators, including around advertising, hardware, and digital goods. Family of Apps Products\n•\nFacebook. Facebook helps give people the power to build community and bring the world closer together. It's a place for people to share life's moments and discuss what's happening, nurture and build relationships, discover and connect to interests, and create economic opportunity. They can do this through Feed, Reels, Stories, Groups, Marketplace, and more. 7\nTable of \nContents\n•\nInstagram. Instagram brings people closer to the people and things they love. Instagram Feed, Stories, Reels, Live, and messaging are places where people and creators can connect and express themselves through photos, video, and private messaging, and discover and shop from their favorite businesses. •\nMessenger."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_006",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.7912,
+        "reranker_score": 0.0010731841903179884,
+        "used": true,
+        "text": "For example, in 2024, we expect to spend approximately 50% of our Reality Labs operating expenses on our AR initiatives, approximately 40% on our VR (including MR) initiatives, and approximately 10% on social platforms and other initiatives. We apply significant judgment in estimating this expense breakdown as there are certain shared costs across product lines, and our expectations are subject to change, including as the metaverse ecosystem and our business strategies evolve. In particular, we regularly evaluate our product roadmaps and make significant changes as our understanding of the technological challenges and market landscape and our product ideas and designs evolve. Competition\nOur business is characterized by innovation, rapid change, and disruptive technologies. We compete with companies providing connection, sharing, discovery, and communication products and services to users online, as well as companies that sell advertising to businesses looking to reach consumers and/or develop tools and systems for managing and optimizing advertising campaigns. We face significant competition in every aspect of our business, including, but not limited to, companies that facilitate the ability of users to create, share, communicate, and discover content and information online or \n8\nTable of \nContents\nenable marketers to reach their existing or prospective audiences. We compete to attract, engage, and retain people who use our products, to attract and retain businesses that use our free or paid business and advertising services, and to attract and retain developers who build compelling applications that integrate with our products. We also compete with companies that develop and deliver consumer hardware and virtual and augmented reality products and services."
+      },
+      {
+        "chunk_id": "META_2023_Item_1_chunk_005",
+        "ticker": "META",
+        "company": "Meta",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Meta workforce description in 2023",
+        "similarity_score": 0.7967,
+        "reranker_score": 7.248608744703233e-05,
+        "used": true,
+        "text": "In the near term, we are continuing to develop early metaverse experiences through Reality Labs products that help people feel connected, anytime, anywhere. Our current product offerings in VR include our Meta Quest devices, as well as software and content available through the Meta Quest Store, which enable a range of social experiences that allow people to defy physical distance while engaging in gaming, fitness, entertainment, and more. For example, Meta Horizon Worlds is a social platform where people can interact with friends, meet new people, play games, and attend virtual events. To drive greater adoption and acceptance of VR we have also introduced MR capabilities, which allow users to experience the immersion and presence of VR while still being grounded in the physical world, through our Meta Quest Pro and Meta Quest 3 devices. We have continued to advance our augmented reality (AR) roadmap to include offerings such as the Ray-Ban Meta smart glasses, which feature Meta AI, our advanced conversational assistant, as well as offer the ability to livestream video and let people stay more present through hands-free interaction. We also offer Meta Spark, a platform that allows creators and businesses to build AR experiences that bring the digital and physical worlds together in our apps. In general, while all of these investments are part of our long-term initiative to help build the metaverse, our VR and social platform efforts also include notable shorter-term projects developing specific products and services to go to market, whereas our AR efforts are primarily directed toward longer-term research and development projects. For example, in 2024, we expect to spend approximately 50% of our Reality Labs operating expenses on our AR initiatives, approximately 40% on our VR (including MR) initiatives, and approximately 10% on social platforms and other initiatives."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_011",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8088,
+        "reranker_score": 0.4357488453388214,
+        "used": true,
+        "text": "We enriched our supplier pipeline, achieving our goal to spend $500 million with double the number of Black- and African American-owned suppliers. We also increased the number of identified partners in the Black Partner Growth Initiative by more than 250 percent, surpassing our initial goal. We have made meaningful progress on representation and inclusion at Microsoft. As of June 2023, we are 93 percent of the way to our 2025 commitment to double the number of Black and African American people managers in the U.S. (below director level), and 107 percent of the way for Black and African American directors (people managers and individual contributors). We are 28 percent of the way for Hispanic and Latinx people managers (below director level) and 74 percent of the way for Hispanic and Latinx directors. Investing in Digital Skills\n\nAfter helping over 80 million jobseekers around the world access digital skilling resources, we introduced a new Skills for Jobs initiative to support a more skills-based labor market, with greater flexibility and accessible learning paths to develop the right skills needed for the most in-demand jobs. Our Skills for Jobs initiative brings together learning resources, certification opportunities, and job-seeker tools from LinkedIn, GitHub, and Microsoft Learn, and is built on data insights drawn from LinkedIn’s Economic Graph. We also launched a national campaign to help skill and recruit 250,000 people into the cybersecurity workforce by 2025, representing half of the country’s workforce shortage. To that end, we are making curriculum available free of charge to all of the nation’s higher education institutions, providing training for new and existing faculty, and providing scholarships and supplemental resources to 25,000 students."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_013",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8464,
+        "reranker_score": 0.4233919084072113,
+        "used": true,
+        "text": "8\n\nPART I\n\nItem 1\n\n \n\nAs of June 30, 2023, we employed approximately 221,000 people on a full-time basis, 120,000 in the U.S. and 101,000 internationally. Of the total employed people, 89,000 were in operations, including manufacturing, distribution, product support, and consulting services; 72,000 were in product research and development; 45,000 were in sales and marketing; and 15,000 were in general and administration. Certain employees are subject to collective bargaining agreements. Our Culture\n\nMicrosoft’s culture is grounded in growth mindset. This means everyone is on a continuous journey to learn and grow, operating as one company instead of multiple siloed businesses. Our employee listening systems enable us to gather feedback directly from our workforce to inform our programs and employee needs globally. Employees participate in our Employee Signals surveys, which cover a variety of topics such as thriving, inclusion, team culture, wellbeing, and learning and development. We also collect Daily Signals employee survey responses, giving us real-time insights into ways we can support our employees. In addition to Employee Signals and Daily Signals surveys, we gain insights through onboarding, exit surveys, internal Viva Engage channels, employee Q&A sessions, and our internal AskHR Service support. Diversity and inclusion are core to our business model, and we hold ourselves accountable for driving global systemic change in our workforce and creating an inclusive work environment. We support multiple highly active Employee Resource Groups for women, families, racial and ethnic minorities, military, people with disabilities, and employees who identify as LGBTQIA+, where employees can go for support, networking, and community-building. As described in our 2022 Proxy Statement, annual performance and compensation reviews of our senior leadership team include an evaluation of their contributions to employee culture and diversity."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_014",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8115,
+        "reranker_score": 0.14203573763370514,
+        "used": true,
+        "text": "As described in our 2022 Proxy Statement, annual performance and compensation reviews of our senior leadership team include an evaluation of their contributions to employee culture and diversity. To ensure accountability over time, we publicly disclose our progress on a multitude of workforce metrics including:\n\n•\nDetailed breakdowns of gender, racial, and ethnic minority representation in our employee population, with data by job types, levels, and segments of our business. •\nOur EEO-1 report (equal employment opportunity). •\nDisability representation. •\nPay equity (see details below). Total Rewards and Pay Equity\n\nWe develop dynamic, sustainable, market-driven, and strategic programs with the goal of providing a highly differentiated portfolio to attract, reward, and retain top talent and enable our employees to thrive. These programs reinforce our culture and values such as collaboration and growth mindset. Managers evaluate and recommend rewards based on, for example, how well we leverage the work of others and contribute to the success of our colleagues. We monitor pay equity and career progress across multiple dimensions. Our total compensation opportunity is highly differentiated and is market competitive. In order to manage our costs in a dynamic, competitive environment, in fiscal year 2023 we announced that base salaries of salaried employees would remain at fiscal year 2022 levels. Pay increases continue to be available for rewards-eligible hourly and equivalent employees. We will continue our practice of investing in stock for all rewards-eligible employees, salaried and hourly, and investing in bonuses for all eligible employees. 9\n\nPART I\n\nItem 1\n\n \n\nSince 2016, we have reported on pay equity as part of our annual Diversity and Inclusion report. In 2022, we reported that all racial and ethnic minority employees in the U.S. combined earn $1.008 for every $1.000 earned by their white counterparts, that women in the U.S."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_015",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8216,
+        "reranker_score": 0.06841626763343811,
+        "used": true,
+        "text": "In 2022, we reported that all racial and ethnic minority employees in the U.S. combined earn $1.008 for every $1.000 earned by their white counterparts, that women in the U.S. earn $1.007 for every $1.000 earned by their counterparts who are men, and that women outside the U.S. earn $1.002 for every $1.000 earned by their counterparts outside the U.S. who are men. In this year’s report, we again expanded our pay equity data beyond the U.S. to report on 61 additional countries (up from 12 last year), representing 99.8% of our global Microsoft workforce. In addition, we began reporting on unadjusted median pay in our annual report, comparing total pay amounts for all employees regardless of factors such as job title, level, or tenure. For employees who are eligible for rewards, the analysis showed that total pay for women is 89.6% of total pay for men in the U.S. and 86.2% outside of the U.S., and total pay for racial and ethnic minorities in the U.S. is 89.9% of total pay for white employees. As we continue to increase representation for women and racial and ethnic minorities at more senior levels, and continue to ensure pay equity for all, the gap between the medians will reduce. Our intended result is a global performance and development approach that fosters our culture, and competitive compensation that ensures equitable pay by role while supporting pay for performance. Wellbeing and Hybrid Work\n\nMicrosoft is committed to supporting our employees’ wellbeing while they are at work and in their personal lives."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_016",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8138,
+        "reranker_score": 0.01640782691538334,
+        "used": true,
+        "text": "Wellbeing and Hybrid Work\n\nMicrosoft is committed to supporting our employees’ wellbeing while they are at work and in their personal lives. We have invested significantly in wellbeing, and offer a differentiated benefits package which includes many physical, emotional, and financial wellness programs including counseling through the Microsoft CARES Employee Assistance Program, mental wellbeing support, flexible fitness benefits, disability accommodations, savings and investment tools, adoption assistance, and back-up care for children and elders. Finally, our Occupational Health and Safety program helps ensure employees can stay safe while they are working. We introduced Hybrid Workplace Flexibility Guidance to better support leaders, managers, and employees in hybrid work scenarios. Our ongoing survey data shows that 93% of employees value the flexibility related to work location, work site, and work hours, and 78% are satisfied with the quality of connection with co-workers. There is no one-size-fits-all approach to flexible work at Microsoft. As a company, we will continue to leverage data and research to inform decision making, balancing the needs of business, team, and individual. Learning and Development\n\nWe offer a range of learning opportunities, including personalized opportunities on our internal and external learning portals, in-classroom learning, required learning on compliance and company culture, on-the-job advancement opportunities, and manager coaching. We also provide customized manager learning, new employee orientation, and tools for operating in a flexible hybrid work environment. All Microsoft employees globally access our single Viva Learning tool for both required and personal choice learning. This includes courses focused on our core principles and compliance matters, such as Business Conduct, Privacy, Security Foundations, and Harassment Prevention. We also deliver skills training for employees based on their profession and role discipline."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_009",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8063,
+        "reranker_score": 0.011475469917058945,
+        "used": true,
+        "text": "•\nDiverted 12,159 metric tons of solid waste from landfills and incinerators across our direct operational footprint. •\nProtected 12,270 acres of land in Belize – more than the 11,206 acres of land that we use around the world. Microsoft has a role to play in developing and advancing new climate solutions, but we recognize that no solution can be offered by any single company, organization, or government. Our approach helps to support the sustainability needs of our customers and the global community. Our Microsoft Cloud for Sustainability, an environmental sustainability management platform that includes Microsoft Sustainability Manager, enables organizations to record, report, and reduce their Scope 1, 2, and 3 emissions. These digital tools can interoperate with business systems and unify data intelligence for organizations. Addressing Racial Injustice and Inequity\n\nWe are committed to addressing racial injustice and inequity in the United States for Black and African American communities and helping improve lived experiences at Microsoft, in employees’ communities, and beyond. Our Racial Equity Initiative focuses on three multi-year pillars, each containing actions and progress we expect to make or exceed by 2025. •\nStrengthening our communities: using data, technology, and partnerships to help improve the lives of Black and African American people in the United States, including our employees and their communities. •\nEngaging our ecosystem: using our balance sheet and relationships with suppliers and partners to foster societal change and create new opportunities. •\nIncreasing representation and strengthening inclusion: building on our momentum by adding a $150 million investment to strengthen inclusion and double the number of Black, African American, Hispanic, and Latinx leaders in the United States by 2025."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_003",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8252,
+        "reranker_score": 0.004697118885815144,
+        "used": true,
+        "text": "Microsoft Teams is a comprehensive platform for work, with meetings, calls, chat, collaboration, and business process automation. Microsoft Viva is an employee experience platform that brings together communications, knowledge, learning, resources, and insights. Microsoft 365 Copilot combines next-generation AI with business data in the Microsoft Graph and Microsoft 365 applications. Together with the Microsoft Cloud, Dynamics 365, Microsoft Teams, and our AI offerings bring a new era of collaborative applications that optimize business functions, processes, and applications to better serve customers and employees while creating more business value. Microsoft Power Platform is helping domain experts drive productivity gains with low-code/no-code tools, robotic process automation, virtual agents, and business intelligence. In a dynamic labor market, LinkedIn is helping professionals use the platform to connect, learn, grow, and get hired. Build the Intelligent Cloud and Intelligent Edge\n \nPlatform\n\nAs digital transformation and adoption of AI accelerates and revolutionizes more business workstreams, organizations in every sector across the globe can address challenges that will have a fundamental impact on their success. For enterprises, digital technology empowers employees, optimizes operations, engages customers, and in some cases, changes the very core of products and services. We continue to invest in high performance and sustainable computing to meet the growing demand for fast access to Microsoft services provided by our network of cloud computing infrastructure and datacenters. Our cloud business benefits from three economies of scale: datacenters that deploy computational resources at significantly lower cost per unit than smaller ones; datacenters that coordinate and aggregate diverse customer, geographic, and application demand patterns, improving the utilization of computing, storage, and network resources; and multi-tenancy locations that lower application maintenance labor costs. The Microsoft Cloud provides the best integration across the technology stack while offering openness, improving time to value, reducing costs, and increasing agility."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_001",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8269,
+        "reranker_score": 0.0037148864939808846,
+        "used": true,
+        "text": "ITEM 1. B\nUSINESS\n\nGENERAL\n\nEmbracing Our Future\n\nMicrosoft is a technology company whose mission is to empower every person and every organization on the planet to achieve more. We strive to create local opportunity, growth, and impact in every country around the world. We are creating the platforms and tools\n,\n powered by artificial intelligence (“\nAI\n”), that deliver better, faster, and more effective solutions to support small and large business competitiveness, improve educational and health outcomes, grow public-sector efficiency, and empower human ingenuity. From infrastructure and data, to business applications and collaboration, we provide unique, differentiated value to customers. In a world of increasing economic complexity, AI has the power to revolutionize many types of work. Microsoft is now innovating and expanding our portfolio with AI capabilities to help people and organizations overcome today’s challenges and emerge stronger. Customers are looking to unlock value from their digital spend and innovate for this next generation of AI, while simplifying security and management. Those leveraging the Microsoft Cloud are best positioned to take advantage of technological advancements and drive innovation. Our investment in AI spans the entire company, from Microsoft Teams and Outlook, to Bing and Xbox, and we are infusing generative AI capability into our consumer and commercial offerings to deliver copilot capability for all services across the Microsoft Cloud. We’re committed to making the promise of AI real – and doing it responsibly. Our work is guided by a core set of principles: fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability. What We Offer\n\nFounded in 1975, we develop and support software, services, devices, and solutions that deliver new value for customers and help people and businesses realize their full potential."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_005",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8034,
+        "reranker_score": 0.0010078945197165012,
+        "used": true,
+        "text": "Nuance, a leader in conversational AI and ambient intelligence across industries including healthcare, financial services, retail, and telecommunications, joined Microsoft in 2022. Microsoft and Nuance enable organizations to accelerate their business goals with security-focused, cloud-based solutions infused with AI. We are accelerating our development of mixed reality solutions with new Azure services and devices. Microsoft Mesh enables organizations to create custom, immersive experiences for the workplace to help bring remote and hybrid workers and teams together. 5\n\nPART I\n\nItem 1\n\n \n\nThe ability to convert data into AI drives our competitive advantage. The Microsoft Intelligent Data Platform is a leading cloud data platform that fully integrates databases, analytics, and governance. The platform empowers organizations to invest more time creating value rather than integrating and managing their data. Microsoft Fabric is an end-to-end, unified analytics platform that brings together all the data and analytics tools that organizations need. GitHub Copilot is at the forefront of AI-powered software development, giving developers a new tool to write code easier and faster so they can focus on more creative problem-solving. From GitHub to Visual Studio, we provide a developer tool chain for everyone, no matter the technical experience, across all platforms, whether Azure, Windows, or any other cloud or client platform. Windows also plays a critical role in fueling our cloud business with Windows 365, a desktop operating system that’s also a cloud service. From another internet-connected device, including Android or macOS devices, users can run Windows 365, just like a virtual machine. Additionally, we are extending our infrastructure beyond the planet, bringing cloud computing to space. Azure Orbital is a fully managed ground station as a service for fast downlinking of data."
+      },
+      {
+        "chunk_id": "MSFT_2023_Item_1_chunk_004",
+        "ticker": "MSFT",
+        "company": "Microsoft",
+        "year": 2023,
+        "section": "Item 1",
+        "section_name": "Business",
+        "group": "Microsoft workforce description in 2023",
+        "similarity_score": 0.8001,
+        "reranker_score": 0.0007392533589154482,
+        "used": true,
+        "text": "The Microsoft Cloud provides the best integration across the technology stack while offering openness, improving time to value, reducing costs, and increasing agility. Being a global-scale cloud, Azure uniquely offers hybrid consistency, developer productivity, AI capabilities, and trusted security and compliance. We see more emerging use cases and needs for compute and security at the edge and are accelerating our innovation across the spectrum of intelligent edge devices, from Internet of Things (“IoT”) sensors to gateway devices and edge hardware to build, manage, and secure edge workloads. Our AI platform, Azure AI, is helping organizations transform, bringing intelligence and insights to the hands of their employees and customers to solve their most pressing challenges. Organizations large and small are deploying Azure AI solutions to achieve more at scale, more easily, with the proper enterprise-level and responsible AI protections. We have a long-term partnership with OpenAI, a leading AI research and deployment company. We deploy OpenAI’s models across our consumer and enterprise products. As OpenAI’s exclusive cloud provider, Azure powers all of OpenAI's workloads. We have also increased our investments in the development and deployment of specialized supercomputing systems to accelerate OpenAI’s research. Our hybrid infrastructure offers integrated, end-to-end security, compliance, identity, and management capabilities to support the real-world needs and evolving regulatory requirements of commercial customers and enterprises. Our industry clouds bring together capabilities across the entire Microsoft Cloud, along with industry-specific customizations. Azure Arc simplifies governance and management by delivering a consistent multi-cloud and on-premises management platform. Nuance, a leader in conversational AI and ambient intelligence across industries including healthcare, financial services, retail, and telecommunications, joined Microsoft in 2022. Microsoft and Nuance enable organizations to accelerate their business goals with security-focused, cloud-based solutions infused with AI."
+      }
+    ],
+    "outcome": "answered",
+    "scores": {
+      "faithfulness": 1.0,
+      "answer_relevance": 0.8955,
+      "context_recall": 0.0,
+      "ground_truth_coverage": 0.0
+    },
+    "metric_errors": {},
+    "metric_details": {
+      "faithfulness": [
+        {
+          "statement": "Meta reported a global workforce of 67,317 employees as of December 31, 2023.",
+          "supported": true,
+          "reason": "The context explicitly states \"We had a global workforce of 67,317 employees as of December 31, 2023.\""
+        },
+        {
+          "statement": "Meta had offices in approximately 90 cities.",
+          "supported": true,
+          "reason": "The context says Meta has offices in approximately 90 cities around the world."
+        },
+        {
+          "statement": "Microsoft employed approximately 221,000 full-time people as of June 30, 2023.",
+          "supported": true,
+          "reason": "The Microsoft excerpt notes \"As of June 30, 2023, we employed approximately 221,000 people on a full-time basis.\""
+        },
+        {
+          "statement": "Microsoft employed approximately 120,000 full-time people in the United States as of June 30, 2023.",
+          "supported": true,
+          "reason": "The same excerpt specifies \"120,000 in the U.S.\""
+        },
+        {
+          "statement": "Microsoft employed approximately 101,000 full-time people internationally as of June 30, 2023.",
+          "supported": true,
+          "reason": "The excerpt also mentions \"101,000 ... internationally.\""
+        },
+        {
+          "statement": "Meta highlighted cost reduction efforts including layoffs.",
+          "supported": true,
+          "reason": "The context describes steps to reduce expense base, including \"employee layoffs and restructurings.\""
+        },
+        {
+          "statement": "Meta emphasized competitive compensation.",
+          "supported": true,
+          "reason": "Meta statements repeatedly say \"We offer competitive compensation\" and \"competitive compensation to attract and retain the best people.\""
+        },
+        {
+          "statement": "Meta emphasized equity grants.",
+          "supported": true,
+          "reason": "The context notes that full-time employees receive equity at hire and through annual equity grants."
+        },
+        {
+          "statement": "Meta emphasized pay equity across genders and races.",
+          "supported": true,
+          "reason": "Meta reports that analyses confirm pay equity across genders globally and by race in the United States."
+        },
+        {
+          "statement": "Microsoft focused on a growth mindset culture.",
+          "supported": true,
+          "reason": "Microsoft’s culture is described as \"grounded in growth mindset.\""
+        },
+        {
+          "statement": "Microsoft emphasized hybrid work flexibility.",
+          "supported": true,
+          "reason": "Microsoft mentions introducing \"Hybrid Workplace Flexibility Guidance\" and supporting hybrid work scenarios."
+        },
+        {
+          "statement": "Microsoft reported specific progress toward doubling the number of Black and African American leaders by 2025.",
+          "supported": true,
+          "reason": "Microsoft states it is 93% of the way to its 2025 commitment to double the number of Black and African American people managers and 107% for directors."
+        },
+        {
+          "statement": "Meta described Meta's compensation as market-competitive.",
+          "supported": true,
+          "reason": "Meta’s compensation is described as \"market-competitive salary\" and \"competitive compensation.\""
+        },
+        {
+          "statement": "Microsoft described Microsoft’s compensation as market-competitive.",
+          "supported": true,
+          "reason": "Microsoft’s text says its total compensation opportunity is \"market competitive.\""
+        },
+        {
+          "statement": "Meta committed to a diverse, inclusive workplace with extensive benefits and learning resources.",
+          "supported": true,
+          "reason": "Meta’s excerpts detail a diverse, inclusive workplace, extensive benefits, and learning and development resources."
+        },
+        {
+          "statement": "Microsoft committed to a diverse, inclusive workplace with extensive benefits and learning resources.",
+          "supported": true,
+          "reason": "Microsoft’s excerpts describe a commitment to diversity, inclusion, extensive benefits, and learning opportunities."
+        }
+      ],
+      "ground_truth_coverage": [
+        {
+          "fact": "Meta's headcount was 67,317 on December 31, 2023, a 22% year-over-year decrease.",
+          "supported": false,
+          "reason": "The context provides the exact headcount for Meta on that date, but does not mention any year-over-year percentage change."
+        },
+        {
+          "fact": "Microsoft reduced its workforce by about 10,000 jobs through the third quarter of fiscal year 2023, representing less than 5% of its total employee base.",
+          "supported": false,
+          "reason": "The context gives Microsoft’s total employee count as of June 30, 2023, but contains no information about workforce reductions or percentages."
+        },
+        {
+          "fact": "Meta's headcount reduction in 2023 was proportionally larger than Microsoft's, with 22% versus less than 5%.",
+          "supported": false,
+          "reason": "The context mentions cost‑reduction efforts for Meta and provides headcount numbers, but it does not provide any percentage figures for either company's reductions."
+        }
+      ]
+    },
+    "seconds": 50.2,
+    "usage": {
+      "calls": 11,
+      "prompt_tokens": 39161,
+      "completion_tokens": 5464,
+      "cost_usd": 0.020681,
+      "unpriced_calls": 0
+    }
+  }
+}

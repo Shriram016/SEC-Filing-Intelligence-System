@@ -1,0 +1,45 @@
+2026-10-14 10:28:20 [INFO ] ============================================================
+2026-10-14 10:28:20 [INFO ] PIPELINE | query_start | query='[EVAL Q14] How did Meta and Microsoft describe their workforce in their 2023 annual reports?'
+2026-10-14 10:28:20 [INFO ] ============================================================
+2026-10-14 10:28:20 [INFO ] RETRIEVER | ENTER | query='How did Meta and Microsoft describe their workforce in their 2023 annual reports?' top_k=10
+2026-10-14 10:28:20 [INFO ] RETRIEVER | filter_extraction | ENTER | query='How did Meta and Microsoft describe their workforce in their 2023 annual reports?'
+2026-10-14 10:28:20 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 10:28:21 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "META",\n        "MSFT"\n    ],\n    "years": [\n        2023\n    ],\n    "sections": [\n        "Item 1"\n    ],\n    "sub_query_template": "<company> workforce description in <year>"\n}'
+2026-10-14 10:28:21 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['META', 'MSFT'] years=[2023] sections=['Item 1'] sub_query_template='<company> workforce description in <year>' rejection_reason=None
+2026-10-14 10:28:21 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 10:28:21 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'META', 'year': 2023, 'section': 'Item 1'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'}]
+2026-10-14 10:28:21 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 1'} n_results=10
+2026-10-14 10:28:22 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 1'} chunks_returned=10
+2026-10-14 10:28:22 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'} n_results=10
+2026-10-14 10:28:22 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'} chunks_returned=10
+2026-10-14 10:28:22 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 1'} sub_query='Meta workforce description in 2023'
+2026-10-14 10:28:22 [INFO ] RERANKER | ENTER | query='Meta workforce description in 2023' chunks=10
+2026-10-14 10:28:22 [INFO ] RERANKER | before | top3=['META_2023_Item_1_chunk_018 cosine=0.8636', 'META_2023_Item_1_chunk_019 cosine=0.8324', 'META_2023_Item_1_chunk_022 cosine=0.8146']
+2026-10-14 10:28:25 [INFO ] RERANKER | after | top3=['META_2023_Item_1_chunk_018 reranker=0.9721', 'META_2023_Item_1_chunk_020 reranker=0.8888', 'META_2023_Item_1_chunk_019 reranker=0.7106']
+2026-10-14 10:28:25 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 10:28:25 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'} sub_query='Microsoft workforce description in 2023'
+2026-10-14 10:28:25 [INFO ] RERANKER | ENTER | query='Microsoft workforce description in 2023' chunks=10
+2026-10-14 10:28:25 [INFO ] RERANKER | before | top3=['MSFT_2023_Item_1_chunk_013 cosine=0.8464', 'MSFT_2023_Item_1_chunk_001 cosine=0.8269', 'MSFT_2023_Item_1_chunk_003 cosine=0.8252']
+2026-10-14 10:28:27 [INFO ] RERANKER | after | top3=['MSFT_2023_Item_1_chunk_011 reranker=0.4357', 'MSFT_2023_Item_1_chunk_013 reranker=0.4234', 'MSFT_2023_Item_1_chunk_014 reranker=0.1420']
+2026-10-14 10:28:27 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=6/10
+2026-10-14 10:28:27 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 10:28:27 [INFO ] SYNTHESIZER | ENTER | query='How did Meta and Microsoft describe their workforce in their 2023 annual reports?' chunks_received=20
+2026-10-14 10:28:27 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 10:28:27 [INFO ] SYNTHESIZER | context | sources=['Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1']
+2026-10-14 10:28:27 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Meta workforce description in 2023 ===\n\n[1] Meta | 2023 | Business\n"For additional information about government regulation applicable to our business, see Part I, Item 1A, "Risk Factors" in this Annual Report on Form 10-K. Human Capital\nAt Meta, everything we do is about helpi'
+2026-10-14 10:28:27 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 10:28:28 [INFO ] SYNTHESIZER | Groq response | answer_length=776 chars
+2026-10-14 10:28:28 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **Meta**: Reported a global workforce of 67,317 employees as of December 31, 2023, with offices in approximately 90 cities.
+*   **Microsoft**: Employed approximately 221,000 full-time people as of June 30, 2023, with 120,000 in the U.S. and 101,000 internationally.
+*   **Meta**: Highlighted cost reduction efforts including layoffs, while emphasizing competitive compensation, equity grants, and pay equity across genders and races.
+*   **Microsoft**: Focused on a "growth mindset" culture, hybrid work flexibility, and specific progress toward doubling the number of Black and African American leaders by 2025.
+*   **Both**: Described their compensation as market-competitive and committed to diverse, inclusive workplaces with extensive benefits and learning resources.
+2026-10-14 10:28:28 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 10:28:28 [INFO ] SCORER | ENTER | answer_preview='*   **Meta**: Reported a global workforce of 67,317 employees as of December 31,' sources=20
+2026-10-14 10:28:28 [INFO ] SCORER | avg_retrieval_similarity=0.8107
+2026-10-14 10:28:28 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=776 chars sources=20
+2026-10-14 10:28:28 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 10:28:29 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 10:28:29 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 10:28:29 [INFO ] SCORER | EXIT | confidence=0.9243 faithfulness=1.0 avg_retrieval_similarity=0.8107

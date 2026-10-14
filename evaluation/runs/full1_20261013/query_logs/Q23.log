@@ -1,0 +1,68 @@
+2026-10-13 11:16:02 [INFO ] ============================================================
+2026-10-13 11:16:02 [INFO ] PIPELINE | query_start | query="[EVAL Q23] Did Apple's stance on single-source supplier risk change between 2020 and 2023?"
+2026-10-13 11:16:02 [INFO ] ============================================================
+2026-10-13 11:16:02 [INFO ] RETRIEVER | ENTER | query="Did Apple's stance on single-source supplier risk change between 2020 and 2023?" top_k=10
+2026-10-13 11:16:02 [INFO ] RETRIEVER | filter_extraction | ENTER | query="Did Apple's stance on single-source supplier risk change between 2020 and 2023?"
+2026-10-13 11:16:02 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-13 11:16:02 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AAPL"],\n    "years": [2020, 2023],\n    "sections": ["Item 1A"],\n    "sub_query_template": "<company> single-source supplier risk disclosures in <year>"\n}'
+2026-10-13 11:16:02 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AAPL'] years=[2020, 2023] sections=['Item 1A'] sub_query_template='<company> single-source supplier risk disclosures in <year>' rejection_reason=None
+2026-10-13 11:16:02 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-13 11:16:02 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'}, {'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'}]
+2026-10-13 11:16:02 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} n_results=10
+2026-10-13 11:16:02 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} chunks_returned=10
+2026-10-13 11:16:02 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} n_results=10
+2026-10-13 11:16:02 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} chunks_returned=10
+2026-10-13 11:16:02 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} sub_query='Apple single-source supplier risk disclosures in 2020'
+2026-10-13 11:16:02 [INFO ] RERANKER | ENTER | query='Apple single-source supplier risk disclosures in 2020' chunks=10
+2026-10-13 11:16:02 [INFO ] RERANKER | before | top3=['AAPL_2020_Item_1A_chunk_035 cosine=0.8229', 'AAPL_2020_Item_1A_chunk_010 cosine=0.8063', 'AAPL_2020_Item_1A_chunk_008 cosine=0.8058']
+2026-10-13 11:16:05 [INFO ] RERANKER | after | top3=['AAPL_2020_Item_1A_chunk_035 reranker=0.4213', 'AAPL_2020_Item_1A_chunk_030 reranker=0.1140', 'AAPL_2020_Item_1A_chunk_029 reranker=0.0875']
+2026-10-13 11:16:05 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-13 11:16:05 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} sub_query='Apple single-source supplier risk disclosures in 2023'
+2026-10-13 11:16:05 [INFO ] RERANKER | ENTER | query='Apple single-source supplier risk disclosures in 2023' chunks=10
+2026-10-13 11:16:05 [INFO ] RERANKER | before | top3=['AAPL_2023_Item_1A_chunk_037 cosine=0.8270', 'AAPL_2023_Item_1A_chunk_017 cosine=0.8208', 'AAPL_2023_Item_1A_chunk_030 cosine=0.8182']
+2026-10-13 11:16:07 [INFO ] RERANKER | after | top3=['AAPL_2023_Item_1A_chunk_037 reranker=0.6727', 'AAPL_2023_Item_1A_chunk_017 reranker=0.2846', 'AAPL_2023_Item_1A_chunk_030 reranker=0.2606']
+2026-10-13 11:16:07 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=5/10
+2026-10-13 11:16:07 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-13 11:16:07 [INFO ] SYNTHESIZER | ENTER | query="Did Apple's stance on single-source supplier risk change between 2020 and 2023?" chunks_received=20
+2026-10-13 11:16:07 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-13 11:16:07 [INFO ] SYNTHESIZER | context | sources=['Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A']
+2026-10-13 11:16:07 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Apple single-source supplier risk disclosures in 2020 ===\n\n[1] Apple | 2020 | Risk Factors\n"The Company distributes its products through third-party cellular network carriers, wholesalers, retailers and resellers. The Company also sells its products directly to small and mid-s'
+2026-10-13 11:16:07 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-13 11:16:10 [INFO ] SYNTHESIZER | Groq response | answer_length=4746 chars
+2026-10-13 11:16:10 [INFO ] SYNTHESIZER | Groq response | answer=
+Based on the provided excerpts, Apple’s stance on single-source supplier risk did not fundamentally change between 2020 and 2023; the company continued to disclose a significant reliance on single or limited sources for critical components and manufacturing, while acknowledging the associated risks. However, the 2023 disclosures included specific updates regarding the nature of the disruptions and the consequences of past delays.
+
+**Similarities in Stance (2020 vs. 2023):**
+*   **Reliance on Single/Limited Sources:** Both years explicitly state that Apple relies on "single or limited sources" for the supply and manufacture of many critical components.
+    *   *2020:* "Because the Company relies on single or limited sources for the supply and manufacture of many critical components, a business interruption affecting such sources would exacerbate any negative consequences to the Company." [2]
+    *   *2023:* "Because the Company currently obtains certain components from single or limited sources, the Company is subject to significant supply and pricing risks." [14]
+*   **Geographic Concentration:** Both years note that final assembly is performed primarily in Asia by a small number of outsourcing partners.
+    *   *2020:* "Substantially all of the Company’s manufacturing is performed in whole or in part by outsourcing partners located primarily in Asia. A significant concentration of this manufacturing is currently performed by a small number of outsourcing partners, often in single locations." [5]
+    *   *2023:* "The Company relies on... outsourcing partners primarily located in Asia, for final assembly of substantially all of the Company’s hardware products." [15]
+*   **Custom Components:** Both years highlight that new products often use custom components available from only one source.
+    *   *2020:* "The Company’s new products often utilize custom components available from only one source." [9]
+    *   *2023:* "The Company’s new products often utilize custom components available from only one source." [14]
+*   **Risk of Disruption:** Both years warn that business interruptions at these sources (due to disasters, political issues, etc.) would have a material adverse effect.
+    *   *2020:* "Any failure of these partners to perform can have a negative impact on the Company’s cost or supply of components or finished goods." [7]
+    *   *2023:* "Any failure of these partners to perform can have a negative impact on the Company’s cost or supply of components or finished goods." [15]
+
+**Differences/Updates in 2023 Disclosures:**
+*   **Specific Industry Example:** The 2023 filing specifically cites the **global semiconductor industry** as an example of past high demand and shortages that adversely affected Apple, whereas the 2020 filing discussed industry-wide shortages more generally without naming the semiconductor sector specifically.
+    *   *2023:* "For example, the global semiconductor industry has in the past experienced high demand and shortages of supply, which adversely affected the Company’s ability to obtain sufficient quantities of components and products on commercially reasonable terms or at all." [14]
+*   **Past Impact Acknowledgment:** The 2023 filing states that when supply has been delayed or constrained, the company’s business **has been** adversely affected (past tense), whereas the 2020 filing focused more on the potential for future material adverse effects.
+    *   *2023:* "When the Company’s supply of components for a new or existing product has been delayed or constrained... the Company’s business, results of operations and financial condition have been adversely affected..." [16]
+    *   *2020:* "If the Company’s supply of components... were delayed or constrained... the Company’s financial condition and operating results could be materially adversely affected." [5]
+*   **Threat Landscape:** The 2023 filing adds **ransomware and other cybersecurity attacks** and **armed conflict** to the list of potential disruption causes, whereas the 2020 filing listed "military actions" and "terrorist attacks" but did not explicitly mention ransomware in the context of supply chain disruption.
+    *   *2023:* "...disrupted for a variety of reasons, including... armed conflict... ransomware and other cybersecurity attacks..." [15]
+    *   *2020:* "...disrupted for a variety of reasons including... military actions... terrorist attacks..." [7]
+
+**Conclusion:**
+Apple’s core stance remained consistent: it acknowledges a high degree of reliance on single-source suppliers and limited sources for critical components and manufacturing, primarily in Asia, and recognizes this as a significant risk to its financial condition. The 2023 disclosure refined this
+2026-10-13 11:16:10 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-13 11:16:10 [INFO ] SCORER | ENTER | answer_preview='Based on the provided excerpts, Apple’s stance on single-source supplier risk di' sources=20
+2026-10-13 11:16:10 [INFO ] SCORER | avg_retrieval_similarity=0.8067
+2026-10-13 11:16:10 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=4746 chars sources=20
+2026-10-13 11:16:10 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-13 11:16:10 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-13 11:16:10 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-13 11:16:10 [INFO ] SCORER | EXIT | confidence=0.9227 faithfulness=1.0 avg_retrieval_similarity=0.8067

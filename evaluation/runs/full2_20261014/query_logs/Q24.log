@@ -1,0 +1,48 @@
+2026-10-14 11:51:20 [INFO ] ============================================================
+2026-10-14 11:51:20 [INFO ] PIPELINE | query_start | query="[EVAL Q24] Did Microsoft's position on AI risk change between 2022 and 2024?"
+2026-10-14 11:51:20 [INFO ] ============================================================
+2026-10-14 11:51:20 [INFO ] RETRIEVER | ENTER | query="Did Microsoft's position on AI risk change between 2022 and 2024?" top_k=10
+2026-10-14 11:51:20 [INFO ] RETRIEVER | filter_extraction | ENTER | query="Did Microsoft's position on AI risk change between 2022 and 2024?"
+2026-10-14 11:51:20 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:51:20 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["MSFT"],\n    "years": [2022, 2024],\n    "sections": ["Item 1A"],\n    "sub_query_template": "<company> AI risk disclosures in <year>"\n}'
+2026-10-14 11:51:20 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['MSFT'] years=[2022, 2024] sections=['Item 1A'] sub_query_template='<company> AI risk disclosures in <year>' rejection_reason=None
+2026-10-14 11:51:20 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:51:20 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'}, {'ticker': 'MSFT', 'year': 2024, 'section': 'Item 1A'}]
+2026-10-14 11:51:20 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:51:20 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:51:20 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2024, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:51:20 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2024, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:51:20 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} sub_query='Microsoft AI risk disclosures in 2022'
+2026-10-14 11:51:20 [INFO ] RERANKER | ENTER | query='Microsoft AI risk disclosures in 2022' chunks=10
+2026-10-14 11:51:20 [INFO ] RERANKER | before | top3=['MSFT_2022_Item_1A_chunk_019 cosine=0.8624', 'MSFT_2022_Item_1A_chunk_004 cosine=0.8166', 'MSFT_2022_Item_1A_chunk_018 cosine=0.8155']
+2026-10-14 11:51:23 [INFO ] RERANKER | after | top3=['MSFT_2022_Item_1A_chunk_019 reranker=0.1041', 'MSFT_2022_Item_1A_chunk_010 reranker=0.0637', 'MSFT_2022_Item_1A_chunk_018 reranker=0.0378']
+2026-10-14 11:51:23 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=7/10
+2026-10-14 11:51:23 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2024, 'section': 'Item 1A'} sub_query='Microsoft AI risk disclosures in 2024'
+2026-10-14 11:51:23 [INFO ] RERANKER | ENTER | query='Microsoft AI risk disclosures in 2024' chunks=10
+2026-10-14 11:51:23 [INFO ] RERANKER | before | top3=['MSFT_2024_Item_1A_chunk_022 cosine=0.8575', 'MSFT_2024_Item_1A_chunk_021 cosine=0.8301', 'MSFT_2024_Item_1A_chunk_023 cosine=0.8296']
+2026-10-14 11:51:25 [INFO ] RERANKER | after | top3=['MSFT_2024_Item_1A_chunk_010 reranker=0.3656', 'MSFT_2024_Item_1A_chunk_022 reranker=0.1022', 'MSFT_2024_Item_1A_chunk_021 reranker=0.0959']
+2026-10-14 11:51:25 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:51:25 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:51:25 [INFO ] SYNTHESIZER | ENTER | query="Did Microsoft's position on AI risk change between 2022 and 2024?" chunks_received=20
+2026-10-14 11:51:25 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:51:25 [INFO ] SYNTHESIZER | context | sources=['Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Microsoft 2024 Item 1A']
+2026-10-14 11:51:25 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Microsoft AI risk disclosures in 2022 ===\n\n[1] Microsoft | 2022 | Risk Factors\n"As with many innovations, AI presents risks and challenges that could affect its adoption, and therefore our business. AI algorithms may be flawed. Datasets may be insufficient or contain biased in'
+2026-10-14 11:51:25 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:51:26 [INFO ] SYNTHESIZER | Groq response | answer_length=1633 chars
+2026-10-14 11:51:26 [INFO ] SYNTHESIZER | Groq response | answer=
+*   Microsoft's position on AI risk evolved from general concerns about flawed algorithms and biased datasets in 2022 to specific acknowledgments of legal liability, regulatory action, and security vulnerabilities in 2024.
+*   In 2022, the company highlighted that AI algorithms may be flawed and datasets may be insufficient or biased, which could lead to competitive harm, regulatory action, and reputational damage.
+*   By 2024, the disclosure expanded to state that AI algorithms or training methodologies may be flawed and that content generated by AI systems may be offensive, illegal, inaccurate, or otherwise harmful.
+*   The 2024 filing explicitly cites current copyright infringement claims and specific new regulations, such as the EU’s AI Act and the U.S.’s AI Executive Order, as sources of legal and regulatory risk.
+*   While 2022 noted that ineffective development practices could impair acceptance or cause harm, 2024 added that human review of certain outputs may be required and that implementation could result in adverse impacts on business and financial condition.
+*   A new risk category emerged in 2024 regarding security, noting that features relying on generative AI may be susceptible to unanticipated security threats from adversaries.
+*   The core concern that AI presents risks and challenges affecting adoption and business remained consistent across both years.
+*   The 2024 disclosure also noted that AI may be developed by Microsoft or others, including strategic partner OpenAI, whereas the 2022 text focused more broadly on Microsoft or others without naming specific partners in the risk context.
+2026-10-14 11:51:26 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:51:26 [INFO ] SCORER | ENTER | answer_preview="*   Microsoft's position on AI risk evolved from general concerns about flawed a" sources=20
+2026-10-14 11:51:26 [INFO ] SCORER | avg_retrieval_similarity=0.8153
+2026-10-14 11:51:26 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=1633 chars sources=20
+2026-10-14 11:51:26 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:51:27 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:51:27 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:51:27 [INFO ] SCORER | EXIT | confidence=0.9261 faithfulness=1.0 avg_retrieval_similarity=0.8153

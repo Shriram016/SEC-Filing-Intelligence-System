@@ -1,0 +1,41 @@
+2026-10-14 11:46:09 [INFO ] ============================================================
+2026-10-14 11:46:09 [INFO ] PIPELINE | query_start | query='[EVAL Q16] What are the biggest risks facing large technology companies?'
+2026-10-14 11:46:09 [INFO ] ============================================================
+2026-10-14 11:46:09 [INFO ] RETRIEVER | ENTER | query='What are the biggest risks facing large technology companies?' top_k=10
+2026-10-14 11:46:09 [INFO ] RETRIEVER | filter_extraction | ENTER | query='What are the biggest risks facing large technology companies?'
+2026-10-14 11:46:09 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:46:09 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [],\n    "years": [],\n    "sections": ["Item 1A"],\n    "sub_query_template": null\n}'
+2026-10-14 11:46:09 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=[] years=[] sections=['Item 1A'] sub_query_template=None rejection_reason=None
+2026-10-14 11:46:09 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:46:09 [INFO ] RETRIEVER | combinations | count=1 combos=[{'section': 'Item 1A'}]
+2026-10-14 11:46:09 [INFO ] RETRIEVER | ChromaDB call | combo={'section': 'Item 1A'} n_results=10
+2026-10-14 11:46:09 [INFO ] RETRIEVER | ChromaDB result | combo={'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:46:09 [INFO ] RERANKER | ENTER | query='What are the biggest risks facing large technology companies?' chunks=10
+2026-10-14 11:46:09 [INFO ] RERANKER | before | top3=['MSFT_2021_Item_1A_chunk_001 cosine=0.8556', 'MSFT_2022_Item_1A_chunk_001 cosine=0.8556', 'MSFT_2020_Item_1A_chunk_001 cosine=0.8546']
+2026-10-14 11:46:11 [INFO ] RERANKER | after | top3=['GOOGL_2022_Item_1A_chunk_043 reranker=0.2934', 'MSFT_2020_Item_1A_chunk_037 reranker=0.1404', 'META_2020_Item_1A_chunk_002 reranker=0.0562']
+2026-10-14 11:46:11 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=10/10
+2026-10-14 11:46:11 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | ENTER | query='What are the biggest risks facing large technology companies?' chunks_received=10
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | context | sources=['Google 2022 Item 1A', 'Microsoft 2020 Item 1A', 'Meta 2020 Item 1A', 'Meta 2024 Item 1A', 'Meta 2023 Item 1A', 'Meta 2022 Item 1A', 'Microsoft 2021 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2020 Item 1A', 'Google 2023 Item 1A']
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Google | 2022 | Risk Factors\n"Some of the areas where we face risks include: \n•\ndiversion of management time and focus from operating our business to challenges related to acquisitions and other strategic transactions; \n•\nfailure to obtain required approvals on a timely basis,'
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | Groq response | answer_length=1722 chars
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | Groq response | answer=
+Based on the provided excerpts, the major risks facing large technology companies include:
+
+*   **Intense Competition:** Microsoft and Google face intense competition across all markets, with low barriers to entry and rapid technological evolution that can lead to lower revenue or operating margins.
+*   **Acquisition and Integration Challenges:** Google, Meta, and Microsoft identify risks related to the failure to successfully integrate acquired operations, technologies, and personnel, as well as the potential liability for pre-acquisition activities.
+*   **Supply Chain and Manufacturing:** Google and Microsoft highlight risks associated with reliance on contract manufacturers and suppliers, including potential failures to meet obligations, pricing changes, or disruptions in the supply of components and hardware.
+*   **Regulatory and Government Actions:** Meta and Microsoft note risks from complex and evolving government regulations, restrictions on product access, and the need to obtain timely approvals for strategic transactions.
+*   **Litigation and Legal Claims:** All three companies cite litigation, including class action lawsuits and claims from employees, customers, or third parties, as a significant risk to their financial condition and reputation.
+*   **Operational and Infrastructure Disruptions:** Meta and Microsoft identify risks related to maintaining technical infrastructure, service disruptions, and the ability to sustain operations during crises or changes in usage patterns.
+*   **Brand and User Engagement:** Meta and Google emphasize the risk of failing to retain users, maintain engagement, or enhance their brands, which could adversely affect their ability to generate revenue.
+2026-10-14 11:46:12 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-14 11:46:13 [INFO ] SCORER | ENTER | answer_preview='Based on the provided excerpts, the major risks facing large technology companie' sources=10
+2026-10-14 11:46:13 [INFO ] SCORER | avg_retrieval_similarity=0.8513
+2026-10-14 11:46:13 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=1722 chars sources=10
+2026-10-14 11:46:13 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:46:13 [INFO ] SCORER | faithfulness_judge | Groq response | raw='4'
+2026-10-14 11:46:13 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=4 normalized=0.75
+2026-10-14 11:46:13 [INFO ] SCORER | EXIT | confidence=0.7905 faithfulness=0.75 avg_retrieval_similarity=0.8513

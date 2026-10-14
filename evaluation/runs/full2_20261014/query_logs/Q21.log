@@ -1,0 +1,9 @@
+2026-10-14 11:49:02 [INFO ] ============================================================
+2026-10-14 11:49:02 [INFO ] PIPELINE | query_start | query="[EVAL Q21] What is Tesla's revenue in 2023?"
+2026-10-14 11:49:02 [INFO ] ============================================================
+2026-10-14 11:49:02 [INFO ] RETRIEVER | ENTER | query="What is Tesla's revenue in 2023?" top_k=10
+2026-10-14 11:49:02 [INFO ] RETRIEVER | filter_extraction | ENTER | query="What is Tesla's revenue in 2023?"
+2026-10-14 11:49:02 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:49:02 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": false,\n    "rejection_reason": "Tesla is not in the supported company list",\n    "tickers": [],\n    "years": [2023],\n    "sections": ["Item 7"],\n    "sub_query_template": null\n}'
+2026-10-14 11:49:02 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=False tickers=[] years=[2023] sections=['Item 7'] sub_query_template=None rejection_reason='Tesla is not in the supported company list'
+2026-10-14 11:49:02 [WARNING] RETRIEVER | EXIT | query rejected | reason='Tesla is not in the supported company list'

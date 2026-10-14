@@ -1,0 +1,30 @@
+2026-10-14 11:52:47 [INFO ] ============================================================
+2026-10-14 11:52:47 [INFO ] PIPELINE | query_start | query="[EVAL Q27] What was Amazon's accounts receivable balance at the end of 2021?"
+2026-10-14 11:52:47 [INFO ] ============================================================
+2026-10-14 11:52:47 [INFO ] RETRIEVER | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?" top_k=10
+2026-10-14 11:52:47 [INFO ] RETRIEVER | filter_extraction | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?"
+2026-10-14 11:52:47 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:52:47 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AMZN"],\n    "years": [2021],\n    "sections": [],\n    "sub_query_template": null\n}'
+2026-10-14 11:52:47 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AMZN'] years=[2021] sections=[] sub_query_template=None rejection_reason=None
+2026-10-14 11:52:47 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:52:47 [INFO ] RETRIEVER | combinations | count=1 combos=[{'ticker': 'AMZN', 'year': 2021}]
+2026-10-14 11:52:47 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN', 'year': 2021} n_results=10
+2026-10-14 11:52:47 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN', 'year': 2021} chunks_returned=10
+2026-10-14 11:52:47 [INFO ] RERANKER | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?" chunks=10
+2026-10-14 11:52:47 [INFO ] RERANKER | before | top3=['AMZN_2021_Item_1_chunk_007 cosine=0.8135', 'AMZN_2021_Item_1_chunk_006 cosine=0.8131', 'AMZN_2021_Item_7_chunk_011 cosine=0.8119']
+2026-10-14 11:52:50 [INFO ] RERANKER | after | top3=['AMZN_2021_Item_1_chunk_007 reranker=0.0902', 'AMZN_2021_Item_7_chunk_011 reranker=0.0353', 'AMZN_2021_Item_7A_chunk_004 reranker=0.0140']
+2026-10-14 11:52:50 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:52:50 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?" chunks_received=10
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | context | sources=['Amazon 2021 Item 1', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7A', 'Amazon 2021 Item 7', 'Amazon 2021 Item 1', 'Amazon 2021 Item 1', 'Amazon 2021 Item 1A', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7']
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Amazon | 2021 | Business\n"Brian T. Olsavsky. Mr. Olsavsky has served as Senior Vice President and Chief Financial Officer since June 2015, Vice President, Finance for the Global Consumer Business from December 2011 to June 2015, and numerous financial leadership roles across A'
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | Groq response | answer_length=81 chars
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | Groq response | answer=
+The provided context does not contain enough information to answer this question.
+2026-10-14 11:52:50 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-14 11:52:50 [INFO ] SCORER | ENTER | answer_preview='The provided context does not contain enough information to answer this question' sources=10
+2026-10-14 11:52:50 [INFO ] SCORER | avg_retrieval_similarity=0.8096
+2026-10-14 11:52:50 [INFO ] SCORER | refusal_detected | faithfulness=1.0 (no Groq call needed)
+2026-10-14 11:52:50 [INFO ] SCORER | EXIT | confidence=0.9238 faithfulness=1.0 avg_retrieval_similarity=0.8096

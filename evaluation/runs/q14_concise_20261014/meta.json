@@ -1,0 +1,37 @@
+{
+  "run_id": "q14_concise_20261014",
+  "started": "2026-10-14T10:27:52.329429",
+  "pipeline_model": "qwen/qwen3.8-27b",
+  "judge_model": "openai/gpt-oss-120b",
+  "eval_framework": "ragas-0.4.3",
+  "evaluator_version": "2026-10-14: numbered judge passages, ground_truth_coverage, per-statement details",
+  "ground_truth_coverage": "share of ground-truth facts supported by the answer (RAGAS claim checking, own aggregation)",
+  "prices_per_million_tokens": {
+    "openai/gpt-oss-120b": [
+      0.15,
+      0.6
+    ],
+    "qwen/qwen3.8-27b": [
+      0.8,
+      4.0
+    ]
+  },
+  "prices_checked": "2026-10-13",
+  "query_file": "evaluation/eval_queries_v2.json",
+  "num_queries_selected": 1,
+  "git": {
+    "commit": "f59e9876c44e274e631b04de6ab4c418e93f55c5",
+    "dirty": true
+  },
+  "args": {
+    "queries": [
+      "Q14"
+    ],
+    "run_id": "q14_concise_20261014",
+    "judge_model": "openai/gpt-oss-120b",
+    "metric_delay": 5,
+    "query_delay": 10,
+    "dry_run": false
+  },
+  "finished": "2026-10-14T10:29:10.635366"
+}

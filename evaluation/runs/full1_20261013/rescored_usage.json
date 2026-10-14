@@ -1,0 +1,1558 @@
+{
+  "prices_per_million_tokens": {
+    "openai/gpt-oss-120b": [
+      0.15,
+      0.6
+    ],
+    "qwen/qwen3.8-27b": [
+      0.8,
+      4.0
+    ]
+  },
+  "total": {
+    "calls": 213,
+    "prompt_tokens": 534808,
+    "completion_tokens": 198493,
+    "cost_usd": 0.199317,
+    "unpriced_calls": 0
+  },
+  "by_model": {
+    "openai/gpt-oss-120b": {
+      "calls": 213,
+      "prompt_tokens": 534808,
+      "completion_tokens": 198493,
+      "cost_usd": 0.199317,
+      "unpriced_calls": 0
+    }
+  },
+  "by_stage": {
+    "judge:answer_relevance": {
+      "calls": 63,
+      "prompt_tokens": 84591,
+      "completion_tokens": 12952,
+      "cost_usd": 0.02046,
+      "unpriced_calls": 0
+    },
+    "judge:context_precision": {
+      "calls": 54,
+      "prompt_tokens": 84711,
+      "completion_tokens": 15643,
+      "cost_usd": 0.022092,
+      "unpriced_calls": 0
+    },
+    "judge:context_recall": {
+      "calls": 18,
+      "prompt_tokens": 139961,
+      "completion_tokens": 13947,
+      "cost_usd": 0.029362,
+      "unpriced_calls": 0
+    },
+    "judge:faithfulness": {
+      "calls": 42,
+      "prompt_tokens": 181615,
+      "completion_tokens": 131373,
+      "cost_usd": 0.106066,
+      "unpriced_calls": 0
+    },
+    "judge:ground_truth_coverage": {
+      "calls": 36,
+      "prompt_tokens": 43930,
+      "completion_tokens": 24578,
+      "cost_usd": 0.021336,
+      "unpriced_calls": 0
+    }
+  },
+  "calls": [
+    {
+      "query_id": "Q01",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1169,
+      "completion_tokens": 2643
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5439,
+      "completion_tokens": 4735
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1280,
+      "completion_tokens": 221
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1280,
+      "completion_tokens": 160
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1280,
+      "completion_tokens": 198
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1520,
+      "completion_tokens": 228
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1514,
+      "completion_tokens": 286
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1542,
+      "completion_tokens": 431
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1567,
+      "completion_tokens": 309
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1513,
+      "completion_tokens": 410
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1543,
+      "completion_tokens": 332
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1546,
+      "completion_tokens": 360
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1567,
+      "completion_tokens": 331
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1555,
+      "completion_tokens": 646
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1516,
+      "completion_tokens": 407
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5136,
+      "completion_tokens": 612
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 625,
+      "completion_tokens": 318
+    },
+    {
+      "query_id": "Q01",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1704,
+      "completion_tokens": 581
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1145,
+      "completion_tokens": 4248
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5289,
+      "completion_tokens": 4619
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1259,
+      "completion_tokens": 175
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1259,
+      "completion_tokens": 172
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1259,
+      "completion_tokens": 172
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1563,
+      "completion_tokens": 224
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1578,
+      "completion_tokens": 489
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1570,
+      "completion_tokens": 339
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1580,
+      "completion_tokens": 287
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1540,
+      "completion_tokens": 273
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1587,
+      "completion_tokens": 239
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1557,
+      "completion_tokens": 466
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1580,
+      "completion_tokens": 217
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1566,
+      "completion_tokens": 246
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1563,
+      "completion_tokens": 213
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5302,
+      "completion_tokens": 848
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 643,
+      "completion_tokens": 610
+    },
+    {
+      "query_id": "Q02",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1706,
+      "completion_tokens": 835
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 710,
+      "completion_tokens": 668
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5034,
+      "completion_tokens": 671
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 816,
+      "completion_tokens": 183
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 816,
+      "completion_tokens": 162
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 816,
+      "completion_tokens": 201
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1693,
+      "completion_tokens": 159
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1574,
+      "completion_tokens": 289
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1559,
+      "completion_tokens": 159
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1485,
+      "completion_tokens": 190
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1543,
+      "completion_tokens": 159
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1538,
+      "completion_tokens": 169
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1528,
+      "completion_tokens": 133
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1541,
+      "completion_tokens": 230
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1547,
+      "completion_tokens": 163
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1636,
+      "completion_tokens": 168
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5514,
+      "completion_tokens": 452
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 607,
+      "completion_tokens": 291
+    },
+    {
+      "query_id": "Q03",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1226,
+      "completion_tokens": 389
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 742,
+      "completion_tokens": 1172
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 4795,
+      "completion_tokens": 1566
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 850,
+      "completion_tokens": 192
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 850,
+      "completion_tokens": 191
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 850,
+      "completion_tokens": 193
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1508,
+      "completion_tokens": 347
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1547,
+      "completion_tokens": 316
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1561,
+      "completion_tokens": 530
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1565,
+      "completion_tokens": 368
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1534,
+      "completion_tokens": 326
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1559,
+      "completion_tokens": 291
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1565,
+      "completion_tokens": 309
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1564,
+      "completion_tokens": 363
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1536,
+      "completion_tokens": 188
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1523,
+      "completion_tokens": 245
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5242,
+      "completion_tokens": 605
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 619,
+      "completion_tokens": 422
+    },
+    {
+      "query_id": "Q04",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1286,
+      "completion_tokens": 820
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 757,
+      "completion_tokens": 603
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5895,
+      "completion_tokens": 963
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 865,
+      "completion_tokens": 185
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 865,
+      "completion_tokens": 180
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 865,
+      "completion_tokens": 181
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1753,
+      "completion_tokens": 254
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1680,
+      "completion_tokens": 220
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1672,
+      "completion_tokens": 229
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1579,
+      "completion_tokens": 513
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1697,
+      "completion_tokens": 213
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1741,
+      "completion_tokens": 250
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1539,
+      "completion_tokens": 175
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1544,
+      "completion_tokens": 243
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1586,
+      "completion_tokens": 183
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1530,
+      "completion_tokens": 234
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 6326,
+      "completion_tokens": 474
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 594,
+      "completion_tokens": 290
+    },
+    {
+      "query_id": "Q05",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1275,
+      "completion_tokens": 359
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 931,
+      "completion_tokens": 1503
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2799,
+      "completion_tokens": 1526
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1042,
+      "completion_tokens": 205
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1042,
+      "completion_tokens": 171
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1042,
+      "completion_tokens": 171
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1554,
+      "completion_tokens": 320
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1553,
+      "completion_tokens": 430
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1586,
+      "completion_tokens": 217
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:context_precision",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1524,
+      "completion_tokens": 327
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 3134,
+      "completion_tokens": 734
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 629,
+      "completion_tokens": 407
+    },
+    {
+      "query_id": "Q06",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1493,
+      "completion_tokens": 771
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1572,
+      "completion_tokens": 2037
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8775,
+      "completion_tokens": 3747
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1682,
+      "completion_tokens": 244
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1682,
+      "completion_tokens": 244
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1682,
+      "completion_tokens": 244
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8607,
+      "completion_tokens": 883
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 647,
+      "completion_tokens": 353
+    },
+    {
+      "query_id": "Q07",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2156,
+      "completion_tokens": 1201
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1430,
+      "completion_tokens": 4848
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9159,
+      "completion_tokens": 4513
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1537,
+      "completion_tokens": 214
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1537,
+      "completion_tokens": 214
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1537,
+      "completion_tokens": 215
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9002,
+      "completion_tokens": 1430
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 717,
+      "completion_tokens": 741
+    },
+    {
+      "query_id": "Q08",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2127,
+      "completion_tokens": 2262
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 760,
+      "completion_tokens": 901
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9812,
+      "completion_tokens": 1453
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 870,
+      "completion_tokens": 190
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 870,
+      "completion_tokens": 190
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 870,
+      "completion_tokens": 211
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 10230,
+      "completion_tokens": 410
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 619,
+      "completion_tokens": 363
+    },
+    {
+      "query_id": "Q09",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1309,
+      "completion_tokens": 314
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1552,
+      "completion_tokens": 3110
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8384,
+      "completion_tokens": 6621
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1662,
+      "completion_tokens": 249
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1662,
+      "completion_tokens": 210
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1662,
+      "completion_tokens": 249
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8043,
+      "completion_tokens": 1119
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 664,
+      "completion_tokens": 393
+    },
+    {
+      "query_id": "Q10",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2126,
+      "completion_tokens": 649
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1496,
+      "completion_tokens": 2912
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 6349,
+      "completion_tokens": 5341
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1609,
+      "completion_tokens": 292
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1609,
+      "completion_tokens": 290
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1609,
+      "completion_tokens": 294
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 6090,
+      "completion_tokens": 819
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 664,
+      "completion_tokens": 516
+    },
+    {
+      "query_id": "Q11",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2083,
+      "completion_tokens": 556
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1553,
+      "completion_tokens": 4770
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9114,
+      "completion_tokens": 5371
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1666,
+      "completion_tokens": 226
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1666,
+      "completion_tokens": 213
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1666,
+      "completion_tokens": 213
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8870,
+      "completion_tokens": 799
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 671,
+      "completion_tokens": 620
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2158,
+      "completion_tokens": 1500
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1264,
+      "completion_tokens": 2354
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9700,
+      "completion_tokens": 4188
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1379,
+      "completion_tokens": 174
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1379,
+      "completion_tokens": 166
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1379,
+      "completion_tokens": 177
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9713,
+      "completion_tokens": 555
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 640,
+      "completion_tokens": 504
+    },
+    {
+      "query_id": "Q13",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1843,
+      "completion_tokens": 728
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1518,
+      "completion_tokens": 3174
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9276,
+      "completion_tokens": 5524
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1631,
+      "completion_tokens": 210
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1631,
+      "completion_tokens": 283
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1631,
+      "completion_tokens": 221
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8985,
+      "completion_tokens": 739
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 663,
+      "completion_tokens": 523
+    },
+    {
+      "query_id": "Q14",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2106,
+      "completion_tokens": 556
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1592,
+      "completion_tokens": 2298
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 12083,
+      "completion_tokens": 5798
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1702,
+      "completion_tokens": 191
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1702,
+      "completion_tokens": 266
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1702,
+      "completion_tokens": 191
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 11807,
+      "completion_tokens": 765
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 688,
+      "completion_tokens": 547
+    },
+    {
+      "query_id": "Q15",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2213,
+      "completion_tokens": 1184
+    },
+    {
+      "query_id": "Q16",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1333,
+      "completion_tokens": 2440
+    },
+    {
+      "query_id": "Q16",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5642,
+      "completion_tokens": 5988
+    },
+    {
+      "query_id": "Q16",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1452,
+      "completion_tokens": 186
+    },
+    {
+      "query_id": "Q16",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1452,
+      "completion_tokens": 186
+    },
+    {
+      "query_id": "Q16",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1452,
+      "completion_tokens": 198
+    },
+    {
+      "query_id": "Q17",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1340,
+      "completion_tokens": 2940
+    },
+    {
+      "query_id": "Q17",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5406,
+      "completion_tokens": 3309
+    },
+    {
+      "query_id": "Q17",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1458,
+      "completion_tokens": 194
+    },
+    {
+      "query_id": "Q17",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1458,
+      "completion_tokens": 194
+    },
+    {
+      "query_id": "Q17",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1458,
+      "completion_tokens": 194
+    },
+    {
+      "query_id": "Q18",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1351,
+      "completion_tokens": 1895
+    },
+    {
+      "query_id": "Q18",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 5340,
+      "completion_tokens": 4971
+    },
+    {
+      "query_id": "Q18",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1472,
+      "completion_tokens": 249
+    },
+    {
+      "query_id": "Q18",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1472,
+      "completion_tokens": 247
+    },
+    {
+      "query_id": "Q18",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1472,
+      "completion_tokens": 249
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 687,
+      "completion_tokens": 547
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9792,
+      "completion_tokens": 1112
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 797,
+      "completion_tokens": 171
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 797,
+      "completion_tokens": 111
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 797,
+      "completion_tokens": 111
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 10280,
+      "completion_tokens": 240
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 600,
+      "completion_tokens": 444
+    },
+    {
+      "query_id": "Q22",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1221,
+      "completion_tokens": 543
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1560,
+      "completion_tokens": 4315
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8681,
+      "completion_tokens": 4851
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1671,
+      "completion_tokens": 220
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1671,
+      "completion_tokens": 220
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1671,
+      "completion_tokens": 220
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8567,
+      "completion_tokens": 1399
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 669,
+      "completion_tokens": 366
+    },
+    {
+      "query_id": "Q23",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2138,
+      "completion_tokens": 770
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1384,
+      "completion_tokens": 1876
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9005,
+      "completion_tokens": 3252
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1497,
+      "completion_tokens": 196
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1497,
+      "completion_tokens": 220
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1497,
+      "completion_tokens": 192
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 9113,
+      "completion_tokens": 1064
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 727,
+      "completion_tokens": 797
+    },
+    {
+      "query_id": "Q24",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 2074,
+      "completion_tokens": 2055
+    }
+  ]
+}

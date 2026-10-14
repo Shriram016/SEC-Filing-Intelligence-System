@@ -1,0 +1,9 @@
+2026-10-14 11:53:00 [INFO ] ============================================================
+2026-10-14 11:53:00 [INFO ] PIPELINE | query_start | query="[EVAL Q28] How much was Meta's CEO paid in 2023?"
+2026-10-14 11:53:00 [INFO ] ============================================================
+2026-10-14 11:53:00 [INFO ] RETRIEVER | ENTER | query="How much was Meta's CEO paid in 2023?" top_k=10
+2026-10-14 11:53:01 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How much was Meta's CEO paid in 2023?"
+2026-10-14 11:53:01 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:53:01 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": false,\n    "rejection_reason": "Executive compensation details are typically found in the Proxy Statement (DEF 14A), not the 10-K annual report.",\n    "tickers": ["META"],\n    "years": [2023],\n    "sections": [],\n    "sub_query_template": null\n}'
+2026-10-14 11:53:01 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=False tickers=['META'] years=[2023] sections=[] sub_query_template=None rejection_reason='Executive compensation details are typically found in the Proxy Statement (DEF 14A), not the 10-K annual report.'
+2026-10-14 11:53:01 [WARNING] RETRIEVER | EXIT | query rejected | reason='Executive compensation details are typically found in the Proxy Statement (DEF 14A), not the 10-K annual report.'

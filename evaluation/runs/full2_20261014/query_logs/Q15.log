@@ -1,0 +1,57 @@
+2026-10-14 11:44:48 [INFO ] ============================================================
+2026-10-14 11:44:48 [INFO ] PIPELINE | query_start | query='[EVAL Q15] Compare the business descriptions of Apple, Amazon, and Google in their 2022 annual reports.'
+2026-10-14 11:44:48 [INFO ] ============================================================
+2026-10-14 11:44:48 [INFO ] RETRIEVER | ENTER | query='Compare the business descriptions of Apple, Amazon, and Google in their 2022 annual reports.' top_k=10
+2026-10-14 11:44:48 [INFO ] RETRIEVER | filter_extraction | ENTER | query='Compare the business descriptions of Apple, Amazon, and Google in their 2022 annual reports.'
+2026-10-14 11:44:48 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:44:48 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "AAPL",\n        "AMZN",\n        "GOOGL"\n    ],\n    "years": [\n        2022\n    ],\n    "sections": [\n        "Item 1"\n    ],\n    "sub_query_template": "<company> business description in <year>"\n}'
+2026-10-14 11:44:48 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AAPL', 'AMZN', 'GOOGL'] years=[2022] sections=['Item 1'] sub_query_template='<company> business description in <year>' rejection_reason=None
+2026-10-14 11:44:48 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:44:48 [INFO ] RETRIEVER | combinations | count=3 combos=[{'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1'}, {'ticker': 'AMZN', 'year': 2022, 'section': 'Item 1'}, {'ticker': 'GOOGL', 'year': 2022, 'section': 'Item 1'}]
+2026-10-14 11:44:48 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1'} n_results=10
+2026-10-14 11:44:49 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1'} chunks_returned=9
+2026-10-14 11:44:49 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN', 'year': 2022, 'section': 'Item 1'} n_results=10
+2026-10-14 11:44:49 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN', 'year': 2022, 'section': 'Item 1'} chunks_returned=10
+2026-10-14 11:44:49 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'GOOGL', 'year': 2022, 'section': 'Item 1'} n_results=10
+2026-10-14 11:44:49 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'GOOGL', 'year': 2022, 'section': 'Item 1'} chunks_returned=10
+2026-10-14 11:44:49 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1'} sub_query='Apple business description in 2022'
+2026-10-14 11:44:49 [INFO ] RERANKER | ENTER | query='Apple business description in 2022' chunks=9
+2026-10-14 11:44:49 [INFO ] RERANKER | before | top3=['AAPL_2022_Item_1_chunk_001 cosine=0.8103', 'AAPL_2022_Item_1_chunk_003 cosine=0.7970', 'AAPL_2022_Item_1_chunk_008 cosine=0.7956']
+2026-10-14 11:44:51 [INFO ] RERANKER | after | top3=['AAPL_2022_Item_1_chunk_003 reranker=0.1537', 'AAPL_2022_Item_1_chunk_001 reranker=0.0231', 'AAPL_2022_Item_1_chunk_008 reranker=0.0222']
+2026-10-14 11:44:51 [INFO ] RERANKER | EXIT | chunks=9 positions_changed=7/9
+2026-10-14 11:44:51 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AMZN', 'year': 2022, 'section': 'Item 1'} sub_query='Amazon business description in 2022'
+2026-10-14 11:44:51 [INFO ] RERANKER | ENTER | query='Amazon business description in 2022' chunks=10
+2026-10-14 11:44:51 [INFO ] RERANKER | before | top3=['AMZN_2022_Item_1_chunk_001 cosine=0.8505', 'AMZN_2022_Item_1_chunk_005 cosine=0.8192', 'AMZN_2022_Item_1_chunk_006 cosine=0.8155']
+2026-10-14 11:44:53 [INFO ] RERANKER | after | top3=['AMZN_2022_Item_1_chunk_005 reranker=0.8050', 'AMZN_2022_Item_1_chunk_001 reranker=0.1097', 'AMZN_2022_Item_1_chunk_007 reranker=0.1009']
+2026-10-14 11:44:53 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=7/10
+2026-10-14 11:44:53 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'GOOGL', 'year': 2022, 'section': 'Item 1'} sub_query='Google business description in 2022'
+2026-10-14 11:44:53 [INFO ] RERANKER | ENTER | query='Google business description in 2022' chunks=10
+2026-10-14 11:44:53 [INFO ] RERANKER | before | top3=['GOOGL_2022_Item_1_chunk_001 cosine=0.8110', 'GOOGL_2022_Item_1_chunk_007 cosine=0.8109', 'GOOGL_2022_Item_1_chunk_012 cosine=0.8082']
+2026-10-14 11:44:55 [INFO ] RERANKER | after | top3=['GOOGL_2022_Item_1_chunk_013 reranker=0.2533', 'GOOGL_2022_Item_1_chunk_012 reranker=0.2289', 'GOOGL_2022_Item_1_chunk_001 reranker=0.0951']
+2026-10-14 11:44:55 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=10/10
+2026-10-14 11:44:55 [INFO ] RETRIEVER | EXIT | total_chunks=29 (after dedup + rerank)
+2026-10-14 11:44:55 [INFO ] SYNTHESIZER | ENTER | query='Compare the business descriptions of Apple, Amazon, and Google in their 2022 annual reports.' chunks_received=29
+2026-10-14 11:44:55 [INFO ] SYNTHESIZER | context | chunks_received=29 chunks_selected=29 (cap=30) dropped=0
+2026-10-14 11:44:55 [INFO ] SYNTHESIZER | context | sources=['Apple 2022 Item 1', 'Apple 2022 Item 1', 'Apple 2022 Item 1', 'Apple 2022 Item 1', 'Apple 2022 Item 1', 'Apple 2022 Item 1', 'Apple 2022 Item 1', 'Apple 2022 Item 1', 'Apple 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Amazon 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1', 'Google 2022 Item 1']
+2026-10-14 11:44:55 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Apple business description in 2022 ===\n\n[1] Apple | 2022 | Business\n"The Company sells its products and resells third-party products in most of its major markets directly to consumers, small and mid-sized businesses, and education, enterprise and government customers through i'
+2026-10-14 11:44:55 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:44:57 [INFO ] SYNTHESIZER | Groq response | answer_length=2841 chars
+2026-10-14 11:44:57 [INFO ] SYNTHESIZER | Groq response | answer=
+Based on the provided 2022 annual report excerpts, here is a comparison of the business descriptions for Apple, Amazon, and Google:
+
+*   **Core Business Focus:** Apple designs, manufactures, and markets hardware (iPhone, Mac, iPad, wearables) and related services; Amazon operates as a customer-centric company serving consumers, sellers, developers, and enterprises through retail, logistics, and cloud services; Google (Alphabet) focuses on organizing information and making it accessible, with core businesses in search, advertising, and cloud computing.
+*   **Organizational Structure:** Apple describes its operations through product lines and distribution channels; Amazon organizes its operations into three specific segments: North America, International, and Amazon Web Services (AWS); Alphabet reports Google in two segments (Google Services and Google Cloud) and collectively reports non-Google businesses as "Other Bets."
+*   **Customer Base:** Apple serves consumers, small and mid-sized businesses, education, enterprise, and government customers; Amazon serves consumers, sellers, developers, enterprises, content creators, advertisers, and employees; Google serves users, advertisers, and enterprise customers through its various platforms.
+*   **Distribution and Delivery:** Apple sells directly through retail/online stores and indirectly through carriers, wholesalers, and retailers; Amazon fulfills orders through its own fulfillment networks, co-sourced arrangements, digital delivery, and physical stores; Google primarily delivers services digitally through its platforms, with some hardware sales.
+*   **Competition:** Apple faces competition from companies with aggressive pricing and low cost structures, noting intense price competition; Amazon faces a broad array of competitors including retailers, publishers, search engines, and cloud providers, with principal factors being selection, price, and convenience; Google faces competition from search engines, e-commerce providers, advertising platforms, and cloud service providers.
+*   **Intellectual Property:** All three companies rely on patents, trademarks, copyrights, and trade secrets to protect their businesses; Apple notes it relies primarily on the skills of its personnel in addition to IP; Amazon regards IP as critical to success; Google relies on IP laws and confidentiality procedures.
+*   **Seasonality:** Apple experiences higher net sales in its first quarter due to holiday demand; Amazon experiences higher sales volume in its fourth quarter (ending December 31); the provided Google excerpts do not specify a seasonal peak for sales.
+*   **Workforce:** As of late 2022, Apple had approximately 164,000 full-time equivalent employees; Amazon employed approximately 1,541,000 full-time and part-time employees; Alphabet had 190,234 employees.
+2026-10-14 11:44:57 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=29
+2026-10-14 11:44:57 [INFO ] SCORER | ENTER | answer_preview='Based on the provided 2022 annual report excerpts, here is a comparison of the b' sources=29
+2026-10-14 11:44:57 [INFO ] SCORER | avg_retrieval_similarity=0.788
+2026-10-14 11:44:57 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=2841 chars sources=29
+2026-10-14 11:44:57 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:44:58 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:44:58 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:44:58 [INFO ] SCORER | EXIT | confidence=0.9152 faithfulness=1.0 avg_retrieval_similarity=0.788

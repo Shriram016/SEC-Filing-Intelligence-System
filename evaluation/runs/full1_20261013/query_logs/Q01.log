@@ -1,0 +1,45 @@
+2026-10-13 10:49:04 [INFO ] ============================================================
+2026-10-13 10:49:04 [INFO ] PIPELINE | query_start | query='[EVAL Q01] What supply chain risks did Apple disclose regarding component sourcing in its 2022 annual report?'
+2026-10-13 10:49:04 [INFO ] ============================================================
+2026-10-13 10:49:04 [INFO ] RETRIEVER | ENTER | query='What supply chain risks did Apple disclose regarding component sourcing in its 2022 annual report?' top_k=10
+2026-10-13 10:49:04 [INFO ] RETRIEVER | filter_extraction | ENTER | query='What supply chain risks did Apple disclose regarding component sourcing in its 2022 annual report?'
+2026-10-13 10:49:04 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-13 10:49:05 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AAPL"],\n    "years": [2022],\n    "sections": ["Item 1A"],\n    "sub_query_template": null\n}'
+2026-10-13 10:49:05 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AAPL'] years=[2022] sections=['Item 1A'] sub_query_template=None rejection_reason=None
+2026-10-13 10:49:05 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-13 10:49:05 [INFO ] RETRIEVER | combinations | count=1 combos=[{'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1A'}]
+2026-10-13 10:49:05 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1A'} n_results=10
+2026-10-13 10:49:05 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1A'} chunks_returned=10
+2026-10-13 10:49:05 [INFO ] RERANKER | ENTER | query='What supply chain risks did Apple disclose regarding component sourcing in its 2022 annual report?' chunks=10
+2026-10-13 10:49:05 [INFO ] RERANKER | before | top3=['AAPL_2022_Item_1A_chunk_012 cosine=0.8319', 'AAPL_2022_Item_1A_chunk_038 cosine=0.8229', 'AAPL_2022_Item_1A_chunk_013 cosine=0.8210']
+2026-10-13 10:49:07 [INFO ] RERANKER | after | top3=['AAPL_2022_Item_1A_chunk_012 reranker=0.3865', 'AAPL_2022_Item_1A_chunk_013 reranker=0.2283', 'AAPL_2022_Item_1A_chunk_038 reranker=0.0326']
+2026-10-13 10:49:07 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-13 10:49:07 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-13 10:49:07 [INFO ] SYNTHESIZER | ENTER | query='What supply chain risks did Apple disclose regarding component sourcing in its 2022 annual report?' chunks_received=10
+2026-10-13 10:49:07 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-13 10:49:07 [INFO ] SYNTHESIZER | context | sources=['Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A', 'Apple 2022 Item 1A']
+2026-10-13 10:49:07 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Apple | 2022 | Risk Factors\n"The Company has invested in manufacturing process equipment, much of which is held at certain of its outsourcing partners, and has made prepayments to certain of its suppliers associated with long-term supply agreements. While these arrangements he'
+2026-10-13 10:49:07 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-13 10:49:09 [INFO ] SYNTHESIZER | Groq response | answer_length=3331 chars
+2026-10-13 10:49:09 [INFO ] SYNTHESIZER | Groq response | answer=
+Based on the provided excerpts from Apple’s 2022 annual report, the company disclosed the following supply chain risks regarding component sourcing:
+
+*   **Reliance on Single or Limited Sources:** Apple obtains certain components from single or limited sources, which subjects the company to significant supply and pricing risks. New products often utilize custom components available from only one source.
+*   **Industry-Wide Shortages and Pricing Fluctuations:** Components, including those from multiple sources, are subject to industry-wide shortages and significant commodity pricing fluctuations. Specifically, the global semiconductor industry was experiencing high demand and supply shortages, which adversely affected Apple’s ability to obtain sufficient quantities on commercially reasonable terms.
+*   **Supplier Financial Instability:** Component suppliers may suffer from poor financial conditions, leading to business failure or industry consolidation. This can limit Apple’s ability to obtain sufficient quantities of components.
+*   **Capacity Constraints for New Technologies:** When components use new technologies, initial capacity constraints may exist until supplier yields mature or manufacturing capacities increase.
+*   **Supplier Prioritization:** Suppliers may decide to concentrate on producing common components rather than components customized for Apple, affecting the availability and price of Apple-specific parts.
+*   **Prepayments and Equipment Recoverability:** Apple has made prepayments to suppliers for long-term supply agreements and invested in manufacturing process equipment held at outsourcing partners. If these partners experience severe financial problems or disruptions, the recoverability of these prepayments and equipment can be negatively impacted.
+*   **Concentration of Receivables and Prepayments:** As of September 24, 2022, vendor non-trade receivables and prepayments related to long-term supply agreements were concentrated among a few individual vendors located primarily in Asia.
+*   **Geographic and Political Risks:** Substantially all manufacturing is performed by outsourcing partners located primarily in Asia (including China mainland, India, Japan, South Korea, Taiwan, and Vietnam). Trade policies, disputes, tariffs, sanctions, and other international conflicts in these regions can restrict international trade and materially adversely affect the supply chain.
+*   **Business Interruptions:** Operations and facilities of suppliers and contract manufacturers are prone to earthquakes, natural disasters, fire, power shortages, industrial accidents, terrorist attacks, cybersecurity attacks, labor disputes, and public health issues (such as the COVID-19 pandemic). These events can disrupt the supply of components and finished goods.
+*   **Forecasting Errors:** Due to volatile markets and rapid technology changes, there is a risk that Apple may forecast incorrectly, leading to ordering or producing excess or insufficient amounts of components, or failing to fully utilize firm purchase commitments.
+*   **Outsourcing Partner Performance:** Apple relies on single-source outsourcing partners in the U.S., Asia, and Europe for many components. Any failure of these partners to perform can negatively impact the cost or supply of components or finished goods.
+2026-10-13 10:49:09 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-13 10:49:09 [INFO ] SCORER | ENTER | answer_preview='Based on the provided excerpts from Apple’s 2022 annual report, the company disc' sources=10
+2026-10-13 10:49:09 [INFO ] SCORER | avg_retrieval_similarity=0.818
+2026-10-13 10:49:09 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=3331 chars sources=10
+2026-10-13 10:49:09 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-13 10:49:09 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-13 10:49:09 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-13 10:49:09 [INFO ] SCORER | EXIT | confidence=0.9272 faithfulness=1.0 avg_retrieval_similarity=0.818

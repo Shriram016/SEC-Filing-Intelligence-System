@@ -1,0 +1,9 @@
+2026-10-14 11:52:26 [INFO ] ============================================================
+2026-10-14 11:52:26 [INFO ] PIPELINE | query_start | query="[EVAL Q25] What were Apple's main risk factors in 2019?"
+2026-10-14 11:52:26 [INFO ] ============================================================
+2026-10-14 11:52:26 [INFO ] RETRIEVER | ENTER | query="What were Apple's main risk factors in 2019?" top_k=10
+2026-10-14 11:52:26 [INFO ] RETRIEVER | filter_extraction | ENTER | query="What were Apple's main risk factors in 2019?"
+2026-10-14 11:52:26 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:52:26 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": false,\n    "rejection_reason": "Year 2019 is not available in the database (available years: 2020-2024)",\n    "tickers": [\n        "AAPL"\n    ],\n    "years": [\n        2019\n    ],\n    "sections": [\n        "Item 1A"\n    ],\n    "sub_query_template": null\n}'
+2026-10-14 11:52:26 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=False tickers=['AAPL'] years=[] sections=['Item 1A'] sub_query_template=None rejection_reason='Year 2019 is not available in the database (available years: 2020-2024)'
+2026-10-14 11:52:26 [WARNING] RETRIEVER | EXIT | query rejected | reason='Year 2019 is not available in the database (available years: 2020-2024)'

@@ -26,7 +26,7 @@
     "expected_tickers": ["AMZN"],
     "expected_years": [2021],
     "expected_sections": ["Item 7"],
-    "ground_truth": "Amazon's total consolidated net sales for 2021 were $469,822 million ($469.8 billion), a 22% increase compared to 2020. AWS revenue was $62,202 million ($62.2 billion) in 2021, representing 37% growth over the prior year.",
+    "ground_truth": "Amazon's total consolidated net sales for 2021 were $469,822 million ($469.8 billion). AWS revenue was $62,202 million ($62.2 billion).",
     "is_valid": true
   },
   {
@@ -36,7 +36,7 @@
     "expected_tickers": ["GOOGL"],
     "expected_years": [2023],
     "expected_sections": ["Item 1"],
-    "ground_truth": "Google Cloud provides the most advanced computing infrastructure and expands access to Google's latest AI models. Its Vertex AI platform gives developers the ability to train, tune, augment, and deploy applications using generative AI models and services such as Enterprise Search and Conversations.",
+    "ground_truth": "Google Cloud generates revenues primarily from consumption-based fees and subscriptions for infrastructure, platform, collaboration tools and other cloud services, through Google Cloud Platform and Google Workspace. Its Vertex AI platform gives developers the ability to train, tune, augment, and deploy applications using generative AI models and services such as Enterprise Search and Conversations.",
     "is_valid": true
   },
   {
@@ -46,7 +46,7 @@
     "expected_tickers": ["META"],
     "expected_years": [2023],
     "expected_sections": ["Item 7"],
-    "ground_truth": "Meta's total revenue for 2023 was $134.90 billion, an increase of 16% compared to 2022. Net income was $39.10 billion, with diluted earnings per share (EPS) of $14.87 for the year ended December 31, 2023.",
+    "ground_truth": "Meta's total revenue for 2023 was $134.90 billion and net income was $39.10 billion.",
     "is_valid": true
   },
   {
@@ -76,7 +76,7 @@
     "expected_tickers": ["MSFT"],
     "expected_years": [2022, 2023],
     "expected_sections": ["Item 1A"],
-    "ground_truth": "Microsoft's 2022 annual report mentioned artificial intelligence only once in its risk factors, as part of its 'intelligent cloud and intelligent edge infused with AI' strategy description, with no dedicated AI risk section. By 2023, Microsoft added explicit AI risk disclosures, warning that AI algorithms may be flawed, datasets may contain biased information, AI-generated content may be harmful, and that ineffective AI development could result in legal liability under proposed EU legislation.",
+    "ground_truth": "Microsoft's 2022 Item 1A already contained an AI risk discussion: AI algorithms may be flawed, datasets may be overbroad, insufficient or biased, and ineffective AI development practices could cause harm and expose Microsoft to competitive harm, regulatory action, legal liability (including under proposed EU legislation) and reputational harm. The 2023 filing keeps these and expands AI coverage substantially. It adds company-wide investment in generative AI, an expectation that AI will be a highly competitive and rapidly evolving market with significant development costs, competition from open-source AI models, generative-AI-specific security risks, a warning that AI-generated content may be offensive, illegal or harmful, the OpenAI partnership, and the proposed EU AI Act.",
     "is_valid": true
   },
   {
@@ -86,7 +86,7 @@
     "expected_tickers": ["META"],
     "expected_years": [2022, 2023],
     "expected_sections": ["Item 7"],
-    "ground_truth": "Meta's total revenue increased 16% from $116.61 billion in 2022 to $134.90 billion in 2023, driven by an increase in advertising revenue. Income from operations increased 62% from $28.94 billion to $46.75 billion in 2023.",
+    "ground_truth": "Meta's total revenue increased 16% from $116.61 billion in 2022 to $134.90 billion in 2023. Income from operations increased 62% from $28.94 billion to $46.75 billion.",
     "is_valid": true
   },
   {
@@ -106,7 +106,7 @@
     "expected_tickers": ["GOOGL"],
     "expected_years": [2021, 2024],
     "expected_sections": ["Item 7A"],
-    "ground_truth": "Google disclosed exposure to foreign currency exchange, interest rate, and equity investment risks in both 2021 and 2024. The principal currencies hedged remained the same (Australian dollar, British pound, Canadian dollar, Euro, Japanese yen). However, the estimated adverse effect of a 10% foreign currency exchange rate change decreased from approximately $285 million as of December 31, 2021 to approximately $135 million as of December 31, 2024, suggesting improved hedging effectiveness or reduced net foreign currency exposure.",
+    "ground_truth": "Google disclosed exposure to foreign currency exchange, interest rate, and equity investment risks in both 2021 and 2024. The principal currencies hedged remained the same (Australian dollar, British pound, Canadian dollar, Euro, Japanese yen). However, the estimated adverse effect of a 10% foreign currency exchange rate change decreased from approximately $285 million as of December 31, 2021 to approximately $135 million as of December 31, 2024.",
     "is_valid": true
   },
   {
@@ -126,17 +126,17 @@
     "expected_tickers": ["AMZN", "GOOGL"],
     "expected_years": [2023],
     "expected_sections": ["Item 7"],
-    "ground_truth": "Amazon's consolidated net sales for 2023 were $574,785 million, a 12% increase compared to 2022. Google's (Alphabet's) consolidated revenues for 2023 were $307,394 million, a 9% increase compared to 2022. Amazon's revenue was nearly double Google's in absolute terms, and Amazon grew at a faster rate (12% vs 9%).",
+    "ground_truth": "Amazon's consolidated net sales for 2023 were $574,785 million, a 12% increase compared to 2022. Google's (Alphabet's) consolidated revenues for 2023 were $307,394 million, a 9% increase compared to 2022. Amazon grew at a faster rate (12% vs 9%).",
     "is_valid": true
   },
   {
     "query_id": "Q14",
-    "query": "How did Meta and Microsoft describe their workforce in their 2023 annual reports?",
+    "query": "How did Meta's and Microsoft's headcount change in their 2023 annual reports?",
     "query_type": "cross_company",
     "expected_tickers": ["META", "MSFT"],
     "expected_years": [2023],
     "expected_sections": ["Item 7"],
-    "ground_truth": "Meta's headcount was 67,317 as of December 31, 2023, a decrease of 22% year-over-year. Microsoft employed approximately 221,000 people on a full-time basis as of June 30, 2023, and reduced its overall workforce by approximately 10,000 jobs through the third quarter of fiscal year 2023, representing less than 5% of its total employee base. Both companies reduced headcount in 2023, but Meta's reduction was significantly larger proportionally (22% vs less than 5%).",
+    "ground_truth": "Meta's headcount was 67,317 as of December 31, 2023, a decrease of 22% year-over-year. Microsoft reduced its overall workforce by approximately 10,000 jobs through the third quarter of fiscal year 2023, representing less than 5% of its total employee base. Both companies reduced headcount in 2023, but Meta's reduction was significantly larger proportionally (22% vs less than 5%).",
     "is_valid": true
   },
   {
@@ -212,31 +212,149 @@
   {
     "query_id": "Q22",
     "query": "Did Meta's Reality Labs segment revenue increase or decrease from 2022 to 2023?",
-    "query_type": "conflict_triggering",
+    "query_type": "cross_year",
     "expected_tickers": ["META"],
     "expected_years": [2022, 2023],
     "expected_sections": ["Item 7"],
-    "ground_truth": "Meta's Reality Labs revenue decreased 12% from $2,159 million in 2022 to $1,896 million in 2023. Additionally, Reality Labs operating losses grew 18% from $13,717 million in 2022 to $16,120 million in 2023, indicating worsening financial performance in this segment despite overall company revenue growth of 16%.",
+    "ground_truth": "Meta's Reality Labs revenue decreased 12%, from $2,159 million in 2022 to $1,896 million in 2023.",
     "is_valid": true
   },
   {
     "query_id": "Q23",
     "query": "Did Apple's stance on single-source supplier risk change between 2020 and 2023?",
-    "query_type": "conflict_triggering",
+    "query_type": "cross_year",
     "expected_tickers": ["AAPL"],
     "expected_years": [2020, 2023],
     "expected_sections": ["Item 1A"],
-    "ground_truth": "Apple's core single-source supplier risk disclosure remained substantially the same in both 2020 and 2023 — the company obtains certain components from single or limited sources, subject to significant supply and pricing risks. The key difference is that the 2020 filing described only generic 'industry-wide shortages' with no mention of semiconductors, while the 2023 filing added a specific reference to the global semiconductor industry, noting it 'has in the past experienced high demand and shortages of supply' — acknowledging the 2021-2022 chip shortage as a historical event.",
+    "ground_truth": "Apple's core single-source supplier risk disclosure remained substantially the same in both 2020 and 2023 — the company obtains certain components from single or limited sources, subject to significant supply and pricing risks. The key difference is that the 2020 filing described only generic 'industry-wide shortages' with no mention of semiconductors, while the 2023 filing added a specific reference to the global semiconductor industry, noting it 'has in the past experienced high demand and shortages of supply'.",
     "is_valid": true
   },
   {
     "query_id": "Q24",
     "query": "Did Microsoft's position on AI risk change between 2022 and 2024?",
-    "query_type": "conflict_triggering",
+    "query_type": "cross_year",
     "expected_tickers": ["MSFT"],
     "expected_years": [2022, 2024],
     "expected_sections": ["Item 1A"],
-    "ground_truth": "Microsoft's AI risk disclosures expanded dramatically between 2022 and 2024. The 2022 filing mentioned 'artificial intelligence' only once, as part of its cloud strategy description, with no dedicated AI risk section. By 2024, the filing contained 45 references to AI and included detailed risk disclosures covering flawed AI algorithms, biased datasets, harmful AI-generated content, copyright infringement claims related to AI training and output, the EU AI Act, and the U.S. AI Executive Order.",
+    "ground_truth": "Microsoft's AI risk disclosure was already present in 2022 and grew substantially by 2024. The 2022 Item 1A already warned that AI algorithms may be flawed, datasets may be biased, and ineffective AI practices could cause harm and expose Microsoft to legal liability (including under proposed EU legislation) and reputational harm. By 2024 it also covered copyright infringement claims related to AI training and output; the EU AI Act and the U.S. AI Executive Order; AI-generated content that may be offensive, illegal, inaccurate or harmful; misuse of AI by threat actors and security risks from generative AI; customers deploying AI in high-risk scenarios; significant costs to build AI infrastructure and datacenter capacity; and execution and competitive risks in AI services as new competitors enter.",
     "is_valid": true
+  },
+  {
+    "query_id": "Q25",
+    "query": "What were Apple's main risk factors in 2019?",
+    "query_type": "should_refuse",
+    "expected_tickers": [
+      "AAPL"
+    ],
+    "expected_years": [],
+    "expected_sections": [
+      "Item 1A"
+    ],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "Data covers 2020-2024 only; no 2019 filing."
+  },
+  {
+    "query_id": "Q26",
+    "query": "What did Microsoft say about AI risk in its 2025 10-K?",
+    "query_type": "should_refuse",
+    "expected_tickers": [
+      "MSFT"
+    ],
+    "expected_years": [],
+    "expected_sections": [
+      "Item 1A"
+    ],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "No 2025 filing in the data."
+  },
+  {
+    "query_id": "Q27",
+    "query": "What was Amazon's accounts receivable balance at the end of 2021?",
+    "query_type": "should_refuse",
+    "expected_tickers": [
+      "AMZN"
+    ],
+    "expected_years": [],
+    "expected_sections": [],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "Balance-sheet figures are in Item 8, which is not indexed. Item 7 only mentions accounts receivable as a concept."
+  },
+  {
+    "query_id": "Q28",
+    "query": "How much was Meta's CEO paid in 2023?",
+    "query_type": "should_refuse",
+    "expected_tickers": [
+      "META"
+    ],
+    "expected_years": [],
+    "expected_sections": [],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "Executive pay is in the proxy statement, not in the indexed 10-K sections."
+  },
+  {
+    "query_id": "Q29",
+    "query": "How many iPhones did Apple sell in 2021?",
+    "query_type": "should_refuse",
+    "expected_tickers": [
+      "AAPL"
+    ],
+    "expected_years": [],
+    "expected_sections": [],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "Apple does not report unit sales; the word 'units' does not appear in any indexed Apple section."
+  },
+  {
+    "query_id": "Q30",
+    "query": "What are Nvidia's biggest risk factors in 2023?",
+    "query_type": "should_refuse",
+    "expected_tickers": [],
+    "expected_years": [],
+    "expected_sections": [
+      "Item 1A"
+    ],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "Nvidia is not one of the five companies in the data.",
+    "reject_also_ok": true
+  },
+  {
+    "query_id": "Q31",
+    "query": "Is Amazon a better investment than Google?",
+    "query_type": "should_refuse",
+    "expected_tickers": [
+      "AMZN",
+      "GOOGL"
+    ],
+    "expected_years": [],
+    "expected_sections": [],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "The filings contain no investment advice or valuation opinions."
+  },
+  {
+    "query_id": "Q32",
+    "query": "How many square feet of office space does Google lease?",
+    "query_type": "should_refuse",
+    "expected_tickers": [
+      "GOOGL"
+    ],
+    "expected_years": [],
+    "expected_sections": [],
+    "ground_truth": null,
+    "is_valid": true,
+    "expected_behavior": "refuse",
+    "why_unanswerable": "Properties (Item 2) is not indexed; 'square feet' appears in no indexed section of any company."
   }
 ]

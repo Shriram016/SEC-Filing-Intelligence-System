@@ -1,0 +1,48 @@
+2026-10-14 11:42:41 [INFO ] ============================================================
+2026-10-14 11:42:41 [INFO ] PIPELINE | query_start | query="[EVAL Q13] Compare Amazon and Google's revenue growth in their 2023 annual reports."
+2026-10-14 11:42:41 [INFO ] ============================================================
+2026-10-14 11:42:42 [INFO ] RETRIEVER | ENTER | query="Compare Amazon and Google's revenue growth in their 2023 annual reports." top_k=10
+2026-10-14 11:42:42 [INFO ] RETRIEVER | filter_extraction | ENTER | query="Compare Amazon and Google's revenue growth in their 2023 annual reports."
+2026-10-14 11:42:42 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:42:42 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "AMZN",\n        "GOOGL"\n    ],\n    "years": [\n        2023\n    ],\n    "sections": [\n        "Item 7"\n    ],\n    "sub_query_template": "<company> revenue growth in <year>"\n}'
+2026-10-14 11:42:42 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AMZN', 'GOOGL'] years=[2023] sections=['Item 7'] sub_query_template='<company> revenue growth in <year>' rejection_reason=None
+2026-10-14 11:42:42 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:42:42 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'AMZN', 'year': 2023, 'section': 'Item 7'}, {'ticker': 'GOOGL', 'year': 2023, 'section': 'Item 7'}]
+2026-10-14 11:42:42 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN', 'year': 2023, 'section': 'Item 7'} n_results=10
+2026-10-14 11:42:42 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN', 'year': 2023, 'section': 'Item 7'} chunks_returned=10
+2026-10-14 11:42:42 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'GOOGL', 'year': 2023, 'section': 'Item 7'} n_results=10
+2026-10-14 11:42:42 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'GOOGL', 'year': 2023, 'section': 'Item 7'} chunks_returned=10
+2026-10-14 11:42:42 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AMZN', 'year': 2023, 'section': 'Item 7'} sub_query='Amazon revenue growth in 2023'
+2026-10-14 11:42:42 [INFO ] RERANKER | ENTER | query='Amazon revenue growth in 2023' chunks=10
+2026-10-14 11:42:42 [INFO ] RERANKER | before | top3=['AMZN_2023_Item_7_chunk_022 cosine=0.8371', 'AMZN_2023_Item_7_chunk_018 cosine=0.8367', 'AMZN_2023_Item_7_chunk_030 cosine=0.8157']
+2026-10-14 11:42:44 [INFO ] RERANKER | after | top3=['AMZN_2023_Item_7_chunk_030 reranker=0.8239', 'AMZN_2023_Item_7_chunk_022 reranker=0.7761', 'AMZN_2023_Item_7_chunk_016 reranker=0.7041']
+2026-10-14 11:42:44 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=7/10
+2026-10-14 11:42:44 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'GOOGL', 'year': 2023, 'section': 'Item 7'} sub_query='Google revenue growth in 2023'
+2026-10-14 11:42:44 [INFO ] RERANKER | ENTER | query='Google revenue growth in 2023' chunks=10
+2026-10-14 11:42:44 [INFO ] RERANKER | before | top3=['GOOGL_2023_Item_7_chunk_018 cosine=0.8425', 'GOOGL_2023_Item_7_chunk_016 cosine=0.8372', 'GOOGL_2023_Item_7_chunk_024 cosine=0.8298']
+2026-10-14 11:42:47 [INFO ] RERANKER | after | top3=['GOOGL_2023_Item_7_chunk_016 reranker=0.9987', 'GOOGL_2023_Item_7_chunk_017 reranker=0.9951', 'GOOGL_2023_Item_7_chunk_024 reranker=0.9754']
+2026-10-14 11:42:47 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:42:47 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:42:47 [INFO ] SYNTHESIZER | ENTER | query="Compare Amazon and Google's revenue growth in their 2023 annual reports." chunks_received=20
+2026-10-14 11:42:47 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:42:47 [INFO ] SYNTHESIZER | context | sources=['Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Amazon 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7', 'Google 2023 Item 7']
+2026-10-14 11:42:47 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Amazon revenue growth in 2023 ===\n\n[1] Amazon | 2023 | MD&A\n"(2)\nRepresents the outcome that would have resulted had foreign exchange rates in the reported period been the same as those in effect in the comparable prior year period for operating results. 30\nTable of Contents\nG'
+2026-10-14 11:42:47 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:42:48 [INFO ] SYNTHESIZER | Groq response | answer_length=1445 chars
+2026-10-14 11:42:48 [INFO ] SYNTHESIZER | Groq response | answer=
+*   Amazon's consolidated net sales grew 12% in 2023, reaching $574.8 billion, while Google's consolidated revenues grew 9% to $307.4 billion.
+*   Amazon's growth was driven by a 12% increase in North America sales, an 11% increase in International sales, and a 13% increase in AWS sales.
+*   Google's growth was driven by an 8% increase in Google Services revenues and a 26% increase in Google Cloud revenues.
+*   Both companies reported that foreign exchange rates had a mixed impact on their respective segments, with Amazon noting a $71 million reduction in consolidated net sales and Google citing unfavorable effects on subscriptions and platforms.
+*   Amazon's AWS segment saw growth primarily from increased customer usage, whereas Google's Cloud segment growth was driven by Google Cloud Platform and Workspace offerings.
+*   Both companies noted that increased spending on technology and infrastructure was a primary driver of cost increases, with Amazon citing infrastructure spending and Google citing investments in technical infrastructure.
+*   Amazon's International segment sales increased 11% in 2023, while Google's EMEA and APAC regions represented 30% and 17% of its total revenues, respectively.
+*   Both companies indicated that their revenue growth was influenced by increased customer usage and spending, with Amazon highlighting unit sales and advertising, and Google highlighting search queries and advertiser spending.
+2026-10-14 11:42:48 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:42:48 [INFO ] SCORER | ENTER | answer_preview="*   Amazon's consolidated net sales grew 12% in 2023, reaching $574.8 billion, w" sources=20
+2026-10-14 11:42:48 [INFO ] SCORER | avg_retrieval_similarity=0.8149
+2026-10-14 11:42:48 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=1445 chars sources=20
+2026-10-14 11:42:48 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:42:49 [INFO ] SCORER | faithfulness_judge | Groq response | raw='4'
+2026-10-14 11:42:49 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=4 normalized=0.75
+2026-10-14 11:42:49 [INFO ] SCORER | EXIT | confidence=0.776 faithfulness=0.75 avg_retrieval_similarity=0.8149

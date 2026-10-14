@@ -35,7 +35,7 @@ from groq import Groq
 from langfuse import observe
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import GROQ_MODEL, MAX_CONTEXT_CHUNKS
+from config import GROQ_MODEL, MAX_CONTEXT_CHUNKS, ANSWER_STYLE
 
 load_dotenv()
 
@@ -47,6 +47,22 @@ SYSTEM_PROMPT = (
     "\"The provided context does not contain enough information to answer this question.\" "
     "Do not use any knowledge outside the provided passages."
 )
+
+# Added when ANSWER_STYLE == "concise". Keeps answers short and free of passage-number citations.
+CONCISE_STYLE_RULES = (
+    " Answer concisely and stay on what the question asks; do not add background or unrelated topics. "
+    "Lead with the direct answer. For a single-fact question use 1-3 sentences. For a comparison or a "
+    "change-over-time question use up to 8 short bullet points, cover every company or year asked about, "
+    "and say both what changed and what stayed the same. Use only facts stated in the passages. "
+    "Say that all companies do something only if the passages for every one of them support it; "
+    "otherwise name only the companies the passages show. "
+    "Do not mention passage numbers or labels, and do not add a closing summary."
+)
+
+
+def build_system_prompt(style: str = ANSWER_STYLE) -> str:
+    """Original prompt for style 'free'; original prompt plus length/format rules for 'concise'."""
+    return SYSTEM_PROMPT + (CONCISE_STYLE_RULES if style == "concise" else "")
 
 
 class Synthesizer:
@@ -167,7 +183,7 @@ class Synthesizer:
         response = self.groq_client.chat.completions.create(
             model=GROQ_MODEL,
             messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "system", "content": build_system_prompt()},
                 {"role": "user",   "content": user_prompt},
             ],
             temperature=0,

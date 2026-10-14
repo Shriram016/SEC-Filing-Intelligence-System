@@ -1,0 +1,1165 @@
+===========================================================================
+ragas_evaluator.py: run full2_20261014 (new)
+Queries: 32 | already done: 0 | judge: openai/gpt-oss-120b
+===========================================================================
+Loading pipeline components and judge...
+
+Loading BGE embedding model...
+Connecting to ChromaDB...
+Loading cross-encoder reranker...
+Initialising Groq client...
+Retriever ready.
+
+Synthesizer ready.
+
+Scorer ready.
+
+
+============================================================
+[1/32] Q01 (single_factual): What supply chain risks did Apple disclose regarding compone
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AAPL"
+  ],
+  "years": [
+    2022
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1A'}]
+  Answer: - Apple relies on single or limited sources for many critical components, exposing it to significant...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9194
+    context_precision...
+      = 0.8722
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 1.0
+
+  Saved Q01. tokens in/out: 39,369/10,413 | cost $0.0186 | run total so far $0.0186
+
+============================================================
+[2/32] Q02 (single_factual): What artificial intelligence risks did Microsoft identify in
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "MSFT"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'}]
+  Answer: *   **Reputational and Competitive Harm:** Flawed AI algorithms, biased or insufficient datasets, an...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9223
+    context_precision...
+      = 0.8095
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.3846
+
+  Saved Q02. tokens in/out: 40,801/10,637 | cost $0.0194 | run total so far $0.0380
+
+============================================================
+[3/32] Q03 (single_factual): What were Amazon's total consolidated net sales and AWS reve
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AMZN"
+  ],
+  "years": [
+    2021
+  ],
+  "sections": [
+    "Item 7"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'AMZN', 'year': 2021, 'section': 'Item 7'}]
+  Answer: Amazon's total consolidated net sales for the year ended December 31, 2021, were $469,822 million, a...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9774
+    context_precision...
+      = 1.0
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 1.0
+
+  Saved Q03. tokens in/out: 39,995/4,199 | cost $0.0149 | run total so far $0.0530
+
+============================================================
+[4/32] Q04 (single_factual): What is Google Cloud and what AI platform does it offer deve
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "GOOGL"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 1"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'GOOGL', 'year': 2023, 'section': 'Item 1'}]
+  Answer: According to Google's 2023 annual filing, Google Cloud generates revenues primarily from consumption...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.899
+    context_precision...
+      = 1.0
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.8
+
+  Saved Q04. tokens in/out: 38,925/7,832 | cost $0.0166 | run total so far $0.0696
+
+============================================================
+[5/32] Q05 (single_factual): What was Meta's total revenue and net income for the year en
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "META"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 7"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'META', 'year': 2023, 'section': 'Item 7'}]
+  Answer: Meta's total revenue for the year ended December 31, 2023, was $134,902 million, and its net income ...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9931
+    context_precision...
+      = 1.0
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 1.0
+
+  Saved Q05. tokens in/out: 44,720/4,798 | cost $0.0176 | run total so far $0.0872
+
+============================================================
+[6/32] Q06 (single_factual): What market risks related to interest rates did Apple disclo
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AAPL"
+  ],
+  "years": [
+    2022
+  ],
+  "sections": [
+    "Item 7A"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'AAPL', 'year': 2022, 'section': 'Item 7A'}]
+  Answer: *   Apple's exposure to interest rate changes primarily relates to its investment portfolio and outs...
+  Chunks retrieved: 4, used: 4
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9046
+    context_precision...
+      = 1.0
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 1.0
+
+  Saved Q06. tokens in/out: 21,776/6,557 | cost $0.0110 | run total so far $0.0982
+
+============================================================
+[7/32] Q07 (cross_year): How did Apple's top risk factors change between its 2020 and
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AAPL"
+  ],
+  "years": [
+    2020,
+    2023
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": "<company> top risk factors in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'}, {'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'}]
+Sub-query template: <company> top risk factors in <year>
+  Reranking combo {'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} with: 'Apple top risk factors in 2020'
+  Reranking combo {'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} with: 'Apple top risk factors in 2023'
+  Answer: *   **App Store Regulation and Litigation:** In 2020, the primary risk was that developers might red...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.8421
+    answer_relevance...
+      = 0.9388
+    context_recall...
+      = 0.5
+    ground_truth_coverage...
+      = 0.4
+
+  Saved Q07. tokens in/out: 40,026/12,022 | cost $0.0254 | run total so far $0.1236
+
+============================================================
+[8/32] Q08 (cross_year): How did Microsoft's risk factor disclosures around artificia
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "MSFT"
+  ],
+  "years": [
+    2022,
+    2023
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": "<company> risk factor disclosures around artificial intelligence in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'}]
+Sub-query template: <company> risk factor disclosures around artificial intelligence in <year>
+  Reranking combo {'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} with: 'Microsoft risk factor disclosures around artificial intelligence in 2022'
+  Reranking combo {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} with: 'Microsoft risk factor disclosures around artificial intelligence in 2023'
+  Answer: *   **Expanded Scope of AI Risks:** In 2022, Microsoft focused on flawed algorithms and biased datas...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.95
+    answer_relevance...
+      = 0.9423
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.5
+
+  Saved Q08. tokens in/out: 40,640/8,817 | cost $0.0238 | run total so far $0.1473
+
+============================================================
+[9/32] Q09 (cross_year): How did Meta's total revenue and operating income change bet
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "META"
+  ],
+  "years": [
+    2022,
+    2023
+  ],
+  "sections": [
+    "Item 7"
+  ],
+  "sub_query_template": "<company> total revenue and operating income in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'META', 'year': 2022, 'section': 'Item 7'}, {'ticker': 'META', 'year': 2023, 'section': 'Item 7'}]
+Sub-query template: <company> total revenue and operating income in <year>
+  Reranking combo {'ticker': 'META', 'year': 2022, 'section': 'Item 7'} with: 'Meta total revenue and operating income in 2022'
+  Reranking combo {'ticker': 'META', 'year': 2023, 'section': 'Item 7'} with: 'Meta total revenue and operating income in 2023'
+  Answer: *   Total revenue increased by 16% from $116.61 billion in 2022 to $134.90 billion in 2023.
+*   Inco...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.8571
+    answer_relevance...
+      = 0.8889
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 1.0
+
+  Saved Q09. tokens in/out: 45,808/5,111 | cost $0.0242 | run total so far $0.1716
+
+============================================================
+[10/32] Q10 (cross_year): How did Amazon's business description change between its 202
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AMZN"
+  ],
+  "years": [
+    2020,
+    2024
+  ],
+  "sections": [
+    "Item 1"
+  ],
+  "sub_query_template": "<company> business description in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'AMZN', 'year': 2020, 'section': 'Item 1'}, {'ticker': 'AMZN', 'year': 2024, 'section': 'Item 1'}]
+Sub-query template: <company> business description in <year>
+  Reranking combo {'ticker': 'AMZN', 'year': 2020, 'section': 'Item 1'} with: 'Amazon business description in 2020'
+  Reranking combo {'ticker': 'AMZN', 'year': 2024, 'section': 'Item 1'} with: 'Amazon business description in 2024'
+  Answer: *   **Leadership Transition:** Jeffrey P. Bezos shifted from President, CEO, and Chairman in 2020 to...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9149
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 1.0
+
+  Saved Q10. tokens in/out: 36,708/8,176 | cost $0.0215 | run total so far $0.1931
+
+============================================================
+[11/32] Q11 (cross_year): How did Google's market risk disclosures change between 2021
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "GOOGL"
+  ],
+  "years": [
+    2021,
+    2024
+  ],
+  "sections": [
+    "Item 7A"
+  ],
+  "sub_query_template": "<company> market risk disclosures in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'GOOGL', 'year': 2021, 'section': 'Item 7A'}, {'ticker': 'GOOGL', 'year': 2024, 'section': 'Item 7A'}]
+Sub-query template: <company> market risk disclosures in <year>
+  Reranking combo {'ticker': 'GOOGL', 'year': 2021, 'section': 'Item 7A'} with: 'Google market risk disclosures in 2021'
+  Reranking combo {'ticker': 'GOOGL', 'year': 2024, 'section': 'Item 7A'} with: 'Google market risk disclosures in 2024'
+  Answer: *   **Foreign Currency Exposure:** The adverse effect of a 10% exchange rate change on income before...
+  Chunks retrieved: 12, used: 12
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.9231
+    answer_relevance...
+      = 0.8481
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.3333
+
+  Saved Q11. tokens in/out: 29,588/8,296 | cost $0.0185 | run total so far $0.2116
+
+============================================================
+[12/32] Q12 (cross_company): Compare how Apple and Microsoft described competitive risks 
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AAPL",
+    "MSFT"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": "<company> competitive risks in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'}]
+Sub-query template: <company> competitive risks in <year>
+  Reranking combo {'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} with: 'Apple competitive risks in 2023'
+  Reranking combo {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} with: 'Microsoft competitive risks in 2023'
+  Answer: *   **Apple** emphasized that competitors often rely on aggressive pricing, low cost structures, and...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.8242
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.4167
+
+  Saved Q12. tokens in/out: 40,485/11,034 | cost $0.0249 | run total so far $0.2365
+
+============================================================
+[13/32] Q13 (cross_company): Compare Amazon and Google's revenue growth in their 2023 ann
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AMZN",
+    "GOOGL"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 7"
+  ],
+  "sub_query_template": "<company> revenue growth in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'AMZN', 'year': 2023, 'section': 'Item 7'}, {'ticker': 'GOOGL', 'year': 2023, 'section': 'Item 7'}]
+Sub-query template: <company> revenue growth in <year>
+  Reranking combo {'ticker': 'AMZN', 'year': 2023, 'section': 'Item 7'} with: 'Amazon revenue growth in 2023'
+  Reranking combo {'ticker': 'GOOGL', 'year': 2023, 'section': 'Item 7'} with: 'Google revenue growth in 2023'
+  Answer: *   Amazon's consolidated net sales grew 12% in 2023, reaching $574.8 billion, while Google's consol...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.9091
+    answer_relevance...
+      = 0.8741
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.3333
+
+  Saved Q13. tokens in/out: 43,368/9,083 | cost $0.0252 | run total so far $0.2617
+
+============================================================
+[14/32] Q14 (cross_company): How did Meta's and Microsoft's headcount change in their 202
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "META",
+    "MSFT"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [],
+  "sub_query_template": "<company> headcount changes in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'META', 'year': 2023}, {'ticker': 'MSFT', 'year': 2023}]
+Sub-query template: <company> headcount changes in <year>
+  Reranking combo {'ticker': 'META', 'year': 2023} with: 'Meta headcount changes in 2023'
+  Reranking combo {'ticker': 'MSFT', 'year': 2023} with: 'Microsoft headcount changes in 2023'
+  Answer: *   Meta's headcount decreased by 22% year-over-year, reaching 67,317 employees as of December 31, 2...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.8889
+    answer_relevance...
+      = 0.9007
+    context_recall...
+      = 0.3333
+    ground_truth_coverage...
+      = 0.3333
+
+  Saved Q14. tokens in/out: 45,070/5,158 | cost $0.0231 | run total so far $0.2848
+
+============================================================
+[15/32] Q15 (cross_company): Compare the business descriptions of Apple, Amazon, and Goog
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AAPL",
+    "AMZN",
+    "GOOGL"
+  ],
+  "years": [
+    2022
+  ],
+  "sections": [
+    "Item 1"
+  ],
+  "sub_query_template": "<company> business description in <year>"
+}
+
+Filter combinations (3): [{'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1'}, {'ticker': 'AMZN', 'year': 2022, 'section': 'Item 1'}, {'ticker': 'GOOGL', 'year': 2022, 'section': 'Item 1'}]
+Sub-query template: <company> business description in <year>
+  Reranking combo {'ticker': 'AAPL', 'year': 2022, 'section': 'Item 1'} with: 'Apple business description in 2022'
+  Reranking combo {'ticker': 'AMZN', 'year': 2022, 'section': 'Item 1'} with: 'Amazon business description in 2022'
+  Reranking combo {'ticker': 'GOOGL', 'year': 2022, 'section': 'Item 1'} with: 'Google business description in 2022'
+  Answer: Based on the provided 2022 annual report excerpts, here is a comparison of the business descriptions...
+  Chunks retrieved: 29, used: 29
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9194
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.7778
+
+  Saved Q15. tokens in/out: 52,961/9,439 | cost $0.0303 | run total so far $0.3151
+
+============================================================
+[16/32] Q16 (vague): What are the biggest risks facing large technology companies
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [],
+  "years": [],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'section': 'Item 1A'}]
+  Answer: Based on the provided excerpts, the major risks facing large technology companies include:
+
+*   **In...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.4878
+    answer_relevance...
+      = 0.997
+
+  Saved Q16. tokens in/out: 18,037/6,838 | cost $0.0137 | run total so far $0.3288
+
+============================================================
+[17/32] Q17 (vague): How have tech companies been affected by macroeconomic condi
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [],
+  "years": [],
+  "sections": [],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{}]
+  Answer: *   **Google (2020)**: Macroeconomic impacts, specifically the pandemic, threatened to cause signifi...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.8846
+    answer_relevance...
+      = 0.895
+
+  Saved Q17. tokens in/out: 18,128/7,748 | cost $0.0144 | run total so far $0.3432
+
+============================================================
+[18/32] Q18 (vague): What do companies say about artificial intelligence?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [],
+  "years": [],
+  "sections": [],
+  "sub_query_template": "<company> artificial intelligence disclosures in <year>"
+}
+
+Filter combinations (1): [{}]
+Sub-query template: <company> artificial intelligence disclosures in <year>
+  Answer: *   **Google** states that AI is critical to its mission, powers core products, and is being integra...
+  Chunks retrieved: 10, used: 10
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.9592
+    answer_relevance...
+      = 0.8495
+
+  Saved Q18. tokens in/out: 17,470/7,562 | cost $0.0138 | run total so far $0.3569
+
+============================================================
+[19/32] Q19 (invalid): What was the weather forecast for New York City in January 2
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": false,
+  "rejection_reason": "Query is about weather forecasts, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.",
+  "tickers": [],
+  "years": [
+    2022
+  ],
+  "sections": [],
+  "sub_query_template": null
+}
+  Rejected: Query is about weather forecasts, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.
+  Outcome: rejected | pass: True
+
+  Saved Q19. tokens in/out: 810/78 | cost $0.0010 | run total so far $0.3579
+
+============================================================
+[20/32] Q20 (invalid): Who won the Super Bowl in 2023?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": false,
+  "rejection_reason": "Query is about sports results, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.",
+  "tickers": [],
+  "years": [],
+  "sections": [],
+  "sub_query_template": null
+}
+  Rejected: Query is about sports results, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.
+  Outcome: rejected | pass: True
+
+  Saved Q20. tokens in/out: 805/73 | cost $0.0009 | run total so far $0.3588
+
+============================================================
+[21/32] Q21 (invalid): What is Tesla's revenue in 2023?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": false,
+  "rejection_reason": "Tesla is not in the supported company list",
+  "tickers": [],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 7"
+  ],
+  "sub_query_template": null
+}
+  Rejected: Tesla is not in the supported company list
+  Outcome: rejected | pass: True
+
+  Saved Q21. tokens in/out: 805/65 | cost $0.0009 | run total so far $0.3597
+
+============================================================
+[22/32] Q22 (cross_year): Did Meta's Reality Labs segment revenue increase or decrease
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "META"
+  ],
+  "years": [
+    2022,
+    2023
+  ],
+  "sections": [
+    "Item 7"
+  ],
+  "sub_query_template": "<company> Reality Labs segment revenue in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'META', 'year': 2022, 'section': 'Item 7'}, {'ticker': 'META', 'year': 2023, 'section': 'Item 7'}]
+Sub-query template: <company> Reality Labs segment revenue in <year>
+  Reranking combo {'ticker': 'META', 'year': 2022, 'section': 'Item 7'} with: 'Meta Reality Labs segment revenue in 2022'
+  Reranking combo {'ticker': 'META', 'year': 2023, 'section': 'Item 7'} with: 'Meta Reality Labs segment revenue in 2023'
+  Answer: Meta's Reality Labs segment revenue decreased from 2022 to 2023. It fell by $263 million, or 12%, fr...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9747
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 1.0
+
+  Saved Q22. tokens in/out: 44,893/2,912 | cost $0.0221 | run total so far $0.3819
+
+============================================================
+[23/32] Q23 (cross_year): Did Apple's stance on single-source supplier risk change bet
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AAPL"
+  ],
+  "years": [
+    2020,
+    2023
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": "<company> single-source supplier risk disclosures in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'}, {'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'}]
+Sub-query template: <company> single-source supplier risk disclosures in <year>
+  Reranking combo {'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} with: 'Apple single-source supplier risk disclosures in 2020'
+  Reranking combo {'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} with: 'Apple single-source supplier risk disclosures in 2023'
+  Answer: *   Apple's core stance on single-source supplier risk remained consistent between 2020 and 2023, as...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.9728
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.8
+
+  Saved Q23. tokens in/out: 38,080/8,430 | cost $0.0220 | run total so far $0.4038
+
+============================================================
+[24/32] Q24 (cross_year): Did Microsoft's position on AI risk change between 2022 and 
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "MSFT"
+  ],
+  "years": [
+    2022,
+    2024
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": "<company> AI risk disclosures in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'}, {'ticker': 'MSFT', 'year': 2024, 'section': 'Item 1A'}]
+Sub-query template: <company> AI risk disclosures in <year>
+  Reranking combo {'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} with: 'Microsoft AI risk disclosures in 2022'
+  Reranking combo {'ticker': 'MSFT', 'year': 2024, 'section': 'Item 1A'} with: 'Microsoft AI risk disclosures in 2024'
+  Answer: *   Microsoft's position on AI risk evolved from general concerns about flawed algorithms and biased...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 0.8462
+    answer_relevance...
+      = 0.9955
+    context_recall...
+      = 1.0
+    ground_truth_coverage...
+      = 0.7
+
+  Saved Q24. tokens in/out: 40,218/9,168 | cost $0.0234 | run total so far $0.4272
+
+============================================================
+[25/32] Q25 (should_refuse): What were Apple's main risk factors in 2019?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": false,
+  "rejection_reason": "Year 2019 is not available in the database (available years: 2020-2024)",
+  "tickers": [
+    "AAPL"
+  ],
+  "years": [],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": null
+}
+  Rejected: Year 2019 is not available in the database (available years: 2020-2024)
+  Outcome: rejected | pass: True
+
+  Saved Q25. tokens in/out: 807/104 | cost $0.0011 | run total so far $0.4283
+
+============================================================
+[26/32] Q26 (should_refuse): What did Microsoft say about AI risk in its 2025 10-K?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": false,
+  "rejection_reason": "Year 2025 is not available in the database (available years: 2020-2024)",
+  "tickers": [
+    "MSFT"
+  ],
+  "years": [],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": null
+}
+  Rejected: Year 2025 is not available in the database (available years: 2020-2024)
+  Outcome: rejected | pass: True
+
+  Saved Q26. tokens in/out: 812/104 | cost $0.0011 | run total so far $0.4294
+
+============================================================
+[27/32] Q27 (should_refuse): What was Amazon's accounts receivable balance at the end of 
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AMZN"
+  ],
+  "years": [
+    2021
+  ],
+  "sections": [],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'AMZN', 'year': 2021}]
+  Answer: The provided context does not contain enough information to answer this question....
+  Chunks retrieved: 10, used: 10
+  [Scorer] Refusal detected — faithfulness set to 1.0 (correct grounding behaviour).
+  Outcome: refused | pass: True
+
+  Saved Q27. tokens in/out: 5,627/70 | cost $0.0048 | run total so far $0.4342
+
+============================================================
+[28/32] Q28 (should_refuse): How much was Meta's CEO paid in 2023?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": false,
+  "rejection_reason": "Executive compensation details are typically found in the Proxy Statement (DEF 14A), not the 10-K annual report.",
+  "tickers": [
+    "META"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [],
+  "sub_query_template": null
+}
+  Rejected: Executive compensation details are typically found in the Proxy Statement (DEF 14A), not the 10-K annual report.
+  Outcome: rejected | pass: True
+
+  Saved Q28. tokens in/out: 807/80 | cost $0.0010 | run total so far $0.4351
+
+============================================================
+[29/32] Q29 (should_refuse): How many iPhones did Apple sell in 2021?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AAPL"
+  ],
+  "years": [
+    2021
+  ],
+  "sections": [
+    "Item 1"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'AAPL', 'year': 2021, 'section': 'Item 1'}]
+  Answer: The provided context does not contain enough information to answer this question....
+  Chunks retrieved: 10, used: 10
+  [Scorer] Refusal detected — faithfulness set to 1.0 (correct grounding behaviour).
+  Outcome: refused | pass: True
+
+  Saved Q29. tokens in/out: 4,704/74 | cost $0.0041 | run total so far $0.4392
+
+============================================================
+[30/32] Q30 (should_refuse): What are Nvidia's biggest risk factors in 2023?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": false,
+  "rejection_reason": "Nvidia is not in the supported company list",
+  "tickers": [],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 1A"
+  ],
+  "sub_query_template": null
+}
+  Rejected: Nvidia is not in the supported company list
+  Outcome: rejected | pass: True
+
+  Saved Q30. tokens in/out: 807/67 | cost $0.0009 | run total so far $0.4401
+
+============================================================
+[31/32] Q31 (should_refuse): Is Amazon a better investment than Google?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "AMZN",
+    "GOOGL"
+  ],
+  "years": [],
+  "sections": [],
+  "sub_query_template": null
+}
+
+Filter combinations (2): [{'ticker': 'AMZN'}, {'ticker': 'GOOGL'}]
+  Answer: The provided context does not contain enough information to answer this question....
+  Chunks retrieved: 20, used: 20
+  [Scorer] Refusal detected — faithfulness set to 1.0 (correct grounding behaviour).
+  Outcome: refused | pass: True
+
+  Saved Q31. tokens in/out: 8,752/70 | cost $0.0073 | run total so far $0.4474
+
+============================================================
+[32/32] Q32 (should_refuse): How many square feet of office space does Google lease?
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "GOOGL"
+  ],
+  "years": [],
+  "sections": [
+    "Item 1"
+  ],
+  "sub_query_template": null
+}
+
+Filter combinations (1): [{'ticker': 'GOOGL', 'section': 'Item 1'}]
+  Answer: The provided context does not contain enough information to answer this question....
+  Chunks retrieved: 10, used: 10
+  [Scorer] Refusal detected — faithfulness set to 1.0 (correct grounding behaviour).
+  Outcome: refused | pass: True
+
+  Saved Q32. tokens in/out: 4,685/82 | cost $0.0041 | run total so far $0.4515
+
+======================================================================================
+Category          n scored         faith       relev        prec      recall    gt_cover
+--------------------------------------------------------------------------------------
+single_factual    6      6         1.000       0.936       0.947       1.000       0.864
+cross_year        8      8         0.927       0.934           -       0.938       0.717
+cross_company     4      4         0.950       0.880           -       0.833       0.465
+vague             3      3         0.777       0.914           -           -           -
+invalid           3  checked 3, passed 3, outcomes {'rejected': 3}
+should_refuse     8  checked 8, passed 8, outcomes {'rejected': 4, 'refused': 4}
+--------------------------------------------------------------------------------------
+ALL ANSWERED                       0.931       0.921       0.947       0.935       0.710
+======================================================================================
+
+Tokens: 806,487 in / 165,097 out over 291 Groq calls
+  openai/gpt-oss-120b: 494,704 in / 156,638 out -> $0.1682
+  qwen/qwen3.8-27b: 311,783 in / 8,459 out -> $0.2833
+TOTAL COST: $0.4515  [prices checked 2026-10-13]
+Run folder: evaluation/runs\full2_20261014

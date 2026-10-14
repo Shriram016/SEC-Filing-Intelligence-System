@@ -1,0 +1,46 @@
+2026-10-14 11:37:47 [INFO ] ============================================================
+2026-10-14 11:37:47 [INFO ] PIPELINE | query_start | query="[EVAL Q09] How did Meta's total revenue and operating income change between 2022 and 2023?"
+2026-10-14 11:37:47 [INFO ] ============================================================
+2026-10-14 11:37:47 [INFO ] RETRIEVER | ENTER | query="How did Meta's total revenue and operating income change between 2022 and 2023?" top_k=10
+2026-10-14 11:37:47 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How did Meta's total revenue and operating income change between 2022 and 2023?"
+2026-10-14 11:37:47 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:37:48 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["META"],\n    "years": [2022, 2023],\n    "sections": ["Item 7"],\n    "sub_query_template": "<company> total revenue and operating income in <year>"\n}'
+2026-10-14 11:37:48 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['META'] years=[2022, 2023] sections=['Item 7'] sub_query_template='<company> total revenue and operating income in <year>' rejection_reason=None
+2026-10-14 11:37:48 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:37:48 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'META', 'year': 2022, 'section': 'Item 7'}, {'ticker': 'META', 'year': 2023, 'section': 'Item 7'}]
+2026-10-14 11:37:48 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'META', 'year': 2022, 'section': 'Item 7'} n_results=10
+2026-10-14 11:37:48 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'META', 'year': 2022, 'section': 'Item 7'} chunks_returned=10
+2026-10-14 11:37:48 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 7'} n_results=10
+2026-10-14 11:37:48 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 7'} chunks_returned=10
+2026-10-14 11:37:48 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'META', 'year': 2022, 'section': 'Item 7'} sub_query='Meta total revenue and operating income in 2022'
+2026-10-14 11:37:48 [INFO ] RERANKER | ENTER | query='Meta total revenue and operating income in 2022' chunks=10
+2026-10-14 11:37:48 [INFO ] RERANKER | before | top3=['META_2022_Item_7_chunk_003 cosine=0.8338', 'META_2022_Item_7_chunk_029 cosine=0.8324', 'META_2022_Item_7_chunk_002 cosine=0.8227']
+2026-10-14 11:37:50 [INFO ] RERANKER | after | top3=['META_2022_Item_7_chunk_002 reranker=0.9739', 'META_2022_Item_7_chunk_003 reranker=0.8893', 'META_2022_Item_7_chunk_036 reranker=0.6961']
+2026-10-14 11:37:50 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:37:50 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 7'} sub_query='Meta total revenue and operating income in 2023'
+2026-10-14 11:37:50 [INFO ] RERANKER | ENTER | query='Meta total revenue and operating income in 2023' chunks=10
+2026-10-14 11:37:50 [INFO ] RERANKER | before | top3=['META_2023_Item_7_chunk_032 cosine=0.8295', 'META_2023_Item_7_chunk_031 cosine=0.8294', 'META_2023_Item_7_chunk_030 cosine=0.8277']
+2026-10-14 11:37:52 [INFO ] RERANKER | after | top3=['META_2023_Item_7_chunk_002 reranker=0.9669', 'META_2023_Item_7_chunk_031 reranker=0.7691', 'META_2023_Item_7_chunk_032 reranker=0.6830']
+2026-10-14 11:37:52 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=7/10
+2026-10-14 11:37:52 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:37:52 [INFO ] SYNTHESIZER | ENTER | query="How did Meta's total revenue and operating income change between 2022 and 2023?" chunks_received=20
+2026-10-14 11:37:52 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:37:52 [INFO ] SYNTHESIZER | context | sources=['Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7']
+2026-10-14 11:37:52 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Meta total revenue and operating income in 2022 ===\n\n[1] Meta | 2022 | MD&A\n"These measures may be different from non‑GAAP financial measures used by other companies, limiting their usefulness for comparison purposes. Moreover, presentation of revenue on a constant currency ba'
+2026-10-14 11:37:52 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:37:53 [INFO ] SYNTHESIZER | Groq response | answer_length=718 chars
+2026-10-14 11:37:53 [INFO ] SYNTHESIZER | Groq response | answer=
+*   Total revenue increased by 16% from $116.61 billion in 2022 to $134.90 billion in 2023.
+*   Income from operations increased by 62% from $28.94 billion in 2022 to $46.75 billion in 2023.
+*   The revenue growth was primarily driven by a 16% increase in advertising revenue, which rose from $113.64 billion to $131.95 billion.
+*   Operating income growth was driven by higher advertising revenue and a decrease in marketing and sales expenses.
+*   Family of Apps operating income increased by 47% to $62.87 billion, while Reality Labs operating losses widened by 18% to $16.12 billion.
+*   Total costs and expenses remained relatively stable, increasing only 1% from $87.67 billion in 2022 to $88.15 billion in 2023.
+2026-10-14 11:37:53 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:37:53 [INFO ] SCORER | ENTER | answer_preview='*   Total revenue increased by 16% from $116.61 billion in 2022 to $134.90 billi' sources=20
+2026-10-14 11:37:53 [INFO ] SCORER | avg_retrieval_similarity=0.8169
+2026-10-14 11:37:53 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=718 chars sources=20
+2026-10-14 11:37:53 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:37:54 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:37:54 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:37:54 [INFO ] SCORER | EXIT | confidence=0.9268 faithfulness=1.0 avg_retrieval_similarity=0.8169

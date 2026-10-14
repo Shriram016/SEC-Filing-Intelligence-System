@@ -1,0 +1,37 @@
+2026-10-14 11:34:13 [INFO ] ============================================================
+2026-10-14 11:34:13 [INFO ] PIPELINE | query_start | query='[EVAL Q06] What market risks related to interest rates did Apple disclose in its 2022 annual report?'
+2026-10-14 11:34:13 [INFO ] ============================================================
+2026-10-14 11:34:13 [INFO ] RETRIEVER | ENTER | query='What market risks related to interest rates did Apple disclose in its 2022 annual report?' top_k=10
+2026-10-14 11:34:13 [INFO ] RETRIEVER | filter_extraction | ENTER | query='What market risks related to interest rates did Apple disclose in its 2022 annual report?'
+2026-10-14 11:34:13 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:34:14 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "AAPL"\n    ],\n    "years": [\n        2022\n    ],\n    "sections": [\n        "Item 7A"\n    ],\n    "sub_query_template": null\n}'
+2026-10-14 11:34:14 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AAPL'] years=[2022] sections=['Item 7A'] sub_query_template=None rejection_reason=None
+2026-10-14 11:34:14 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:34:14 [INFO ] RETRIEVER | combinations | count=1 combos=[{'ticker': 'AAPL', 'year': 2022, 'section': 'Item 7A'}]
+2026-10-14 11:34:14 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2022, 'section': 'Item 7A'} n_results=10
+2026-10-14 11:34:14 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2022, 'section': 'Item 7A'} chunks_returned=4
+2026-10-14 11:34:14 [INFO ] RERANKER | ENTER | query='What market risks related to interest rates did Apple disclose in its 2022 annual report?' chunks=4
+2026-10-14 11:34:14 [INFO ] RERANKER | before | top3=['AAPL_2022_Item_7A_chunk_001 cosine=0.8366', 'AAPL_2022_Item_7A_chunk_002 cosine=0.8324', 'AAPL_2022_Item_7A_chunk_003 cosine=0.8280']
+2026-10-14 11:34:15 [INFO ] RERANKER | after | top3=['AAPL_2022_Item_7A_chunk_003 reranker=0.1283', 'AAPL_2022_Item_7A_chunk_001 reranker=0.1115', 'AAPL_2022_Item_7A_chunk_002 reranker=0.1096']
+2026-10-14 11:34:15 [INFO ] RERANKER | EXIT | chunks=4 positions_changed=3/4
+2026-10-14 11:34:15 [INFO ] RETRIEVER | EXIT | total_chunks=4 (after dedup + rerank)
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | ENTER | query='What market risks related to interest rates did Apple disclose in its 2022 annual report?' chunks_received=4
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | context | chunks_received=4 chunks_selected=4 (cap=30) dropped=0
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | context | sources=['Apple 2022 Item 7A', 'Apple 2022 Item 7A', 'Apple 2022 Item 7A', 'Apple 2022 Item 7A']
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Apple | 2022 | Market Risk\n"A 100 basis point increase in market interest rates would cause interest expense on the Company’s debt as of September 24, 2022 and September 25, 2021 to increase by $201 million and $186 million on an annualized basis, respectively. Foreign Currenc'
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | Groq response | answer_length=909 chars
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | Groq response | answer=
+*   Apple's exposure to interest rate changes primarily relates to its investment portfolio and outstanding debt, with U.S. interest rate fluctuations having the most significant impact.
+*   A hypothetical 100 basis point increase in interest rates would result in a $4.0 billion incremental decline in the fair market value of the investment portfolio as of September 24, 2022.
+*   The same 100 basis point increase would cause interest expense on the Company’s debt to increase by $201 million on an annualized basis as of September 24, 2022.
+*   The Company manages interest rate risk on its outstanding term debt by entering into interest rate swaps to convert fixed-rate payments into floating-rate payments or vice versa.
+*   Apple’s investment policy focuses on capital preservation and liquidity, typically investing in highly rated, investment-grade securities to minimize the risk of principal loss.
+2026-10-14 11:34:15 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=4
+2026-10-14 11:34:15 [INFO ] SCORER | ENTER | answer_preview="*   Apple's exposure to interest rate changes primarily relates to its investmen" sources=4
+2026-10-14 11:34:15 [INFO ] SCORER | avg_retrieval_similarity=0.8294
+2026-10-14 11:34:15 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=909 chars sources=4
+2026-10-14 11:34:15 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:34:16 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:34:16 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:34:16 [INFO ] SCORER | EXIT | confidence=0.9318 faithfulness=1.0 avg_retrieval_similarity=0.8294

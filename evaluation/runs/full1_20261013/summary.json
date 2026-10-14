@@ -1,0 +1,282 @@
+{
+  "by_category": {
+    "single_factual": {
+      "n": 6,
+      "n_scored": 6,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 0.9811,
+            "Q03": 0.8,
+            "Q04": 1.0,
+            "Q05": 0.3333,
+            "Q06": 0.0
+          },
+          "n": 6,
+          "mean": 0.6857
+        },
+        "answer_relevance": {
+          "values": {
+            "Q01": 0.9986,
+            "Q02": 0.9938,
+            "Q03": 0.9774,
+            "Q04": 0.9425,
+            "Q05": 0.9897,
+            "Q06": 0.9313
+          },
+          "n": 6,
+          "mean": 0.9722
+        },
+        "context_precision": {
+          "values": {
+            "Q01": 0.86,
+            "Q02": 0.6429,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 0.9172
+        },
+        "context_recall": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 1.0,
+            "Q03": 1.0,
+            "Q04": 1.0,
+            "Q05": 1.0,
+            "Q06": 1.0
+          },
+          "n": 6,
+          "mean": 1.0
+        },
+        "factual_correctness": {
+          "values": {
+            "Q01": 1.0,
+            "Q02": 0.75,
+            "Q03": 1.0,
+            "Q04": 0.5,
+            "Q05": 0.0,
+            "Q06": 0.0
+          },
+          "n": 6,
+          "mean": 0.5417
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "cross_year": {
+      "n": 8,
+      "n_scored": 8,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q07": 0.7742,
+            "Q08": 0.0,
+            "Q09": 0.8,
+            "Q10": 1.0,
+            "Q11": 1.0,
+            "Q22": 1.0,
+            "Q23": 1.0,
+            "Q24": 0.0
+          },
+          "n": 8,
+          "mean": 0.6968
+        },
+        "answer_relevance": {
+          "values": {
+            "Q07": 0.9311,
+            "Q08": 0.9407,
+            "Q09": 0.9633,
+            "Q10": 0.9492,
+            "Q11": 0.8793,
+            "Q22": 0.9654,
+            "Q23": 1.0,
+            "Q24": 0.9751
+          },
+          "n": 8,
+          "mean": 0.9505
+        },
+        "context_recall": {
+          "values": {
+            "Q07": 1.0,
+            "Q08": 1.0,
+            "Q09": 1.0,
+            "Q10": 1.0,
+            "Q11": 1.0,
+            "Q22": 1.0,
+            "Q23": 0.5,
+            "Q24": 1.0
+          },
+          "n": 8,
+          "mean": 0.9375
+        },
+        "factual_correctness": {
+          "values": {
+            "Q07": 0.0,
+            "Q08": 0.33,
+            "Q09": 1.0,
+            "Q10": 0.5,
+            "Q11": 0.0,
+            "Q22": 1.0,
+            "Q23": 1.0,
+            "Q24": 0.33
+          },
+          "n": 8,
+          "mean": 0.52
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "cross_company": {
+      "n": 4,
+      "n_scored": 4,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q12": 1.0,
+            "Q13": 0.7727,
+            "Q14": 1.0,
+            "Q15": 1.0
+          },
+          "n": 4,
+          "mean": 0.9432
+        },
+        "answer_relevance": {
+          "values": {
+            "Q12": 0.9571,
+            "Q13": 0.9125,
+            "Q14": 0.8805,
+            "Q15": 0.8119
+          },
+          "n": 4,
+          "mean": 0.8905
+        },
+        "context_recall": {
+          "values": {
+            "Q12": 1.0,
+            "Q13": 1.0,
+            "Q14": 0.0,
+            "Q15": 1.0
+          },
+          "n": 4,
+          "mean": 0.75
+        },
+        "factual_correctness": {
+          "values": {
+            "Q12": 0.0,
+            "Q13": 1.0,
+            "Q14": 0.25,
+            "Q15": 0.6
+          },
+          "n": 4,
+          "mean": 0.4625
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "vague": {
+      "n": 3,
+      "n_scored": 3,
+      "metrics": {
+        "faithfulness": {
+          "values": {
+            "Q16": 0.6786,
+            "Q17": 0.88,
+            "Q18": 0.55
+          },
+          "n": 3,
+          "mean": 0.7029
+        },
+        "answer_relevance": {
+          "values": {
+            "Q16": 0.9472,
+            "Q17": 0.9887,
+            "Q18": 0.8489
+          },
+          "n": 3,
+          "mean": 0.9283
+        }
+      },
+      "outcomes": {},
+      "passed": 0,
+      "checked": 0,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "invalid": {
+      "n": 3,
+      "n_scored": 0,
+      "metrics": {},
+      "outcomes": {
+        "rejected": 3
+      },
+      "passed": 3,
+      "checked": 3,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    },
+    "should_refuse": {
+      "n": 8,
+      "n_scored": 0,
+      "metrics": {},
+      "outcomes": {
+        "rejected": 4,
+        "refused": 4
+      },
+      "passed": 8,
+      "checked": 8,
+      "unexpected_rejections": [],
+      "metric_errors": [],
+      "pipeline_errors": []
+    }
+  },
+  "overall_answer_categories": {
+    "faithfulness": {
+      "mean": 0.7414,
+      "n": 21
+    },
+    "answer_relevance": {
+      "mean": 0.9421,
+      "n": 21
+    },
+    "context_precision": {
+      "mean": 0.9172,
+      "n": 6
+    },
+    "context_recall": {
+      "mean": 0.9167,
+      "n": 18
+    },
+    "factual_correctness": {
+      "mean": 0.5144,
+      "n": 18
+    }
+  },
+  "usage_total": {
+    "calls": 327,
+    "prompt_tokens": 889418,
+    "completion_tokens": 257949,
+    "cost_usd": 0.549063,
+    "unpriced_calls": 0
+  }
+}

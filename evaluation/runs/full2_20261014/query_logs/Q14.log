@@ -1,0 +1,44 @@
+2026-10-14 11:43:53 [INFO ] ============================================================
+2026-10-14 11:43:53 [INFO ] PIPELINE | query_start | query="[EVAL Q14] How did Meta's and Microsoft's headcount change in their 2023 annual reports?"
+2026-10-14 11:43:53 [INFO ] ============================================================
+2026-10-14 11:43:53 [INFO ] RETRIEVER | ENTER | query="How did Meta's and Microsoft's headcount change in their 2023 annual reports?" top_k=10
+2026-10-14 11:43:53 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How did Meta's and Microsoft's headcount change in their 2023 annual reports?"
+2026-10-14 11:43:53 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:43:53 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "META",\n        "MSFT"\n    ],\n    "years": [\n        2023\n    ],\n    "sections": [],\n    "sub_query_template": "<company> headcount changes in <year>"\n}'
+2026-10-14 11:43:53 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['META', 'MSFT'] years=[2023] sections=[] sub_query_template='<company> headcount changes in <year>' rejection_reason=None
+2026-10-14 11:43:53 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:43:53 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'META', 'year': 2023}, {'ticker': 'MSFT', 'year': 2023}]
+2026-10-14 11:43:53 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'META', 'year': 2023} n_results=10
+2026-10-14 11:43:53 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'META', 'year': 2023} chunks_returned=10
+2026-10-14 11:43:53 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2023} n_results=10
+2026-10-14 11:43:53 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2023} chunks_returned=10
+2026-10-14 11:43:53 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'META', 'year': 2023} sub_query='Meta headcount changes in 2023'
+2026-10-14 11:43:53 [INFO ] RERANKER | ENTER | query='Meta headcount changes in 2023' chunks=10
+2026-10-14 11:43:53 [INFO ] RERANKER | before | top3=['META_2023_Item_1_chunk_018 cosine=0.8284', 'META_2023_Item_7_chunk_033 cosine=0.8148', 'META_2023_Item_1_chunk_022 cosine=0.8117']
+2026-10-14 11:43:56 [INFO ] RERANKER | after | top3=['META_2023_Item_7_chunk_033 reranker=0.6788', 'META_2023_Item_7_chunk_004 reranker=0.6594', 'META_2023_Item_7_chunk_031 reranker=0.3913']
+2026-10-14 11:43:56 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:43:56 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2023} sub_query='Microsoft headcount changes in 2023'
+2026-10-14 11:43:56 [INFO ] RERANKER | ENTER | query='Microsoft headcount changes in 2023' chunks=10
+2026-10-14 11:43:56 [INFO ] RERANKER | before | top3=['MSFT_2023_Item_7_chunk_002 cosine=0.8235', 'MSFT_2023_Item_7_chunk_012 cosine=0.8159', 'MSFT_2023_Item_1_chunk_040 cosine=0.8144']
+2026-10-14 11:43:58 [INFO ] RERANKER | after | top3=['MSFT_2023_Item_1_chunk_040 reranker=0.3520', 'MSFT_2023_Item_7_chunk_005 reranker=0.2509', 'MSFT_2023_Item_7_chunk_002 reranker=0.1348']
+2026-10-14 11:43:58 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:43:58 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:43:58 [INFO ] SYNTHESIZER | ENTER | query="How did Meta's and Microsoft's headcount change in their 2023 annual reports?" chunks_received=20
+2026-10-14 11:43:58 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:43:58 [INFO ] SYNTHESIZER | context | sources=['Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 1', 'Meta 2023 Item 1A', 'Meta 2023 Item 1', 'Meta 2023 Item 7', 'Meta 2023 Item 1', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 7', 'Microsoft 2023 Item 7', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 7', 'Microsoft 2023 Item 7', 'Microsoft 2023 Item 7', 'Microsoft 2023 Item 7', 'Microsoft 2023 Item 7']
+2026-10-14 11:43:58 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Meta headcount changes in 2023 ===\n\n[1] Meta | 2023 | MD&A\n"See Note 3 — Restructuring in the notes to the consolidated financial statements included in Part II, Item 8, "Financial Statements and Supplementary Data" of this Annual Report on Form 10-K for additional information'
+2026-10-14 11:43:58 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:43:59 [INFO ] SYNTHESIZER | Groq response | answer_length=635 chars
+2026-10-14 11:43:59 [INFO ] SYNTHESIZER | Groq response | answer=
+*   Meta's headcount decreased by 22% year-over-year, reaching 67,317 employees as of December 31, 2023.
+*   Microsoft reported employing approximately 221,000 people on a full-time basis as of June 30, 2023, but the provided excerpts do not state the specific percentage change or the prior year's headcount for comparison.
+*   Meta attributed its headcount reduction to employee layoffs and restructurings initiated in November 2022 to reduce its expense base.
+*   Microsoft noted that it eliminated roles in some areas while continuing to hire in key strategic areas, and its operating expenses included employee severance expenses.
+2026-10-14 11:43:59 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:43:59 [INFO ] SCORER | ENTER | answer_preview="*   Meta's headcount decreased by 22% year-over-year, reaching 67,317 employees " sources=20
+2026-10-14 11:43:59 [INFO ] SCORER | avg_retrieval_similarity=0.807
+2026-10-14 11:43:59 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=635 chars sources=20
+2026-10-14 11:43:59 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:44:00 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:44:00 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:44:00 [INFO ] SCORER | EXIT | confidence=0.9228 faithfulness=1.0 avg_retrieval_similarity=0.807

@@ -1,0 +1,47 @@
+2026-10-14 11:38:43 [INFO ] ============================================================
+2026-10-14 11:38:43 [INFO ] PIPELINE | query_start | query="[EVAL Q10] How did Amazon's business description change between its 2020 and 2024 annual reports?"
+2026-10-14 11:38:43 [INFO ] ============================================================
+2026-10-14 11:38:43 [INFO ] RETRIEVER | ENTER | query="How did Amazon's business description change between its 2020 and 2024 annual reports?" top_k=10
+2026-10-14 11:38:43 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How did Amazon's business description change between its 2020 and 2024 annual reports?"
+2026-10-14 11:38:43 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:38:44 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AMZN"],\n    "years": [2020, 2024],\n    "sections": ["Item 1"],\n    "sub_query_template": "<company> business description in <year>"\n}'
+2026-10-14 11:38:44 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AMZN'] years=[2020, 2024] sections=['Item 1'] sub_query_template='<company> business description in <year>' rejection_reason=None
+2026-10-14 11:38:44 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:38:44 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'AMZN', 'year': 2020, 'section': 'Item 1'}, {'ticker': 'AMZN', 'year': 2024, 'section': 'Item 1'}]
+2026-10-14 11:38:44 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN', 'year': 2020, 'section': 'Item 1'} n_results=10
+2026-10-14 11:38:44 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN', 'year': 2020, 'section': 'Item 1'} chunks_returned=10
+2026-10-14 11:38:44 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN', 'year': 2024, 'section': 'Item 1'} n_results=10
+2026-10-14 11:38:44 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN', 'year': 2024, 'section': 'Item 1'} chunks_returned=10
+2026-10-14 11:38:44 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AMZN', 'year': 2020, 'section': 'Item 1'} sub_query='Amazon business description in 2020'
+2026-10-14 11:38:44 [INFO ] RERANKER | ENTER | query='Amazon business description in 2020' chunks=10
+2026-10-14 11:38:44 [INFO ] RERANKER | before | top3=['AMZN_2020_Item_1_chunk_001 cosine=0.8560', 'AMZN_2020_Item_1_chunk_006 cosine=0.8270', 'AMZN_2020_Item_1_chunk_002 cosine=0.7938']
+2026-10-14 11:38:46 [INFO ] RERANKER | after | top3=['AMZN_2020_Item_1_chunk_006 reranker=0.3071', 'AMZN_2020_Item_1_chunk_001 reranker=0.2255', 'AMZN_2020_Item_1_chunk_004 reranker=0.0347']
+2026-10-14 11:38:46 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=5/10
+2026-10-14 11:38:46 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AMZN', 'year': 2024, 'section': 'Item 1'} sub_query='Amazon business description in 2024'
+2026-10-14 11:38:46 [INFO ] RERANKER | ENTER | query='Amazon business description in 2024' chunks=10
+2026-10-14 11:38:46 [INFO ] RERANKER | before | top3=['AMZN_2024_Item_1_chunk_001 cosine=0.8568', 'AMZN_2024_Item_1_chunk_006 cosine=0.8265', 'AMZN_2024_Item_1_chunk_005 cosine=0.8175']
+2026-10-14 11:38:49 [INFO ] RERANKER | after | top3=['AMZN_2024_Item_1_chunk_005 reranker=0.8437', 'AMZN_2024_Item_1_chunk_007 reranker=0.0564', 'AMZN_2024_Item_1_chunk_001 reranker=0.0381']
+2026-10-14 11:38:49 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:38:49 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:38:49 [INFO ] SYNTHESIZER | ENTER | query="How did Amazon's business description change between its 2020 and 2024 annual reports?" chunks_received=20
+2026-10-14 11:38:49 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:38:49 [INFO ] SYNTHESIZER | context | sources=['Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2020 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1', 'Amazon 2024 Item 1']
+2026-10-14 11:38:49 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Amazon business description in 2020 ===\n\n[1] Amazon | 2020 | Business\n"and international patent applications covering certain of our proprietary technology. Seasonality\nOur business is affected by seasonality, which historically has resulted in higher sales volume during our f'
+2026-10-14 11:38:49 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:38:50 [INFO ] SYNTHESIZER | Groq response | answer_length=1492 chars
+2026-10-14 11:38:50 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **Leadership Transition:** Jeffrey P. Bezos shifted from President, CEO, and Chairman in 2020 to Executive Chair in 2024, while Andrew R. Jassy moved from CEO of AWS to President and CEO of the company.
+*   **Employee Count:** The workforce increased from approximately 1,298,000 full-time and part-time employees in 2020 to approximately 1,556,000 in 2024.
+*   **Customer Segments:** The 2024 report explicitly lists "advertisers" and "employees" as primary customer sets, whereas the 2020 report listed consumers, sellers, developers, enterprises, and content creators.
+*   **Product Portfolio:** The 2024 description adds Blink and eero to the list of manufactured electronic devices, while the 2020 description listed Kindle, Fire tablet, Fire TV, Echo, and Ring.
+*   **Competitive Landscape:** The 2024 report identifies "providers of virtual or in-person healthcare services" and "tools and services relating to artificial intelligence" as competitors, categories not explicitly listed in the 2020 report.
+*   **Advertising Services:** While 2020 mentioned advertising services in the general description, the 2024 report dedicates a specific section to "Advertisers" as a distinct customer set served through sponsored ads, display, and video.
+*   **Consistent Elements:** Both reports maintain the same three operating segments (North America, International, and AWS), the same four guiding principles, and the same seasonal sales pattern with higher volume in the fourth quarter.
+2026-10-14 11:38:50 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:38:50 [INFO ] SCORER | ENTER | answer_preview='*   **Leadership Transition:** Jeffrey P. Bezos shifted from President, CEO, and' sources=20
+2026-10-14 11:38:50 [INFO ] SCORER | avg_retrieval_similarity=0.7862
+2026-10-14 11:38:50 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=1492 chars sources=20
+2026-10-14 11:38:50 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:38:51 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:38:51 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:38:51 [INFO ] SCORER | EXIT | confidence=0.9145 faithfulness=1.0 avg_retrieval_similarity=0.7862

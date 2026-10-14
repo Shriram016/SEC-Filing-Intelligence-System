@@ -1,0 +1,30 @@
+2026-10-13 11:19:21 [INFO ] ============================================================
+2026-10-13 11:19:21 [INFO ] PIPELINE | query_start | query='[EVAL Q29] How many iPhones did Apple sell in 2021?'
+2026-10-13 11:19:21 [INFO ] ============================================================
+2026-10-13 11:19:22 [INFO ] RETRIEVER | ENTER | query='How many iPhones did Apple sell in 2021?' top_k=10
+2026-10-13 11:19:22 [INFO ] RETRIEVER | filter_extraction | ENTER | query='How many iPhones did Apple sell in 2021?'
+2026-10-13 11:19:22 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-13 11:19:22 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AAPL"],\n    "years": [2021],\n    "sections": ["Item 7"],\n    "sub_query_template": null\n}'
+2026-10-13 11:19:22 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AAPL'] years=[2021] sections=['Item 7'] sub_query_template=None rejection_reason=None
+2026-10-13 11:19:22 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-13 11:19:22 [INFO ] RETRIEVER | combinations | count=1 combos=[{'ticker': 'AAPL', 'year': 2021, 'section': 'Item 7'}]
+2026-10-13 11:19:22 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2021, 'section': 'Item 7'} n_results=10
+2026-10-13 11:19:22 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2021, 'section': 'Item 7'} chunks_returned=10
+2026-10-13 11:19:22 [INFO ] RERANKER | ENTER | query='How many iPhones did Apple sell in 2021?' chunks=10
+2026-10-13 11:19:22 [INFO ] RERANKER | before | top3=['AAPL_2021_Item_7_chunk_003 cosine=0.8673', 'AAPL_2021_Item_7_chunk_004 cosine=0.8589', 'AAPL_2021_Item_7_chunk_005 cosine=0.8448']
+2026-10-13 11:19:24 [INFO ] RERANKER | after | top3=['AAPL_2021_Item_7_chunk_003 reranker=0.0418', 'AAPL_2021_Item_7_chunk_008 reranker=0.0039', 'AAPL_2021_Item_7_chunk_011 reranker=0.0026']
+2026-10-13 11:19:24 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-13 11:19:24 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-13 11:19:24 [INFO ] SYNTHESIZER | ENTER | query='How many iPhones did Apple sell in 2021?' chunks_received=10
+2026-10-13 11:19:24 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-13 11:19:24 [INFO ] SYNTHESIZER | context | sources=['Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7', 'Apple 2021 Item 7']
+2026-10-13 11:19:24 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Apple | 2021 | MD&A\n"In April 2021, the Company announced an increase to its current share repurchase program authorization from $225 billion to $315 billion and raised its quarterly dividend from $0.205 to $0.22 per share beginning in May 2021. During 2021, the Company repurc'
+2026-10-13 11:19:24 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-13 11:19:25 [INFO ] SYNTHESIZER | Groq response | answer_length=81 chars
+2026-10-13 11:19:25 [INFO ] SYNTHESIZER | Groq response | answer=
+The provided context does not contain enough information to answer this question.
+2026-10-13 11:19:25 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-13 11:19:25 [INFO ] SCORER | ENTER | answer_preview='The provided context does not contain enough information to answer this question' sources=10
+2026-10-13 11:19:25 [INFO ] SCORER | avg_retrieval_similarity=0.8068
+2026-10-13 11:19:25 [INFO ] SCORER | refusal_detected | faithfulness=1.0 (no Groq call needed)
+2026-10-13 11:19:25 [INFO ] SCORER | EXIT | confidence=0.9227 faithfulness=1.0 avg_retrieval_similarity=0.8068

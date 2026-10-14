@@ -1,0 +1,47 @@
+2026-10-14 11:35:24 [INFO ] ============================================================
+2026-10-14 11:35:24 [INFO ] PIPELINE | query_start | query="[EVAL Q07] How did Apple's top risk factors change between its 2020 and 2023 annual reports?"
+2026-10-14 11:35:24 [INFO ] ============================================================
+2026-10-14 11:35:24 [INFO ] RETRIEVER | ENTER | query="How did Apple's top risk factors change between its 2020 and 2023 annual reports?" top_k=10
+2026-10-14 11:35:24 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How did Apple's top risk factors change between its 2020 and 2023 annual reports?"
+2026-10-14 11:35:24 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:35:24 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AAPL"],\n    "years": [2020, 2023],\n    "sections": ["Item 1A"],\n    "sub_query_template": "<company> top risk factors in <year>"\n}'
+2026-10-14 11:35:24 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AAPL'] years=[2020, 2023] sections=['Item 1A'] sub_query_template='<company> top risk factors in <year>' rejection_reason=None
+2026-10-14 11:35:24 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:35:24 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'}, {'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'}]
+2026-10-14 11:35:24 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:35:24 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:35:24 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:35:24 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:35:24 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AAPL', 'year': 2020, 'section': 'Item 1A'} sub_query='Apple top risk factors in 2020'
+2026-10-14 11:35:24 [INFO ] RERANKER | ENTER | query='Apple top risk factors in 2020' chunks=10
+2026-10-14 11:35:24 [INFO ] RERANKER | before | top3=['AAPL_2020_Item_1A_chunk_001 cosine=0.8322', 'AAPL_2020_Item_1A_chunk_035 cosine=0.8082', 'AAPL_2020_Item_1A_chunk_004 cosine=0.8044']
+2026-10-14 11:35:27 [INFO ] RERANKER | after | top3=['AAPL_2020_Item_1A_chunk_016 reranker=0.1205', 'AAPL_2020_Item_1A_chunk_001 reranker=0.0739', 'AAPL_2020_Item_1A_chunk_035 reranker=0.0442']
+2026-10-14 11:35:27 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:35:27 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} sub_query='Apple top risk factors in 2023'
+2026-10-14 11:35:27 [INFO ] RERANKER | ENTER | query='Apple top risk factors in 2023' chunks=10
+2026-10-14 11:35:27 [INFO ] RERANKER | before | top3=['AAPL_2023_Item_1A_chunk_030 cosine=0.8182', 'AAPL_2023_Item_1A_chunk_037 cosine=0.8137', 'AAPL_2023_Item_1A_chunk_001 cosine=0.8116']
+2026-10-14 11:35:29 [INFO ] RERANKER | after | top3=['AAPL_2023_Item_1A_chunk_037 reranker=0.1567', 'AAPL_2023_Item_1A_chunk_001 reranker=0.1050', 'AAPL_2023_Item_1A_chunk_029 reranker=0.0755']
+2026-10-14 11:35:29 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:35:29 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:35:29 [INFO ] SYNTHESIZER | ENTER | query="How did Apple's top risk factors change between its 2020 and 2023 annual reports?" chunks_received=20
+2026-10-14 11:35:29 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:35:29 [INFO ] SYNTHESIZER | context | sources=['Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A']
+2026-10-14 11:35:29 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Apple top risk factors in 2020 ===\n\n[1] Apple | 2020 | Risk Factors\n"This analysis may be based on factors such as the market position of the Company and its products, the anticipated revenue that may be generated, expected future growth of product sales, and the costs of deve'
+2026-10-14 11:35:29 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:35:31 [INFO ] SYNTHESIZER | Groq response | answer_length=2481 chars
+2026-10-14 11:35:31 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **App Store Regulation and Litigation:** In 2020, the primary risk was that developers might reduce their use of Apple’s platforms or in-app purchases, decreasing commission revenue. By 2023, this evolved into specific risks regarding antitrust investigations, litigation, and mandatory compliance with the EU Digital Markets Act, which could force changes to App Store terms, reduce commissions, or result in significant fines.
+*   **Environmental, Social, and Governance (ESG):** The 2020 report did not highlight ESG as a top risk factor. In 2023, Apple explicitly identified expectations related to ESG considerations, including climate change and human rights, as a source of potential liabilities, increased costs, and reputational harm.
+*   **Tax Jurisdictions:** Both years identified exposure to changes in tax rates and legislation. However, the 2020 report specifically named Ireland as a jurisdiction where subsidiaries are organized, while the 2023 report named both Ireland and Singapore, and additionally referenced the OECD’s proposals for global minimum tax standards.
+*   **Supply Chain and Trade Restrictions:** Both reports cited risks from international trade disputes, tariffs, and the concentration of vendor non-trade receivables among a few vendors primarily in Asia. The 2023 report specifically cited tensions between the U.S. and China as a past driver of tariffs and warned that future escalations could be more severe.
+*   **Pandemic and Business Interruption:** The 2020 report detailed the immediate, material adverse impacts of the COVID-19 pandemic on manufacturing, retail store closures, and employee remote work. The 2023 report still lists pandemics as a risk factor for business interruption but frames it within a broader context of natural disasters, cybersecurity attacks (including ransomware), and other hostile acts, rather than as an ongoing active crisis.
+*   **Inventory and Asset Impairment:** The 2020 report focused on credit and collectibility risks for trade receivables. The 2023 report added a distinct risk factor regarding the potential for write-downs on inventory and other assets due to obsolescence or excess demand, as well as purchase commitment cancellation risks.
+*   **Consistent Risks:** Both years consistently identified risks related to global economic conditions, the concentration of sales outside the U.S., the reliance on third-party developers for software applications, and the need for key personnel.
+2026-10-14 11:35:31 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:35:31 [INFO ] SCORER | ENTER | answer_preview='*   **App Store Regulation and Litigation:** In 2020, the primary risk was that ' sources=20
+2026-10-14 11:35:31 [INFO ] SCORER | avg_retrieval_similarity=0.7998
+2026-10-14 11:35:31 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=2481 chars sources=20
+2026-10-14 11:35:31 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:35:32 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:35:32 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:35:32 [INFO ] SCORER | EXIT | confidence=0.9199 faithfulness=1.0 avg_retrieval_similarity=0.7998

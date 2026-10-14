@@ -1,0 +1,41 @@
+2026-10-14 11:49:12 [INFO ] ============================================================
+2026-10-14 11:49:12 [INFO ] PIPELINE | query_start | query="[EVAL Q22] Did Meta's Reality Labs segment revenue increase or decrease from 2022 to 2023?"
+2026-10-14 11:49:12 [INFO ] ============================================================
+2026-10-14 11:49:12 [INFO ] RETRIEVER | ENTER | query="Did Meta's Reality Labs segment revenue increase or decrease from 2022 to 2023?" top_k=10
+2026-10-14 11:49:12 [INFO ] RETRIEVER | filter_extraction | ENTER | query="Did Meta's Reality Labs segment revenue increase or decrease from 2022 to 2023?"
+2026-10-14 11:49:12 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:49:13 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["META"],\n    "years": [2022, 2023],\n    "sections": ["Item 7"],\n    "sub_query_template": "<company> Reality Labs segment revenue in <year>"\n}'
+2026-10-14 11:49:13 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['META'] years=[2022, 2023] sections=['Item 7'] sub_query_template='<company> Reality Labs segment revenue in <year>' rejection_reason=None
+2026-10-14 11:49:13 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:49:13 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'META', 'year': 2022, 'section': 'Item 7'}, {'ticker': 'META', 'year': 2023, 'section': 'Item 7'}]
+2026-10-14 11:49:13 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'META', 'year': 2022, 'section': 'Item 7'} n_results=10
+2026-10-14 11:49:13 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'META', 'year': 2022, 'section': 'Item 7'} chunks_returned=10
+2026-10-14 11:49:13 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 7'} n_results=10
+2026-10-14 11:49:13 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 7'} chunks_returned=10
+2026-10-14 11:49:13 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'META', 'year': 2022, 'section': 'Item 7'} sub_query='Meta Reality Labs segment revenue in 2022'
+2026-10-14 11:49:13 [INFO ] RERANKER | ENTER | query='Meta Reality Labs segment revenue in 2022' chunks=10
+2026-10-14 11:49:13 [INFO ] RERANKER | before | top3=['META_2022_Item_7_chunk_004 cosine=0.8366', 'META_2022_Item_7_chunk_035 cosine=0.8348', 'META_2022_Item_7_chunk_003 cosine=0.8280']
+2026-10-14 11:49:15 [INFO ] RERANKER | after | top3=['META_2022_Item_7_chunk_035 reranker=0.9975', 'META_2022_Item_7_chunk_003 reranker=0.9937', 'META_2022_Item_7_chunk_034 reranker=0.9682']
+2026-10-14 11:49:15 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:49:15 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 7'} sub_query='Meta Reality Labs segment revenue in 2023'
+2026-10-14 11:49:15 [INFO ] RERANKER | ENTER | query='Meta Reality Labs segment revenue in 2023' chunks=10
+2026-10-14 11:49:15 [INFO ] RERANKER | before | top3=['META_2023_Item_7_chunk_031 cosine=0.8417', 'META_2023_Item_7_chunk_034 cosine=0.8398', 'META_2023_Item_7_chunk_003 cosine=0.8361']
+2026-10-14 11:49:17 [INFO ] RERANKER | after | top3=['META_2023_Item_7_chunk_030 reranker=0.9931', 'META_2023_Item_7_chunk_002 reranker=0.9930', 'META_2023_Item_7_chunk_031 reranker=0.9919']
+2026-10-14 11:49:17 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=10/10
+2026-10-14 11:49:17 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:49:17 [INFO ] SYNTHESIZER | ENTER | query="Did Meta's Reality Labs segment revenue increase or decrease from 2022 to 2023?" chunks_received=20
+2026-10-14 11:49:17 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:49:17 [INFO ] SYNTHESIZER | context | sources=['Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2022 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7', 'Meta 2023 Item 7']
+2026-10-14 11:49:17 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Meta Reality Labs segment revenue in 2022 ===\n\n[1] Meta | 2022 | MD&A\n"The decrease in average price per ad was driven by an increase in the number of ads delivered, especially in geographies and in products such as video and Reels that monetize at lower rates, and an unfavora'
+2026-10-14 11:49:17 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:49:19 [INFO ] SYNTHESIZER | Groq response | answer_length=152 chars
+2026-10-14 11:49:19 [INFO ] SYNTHESIZER | Groq response | answer=
+Meta's Reality Labs segment revenue decreased from 2022 to 2023. It fell by $263 million, or 12%, from $2,159 million in 2022 to $1,896 million in 2023.
+2026-10-14 11:49:19 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:49:19 [INFO ] SCORER | ENTER | answer_preview="Meta's Reality Labs segment revenue decreased from 2022 to 2023. It fell by $263" sources=20
+2026-10-14 11:49:19 [INFO ] SCORER | avg_retrieval_similarity=0.8174
+2026-10-14 11:49:19 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=152 chars sources=20
+2026-10-14 11:49:19 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:49:20 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:49:20 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:49:20 [INFO ] SCORER | EXIT | confidence=0.927 faithfulness=1.0 avg_retrieval_similarity=0.8174

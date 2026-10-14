@@ -1,0 +1,9 @@
+2026-10-14 11:48:51 [INFO ] ============================================================
+2026-10-14 11:48:51 [INFO ] PIPELINE | query_start | query='[EVAL Q20] Who won the Super Bowl in 2023?'
+2026-10-14 11:48:51 [INFO ] ============================================================
+2026-10-14 11:48:52 [INFO ] RETRIEVER | ENTER | query='Who won the Super Bowl in 2023?' top_k=10
+2026-10-14 11:48:52 [INFO ] RETRIEVER | filter_extraction | ENTER | query='Who won the Super Bowl in 2023?'
+2026-10-14 11:48:52 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:48:52 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": false,\n    "rejection_reason": "Query is about sports results, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.",\n    "tickers": [],\n    "years": [],\n    "sections": [],\n    "sub_query_template": null\n}'
+2026-10-14 11:48:52 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=False tickers=[] years=[] sections=[] sub_query_template=None rejection_reason='Query is about sports results, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.'
+2026-10-14 11:48:52 [WARNING] RETRIEVER | EXIT | query rejected | reason='Query is about sports results, which is unrelated to SEC 10-K filings, companies, finance, business, or risk.'

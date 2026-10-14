@@ -1,0 +1,40 @@
+2026-10-14 11:47:56 [INFO ] ============================================================
+2026-10-14 11:47:56 [INFO ] PIPELINE | query_start | query='[EVAL Q18] What do companies say about artificial intelligence?'
+2026-10-14 11:47:56 [INFO ] ============================================================
+2026-10-14 11:47:56 [INFO ] RETRIEVER | ENTER | query='What do companies say about artificial intelligence?' top_k=10
+2026-10-14 11:47:56 [INFO ] RETRIEVER | filter_extraction | ENTER | query='What do companies say about artificial intelligence?'
+2026-10-14 11:47:56 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:47:56 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [],\n    "years": [],\n    "sections": [],\n    "sub_query_template": "<company> artificial intelligence disclosures in <year>"\n}'
+2026-10-14 11:47:56 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=[] years=[] sections=[] sub_query_template='<company> artificial intelligence disclosures in <year>' rejection_reason=None
+2026-10-14 11:47:56 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:47:56 [INFO ] RETRIEVER | combinations | count=1 combos=[{}]
+2026-10-14 11:47:56 [INFO ] RETRIEVER | ChromaDB call | combo={} n_results=10
+2026-10-14 11:47:56 [INFO ] RETRIEVER | ChromaDB result | combo={} chunks_returned=10
+2026-10-14 11:47:56 [INFO ] RERANKER | ENTER | query='What do companies say about artificial intelligence?' chunks=10
+2026-10-14 11:47:56 [INFO ] RERANKER | before | top3=['GOOGL_2022_Item_1_chunk_003 cosine=0.8620', 'GOOGL_2024_Item_1A_chunk_004 cosine=0.8566', 'MSFT_2023_Item_1A_chunk_004 cosine=0.8545']
+2026-10-14 11:47:58 [INFO ] RERANKER | after | top3=['GOOGL_2023_Item_1A_chunk_018 reranker=0.4765', 'MSFT_2024_Item_1_chunk_001 reranker=0.0320', 'MSFT_2023_Item_1A_chunk_004 reranker=0.0219']
+2026-10-14 11:47:58 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:47:58 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-14 11:47:58 [INFO ] SYNTHESIZER | ENTER | query='What do companies say about artificial intelligence?' chunks_received=10
+2026-10-14 11:47:58 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-14 11:47:58 [INFO ] SYNTHESIZER | context | sources=['Google 2023 Item 1A', 'Microsoft 2024 Item 1', 'Microsoft 2023 Item 1A', 'Meta 2024 Item 1A', 'Microsoft 2024 Item 1A', 'Google 2022 Item 1', 'Microsoft 2024 Item 1A', 'Google 2024 Item 1A', 'Google 2024 Item 1A', 'Google 2023 Item 1A']
+2026-10-14 11:47:58 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Google | 2023 | Risk Factors\n"It is hard to predict the challenges we may encounter in adapting our products and services and developing competitive new products and services. We expect to continue to devote significant resources to creating and supporting products and service'
+2026-10-14 11:47:58 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:47:59 [INFO ] SYNTHESIZER | Groq response | answer_length=1563 chars
+2026-10-14 11:47:59 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **Google** states that AI is critical to its mission, powers core products, and is being integrated across the company, including generative AI, while acknowledging risks related to harmful content, liability, and the need for significant investment in infrastructure and development.
+*   **Microsoft** describes AI as a transformative force for productivity and a core component of its business strategy, noting that it is infusing generative AI into consumer and commercial offerings while facing risks from flawed algorithms, legal liability, and intense competition.
+*   **Meta** emphasizes that its AI initiatives require increased investment in infrastructure and headcount, and it highlights significant risks associated with generative AI, including harmful content, bias, intellectual property infringement, and evolving regulatory scrutiny.
+*   All three companies identify AI as a highly competitive and rapidly evolving market that requires significant resources to develop and maintain.
+*   Each company notes that AI presents risks related to legal liability, regulatory action (such as the EU AI Act), and reputational harm.
+*   Google and Microsoft specifically mention the integration of AI into their existing product ecosystems and the importance of AI for their core business operations.
+*   Microsoft and Meta explicitly reference the use of generative AI capabilities in their offerings.
+*   All three companies acknowledge that AI development involves ethical issues and potential negative impacts on society, privacy, and human rights.
+2026-10-14 11:47:59 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-14 11:47:59 [INFO ] SCORER | ENTER | answer_preview='*   **Google** states that AI is critical to its mission, powers core products, ' sources=10
+2026-10-14 11:47:59 [INFO ] SCORER | avg_retrieval_similarity=0.8525
+2026-10-14 11:47:59 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=1563 chars sources=10
+2026-10-14 11:47:59 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:48:00 [INFO ] SCORER | faithfulness_judge | Groq response | raw='4'
+2026-10-14 11:48:00 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=4 normalized=0.75
+2026-10-14 11:48:00 [INFO ] SCORER | EXIT | confidence=0.791 faithfulness=0.75 avg_retrieval_similarity=0.8525

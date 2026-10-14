@@ -1,0 +1,57 @@
+2026-10-13 11:09:29 [INFO ] ============================================================
+2026-10-13 11:09:29 [INFO ] PIPELINE | query_start | query='[EVAL Q14] How did Meta and Microsoft describe their workforce in their 2023 annual reports?'
+2026-10-13 11:09:29 [INFO ] ============================================================
+2026-10-13 11:09:29 [INFO ] RETRIEVER | ENTER | query='How did Meta and Microsoft describe their workforce in their 2023 annual reports?' top_k=10
+2026-10-13 11:09:29 [INFO ] RETRIEVER | filter_extraction | ENTER | query='How did Meta and Microsoft describe their workforce in their 2023 annual reports?'
+2026-10-13 11:09:29 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-13 11:09:29 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "META",\n        "MSFT"\n    ],\n    "years": [\n        2023\n    ],\n    "sections": [\n        "Item 1"\n    ],\n    "sub_query_template": "<company> workforce description in <year>"\n}'
+2026-10-13 11:09:29 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['META', 'MSFT'] years=[2023] sections=['Item 1'] sub_query_template='<company> workforce description in <year>' rejection_reason=None
+2026-10-13 11:09:29 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-13 11:09:29 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'META', 'year': 2023, 'section': 'Item 1'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'}]
+2026-10-13 11:09:29 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 1'} n_results=10
+2026-10-13 11:09:29 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 1'} chunks_returned=10
+2026-10-13 11:09:29 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'} n_results=10
+2026-10-13 11:09:30 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'} chunks_returned=10
+2026-10-13 11:09:30 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'META', 'year': 2023, 'section': 'Item 1'} sub_query='Meta workforce description in 2023'
+2026-10-13 11:09:30 [INFO ] RERANKER | ENTER | query='Meta workforce description in 2023' chunks=10
+2026-10-13 11:09:30 [INFO ] RERANKER | before | top3=['META_2023_Item_1_chunk_018 cosine=0.8636', 'META_2023_Item_1_chunk_019 cosine=0.8324', 'META_2023_Item_1_chunk_022 cosine=0.8146']
+2026-10-13 11:09:32 [INFO ] RERANKER | after | top3=['META_2023_Item_1_chunk_018 reranker=0.9721', 'META_2023_Item_1_chunk_020 reranker=0.8888', 'META_2023_Item_1_chunk_019 reranker=0.7106']
+2026-10-13 11:09:32 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-13 11:09:32 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'} sub_query='Microsoft workforce description in 2023'
+2026-10-13 11:09:32 [INFO ] RERANKER | ENTER | query='Microsoft workforce description in 2023' chunks=10
+2026-10-13 11:09:32 [INFO ] RERANKER | before | top3=['MSFT_2023_Item_1_chunk_013 cosine=0.8464', 'MSFT_2023_Item_1_chunk_001 cosine=0.8269', 'MSFT_2023_Item_1_chunk_003 cosine=0.8252']
+2026-10-13 11:09:34 [INFO ] RERANKER | after | top3=['MSFT_2023_Item_1_chunk_011 reranker=0.4357', 'MSFT_2023_Item_1_chunk_013 reranker=0.4234', 'MSFT_2023_Item_1_chunk_014 reranker=0.1420']
+2026-10-13 11:09:34 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=6/10
+2026-10-13 11:09:34 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-13 11:09:34 [INFO ] SYNTHESIZER | ENTER | query='How did Meta and Microsoft describe their workforce in their 2023 annual reports?' chunks_received=20
+2026-10-13 11:09:34 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-13 11:09:34 [INFO ] SYNTHESIZER | context | sources=['Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Meta 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1', 'Microsoft 2023 Item 1']
+2026-10-13 11:09:34 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Meta workforce description in 2023 ===\n\n[1] Meta | 2023 | Business\n"For additional information about government regulation applicable to our business, see Part I, Item 1A, "Risk Factors" in this Annual Report on Form 10-K. Human Capital\nAt Meta, everything we do is about helpi'
+2026-10-13 11:09:34 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-13 11:09:37 [INFO ] SYNTHESIZER | Groq response | answer_length=4314 chars
+2026-10-13 11:09:37 [INFO ] SYNTHESIZER | Groq response | answer=
+Based on the provided 2023 annual report excerpts, Meta and Microsoft described their workforces as follows:
+
+**Meta**
+*   **Size and Location:** Meta reported a global workforce of **67,317 employees** as of December 31, 2023, with offices in approximately 90 cities worldwide.
+*   **Culture and Compensation:** The company emphasized a "unique company culture" focused on helping people feel connected. It offers competitive compensation including market-competitive salaries, bonuses, and equity (granted at hire and annually). Meta stated it has pay equity across genders globally and by race in the U.S. for similar jobs.
+*   **Benefits and Well-being:** Through its "Life@ Meta" program, Meta provides benefits covering health, family, finance, community, and time away. Specific programs support autism care, cancer care, transgender services, mental health, and retirement savings.
+*   **Diversity and Inclusion:** As of December 31, 2022 (the most recent data cited in the 2023 report), 45.4% of the global employee base were underrepresented people. In the U.S., 47.9% were underrepresented people, 43.1% of leaders were people of color, 7.2% of the workforce had disabilities, 2.3% were veterans, and 9.8% identified as LGBTQ+.
+*   **Workforce Changes:** Beginning in November 2022, Meta implemented cost reduction measures including scaling back budgets, reducing perks, shrinking its real estate footprint, and conducting employee layoffs and restructurings. It provided generous severance packages, including 16 weeks of base pay plus two weeks per year of service for U.S. employees, along with healthcare coverage and career support.
+*   **Learning and Development:** Meta conducts performance reviews twice a year and offers various learning modalities, including virtual/in-person experiences, e-learning, and coaching. It also conducts company-wide and real-time employee surveys to measure sentiment and drive change.
+
+**Microsoft**
+*   **Size and Location:** As of June 30, 2023, Microsoft employed approximately **221,000 people** on a full-time basis, with 120,000 in the U.S. and 101,000 internationally. The workforce was distributed across operations (89,000), product research and development (72,000), sales and marketing (45,000), and general and administration (15,000).
+*   **Culture and Compensation:** Microsoft’s culture is grounded in a "growth mindset." It offers a differentiated, market-competitive total rewards package. In fiscal year 2023, base salaries for salaried employees remained at fiscal year 2022 levels, while pay increases were available for hourly employees. The company continues to invest in stock and bonuses for eligible employees.
+*   **Pay Equity:** Microsoft reported that in 2022, U.S. racial and ethnic minority employees earned $1.008 for every $1.000 earned by white counterparts, and U.S. women earned $1.007 for every $1.000 earned by men. In 2023, it expanded pay equity reporting to 61 additional countries. Unadjusted median pay analysis showed total pay for women was 89.6% of men’s in the U.S. and 86.2% outside the U.S., while total pay for U.S. racial and ethnic minorities was 89.9% of white employees.
+*   **Diversity and Inclusion:** Microsoft highlighted progress toward its 2025 commitment to double the number of Black and African American people managers in the U.S., stating it was 93% of the way there as of June 2023. It supports multiple Employee Resource Groups (ERGs) for women, families, racial/ethnic minorities, military, people with disabilities, and LGBTQIA+ employees. Senior leadership performance reviews include evaluations of contributions to culture and diversity.
+*   **Wellbeing and Work Flexibility:** Microsoft offers a differentiated benefits package including counseling (CARES program), mental wellbeing support, fitness benefits, and adoption assistance. It introduced "Hybrid Workplace Flexibility Guidance," noting that 93% of employees value flexibility in work location/site/hours.
+*   **Learning and Development:** All employees access the "Viva Learning" tool for required and personal choice learning, including compliance courses and role-specific skills training. The company also uses "Employee Signals" and "Daily Signals" surveys to gather real-time feedback on thriving, inclusion, and wellbeing.
+2026-10-13 11:09:37 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-13 11:09:37 [INFO ] SCORER | ENTER | answer_preview='Based on the provided 2023 annual report excerpts, Meta and Microsoft described ' sources=20
+2026-10-13 11:09:37 [INFO ] SCORER | avg_retrieval_similarity=0.8107
+2026-10-13 11:09:37 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=4314 chars sources=20
+2026-10-13 11:09:37 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-13 11:09:38 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-13 11:09:38 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-13 11:09:38 [INFO ] SCORER | EXIT | confidence=0.9243 faithfulness=1.0 avg_retrieval_similarity=0.8107

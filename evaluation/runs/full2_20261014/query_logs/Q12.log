@@ -1,0 +1,48 @@
+2026-10-14 11:41:15 [INFO ] ============================================================
+2026-10-14 11:41:15 [INFO ] PIPELINE | query_start | query='[EVAL Q12] Compare how Apple and Microsoft described competitive risks in their 2023 annual reports.'
+2026-10-14 11:41:15 [INFO ] ============================================================
+2026-10-14 11:41:15 [INFO ] RETRIEVER | ENTER | query='Compare how Apple and Microsoft described competitive risks in their 2023 annual reports.' top_k=10
+2026-10-14 11:41:16 [INFO ] RETRIEVER | filter_extraction | ENTER | query='Compare how Apple and Microsoft described competitive risks in their 2023 annual reports.'
+2026-10-14 11:41:16 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:41:16 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [\n        "AAPL",\n        "MSFT"\n    ],\n    "years": [\n        2023\n    ],\n    "sections": [\n        "Item 1A"\n    ],\n    "sub_query_template": "<company> competitive risks in <year>"\n}'
+2026-10-14 11:41:16 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AAPL', 'MSFT'] years=[2023] sections=['Item 1A'] sub_query_template='<company> competitive risks in <year>' rejection_reason=None
+2026-10-14 11:41:16 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:41:16 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'}]
+2026-10-14 11:41:16 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:41:16 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:41:16 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:41:16 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:41:16 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'AAPL', 'year': 2023, 'section': 'Item 1A'} sub_query='Apple competitive risks in 2023'
+2026-10-14 11:41:16 [INFO ] RERANKER | ENTER | query='Apple competitive risks in 2023' chunks=10
+2026-10-14 11:41:16 [INFO ] RERANKER | before | top3=['AAPL_2023_Item_1A_chunk_037 cosine=0.8177', 'AAPL_2023_Item_1A_chunk_029 cosine=0.8113', 'AAPL_2023_Item_1A_chunk_006 cosine=0.8111']
+2026-10-14 11:41:18 [INFO ] RERANKER | after | top3=['AAPL_2023_Item_1A_chunk_037 reranker=0.0574', 'AAPL_2023_Item_1A_chunk_030 reranker=0.0400', 'AAPL_2023_Item_1A_chunk_007 reranker=0.0397']
+2026-10-14 11:41:18 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:41:18 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} sub_query='Microsoft competitive risks in 2023'
+2026-10-14 11:41:18 [INFO ] RERANKER | ENTER | query='Microsoft competitive risks in 2023' chunks=10
+2026-10-14 11:41:18 [INFO ] RERANKER | before | top3=['MSFT_2023_Item_1A_chunk_001 cosine=0.8429', 'MSFT_2023_Item_1A_chunk_002 cosine=0.8288', 'MSFT_2023_Item_1A_chunk_005 cosine=0.8207']
+2026-10-14 11:41:21 [INFO ] RERANKER | after | top3=['MSFT_2023_Item_1A_chunk_020 reranker=0.4313', 'MSFT_2023_Item_1A_chunk_004 reranker=0.2099', 'MSFT_2023_Item_1A_chunk_001 reranker=0.2066']
+2026-10-14 11:41:21 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:41:21 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:41:21 [INFO ] SYNTHESIZER | ENTER | query='Compare how Apple and Microsoft described competitive risks in their 2023 annual reports.' chunks_received=20
+2026-10-14 11:41:21 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:41:21 [INFO ] SYNTHESIZER | context | sources=['Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A']
+2026-10-14 11:41:21 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Apple competitive risks in 2023 ===\n\n[1] Apple | 2023 | Risk Factors\n"The Company is exposed to credit risk on its trade accounts receivable, vendor non-trade receivables and prepayments related to long-term supply agreements, and this risk is heightened during periods when ec'
+2026-10-14 11:41:21 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:41:22 [INFO ] SYNTHESIZER | Groq response | answer_length=2442 chars
+2026-10-14 11:41:22 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **Apple** emphasized that competitors often rely on aggressive pricing, low cost structures, and imitation of its products, while **Microsoft** highlighted competition from free, advertising-funded services and open-source software that mimic its features.
+*   **Apple** noted that its competitors may infringe on its intellectual property and that effective IP protection is not consistently available in all operating countries, whereas **Microsoft** focused on the risks of AI development, including flawed algorithms, biased data, and potential regulatory or legal liability.
+*   **Apple** described its exposure to credit risk on trade receivables and vendor prepayments, particularly in international markets, while **Microsoft** detailed operational risks related to maintaining cloud infrastructure, such as datacenter availability, energy costs, and potential service outages.
+*   **Apple** stated that it faces substantial competition in smartphone, PC, and tablet markets where it holds a minority market share, while **Microsoft** described intense competition across all markets, including platform-based ecosystems and vertically integrated models that control both hardware and software.
+*   **Apple** identified risks related to the App Store, including antitrust investigations and the need to comply with new regulations like the EU Digital Markets Act, while **Microsoft** cited risks from evolving pricing and delivery models and the need to maintain scale in cloud-based services to achieve attractive margins.
+*   **Apple** warned that quality issues in its hardware, software, or services could lead to product liability claims, recalls, and reputational harm, while **Microsoft** similarly noted that quality or supply problems in its hardware and software could result in significant expenses, lost revenue, and reputational damage.
+*   **Apple** highlighted the importance of retaining highly skilled employees and managing workforce dynamics to maintain its culture, while **Microsoft** emphasized the need to successfully enlist developers for its platform and manage the integration of acquisitions and strategic alliances.
+*   Both companies acknowledged that rapid technological change and the need for continuous innovation are critical to maintaining competitive advantage, with **Apple** focusing on timely product introductions and **Microsoft** focusing on the execution of its cloud and AI strategies.
+2026-10-14 11:41:22 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:41:22 [INFO ] SCORER | ENTER | answer_preview='*   **Apple** emphasized that competitors often rely on aggressive pricing, low ' sources=20
+2026-10-14 11:41:22 [INFO ] SCORER | avg_retrieval_similarity=0.8123
+2026-10-14 11:41:22 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=2442 chars sources=20
+2026-10-14 11:41:22 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:41:23 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:41:23 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:41:23 [INFO ] SCORER | EXIT | confidence=0.9249 faithfulness=1.0 avg_retrieval_similarity=0.8123

@@ -1,0 +1,47 @@
+2026-10-14 11:36:43 [INFO ] ============================================================
+2026-10-14 11:36:43 [INFO ] PIPELINE | query_start | query="[EVAL Q08] How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?"
+2026-10-14 11:36:43 [INFO ] ============================================================
+2026-10-14 11:36:43 [INFO ] RETRIEVER | ENTER | query="How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?" top_k=10
+2026-10-14 11:36:43 [INFO ] RETRIEVER | filter_extraction | ENTER | query="How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?"
+2026-10-14 11:36:43 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:36:43 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["MSFT"],\n    "years": [2022, 2023],\n    "sections": ["Item 1A"],\n    "sub_query_template": "<company> risk factor disclosures around artificial intelligence in <year>"\n}'
+2026-10-14 11:36:43 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['MSFT'] years=[2022, 2023] sections=['Item 1A'] sub_query_template='<company> risk factor disclosures around artificial intelligence in <year>' rejection_reason=None
+2026-10-14 11:36:43 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:36:43 [INFO ] RETRIEVER | combinations | count=2 combos=[{'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'}]
+2026-10-14 11:36:43 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:36:43 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:36:43 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} n_results=10
+2026-10-14 11:36:43 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} chunks_returned=10
+2026-10-14 11:36:43 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2022, 'section': 'Item 1A'} sub_query='Microsoft risk factor disclosures around artificial intelligence in 2022'
+2026-10-14 11:36:43 [INFO ] RERANKER | ENTER | query='Microsoft risk factor disclosures around artificial intelligence in 2022' chunks=10
+2026-10-14 11:36:43 [INFO ] RERANKER | before | top3=['MSFT_2022_Item_1A_chunk_019 cosine=0.8468', 'MSFT_2022_Item_1A_chunk_004 cosine=0.8098', 'MSFT_2022_Item_1A_chunk_001 cosine=0.8091']
+2026-10-14 11:36:45 [INFO ] RERANKER | after | top3=['MSFT_2022_Item_1A_chunk_019 reranker=0.1700', 'MSFT_2022_Item_1A_chunk_018 reranker=0.1340', 'MSFT_2022_Item_1A_chunk_038 reranker=0.1325']
+2026-10-14 11:36:45 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:36:45 [INFO ] RETRIEVER | per-combo rerank | combo={'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1A'} sub_query='Microsoft risk factor disclosures around artificial intelligence in 2023'
+2026-10-14 11:36:46 [INFO ] RERANKER | ENTER | query='Microsoft risk factor disclosures around artificial intelligence in 2023' chunks=10
+2026-10-14 11:36:46 [INFO ] RERANKER | before | top3=['MSFT_2023_Item_1A_chunk_020 cosine=0.8382', 'MSFT_2023_Item_1A_chunk_021 cosine=0.8369', 'MSFT_2023_Item_1A_chunk_007 cosine=0.8283']
+2026-10-14 11:36:48 [INFO ] RERANKER | after | top3=['MSFT_2023_Item_1A_chunk_020 reranker=0.5831', 'MSFT_2023_Item_1A_chunk_011 reranker=0.0946', 'MSFT_2023_Item_1A_chunk_021 reranker=0.0710']
+2026-10-14 11:36:48 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:36:48 [INFO ] RETRIEVER | EXIT | total_chunks=20 (after dedup + rerank)
+2026-10-14 11:36:48 [INFO ] SYNTHESIZER | ENTER | query="How did Microsoft's risk factor disclosures around artificial intelligence evolve from its 2022 to 2023 annual report?" chunks_received=20
+2026-10-14 11:36:48 [INFO ] SYNTHESIZER | context | chunks_received=20 chunks_selected=20 (cap=30) dropped=0
+2026-10-14 11:36:48 [INFO ] SYNTHESIZER | context | sources=['Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2022 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2023 Item 1A']
+2026-10-14 11:36:48 [INFO ] SYNTHESIZER | grouping=yes | context_preview='Context passages:\n\n=== Microsoft risk factor disclosures around artificial intelligence in 2022 ===\n\n[1] Microsoft | 2022 | Risk Factors\n"As with many innovations, AI presents risks and challenges that could affect its adoption, and therefore our business. AI algorithms may be flawed. Datasets may b'
+2026-10-14 11:36:48 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:36:49 [INFO ] SYNTHESIZER | Groq response | answer_length=2396 chars
+2026-10-14 11:36:49 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **Expanded Scope of AI Risks:** In 2022, Microsoft focused on flawed algorithms and biased datasets, whereas the 2023 disclosure broadened this to include flawed training methodologies, overbroad datasets, and content generated by AI that may be offensive, illegal, or harmful.
+*   **New Operational Requirements:** The 2023 report explicitly notes that human review of certain AI outputs may be required, a specific operational constraint not detailed in the 2022 disclosures.
+*   **Increased Cybersecurity Specificity:** While 2022 highlighted general cyberthreats and supply chain attacks, the 2023 report specifically identifies that the increasing use of generative AI models in internal systems may create new attack methods for adversaries and that generative AI features may be susceptible to unanticipated security threats.
+*   **Regulatory and Legal Nuance:** Both years cited potential regulatory action and legal liability, including under EU legislation; however, the 2023 disclosure added that AI risks could result in new applications of existing data protection, privacy, and intellectual property laws, and specifically mentioned the EU AI Act as a factor that could increase costs or decrease opportunities.
+*   **Competitive Landscape:** The 2022 report described competitors developing cloud-based services, while the 2023 report added that competitors are using open source AI models and that the AI market is expected to be highly competitive and rapidly evolving, requiring significant development and operational costs to compete effectively.
+*   **Strategic Vision and Infrastructure:** The 2022 strategic vision centered on an "intelligent cloud and intelligent edge infused with artificial intelligence," while the 2023 vision shifted to "ubiquitous computing and ambient intelligence." Additionally, the 2023 operational risks specifically highlighted dependencies on graphics processing units (GPUs) and the incorporation of AI features into existing services like Bing and Azure, whereas the 2022 report focused more broadly on datacenter energy and networking supplies.
+*   **Partnerships and Development:** The 2023 disclosure explicitly mentions that AI may be developed by Microsoft or others, including strategic partner OpenAI, whereas the 2022 report referred more generally to "first- and third-party AI" without naming specific partners in that context.
+2026-10-14 11:36:49 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=20
+2026-10-14 11:36:49 [INFO ] SCORER | ENTER | answer_preview='*   **Expanded Scope of AI Risks:** In 2022, Microsoft focused on flawed algorit' sources=20
+2026-10-14 11:36:49 [INFO ] SCORER | avg_retrieval_similarity=0.812
+2026-10-14 11:36:49 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=2396 chars sources=20
+2026-10-14 11:36:49 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:36:50 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:36:50 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:36:50 [INFO ] SCORER | EXIT | confidence=0.9248 faithfulness=1.0 avg_retrieval_similarity=0.812

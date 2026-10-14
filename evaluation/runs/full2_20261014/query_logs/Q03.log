@@ -1,0 +1,33 @@
+2026-10-14 11:29:29 [INFO ] ============================================================
+2026-10-14 11:29:29 [INFO ] PIPELINE | query_start | query="[EVAL Q03] What were Amazon's total consolidated net sales and AWS revenue for the year ended December 31, 2021?"
+2026-10-14 11:29:29 [INFO ] ============================================================
+2026-10-14 11:29:29 [INFO ] RETRIEVER | ENTER | query="What were Amazon's total consolidated net sales and AWS revenue for the year ended December 31, 2021?" top_k=10
+2026-10-14 11:29:29 [INFO ] RETRIEVER | filter_extraction | ENTER | query="What were Amazon's total consolidated net sales and AWS revenue for the year ended December 31, 2021?"
+2026-10-14 11:29:29 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:29:29 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AMZN"],\n    "years": [2021],\n    "sections": ["Item 7"],\n    "sub_query_template": null\n}'
+2026-10-14 11:29:29 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AMZN'] years=[2021] sections=['Item 7'] sub_query_template=None rejection_reason=None
+2026-10-14 11:29:29 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:29:29 [INFO ] RETRIEVER | combinations | count=1 combos=[{'ticker': 'AMZN', 'year': 2021, 'section': 'Item 7'}]
+2026-10-14 11:29:29 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN', 'year': 2021, 'section': 'Item 7'} n_results=10
+2026-10-14 11:29:29 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN', 'year': 2021, 'section': 'Item 7'} chunks_returned=10
+2026-10-14 11:29:29 [INFO ] RERANKER | ENTER | query="What were Amazon's total consolidated net sales and AWS revenue for the year ended December 31, 2021?" chunks=10
+2026-10-14 11:29:29 [INFO ] RERANKER | before | top3=['AMZN_2021_Item_7_chunk_016 cosine=0.8386', 'AMZN_2021_Item_7_chunk_017 cosine=0.8262', 'AMZN_2021_Item_7_chunk_023 cosine=0.8179']
+2026-10-14 11:29:32 [INFO ] RERANKER | after | top3=['AMZN_2021_Item_7_chunk_016 reranker=0.9992', 'AMZN_2021_Item_7_chunk_017 reranker=0.9973', 'AMZN_2021_Item_7_chunk_005 reranker=0.9960']
+2026-10-14 11:29:32 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=8/10
+2026-10-14 11:29:32 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-14 11:29:32 [INFO ] SYNTHESIZER | ENTER | query="What were Amazon's total consolidated net sales and AWS revenue for the year ended December 31, 2021?" chunks_received=10
+2026-10-14 11:29:32 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-14 11:29:32 [INFO ] SYNTHESIZER | context | sources=['Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7']
+2026-10-14 11:29:32 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Amazon | 2021 | MD&A\n"Service sales primarily represent third-party seller fees, which includes commissions and any related fulfillment and shipping fees, AWS sales, advertising services, Amazon Prime membership fees, and certain digital content subscriptions. Net sales inform'
+2026-10-14 11:29:32 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:29:33 [INFO ] SYNTHESIZER | Groq response | answer_length=135 chars
+2026-10-14 11:29:33 [INFO ] SYNTHESIZER | Groq response | answer=
+Amazon's total consolidated net sales for the year ended December 31, 2021, were $469,822 million, and AWS revenue was $62,202 million.
+2026-10-14 11:29:33 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-14 11:29:33 [INFO ] SCORER | ENTER | answer_preview="Amazon's total consolidated net sales for the year ended December 31, 2021, were" sources=10
+2026-10-14 11:29:33 [INFO ] SCORER | avg_retrieval_similarity=0.8088
+2026-10-14 11:29:33 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=135 chars sources=10
+2026-10-14 11:29:33 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:29:33 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:29:33 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:29:33 [INFO ] SCORER | EXIT | confidence=0.9235 faithfulness=1.0 avg_retrieval_similarity=0.8088

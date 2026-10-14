@@ -1,0 +1,73 @@
+===========================================================================
+ragas_evaluator.py: run q14_concise_20261014 (new)
+Queries: 1 | already done: 0 | judge: openai/gpt-oss-120b
+===========================================================================
+Loading pipeline components and judge...
+
+Loading BGE embedding model...
+Connecting to ChromaDB...
+Loading cross-encoder reranker...
+Initialising Groq client...
+Retriever ready.
+
+Synthesizer ready.
+
+Scorer ready.
+
+
+============================================================
+[1/1] Q14 (cross_company): How did Meta and Microsoft describe their workforce in their
+============================================================
+
+  Phase 1: pipeline (retrieve, synthesize, app confidence)...
+
+Query parser output:
+{
+  "is_valid": true,
+  "rejection_reason": null,
+  "tickers": [
+    "META",
+    "MSFT"
+  ],
+  "years": [
+    2023
+  ],
+  "sections": [
+    "Item 1"
+  ],
+  "sub_query_template": "<company> workforce description in <year>"
+}
+
+Filter combinations (2): [{'ticker': 'META', 'year': 2023, 'section': 'Item 1'}, {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'}]
+Sub-query template: <company> workforce description in <year>
+  Reranking combo {'ticker': 'META', 'year': 2023, 'section': 'Item 1'} with: 'Meta workforce description in 2023'
+  Reranking combo {'ticker': 'MSFT', 'year': 2023, 'section': 'Item 1'} with: 'Microsoft workforce description in 2023'
+  Answer: *   **Meta**: Reported a global workforce of 67,317 employees as of December 31, 2023, with offices ...
+  Chunks retrieved: 20, used: 20
+  [Scorer] Calling Groq faithfulness judge...
+
+  Phase 2: RAGAS scoring...
+    faithfulness...
+      = 1.0
+    answer_relevance...
+      = 0.8955
+    context_recall...
+      = 0.0
+    ground_truth_coverage...
+      = 0.0
+
+  Saved Q14. tokens in/out: 39,161/5,464 | cost $0.0207 | run total so far $0.0207
+
+======================================================================================
+Category          n scored         faith       relev        prec      recall    gt_cover
+--------------------------------------------------------------------------------------
+cross_company     1      1         1.000       0.895           -       0.000       0.000
+--------------------------------------------------------------------------------------
+ALL ANSWERED                       1.000       0.895           -       0.000       0.000
+======================================================================================
+
+Tokens: 39,161 in / 5,464 out over 11 Groq calls
+  openai/gpt-oss-120b: 22,936 in / 5,175 out -> $0.0065
+  qwen/qwen3.8-27b: 16,225 in / 289 out -> $0.0141
+TOTAL COST: $0.0207  [prices checked 2026-10-13]
+Run folder: evaluation/runs\q14_concise_20261014

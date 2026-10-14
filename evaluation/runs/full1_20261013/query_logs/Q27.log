@@ -1,0 +1,30 @@
+2026-10-13 11:18:57 [INFO ] ============================================================
+2026-10-13 11:18:57 [INFO ] PIPELINE | query_start | query="[EVAL Q27] What was Amazon's accounts receivable balance at the end of 2021?"
+2026-10-13 11:18:57 [INFO ] ============================================================
+2026-10-13 11:18:57 [INFO ] RETRIEVER | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?" top_k=10
+2026-10-13 11:18:58 [INFO ] RETRIEVER | filter_extraction | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?"
+2026-10-13 11:18:58 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-13 11:18:58 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": ["AMZN"],\n    "years": [2021],\n    "sections": ["Item 7"],\n    "sub_query_template": null\n}'
+2026-10-13 11:18:58 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=['AMZN'] years=[2021] sections=['Item 7'] sub_query_template=None rejection_reason=None
+2026-10-13 11:18:58 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-13 11:18:58 [INFO ] RETRIEVER | combinations | count=1 combos=[{'ticker': 'AMZN', 'year': 2021, 'section': 'Item 7'}]
+2026-10-13 11:18:58 [INFO ] RETRIEVER | ChromaDB call | combo={'ticker': 'AMZN', 'year': 2021, 'section': 'Item 7'} n_results=10
+2026-10-13 11:18:58 [INFO ] RETRIEVER | ChromaDB result | combo={'ticker': 'AMZN', 'year': 2021, 'section': 'Item 7'} chunks_returned=10
+2026-10-13 11:18:58 [INFO ] RERANKER | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?" chunks=10
+2026-10-13 11:18:58 [INFO ] RERANKER | before | top3=['AMZN_2021_Item_7_chunk_011 cosine=0.8119', 'AMZN_2021_Item_7_chunk_012 cosine=0.8096', 'AMZN_2021_Item_7_chunk_017 cosine=0.8089']
+2026-10-13 11:19:00 [INFO ] RERANKER | after | top3=['AMZN_2021_Item_7_chunk_018 reranker=0.0399', 'AMZN_2021_Item_7_chunk_011 reranker=0.0353', 'AMZN_2021_Item_7_chunk_023 reranker=0.0123']
+2026-10-13 11:19:00 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-13 11:19:00 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-13 11:19:00 [INFO ] SYNTHESIZER | ENTER | query="What was Amazon's accounts receivable balance at the end of 2021?" chunks_received=10
+2026-10-13 11:19:00 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-13 11:19:00 [INFO ] SYNTHESIZER | context | sources=['Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7', 'Amazon 2021 Item 7']
+2026-10-13 11:19:00 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Amazon | 2021 | MD&A\n"We believe that operating income (loss) is a more meaningful measure than gross profit and gross margin due to the diversity of our product categories and services. The decrease in North America operating income in absolute dollars in 2021, compared to th'
+2026-10-13 11:19:00 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-13 11:19:01 [INFO ] SYNTHESIZER | Groq response | answer_length=81 chars
+2026-10-13 11:19:01 [INFO ] SYNTHESIZER | Groq response | answer=
+The provided context does not contain enough information to answer this question.
+2026-10-13 11:19:01 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-13 11:19:01 [INFO ] SCORER | ENTER | answer_preview='The provided context does not contain enough information to answer this question' sources=10
+2026-10-13 11:19:01 [INFO ] SCORER | avg_retrieval_similarity=0.8046
+2026-10-13 11:19:01 [INFO ] SCORER | refusal_detected | faithfulness=1.0 (no Groq call needed)
+2026-10-13 11:19:01 [INFO ] SCORER | EXIT | confidence=0.9218 faithfulness=1.0 avg_retrieval_similarity=0.8046

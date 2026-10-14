@@ -172,6 +172,8 @@ A 65-second delay between calls manages Groq's rate limit. A pre-filter based on
 | **Context Precision** | Are the relevant chunks ranked near the top? |
 | **Context Recall** | Does the retrieved context contain enough to derive the ground truth? |
 
+> **Note:** the table below is from the earlier V2 run (Llama-4-Scout pipeline, Llama-70B judge, 24 queries). Groq has since retired those models, and the evaluation was rebuilt (32 queries, new models, corrected ground truths, new metric handling). Fresh numbers will replace this table. See `docs/V2_POLISH_PLAN.md`.
+
 **Results by category (21 evaluated, 3 correctly rejected):**
 
 | Category | Queries | Faithfulness | Relevance | Precision | Recall |
@@ -191,6 +193,13 @@ A 65-second delay between calls manages Groq's rate limit. A pre-filter based on
 - Context precision is low on multi-hop queries (0.17–0.40) because 20 chunks are retrieved per query but only 3–4 are essential. This does not affect answer quality.
 
 **Evaluation limitations:** LLM-as-judge scores vary across runs due to non-deterministic LLM output on hosted APIs, even at temperature=0. Category averages are more reliable than individual query scores. Full eval report in `evaluation/EVAL_REPORT_V2.md`.
+
+**Metric definitions (updated during V2 polish).** Full details in [`docs/EVAL_METRICS_GUIDE.md`](docs/EVAL_METRICS_GUIDE.md).
+
+- **Which metrics run depends on the question type.** Fact and comparison questions get faithfulness and relevance, plus precision and recall where a ground truth exists. Questions the data cannot answer, and off-topic questions, get a yes/no check ("did it decline?"), because RAGAS scores a good answer and a correct refusal has none.
+- **Ground-truth coverage replaces RAGAS `FactualCorrectness(recall)`.** It uses RAGAS's own claim-splitting and checking, but scores the share of ground-truth facts the answer supports. The stock recall formula returned 0.0 on a correct answer when the judge marked the answer's more precise claims as unsupported (0 / 0), and flipped between 0.0 and 1.0 on identical input. The per-fact verdicts are saved so any score can be re-checked.
+- **The judge sees the same numbered passages the answering model saw.** Answers often cite "Passage [2]"; without the numbers those statements could never be verified and faithfulness was dragged down.
+- **Judge scores are noisy.** We report per-category counts and values, run the full set three times to measure spread, and hand-check a sample of answers.
 
 ---
 

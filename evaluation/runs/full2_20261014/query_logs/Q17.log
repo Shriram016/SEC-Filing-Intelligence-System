@@ -1,0 +1,37 @@
+2026-10-14 11:47:02 [INFO ] ============================================================
+2026-10-14 11:47:02 [INFO ] PIPELINE | query_start | query='[EVAL Q17] How have tech companies been affected by macroeconomic conditions?'
+2026-10-14 11:47:02 [INFO ] ============================================================
+2026-10-14 11:47:02 [INFO ] RETRIEVER | ENTER | query='How have tech companies been affected by macroeconomic conditions?' top_k=10
+2026-10-14 11:47:02 [INFO ] RETRIEVER | filter_extraction | ENTER | query='How have tech companies been affected by macroeconomic conditions?'
+2026-10-14 11:47:02 [INFO ] RETRIEVER | filter_extraction | Groq call | model=qwen/qwen3.8-27b
+2026-10-14 11:47:02 [INFO ] RETRIEVER | filter_extraction | Groq response | raw='{\n    "is_valid": true,\n    "rejection_reason": null,\n    "tickers": [],\n    "years": [],\n    "sections": [],\n    "sub_query_template": null\n}'
+2026-10-14 11:47:02 [INFO ] RETRIEVER | filter_extraction | EXIT | is_valid=True tickers=[] years=[] sections=[] sub_query_template=None rejection_reason=None
+2026-10-14 11:47:02 [INFO ] RETRIEVER | query_embedded | model=BAAI/bge-base-en prefix=True vector_dim=768
+2026-10-14 11:47:02 [INFO ] RETRIEVER | combinations | count=1 combos=[{}]
+2026-10-14 11:47:02 [INFO ] RETRIEVER | ChromaDB call | combo={} n_results=10
+2026-10-14 11:47:02 [INFO ] RETRIEVER | ChromaDB result | combo={} chunks_returned=10
+2026-10-14 11:47:03 [INFO ] RERANKER | ENTER | query='How have tech companies been affected by macroeconomic conditions?' chunks=10
+2026-10-14 11:47:03 [INFO ] RERANKER | before | top3=['AAPL_2022_Item_1A_chunk_002 cosine=0.8755', 'AAPL_2023_Item_7_chunk_003 cosine=0.8729', 'AAPL_2023_Item_1A_chunk_002 cosine=0.8710']
+2026-10-14 11:47:05 [INFO ] RERANKER | after | top3=['GOOGL_2020_Item_1A_chunk_036 reranker=0.9979', 'AAPL_2020_Item_1A_chunk_004 reranker=0.9816', 'AAPL_2022_Item_1A_chunk_002 reranker=0.9529']
+2026-10-14 11:47:05 [INFO ] RERANKER | EXIT | chunks=10 positions_changed=9/10
+2026-10-14 11:47:05 [INFO ] RETRIEVER | EXIT | total_chunks=10 (after dedup + rerank)
+2026-10-14 11:47:05 [INFO ] SYNTHESIZER | ENTER | query='How have tech companies been affected by macroeconomic conditions?' chunks_received=10
+2026-10-14 11:47:05 [INFO ] SYNTHESIZER | context | chunks_received=10 chunks_selected=10 (cap=30) dropped=0
+2026-10-14 11:47:05 [INFO ] SYNTHESIZER | context | sources=['Google 2020 Item 1A', 'Apple 2020 Item 1A', 'Apple 2022 Item 1A', 'Apple 2024 Item 1A', 'Apple 2023 Item 1A', 'Apple 2023 Item 7', 'Apple 2020 Item 1A', 'Apple 2021 Item 1A', 'Microsoft 2023 Item 1A', 'Microsoft 2022 Item 1A']
+2026-10-14 11:47:05 [INFO ] SYNTHESIZER | grouping=no | context_preview='Context passages:\n\n[1] Google | 2020 | Risk Factors\n"The macroeconomic impacts on our business continue to evolve and be unpredictable and may continue to\n adversely affect our business, operations and financial performance. As a result of the scale of the ongoing pandemic and the speed at which the'
+2026-10-14 11:47:05 [INFO ] SYNTHESIZER | Groq call | model=qwen/qwen3.8-27b max_tokens=1024 temperature=0
+2026-10-14 11:47:06 [INFO ] SYNTHESIZER | Groq response | answer_length=1357 chars
+2026-10-14 11:47:06 [INFO ] SYNTHESIZER | Groq response | answer=
+*   **Google (2020)**: Macroeconomic impacts, specifically the pandemic, threatened to cause significant declines in advertising and hardware revenues, with expenses remaining relatively fixed, potentially leading to operating results falling below expectations.
+*   **Apple (2020–2024)**: Adverse macroeconomic conditions, including inflation, recession, and currency fluctuations, have consistently been cited as risks that can materially adversely affect consumer confidence, spending, and demand for products and services.
+*   **Apple (2023)**: Macroeconomic conditions directly impacted results, with total net sales decreasing 3% in 2023 compared to 2022; weakness in foreign currencies (euro, renminbi, yen) accounted for more than the entire year-over-year decrease in Europe, Greater China, and Japan net sales.
+*   **Microsoft (2022–2023)**: Worsening economic conditions, such as inflation and recession, may cause lower IT spending and reduced demand for PCs and servers, while also increasing allowances for doubtful accounts and exposing the company’s investment portfolio to credit and market risks.
+*   **Common Themes**: All three companies identify inflation, recession, and currency fluctuations as key macroeconomic risks that can reduce consumer and business spending, disrupt supply chains, and negatively impact financial performance.
+2026-10-14 11:47:06 [INFO ] SYNTHESIZER | EXIT | model=qwen/qwen3.8-27b context_chunks=10
+2026-10-14 11:47:06 [INFO ] SCORER | ENTER | answer_preview='*   **Google (2020)**: Macroeconomic impacts, specifically the pandemic, threate' sources=10
+2026-10-14 11:47:06 [INFO ] SCORER | avg_retrieval_similarity=0.8686
+2026-10-14 11:47:06 [INFO ] SCORER | faithfulness_judge | ENTER | answer_length=1357 chars sources=10
+2026-10-14 11:47:06 [INFO ] SCORER | faithfulness_judge | Groq call | model=qwen/qwen3.8-27b max_tokens=5 temperature=0
+2026-10-14 11:47:06 [INFO ] SCORER | faithfulness_judge | Groq response | raw='5'
+2026-10-14 11:47:06 [INFO ] SCORER | faithfulness_judge | EXIT | raw_score=5 normalized=1.0
+2026-10-14 11:47:06 [INFO ] SCORER | EXIT | confidence=0.9474 faithfulness=1.0 avg_retrieval_similarity=0.8686

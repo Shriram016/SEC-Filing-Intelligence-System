@@ -1,0 +1,165 @@
+{
+  "prices_per_million_tokens": {
+    "openai/gpt-oss-120b": [
+      0.15,
+      0.6
+    ],
+    "qwen/qwen3.8-27b": [
+      0.8,
+      4.0
+    ]
+  },
+  "total": {
+    "calls": 11,
+    "prompt_tokens": 38422,
+    "completion_tokens": 5793,
+    "cost_usd": 0.02035,
+    "unpriced_calls": 0
+  },
+  "by_model": {
+    "openai/gpt-oss-120b": {
+      "calls": 8,
+      "prompt_tokens": 22757,
+      "completion_tokens": 5520,
+      "cost_usd": 0.006726,
+      "unpriced_calls": 0
+    },
+    "qwen/qwen3.8-27b": {
+      "calls": 3,
+      "prompt_tokens": 15665,
+      "completion_tokens": 273,
+      "cost_usd": 0.013624,
+      "unpriced_calls": 0
+    }
+  },
+  "by_stage": {
+    "judge:answer_relevance": {
+      "calls": 3,
+      "prompt_tokens": 2622,
+      "completion_tokens": 563,
+      "cost_usd": 0.000731,
+      "unpriced_calls": 0
+    },
+    "judge:context_recall": {
+      "calls": 1,
+      "prompt_tokens": 8870,
+      "completion_tokens": 781,
+      "cost_usd": 0.001799,
+      "unpriced_calls": 0
+    },
+    "judge:faithfulness": {
+      "calls": 2,
+      "prompt_tokens": 9233,
+      "completion_tokens": 2741,
+      "cost_usd": 0.00303,
+      "unpriced_calls": 0
+    },
+    "judge:ground_truth_coverage": {
+      "calls": 2,
+      "prompt_tokens": 2032,
+      "completion_tokens": 1435,
+      "cost_usd": 0.001166,
+      "unpriced_calls": 0
+    },
+    "pipeline:app_confidence": {
+      "calls": 1,
+      "prompt_tokens": 7509,
+      "completion_tokens": 2,
+      "cost_usd": 0.006015,
+      "unpriced_calls": 0
+    },
+    "pipeline:filter_extraction": {
+      "calls": 1,
+      "prompt_tokens": 811,
+      "completion_tokens": 92,
+      "cost_usd": 0.001017,
+      "unpriced_calls": 0
+    },
+    "pipeline:synthesis": {
+      "calls": 1,
+      "prompt_tokens": 7345,
+      "completion_tokens": 179,
+      "cost_usd": 0.006592,
+      "unpriced_calls": 0
+    }
+  },
+  "calls": [
+    {
+      "query_id": "Q12",
+      "stage": "pipeline:filter_extraction",
+      "model": "qwen/qwen3.8-27b",
+      "prompt_tokens": 811,
+      "completion_tokens": 92
+    },
+    {
+      "query_id": "Q12",
+      "stage": "pipeline:synthesis",
+      "model": "qwen/qwen3.8-27b",
+      "prompt_tokens": 7345,
+      "completion_tokens": 179
+    },
+    {
+      "query_id": "Q12",
+      "stage": "pipeline:app_confidence",
+      "model": "qwen/qwen3.8-27b",
+      "prompt_tokens": 7509,
+      "completion_tokens": 2
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 761,
+      "completion_tokens": 764
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:faithfulness",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8472,
+      "completion_tokens": 1977
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 874,
+      "completion_tokens": 197
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 874,
+      "completion_tokens": 183
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:answer_relevance",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 874,
+      "completion_tokens": 183
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:context_recall",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 8870,
+      "completion_tokens": 781
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 671,
+      "completion_tokens": 469
+    },
+    {
+      "query_id": "Q12",
+      "stage": "judge:ground_truth_coverage",
+      "model": "openai/gpt-oss-120b",
+      "prompt_tokens": 1361,
+      "completion_tokens": 966
+    }
+  ]
+}
