@@ -1,5 +1,7 @@
 # Evaluation Report — V2 (Multi-Hop Fix + Scout 17B + Judge Fix)
 
+> **Historical document.** This reports the earlier run (Llama-4-Scout pipeline, Llama-3.3-70B judge, 24 queries). Groq has since retired those models, and the setup had known problems (a judge that could not see passage numbers, ground-truth errors, and a RAGAS recall formula that was later replaced). Its numbers are retired. Current results: [`EVAL_RESULTS_LATEST.md`](EVAL_RESULTS_LATEST.md). Current metric definitions: [`../docs/EVAL_METRICS_GUIDE.md`](../docs/EVAL_METRICS_GUIDE.md).
+
 ## Run Details
 
 - **Date:** 2026-06-29

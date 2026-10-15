@@ -30,7 +30,7 @@ The bar this work targets: *visible judgment under failure*:
 |---|---|---|
 | 1 | Clean-up | ✅ All 9 steps done 2026-10-08. Committed as `f59e987` on `version2` (not pushed) |
 | 2 | Tests and experiments | ✅ Committed 2026-10-14 (partly): step 2.0 metrics guide, 2.1 evaluator rebuilt, 2.2 refuse queries, 32-query runs `full1` and `full2` with `evaluation/EVAL_RESULTS_LATEST.md`. **Deferred:** 2.3 reranker/prompt switches (only `ANSWER_STYLE` done), 2.4 three repeat runs, 2.5 reranker ablation, 2.6 refusal stability, 2.7 failure analysis, hand check of ~20 answers. Open changes in `docs/V2_PENDING_CHANGES.md` |
-| 3 | Honest docs | ⏳ Not started |
+| 3 | Honest docs | ✅ Done 2026-10-15 (README rewritten; 3.2 DECISIONS.md and 3.3 postmortem skipped by choice; stale eval docs bannered; CLAUDE.md refreshed). Awaiting commit |
 | 4 | Put the app online | ⏳ Not started |
 | 5 | Freeze (`v2-baseline` tag) | ⏳ Not started |
 
@@ -126,12 +126,12 @@ The bar this work targets: *visible judgment under failure*:
 
 | # | Step | Files | Status |
 |---|---|---|---|
-| 3.1 | README: overall and per-category scores with run-to-run spread; refusal results; "Known failures" section (the 4 bugs above plus the untuned weights); honest conflict-detector description; real clone URL; live-app link | `README.md` | ⏳ |
-| 3.2 | Design decisions: what was chosen, what was rejected, why, and measured evidence where Stage 2 provides it. Covers LlamaIndex, the similarity pre-filter, claim-level citations, the reranker (skipped in V1, added in V2), and per-combo vs original-question reranking | `DECISIONS.md` (new) | ⏳ |
-| 3.3 | Reranker postmortem: symptom → wrong first theory → what the logs showed → what the experiments proved | `docs/RERANKER_POSTMORTEM.md` (new) | ⏳ |
-| 3.4 | Bring outdated docs up to date | `evaluation/EVAL_PIPELINE.md`, `evaluation/EVAL_REPORT_V2.md` | ⏳ |
-| 3.5 | Fix smaller README contradictions: "Python 3.10+" vs `requirements.txt` "Python 3.13 compatible"; "Item 8 tables planned for v2" (not done; move to a future/V3 note) | `README.md` | ⏳ |
-| 3.6 | Update the private session file, which is badly out of date: the "New Session Prompt" says 8B model, 0.83 scores and "project COMPLETE"; Component 9 still says reranker skipped; the build table shows V2-1 "In Progress"; the tech stack says "No RAGAS library"; folder structure and config block are old. A new session reading it would be misled | `CLAUDE.md` (gitignored) | ⏳ |
+| 3.1 | README: overall and per-category scores with run-to-run spread; refusal results; "Known failures" section (the 4 bugs above plus the untuned weights); honest conflict-detector description; real clone URL; live-app link | `README.md` | ✅ 2026-10-15 rewritten section by section with the user's approval; numbers checked against `full2_20261014`. Live-app link still missing (Stage 4) |
+| 3.2 | Design decisions: what was chosen, what was rejected, why, and measured evidence where Stage 2 provides it. Covers LlamaIndex, the similarity pre-filter, claim-level citations, the reranker (skipped in V1, added in V2), and per-combo vs original-question reranking | `DECISIONS.md` (new) | ⏭ Skipped 2026-10-15 by the user: the README, metrics guide and results file already cover the important parts, and most entries would rest on design notes rather than measurements |
+| 3.3 | Reranker postmortem: symptom → wrong first theory → what the logs showed → what the experiments proved | `docs/RERANKER_POSTMORTEM.md` (new) | ⏭ Skipped 2026-10-15: the README's Known Failures states the finding and the evidence logs are in `evaluation/archive/evidence/` |
+| 3.4 | Bring outdated docs up to date | `evaluation/EVAL_PIPELINE.md`, `evaluation/EVAL_REPORT_V2.md` | ✅ 2026-10-15 (historical-document banners added to both files; content kept as history) |
+| 3.5 | Fix smaller README contradictions: "Python 3.10+" vs `requirements.txt` "Python 3.13 compatible"; "Item 8 tables planned for v2" (not done; move to a future/V3 note) | `README.md` | ✅ 2026-10-15 (Python 3.13 stated; Item 8 now "not done in V2") |
+| 3.6 | Update the private session file, which is badly out of date: the "New Session Prompt" says 8B model, 0.83 scores and "project COMPLETE"; Component 9 still says reranker skipped; the build table shows V2-1 "In Progress"; the tech stack says "No RAGAS library"; folder structure and config block are old. A new session reading it would be misled | `CLAUDE.md` (gitignored) | ✅ 2026-10-15 (Resume Here + New Session Prompt rewritten; old block archived at the bottom; tech stack, folder tree, config and build-status refreshed) |
 
 ---
 

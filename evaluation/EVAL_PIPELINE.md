@@ -1,5 +1,7 @@
 # Evaluation Pipeline — Design & Status
 
+> **Historical document.** This describes the earlier evaluation pipeline (llama-3.1-8b-instant, one merged-pool rerank, the V1 comparison). Groq has since retired those models, and the setup had known problems (a judge that could not see passage numbers, ground-truth errors, and a RAGAS recall formula that was later replaced). Its numbers are retired. Current results: [`EVAL_RESULTS_LATEST.md`](EVAL_RESULTS_LATEST.md). Current metric definitions: [`../docs/EVAL_METRICS_GUIDE.md`](../docs/EVAL_METRICS_GUIDE.md).
+
 ## Goal
 
 Measure whether V2 changes (cross-encoder reranker + dynamic context cap) improved retrieval and answer quality over V1 baseline.
