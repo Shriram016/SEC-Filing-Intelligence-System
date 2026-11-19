@@ -1,0 +1,11 @@
+{
+  "file": "locked/financebench_open_source.jsonl",
+  "sha256": "a5a2aa673e573e55675fc3c0f9aa38c1cf59d2abc91edb077534f71f10a71877",
+  "count": 150,
+  "source_commit": "cc39aeb4afdf33909ee1412188bf89035950c2eb",
+  "locked_at": "2026-11-19T07:38:27+00:00",
+  "allowed_milestones": [
+    "M3",
+    "M6"
+  ]
+}

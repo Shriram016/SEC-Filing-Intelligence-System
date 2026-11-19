@@ -461,3 +461,7 @@ Also watch: the 361 PDFs are hosted on company sites (links can break) and Finan
 - **Answer (2026-11-19):** Option B: rewrite it as an overview that links to the specs and ADRs. Keep it updated with the latest details.
 - **Verdict:** changed
 - **Action (done 2026-11-19):** V3_DESIGN.md rewritten (12 sections). Old version in git history (commit 3248756). All "after approval, update V3_DESIGN.md" actions in this log are now covered by the overview + specs.
+
+### Correction (2026-11-19, M0) — corpus count
+- **Finding:** the document list has 361 rows, but one name (`FOOTLOCKER_2023_annualreport`) appears twice with two periods. Unique PDFs = **360** (269 10-K, 30 8-K, 27 10-Q, 29 earnings, 5 annual reports). The repo also holds 8 PDFs not in the list; they are not in the corpus.
+- **Action (done):** "361" changed to "360" in the specs, ADRs, glossary and V3_DESIGN.md. Pitch now says "360 real company filings", because some documents are earnings reports, not SEC filings. Older entries above keep the original number.

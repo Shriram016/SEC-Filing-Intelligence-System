@@ -4,7 +4,7 @@ One meaning per term. Use these words the same way in code, docs and talks.
 
 | Term | Meaning |
 |---|---|
-| **Corpus** | The 361 FinanceBench PDFs. Fixed; no user uploads |
+| **Corpus** | The 360 FinanceBench PDFs. Fixed; no user uploads |
 | **Document catalog** | One row per PDF: company, doc type, fiscal period, period dates. Used by the coverage check |
 | **Chunk** | One stored piece of a document: a text section or one whole table, with metadata |
 | **Table label** | A 1–2 sentence description added to a table chunk for search. The table itself is stored unchanged |

@@ -1,18 +1,18 @@
 # Spec — Ingestion pipeline
 
 **Status:** design approved (grilling 2026-11-04 → 2026-11-19). Not built.
-**Milestones:** M0 (download), M1 (few companies), M2 (all 361 PDFs).
+**Milestones:** M0 (download), M1 (few companies), M2 (all 360 PDFs).
 **Sources:** `docs/V3_GRILLING_LOG.md` Q3, Q20–Q25, Q38, Q39, Q49.
 
 ## 1. Purpose
 
-Turn the 361 FinanceBench PDFs into searchable chunks with exact metadata. Ingestion is a batch job. It runs separately from answering.
+Turn the 360 FinanceBench PDFs into searchable chunks with exact metadata. Ingestion is a batch job. It runs separately from answering.
 
 ## 2. Input and output
 
 | | Value |
 |---|---|
-| Input | The 361 FinanceBench PDFs (269 10-K, 30 8-K, 27 10-Q, 29 earnings, 6 annual reports; 2015–2024) and the FinanceBench document list |
+| Input | The 360 FinanceBench PDFs (269 10-K, 30 8-K, 27 10-Q, 29 earnings, 5 annual reports; 2015–2024) and the FinanceBench document list |
 | Output | Chunks in the vector store, each with an embedding and metadata. A **document catalog** (one row per PDF) for the router coverage check |
 
 ## 3. Steps
@@ -29,7 +29,7 @@ Turn the 361 FinanceBench PDFs into searchable chunks with exact metadata. Inges
 
 | Decision | Choice | Ref |
 |---|---|---|
-| Corpus | The 361 FinanceBench PDFs only. No SEC HTML, no XBRL | Q3, ADR-0001 |
+| Corpus | The 360 FinanceBench PDFs only. No SEC HTML, no XBRL | Q3, ADR-0001 |
 | PDF reader | Chosen at build time by a test on pages that **no FinanceBench question uses**, plus a user hand-check. FinanceBench evidence pages are never used (test leakage) | Q20, Q21 |
 | Table labels | Yes, one label per table chunk | Q22 |
 | Who writes labels | Code template, LLM, or both: decided at build time after looking at real tables | Q23 |

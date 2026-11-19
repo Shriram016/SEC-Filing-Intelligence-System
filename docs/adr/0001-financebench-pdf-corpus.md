@@ -6,7 +6,7 @@
 The old design used SEC HTML as the main source, FinanceBench PDFs as a second source, and SEC XBRL to auto-generate answer keys.
 
 ## Decision
-The corpus is the 361 FinanceBench PDFs only (10-K, 10-Q, 8-K, earnings, annual reports; 2015–2024). No SEC HTML. No XBRL.
+The corpus is the 360 FinanceBench PDFs only (10-K, 10-Q, 8-K, earnings, annual reports; 2015–2024). No SEC HTML. No XBRL.
 
 ## Reasons
 - FinanceBench gives a human-checked benchmark (150 open questions) whose evidence points into these exact PDFs.

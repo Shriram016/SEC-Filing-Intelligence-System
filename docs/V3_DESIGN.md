@@ -29,7 +29,7 @@ V3 is not framed as an alternative to commercial tools (Bloomberg, AlphaSense). 
 
 ## 2. Data
 
-- **Corpus:** the 361 FinanceBench PDFs (269 10-K, 30 8-K, 27 10-Q, 29 earnings, 6 annual reports; 2015–2024). No SEC HTML, no XBRL. [ADR-0001](adr/0001-financebench-pdf-corpus.md)
+- **Corpus:** the 360 FinanceBench PDFs (269 10-K, 30 8-K, 27 10-Q, 29 earnings, 5 annual reports; 2015–2024). No SEC HTML, no XBRL. [ADR-0001](adr/0001-financebench-pdf-corpus.md)
 - **Why:** a human-checked benchmark with answers, on real, messy PDF filings. Q2.
 - No user uploads. Q49.
 - Licence CC-BY-NC-4.0: credit FinanceBench.
@@ -48,7 +48,7 @@ Keycloak ◄──┤                      API service (FastAPI, SSE, rate limit
             │                                     │                                        │
             │        Vector store + database (chunks, catalog, chats, logs)                │
             └──────────────────────────────────────────────────────────────────────────────┘
-Ingestion (batch): 361 PDFs → PDF reader → period dates → split + table labels → local embeddings → store
+Ingestion (batch): 360 PDFs → PDF reader → period dates → split + table labels → local embeddings → store
 Observability: Langfuse traces + metrics/alerts tool. Evaluation runner: dev set, locked benchmark, baseline.
 ```
 
@@ -113,9 +113,9 @@ Rules: walking skeleton first, then depth. Baseline and eval runner early. The l
 
 | # | Milestone | Done when | Measured |
 |---|---|---|---|
-| M0 | Foundations | V2 code removed from `v3`; layout; env settings; basic CI; 361 PDFs + 150 questions downloaded, **150 locked**; dev set drafting starts; `V3_LEARNING.md` | — |
+| M0 | Foundations | V2 code removed from `v3`; layout; env settings; basic CI; 360 PDFs + 150 questions downloaded, **150 locked**; dev set drafting starts; `V3_LEARNING.md` | — |
 | M1 | Walking skeleton + baseline | Few companies ingested; PDF reader and store chosen by test; chunk metadata with period dates; plain-RAG baseline in the eval runner | First dev scorecard |
-| M2 | Core engine, all 361 PDFs | Router + coverage check; semantic search + filters; JSON claims + quote check; API with SSE | vs baseline; refusal rate; citation pass rate; **speed/cost targets set** |
+| M2 | Core engine, all 360 PDFs | Router + coverage check; semantic search + filters; JSON claims + quote check; API with SSE | vs baseline; refusal rate; citation pass rate; **speed/cost targets set** |
 | M3 | Hard questions | Planner, calculator, multi-turn, year comparisons, company comparisons (low priority) | Failure causes; **locked run 1**; judge-vs-human agreement |
 | M4 | Users + UI | Keycloak; chats per user + sidebar + 30-day deletion; React UI | — |
 | M5 | Safety + production | Safety test set; full rate limits; retries + OpenAI fallback; Langfuse + metrics + alerts; quality gate + weekly eval (manual); load test | Safety pass rates; load number |
@@ -159,7 +159,7 @@ Also: PDFs hosted on company sites can disappear → download once in M0, keep c
 
 ## 11. Interview pitch (draft, to refine)
 
-"V3 is a chat assistant that answers equity-analyst questions from 361 real SEC filings. Every number in an answer comes with an exact quote that code checks, and every calculation is done by code, not the model. I measured it on FinanceBench, a human-written benchmark where plain vector RAG scores about 50%, against my own plain-RAG baseline, and I report failures by cause. It runs like a real product: login, per-user rate limits, fallback to a second AI provider, traces, metrics and alerts."
+"V3 is a chat assistant that answers equity-analyst questions from 360 real company filings (10-K, 10-Q, 8-K, earnings reports). Every number in an answer comes with an exact quote that code checks, and every calculation is done by code, not the model. I measured it on FinanceBench, a human-written benchmark where plain vector RAG scores about 50%, against my own plain-RAG baseline, and I report failures by cause. It runs like a real product: login, per-user rate limits, fallback to a second AI provider, traces, metrics and alerts."
 
 ## 12. Decided at build time
 
