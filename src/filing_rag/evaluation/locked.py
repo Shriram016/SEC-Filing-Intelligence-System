@@ -56,7 +56,7 @@ def lock(settings: Settings, now: datetime | None = None) -> dict[str, Any]:
     if manifest_path.exists():
         existing = json.loads(manifest_path.read_text(encoding="utf-8"))
         if existing["sha256"] != digest:
-            raise LockedSetError("locked file differs from the committed manifest; refusing to re-lock")
+            raise LockedSetError("locked file differs from the manifest; refusing to re-lock")
         return dict(existing)
 
     manifest = {
@@ -101,7 +101,7 @@ def open_locked(
     now: datetime | None = None,
 ) -> list[dict[str, Any]]:
     if not allow:
-        raise LockedSetError("the locked set is closed; pass allow=True (CLI: --locked) at M3/M6 only")
+        raise LockedSetError("the locked set is closed; pass allow=True at M3/M6 only")
     if milestone not in ALLOWED_MILESTONES:
         raise LockedSetError(f"milestone must be one of {ALLOWED_MILESTONES}, got {milestone!r}")
     if not reason.strip():
