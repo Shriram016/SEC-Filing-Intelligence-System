@@ -16,6 +16,7 @@ def _q(**over: Any) -> dict[str, Any]:
         "expected_route": "answer",
         "gold_answer": "$32,136 million",
         "evidence": [{"doc_name": "3M_2019_10K", "page": 40}],
+        "answer_source": "table",
     }
     base.update(over)
     return base
@@ -37,6 +38,9 @@ def test_valid_answerable_question() -> None:
         {"category": "advice", "expected_route": "answer"},
         {"category": "multi_turn", "turns": ["only one"]},
         {"turns": []},
+        {"answer_source": None},
+        {"answer_source": "chart"},
+        {"evidence": [{"doc_name": "3M_2019_10K", "page": 0}]},
     ],
 )
 def test_invalid_questions(over: dict[str, Any]) -> None:
@@ -55,7 +59,7 @@ def test_validate_file_reports_errors_duplicates_and_overlaps(tmp_path: Path) ->
     p = tmp_path / "dev.jsonl"
     lines = [json.dumps(_q()), json.dumps(_q()), "{bad json", json.dumps(_q(id="dev_0002"))]
     p.write_text("\n".join(lines))
-    r = validate_dev_set(p, locked_pages={("3M_2019_10K", 40)})
+    r = validate_dev_set(p, locked_pages={("3M_2019_10K", 41)})  # next page counts too
     assert len(r.questions) == 2
     assert len(r.errors) == 2
     assert len(r.locked_page_overlaps) == 2
@@ -65,3 +69,26 @@ def test_missing_file_is_empty(tmp_path: Path) -> None:
     r = validate_dev_set(tmp_path / "none.jsonl")
     assert r.questions == []
     assert r.errors == []
+
+
+def test_gold_value_and_unit_go_together() -> None:
+    q = DevQuestion.model_validate(_q(gold_value=32136, gold_unit="USD million"))
+    assert q.gold_value == 32136
+    with pytest.raises(ValidationError, match="set together"):
+        DevQuestion.model_validate(_q(gold_value=32136))
+    with pytest.raises(ValidationError, match="set together"):
+        DevQuestion.model_validate(_q(gold_unit="%"))
+
+
+def test_gold_value_only_for_answerable_questions() -> None:
+    with pytest.raises(ValidationError, match="only answerable"):
+        DevQuestion.model_validate(
+            {
+                "id": "dev_0002",
+                "category": "unrelated",
+                "turns": ["weather?"],
+                "expected_route": "unrelated",
+                "gold_value": 1,
+                "gold_unit": "%",
+            }  # fmt: skip
+        )

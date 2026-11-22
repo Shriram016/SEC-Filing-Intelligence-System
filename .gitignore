@@ -11,6 +11,8 @@ V3_LEARNING.md
 
 # --- Data (downloaded or generated; FinanceBench licence: do not redistribute) ---
 /data/
+/qdrant_storage/
+/experiments/structure/results/
 
 # --- V2 leftovers kept locally only ---
 /chroma_db/
@@ -36,3 +38,9 @@ htmlcov/
 .vscode/
 .idea/
 */settings.local.json
+
+# --- M1a page images (derived from FinanceBench PDFs; do not redistribute) ---
+/experiments/m1a/pages/
+/experiments/m1a/results/
+/experiments/m1b/audit_pages/
+/experiments/m1b/audit_pages_*/

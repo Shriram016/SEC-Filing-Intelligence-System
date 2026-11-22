@@ -1,0 +1,556 @@
+[
+ {
+  "id": "dev_0001",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": 4,
+  "near_rank": [
+   1
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0002",
+  "source": "table",
+  "company_rank": 7,
+  "doc_rank": 1,
+  "near_rank": [
+   4
+  ],
+  "other_doc_in_top": 5,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0003",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": 2,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0004",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0005",
+  "source": "table",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 0,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0006",
+  "source": "table",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   3
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0007",
+  "source": "table",
+  "company_rank": 9,
+  "doc_rank": 5,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 2,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0008",
+  "source": "table",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 1,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0009",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 2,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0010",
+  "source": "table",
+  "company_rank": 2,
+  "doc_rank": 1,
+  "near_rank": [
+   1
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0011",
+  "source": "text",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   5
+  ],
+  "other_doc_in_top": 2,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0012",
+  "source": "text",
+  "company_rank": 10,
+  "doc_rank": 4,
+  "near_rank": [
+   5
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0013",
+  "source": "text",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0014",
+  "source": "text",
+  "company_rank": 9,
+  "doc_rank": 6,
+  "near_rank": [
+   6
+  ],
+  "other_doc_in_top": 2,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0015",
+  "source": "text",
+  "company_rank": 10,
+  "doc_rank": 5,
+  "near_rank": [
+   3
+  ],
+  "other_doc_in_top": 2,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0016",
+  "source": "text",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   10
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0017",
+  "source": "text",
+  "company_rank": 5,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0018",
+  "source": "text",
+  "company_rank": 3,
+  "doc_rank": 1,
+  "near_rank": [
+   3
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0019",
+  "source": "text",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   8
+  ],
+  "other_doc_in_top": 1,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0020",
+  "source": "text",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0021",
+  "source": "text",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   4
+  ],
+  "other_doc_in_top": 1,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0022",
+  "source": "text",
+  "company_rank": 2,
+  "doc_rank": 1,
+  "near_rank": [
+   3
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0023",
+  "source": "text",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   2
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0024",
+  "source": "text",
+  "company_rank": 6,
+  "doc_rank": 1,
+  "near_rank": [
+   1
+  ],
+  "other_doc_in_top": 5,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0025",
+  "source": "text",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   1
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0026",
+  "source": "text",
+  "company_rank": 8,
+  "doc_rank": 3,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0027",
+  "source": "text",
+  "company_rank": 6,
+  "doc_rank": 1,
+  "near_rank": [
+   2
+  ],
+  "other_doc_in_top": 5,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0028",
+  "source": "text",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0029",
+  "source": "text",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0030",
+  "source": "text",
+  "company_rank": 2,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0031",
+  "source": "table",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   2
+  ],
+  "other_doc_in_top": 1,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0032",
+  "source": "table",
+  "company_rank": 7,
+  "doc_rank": 2,
+  "near_rank": [
+   1
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0033",
+  "source": "text",
+  "company_rank": 2,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0034",
+  "source": "table",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   6
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0035",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   1
+  ],
+  "other_doc_in_top": 1,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0036",
+  "source": "text",
+  "company_rank": 3,
+  "doc_rank": 1,
+  "near_rank": [
+   1
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0037",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0038",
+  "source": "table",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   6
+  ],
+  "other_doc_in_top": 0,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0039",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   10
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0040",
+  "source": "table",
+  "company_rank": 1,
+  "doc_rank": 1,
+  "near_rank": [
+   3
+  ],
+  "other_doc_in_top": 2,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0041",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   3
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0042",
+  "source": "table",
+  "company_rank": 2,
+  "doc_rank": 1,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0043",
+  "source": "table",
+  "company_rank": 5,
+  "doc_rank": 4,
+  "near_rank": [
+   null
+  ],
+  "other_doc_in_top": 1,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0044",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": 7,
+  "near_rank": [
+   6
+  ],
+  "other_doc_in_top": 2,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0045",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   6
+  ],
+  "other_doc_in_top": 3,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0046",
+  "source": "table",
+  "company_rank": 3,
+  "doc_rank": 1,
+  "near_rank": [
+   10
+  ],
+  "other_doc_in_top": 4,
+  "n_top": 5
+ },
+ {
+  "id": "dev_0047",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   null,
+   null
+  ],
+  "other_doc_in_top": 7,
+  "n_top": 10
+ },
+ {
+  "id": "dev_0048",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   7,
+   3
+  ],
+  "other_doc_in_top": 6,
+  "n_top": 10
+ },
+ {
+  "id": "dev_0049",
+  "source": "table",
+  "company_rank": null,
+  "doc_rank": null,
+  "near_rank": [
+   null,
+   null
+  ],
+  "other_doc_in_top": 8,
+  "n_top": 10
+ },
+ {
+  "id": "dev_0050",
+  "source": "table",
+  "company_rank": 6,
+  "doc_rank": 2,
+  "near_rank": [
+   null,
+   null
+  ],
+  "other_doc_in_top": 6,
+  "n_top": 10
+ }
+]

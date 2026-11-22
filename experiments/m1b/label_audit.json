@@ -1,0 +1,1912 @@
+[
+ {
+  "n": 1,
+  "chunk_id": "3222cb4a349e1345fda6",
+  "doc_name": "3M_2019_10K",
+  "doc_type": "10-K",
+  "page": 110,
+  "page_end": 110,
+  "is_table": false,
+  "label": {
+   "head": "3M 10-K FY2019",
+   "section": "Item 8. Financial Statements and Supplementary Data",
+   "subsection": "NOTE 16. Commitments and Contingencies",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "As a result, the current estimates of the potential impact on the Company’s consolidated financial position, results of operations and cash flows for the legal proceedings and claims pending against the Company could change in the future.\nProcess for Disclosure and Recording of Insurance Receivables",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     51,
+     "Item 8. Financial Statements and Supplementary Data."
+    ],
+    "note": [
+     109,
+     "NOTE 16. Commitments and Contingencies"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\n110\r\nBecause litigation is subject to inherent uncertainties, and unfavorable rulings or developments could occur, there can be no certainty that the Company may\r\nnot ultimately incur charges in excess of presently recorded liabilities. Many of the matters described are at preliminary stages or seek an indeterminate\r\namount of damages. It is not uncommon for claims to be resolved over many years. A future adverse ruling, settlement, unfavorable development, or\r\nincrease in accruals for one or more of these matters could result in future charges that could have a material adverse effect on the Company’s results of\r\noperations or cash flows in the period in which they are recorded. Although the Company cannot estimate its exposure to all legal proceedings, the\r\nCompany currently believes that the ultimate outcome of legal proceedings or future charges, if any, would not have a material adverse effect on the\r\nconsolidated financial position of the Company. Based on experience and developments, the Company reexamines its estimates of probable liabilities and\r\nassociated expenses and receivables each period, and whether it is able to estimate a liability previously determined to be not estimable and/or not probable. Where appropriate, the Company makes additions to or adjustments of its estimated liabilities. As a result, the current estimates of the potential impact on\r\nthe Company’s consolidated financial position, results of operations and cash flows for the "
+  },
+  "image": "audit_pages/01_3M_2019_10K_p110.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 2,
+  "chunk_id": "9ef2d726a53073280255",
+  "doc_name": "3M_2019_10K",
+  "doc_type": "10-K",
+  "page": 140,
+  "page_end": 141,
+  "is_table": false,
+  "label": {
+   "head": "3M 10-K FY2019",
+   "section": "Item 16. Form 10-K Summary",
+   "subsection": null,
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "Item 16. Form 10-K Summary.\nA Form 10-K summary is provided at the beginning of this document, with hyperlinked cross-references. This allows users to easily locate the corresponding items in Form 10-K, where the disclosure is fully presented. The summary does not include certain Part III informatio",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     140,
+     "Item 16. Form 10-K Summary."
+    ],
+    "note": [
+     134,
+     "NOTE 20. Quarterly Data (Unaudited)"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\n140\r\nFiled herewith, in addition to items, if any, specifically identified above:\r\n(21) Subsidiaries of the Registrant.\r\n(23) Consent of independent registered public accounting firm.\r\n(24) Power of attorney.\r\n(31.1) Certification of the Chief Executive Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, 18 U.S.C. Section 1350.\r\n(31.2) Certification of the Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, 18 U.S.C. Section 1350.\r\n(32.1) Certification of the Chief Executive Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002, 18 U.S.C. Section 1350.\r\n(32.2) Certification of the Chief Financial Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002, 18 U.S.C. Section 1350.\r\n(95) Mine Safety Disclosures.\r\n(101.INS) Inline XBRL Instance Document (the instance document does not appear in the Interactive Data File because its XBRL tags are embedded\r\nwithin the Inline XBRL document)\r\n(101.SCH) Inline XBRL Taxonomy Extension Schema Document\r\n(101.CAL) Inline XBRL Taxonomy Extension Calculation Linkbase Document\r\n(101.DEF) Inline XBRL Taxonomy Extension Definition Linkbase Document\r\n(101.LAB) Inline XBRL Taxonomy Extension Label Linkbase Document\r\n(101.PRE)\r\n(104)\r\nInline XBRL Taxonomy Extension Presentation Linkbase Document\r\nCover Page Interactive Data File (formatted as Inline XBRL and contained in Exhibit 101)\r\n________________________\r\n* Management contract or compensatory plan or arrangem"
+  },
+  "image": "audit_pages/02_3M_2019_10K_p140.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 3,
+  "chunk_id": "cc72406b5eaec4ee32b8",
+  "doc_name": "ADOBE_2018_10K",
+  "doc_type": "10-K",
+  "page": 67,
+  "page_end": 67,
+  "is_table": false,
+  "label": {
+   "head": "Adobe 10-K FY2018",
+   "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+   "subsection": "NOTES TO CONSOLIDATED FINANCIAL STATEMENTS NOTE 1. BASIS OF PRESENTATION AND SIGNIFICANT…",
+   "heading": "Significant Accounting Policies",
+   "table_title": null
+  },
+  "chunk_start": "Contracts that do not qualify for hedge accounting are adjusted to fair value through earnings. See Note 5 for information regarding our hedging activities.\nGains and losses from foreign exchange forward contracts which hedge certain balance sheet positions are recorded each period as a component of",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     56,
+     "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ],
+    "note": [
+     62,
+     "NOTE 1. BASIS OF PRESENTATION AND SIGNIFICANT ACCOUNTING POLICIES"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nADOBE INC.\r\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\r\n67\r\nTaxes Collected from Customers\r\nWe net taxes collected from customers against those remitted to government authorities in our financial statements. \r\nAccordingly, taxes collected from customers are not reported as revenue.\r\nTreasury Stock\r\nWe account for treasury stock under the cost method. When treasury stock is re-issued at a price higher than its cost, the \r\ndifference is recorded as a component of additional paid-in-capital in our Consolidated Balance Sheets. When treasury stock is \r\nre-issued at a price lower than its cost, the difference is recorded as a component of additional paid-in-capital to the extent that \r\nthere are previously recorded gains to offset the losses. If there are no treasury stock gains in additional paid-in-capital, the losses \r\nupon re-issuance of treasury stock are recorded as a reduction of retained earnings in our Consolidated Balance Sheets.\r\nAdvertising Expenses\r\nAdvertising costs are expensed as incurred. Advertising expenses for fiscal 2018, 2017 and 2016 were $173.6 million, \r\n$141.7 million and $135.8 million, respectively.\r\nForeign Currency Translation\r\nWe translate assets and liabilities of foreign subsidiaries, whose functional currency is their local currency, at exchange \r\nrates in effect at the balance sheet date. We translate revenue and expenses at the monthly average exchange rates. We include \r\naccumulated net translation adjustments in s"
+  },
+  "image": "audit_pages/03_ADOBE_2018_10K_p67.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 4,
+  "chunk_id": "7a0fae27f147695ea750",
+  "doc_name": "ADOBE_2018_10K",
+  "doc_type": "10-K",
+  "page": 49,
+  "page_end": 50,
+  "is_table": false,
+  "label": {
+   "head": "Adobe 10-K FY2018",
+   "section": "Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+   "subsection": "LIQUIDITY AND CAPITAL RESOURCES",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "Income taxes payable decreased primarily due to taxes paid in excess of the tax provision increase.\nFor fiscal 2016, net cash provided by operating activities of $2.20 billion was primarily comprised of net income plus the net effect of non-cash items. The primary working capital sources of cash wer",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     36,
+     "ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\n49\r\nLIQUIDITY AND CAPITAL RESOURCES\r\nThis data should be read in conjunction with our Consolidated Statements of Cash Flows.\r\nAs of\r\n(in millions) November 30, 2018 December 1, 2017\r\nCash and cash equivalents $ 1,642.8 $ 2,306.1\r\nShort-term investments $ 1,586.2 $ 3,513.7\r\nWorking capital $ 555.9 $ 3,720.4\r\nStockholders’ equity $ 9,362.1 $ 8,459.9\r\nA summary of our cash flows is as follows:\r\n(in millions)\r\nFiscal\r\n2018\r\nFiscal\r\n2017\r\nFiscal\r\n2016\r\nNet cash provided by operating activities $ 4,029.3 $ 2,912.9 $ 2,199.7\r\nNet cash used for investing activities (4,685.3) (442.9) (960.0)\r\nNet cash used for financing activities (5.6) (1,183.7) (1,090.7)\r\nEffect of foreign currency exchange rates on cash and cash\r\nequivalents (1.7) 8.5 (14.2)\r\nNet increase (decrease) in cash and cash equivalents $ (663.3) $ 1,294.8 $ 134.8\r\nOur primary source of cash is receipts from revenue and, to a lesser extent, proceeds from participation in the employee \r\nstock purchase plan. The primary uses of cash are our stock repurchase program as described below, payroll-related expenses, \r\ngeneral operating expenses including marketing, travel and office rent, and cost of revenue. Other uses of cash include business \r\nacquisitions and purchases of property and equipment. \r\nCash Flows from Operating Activities\r\nFor fiscal 2018, net cash provided by operating activities of $4.03 billion was primarily comprised of net income plus the \r\nnet effect of non-cash items, including adjustments "
+  },
+  "image": "audit_pages/04_ADOBE_2018_10K_p49.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 5,
+  "chunk_id": "a6ad5604d7c84f62fc23",
+  "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+  "doc_type": "8-K",
+  "page": 88,
+  "page_end": 88,
+  "is_table": false,
+  "label": {
+   "head": "Amcor 8-K dated 2022-04-26",
+   "section": "Exhibit 10.1",
+   "subsection": null,
+   "heading": "ARTICLE IX",
+   "table_title": null
+  },
+  "chunk_start": "any theory of liability, to any Loan Party, any Lender or any other Person for indirect, special, consequential or punitive damages (as opposed to direct or actual damages). Parent, each Borrower and each Lender agrees that any Agent or any Titled Person may, but shall not be obligated to, store any",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     3,
+     "Item 9.01. Financial Statements and Exhibits."
+    ],
+    "note": null,
+    "exhibit": [
+     5,
+     "Exhibit 10.1"
+    ]
+   },
+   "page_text_start": "79\r\n(e) In connection with any Borrowing Request or Interest Election Request required to be provided hereunder to the\r\nForeign Administrative Agent, the applicable Borrower (or Parent on its behalf) shall furnish with such request telephone call-back information\r\ndesignating a Financial Officer or other authorized employee of the applicable Borrower (or of Parent on its behalf) as authorized to confirm and\r\nprovide any additional information relating to any such request as the Foreign Administrative Agent may reasonably require in order to give\r\neffect to such request. The Foreign Administrative Agent shall be authorized to seek any such confirmation or additional information by\r\ntelephonic request. The Foreign Administrative Agent shall be entitled to rely, and shall not incur any liability for relying, upon any information\r\nprovided by such designated Person and, in the event such designated Person is not, in fact, available to provide any such information by\r\ntelephone call-back, the Foreign Administrative Agent shall have no liability for any failure to act in connection with any such request or notice.\r\n(f) The Borrowers agree that any Agent may, but shall not be obligated to, make any Communication by posting such\r\nCommunication on the Platform. The Platform and any Communications are provided “as is” and “as available”. The Agents, the Titled Persons\r\nand their respective Related Parties do not warrant, and shall not be deemed to warrant, the adequacy of the Platform "
+  },
+  "image": "audit_pages/05_AMCOR_2022_8K_dated-2022-04-26_p88.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 6,
+  "chunk_id": "0cc4656861d41656887f",
+  "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+  "doc_type": "8-K",
+  "page": 243,
+  "page_end": 246,
+  "is_table": false,
+  "label": {
+   "head": "Amcor 8-K dated 2022-04-26",
+   "section": "Exhibit 10.2",
+   "subsection": null,
+   "heading": "S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 P\u0000\u0000\u0000 \u0000\u0000 A\u0000\u0000\u0000\u0000 F\u0000\u0000\u0000-Y\u0000\u0000\u0000 S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 F\u0000\u0000\u0000\u0000\u0000\u0000\u0000 A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+   "table_title": null
+  },
+  "chunk_start": "S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 P\u0000\u0000\u0000 \u0000\u0000 A\u0000\u0000\u0000\u0000 F\u0000\u0000\u0000-Y\u0000\u0000\u0000 S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 F\u0000\u0000\u0000\u0000\u0000\u0000\u0000 A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\nSIGNATURE PAGE TO THE AMCOR FIVE-YEAR SYNDICATED FACILITY AGREEMENT\nName of Institution: BANK OF CHINA LIMITED, SYDNEY\nBRANCH\nby /s/ Zhibin Xie Name:Zhibin Xie Title: Assistant General Manager\nS\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 P\u0000\u0000\u0000 \u0000\u0000 A\u0000\u0000\u0000\u0000 F\u0000\u0000\u0000-Y\u0000\u0000\u0000 S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     3,
+     "Item 9.01. Financial Statements and Exhibits."
+    ],
+    "note": null,
+    "exhibit": [
+     124,
+     "Exhibit 10.2"
+    ]
+   },
+   "page_text_start": "SIGNATURE PAGE TO\r\nTHE AMCOR FIVE-YEAR SYNDICATED FACILITY AGREEMENT\r\nName of Institution: AUSTRALIA AND NEW ZEALAND\r\nBANKING GROUP LIMITED\r\nby\r\n/s/ Elizabeth Hansen\r\nName: Elizabeth Hansen\r\nTitle: Associate Director, Loan Structuring\r\nand Execution\r\nSignature Page to Amcor Five-Year Syndicated Facility Agreement"
+  },
+  "image": "audit_pages/06_AMCOR_2022_8K_dated-2022-04-26_p243.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": false,
+   "table_title": null,
+   "note": "spaced capital letters, unreadable"
+  }
+ },
+ {
+  "n": 7,
+  "chunk_id": "bc488365aeaf05849bae",
+  "doc_name": "APPLE_2019_10K",
+  "doc_type": "10-K",
+  "page": 29,
+  "page_end": 29,
+  "is_table": false,
+  "label": {
+   "head": "Apple 10-K FY2019",
+   "section": "Item 7A. Quantitative and Qualitative Disclosures About Market Risk",
+   "subsection": null,
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "Item 7A. Quantitative and Qualitative Disclosures About Market Risk\nInterest Rate and Foreign Currency Risk Management\nThe Company regularly reviews its foreign exchange forward and option positions and interest rate swaps, both on a stand-alone basis and in conjunction with its underlying foreign c",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     29,
+     "Item 7A. Quantitative and Qualitative Disclosures About Market Risk"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Valuation of Manufacturing-Related Assets and Estimation of Inventory Purchase Commitment Cancellation Fees\r\nThe Company invests in manufacturing-related assets, including capital assets held at its suppliers’ facilities and prepayments provided to certain of its suppliers\r\nassociated with long-term agreements to secure the supply of inventory. The Company also accrues estimated purchase commitment cancellation fees related\r\nto inventory orders that have been canceled or are expected to be canceled. The Company’s estimates of future product development plans and demand for its\r\nproducts are the key inputs in the determination of the recoverability of manufacturing-related assets and the assessment of the adequacy of any purchase\r\ncommitment cancellation fee accruals. If there is an abrupt and substantial decline in estimated demand for one or more of the Company’s products, a change in\r\nthe Company’s product development plans, or an unanticipated change in technological requirements for any of the Company’s products, the Company may be\r\nrequired to record write-downs or impairments of manufacturing-related assets or accrue purchase commitment cancellation fees.\r\nWarranty Costs\r\nThe Company offers limited warranties on its new hardware products and on parts used to repair its hardware products, and customers may purchase extended\r\nservice coverage, where available, on many of the Company’s hardware products. The Company accrues the estimated cost of warranties in the period th"
+  },
+  "image": "audit_pages/07_APPLE_2019_10K_p29.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 8,
+  "chunk_id": "2df0122230ced97dcb5b",
+  "doc_name": "APPLE_2019_10K",
+  "doc_type": "10-K",
+  "page": 92,
+  "page_end": 92,
+  "is_table": false,
+  "label": {
+   "head": "Apple 10-K FY2019",
+   "section": "Exhibit 10.16",
+   "subsection": "5. Dividend and Voting Rights",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "The Participant hereby consents to receive all applicable documentation by electronic delivery and to participate in the Plan through an on-line or voice activated system established and maintained by the Company or a third party vendor designated by the Company.\n13. Data Privacy . By participating ",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     66,
+     "Item 16. Form 10-K Summary"
+    ],
+    "note": [
+     58,
+     "Note 12 – Selected Quarterly Financial Information (Unaudited)"
+    ],
+    "exhibit": [
+     88,
+     "Exhibit 10.16"
+    ]
+   },
+   "page_text_start": "(a) withholding from any wages or other cash compensation payable to the Participant by the Company or the Employer;\r\n(b) withholding otherwise deliverable Shares and from otherwise payable Dividend Equivalent Rights to be issued or paid upon\r\nvesting/settlement of the Award;\r\n(c) arranging for the sale of Shares otherwise deliverable to the Participant (on the Participant’s behalf and at the Participant’s\r\ndirection pursuant to this authorization), including selling Shares as part of a block trade with other Participants in the Plan; or\r\n(d) withholding from the proceeds of the sale of Shares acquired upon vesting/settlement of the Award.\r\nNotwithstanding the foregoing, if the Participant is an officer of the Company who is subject to Section 16 of the Exchange Act, then\r\nthe Company must satisfy any withholding obligations arising upon the occurrence of a taxable or tax withholding event, as applicable,\r\nby withholding Shares otherwise deliverable or an amount otherwise payable upon settlement of Dividend Equivalent Rights pursuant to\r\nmethod (b), unless the Board or the Committee determines in its discretion to satisfy the obligation for Tax-Related Items by one or a\r\ncombination of methods (a), (b), (c), and (d) above.\r\nDepending on the withholding method, the Company may withhold or account for Tax-Related Items by considering applicable minimum\r\nstatutory withholding amounts or other applicable withholding rates, including maximum applicable rates in the Participant's j"
+  },
+  "image": "audit_pages/08_APPLE_2019_10K_p92.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": true,
+   "table_title": null,
+   "note": "stale: page 92 is Section 12 (run-in numbered headings not found)"
+  }
+ },
+ {
+  "n": 9,
+  "chunk_id": "c44eb47b4e70f995d81b",
+  "doc_name": "APPLE_2023Q3_10Q",
+  "doc_type": "10-Q",
+  "page": 7,
+  "page_end": 7,
+  "is_table": true,
+  "label": {
+   "head": "Apple 10-Q FY2023 Q3",
+   "section": "Part I, Item 1. Financial Statements",
+   "subsection": null,
+   "heading": "CONDENSED CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Unaudited)",
+   "table_title": "CONDENSED CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Unaudited)"
+  },
+  "chunk_start": "CONDENSED CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Unaudited)\n(In millions, except per share amounts)\n                                                           (In millions, except per share amounts)\n                                                                                      Three",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     4,
+     "Item 1. Financial Statements"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Apple Inc.\r\nCONDENSED CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Unaudited)\r\n(In millions, except per share amounts)\r\nThree Months Ended Nine Months Ended\r\nJuly 1,\r\n2023\r\nJune 25,\r\n2022\r\nJuly 1,\r\n2023\r\nJune 25,\r\n2022\r\nTotal shareholders’ equity, beginning balances $ 62,158 $ 67,399 $ 50,672 $ 63,090\r\nCommon stock and additional paid-in capital:\r\nBeginning balances 69,568 61,181 64,849 57,365\r\nCommon stock issued — — 690 593\r\nCommon stock withheld related to net share settlement of equity\r\nawards (1,595) (1,371) (3,310) (2,783)\r\nShare-based compensation 2,694 2,305 8,438 6,940\r\nEnding balances 70,667 62,115 70,667 62,115\r\nRetained earnings/(Accumulated deficit):\r\nBeginning balances 4,336 12,712 (3,068) 5,562\r\nNet income 19,881 19,442 74,039 79,082\r\nDividends and dividend equivalents declared (3,811) (3,760) (11,207) (11,058)\r\nCommon stock withheld related to net share settlement of equity\r\nawards (858) (1,403) (1,988) (3,323)\r\nCommon stock repurchased (18,140) (21,702) (56,368) (64,974)\r\nEnding balances 1,408 5,289 1,408 5,289\r\nAccumulated other comprehensive income/(loss):\r\nBeginning balances (11,746) (6,494) (11,109) 163\r\nOther comprehensive income/(loss) (55) (2,803) (692) (9,460)\r\nEnding balances (11,801) (9,297) (11,801) (9,297)\r\nTotal shareholders’ equity, ending balances $ 60,274 $ 58,107 $ 60,274 $ 58,107\r\nDividends and dividend equivalents declared per share or RSU $ 0.24 $ 0.23 $ 0.70 $ 0.67\r\nSee accompanying Notes to Condensed Consolidated Financial Statements"
+  },
+  "image": "audit_pages/09_APPLE_2023Q3_10Q_p7.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": true,
+   "note": ""
+  }
+ },
+ {
+  "n": 10,
+  "chunk_id": "01030c8a8b56fcff9cd8",
+  "doc_name": "APPLE_2023Q3_10Q",
+  "doc_type": "10-Q",
+  "page": 15,
+  "page_end": 15,
+  "is_table": false,
+  "label": {
+   "head": "Apple 10-Q FY2023 Q3",
+   "section": "Part I, Item 1. Financial Statements",
+   "subsection": "Note 8 – Benefit Plans",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "Note 8 – Benefit Plans\nRestricted Stock Units\nA summary of the Company’s RSU activity and related information for the nine months ended July 1, 2023 is as follows:",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     4,
+     "Item 1. Financial Statements"
+    ],
+    "note": [
+     15,
+     "Note 9 – Commitments and Contingencies"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Note 8 – Benefit Plans\r\nRestricted Stock Units\r\nA summary of the Company’s RSU activity and related information for the nine months ended July 1, 2023 is as follows:\r\nNumber of\r\nRSUs\r\n(in thousands)\r\nWeighted-Average\r\nGrant Date Fair\r\nValue Per RSU\r\nAggregate\r\nFair Value\r\n(in millions)\r\nBalance as of September 24, 2022 201,501 $ 109.48\r\nRSUs granted 86,896 $ 150.23\r\nRSUs vested (96,681) $ 95.97\r\nRSUs canceled (7,000) $ 126.48\r\nBalance as of July 1, 2023 184,716 $ 135.08 $ 35,829\r\nThe fair value as of the respective vesting dates of RSUs was $7.0 billion and $14.9 billion for the three- and nine-month periods ended July 1, 2023,\r\nrespectively, and was $7.8 billion and $17.3 billion for the three- and nine-month periods ended June 25, 2022, respectively.\r\nShare-Based Compensation\r\nThe following table shows share-based compensation expense and the related income tax benefit included in the Condensed Consolidated Statements of\r\nOperations for the three- and nine-month periods ended July 1, 2023 and June 25, 2022 (in millions):\r\nThree Months Ended Nine Months Ended\r\nJuly 1,\r\n2023\r\nJune 25,\r\n2022\r\nJuly 1,\r\n2023\r\nJune 25,\r\n2022\r\nShare-based compensation expense $ 2,617 $ 2,243 $ 8,208 $ 6,760\r\nIncome tax benefit related to share-based compensation expense $ (993) $ (1,231) $ (2,791) $ (3,416)\r\nAs of July 1, 2023, the total unrecognized compensation cost related to outstanding RSUs and stock options was $20.9 billion, which the Company expects to\r\nrecognize over a weighted-average pe"
+  },
+  "image": "audit_pages/10_APPLE_2023Q3_10Q_p15.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 11,
+  "chunk_id": "e27e8170592ffddcbcc1",
+  "doc_name": "COSTCO_2019_10K",
+  "doc_type": "10-K",
+  "page": 16,
+  "page_end": 16,
+  "is_table": true,
+  "label": {
+   "head": "Costco 10-K FY2019",
+   "section": "Item 2. Properties",
+   "subsection": null,
+   "heading": "Warehouse Properties",
+   "table_title": null
+  },
+  "chunk_start": "                                                                                                                  Lease Land\n                                                                                                 Own Land            and/or\n                                                   ",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     16,
+     "Item 2—Properties"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nItem 1B—Unresolved Staff Comments\r\nNone.\r\nItem 2—Properties\r\nWarehouse Properties\r\nAt September 1, 2019, we operated 782 membership warehouses:\r\nOwn Land\r\nand Building\r\nLease Land\r\nand/or\r\nBuilding(1) Total\r\nUnited States and Puerto Rico 437 106 543\r\nCanada 86 14 100\r\nMexico 38 1 39\r\nUnited Kingdom 23 6 29\r\nJapan 13 13 26\r\nKorea 12 4 16\r\nTaiwan — 13 13\r\nAustralia 8 3 11\r\nSpain 2 — 2\r\nIceland — 1 1\r\nFrance 1 — 1\r\nChina — 1 1\r\nTotal 620 162 782\r\n_______________\r\n(1) 114 of the 162 leases are land-only leases, where Costco owns the building.\r\nThe following schedule shows warehouse openings, net of closings and relocations, and expected openings through December 31, 2019:\r\nUnited States Canada\r\nOther\r\nInternational Total\r\nTotal Warehouses\r\nin Operation\r\n2015 and prior 480 89 117 686 686\r\n2016 21 2 6 29 715\r\n2017 13 6 7 26 741\r\n2018 13 3 5 21 762\r\n2019 16 — 4 20 782\r\n2020 (expected through 12/31/2019) 3 — — 3 785\r\nTotal 546 100 139 785\r\nAt the end of 2019, our warehouses contained approximately 113.9 million square feet of operating floor space: 79.9 million in the U.S.; 14.0 million\r\nin Canada; and 20.0 million in Other International. We operate 24 depots, with approximately 11.0 million square feet, for the distribution of most\r\nmerchandise shipments to the warehouses. Additionally, we operate various fulfillment, processing, packaging, manufacturing and other facilities to\r\nsupport our business, which includes the production of certain private-label items. Ou"
+  },
+  "image": "audit_pages/11_COSTCO_2019_10K_p16.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": "missing",
+   "note": ""
+  }
+ },
+ {
+  "n": 12,
+  "chunk_id": "a2ab4fbff34ff3464660",
+  "doc_name": "COSTCO_2019_10K",
+  "doc_type": "10-K",
+  "page": 59,
+  "page_end": 60,
+  "is_table": false,
+  "label": {
+   "head": "Costco 10-K FY2019",
+   "section": "Item 8. Financial Statements and Supplementary Data",
+   "subsection": "Note 10—Commitments and Contingencies",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "On January 30, 2019, an order was entered consolidating the actions and a consolidated amended complaint was filed on April 16, 2019. A motion to dismiss the complaint was filed on June 7.\nMembers of the Board of Directors, one other individual, and the Company are defendants in a shareholder deriva",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     30,
+     "Item 8—Financial Statements and Supplementary Data"
+    ],
+    "note": [
+     57,
+     "Note 10—Commitments and Contingencies"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nIn January 2019, a former seasonal employee filed a class action, alleging failure to provide California seasonal employees meal and rest breaks,\r\nproper wage statements, and appropriate wages. Jadan v. Costco Wholesale Corp. (Case No. 19-CV-340438 Santa Clara Superior Court filed Jan.\r\n3, 2019). The complaint seeks relief under the California Labor Code, including civil penalties and attorneys’ fees.\r\nIn March 2019, employees filed a class action against the Company alleging claims under California law for failure to pay overtime, to provide meal\r\nperiods and itemized wage statements, to timely pay wages due to terminating employees, to pay minimum wages, and for unfair business\r\npractices. Relief is sought under the California Labor Code, including civil penalties and attorneys' fees. Nevarez, et ano., v. Costco Wholesale\r\nCorp., et al. (Case No. 2:19-cv-03454 C.D. Cal. Filed Mar. 25, 2019). The Company filed an answer denying the material allegations of the\r\ncomplaint. In May 2019, employees filed a class action against the Company alleging claims under California law for failure to pay overtime, to\r\nprovide itemized wage statements, to timely pay wages due to terminating employees, to pay minimum wages, and for unfair business practices.\r\nRough v. Costco Wholesale Corp. (Case No. 2:19-cv-01340 E.D. Cal. filed May 28, 2019). Relief is sought under the California Labor Code,\r\nincluding civil penalties and attorneys' fees. In June 2019, employees filed a c"
+  },
+  "image": "audit_pages/12_COSTCO_2019_10K_p59.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 13,
+  "chunk_id": "d66e2d58318c28432eb0",
+  "doc_name": "COSTCO_2023_8K_dated-2023-08-16",
+  "doc_type": "8-K",
+  "page": 1,
+  "page_end": 1,
+  "is_table": false,
+  "label": {
+   "head": "Costco 8-K dated 2023-08-16",
+   "section": null,
+   "subsection": "COSTCO WHOLESALE CORPORATION",
+   "heading": "Registrant’s telephone number, including area code: 425-313-8100",
+   "table_title": null
+  },
+  "chunk_start": "Registrant’s telephone number, including area code: 425-313-8100\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (see General Instruction A.2. below):\n☐ Written communications p",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "UNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\nFORM 8-K\r\nCURRENT REPORT\r\nPursuant to Section 13 or 15(d)\r\nof the Securities Exchange Act of 1934\r\nDate of Report (Date of earliest event reported): August 16, 2023\r\nCOSTCO WHOLESALE CORPORATION\r\n(Exact name of registrant as specified in its charter)\r\nWashington 0-20355 91-1223280\r\n(State or other jurisdiction\r\nof incorporation)\r\n(Commission\r\nFile No.)\r\n(I.R.S. Employer\r\nIdentification No.)\r\n999 Lake Drive\r\nIssaquah, WA 98027\r\n(Address of principal executive offices and zip code)\r\nRegistrant’s telephone number, including area code: 425-313-8100\r\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following\r\nprovisions (see General Instruction A.2. below):\r\n☐ Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)\r\n☐ Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)\r\n☐ Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))\r\n☐ Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240.13e-4(c))\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, par value $.005 per share COST NASDAQ\r\nIndicate by check mark whether the registrant is an emerging growth company "
+  },
+  "image": "audit_pages/13_COSTCO_2023_8K_dated-2023-08-16_p1.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": false,
+   "table_title": null,
+   "note": "cover form field (telephone number)"
+  }
+ },
+ {
+  "n": 14,
+  "chunk_id": "0542fe5bc0e22c43b7f1",
+  "doc_name": "COSTCO_2023_8K_dated-2023-08-16",
+  "doc_type": "8-K",
+  "page": 3,
+  "page_end": 3,
+  "is_table": false,
+  "label": {
+   "head": "Costco 8-K dated 2023-08-16",
+   "section": "Exhibit 99.1",
+   "subsection": "COSTCO WHOLESALE CORPORATION ANNOUNCES NEW BOARD MEMBER",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "Costco currently operates 858 warehouses, including 590 in the United States and Puerto Rico, 107 in Canada, 40 in Mexico, 32 in Japan, 29 in the United Kingdom, 18 in Korea, 15 in Australia, 14 in Taiwan, four each in China and Spain, two in France, and one each in Iceland, New Zealand and Sweden. ",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     2,
+     "Item 9.01. Financial Statements and Exhibits"
+    ],
+    "note": null,
+    "exhibit": [
+     3,
+     "Exhibit 99.1"
+    ]
+   },
+   "page_text_start": "Exhibit 99.1\r\nPress Release\r\nCOSTCO WHOLESALE CORPORATION ANNOUNCES NEW BOARD MEMBER\r\nISSAQUAH, Wash., August 16, 2023 - Costco Wholesale Corporation (“Costco” or the “Company”) (Nasdaq: COST) today announced the\r\nelection to its Board of Directors of Helena Buonanno Foulkes. Most recently, Ms. Foulkes was CEO of Hudson's Bay Company. Previously she\r\nspent 25 years at CVS Health, including as President of CVS Pharmacy and Executive Vice President of CVS Health. Ms. Foulkes is also a\r\nmember of the boards of directors of Follett Higher Education, PM Pediatrics, Harry's Inc., and Skillsoft. She recently completed a term as\r\nPresident of Harvard University's Board of Overseers.\r\nHamilton (Tony) James, Chairman of the Board, stated: \"We are very pleased to welcome Helena as a member of our Board. She is widely\r\nrecognized as a leading retail executive and advocate for education. She also brings substantial experience in healthcare and as a board\r\nmember of prominent companies. We look forward to her contributions.\"\r\nCostco currently operates 858 warehouses, including 590 in the United States and Puerto Rico, 107 in Canada, 40 in Mexico, 32 in Japan, 29 in\r\nthe United Kingdom, 18 in Korea, 15 in Australia, 14 in Taiwan, four each in China and Spain, two in France, and one each in Iceland, New\r\nZealand and Sweden. Costco also operates e-commerce sites in the U.S., Canada, the U.K., Mexico, Korea, Taiwan, Japan, and Australia.\r\nCONTACTS: Costco Wholesale Corporation\r\nRichard Galanti"
+  },
+  "image": "audit_pages/14_COSTCO_2023_8K_dated-2023-08-16_p3.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 15,
+  "chunk_id": "386c0dffbe0d450ce76e",
+  "doc_name": "CVSHEALTH_2017_10K",
+  "doc_type": "10-K",
+  "page": 74,
+  "page_end": 74,
+  "is_table": false,
+  "label": {
+   "head": "CVS Health 10-K FY2017",
+   "section": "Exhibit 13",
+   "subsection": null,
+   "heading": "New Accounting Pronouncements",
+   "table_title": null
+  },
+  "chunk_start": "New Accounting Pronouncements\nSee Note 1 “Significant Accounting Policies” to the consolidated financial statements for a description of New Accounting Pronouncements applicable to the Company.\nCautionary Statement Concerning Forward-Looking Statements",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     42,
+     "Item 15. Exhibits and Financial Statement Schedules"
+    ],
+    "note": [
+     42,
+     "2.         Financial Statement Schedules"
+    ],
+    "exhibit": [
+     51,
+     "Exhibit 13"
+    ]
+   },
+   "page_text_start": "Income Taxes\r\nIncome taxes are accounted for using the asset and liability method. Deferred tax assets and liabilities are established for any\r\ntemporary differences between financial and tax reporting bases and are adjusted as needed to reflect changes in the enacted tax\r\nrates expected to be in effect when the temporary differences reverse. Such adjustments are recorded in the period in which\r\nchanges in tax laws are enacted, regardless of when they are effective. Deferred tax assets are reduced, if necessary, by a\r\nvaluation allowance to the extent future realization of those losses, deductions or other tax benefits is sufficiently uncertain.\r\nSignificant judgment is required in determining the provision for income taxes and the related taxes payable and deferred tax\r\nassets and liabilities since, in the ordinary course of business, there are transactions and calculations where the ultimate tax\r\noutcome is uncertain. Additionally, our tax returns are subject to audit by various domestic and foreign tax authorities that could\r\nresult in material adjustments based on differing interpretations of the tax laws. Although we believe that our estimates are\r\nreasonable and are based on the best available information at the time we prepare the provision, actual results could differ from\r\nthese estimates resulting in a final tax outcome that may be materially different from that which is reflected in our consolidated\r\nfinancial statements.\r\nThe tax benefit from an uncertain tax posi"
+  },
+  "image": "audit_pages/15_CVSHEALTH_2017_10K_p74.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 16,
+  "chunk_id": "9fbee133f9617b69cb77",
+  "doc_name": "CVSHEALTH_2017_10K",
+  "doc_type": "10-K",
+  "page": 54,
+  "page_end": 54,
+  "is_table": false,
+  "label": {
+   "head": "CVS Health 10-K FY2017",
+   "section": "Exhibit 13",
+   "subsection": null,
+   "heading": "Results of Operations Summary of our Consolidated Financial Results",
+   "table_title": null
+  },
+  "chunk_start": "Net revenues increased $7.2 billion in 2017 compared to 2016, and increased $24.2 billion in 2016 compared to 2015. As you review our performance in this area, we believe you should consider the following important information:\n· During 2017, net revenues in our Pharmacy Services Segment increased 8",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     42,
+     "Item 15. Exhibits and Financial Statement Schedules"
+    ],
+    "note": [
+     42,
+     "2.         Financial Statement Schedules"
+    ],
+    "exhibit": [
+     51,
+     "Exhibit 13"
+    ]
+   },
+   "page_text_start": "Net revenues increased $7.2 billion in 2017 compared to 2016, and increased $24.2 billion in 2016 compared to 2015. As you\r\nreview our performance in this area, we believe you should consider the following important information: · During 2017, net revenues in our Pharmacy Services Segment increased 8.9% and net revenues in our Retail/LTC Segment\r\ndecreased 2.1% compared to the prior year. The Retail/LTC Segment decrease was primarily due to a decline in same store\r\nsales of 2.6% as a result of the previously-announced marketplace changes that restrict CVS Pharmacy from participating in\r\ncertain networks. · During 2016, net revenues in our Pharmacy Services Segment increased by 19.5% and net revenues in our Retail/LTC\r\nSegment increased 12.6% compared to the prior year. The Retail/LTC Segment benefited from the 2015 acquisitions of\r\nOmnicare and the pharmacies and clinics of Target. · In 2017 and 2016, the Pharmacy Services Segment continued to grow from net new business and specialty. The increase in\r\nour generic dispensing rates in both of our operating segments continued to have a negative effect on net revenue in 2017 as\r\ncompared to 2016, as well as in 2016 as compared to 2015.\r\nPlease see the Segment Analysis later in this document for additional information about our net revenues.\r\nGross profit decreased $312 million, or 1.1% in 2017, to $28.5 billion, as compared to $28.9 billion in 2016. Gross profit\r\nincreased $2.3 billion, or 8.8% in 2016, to $28.9 billion, as compa"
+  },
+  "image": "audit_pages/16_CVSHEALTH_2017_10K_p54.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 17,
+  "chunk_id": "6e138dc71d2934279b1e",
+  "doc_name": "EBAY_2023Q1_8K",
+  "doc_type": "8-K",
+  "page": 2,
+  "page_end": 2,
+  "is_table": false,
+  "label": {
+   "head": "eBay 8-K dated 2023-02-07",
+   "section": "Item 7.01 Regulation FD Disclosure",
+   "subsection": null,
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "Item 7.01. Regulation FD Disclosure.\nOn February 7, 2023, Jamie Iannone, Chief Executive Officer of eBay Inc. (“eBay”), shared the following message with eBay employees:\nTeam,\nOver the past few months, we’ve taken a thoughtful look at where we are as a company with considerations of the macroeconomi",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     2,
+     "Item 9.01. Financial Statements and Exhibits."
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Item 7.01. Regulation FD Disclosure.\r\nOn February 7, 2023, Jamie Iannone, Chief Executive Officer of eBay Inc. (“eBay”), shared the following message with eBay employees:\r\nTeam,\r\nOver the past few months, we’ve taken a thoughtful look at where we are as a company with considerations of the macroeconomic situation around the world\r\nand how to best invest and operate so that we can continue to be successful. To create long-term, sustainable growth for eBay, we need to evolve our\r\norganization as we take the next step in our strategy — focused on driving growth, building a trusted marketplace, empowering enthusiasts and seeding new\r\ntechnologies for the future.\r\nAs a result of these considerations and our future-forward plans, I have some hard news to share. Over the next 24 hours, we’ll be letting approximately 500\r\nemployees globally know that their jobs will be eliminated. This number represents about 4% of our total employee base. In some locations, the notifications\r\nare proposals subject to consultation as required by applicable law.\r\nThere is no easy way to communicate this — but I do want to share with you why we are making this decision, and where we’re headed next.\r\nToday’s actions are designed to strengthen our ability to deliver better end-to-end experiences for our customers and to support more innovation and scale\r\nacross our platform. They also help us make sure we’re concentrating on where we can make the biggest impact, including expanding Focus Categories,\r\ncre"
+  },
+  "image": "audit_pages/17_EBAY_2023Q1_8K_p2.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 18,
+  "chunk_id": "b2fb63a0b7d66a1fcfc6",
+  "doc_name": "EBAY_2023Q1_8K",
+  "doc_type": "8-K",
+  "page": 1,
+  "page_end": 1,
+  "is_table": false,
+  "label": {
+   "head": "eBay 8-K dated 2023-02-07",
+   "section": null,
+   "subsection": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM 8-K CURRENT…",
+   "heading": "Securities registered pursuant to Section 12(b) of the Act",
+   "table_title": null
+  },
+  "chunk_start": "Securities registered pursuant to Section 12(b) of the Act:\nTitle of each class Trading symbol(s) Name of exchange on which registered\nCommon stock EBAY The Nasdaq Global Select Market\nIndicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securitie",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "UNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, D.C. 20549\r\nFORM 8-K\r\nCURRENT REPORT\r\nPursuant to Section 13 or 15(d) of\r\nthe Securities Exchange Act of 1934\r\nDate of Report (Date of earliest event reported): February 7, 2023\r\neBay Inc.\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 001-37713 77-0430924\r\n(State or other jurisdiction of incorporation) (Commission File Number) (I.R.S. Employer Identification No.)\r\n2025 Hamilton Avenue\r\nSan Jose, California 95125\r\n(Address of principal executive offices)\r\n(408) 376-7108\r\n(Registrant’s telephone number, including area code)\r\nNot Applicable.\r\n(Former name or former address, if changed since last report.)\r\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following\r\nprovisions:\r\n☐ Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)\r\n☐ Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)\r\n☐ Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))\r\n☐ Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240.13e-4(c))\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading symbol(s) Name of exchange on which registered\r\nCommon stock EBAY The Nasdaq Global Select Market\r\nIndicate by check mark whether the registrant is an em"
+  },
+  "image": "audit_pages/18_EBAY_2023Q1_8K_p1.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 19,
+  "chunk_id": "a3d1c74e6c24488732da",
+  "doc_name": "FEDEX_2023_annualreport",
+  "doc_type": "annual report",
+  "page": 85,
+  "page_end": 85,
+  "is_table": true,
+  "label": {
+   "head": "FedEx annual report FY2023",
+   "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+   "subsection": "CONSOLIDATED STATEMENTS OF CASH FLOWS (IN MILLIONS)",
+   "heading": "OPERATING ACTIVITIES",
+   "table_title": "OPERATING ACTIVITIES"
+  },
+  "chunk_start": "OPERATING ACTIVITIES\n                 Proceeds from stock issuances                                                     231               184              740\n                 Dividends paid                                                                  (1,177)            (793)            (686)\n  ",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     77,
+     "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "- 80 -\r\nFEDEX CORPORATION\r\nCONSOLIDATED STATEMENTS OF CASH FLOWS \r\n(IN MILLIONS) \r\nYears ended May 31,\r\n2023 2022 2021\r\nOPERATING ACTIVITIES\r\nNet income $ 3,972 $ 3,826 $ 5,231\r\nAdjustments to reconcile net income to cash provided by operating \r\n activities:\r\nDepreciation and amortization 4,176 3,970 3,793\r\nProvision for uncollectible accounts 696 403 577\r\nOther noncash items including leases and deferred income taxes 3,472 2,931 2,887\r\nStock-based compensation 182 190 200\r\nRetirement plans mark-to-market adjustments (650) 1,578 (1,176)\r\nLoss on extinguishment of debt — — 393\r\nGoodwill and other asset impairment charges 117 — —\r\nBusiness optimization and realignment costs, net of payments 23 53 102\r\nChanges in assets and liabilities:\r\nReceivables 782 (310) (1,389)\r\nOther current assets 48 (158) (40)\r\nPension and postretirement healthcare assets and liabilities, net (623) (697) (317)\r\nAccounts payable and other liabilities (3,331) (1,861) 71\r\nOther, net (16) (93) (197)\r\nCash provided by operating activities 8,848 9,832 10,135\r\nINVESTING ACTIVITIES\r\nCapital expenditures (6,174) (6,763) (5,884)\r\nBusiness acquisitions, net of cash acquired — — (228)\r\nPurchase of investments (84) (147) —\r\nProceeds from asset dispositions and other 84 94 102\r\nCash used in investing activities (6,174) (6,816) (6,010)\r\nFINANCING ACTIVITIES\r\nPrincipal payments on debt (152) (161) (6,318)\r\nProceeds from debt issuances — — 4,212\r\nProceeds from stock issuances 231 184 740\r\nDividends paid (1,177) (793) (6"
+  },
+  "image": "audit_pages/19_FEDEX_2023_annualreport_p85.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": false,
+   "table_title": false,
+   "note": "'OPERATING ACTIVITIES' on financing-activity rows; 'OPERATING ACTIVITIES' (should be the statement title)"
+  }
+ },
+ {
+  "n": 20,
+  "chunk_id": "ddccf23152ceba6b291d",
+  "doc_name": "FEDEX_2023_annualreport",
+  "doc_type": "annual report",
+  "page": 40,
+  "page_end": 40,
+  "is_table": false,
+  "label": {
+   "head": "FedEx annual report FY2023",
+   "section": "Item 1A. RISK FACTORS",
+   "subsection": null,
+   "heading": "Environmental, Climate, and Weather Risks",
+   "table_title": null
+  },
+  "chunk_start": "There is no assurance that we will be able to successfully execute our strategies and achieve or demonstrate progress on our calendar 2040 goal of carbon neutrality for our global operations. Additionally, we may determine that it is in our best interests to prioritize other business, social, govern",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     30,
+     "ITEM 1A. RISK FACTORS"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "- 35 -\r\nEnvironmental, Climate, and Weather Risks\r\nWe may be affected by global climate change or by legal, regulatory, or market responses to such change. Concern over climate \r\nchange, including the effect of global warming, has led to significant U.S. and international legislative and regulatory efforts to limit \r\nGHG emissions, including our aircraft and vehicle engine emissions. Increasingly, state and local governments are also considering \r\nGHG regulatory requirements. Compliance with such regulation and the associated potential cost is complicated by the fact that \r\nvarious countries and regions are following different approaches to the regulation of climate change. Increased regulation regarding \r\nGHG emissions, especially aircraft or vehicle engine emissions, could impose substantial costs on us, especially at FedEx Express. \r\nThese costs include an increase in the cost of the fuel and other energy we purchase and capital and impairment costs associated with \r\nupdating or replacing our aircraft or vehicles prematurely. Until the timing, scope, and extent of such possible regulation becomes \r\nknown, we cannot predict its effect on our cost structure or our operating results. It is reasonably possible, however, that it could \r\nmaterially increase our operating expenses and have an adverse direct or indirect effect on our business, if instituted. For additional \r\ndiscussion of regulatory responses to climate change, including CORSIA and the Paris climate accord, see “I"
+  },
+  "image": "audit_pages/20_FEDEX_2023_annualreport_p40.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 21,
+  "chunk_id": "d35b200945c914ef0c99",
+  "doc_name": "INTEL_2019_10K",
+  "doc_type": "10-K",
+  "page": 86,
+  "page_end": 86,
+  "is_table": true,
+  "label": {
+   "head": "Intel 10-K FY2019",
+   "section": null,
+   "subsection": "NOTE 5 : EARNINGS PER SHARE",
+   "heading": null,
+   "table_title": "The following table shows the changes in contract liability balances relating to long-term prepaid supply agreements during 2019:"
+  },
+  "chunk_start": "The following table shows the changes in contract liability balances relating to long-term prepaid supply agreements during 2019:\n(In Millions)\n       (In Millions)\n       Prepaid supply agreements balance as of December 29, 2018                                                                       ",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": [
+     86,
+     "NOTE 7 : OTHER FINANCIAL STATEMENT DETAILS"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nNOTE 6 : CONTRACT LIABILITIES\r\n(In Millions)\r\nDec 28, \r\n2019\r\nDec 29, \r\n2018\r\nPrepaid supply agreements $ 1,805 $ 2,587\r\nOther 236 122\r\nTotal contract liabilities $ 2,041 $ 2,709\r\nContract liabilities are primarily related to prepayments received from customers on long-term prepaid supply agreements toward future NSG product delivery. The short-term\r\nportion of contract liabilities is reported on the Consolidated Balance Sheets within other accrued liabilities.\r\nThe following table shows the changes in contract liability balances relating to long-term prepaid supply agreements during 2019:\r\n(In Millions)\r\nPrepaid supply agreements balance as of December 29, 2018 $ 2,587\r\nPrepaids utilized (782)\r\nPrepaid supply agreements balance as of December 28, 2019 $ 1,805\r\nAs new long-term prepaid supply agreements are entered into and performance obligations are negotiated, this component of the contract liability balance will increase, and as\r\ncustomers purchase product and utilize their prepaid balances, the balance will decrease.\r\nWe expect our remaining contract liability balance of $1.8 billion to be recognized into revenue over the next 4 years. The timing and amount of future anticipated revenue may\r\nvary from our expectations due to changes in supply, demand, and market pricing.\r\nNOTE 7 : OTHER FINANCIAL STATEMENT DETAILS\r\nINVENTORIES\r\n(In Millions)\r\nDec 28, \r\n2019\r\nDec 29, \r\n2018\r\nRaw materials $ 840 $ 813\r\nWork in process 6,225 4,511\r\nFinished goods 1,679 1,"
+  },
+  "image": "audit_pages/21_INTEL_2019_10K_p86.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": true,
+   "table_title": true,
+   "note": "stale: page is NOTE 6, label says NOTE 5 (NOTE 6 heading absorbed into table header)"
+  }
+ },
+ {
+  "n": 22,
+  "chunk_id": "707d742614fc82c22927",
+  "doc_name": "INTEL_2019_10K",
+  "doc_type": "10-K",
+  "page": 94,
+  "page_end": 94,
+  "is_table": true,
+  "label": {
+   "head": "Intel 10-K FY2019",
+   "section": null,
+   "subsection": "NOTE 12 : GOODWILL",
+   "heading": null,
+   "table_title": "Goodwill activity for each period was as follows:"
+  },
+  "chunk_start": "Goodwill activity for each period was as follows:\n(In Millions)\n                                                                      Dec 29,                                                                            Dec 28,\n       (In Millions)                                                    201",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": [
+     94,
+     "NOTE 12 : GOODWILL"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nDIVESTITURES\r\nSmartphone Modem Business\r\nOn December 2, 2019, we completed the divestiture of the majority of our smartphone modem business, including certain employees, IP, equipment, and leases. Net assets sold\r\nwere $267 million. We recognized a pre-tax gain of $690 million on the divestiture.\r\nWind River\r\nDuring the second quarter of 2018, we completed the divestiture of Wind River and recognized a pre-tax gain of $494 million.\r\nIntel Security Group\r\nDuring the second quarter of 2017, we closed the transaction with TPG VII Manta Holdings, L.P., now known as Manta Holdings, L.P., transferring certain assets and liabilities\r\nrelating to ISecG to a newly formed, jointly owned, separate cybersecurity company called McAfee. As of the transaction close date, we recognized a pre-tax gain of $387 million\r\nwithin Interest and other, net, which is net of $507 million of currency translation adjustment losses reclassified from accumulated other comprehensive income (loss) associated\r\nwith currency charges on the carrying values of ISecG goodwill and identified intangible assets. In addition, we recognized a tax expense of $822 million.\r\nNOTE 12 : GOODWILL\r\nGoodwill activity for each period was as follows:\r\n(In Millions)\r\nDec 29, \r\n2018 Acquisitions Transfers Other\r\nDec 28, \r\n2019\r\nData Center Group $ 5,424 $ 1,758 $ — $ — $ 7,155\r\nInternet of Things Group 1,579 — — — 1,579\r\nMobileye 10,290 — — — 10,290\r\nProgrammable Solutions Group 2,579 67 — 8 2,681\r\nClient Compu"
+  },
+  "image": "audit_pages/22_INTEL_2019_10K_p94.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": true,
+   "note": ""
+  }
+ },
+ {
+  "n": 23,
+  "chunk_id": "ad0625060d48a84d4bb4",
+  "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+  "doc_type": "8-K",
+  "page": 139,
+  "page_end": 139,
+  "is_table": false,
+  "label": {
+   "head": "Intel 8-K dated 2023-02-07",
+   "section": "Exhibit 4.2",
+   "subsection": "COMPUTERSHARE TRUST COMPANY, NATIONAL",
+   "heading": "(REVERSE OF NOTE) INTEL CORPORATION",
+   "table_title": null
+  },
+  "chunk_start": "3. Indenture; Defined Terms .\nThis Note is one of the 4.875% Senior Notes due 2026 (the “ Notes ”) issued under the Indenture dated as of March 29, 2006, as amended by the First Supplemental Indenture dated as of December 3, 2007 and the Eighteenth Supplemental Indenture dated as of August 5, 2022 (",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     2,
+     "Item 9.01 Financial Statements and Exhibits."
+    ],
+    "note": null,
+    "exhibit": [
+     135,
+     "Exhibit 4.2"
+    ]
+   },
+   "page_text_start": "(REVERSE OF NOTE)\r\nINTEL CORPORATION\r\n4.875% Senior Notes due 2026\r\n1. Interest.\r\nIntel Corporation (the “Issuer”) promises to pay interest on the principal amount of this Note at the rate per annum described above. Cash interest\r\non the Notes will accrue from the most recent date to which interest has been paid; or, if no interest has been paid, from February 10, 2023. Interest on\r\nthis Note will be paid to but excluding the relevant Interest Payment Date or on such earlier date as the principal amount shall become due in accordance\r\nwith the provisions hereof. The Issuer will pay interest semi-annually in arrears on each Interest Payment Date, beginning on August 10, 2023. If any\r\nInterest Payment Date, Stated Maturity or other payment date with respect to the Notes is not a Business Day, the required payment of principal,\r\npremium, if any, or interest will be due on the next succeeding Business Day as if made on the date that such payment was due, and no interest will\r\naccrue on that payment for the period from and after that Interest Payment Date, Stated Maturity or other payment date, as the case may be, to the date\r\nof that payment on the next succeeding Business Day. Interest will be computed on the basis of a 360-day year consisting of twelve 30-day months.\r\nThe Issuer shall pay interest on overdue principal from time to time on demand at the rate borne by the Notes and at the same rate on overdue\r\ninstallments of interest (without regard to any applicable grace perio"
+  },
+  "image": "audit_pages/23_INTEL_2023_8K_dated-2023-02-10_p139.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": true,
+   "table_title": null,
+   "note": "party name from a signature block, not a heading"
+  }
+ },
+ {
+  "n": 24,
+  "chunk_id": "665abd93d2de776fdf1a",
+  "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+  "doc_type": "8-K",
+  "page": 64,
+  "page_end": 64,
+  "is_table": false,
+  "label": {
+   "head": "Intel 8-K dated 2023-02-07",
+   "section": "Exhibit 4.1",
+   "subsection": "COMPUTERSHARE TRUST COMPANY, NATIONAL",
+   "heading": "(REVERSE OF NOTE) INTEL CORPORATION",
+   "table_title": null
+  },
+  "chunk_start": "A new Note in a principal amount equal to the unredeemed portion of the Note shall be issued in the name of the Holder of the Note upon surrender for cancellation of the original Note.\nNotice of any redemption shall be mailed or electronically delivered (or otherwise transmitted in accordance with t",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     2,
+     "Item 9.01 Financial Statements and Exhibits."
+    ],
+    "note": null,
+    "exhibit": [
+     37,
+     "Exhibit 4.1"
+    ]
+   },
+   "page_text_start": "6. Optional Redemption.\r\nPrior to February 10, 2026 (the “Stated Maturity”), the Issuer may redeem the Notes at its option, in whole or in part, at any time and from time\r\nto time, at a Redemption Price (expressed as a percentage of principal amount and rounded to three decimal places) equal to the greater of:\r\n(i) (A) the sum of the present values of the remaining scheduled payments of principal and interest on the Notes discounted to the relevant\r\nRedemption Date (assuming the Notes matured on the Stated Maturity) on a semi-annual basis (assuming a 360-day year consisting of twelve 30-day\r\nmonths) at the Treasury Rate plus 15 basis points (such sum to be calculated as set forth in the Indenture); or\r\n(ii) 100% of the principal amount of the Notes to be redeemed,\r\nplus, in the case of either (i) or (ii), accrued interest thereon to, but not including, the Redemption Date.\r\nOn and after the Redemption Date for the Notes, interest will cease to accrue on the Notes or portions thereof called for redemption, unless the\r\nIssuer defaults in the payment of the Redemption Price. On or before the Redemption Date for the Notes, the Issuer shall deposit with the Trustee or a\r\nPaying Agent, funds sufficient to pay the Redemption Price of the Notes to be redeemed on the Redemption Date. In the case of a partial redemption,\r\nselection of the Notes for redemption shall be made pro rata, by lot or by such other method as the Trustee in its sole discretion deems appropriate and\r\nfair, subjec"
+  },
+  "image": "audit_pages/24_INTEL_2023_8K_dated-2023-02-10_p64.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": true,
+   "table_title": null,
+   "note": "party name from a signature block, not a heading"
+  }
+ },
+ {
+  "n": 25,
+  "chunk_id": "1e094da16e775cc1264e",
+  "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+  "doc_type": "earnings",
+  "page": 2,
+  "page_end": 2,
+  "is_table": false,
+  "label": {
+   "head": "Johnson & Johnson earnings FY2023 Q1",
+   "section": null,
+   "subsection": null,
+   "heading": "REGIONAL SALES RESULTS",
+   "table_title": null
+  },
+  "chunk_start": "1 Non-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules 2 Excludes the impact of translational currency 3 Excludes the net impact of acquisitions and divestitures and translational currency Note: Values may have been rounded\nSEGMENT SA",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "REGIONAL SALES RESULTS \r\nQ1 % Change \r\n($ in Millions) 2023 2022 Reported Operational1,2 Currency Adjusted \r\nOperational1,3\r\nU.S. $12,517 $11,414 9.7% 9.7 - 7.4 \r\nInternational 12,229 12,012 1.8 8.3 (6.5) 7.9 \r\nWorldwide $24,746 $23,426 5.6% 9.0 (3.4) 7.6 \r\n 1 Non-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules\r\n 2 Excludes the impact of translational currency \r\n 3 Excludes the net impact of acquisitions and divestitures and translational currency\r\n Note: Values may have been rounded\r\nSEGMENT SALES RESULTS \r\nQ1 % Change \r\n($ in Millions) 2023 2022 Reported Operational1,2 Currency Adjusted \r\nOperational1,3\r\nConsumer Health $3,852 $3,586 7.4% 11.3 (3.9) 11.3 \r\nPharmaceutical 13,413 12,869 4.2 7.2 (3.0) 7.2 \r\nMedTech 7,481 6,971 7.3 11.0 (3.7) 6.4 \r\nWorldwide $24,746 $23,426 5.6% 9.0 (3.4) 7.6 \r\n 1 Non-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules\r\n 2 Excludes the impact of translational currency \r\n 3 Excludes the net impact of acquisitions and divestitures and translational currency \r\n Note: Values may have been rounded "
+  },
+  "image": "audit_pages/25_JOHNSON_JOHNSON_2023Q1_EARNINGS_p2.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 26,
+  "chunk_id": "2bb13484c6dced79122d",
+  "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+  "doc_type": "earnings",
+  "page": 7,
+  "page_end": 8,
+  "is_table": false,
+  "label": {
+   "head": "Johnson & Johnson earnings FY2023 Q1",
+   "section": null,
+   "subsection": null,
+   "heading": "NOTE TO INVESTORS CONCERNING FORWARD-LOOKING STATEMENTS",
+   "table_title": null
+  },
+  "chunk_start": "Any forward-looking statement made in this release speaks only as of the date of this release. Johnson & Johnson does not undertake to update any forward-looking statement as a result of new information or future events or developments.\nPress Contacts: Investor Contacts:\nTesia Williams Jessica Moore",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "competitors; challenges inherent in new product research and development, including uncertainty of clinical success \r\nand obtaining regulatory approvals; uncertainty of commercial success for new and existing products; challenges to \r\npatents; the impact of patent expirations; the ability of the company to successfully execute strategic plans, including \r\nrestructuring plans; the impact of business combinations and divestitures; manufacturing difficulties or delays, \r\ninternally or within the supply chain; product efficacy or safety concerns resulting in product recalls or regulatory \r\naction; significant adverse litigation or government action, including related to product liability claims; changes to \r\napplicable laws and regulations, including tax laws and global health care reforms; trends toward health care cost \r\ncontainment; changes in behavior and spending patterns of purchasers of health care products and services; \r\nfinancial instability of international economies and legal systems and sovereign risk; increased scrutiny of the health \r\ncare industry by government agencies; the Company’s ability to satisfy the necessary conditions to consummate the \r\nseparation of the Company’s Consumer Health business on a timely basis or at all; the Company’s ability to \r\nsuccessfully separate the Company’s Consumer Health business and realize the anticipated benefits from the \r\nseparation; and the New Consumer Health Company’s ability to succeed as a standalone publicly traded com"
+  },
+  "image": "audit_pages/26_JOHNSON_JOHNSON_2023Q1_EARNINGS_p7.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 27,
+  "chunk_id": "c2ea4d1ab272567b9ebe",
+  "doc_name": "JPMORGAN_2021Q2_10Q",
+  "doc_type": "10-Q",
+  "page": 15,
+  "page_end": 16,
+  "is_table": false,
+  "label": {
+   "head": "JPMorgan 10-Q FY2021 Q2",
+   "section": null,
+   "subsection": "CONSOLIDATED BALANCE SHEETS AND CASH FLOWS ANALYSIS",
+   "heading": "Assets",
+   "table_title": null
+  },
+  "chunk_start": "Refer to Credit and Investment Risk Management on pages 56-75, and Notes 2, 3, 11 and 12 for a more detailed discussion of loans and the allowance for loan losses.\nAccrued interest and accounts receivable increased Other assets increased predominantly due to the impact of predominantly due to higher",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     4,
+     "Part II, Item 1A, Risk Factors on pages 190-191 of this Form"
+    ],
+    "note": [
+     15,
+     "Note 10 for additional information."
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "CONSOLIDATED BALANCE SHEETS AND CASH FLOWS ANALYSIS\r\nConsolidated balance sheets analysis\r\nThe following is a discussion of the significant changes between June 30, 2021, and December 31, 2020. \r\nSelected Consolidated balance sheets data\r\n(in millions)\r\nJune 30,\r\n2021\r\nDecember 31,\r\n2020 Change\r\nAssets\r\nCash and due from banks $ 26,592 $ 24,874 7 %\r\nDeposits with banks 678,829 502,735 35 \r\nFederal funds sold and securities purchased under resale agreements 260,987 296,284 (12) \r\nSecurities borrowed 186,376 160,635 16 \r\nTrading assets 520,588 503,126 3 \r\nAvailable-for-sale securities 232,161 388,178 (40) \r\nHeld-to-maturity securities, net of allowance for credit losses 341,476 201,821 69 \r\nInvestment securities, net of allowance for credit losses 573,637 589,999 (3) \r\nLoans 1,040,954 1,012,853 3 \r\nAllowance for loan losses (19,500) (28,328) (31) \r\nLoans, net of allowance for loan losses 1,021,454 984,525 4 \r\nAccrued interest and accounts receivable 125,253 90,503 38 \r\nPremises and equipment 26,631 27,109 (2) \r\nGoodwill, MSRs and other intangible assets 54,655 53,428 2 \r\nOther assets(a) 209,254 151,539 38 \r\nTotal assets $ 3,684,256 $ 3,384,757 9 %\r\n(a) Prior-period amount has been revised to conform with the current presentation. Refer to Note 1 for further information.\r\nCash and due from banks and deposits with banks\r\nincreased primarily as a result of the continued growth in \r\ndeposits and limited deployment opportunities in Treasury \r\nand CIO. Deposits with banks reflect the"
+  },
+  "image": "audit_pages/27_JPMORGAN_2021Q2_10Q_p15.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 28,
+  "chunk_id": "9386cf32009ae64636a9",
+  "doc_name": "JPMORGAN_2021Q2_10Q",
+  "doc_type": "10-Q",
+  "page": 31,
+  "page_end": 31,
+  "is_table": true,
+  "label": {
+   "head": "JPMorgan 10-Q FY2021 Q2",
+   "section": null,
+   "subsection": "CORPORATE & INVESTMENT BANK",
+   "heading": "Investment banking fees",
+   "table_title": "Investment banking fees"
+  },
+  "chunk_start": "Investment banking fees\n(in millions)\n                                                                             Three months ended June 30,                Six months ended June 30,\n              (in millions)                                                2021          2020         Change        ",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     4,
+     "Part II, Item 1A, Risk Factors on pages 190-191 of this Form"
+    ],
+    "note": [
+     16,
+     "Note 19 for additional information on AOCI."
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Investment banking fees\r\nThree months ended June 30, Six months ended June 30,\r\n(in millions) 2021 2020 Change 2021 2020 Change\r\nAdvisory $ 916 $ 602 52 % $ 1,596 $ 1,105 44 %\r\nEquity underwriting 1,063 977 9 2,119 1,308 62 \r\nDebt underwriting(a) 1,593 1,268 26 2,845 2,341 22 \r\nTotal investment banking fees $ 3,572 $ 2,847 25 % $ 6,560 $ 4,754 38 %\r\n(a) Represents long-term debt and loan syndications.\r\nLeague table results – wallet share\r\nThree months ended June 30, Six months ended June 30,\r\n2021 2020 2021 2020 Full-year 2020\r\nRank Share Rank Share Rank Share Rank Share Rank Share\r\nBased on fees(a)\r\nM&A(b)\r\nGlobal # 2 10.6 % # 1 10.0 % # 2 9.5 % # 2 9.0 % # 2 9.0 %\r\nU.S. 2 11.4 4 8.1 2 10.3 2 8.6 2 9.4 \r\nEquity and equity-related(c)\r\nGlobal 1 10.4 2 11.7 3 8.7 2 10.9 2 8.6 \r\nU.S. 1 14.3 2 13.1 3 9.8 2 12.9 2 11.2 \r\nLong-term debt(d)\r\nGlobal 1 9.0 1 9.7 1 9.1 1 9.3 1 8.9 \r\nU.S. 1 13.5 1 13.5 1 13.0 1 13.0 1 12.8 \r\nLoan syndications\r\nGlobal 1 10.8 1 9.4 1 11.9 1 10.1 1 11.1 \r\nU.S. 1 12.3 1 10.3 1 13.9 1 10.2 1 11.6 \r\nGlobal investment banking fees(e) # 1 10.1 % # 1 10.4 % # 1 9.4 % # 1 9.7 % # 1 9.1 %\r\n(a) Source: Dealogic as of July 1, 2021. Reflects the ranking of revenue wallet and market share.\r\n(b) Global M&A excludes any withdrawn transactions. U.S. M&A revenue wallet represents wallet from client parents based in the U.S.\r\n(c) Global equity and equity-related ranking includes rights offerings and Chinese A-Shares.\r\n(d) Long-term debt rankings include investment-grade, h"
+  },
+  "image": "audit_pages/28_JPMORGAN_2021Q2_10Q_p31.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": true,
+   "note": ""
+  }
+ },
+ {
+  "n": 29,
+  "chunk_id": "9d670d74f4059e65e230",
+  "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+  "doc_type": "10-Q",
+  "page": 10,
+  "page_end": 10,
+  "is_table": false,
+  "label": {
+   "head": "Lockheed Martin 10-Q FY2023 Q2",
+   "section": null,
+   "subsection": null,
+   "heading": "Service and non-service cost reconciliation",
+   "table_title": null
+  },
+  "chunk_start": "Service and non-service cost reconciliation",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "7/16/23, 3:13 PM 3919443-1-1_Proof.html\r\nfile:///C:/Users/e397779/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/I609JZAV/3919443-1-1_Proof.html 10/14\r\nLockheed Martin Corporation\r\nBusiness Segment Summary Operating Results\r\n(unaudited; in millions)\r\nQuarters Ended Six Months Ended\r\nJune 25,\r\n2023\r\nJune 26,\r\n2022\r\n%\r\nChange\r\nJune 25,\r\n2023\r\nJune 26,\r\n2022\r\n%\r\nChange\r\nNet sales\r\nAeronautics $ 6,875 $ 5,862 17 % $ 13,144 $ 12,263 7 %\r\nMissiles and Fire Control 2,755 2,747 — % 5,143 5,199 (1 %)\r\nRotary and Mission Systems 3,897 4,012 (3 %) 7,407 7,564 (2 %)\r\nSpace 3,166 2,825 12 % 6,125 5,384 14 %\r\nTotal net sales $ 16,693 $ 15,446 8 % $ 31,819 $ 30,410 5 %\r\nOperating profit\r\nAeronautics $ 718 $ 613 17 % $ 1,393 $ 1,292 8 %\r\nMissiles and Fire Control 371 418 (11 %) 748 803 (7 %)\r\nRotary and Mission Systems 454 461 (2 %) 804 867 (7 %)\r\nSpace 312 271 15 % 592 519 14 %\r\nTotal business segment operating\r\nprofit\r\n1 1,855 1,763 5 % 3,537 3,481 2 %\r\nUnallocated items\r\nFAS/CAS operating adjustment 416 425 831 851\r\nIntangible asset amortization expense (62) (62) (124) (124)\r\nOther, net\r\n1,2 (74) (163) (72) (312)\r\nTotal unallocated items 280 200 40 % 635 415 53 %\r\nTotal consolidated operating\r\nprofit $ 2,135 $ 1,963 9 % $ 4,172 $ 3,896 7 %\r\nOperating margin\r\nAeronautics 10.4 % 10.5 % 10.6 % 10.5 %\r\nMissiles and Fire Control 13.5 % 15.2 % 14.5 % 15.4 %\r\nRotary and Mission Systems 11.6 % 11.5 % 10.9 % 11.5 %\r\nSpace 9.9 % 9.6 % 9.7 % 9.6 %\r\nTotal business segment operating\r\nmargin"
+  },
+  "image": "audit_pages/29_LOCKHEEDMARTIN_2023Q2_10Q_p10.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 30,
+  "chunk_id": "b5c57519b807d39948d3",
+  "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+  "doc_type": "10-Q",
+  "page": 5,
+  "page_end": 6,
+  "is_table": false,
+  "label": {
+   "head": "Lockheed Martin 10-Q FY2023 Q2",
+   "section": null,
+   "subsection": null,
+   "heading": "Rotary and Mission Systems",
+   "table_title": null
+  },
+  "chunk_start": "RMS' net sales in the second quarter of 2023 decreased $115 million, or 3%, compared to the same period in 2022. The decrease was primarily attributable to lower net sales of $145 million for Sikorsky helicopter programs due to lower production volume (Black Hawk). This decrease was partially offset",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "7/16/23, 3:13 PM 3919443-1-1_Proof.html\r\nfile:///C:/Users/e397779/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/I609JZAV/3919443-1-1_Proof.html 5/14\r\n(in millions) Quarters Ended Six Months Ended\r\nJune 25,\r\n2023\r\nJune 26,\r\n2022\r\nJune 25,\r\n2023\r\nJune 26,\r\n2022\r\nNet sales $ 6,875 $ 5,862 $ 13,144 $ 12,263\r\nOperating profit 718 613 1,393 1,292\r\nOperating margin 10.4 % 10.5 % 10.6 % 10.5 %\r\nAeronautics' net sales in the second quarter of 2023 increased $1.0 billion, or 17%, compared to the same period in 2022. The increase\r\nwas primarily attributable to higher net sales of $735 million for the F-35 program due to higher volume on production contracts partially\r\ndriven by lower volume in the second quarter of 2022 due to the impact of the delays in receiving additional contractual authorization\r\nand funding under the Lots 15-17 contract and higher volume on sustainment contracts; higher net sales of $100 million on classified\r\nprograms due to higher volume; and higher net sales of $90 million for the C-130 program due to higher volume on sustainment\r\ncontracts.\r\nAeronautics' operating profit in the second quarter of 2023 increased $105 million, or 17%, compared to the same period in 2022. The\r\nincrease was primarily attributable to higher operating profit of $75 million for the F-35 program due to higher volume on production\r\ncontracts; and higher operating profit of $20 million on classified programs due to lower unfavorable profit adjustments. Total net profit\r\nbooki"
+  },
+  "image": "audit_pages/30_LOCKHEEDMARTIN_2023Q2_10Q_p5.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 31,
+  "chunk_id": "aa7c614b999e715572d2",
+  "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+  "doc_type": "earnings",
+  "page": 4,
+  "page_end": 4,
+  "is_table": false,
+  "label": {
+   "head": "McDonalds earnings FY2023 Q1",
+   "section": "Exhibit 99.1",
+   "subsection": "FORWARD-LOOKING STATEMENTS",
+   "heading": "McDONALD'S CORPORATION",
+   "table_title": null
+  },
+  "chunk_start": "McDONALD'S CORPORATION\nCONDENSED CONSOLIDATED STATEMENT OF INCOME (UNAUDITED)\nDollars and shares in millions, except per share data\nQuarters Ended March 31, 2023 2022 Inc/ (Dec)",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": [
+     1,
+     "Exhibit 99.1"
+    ]
+   },
+   "page_text_start": "4\r\nMcDONALD'S CORPORATION\r\nCONDENSED CONSOLIDATED STATEMENT OF INCOME (UNAUDITED)\r\nDollars and shares in millions, except per share data\r\nQuarters Ended March 31, 2023 2022 Inc/ (Dec)\r\nRevenues\r\nSales by Company-operated restaurants $ 2,224.3 $ 2,302.4 $ (78.1) (3)%\r\nRevenues from franchised restaurants 3,587.5 3,262.8 324.7 10\r\nOther revenues 86.0 100.4 (14.4) (14)\r\nTOTAL REVENUES 5,897.8 5,665.6 232.2 4\r\nOperating costs and expenses\r\nCompany-operated restaurant expenses 1,923.1 1,959.2 (36.1) (2)\r\nFranchised restaurants-occupancy expenses 598.3 584.0 14.3 2\r\nOther restaurant expenses 62.8 72.3 (9.5) (13)\r\nSelling, general & administrative expenses\r\nDepreciation and amortization 99.3 92.7 6.6 7\r\nOther 553.3 584.3 (31.0) (5)\r\nOther operating (income) expense, net 128.6 60.5 68.1 n/m\r\nTotal operating costs and expenses 3,365.4 3,353.0 12.4 —\r\nOPERATING INCOME 2,532.4 2,312.6 219.8 10\r\nInterest expense 329.7 287.3 42.4 15\r\nNonoperating (income) expense, net (64.3) 484.1 (548.4) n/m\r\nIncome before provision for income taxes 2,267.0 1,541.2 725.8 47\r\nProvision for income taxes 464.7 436.8 27.9 6\r\nNET INCOME $ 1,802.3 $ 1,104.4 $ 697.9 63 %\r\nEARNINGS PER SHARE-DILUTED $ 2.45 $ 1.48 $ 0.97 66 %\r\nWeighted average shares outstanding-diluted 735.5 747.6 (12.1) (2)%\r\nn/m Not meaningful"
+  },
+  "image": "audit_pages/31_MCDONALDS_2023Q1_EARNINGS_p4.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": true,
+   "table_title": null,
+   "note": "stale: 'FORWARD-LOOKING STATEMENTS' on an income statement page"
+  }
+ },
+ {
+  "n": 32,
+  "chunk_id": "094984a52b0b0aa1b899",
+  "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+  "doc_type": "earnings",
+  "page": 2,
+  "page_end": 2,
+  "is_table": true,
+  "label": {
+   "head": "McDonalds earnings FY2023 Q1",
+   "section": "Exhibit 99.1",
+   "subsection": "FOR IMMEDIATE RELEASE FOR MORE INFORMATION CONTACT",
+   "heading": "KEY FINANCIAL METRICS - CONSOLIDATED",
+   "table_title": "KEY FINANCIAL METRICS - CONSOLIDATED"
+  },
+  "chunk_start": "KEY FINANCIAL METRICS - CONSOLIDATED\n(Dollars in millions, except per share data)\n      Dollars in millions, except per share data\n                                                                               Quarters Ended March 31,\n                                                                 ",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": [
+     1,
+     "Exhibit 99.1"
+    ]
+   },
+   "page_text_start": "2\r\nCOMPARABLE SALES\r\nIncrease/(Decrease)\r\nQuarters Ended March 31,\r\n2023 2022\r\nU.S. 12.6 % 3.5 %\r\nInternational Operated Markets 12.6 20.4\r\nInternational Developmental Licensed Markets & Corporate 12.6 14.7\r\nTotal 12.6 % 11.8 %\r\n• U.S.: Comparable sales results benefited from strategic menu price increases and positive comparable guest count growth. \r\nSuccessful operational execution in McDonald’s restaurants, effective marketing campaigns featuring the core menu and continued \r\ndigital and delivery growth contributed to strong comparable sales results.\r\n• International Operated Markets: Segment performance was led by strong comparable sales across the Big Five* and the majority \r\nof other markets.\r\n• International Developmental Licensed Markets: The quarter reflected strong comparable sales across the segment, led by Japan, \r\nalong with all geographic regions.\r\nKEY FINANCIAL METRICS - CONSOLIDATED\r\nDollars in millions, except per share data \r\nQuarters Ended March 31,\r\n2023 2022 Inc/ (Dec)\r\nInc/ (Dec) \r\nExcluding \r\nCurrency \r\nTranslation\r\nRevenues $ 5,897.8 $ 5,665.6 4 % 8 %\r\nOperating income 2,532.4 2,312.6 10 14\r\nNet income 1,802.3 1,104.4 63 69\r\nEarnings per share-diluted $ 2.45 $ 1.48 66 % 72 %\r\nResults for 2023 included the following:\r\n• Pre-tax restructuring charges of $180 million, or $0.18 per share, related to Accelerating the Organization\r\nResults for 2022 included the following:\r\n• Pre-tax expenses of $127 million, or $0.13 per share, primarily incurred to support "
+  },
+  "image": "audit_pages/32_MCDONALDS_2023Q1_EARNINGS_p2.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": true,
+   "table_title": true,
+   "note": "cover text 'FOR IMMEDIATE RELEASE FOR MORE INFORMATION CONTACT'"
+  }
+ },
+ {
+  "n": 33,
+  "chunk_id": "9397cb26fbbd18880368",
+  "doc_name": "MGMRESORTS_2017_10K",
+  "doc_type": "10-K",
+  "page": 72,
+  "page_end": 73,
+  "is_table": false,
+  "label": {
+   "head": "MGM Resorts 10-K FY2017",
+   "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+   "subsection": "NOTE 2 — BASIS OF PRESENTATION AND SIGNIFICANT ACCOUNTING POLICIES",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "The Company performs this analysis on an ongoing basis.\nManagement has determined that MGP is a VIE b ecause the Class A equity investors as a group lack the power through voting or similar rights to direct the activities of such entity that most significantly impact such entity’s economic performan",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": [
+     56,
+     "15. EXHIBITS,"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "The Company has an approximate 56% controlling interest in MGM China, which owns MGM Grand Paradise, S.A. (“MGM Grand Paradise”). MGM\r\nGrand Paradise owns and operates the MGM Macau resort and casino and the related gaming subconcession and land concessions as well as MGM Cotai, an\r\nintegrated casino, hotel and entertainment resort located on an 18 acre sit e on the Cotai Strip in Macau that opened on February 13, 2018. The Gaming Inspection\r\nand Coordination Bureau of Macau (“DICJ”) approved 100 gaming tables for the opening of MGM Cotai and 25 additional gaming tables effective for operation on\r\nJanuary 1, 20 19, for a total of 125 gaming tables in aggregate. In addition, the DICJ approved the initial transfer of 77 gaming tables from MGM Macau to MGM\r\nCotai . The Company owns 50% of and manages CityCenter Holdings, LLC (“CityCenter”), located between Bellagio and Monte Carlo. The other 50% of\r\nCityCenter is owned by Infinity World Development Corp, a wholly owned subsidiary of Dubai World, a Dubai, United Arab Emirates government decree entity.\r\nCityCenter consists of Aria, an integrated casino, hotel and entertainment resort; Mandarin Oriental Las Vegas, a non-gaming boutique hotel; and Vdara, a luxury\r\ncondominium-hotel. In addition, CityCenter features residential units in the Residences at Mandarin Oriental and Veer. See Note 7 and Note 18 for additional\r\ninformation related to CityCenter.\r\nThe Company and a subsidiary of Anschutz Entertainment Group, Inc. (“AEG”) each"
+  },
+  "image": "audit_pages/33_MGMRESORTS_2017_10K_p72.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 34,
+  "chunk_id": "a4fcc3921f06c0dbf752",
+  "doc_name": "MGMRESORTS_2017_10K",
+  "doc_type": "10-K",
+  "page": 86,
+  "page_end": 86,
+  "is_table": false,
+  "label": {
+   "head": "MGM Resorts 10-K FY2017",
+   "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+   "subsection": "NOTE 10 — LONG-TERM DEBT",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "NOTE 10 — LONG-TERM DEBT\nLong-term debt consisted of the following:",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": [
+     56,
+     "15. EXHIBITS,"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "NOTE\n10\n—\nLONG-TERM\nDEBT\r\nLong-term debt consisted of the following: \r\nDecember\n31,\r\n2017 2016\r\n(In thousands)\r\nSenior credit facility $ 372,500 $ 250,000\r\nOperating Partnership senior credit facility 2,091,375 2,133,250\r\nMGM China credit facility 2,301,584 1,933,313\r\nMGM National Harbor credit facility — 450,000\r\n$475 million 11.375% senior notes, due 2018 — 475,000\r\n$850 million 8.625% senior notes, due 2019 850,000 850,000\r\n$500 million 5.25% senior notes, due 2020 500,000 500,000\r\n$1,000 million 6.75% senior notes, due 2020 1,000,000 1,000,000\r\n$1,250 million 6.625% senior notes, due 2021 1,250,000 1,250,000\r\n$1,000 million 7.75% senior notes, due 2022 1,000,000 1,000,000\r\n$1,250 million 6% senior notes, due 2023 1,250,000 1,250,000\r\n$1,050 million 5.625% Operating Partnership senior notes, due 2024 1,050,000 1,050,000\r\n$500 million 4.50% Operating Partnership senior notes, due 2026 500,000 500,000\r\n$500 million 4.625% senior notes, due 2026 500,000 500,000\r\n$350 million 4.50% Operating Partnership senior notes, due 2028 350,000 —\r\n$0.6 million 7% debentures, due 2036 552 552\r\n$2.3 million 6.7% debentures, due 2096 2,265 2,265\r\n13,018,276 13,144,380\r\nLess: Premiums, discounts, and unamortized debt issuance costs, net (109,182) (156,785)\r\n12,909,094 12,987,595\r\nLess: Current portion (158,042) (8,375)\r\n$ 12,751,052 $ 12,979,220\r\nDebt due within one year of the December 31, 2017 balance sheet was classified as long-term as the Company had both the intent and ability to refin"
+  },
+  "image": "audit_pages/34_MGMRESORTS_2017_10K_p86.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 35,
+  "chunk_id": "a52fd36fe248a6c561b6",
+  "doc_name": "ORACLE_2020_10K",
+  "doc_type": "10-K",
+  "page": 97,
+  "page_end": 97,
+  "is_table": false,
+  "label": {
+   "head": "Oracle 10-K FY2020",
+   "section": "Item 15. Exhibits and Financial Statement Schedules",
+   "subsection": "10. DERIVATIVE FINANCIAL INSTRUMENTS",
+   "heading": "Foreign Currency Forward Contracts Not Designated as Hedges",
+   "table_title": null
+  },
+  "chunk_start": "Foreign Currency Forward Contracts Not Designated as Hedges\nWe transact business in various foreign currencies and have established a program that primarily utilizes foreign currency forward contracts to offset the risks associated with the effects of certain foreign currency exposures. Under this p",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     67,
+     "Item 15.Exhibits and Financial Statement Schedules"
+    ],
+    "note": [
+     96,
+     "10. DERIVATIVE FINANCIAL INSTRUMENTS"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nIndex to Financial Statements\r\nORACLE CORPORATION\r\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS—(Continued)\r\nMay 31, 2020\r\nThe changes in fair values of our interest rate swap agreements associated with our July 2021 Notes are recognized as interest expense in our consolidated\r\nstatements of operations with the corresponding amounts included in other non-current assets or other non-current liabilities in our consolidated balance\r\nsheets. The amount of net gain (loss) attributable to the interest rate risk being hedged is recognized as interest expense and amount of net gain (loss)\r\nattributable to the foreign exchange risk being hedged, as applicable, is recognized as non-operating income, net in our consolidated statements of operations\r\nwith the corresponding amount included in notes payable, current or notes payable, non-current. We exclude the portion of the change in fair value of cross￾currency interest rate swap agreements attributable to the related cross-currency basis spread in our assessment of hedge effectiveness. The change in fair value\r\nof these cross-currency interest rate swap agreements attributable to the cross-currency basis spread is included in AOCL. The periodic interest settlements for\r\nthe swap agreements for the July 2025 Notes and July 2021 Notes are recorded as interest expense and are included as a part of cash flows from operating\r\nactivities and, for the swap agreements associated with the July 2025 Notes, the cash flows that pe"
+  },
+  "image": "audit_pages/35_ORACLE_2020_10K_p97.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 36,
+  "chunk_id": "ef957183c06a27e5a525",
+  "doc_name": "ORACLE_2020_10K",
+  "doc_type": "10-K",
+  "page": 55,
+  "page_end": 55,
+  "is_table": true,
+  "label": {
+   "head": "Oracle 10-K FY2020",
+   "section": "Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…",
+   "subsection": null,
+   "heading": "Percent Change (Dollars in millions) 2020 Actual Constant 2019",
+   "table_title": null
+  },
+  "chunk_start": "(Dollars in millions)\n                                                                                                                Year Ended May 31,\n                                                                                                                  Percent Change\n     (Dollars in m",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     39,
+     "Item 7.Management’s Discussion and Analysis of Financial Condition and Results of Operations"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nIndex to Financial Statements\r\nNon-Operating Income, net: Non-operating income, net consists primarily of interest income, net foreign currency exchange gains (losses), the noncontrolling\r\ninterests in the net profits of our majority-owned subsidiaries (primarily Oracle Financial Services Software Limited and Oracle Corporation Japan) and net other\r\nincome (losses), including net realized gains and losses related to all of our investments, net unrealized gains and losses related to the small portion of our\r\ninvestment portfolio related to our deferred compensation plan, net unrealized gains and losses related to certain equity securities and non-service net periodic\r\npension income (losses). Year Ended May 31,\r\nPercent Change\r\n(Dollars in millions) 2020 Actual Constant 2019\r\nInterest income $ 527 -52% -51% $ 1,092\r\nForeign currency losses, net (185) 67% 69% (111)\r\nNoncontrolling interests in income (164) 8% 8% (152)\r\nOther, net (16) 13% 25% (14)\r\nTotal non-operating income, net $ 162 -80% -80% $ 815\r\nOn a constant currency basis, our non-operating income, net decreased in fiscal 2020 compared to fiscal 2019 primarily due to lower interest income in fiscal\r\n2020, which was primarily attributable to lower average cash, cash equivalent and marketable securities balances and, to a lesser extent, lower interest rates\r\non these balances during fiscal 2020, and also due to higher fiscal 2020 foreign currency losses. Provision for Income Taxes: Our effective income"
+  },
+  "image": "audit_pages/36_ORACLE_2020_10K_p55.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": false,
+   "table_title": "missing",
+   "note": "column-header text taken as heading"
+  }
+ },
+ {
+  "n": 37,
+  "chunk_id": "311713c3454008579661",
+  "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+  "doc_type": "earnings",
+  "page": 70,
+  "page_end": 71,
+  "is_table": false,
+  "label": {
+   "head": "PG&E Corporation earnings FY2023",
+   "section": "Exhibit 4.1",
+   "subsection": "ARTICLE VI MISCELLANEOUS",
+   "heading": "CUSIP [•]",
+   "table_title": null
+  },
+  "chunk_start": "A-2\nPayment of principal of, premium, if any, and interest on the Bonds of this series shall be made in such coin or currency of the United States of America as at the time of payment is legal tender for payment of public and private debts. Payments of principal of, premium, if any, and interest on ",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": [
+     54,
+     "Exhibit 4.1"
+    ]
+   },
+   "page_text_start": "PACIFIC GAS AND ELECTRIC COMPANY\r\n6.100% FIRST MORTGAGE BOND DUE 2029\r\n(Fixed Rate)\r\nNo. [•] Principal Amount: $[•]\r\nCUSIP [•]\r\nPACIFIC GAS AND ELECTRIC COMPANY, a corporation duly organized and existing under the laws of the State of California (herein called\r\nthe “Company,” which term includes any successor Person pursuant to the applicable provisions of the Mortgage Indenture hereinafter referred to), for\r\nvalue received, hereby promises to pay to Cede & Co., as nominee for The Depository Trust Company, or registered assigns, the Principal Amount\r\nstated above on the Maturity Date stated above, and to pay interest thereon from and including the Original Issue Date stated above or, in the case of a\r\n6.100% First Mortgage Bond Due 2029 issued upon the registration of transfer or exchange, from and including the most recent Interest Payment Date\r\nto which interest has been paid or duly provided for, semi-annually in arrears on the Interest Payment Dates set forth above and on the Maturity Date\r\nstated above at the rate of 6.100% per annum until the principal hereof is paid or made available for payment. The interest so payable, and punctually\r\npaid or duly provided for, on any Interest Payment Date will, as provided in such Mortgage Indenture, be paid to the Person in whose name this 6.100%\r\nFirst Mortgage Bond Due 2029 (this “Bond”) (or one or more Predecessor Bonds) is registered at the close of business on the Regular Record Date for\r\nsuch interest, which shall be January "
+  },
+  "image": "audit_pages/37_PG_E_2023_EARNINGS-dated-2023-06-01_p70.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": false,
+   "table_title": null,
+   "note": "stale: Article VI of the indenture; page is the bond form; form field 'CUSIP [•]'"
+  }
+ },
+ {
+  "n": 38,
+  "chunk_id": "c0eda60c87e29246c137",
+  "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+  "doc_type": "earnings",
+  "page": 3,
+  "page_end": 3,
+  "is_table": true,
+  "label": {
+   "head": "PG&E Corporation earnings FY2023",
+   "section": "Exhibit 4.1",
+   "subsection": null,
+   "heading": null,
+   "table_title": "Exhibit 4.1)"
+  },
+  "chunk_start": "Exhibit 4.1)\n         5.1       Opinion of Hunton Andrews Kurth LLP, dated June 5, 2023\n        23.1       Consent of Hunton Andrews Kurth LLP (included in Exhibit 5.1 above)\n        104        Cover Page Interactive Data File - the cover page XBRL tags are embedded within the Inline XBRL document",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Item 8.01. Other Events\r\nOn June 5, 2023, Pacific Gas and Electric Company (the “Utility”) completed the sale of (i) $850,000,000 aggregate principal amount of 6.100%\r\nFirst Mortgage Bonds due 2029 (the “2029 Bonds”), (ii) $1,150,000,000 aggregate principal amount of 6.400% First Mortgage Bonds due 2033 (the\r\n“2033 Bonds”) and (iii) $500,000,000 aggregate principal amount of 6.750% First Mortgage Bonds due 2053 (the “2053 Bonds”, together with the 2029\r\nBonds and the 2033 Bonds, the “Mortgage Bonds”). The 2053 Bonds are part of the same series of debt securities issued by the Utility on January 6,\r\n2023. Upon completion of this offering, the aggregate principal amount of outstanding 2053 Bonds is $1,250,000,000. For further information\r\nconcerning the Mortgage Bonds, refer to the exhibits attached to this report.\r\nItem 9.01. Financial Statements and Exhibits\r\n(d) Exhibits.\r\nExhibit\r\nNo. Description\r\n1.1 Underwriting Agreement, dated as of June 1, 2023, by and among Pacific Gas and Electric Company, Barclays Capital Inc., BofA\r\nSecurities, Inc., Goldman Sachs & Co. LLC and J.P. Morgan Securities LLC\r\n4.1 Twentieth Supplemental Indenture, dated as of June 5, 2023, relating to the 2029 Bonds and 2033 Bonds, between Pacific Gas and Electric\r\nCompany and The Bank of New York Mellon Trust Company, N.A., as Trustee (including the forms of the 2029 Bonds and the 2033 Bonds)\r\n4.2 Eighteenth Supplemental Indenture, dated as of January 6, 2023, relating to the 2053 Bonds, between Pacifi"
+  },
+  "image": "audit_pages/38_PG_E_2023_EARNINGS-dated-2023-06-01_p3.png",
+  "verdict": {
+   "head": true,
+   "section": false,
+   "subsection": true,
+   "heading": true,
+   "table_title": false,
+   "note": "exhibit-index line 'Exhibit 4.1)' taken as an Exhibit heading (page is Item 8.01/9.01); 'Exhibit 4.1)' (list fragment)"
+  }
+ },
+ {
+  "n": 39,
+  "chunk_id": "697730216d73e7655e33",
+  "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+  "doc_type": "earnings",
+  "page": 6,
+  "page_end": 6,
+  "is_table": true,
+  "label": {
+   "head": "Ulta Beauty earnings FY2023 Q1",
+   "section": null,
+   "subsection": "Ulta Beauty Announces First Quarter Fiscal 2023 Results",
+   "heading": "(Unaudited) (Unaudited) Assets",
+   "table_title": "(Unaudited) (Unaudited) Assets"
+  },
+  "chunk_start": "(Unaudited) (Unaudited) Assets\n               Non-current operating lease liabilities                                       1,610,256        1,619,883        1,568,356\n               Deferred income taxes                                                            57,490           55,346          40,",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": [
+     6,
+     "Exhibit 2"
+    ]
+   },
+   "page_text_start": "Exhibit 2\r\nUlta Beauty, Inc.\r\nCondensed Consolidated Balance Sheets\r\n(In thousands)\r\nApril 29, January 28, April 30,\r\n2023 2023 2022\r\n(Unaudited) (Unaudited)\r\nAssets\r\nCurrent assets:\r\nCash and cash equivalents $ 636,449 $ 737,877 $ 654,486\r\nReceivables, net 190,282 199,422 192,754\r\nMerchandise inventories, net 1,751,235 1,603,451 1,570,552\r\nPrepaid expenses and other current assets 108,014 130,246 114,075\r\nPrepaid income taxes — 38,308 —\r\nTotal current assets 2,685,980 2,709,304 2,531,867\r\nProperty and equipment, net 1,019,978 1,009,273 909,543\r\nOperating lease assets 1,559,560 1,561,263 1,488,040\r\nGoodwill 10,870 10,870 10,870\r\nOther intangible assets, net 1,015 1,312 1,307\r\nDeferred compensation plan assets 37,002 35,382 35,978\r\nOther long-term assets 61,314 43,007 34,431\r\nTotal assets $ 5,375,719 $ 5,370,411 $ 5,012,036\r\nLiabilities and stockholders’ equity\r\nCurrent liabilities:\r\nAccounts payable $ 621,272 $ 559,527 $ 585,500\r\nAccrued liabilities 308,583 444,278 305,000\r\nDeferred revenue 357,217 394,677 324,694\r\nCurrent operating lease liabilities 288,133 283,293 276,440\r\nAccrued income taxes 58,695 — 108,113\r\nTotal current liabilities 1,633,900 1,681,775 1,599,747\r\nNon-current operating lease liabilities 1,610,256 1,619,883 1,568,356\r\nDeferred income taxes 57,490 55,346 40,702\r\nOther long-term liabilities 56,005 53,596 57,611\r\nTotal liabilities 3,357,651 3,410,600 3,266,416\r\nCommitments and contingencies\r\nTotal stockholders’ equity 2,018,068 1,959,811 1,745,620\r\nTotal lia"
+  },
+  "image": "audit_pages/39_ULTABEAUTY_2024Q1_EARNINGS_p6.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": false,
+   "table_title": false,
+   "note": "column-header fragments '(Unaudited) (Unaudited) Assets'; column-header fragments"
+  }
+ },
+ {
+  "n": 40,
+  "chunk_id": "5693ec2ebefb661169df",
+  "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+  "doc_type": "earnings",
+  "page": 7,
+  "page_end": 7,
+  "is_table": false,
+  "label": {
+   "head": "Ulta Beauty earnings FY2023 Q1",
+   "section": null,
+   "subsection": "Ulta Beauty Announces First Quarter Fiscal 2023 Results",
+   "heading": "Consolidated Statements of Cash Flows (In thousands) 13 Weeks Ended",
+   "table_title": null
+  },
+  "chunk_start": "Consolidated Statements of Cash Flows (In thousands) 13 Weeks Ended\nApril 29, April 30, 2023 2022\n(Unaudited) (Unaudited) Operating activities\nNet income $ 347,051 $ 331,395 Adjustments to reconcile net income to net cash provided by operating activities:",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": null,
+    "exhibit": [
+     7,
+     "Exhibit 4"
+    ]
+   },
+   "page_text_start": "Exhibit 3\r\nUlta Beauty, Inc.\r\nConsolidated Statements of Cash Flows\r\n(In thousands)\r\n13 Weeks Ended\r\nApril 29, April 30,\r\n2023 2022\r\n(Unaudited) (Unaudited)\r\nOperating activities\r\nNet income $ 347,051 $ 331,395\r\nAdjustments to reconcile net income to net cash provided by operating activities:\r\nDepreciation and amortization 57,949 62,839\r\nNon-cash lease expense 75,478 72,192\r\nDeferred income taxes 2,144 1,009\r\nStock-based compensation expense 9,721 10,356\r\nLoss on disposal of property and equipment 1,451 1,002\r\nChange in operating assets and liabilities:\r\nReceivables 9,140 40,928\r\nMerchandise inventories (147,784) (71,334)\r\nPrepaid expenses and other current assets 22,232 (3,261)\r\nIncome taxes 97,003 101,236\r\nAccounts payable 62,257 42,586\r\nAccrued liabilities (98,515) (57,214)\r\nDeferred revenue (37,460) (28,885)\r\nOperating lease liabilities (78,562) (79,936)\r\nOther assets and liabilities (17,204) 3,390\r\nNet cash provided by operating activities 304,901 426,303\r\nInvesting activities\r\nCapital expenditures (109,766) (71,076)\r\nOther investments (314) (797)\r\nNet cash used in investing activities (110,080) (71,873)\r\nFinancing activities\r\nRepurchase of common shares (283,517) (132,834)\r\nStock options exercised 8,927 6,502\r\nPurchase of treasury shares (21,659) (5,172)\r\nNet cash used in financing activities (296,249) (131,504)\r\nNet (decrease) increase in cash and cash equivalents (101,428) 222,926\r\nCash and cash equivalents at beginning of period\r\n737,877 431,560\r\nCash and cash equiva"
+  },
+  "image": "audit_pages/40_ULTABEAUTY_2024Q1_EARNINGS_p7.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 41,
+  "chunk_id": "cf54b3b186432306f4b7",
+  "doc_name": "VERIZON_2018_10K",
+  "doc_type": "10-K",
+  "page": 53,
+  "page_end": 53,
+  "is_table": false,
+  "label": {
+   "head": "Verizon 10-K FY2018",
+   "section": "Item 15. Exhibits, Financial Statement Schedules",
+   "subsection": "5. Vesting",
+   "heading": "(b) Additional Performance-Based Vesting",
+   "table_title": null
+  },
+  "chunk_start": "The Participant acknowledges that this Agreement or any prior RSU agreement shall not entitle the Participant to any other benefits under the Plan or any other plans maintained by the Company or a Related Company.\n13. Company and Related Company. For purposes of this Agreement, “Company” means Veriz",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     24,
+     "Item 15. Exhibits, Financial Statement Schedules"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "April 9, 2021 shall have no effect on whether any RSUs vest or become payable under this paragraph 7(d). If both paragraph 7(c) and this paragraph 7(d) would otherwise\r\napply in the circumstances, this paragraph 7(d) shall control. All payments provided in this paragraph 7(d) shall be made at their regularly scheduled time as specified in\r\nparagraph 6.\r\n(e) Vesting Schedule. Except and to the extent provided in paragraphs 7(c) and (d), nothing in this paragraph 7 shall alter the vesting schedule prescribed by paragraph 5.\r\n8. Shareholder Rights. The Participant shall have no rights as a shareholder with respect to the RSUs until the date on which the Participant becomes the holder of record with\r\nrespect to any shares of Verizon common stock to which this grant relates. Except as provided in the Plan or in this Agreement, no adjustment shall be made for dividends or\r\nother rights for which the record date occurs while the RSUs are outstanding.\r\n9. Amendment of Agreement. Except to the extent required by law or specifically contemplated under this Agreement, neither the Committee nor the Executive Vice\r\nPresident and Chief Administrative Officer of Verizon (or his or her designee) may, without the written consent of the Participant, change any term, condition or provision\r\naffecting the RSUs if the change would have a material adverse effect upon the RSUs or the Participant’s rights thereto. Nothing in the preceding sentence shall preclude the\r\nCommittee or the Executive Vice "
+  },
+  "image": "audit_pages/41_VERIZON_2018_10K_p53.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": false,
+   "table_title": null,
+   "note": "stale: page is paragraph 7, label says '5. Vesting'; stale paragraph heading"
+  }
+ },
+ {
+  "n": 42,
+  "chunk_id": "ce18c41cbee4ccf945e3",
+  "doc_name": "VERIZON_2018_10K",
+  "doc_type": "10-K",
+  "page": 78,
+  "page_end": 78,
+  "is_table": false,
+  "label": {
+   "head": "Verizon 10-K FY2018",
+   "section": "Exhibit 13",
+   "subsection": null,
+   "heading": "Consolidated Operating Expenses",
+   "table_title": null
+  },
+  "chunk_start": "Consolidated Operating Expenses",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     24,
+     "Item 15. Exhibits, Financial Statement Schedules"
+    ],
+    "note": null,
+    "exhibit": [
+     74,
+     "EXHIBIT 13"
+    ]
+   },
+   "page_text_start": "by the sale of 23 customer-facing data center sites in the U.S. and Latin America in our Wireline segment (Data Center Sale) in May 2017 and other insignificant transactions\r\n(see \"Operating Results From Divested Businesses\" below).\r\n2017 Compared to 2016\r\nConsolidated revenues remained consistent during 2017 compared to 2016 primarily due to a decline in revenues at our Wireless segment, offset by an increase in revenues\r\nwithin Corporate and other.\r\nRevenues for our segments are discussed separately below under the heading \"Segment Results of Operations.\"\r\nCorporate and other revenues increased $1.6 billion, or 20.7%, during 2017 compared to 2016 primarily due to an increase in revenue as a result of the acquisition of Yahoo's\r\noperating business on June 13, 2017, as well as fleet service revenue growth in our telematics business. These increases were partially offset by the sale (Access Line Sale) of\r\nour local exchange business and related landline activities in California, Florida and Texas, including Fios Internet and video customers, switched and special access lines and\r\nhigh-speed internet (HSI) services and long distance voice accounts in these three states, to Frontier Communications Corporation (Frontier) on April 1, 2016 and the Data\r\nCenter Sale on May 1, 2017, and other insignificant transactions (see \"Operating Results From Divested Businesses\" below). During 2017, Oath generated $6.0 billion in\r\nrevenues which represented approximately 64% of revenues in Corp"
+  },
+  "image": "audit_pages/42_VERIZON_2018_10K_p78.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 43,
+  "chunk_id": "a800be74613d90df1502",
+  "doc_name": "WALMART_2023_annualreport",
+  "doc_type": "annual report",
+  "page": 28,
+  "page_end": 28,
+  "is_table": false,
+  "label": {
+   "head": "Walmart annual report FY2023",
+   "section": "Item 1A. RISK FACTORS",
+   "subsection": null,
+   "heading": "of operations, financial position and liquidity",
+   "table_title": null
+  },
+  "chunk_start": "For example, we are currently a defendant in a number of cases containing class or collective-action allegations, or both, in which the plaintiffs have brought claims under federal and state wage and hour laws, as well as a number of cases containing class-action allegations in which the plaintiffs ",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     17,
+     "ITEM 1A. RISK FACTORS"
+    ],
+    "note": [
+     11,
+     "Note 12 to our Consolidated Financial Statements for discussion of recent divestitures."
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "existing laws and regulations may require extensive system and operational changes, be difficult to implement, increase our \r\noperating costs, require significant capital expenditures, or adversely impact the cost or attractiveness of the products or \r\nservices we offer, or result in adverse publicity and harm our reputation. If we fail to predict or respond adequately to changes, \r\nincluding by implementing strategic and operational initiatives, or do not respond as effectively as our competitors, our \r\nbusiness, operations, and financial performance may be adversely affected.\r\nIn addition, we may face audits or investigations by one or more government agencies relating to our compliance with \r\napplicable laws and regulations. The regulatory, political, and media scrutiny we face, which may continue, amplifies these \r\nrisks. To the extent a regulator or court disagrees with our interpretation of these laws and determines that our practices are not \r\nin compliance with applicable laws and regulations, we could be subject to civil and criminal penalties that could adversely \r\naffect the continued operation of our businesses, including: suspension of payments from government programs; loss of \r\nrequired licenses and certifications; loss of authorizations to participate in or exclusion from government programs, including \r\nthe Medicare and Medicaid programs in the U.S.; termination from contractual relationships, including those with our drug \r\nsuppliers and third-party payers; "
+  },
+  "image": "audit_pages/43_WALMART_2023_annualreport_p28.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": false,
+   "table_title": null,
+   "note": "sentence fragment starting in lower case"
+  }
+ },
+ {
+  "n": 44,
+  "chunk_id": "029cf95cb49f9452bc44",
+  "doc_name": "WALMART_2023_annualreport",
+  "doc_type": "annual report",
+  "page": 49,
+  "page_end": 49,
+  "is_table": false,
+  "label": {
+   "head": "Walmart annual report FY2023",
+   "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+   "subsection": "CALCULATION OF RETURN ON ASSETS",
+   "heading": "Inventories",
+   "table_title": null
+  },
+  "chunk_start": "Inventories\nThe Walmart U.S. segment comprises the largest portion of our inventory and is primarily accounted for under the retail inventory method of accounting to determine inventory cost, using the last-in, first-out (\"LIFO\") valuation method. The majority of the Sam's Club segment inventories a",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     37,
+     "ITEM 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF"
+    ],
+    "note": [
+     11,
+     "Note 12 to our Consolidated Financial Statements for discussion of recent divestitures."
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Other Matters\r\nIn Note 10 to our Consolidated Financial Statements, which is captioned \"Contingencies\" and appears in Part II of this Annual \r\nReport on Form 10-K under the caption \"Item 8. Financial Statements and Supplementary Data,\" we discuss, under the sub￾captions \"Settlement Framework Regarding Multidistrict and State or Local Opioid Related Litigation,\" and \"Other Opioid \r\nRelated Litigation\" the Prescription Opiate Litigation, the Settlement Framework, and other matters, including certain risks \r\narising therefrom. In that Note 10, we also discuss under the sub-caption \"Asda Equal Value Claims\" the Company's \r\nindemnification obligation for the Asda Equal Value Claims matter as well as under the sub-caption \"Money Transfer Agent \r\nServices Matters\", a United States Federal Trade Commission complaint related to money transfers and the Company's anti￾fraud program and a government investigation by the U.S. Attorney's Office for the Middle District of Pennsylvania into the \r\nCompany's consumer fraud prevention and anti-money laundering compliance related to the Company's money transfer agent \r\nservices. We discuss various legal proceedings related to the Federal and State Prescription Opiate Litigation, the Settlement \r\nFramework, DOJ Opioid Civil Litigation and Opioids Related Securities Class Actions and Derivative Litigation in Part I of \r\nthis Annual Report on Form 10-K under the caption \"Item 3. Legal Proceedings,\" under the sub-caption \"I. Supplemental \r\nInformati"
+  },
+  "image": "audit_pages/44_WALMART_2023_annualreport_p49.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": false,
+   "heading": true,
+   "table_title": null,
+   "note": "stale: 'CALCULATION OF RETURN ON ASSETS'; page is critical accounting estimates"
+  }
+ },
+ {
+  "n": 45,
+  "chunk_id": "27c8745785842bf3d13c",
+  "doc_name": "WALMART_2023_annualreport",
+  "doc_type": "annual report",
+  "page": 8,
+  "page_end": 8,
+  "is_table": false,
+  "label": {
+   "head": "Walmart annual report FY2023",
+   "section": "Item 1. BUSINESS",
+   "subsection": null,
+   "heading": "The Development of Our Company",
+   "table_title": null
+  },
+  "chunk_start": "We have also continued to enhance our eCommerce initiatives, such as with our acquisition of a majority stake in Flipkart Private Limited (\"Flipkart\"), which is our ecosystem in India that includes eCommerce platforms of Flipkart and Myntra, as well as with our majority stake in PhonePe Private Limi",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     8,
+     "ITEM 1. BUSINESS"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "ITEM 1. BUSINESS\r\nGeneral\r\nWalmart Inc. (\"Walmart,\" the \"Company\" or \"we\") is a people-led, technology-powered omni-channel retailer dedicated to help \r\npeople around the world save money and live better – anytime and anywhere – by providing the opportunity to shop in both \r\nretail stores and through eCommerce, and to access our other service offerings. Through innovation, we strive to continuously \r\nimprove a customer-centric experience that seamlessly integrates our eCommerce and retail stores in an omni-channel offering \r\nthat saves time for our customers. Each week, we serve approximately 240 million customers who visit more than 10,500 \r\nstores and numerous eCommerce websites in 20 countries.\r\nOur strategy is to make every day easier for busy families, operate with discipline, sharpen our culture and become more digital, \r\nand make trust a competitive advantage. Making life easier for busy families includes our commitment to price leadership, \r\nwhich has been and will remain a cornerstone of our business, as well as increasing convenience to save our customers time. \r\nBy leading on price, we earn the trust of our customers every day by providing a broad assortment of quality merchandise and \r\nservices at everyday low prices (\"EDLP\"). EDLP is our pricing philosophy under which we price items at a low price every \r\nday so our customers trust that our prices will not change under frequent promotional activity. Everyday low cost (\"EDLC\") is \r\nour commitment to control expens"
+  },
+  "image": "audit_pages/45_WALMART_2023_annualreport_p8.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 46,
+  "chunk_id": "26b219a7c8778dc02827",
+  "doc_name": "ADOBE_2018_10K",
+  "doc_type": "10-K",
+  "page": 37,
+  "page_end": 37,
+  "is_table": false,
+  "label": {
+   "head": "Adobe 10-K FY2018",
+   "section": "Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+   "subsection": "CRITICAL ACCOUNTING POLICIES AND ESTIMATES",
+   "heading": "Accounting for Income Taxes",
+   "table_title": null
+  },
+  "chunk_start": "Our assumptions, judgments and estimates relative to the current provision for income taxes take into account current tax laws, our interpretation of current tax laws and possible outcomes of current and future audits conducted by foreign and domestic tax authorities. We have established reserves fo",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     36,
+     "ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF"
+    ],
+    "note": null,
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\n37\r\nIn connection with the purchase price allocations for our acquisitions, we estimate the fair value of the deferred revenue \r\nobligations assumed. The estimated fair value of these obligations is determined utilizing a cost build-up approach. The cost build￾up approach determines fair value by estimating the costs related to fulfilling the obligations plus a normal profit margin. \r\nUnanticipated events and circumstances may occur which may affect the accuracy or validity of such assumptions, estimates \r\nor actual results.\r\nAccounting for Income Taxes\r\nWe use the asset and liability method of accounting for income taxes. Under this method, income tax expense is recognized \r\nfor the amount of taxes payable or refundable for the current year. In addition, deferred tax assets and liabilities are recognized \r\nfor the expected future tax consequences of temporary differences between the financial reporting and tax bases of assets and \r\nliabilities, and for operating losses and tax credit carryforwards. Management must make assumptions, judgments and estimates \r\nto determine our current provision for income taxes and also our deferred tax assets and liabilities.\r\nOur assumptions, judgments and estimates relative to the current provision for income taxes take into account current tax \r\nlaws, our interpretation of current tax laws and possible outcomes of current and future audits conducted by foreign and domestic \r\ntax authorities. We have established reserves f"
+  },
+  "image": "audit_pages/46_ADOBE_2018_10K_p37.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 47,
+  "chunk_id": "fa4b60298e47a9fca458",
+  "doc_name": "ORACLE_2020_10K",
+  "doc_type": "10-K",
+  "page": 115,
+  "page_end": 115,
+  "is_table": true,
+  "label": {
+   "head": "Oracle 10-K FY2020",
+   "section": "Item 15. Exhibits and Financial Statement Schedules",
+   "subsection": "16. EARNINGS PER SHARE",
+   "heading": null,
+   "table_title": "The following table sets forth the computation of basic and diluted earnings per share:"
+  },
+  "chunk_start": "The following table sets forth the computation of basic and diluted earnings per share:\n(in millions, except per share data)\n                                                                                                                                    Year Ended May 31,\n     (in millions, excep",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     67,
+     "Item 15.Exhibits and Financial Statement Schedules"
+    ],
+    "note": [
+     115,
+     "16. EARNINGS PER SHARE"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "Table of Contents\r\nIndex to Financial Statements\r\nORACLE CORPORATION\r\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS—(Continued)\r\nMay 31, 2020\r\nThe following table presents our cloud services and license support revenues by applications and infrastructure ecosystems.\r\nYear Ended May 31,\r\n(in millions) 2020 2019 2018 Applications cloud services and license support $ 11,015 $ 10,553 $ 10,038\r\nInfrastructure cloud services and license support 16,377 16,154 16,184\r\nTotal cloud services and license support revenues $ 27,392 $ 26,707 $ 26,222\r\nGeographic Information\r\nDisclosed in the table below is geographic information for each country that comprised greater than three percent of our total revenues for any of fiscal 2020,\r\n2019 or 2018.\r\nAs of and for the Year Ended May 31, 2020 2019 2018\r\n(in millions) Revenues Long-Lived Assets(1) Revenues Long-Lived Assets(1) Revenues Long-Lived Assets(1)\r\nUnited States $ 18,428 $ 6,012 $ 18,596 $ 5,318 $ 18,330 $ 4,976\r\nJapan 1,977 655 1,848 422 1,716 388\r\nUnited Kingdom 1,904 472 2,054 423 2,093 510\r\nGermany 1,510 418 1,583 263 1,526 179\r\nCanada 1,162 169 1,166 87 1,200 78\r\nOther countries 14,087 1,977 14,259 1,356 14,518 1,223\r\nTotal $ 39,068 $ 9,703 $ 39,506 $ 7,869 $ 39,383 $ 7,354\r\n(1) Long-lived assets exclude goodwill, intangible assets, equity investments and deferred taxes, which are not allocated to specific geographic locations as it is impracticable to do so.\r\n16. EARNINGS PER SHARE\r\nBasic earnings per share is computed by dividing ne"
+  },
+  "image": "audit_pages/47_ORACLE_2020_10K_p115.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": true,
+   "note": ""
+  }
+ },
+ {
+  "n": 48,
+  "chunk_id": "3a6cffb6ca1c8f97ab01",
+  "doc_name": "MGMRESORTS_2017_10K",
+  "doc_type": "10-K",
+  "page": 71,
+  "page_end": 71,
+  "is_table": false,
+  "label": {
+   "head": "MGM Resorts 10-K FY2017",
+   "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+   "subsection": "NOTE 1 — ORGANIZATION",
+   "heading": null,
+   "table_title": null
+  },
+  "chunk_start": "In connection with the IPO, the Company and MGP entered into a series of transactions and several agreements that, among other things, set forth the terms and conditions of the IPO and provide a framework for the Company’s relationship with MGP.\nMGP is organized as an umbrella partnership REIT (comm",
+  "evidence": {
+   "markers_before": {
+    "item": null,
+    "note": [
+     56,
+     "15. EXHIBITS,"
+    ],
+    "exhibit": null
+   },
+   "page_text_start": "M\nGM\nRESORTS\nINTERNATIONAL\nAND\nSUBSIDIARIES\r\nNOTES\nTO\nCONSOLIDATED\nFINANCIAL\nSTATEMENTS\r\nNOTE\n1\n—\nORGANIZATION\r\nOrganization.\nMGM Resorts International (together with its consolidated subsidiaries, unless otherwise indicated or unless the context requires otherwise,\r\nthe “Company”) is a Delaware corporation that acts largely as a holding company and, through subsidiaries, owns and operates casino resorts. As discussed further\r\nbelow, the Company leases certain of its real estate assets from MGM Growth Properties Operating Partnership LP (the “Operating Partnership”), which is a\r\nconsolidated subsidiary.\r\nThe Company owns and operates the following integrated casino, hotel and entertainment resorts in Las Vegas, Nevada: Bellagio, MGM Grand Las Vegas,\r\nThe Mirage, Mandalay Bay, Luxor, New York-New York, Monte Carlo, Excalibur and Circus Circus Las Vegas. Operations at MGM Grand Las Vegas include\r\nmanagement of The Signature at MGM Grand Las Vegas, a condominium-hotel consisting of three towers. The Company operates and, along with local investors,\r\nowns MGM Grand Detroit in Detroit, Michigan and MGM National Harbor in Prince George’s County, Maryland. The Company also owns and operates Borgata\r\nlocated on Renaissance Pointe in the Marina area of Atlantic City, New Jersey and the following resorts in Mississippi: Beau Rivage in Biloxi and Gold Strike in\r\nTunica. Additionally, the Company owns and operates the Park, a dining and entertainment district located between New York-New"
+  },
+  "image": "audit_pages/48_MGMRESORTS_2017_10K_p71.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 49,
+  "chunk_id": "750c2bf843747ae10606",
+  "doc_name": "3M_2019_10K",
+  "doc_type": "10-K",
+  "page": 176,
+  "page_end": 176,
+  "is_table": false,
+  "label": {
+   "head": "3M 10-K FY2019",
+   "section": "Exhibit 10.20",
+   "subsection": "3M EXECUTIVE SEVERANCE PLAN SUMMARY PLAN DESCRIPTION",
+   "heading": "Schedule A to the 3M Executive Severance Plan",
+   "table_title": null
+  },
+  "chunk_start": "Schedule A to the 3M Executive Severance Plan\nSeverance Pay for the Chief Executive Officer\nIf you become a Plan Participant by signing the Release and satisfying all other eligibility requirements, you will receive the severance payments described below.\n1. Continued payment of the annual base sala",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     140,
+     "Item 16. Form 10-K Summary."
+    ],
+    "note": [
+     134,
+     "NOTE 20. Quarterly Data (Unaudited)"
+    ],
+    "exhibit": [
+     166,
+     "EXHIBIT 10.20"
+    ]
+   },
+   "page_text_start": "Schedule A to the 3M Executive Severance Plan\r\nSeverance Pay for the Chief Executive Officer\r\nIf you become a Plan Participant by signing the Release and satisfying all other eligibility requirements, you will receive the severance\r\npayments described below.\r\n1. Continued payment of the annual base salary you otherwise would have earned if you remained employed through the date that\r\nis twenty-four (24) months following your separation date (the “Severance Period Expiration Date”), payable in accordance with\r\n3M’s regular payroll practices, with the first such payment commencing sixty (60) days following your separation date, subject\r\nto Section VI.F of the Plan.\r\n1. Continued payment of all Annual Incentive Plan payments that you otherwise would have been entitled to receive if you\r\nremained employed by 3M through the Severance Period Expiration Date. In the event the Severance Period Expiration Date\r\noccurs prior to the completion of an Annual Incentive Plan measurement year, you will receive a prorated amount for such year\r\nbased on the number of calendar days in such year preceding the Severance Period Expiration Date. The amount of each Annual\r\nIncentive Plan payment (or prorated payment) to which you may become entitled will be calculated in accordance with the terms\r\nof the Annual Incentive Plan based on actual results for the relevant Annual Incentive Plan measurement year. For purposes of\r\ncalculating such payments, your performance rating for the year of termination"
+  },
+  "image": "audit_pages/49_3M_2019_10K_p176.png",
+  "verdict": {
+   "head": true,
+   "section": true,
+   "subsection": true,
+   "heading": true,
+   "table_title": null,
+   "note": ""
+  }
+ },
+ {
+  "n": 50,
+  "chunk_id": "b82b7e9e5d2910c1b36b",
+  "doc_name": "WALMART_2023_annualreport",
+  "doc_type": "annual report",
+  "page": 99,
+  "page_end": 99,
+  "is_table": true,
+  "label": {
+   "head": "Walmart annual report FY2023",
+   "section": "Exhibit 32.2",
+   "subsection": "Corporate and Stock Information",
+   "heading": "Communication with Shareholders",
+   "table_title": "• Environmental, Social and Governance Report"
+  },
+  "chunk_start": "• Environmental, Social and Governance Report\n                • Culture, Diversity, Equity & Inclusion Report                  $250\n                Independent Registered Public Accounting Firm                    $200\n                Ernst & Young LLP\n                5417 Pinnacle Point Dr., Suite 5",
+  "evidence": {
+   "markers_before": {
+    "item": [
+     87,
+     "ITEM 16. FORM 10-K SUMMARY"
+    ],
+    "note": [
+     82,
+     "Note 14. Subsequent Event"
+    ],
+    "exhibit": [
+     95,
+     "Exhibit 32.2"
+    ]
+   },
+   "page_text_start": "Corporate and Stock Information\r\nListing\r\nNew York Stock Exchange\r\nStock Symbol: WMT\r\nCorporate Information\r\nStock Registrar and Transfer Agent:\r\nComputershare Trust Company, N.A.\r\nP.O. Box 43006\r\nProvidence RI 02940-3006\r\n1-800-438-6278\r\nTDD for hearing-impaired inside the U.S. 1-800-952-9245\r\nInternet: http://www.computershare.com\r\nAnnual Meeting\r\nOur 2023 Annual Shareholders’ Meeting will be held on Wednesday,\r\nMay 31, 2023 at 10:30am CDT in a virtual meeting format only, with\r\nno physical in-person meeting. Our Annual Shareholders’ Meeting\r\nwill be available for viewing at www.virtualshareholdermeeting.com/\r\nWMT2023.\r\nCommunication with Shareholders\r\nWalmart Inc. periodically communicates with our shareholders and\r\nother members of the investment community about our operations.\r\nFor further information regarding our policy on shareholder and\r\ninvestor communications refer to our website, www.stock.walmart.com.\r\nThe following reports are available without charge upon request\r\nby writing the company c/o Investor Relations or by emailing\r\nIR@walmart.com. These reports are also available via the\r\ncorporate website.\r\n• Annual Report on Form 10-K\r\n• Quarterly Reports on Form 10-Q\r\n• Earnings Releases\r\n• Current Reports on Form 8-K\r\n• Annual Shareholders’ Meeting Proxy Statement\r\n• Environmental, Social and Governance Report\r\n• Culture, Diversity, Equity & Inclusion Report\r\nIndependent Registered Public Accounting Firm\r\nErnst & Young LLP\r\n5417 Pinnacle Point Dr., Suite 501\r\nRoge"
+  },
+  "image": "audit_pages/50_WALMART_2023_annualreport_p99.png",
+  "verdict": {
+   "head": true,
+   "section": false,
+   "subsection": true,
+   "heading": true,
+   "table_title": false,
+   "note": "back matter after the last exhibit labelled 'Exhibit 32.2'; a bullet line"
+  }
+ }
+]

@@ -2,6 +2,7 @@
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -20,6 +21,50 @@ class Settings(BaseSettings):
     http_user_agent: str = "filing-rag/0.1 (portfolio project)"
     http_timeout_s: float = 120.0
 
+    # Ingestion (docs/v3/ingestion.md)
+    qdrant_url: str = "http://localhost:6333"
+    # Q106 (2026-11-22): chunks_v2 = fixed table reader; the old "chunks" (folder "v3")
+    # is kept for rollback: set both settings back together.
+    qdrant_collection: str = "chunks_v2"
+    qdrant_timeout_s: int = 60
+    # Folder under data_dir for the catalog, chunk files and report of `qdrant_collection`.
+    # Each collection has its own folder, so a test or new collection never overwrites the
+    # files of another one (the router catalog and the skip rule read them).
+    ingest_dir_name: str = "v3_v2"
+    embedding_model: str = "BAAI/bge-base-en-v1.5"
+    embedding_query_prefix: str = "Represent this sentence for searching relevant passages: "
+    chunk_target_tokens: int = 350
+    chunk_max_tokens: int = 480  # bge-base reads 512 tokens; keep room
+    chunk_overlap_tokens: int = 50
+    label_depth: Literal["none", "section", "full"] = "section"  # Q99
+    max_pdf_bytes: int = 100_000_000
+
+    # Answer model (docs/v3/engine.md §5, ADR-0005). Prices in USD per 1M tokens.
+    answer_model: str = "claude-sonnet-5-5"
+    answer_price_in_per_mtok: float = 2.0
+    answer_price_out_per_mtok: float = 10.0
+    answer_max_tokens: int = 1024
+    # Sonnet 5.5: "between_tools" is the lowest thinking setting (no extended thinking);
+    # "disabled" is rejected on this model. None = do not send the field.
+    answer_thinking: str | None = "between_tools"
+    answer_effort: str | None = None  # None = do not send (API default)
+
+    # Router model (docs/v3/router.md, Q34). Haiku 5.5: adaptive thinking only (on by default;
+    # "between_tools" is rejected); effort is the lever. Thinking counts toward max_tokens.
+    # Prices: $0.10/$0.50 per 1M tokens for prompts up to 100K tokens (checked 2026-11-21).
+    router_model: str = "claude-haiku-5-5"
+    router_price_in_per_mtok: float = 0.10
+    router_price_out_per_mtok: float = 0.50
+    router_max_tokens: int = 2048
+    router_thinking: str | None = None
+    router_effort: str | None = "low"
+    router_year_rule: Literal["A", "B"] = "A"  # Q104: Y else Y+1 (A) or always Y and Y+1 (B)
+
+    # Plain-RAG baseline (docs/v3/evaluation.md §3)
+    baseline_top_k: int = 5
+    table_parts_max_extra: int = 3  # Q105: parts of a split table added after the search
+    baseline_max_cost_usd: float = 2.0  # a run stops when its cost goes above this
+
     # API keys: optional until the components that need them exist. Read without the prefix.
     anthropic_api_key: SecretStr | None = Field(default=None, validation_alias="ANTHROPIC_API_KEY")
     openai_api_key: SecretStr | None = Field(default=None, validation_alias="OPENAI_API_KEY")
@@ -31,6 +76,14 @@ class Settings(BaseSettings):
     @property
     def pdf_dir(self) -> Path:
         return self.financebench_dir / "pdfs"
+
+    @property
+    def pdf_override_dir(self) -> Path:
+        return self.financebench_dir / "pdf_overrides"
+
+    @property
+    def ingest_dir(self) -> Path:
+        return self.data_dir / self.ingest_dir_name
 
     @property
     def locked_dir(self) -> Path:

@@ -1,0 +1,3731 @@
+{
+ "version": "rule_a",
+ "collection": "chunks",
+ "k": 10,
+ "scores": {
+  "all": {
+   "n": 50,
+   "hit@1": 0.38,
+   "hit@5": 0.62,
+   "hit@10": 0.7,
+   "mrr@10": 0.48,
+   "value_n": 20,
+   "value_hit@1": 0.25,
+   "value_hit@5": 0.5,
+   "value_hit@10": 0.7
+  },
+  "answer_source": {
+   "table": {
+    "n": 28,
+    "hit@1": 0.357,
+    "hit@5": 0.571,
+    "hit@10": 0.607,
+    "mrr@10": 0.443,
+    "value_n": 10,
+    "value_hit@1": 0.3,
+    "value_hit@5": 0.4,
+    "value_hit@10": 0.6
+   },
+   "text": {
+    "n": 22,
+    "hit@1": 0.409,
+    "hit@5": 0.682,
+    "hit@10": 0.818,
+    "mrr@10": 0.528,
+    "value_n": 10,
+    "value_hit@1": 0.2,
+    "value_hit@5": 0.6,
+    "value_hit@10": 0.8
+   }
+  },
+  "category": {
+   "calculate": {
+    "n": 10,
+    "hit@1": 0.6,
+    "hit@5": 0.7,
+    "hit@10": 0.7,
+    "mrr@10": 0.65
+   },
+   "compare_companies": {
+    "n": 4,
+    "hit@1": 0.0,
+    "hit@5": 0.25,
+    "hit@10": 0.25,
+    "mrr@10": 0.125
+   },
+   "compare_years": {
+    "n": 6,
+    "hit@1": 0.167,
+    "hit@5": 0.5,
+    "hit@10": 0.5,
+    "mrr@10": 0.256
+   },
+   "explain_why": {
+    "n": 10,
+    "hit@1": 0.3,
+    "hit@5": 0.7,
+    "hit@10": 0.8,
+    "mrr@10": 0.483
+   },
+   "find_number": {
+    "n": 20,
+    "hit@1": 0.45,
+    "hit@5": 0.65,
+    "hit@10": 0.8,
+    "mrr@10": 0.532,
+    "value_n": 20,
+    "value_hit@1": 0.25,
+    "value_hit@5": 0.5,
+    "value_hit@10": 0.7
+   }
+  }
+ },
+ "expansion": {
+  "questions_with_added_parts": 8,
+  "added_parts": 19,
+  "added_chars": 36262,
+  "top5_chars": 361597
+ },
+ "questions": [
+  {
+   "id": "dev_0001",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What non-current liability did 3M carry for its U.S. qualified and non-qualified pension plans at the end of 2019?",
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 91
+    }
+   ],
+   "ranks": [
+    4
+   ],
+   "top": [
+    {
+     "score": 0.7208,
+     "doc_name": "3M_2019_10K",
+     "page": 90,
+     "page_end": 90,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The charge is related to lump sum payments made to employees at retirement. The settlement expense is an accelerated recognition of past actuarial losses.\nIn May 2019, 3M modified the 3M Retiree Life "
+    },
+    {
+     "score": 0.7167,
+     "doc_name": "3M_2019_10K",
+     "page": 89,
+     "page_end": 89,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "NOTE 13. Pension and Postretirement Benefit Plans\n3M has company-sponsored retirement plans covering substantially all U.S. employees and many employees outside the United States. In total, 3M has ove"
+    },
+    {
+     "score": 0.7003,
+     "doc_name": "3M_2019_10K",
+     "page": 90,
+     "page_end": 90,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "(Millions)\n                 December 31, 2019 and 2018.\n                                                                                                      Qualified and Non-qualified\n              "
+    },
+    {
+     "score": 0.698,
+     "doc_name": "3M_2019_10K",
+     "page": 91,
+     "page_end": 91,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The following amounts relate to pension plans with accumulated benefit obligations in excess of plan assets as of December 31:\n(Millions)\n                                                              "
+    },
+    {
+     "score": 0.69,
+     "doc_name": "3M_2019_10K",
+     "page": 91,
+     "page_end": 91,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "Qualified and Non-qualified Pension Benefits Postretirement\nUnited States International Benefits (Millions) 2019 2018 2019 2018 2019 2018\nAmounts recognized in accumulated other comprehensive income"
+    }
+   ],
+   "value_ranks": [
+    null
+   ],
+   "rank": 4,
+   "value_rank": null,
+   "added_parts": 1,
+   "added_chars": 3966,
+   "top5_chars": 5477
+  },
+  {
+   "id": "dev_0002",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "If JPMorgan's long-term issuer ratings had been cut by two notches at June 30, 2021, how much extra collateral would the firm have had to post on its OTC and OTC-cleared derivatives?",
+   "evidence": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 119
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.8185,
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 119,
+     "page_end": 119,
+     "is_table": false,
+     "section": null,
+     "text": "(a) Prior-period amount has been revised to conform with the current presentation.\nThe following table shows the impact of a single-notch and two-notch downgrade of the long-term issuer ratings of JPM"
+    },
+    {
+     "score": 0.8142,
+     "doc_name": "JPMORGAN_2021Q3_10Q",
+     "page": 121,
+     "page_end": 121,
+     "is_table": false,
+     "section": null,
+     "text": "(a) Prior-period amount has been revised to conform with the current presentation.\nThe following table shows the impact of a single-notch and two-notch downgrade of the long-term issuer ratings of JPM"
+    },
+    {
+     "score": 0.8111,
+     "doc_name": "JPMORGAN_2021Q1_10Q",
+     "page": 105,
+     "page_end": 105,
+     "is_table": false,
+     "section": null,
+     "text": "(a) Prior-period amount has been revised to conform with the current presentation.\nThe following table shows the impact of a single-notch and two-notch downgrade of the long-term issuer ratings of JPM"
+    },
+    {
+     "score": 0.8101,
+     "doc_name": "JPMORGAN_2021_10K",
+     "page": 205,
+     "page_end": 205,
+     "is_table": false,
+     "section": "Exhibit 10.18",
+     "text": "(a) Prior-period amount has been revised to conform with the current presentation.\nThe following table shows the impact of a single-notch and two-notch downgrade of the long-term issuer ratings of JPM"
+    },
+    {
+     "score": 0.7513,
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 119,
+     "page_end": 119,
+     "is_table": false,
+     "section": null,
+     "text": "Liquidity risk and credit-related contingent features\nRefer to Note 5 of JPMorgan Chase\u2019s 2020 Form 10-K for a more detailed discussion of liquidity risk and credit-related contingent features related"
+    }
+   ],
+   "value_ranks": [
+    8
+   ],
+   "rank": 1,
+   "value_rank": 8,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5192
+  },
+  {
+   "id": "dev_0003",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much cash and cash equivalents did MGM Resorts hold at the end of 2017?",
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 66
+    }
+   ],
+   "ranks": [
+    2
+   ],
+   "top": [
+    {
+     "score": 0.7958,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 174,
+     "page_end": 174,
+     "is_table": true,
+     "section": "Exhibit 99.3",
+     "text": "ASSETS\nCurrent assets\n        Cash and cash equivalents                                                                         $            208,364    $            248,474\n        Accounts receivable"
+    },
+    {
+     "score": 0.7648,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 66,
+     "page_end": 66,
+     "is_table": true,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "ASSETS\nCurrent assets\n        Cash and cash equivalents                                                                         $           1,499,995   $           1,446,581\n        Accounts receivabl"
+    },
+    {
+     "score": 0.7641,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 45,
+     "page_end": 45,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RES ULTS OF OPERA\u2026",
+     "text": "Liquidity and Capital Resources\nCash Flows \u2013 Summary\nWe require a certain amount of cash on hand to operate our resorts. In addition to required cash on hand for operations, we utilize company-wide ca"
+    },
+    {
+     "score": 0.7574,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 70,
+     "page_end": 70,
+     "is_table": true,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "For the Years ended December 31, 2017, 2016 and 2015\n(In thousands)\n                                                                                                       (In thousands )\n             "
+    },
+    {
+     "score": 0.7456,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 83,
+     "page_end": 83,
+     "is_table": true,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "Goodwill and other intangible assets consisted of the following:\n(In thousands)\n                                                                                                                        "
+    }
+   ],
+   "value_ranks": [
+    2
+   ],
+   "rank": 2,
+   "value_rank": 2,
+   "added_parts": 3,
+   "added_chars": 7793,
+   "top5_chars": 15866
+  },
+  {
+   "id": "dev_0004",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much revenue did Apple make from services in fiscal year 2019?",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 32
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7577,
+     "doc_name": "APPLE_2019_10K",
+     "page": 40,
+     "page_end": 40,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The Company has elected to record revenue net of taxes collected from customers that are remitted to governmental authorities, with the collected taxes recorded within other current liabilities until "
+    },
+    {
+     "score": 0.7251,
+     "doc_name": "APPLE_2019_10K",
+     "page": 22,
+     "page_end": 22,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "include amortization of the deferred value of Maps, Siri and free iCloud services, which are bundled in the sales price of certain products.\niPhone iPhone net sales decreased during 2019 compared to 2"
+    },
+    {
+     "score": 0.7236,
+     "doc_name": "APPLE_2019_10K",
+     "page": 40,
+     "page_end": 40,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "Net sales disaggregated by significant products and services for 2019, 2018 and 2017 were as follows (in millions):\n(in millions)\n                                                                      "
+    },
+    {
+     "score": 0.7121,
+     "doc_name": "APPLE_2019_10K",
+     "page": 22,
+     "page_end": 22,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Products and Services Performance\nBeginning in the first quarter of 2019, the Company classified the amortization of the deferred value of Maps, Siri and free iCloud services, which are bundled in the"
+    },
+    {
+     "score": 0.7106,
+     "doc_name": "APPLE_2019_10K",
+     "page": 21,
+     "page_end": 21,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Fiscal 2019 Highlights\nTotal net sales decreased 2% or $5.4 billion during 2019 compared to 2018, driven by lower net sales of iPhone, partially offset by higher net sales of Wearables, Home and Acces"
+    }
+   ],
+   "value_ranks": [
+    null
+   ],
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 4727
+  },
+  {
+   "id": "dev_0005",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What was Apple's total comprehensive income for the first nine months of fiscal 2023 (nine months ended July 1, 2023)?",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 5
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7528,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 5,
+     "page_end": 5,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (Unaudited)\n(In millions)\n                                                                           (In millions)\n                           "
+    },
+    {
+     "score": 0.7463,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 13,
+     "page_end": 13,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "(in millions)\n                                                                                        Three Months Ended                    Nine Months Ended\n                                          "
+    },
+    {
+     "score": 0.7431,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 16,
+     "page_end": 16,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "(in millions)\n    ended July 1, 2023 and June 25, 2022 is as follows (in millions):\n                                                                                    Three Months Ended              "
+    },
+    {
+     "score": 0.7423,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 15,
+     "page_end": 15,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "(in millions)\n                                                                                        Three Months Ended                    Nine Months Ended\n                                          "
+    },
+    {
+     "score": 0.7404,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 10,
+     "page_end": 10,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "(in millions)\n                                                                                           Three Months Ended                     Nine Months Ended\n                                      "
+    }
+   ],
+   "value_ranks": [
+    null
+   ],
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5865
+  },
+  {
+   "id": "dev_0006",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much net cash did Walmart use in financing activities in fiscal 2023?",
+   "evidence": [
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 46
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.8449,
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 46,
+     "page_end": 46,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "Net Cash Used in Financing Activities\nFiscal Years Ended January 31, (Amounts in millions) 2023 2022 2021 Net cash used in financing activities $ (17,039) $ (22,828) $ (16,117)\nNet cash from financing"
+    },
+    {
+     "score": 0.8422,
+     "doc_name": "WALMART_2023_10K",
+     "page": 44,
+     "page_end": 44,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026",
+     "text": "Net Cash Used in Financing Activities\nFiscal Years Ended January 31, (Amounts in millions) 2023 2022 2021 Net cash used in financing activities $ (17,039) $ (22,828) $ (16,117)\nNet cash from financing"
+    },
+    {
+     "score": 0.7938,
+     "doc_name": "WALMART_2023_10K",
+     "page": 44,
+     "page_end": 44,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026",
+     "text": "Net Cash Used in Investing Activities\nFiscal Years Ended January 31, (Amounts in millions) 2023 2022 2021 Net cash used in investing activities $ (17,722) $ (6,015) $ (10,071)\nNet cash used in investi"
+    },
+    {
+     "score": 0.7927,
+     "doc_name": "WALMART_2023_10K",
+     "page": 43,
+     "page_end": 43,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026",
+     "text": "Net Cash Provided by Operating Activities\nFiscal Years Ended January 31, (Amounts in millions) 2023 2022 2021 Net cash provided by operating activities $ 28,841 $ 24,181 $ 36,074\nNet cash provided by "
+    },
+    {
+     "score": 0.7922,
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 46,
+     "page_end": 46,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "Net Cash Used in Investing Activities\nFiscal Years Ended January 31, (Amounts in millions) 2023 2022 2021 Net cash used in investing activities $ (17,722) $ (6,015) $ (10,071)\nNet cash used in investi"
+    }
+   ],
+   "value_ranks": [
+    1
+   ],
+   "rank": 1,
+   "value_rank": 1,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5875
+  },
+  {
+   "id": "dev_0007",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What was FedEx's diluted earnings per share for fiscal 2023?",
+   "evidence": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 102
+    }
+   ],
+   "ranks": [
+    9
+   ],
+   "top": [
+    {
+     "score": 0.7308,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 58,
+     "page_end": 58,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF RESULTS OF OPERATIONS AND FINANCIAL",
+     "text": "and post-judgment interest in connection with a separate FedEx Ground legal matter.\nOperating income declined in 2023 primarily due to lower volumes at each of our transportation segments, partially o"
+    },
+    {
+     "score": 0.7296,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 54,
+     "page_end": 54,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF RESULTS OF OPERATIONS AND FINANCIAL",
+     "text": "(\u201cShopRunner\u201d) acquisition at FedEx Dataworks, Inc. (\u201cFedEx Dataworks\u201d). See the \u201cGoodwill and Other Asset Impairment Charges\u201d section of this MD&A for more information.\nOperating income in 2023 inclu"
+    },
+    {
+     "score": 0.7289,
+     "doc_name": "FEDEX_2023_10K",
+     "page": 52,
+     "page_end": 52,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF RESULTS OF OPERATIONS AND FINANCIAL CONDI\u2026",
+     "text": "Overview\nOur operating results for 2023 were negatively affected by macroeconomic conditions, including inflation well above historical levels, and elevated global interest rates. In response to marke"
+    },
+    {
+     "score": 0.727,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 54,
+     "page_end": 54,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF RESULTS OF OPERATIONS AND FINANCIAL",
+     "text": "Overview\nOur operating results for 2023 were negatively affected by macroeconomic conditions, including inflation well above historical levels, and elevated global interest rates. In response to marke"
+    },
+    {
+     "score": 0.7258,
+     "doc_name": "FEDEX_2023_10K",
+     "page": 56,
+     "page_end": 56,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF RESULTS OF OPERATIONS AND FINANCIAL CONDI\u2026",
+     "text": "in connection with a separate FedEx Ground legal matter.\nOperating income declined in 2023 primarily due to lower volumes at each of our transportation segments, partially offset by yield improvement,"
+    }
+   ],
+   "value_ranks": [
+    9
+   ],
+   "rank": 9,
+   "value_rank": 9,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6981
+  },
+  {
+   "id": "dev_0008",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "Under the credit agreement Amcor filed in April 2022, what interest margin applies to term benchmark/RFR loans when Amcor's unsecured rating is Baa2/BBB?",
+   "evidence": [
+    {
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 12
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7582,
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 12,
+     "page_end": 12,
+     "is_table": true,
+     "section": "Exhibit 10.1",
+     "text": "                                                                             Applicable Rate       Applicable Rate for\n                                                                                 "
+    },
+    {
+     "score": 0.7445,
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 131,
+     "page_end": 131,
+     "is_table": true,
+     "section": "Exhibit 10.2",
+     "text": "                                                               Applicable Rate\n                                                                  for Term\n                                              "
+    },
+    {
+     "score": 0.7367,
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": "Item 1.01 Entry into a Material Definitive Agreement",
+     "text": "At closing, the Company did not draw down any amounts pursuant to the Agreements.\nUnder the Agreements, each loan which is an alternate base rate loan will bear interest at a rate per annum equal to A"
+    },
+    {
+     "score": 0.7267,
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 167,
+     "page_end": 168,
+     "is_table": false,
+     "section": "Exhibit 10.2",
+     "text": "Borrowings of more than one Type may be outstanding at the same time; provided that there shall not at any time be more than a total of 10 (or such greater number as may be agreed to by the Administra"
+    },
+    {
+     "score": 0.7226,
+     "doc_name": "AMCOR_2022_10K",
+     "page": 83,
+     "page_end": 83,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "Priority, Guarantees, and Financial Covenants\nAll the notes are general unsecured senior obligations of the Company and are fully and unconditionally guaranteed on a joint and several basis by certain"
+    }
+   ],
+   "value_ranks": [
+    1
+   ],
+   "rank": 1,
+   "value_rank": 1,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5404
+  },
+  {
+   "id": "dev_0009",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What were Johnson & Johnson's worldwide MedTech sales in the first quarter of 2023?",
+   "evidence": [
+    {
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 8
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7045,
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": null,
+     "text": "FOR IMMEDIATE RELEASE\n\uf0b7 2023 First-Quarter reported sales growth of 5.6% to $24.7 Billion with operational growth of 9.0%* and adjusted operational growth of 7.6%*\n\uf0b7 2023 First-Quarter basic loss per "
+    },
+    {
+     "score": 0.7015,
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 3,
+     "page_end": 4,
+     "is_table": false,
+     "section": null,
+     "text": "MedTech MedTech worldwide adjusted operational sales grew 6.4%*, driven primarily by electrophysiology products in Interventional Solutions, contact lenses in Vision, wound closure products in General"
+    },
+    {
+     "score": 0.6967,
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 16,
+     "page_end": 17,
+     "is_table": false,
+     "section": null,
+     "text": "See footnotes at end of schedule\nMEDTECH SEGMENT (2,3) Operational (1) 2023 2022 Reported Currency\nINTERVENTIONAL SOLUTIONS"
+    },
+    {
+     "score": 0.6942,
+     "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+     "page": 4,
+     "page_end": 5,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "New Brunswick, N.J. (August 30, 2023) \u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and 2023 guidance which reflect its operations as a company focused on t"
+    },
+    {
+     "score": 0.6941,
+     "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+     "page": 24,
+     "page_end": 24,
+     "is_table": true,
+     "section": "Exhibit 99.2",
+     "text": "Q4 2022 YTD - Income Before Tax by Segment from Continuing Operations\n(Dollars in Millions)\n              (Dollars in Millions)                                           Pharmaceutical            MedT"
+    }
+   ],
+   "value_ranks": [
+    null
+   ],
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6169
+  },
+  {
+   "id": "dev_0010",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How large was the valuation allowance Costco set against its deferred tax assets at the end of fiscal 2019?",
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 56
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7801,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 56,
+     "page_end": 57,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The deferred tax accounts at the end of 2019 and 2018 include deferred income tax assets of $398 and $316, respectively, included in other assets; and deferred income tax liabilities of $543 and $317,"
+    },
+    {
+     "score": 0.7476,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 56,
+     "page_end": 56,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The components of the deferred tax assets (liabilities) are as follows:\n                                                                                                                           2019 "
+    },
+    {
+     "score": 0.7274,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 47,
+     "page_end": 47,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "Income Taxes\nThe Company accounts for income taxes using the asset and liability method. Deferred tax assets and liabilities are recognized for the future tax consequences attributed to differences be"
+    },
+    {
+     "score": 0.7002,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 55,
+     "page_end": 56,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "During 2019, the Company recognized net tax benefits of $123 related to the 2017 Tax Act. This benefit primarily included $105 related to U.S. taxation of deemed foreign dividends, partially offset by"
+    },
+    {
+     "score": 0.695,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 55,
+     "page_end": 55,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The provisions for income taxes are as follows:\n                                                                                                 2019               2018              2017\n     Federal:"
+    }
+   ],
+   "value_ranks": [
+    1
+   ],
+   "rank": 1,
+   "value_rank": 1,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7854
+  },
+  {
+   "id": "dev_0011",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "According to Intel's 2019 annual report, what share of data traffic did Intel expect to be video by 2022?",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 24
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7101,
+     "doc_name": "INTEL_2019_10K",
+     "page": 24,
+     "page_end": 24,
+     "is_table": false,
+     "section": null,
+     "text": "We help cities and infrastructure providers turn data into actionable insights to enable smarter, safer, and more efficient solutions. Infrastructure providers and cities are seeking the best ways to "
+    },
+    {
+     "score": 0.6508,
+     "doc_name": "INTEL_2019_10K",
+     "page": 37,
+     "page_end": 37,
+     "is_table": false,
+     "section": null,
+     "text": "CONSOLIDATED RESULTS OF OPERATIONS\nOur transformation to a data-centric company continued in 2019 as we experienced strong demand and reached critical product milestones. Most of our segments experien"
+    },
+    {
+     "score": 0.6504,
+     "doc_name": "INTEL_2019_10K",
+     "page": 6,
+     "page_end": 6,
+     "is_table": false,
+     "section": null,
+     "text": "A YEAR IN REVIEW\nOur transformation to a data-centric company continued in 2019, and we experienced strong demand and reached critical product milestones. We achieved record revenue of $72.0 billion, "
+    },
+    {
+     "score": 0.6275,
+     "doc_name": "INTEL_2019_10K",
+     "page": 28,
+     "page_end": 29,
+     "is_table": false,
+     "section": null,
+     "text": "5-YEAR TRENDS\n\u25a0 Revenue $B \u2014 Year over Year Growth \u25a0 Op Income $B 1 Source: Intel calculated TAM growth derived from industry analyst reports.\nMD&A 26\nMARKET AND BUSINESS OVERVIEW\nMarket trends and st"
+    },
+    {
+     "score": 0.6179,
+     "doc_name": "INTEL_2019_10K",
+     "page": 23,
+     "page_end": 23,
+     "is_table": false,
+     "section": null,
+     "text": "HIGHLIGHTS AND SEGMENT IMPERATIVES\n\u25cf IOTG achieved record revenue and operating income in 2019 on broad business strength and growing demand for edge computing and computer vision-based applications.\n"
+    }
+   ],
+   "value_ranks": [
+    1
+   ],
+   "rank": 1,
+   "value_rank": 1,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 4602
+  },
+  {
+   "id": "dev_0012",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "How many shares of common stock is 3M authorized to issue, according to the description of its securities filed with the 2019 10-K?",
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 142
+    }
+   ],
+   "ranks": [
+    4
+   ],
+   "top": [
+    {
+     "score": 0.754,
+     "doc_name": "3M_2019_10K",
+     "page": 4,
+     "page_end": 4,
+     "is_table": false,
+     "section": "Item 1. Business",
+     "text": "Item 1. Business.\n3M Company was incorporated in 1929 under the laws of the State of Delaware to continue operations begun in 1902. The Company\u2019s ticker symbol is MMM. As used herein, the term \u201c3M\u201d or"
+    },
+    {
+     "score": 0.7475,
+     "doc_name": "3M_2019_10K",
+     "page": 80,
+     "page_end": 80,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "NOTE 8. Supplemental Equity and Comprehensive Income Information\nCommon stock ($.01 par value per share) of 3.0 billion shares is authorized, with 944,033,056 shares issued as of December 31, 2019, 20"
+    },
+    {
+     "score": 0.7443,
+     "doc_name": "3M_2019_10K",
+     "page": 185,
+     "page_end": 185,
+     "is_table": false,
+     "section": "Exhibit 32.2",
+     "text": "EXHIBIT 32.2\nSARBANES-OXLEY SECTION 906 CERTIFICATION\nIn connection with the Annual Report of 3M Company (the \u201cCompany\u201d) on Form 10-K for the period ended December 31, 2019 as filed with the Securitie"
+    },
+    {
+     "score": 0.7426,
+     "doc_name": "3M_2019_10K",
+     "page": 142,
+     "page_end": 142,
+     "is_table": false,
+     "section": "Exhibit 4.3",
+     "text": "General\nWe are authorized to issue up to 3,000,000,000 shares of common stock, par value $0.01 per share, and 10,000,000 shares of preferred stock without par value.\nVoting Rights\nEach holder of our c"
+    },
+    {
+     "score": 0.7416,
+     "doc_name": "3M_2019_10K",
+     "page": 140,
+     "page_end": 141,
+     "is_table": false,
+     "section": "Item 16. Form 10-K Summary",
+     "text": "Item 16. Form 10-K Summary.\nA Form 10-K summary is provided at the beginning of this document, with hyperlinked cross-references. This allows users to easily locate the corresponding items in Form 10-"
+    }
+   ],
+   "value_ranks": [
+    4
+   ],
+   "rank": 4,
+   "value_rank": 4,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 4529
+  },
+  {
+   "id": "dev_0013",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "Under the sixth amendment to Costco's co-branded credit card agreement with Citibank, within how many business days after each calendar quarter must Citibank pay Costco the quarterly amounts?",
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 70
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.8016,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 70,
+     "page_end": 70,
+     "is_table": false,
+     "section": "Item 16. Form 10-K Summary",
+     "text": "SIXTH AMENDMENT TO THE CO-BRANDED CREDIT CARD PROGRAM AGREEMENT\nThis Sixth Amendment (\u201c Amendment \u201d) is between Citibank, N.A. (\u201c Bank \u201d) and Costco Wholesale Corporation (\u201c Costco \u201d), is effective as"
+    },
+    {
+     "score": 0.7556,
+     "doc_name": "COSTCO_2016_10K",
+     "page": 72,
+     "page_end": 73,
+     "is_table": false,
+     "section": "Item 15. Exhibits, Financial Statement Schedules",
+     "text": "EXECUTIVE\nBy:\n/s/ W. C RAIG J ELINEK 7/21/2016 W. Craig Jelinek President and Chief Executive Officer\n[*] Indicates confidential portions omitted pursuant to a request for confidential treatment filed"
+    },
+    {
+     "score": 0.7427,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 70,
+     "page_end": 70,
+     "is_table": false,
+     "section": "Item 16. Form 10-K Summary",
+     "text": "\u201c(9) Timing of Payments. Bank will pay to Costco the amounts in paragraphs (1) and (2) of this Schedule 9.01 within fifteen (15) Business Days following the end of the month to which such payments rel"
+    },
+    {
+     "score": 0.7419,
+     "doc_name": "COSTCO_2021_10K",
+     "page": 68,
+     "page_end": 68,
+     "is_table": false,
+     "section": "Item 15. Exhibits, Financial Statement Schedules",
+     "text": "10.8** Citibank, N.A. Co-Branded Credit Card 10-Q/A 5/10/2015 8/31/2015 Agreement\n10.8.1** First Amendment to Citi, N.A. Co-Branded 10-Q 11/22/2015 12/17/2015 Credit Card Agreement\n10.8.2** Second Ame"
+    },
+    {
+     "score": 0.7384,
+     "doc_name": "COSTCO_2018_10K",
+     "page": 66,
+     "page_end": 66,
+     "is_table": false,
+     "section": "Item 15. Exhibits, Financial Statement Schedules",
+     "text": "10.6.1** Citibank, N.A. Co-Branded Credit Card 10-Q/A 5/10/2015 8/31/2015 Agreement\n10.6.2** First Amendment to Citi, N.A. Co-Branded Credit 10-Q 11/22/2015 12/17/2015 Card Agreement\n10.6.3** Second A"
+    }
+   ],
+   "value_ranks": [
+    3
+   ],
+   "rank": 1,
+   "value_rank": 3,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 3399
+  },
+  {
+   "id": "dev_0014",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "What principal amount of 6.100% First Mortgage Bonds due 2029 did PG&E issue in June 2023?",
+   "evidence": [
+    {
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 69
+    }
+   ],
+   "ranks": [
+    7
+   ],
+   "top": [
+    {
+     "score": 0.8114,
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": "Item 8.01 Other Events",
+     "text": "Item 8.01. Other Events\nOn June 5, 2023, Pacific Gas and Electric Company (the \u201cUtility\u201d) completed the sale of (i) $850,000,000 aggregate principal amount of 6.100% First Mortgage Bonds due 2029 (the"
+    },
+    {
+     "score": 0.792,
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 35,
+     "page_end": 36,
+     "is_table": false,
+     "section": "Exhibit 1.1",
+     "text": "I-1\nSCHEDULE II\nIssuer Free Writing Prospectus dated June 1, 2023 Filed Pursuant to Rule 433 Registration No. 333-253630 (Supplementing the Preliminary Prospectus Supplement dated June 1, 2023 to the "
+    },
+    {
+     "score": 0.7899,
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 58,
+     "page_end": 59,
+     "is_table": false,
+     "section": "Exhibit 4.1",
+     "text": "ARTICLE II ESTABLISHMENT OF 6.100% FIRST MORTGAGE BONDS DUE 2029\nSECTION 201 Establishment and Designation of the 2029 Bonds.\nPursuant to the terms hereof and Section 3.01 and Article V of the Mortgag"
+    },
+    {
+     "score": 0.758,
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 74,
+     "page_end": 74,
+     "is_table": false,
+     "section": "Exhibit 4.1",
+     "text": "This 6.100% First Mortgage Bond due 2029 is one of a duly authorized issue of Bonds of the Company (the \u201c Bonds \u201d), issued and issuable in one or more series under and equally secured by an Indenture "
+    },
+    {
+     "score": 0.7572,
+     "doc_name": "PG_E_2023Q3_10Q",
+     "page": 72,
+     "page_end": 72,
+     "is_table": false,
+     "section": "Part I, Item 2. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS O\u2026",
+     "text": "Long-Term Debt Issuances and Redemptions Utility\nOn February 18, 2022, the Utility completed the sale of (i) $1 billion aggregate principal amount of 3.25% First Mortgage Bonds due 2024, (ii) $400 mil"
+    }
+   ],
+   "value_ranks": [
+    7
+   ],
+   "rank": 7,
+   "value_rank": 7,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5234
+  },
+  {
+   "id": "dev_0015",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "How many retail stores did Ulta Beauty operate when it reported its first quarter of fiscal 2023 results?",
+   "evidence": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 3
+    }
+   ],
+   "ranks": [
+    7
+   ],
+   "top": [
+    {
+     "score": 0.775,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 7,
+     "page_end": 8,
+     "is_table": false,
+     "section": "Exhibit 4",
+     "text": "Exhibit 4\nUlta Beauty, Inc. Store Update\nTotal stores open Number of stores Number of stores Total stores at beginning of the opened during the closed during the open at Fiscal 2023 quarter quarter qu"
+    },
+    {
+     "score": 0.7735,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": null,
+     "text": "May 25, 2023\nUlta Beauty Announces First Quarter Fiscal 2023 Results\nNet Sales of $2.6 Billion Compared to $2.3 Billion in the Year-Ago Quarter\nComparable Sales Increased 9.3%\nNet Income of $347.1 Mil"
+    },
+    {
+     "score": 0.7448,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "Share Repurchase Program\nDuring the first quarter of fiscal 2023, the Company repurchased 541,108 shares of its common stock at a cost of $285.8 million, including excise tax. As of April 29, 2023, $8"
+    },
+    {
+     "score": 0.7377,
+     "doc_name": "ULTABEAUTY_2024Q2_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": null,
+     "text": "August 24, 2023\nUlta Beauty Announces Second Quarter Fiscal 2023 Results\nNet Sales of $2.5 Billion Compared to $2.3 Billion in the Year-Ago Quarter\nComparable Sales Increased 8.0%\nNet Income of $300.1"
+    },
+    {
+     "score": 0.7376,
+     "doc_name": "ULTABEAUTY_2024Q2_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "For the First Six Months of Fiscal 2023\nNet sales increased 11.2% to $5.2 billion compared to $4.6 billion in the first six months of fiscal 2022, primarily due to increased comparable sales, strong n"
+    }
+   ],
+   "value_ranks": [
+    7
+   ],
+   "rank": 7,
+   "value_rank": 7,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 2461
+  },
+  {
+   "id": "dev_0016",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "In its second quarter 2023 earnings release, what total CAS pension cost did Lockheed Martin expect for 2023?",
+   "evidence": [
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 7
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7939,
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": null,
+     "text": "Capital expenditures ~$(1,950) ~$(1,950) Free cash flow 2 \u2265$6,200 \u2265$6,200\n1 The company's current 2023 financial outlook does not include any future gains or losses related to changes in valuations of"
+    },
+    {
+     "score": 0.7755,
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 10,
+     "page_end": 10,
+     "is_table": true,
+     "section": null,
+     "text": "Lockheed Martin Corporation Selected Financial Data\n(in millions)\n            (unaudited; in millions)\n                                                              Current 2023       2022\n           "
+    },
+    {
+     "score": 0.7571,
+     "doc_name": "LOCKHEEDMARTIN_2023Q1_10Q",
+     "page": 4,
+     "page_end": 4,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "3 Effective Jan\n1, 2023, the company no longer considers amortization expense related to purchased intangible assets in its evaluation of business segment operating performance. As a result, beginning"
+    },
+    {
+     "score": 0.755,
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 11,
+     "page_end": 11,
+     "is_table": false,
+     "section": null,
+     "text": "1 Total FAS/CAS pension adjustment \u2013 adjusted is a non-GAAP measure. See the \"Use of Non-GAAP Financial Measures\" section of this news release for more information. The company recognized a noncash, n"
+    },
+    {
+     "score": 0.7478,
+     "doc_name": "LOCKHEEDMARTIN_2023Q1_10Q",
+     "page": 12,
+     "page_end": 12,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "2023 Outlook\nBusiness segment operating profit (non-GAAP) ~$7,255 - $7,355 FAS/CAS operating adjustment 1 ~1,660\nIntangible asset amortization expense ~(245) Other, net ~(325)\nConsolidated operating p"
+    }
+   ],
+   "value_ranks": [
+    null
+   ],
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 4253
+  },
+  {
+   "id": "dev_0017",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "What was JPMorgan's indicative stress capital buffer requirement after the Federal Reserve's 2021 CCAR stress test?",
+   "evidence": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 8
+    }
+   ],
+   "ranks": [
+    4
+   ],
+   "top": [
+    {
+     "score": 0.8387,
+     "doc_name": "JPMORGAN_2021Q1_10Q",
+     "page": 40,
+     "page_end": 40,
+     "is_table": false,
+     "section": null,
+     "text": "disclose the Firm\u2019s indicative Stress Capital Buffer (\"SCB\")\nrequirement which will become effective October 1, 2021 % of total\nleverage and summary information regarding the Firm\u2019s stress test exposu"
+    },
+    {
+     "score": 0.8383,
+     "doc_name": "JPMORGAN_2021Q3_10Q",
+     "page": 52,
+     "page_end": 52,
+     "is_table": false,
+     "section": null,
+     "text": "Capital planning and stress testing\nequity securities in a resolution scenario. Comprehensive Capital Analysis and Review On June 28, 2021, JPMorgan Chase announced that it had completed the 2021 CCAR"
+    },
+    {
+     "score": 0.819,
+     "doc_name": "JPMORGAN_2021_10K",
+     "page": 6,
+     "page_end": 6,
+     "is_table": false,
+     "section": "Item 1. Business",
+     "text": "Refer to Capital Risk Management on pages 86-96 and Liquidity Risk Management on pages 97-104 .\nStress tests . As a large BHC, JPMorgan Chase is subject to supervisory stress testing administered by t"
+    },
+    {
+     "score": 0.7981,
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 8,
+     "page_end": 8,
+     "is_table": false,
+     "section": null,
+     "text": "Recent events\n\u2022 On June 28, 2021, JPMorgan Chase announced that it had completed the Federal Reserve\u2019s 2021 Comprehensive Capital Analysis and Review (\u201cCCAR\u201d) stress test process.\n\u2013 The Firm\u2019s 2021 in"
+    },
+    {
+     "score": 0.7918,
+     "doc_name": "JPMORGAN_2021_10K",
+     "page": 88,
+     "page_end": 89,
+     "is_table": false,
+     "section": "Exhibit 10.18",
+     "text": "On June 28, 2021, JPMorgan Chase announced that it had completed the 2021 CCAR stress test process. On August 5, 2021, the Federal Reserve affirmed the Firm's 2021 SCB requirement of 3.2% (down from 3"
+    }
+   ],
+   "value_ranks": [
+    4
+   ],
+   "rank": 4,
+   "value_rank": 4,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6261
+  },
+  {
+   "id": "dev_0018",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "At the end of fiscal 2019, within how many years did Apple expect its hedged foreign currency transactions on term debt and marketable securities to be recognized?",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 43
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7681,
+     "doc_name": "APPLE_2019_10K",
+     "page": 43,
+     "page_end": 43,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The Company may also enter into non-designated foreign currency contracts to offset a portion of the foreign currency exchange gains and losses generated by the remeasurement of certain assets and lia"
+    },
+    {
+     "score": 0.7174,
+     "doc_name": "APPLE_2019_10K",
+     "page": 43,
+     "page_end": 43,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "To protect the net investment in a foreign operation from fluctuations in foreign currency exchange rates, the Company may enter into foreign currency forward and option contracts to offset a portion "
+    },
+    {
+     "score": 0.713,
+     "doc_name": "APPLE_2019_10K",
+     "page": 41,
+     "page_end": 42,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "similar assets or liabilities in inactive markets, or other inputs that are observable or can be corroborated by observable market data for substantially the full term of the assets or liabilities.\n(3"
+    },
+    {
+     "score": 0.6898,
+     "doc_name": "APPLE_2019_10K",
+     "page": 50,
+     "page_end": 50,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "Term Debt\nAs of September 28, 2019, the Company had outstanding floating- and fixed-rate notes with varying maturities for an aggregate principal amount of $101.7 billion (collectively the \u201cNotes\u201d). T"
+    },
+    {
+     "score": 0.689,
+     "doc_name": "APPLE_2019_10K",
+     "page": 70,
+     "page_end": 70,
+     "is_table": false,
+     "section": "Exhibit 4.1",
+     "text": "The 2027 Notes\nWe issued \u20ac1,000,000,000 aggregate principal amount of the 2027 Notes on September 17, 2015. The maturity date of the 2027 Notes is September 17, 2027, and interest at a rate of 2.000% "
+    }
+   ],
+   "value_ranks": [
+    2
+   ],
+   "rank": 1,
+   "value_rank": 2,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 4441
+  },
+  {
+   "id": "dev_0019",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "In what denominations are the notes Intel issued in February 2023?",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 85
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7219,
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": "Item 8.01 Other Events",
+     "text": "Item 8.01 Other Events.\nOn February 10, 2023, Intel Corporation (\u201cIntel\u201d) issued $1,500,000,000 aggregate principal amount of 4.875% Senior Notes due 2026 (the \u201c2026 Notes\u201d), $1,750,000,000 aggregate "
+    },
+    {
+     "score": 0.6855,
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 170,
+     "page_end": 172,
+     "is_table": false,
+     "section": "Exhibit 4.5",
+     "text": "Name: Robert M. Friess Title: Corporate Vice President and Treasurer\n[Signature Page to Note]\nThis is one of the Notes of the series designated herein and referred to in the within-mentioned Indenture"
+    },
+    {
+     "score": 0.6846,
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 93,
+     "page_end": 95,
+     "is_table": false,
+     "section": "Exhibit 4.1",
+     "text": "Name: Robert M. Friess Title: Corporate Vice President and Treasurer\n[Signature Page to Note]\nThis is one of the Notes of the series designated herein and referred to in the within-mentioned Indenture"
+    },
+    {
+     "score": 0.6831,
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 203,
+     "page_end": 205,
+     "is_table": false,
+     "section": "Exhibit 4.8",
+     "text": "Name: Robert M. Friess Title: Corporate Vice President and Treasurer\n[Signature Page to Note]\nThis is one of the Notes of the series designated herein and referred to in the within-mentioned Indenture"
+    },
+    {
+     "score": 0.6823,
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 148,
+     "page_end": 150,
+     "is_table": false,
+     "section": "Exhibit 4.3",
+     "text": "Name: Robert M. Friess Title: Corporate Vice President and Treasurer\n[Signature Page to Note]\nThis is one of the Notes of the series designated herein and referred to in the within-mentioned Indenture"
+    }
+   ],
+   "value_ranks": [
+    null
+   ],
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 2931
+  },
+  {
+   "id": "dev_0020",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "How large were Apple's manufacturing purchase obligations as of July 1, 2023?",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 22
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7365,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 22,
+     "page_end": 22,
+     "is_table": false,
+     "section": "Part I, Item 2. Management\u2019s Discussion and Analysis of Financial Condition and Results o\u2026",
+     "text": "Liquidity and Capital Resources\nThe Company believes its balances of cash, cash equivalents and unrestricted marketable securities, along with cash generated by ongoing operations and continued access"
+    },
+    {
+     "score": 0.7212,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 15,
+     "page_end": 15,
+     "is_table": false,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "As of July 1, 2023, the total unrecognized compensation cost related to outstanding RSUs and stock options was $20.9 billion, which the Company expects to recognize over a weighted-average period of 2"
+    },
+    {
+     "score": 0.6936,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 13,
+     "page_end": 13,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "Inventories\n                                                                                                                      July 1,            September 24,\n                                     "
+    },
+    {
+     "score": 0.6935,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 14,
+     "page_end": 14,
+     "is_table": false,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "Term Debt\nAs of July 1, 2023 and September 24, 2022, the Company had outstanding fixed-rate notes with varying maturities for an aggregate carrying amount of $105.3 billion and $110.1 billion, respect"
+    },
+    {
+     "score": 0.6926,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 10,
+     "page_end": 10,
+     "is_table": false,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "Total net sales include $3.3 billion of revenue recognized in the three months ended July 1, 2023 that was included in deferred revenue as of April 1, 2023, $3.1 billion of revenue recognized in the t"
+    }
+   ],
+   "value_ranks": [
+    1
+   ],
+   "rank": 1,
+   "value_rank": 1,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6097
+  },
+  {
+   "id": "dev_0021",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why could the EPA's proposed rule on PFAS substances create costs for FedEx, according to its 2023 annual report?",
+   "evidence": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 28
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.75,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 28,
+     "page_end": 28,
+     "is_table": false,
+     "section": "Item 1. BUSINESS",
+     "text": "Additionally, the extent to which other countries implement that agreement could have an adverse direct or indirect effect on our business.\nHazardous Substances : In calendar 2022, the EPA proposed re"
+    },
+    {
+     "score": 0.7307,
+     "doc_name": "FEDEX_2023_10K",
+     "page": 26,
+     "page_end": 26,
+     "is_table": false,
+     "section": "Item 1. BUSINESS",
+     "text": "Additionally, the extent to which other countries implement that agreement could have an adverse direct or indirect effect on our business.\nHazardous Substances : In calendar 2022, the EPA proposed re"
+    },
+    {
+     "score": 0.681,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 28,
+     "page_end": 28,
+     "is_table": false,
+     "section": "Item 1. BUSINESS",
+     "text": "While the impact of this rulemaking on our business and results of operations cannot currently be predicted, we remain committed to transitioning to PFAS-free materials for fire suppression in accorda"
+    },
+    {
+     "score": 0.6749,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 40,
+     "page_end": 40,
+     "is_table": false,
+     "section": "Item 1A. RISK FACTORS",
+     "text": "Environmental, Climate, and Weather Risks\nWe may be affected by global climate change or by legal, regulatory, or market responses to such change. Concern over climate change, including the effect of "
+    },
+    {
+     "score": 0.669,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 27,
+     "page_end": 28,
+     "is_table": false,
+     "section": "Item 1. BUSINESS",
+     "text": "The amount of such increase will ultimately depend on a number of factors, including the number of our flights subject to CORSIA and the ETS, the fuel efficiency of our fleet, the average growth of th"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6693
+  },
+  {
+   "id": "dev_0022",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why did McDonald's leave Argentina and Lebanon out of its comparable sales from the first quarter of 2023?",
+   "evidence": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 3
+    }
+   ],
+   "ranks": [
+    2
+   ],
+   "top": [
+    {
+     "score": 0.7061,
+     "doc_name": "MCDONALDS_2023Q2_EARNINGS",
+     "page": 4,
+     "page_end": 4,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "Management reviews and analyzes business results excluding the effect of foreign currency translation, impairment and other charges and gains, as well as material regulatory and other income tax impac"
+    },
+    {
+     "score": 0.7058,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "Comparable sales and comparable guest counts are compared to the same period in the prior year and represent sales and transactions, respectively, at all restaurants, whether operated by the Company o"
+    },
+    {
+     "score": 0.6692,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "Exhibit 99.1\nFOR IMMEDIATE RELEASE FOR MORE INFORMATION CONTACT: 4/25/2023 Investors: Mike Cieplak, investor.relations@us.mcd.com Media: Lauren Altmin, lauren.altmin@us.mcd.com\nMcDONALD'S REPORTS FIRS"
+    },
+    {
+     "score": 0.6286,
+     "doc_name": "MCDONALDS_2023Q2_EARNINGS",
+     "page": 4,
+     "page_end": 4,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "ABOUT McDONALD\u2019S\nMcDonald\u2019s is the world\u2019s leading global foodservice retailer with over 40,000 locations in over 100 countries. Approximately 95% of McDonald\u2019s restaurants worldwide are owned and ope"
+    },
+    {
+     "score": 0.6208,
+     "doc_name": "MCDONALDS_2023Q2_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "Exhibit 99.1\nFOR IMMEDIATE RELEASE FOR MORE INFORMATION CONTACT: 7/27/2023 Investors: Mike Cieplak, investor.relations@us.mcd.com Media: Lauren Altmin, lauren.altmin@us.mcd.com\nMcDONALD'S REPORTS SECO"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 2,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7925
+  },
+  {
+   "id": "dev_0023",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "In mid-2021, why did JPMorgan warn that the COVID-19 pandemic could constrain its liquidity or capital?",
+   "evidence": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 191
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.8192,
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 191,
+     "page_end": 191,
+     "is_table": false,
+     "section": "Part II, Item 4. Controls and Procedures",
+     "text": "\u2022 constraints on liquidity or capital due to elevated levels of deposits, increases in risk-weighted assets (\u201cRWA\u201d) related to supporting client activities, downgrades in client credit ratings, regula"
+    },
+    {
+     "score": 0.8187,
+     "doc_name": "JPMORGAN_2021Q1_10Q",
+     "page": 173,
+     "page_end": 173,
+     "is_table": false,
+     "section": "Part II, Item 4. Controls and Procedures",
+     "text": "\u2022 constraints on liquidity or capital due to elevated levels of deposits, increases in risk-weighted assets (\u201cRWA\u201d) related to supporting client activities, downgrades in client credit ratings, regula"
+    },
+    {
+     "score": 0.7996,
+     "doc_name": "JPMORGAN_2021Q3_10Q",
+     "page": 195,
+     "page_end": 195,
+     "is_table": false,
+     "section": "Part II, Item 4. Controls and Procedures",
+     "text": "\u2022 downgrades in JPMorgan Chase\u2019s credit ratings\n\u2022 constraints on liquidity or capital due to elevated levels of deposits, increases in risk-weighted assets (\u201cRWA\u201d) related to supporting client activit"
+    },
+    {
+     "score": 0.7979,
+     "doc_name": "JPMORGAN_2021_10K",
+     "page": 12,
+     "page_end": 12,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors. conditions or from concentrations of credit and market",
+     "text": "COVID-19 Pandemic\n\u2022 the possibility that significant portions of\nOngoing effects of the COVID-19 pandemic could harm\nJPMorgan Chase\u2019s workforce are unable to work the global economy and negatively aff"
+    },
+    {
+     "score": 0.7899,
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 190,
+     "page_end": 190,
+     "is_table": false,
+     "section": "Part II, Item 4. Controls and Procedures",
+     "text": "The COVID-19 pandemic has caused and is causing\nsignificant harm to the global economy and could further negatively affect certain of JPMorgan Chase\u2019s businesses.\nOn March 11, 2020, the World Health O"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6917
+  },
+  {
+   "id": "dev_0024",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why does Walmart not record gift card purchases as sales when the card is bought?",
+   "evidence": [
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 66
+    }
+   ],
+   "ranks": [
+    6
+   ],
+   "top": [
+    {
+     "score": 0.7004,
+     "doc_name": "WALMART_2018_10K",
+     "page": 66,
+     "page_end": 67,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Membership fee revenue is included in membership and other income in the Company's Consolidated Statements of Income. The deferred membership fee is included in accrued liabilities in the Company's Co"
+    },
+    {
+     "score": 0.6847,
+     "doc_name": "WALMART_2023_10K",
+     "page": 63,
+     "page_end": 64,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Revenue Recognition\nNet Sales The Company recognizes sales revenue, net of sales taxes and estimated sales returns, at the time it sells merchandise or services to the customer. eCommerce sales includ"
+    },
+    {
+     "score": 0.6831,
+     "doc_name": "WALMART_2022_10K",
+     "page": 62,
+     "page_end": 62,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Revenue Recognition\nNet Sales The Company recognizes sales revenue, net of sales taxes and estimated sales returns, at the time it sells merchandise or services to the customer. eCommerce sales includ"
+    },
+    {
+     "score": 0.6825,
+     "doc_name": "WALMART_2020_10K",
+     "page": 62,
+     "page_end": 63,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Revenue Recognition\nNet Sales The Company recognizes sales revenue, net of sales taxes and estimated sales returns, at the time it sells merchandise or services to the customer. eCommerce sales includ"
+    },
+    {
+     "score": 0.6823,
+     "doc_name": "WALMART_2021_10K",
+     "page": 63,
+     "page_end": 64,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Revenue Recognition\nNet Sales The Company recognizes sales revenue, net of sales taxes and estimated sales returns, at the time it sells merchandise or services to the customer. eCommerce sales includ"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 6,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7785
+  },
+  {
+   "id": "dev_0025",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why did MGM Resorts' cash from operating activities rise in 2016 compared with 2015?",
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 46
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7996,
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 47,
+     "page_end": 48,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL C ONDITION AND RESULTS OF OPERA\u2026",
+     "text": "Cash Flows\nOperating activities\nTrends in our operating cash flows tend to follow trends in operating income, excluding non-cash charges, but can be affected by changes in working capital, cash paid f"
+    },
+    {
+     "score": 0.7655,
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 39,
+     "page_end": 39,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL C ONDITION AND RESULTS OF OPERA\u2026",
+     "text": "Casino revenue increased 14% in 2016 compared to 2015 due primarily to the Borgata transaction and an increase in both table games revenue and slots revenue on a same-store basis. Same-store casino re"
+    },
+    {
+     "score": 0.7569,
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 34,
+     "page_end": 34,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL C ONDITION AND RESULTS OF OPERA\u2026",
+     "text": "ITEM 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL C ONDITION AND RESULTS OF OPERATIONS\nExecutive Overview\nOur primary business is the ownership and operation of casino resorts, which offer gam"
+    },
+    {
+     "score": 0.7564,
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 39,
+     "page_end": 39,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL C ONDITION AND RESULTS OF OPERA\u2026",
+     "text": "Food and beverage revenues increased 5% in 2016 compared to 2015 due primarily to the Borgata transaction, an increase in convention and banquet business, and the opening of several new outlets. Same-"
+    },
+    {
+     "score": 0.7554,
+     "doc_name": "MGMRESORTS_2015_10K",
+     "page": 43,
+     "page_end": 43,
+     "is_table": false,
+     "section": "Item 7. M ANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERA\u2026",
+     "text": "Cash Flows \u2013 Operating Activities\nTrends in our operating cash flows tend to follow trends in operating income, excluding non-cash charges, but can be affected by changes in working capital, the timin"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7025
+  },
+  {
+   "id": "dev_0026",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "According to Intel's 2019 10-K, why have cloud service providers become more important customers for Intel?",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 62
+    }
+   ],
+   "ranks": [
+    3
+   ],
+   "top": [
+    {
+     "score": 0.7559,
+     "doc_name": "INTEL_2019_10K",
+     "page": 5,
+     "page_end": 5,
+     "is_table": false,
+     "section": null,
+     "text": "INTRODUCTION TO OUR BUSINESS\nIntel was founded in 1968 and our technology has been at the heart of computing breakthroughs ever since. More than 50 years later, we are a world leader in the design and"
+    },
+    {
+     "score": 0.7234,
+     "doc_name": "INTEL_2019_10K",
+     "page": 21,
+     "page_end": 21,
+     "is_table": false,
+     "section": null,
+     "text": "DCG focuses on three market segments: cloud service providers, enterprise and government, and communications service providers. In 2019, cloud revenue grew as service providers continued to invest in "
+    },
+    {
+     "score": 0.722,
+     "doc_name": "INTEL_2019_10K",
+     "page": 62,
+     "page_end": 62,
+     "is_table": false,
+     "section": null,
+     "text": "Gray market products also sometimes include parts that have been altered or damaged, and our reputation may be harmed when these products fail or are found to be substandard.\nWe receive a significant "
+    },
+    {
+     "score": 0.7158,
+     "doc_name": "INTEL_2019_10K",
+     "page": 18,
+     "page_end": 18,
+     "is_table": false,
+     "section": null,
+     "text": "Our PC-centric business revenue remained flat We are targeting an approximately $70 billion Our PC-centric business is operating in an year over year. We began shipping our 10nm- PC-centric revenue TA"
+    },
+    {
+     "score": 0.6958,
+     "doc_name": "INTEL_2019_10K",
+     "page": 24,
+     "page_end": 24,
+     "is_table": false,
+     "section": null,
+     "text": "We help cities and infrastructure providers turn data into actionable insights to enable smarter, safer, and more efficient solutions. Infrastructure providers and cities are seeking the best ways to "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 3,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6391
+  },
+  {
+   "id": "dev_0027",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why did eBay eliminate about 500 jobs in February 2023?",
+   "evidence": [
+    {
+     "doc_name": "EBAY_2023Q1_8K",
+     "page": 2
+    }
+   ],
+   "ranks": [
+    3
+   ],
+   "top": [
+    {
+     "score": 0.6611,
+     "doc_name": "EBAY_2023Q2_10Q",
+     "page": 43,
+     "page_end": 43,
+     "is_table": false,
+     "section": null,
+     "text": "During the first quarter of 2023, management announced plans that included a reduction in workforce and other exit costs. The reduction was substantially completed in the first quarter of 2023 and res"
+    },
+    {
+     "score": 0.6422,
+     "doc_name": "EBAY_2023Q1_EARNINGS",
+     "page": 14,
+     "page_end": 14,
+     "is_table": true,
+     "section": null,
+     "text": "Reconciliation of GAAP Operating Income t o Non-GAAP Operating Income*\n(In millions, except)\n                                                                                             Three Months E"
+    },
+    {
+     "score": 0.6282,
+     "doc_name": "EBAY_2023Q1_8K",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": "Item 7.01 Regulation FD Disclosure",
+     "text": "Item 7.01. Regulation FD Disclosure.\nOn February 7, 2023, Jamie Iannone, Chief Executive Officer of eBay Inc. (\u201ceBay\u201d), shared the following message with eBay employees:\nTeam,\nOver the past few months"
+    },
+    {
+     "score": 0.6227,
+     "doc_name": "EBAY_2023Q1_EARNINGS",
+     "page": 15,
+     "page_end": 15,
+     "is_table": true,
+     "section": null,
+     "text": "Reconciliation of Operating Cash Flow to Free Cash Flow\n(In millions)\n                                                                                                    Three Months Ended\n           "
+    },
+    {
+     "score": 0.6216,
+     "doc_name": "EBAY_2023Q2_10Q",
+     "page": 16,
+     "page_end": 16,
+     "is_table": true,
+     "section": null,
+     "text": "The following table summarizes the allocation of net revenues based on geography for the periods indicated (in millions):\n(in millions)\n                                                                "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 3,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 4782
+  },
+  {
+   "id": "dev_0028",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why does Apple say in its 2019 10-K that global and regional economic conditions strongly affect its business?",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 8
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7813,
+     "doc_name": "APPLE_2019_10K",
+     "page": 8,
+     "page_end": 8,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Global and regional economic conditions could materially adversely affect the Company\u2019s business, results of operations, financial condition and growth.\nThe Company has international operations with s"
+    },
+    {
+     "score": 0.72,
+     "doc_name": "APPLE_2019_10K",
+     "page": 23,
+     "page_end": 23,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Segment Operating Performance\nThe Company manages its business primarily on a geographic basis. The Company\u2019s reportable segments consist of the Americas, Europe, Greater China, Japan and Rest of Asia"
+    },
+    {
+     "score": 0.713,
+     "doc_name": "APPLE_2019_10K",
+     "page": 23,
+     "page_end": 23,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Americas\nAmericas net sales increased during 2019 compared to 2018 due primarily to higher Services and Wearables, Home and Accessories net sales, partially offset by lower iPhone net sales. The weakn"
+    },
+    {
+     "score": 0.7063,
+     "doc_name": "APPLE_2019_10K",
+     "page": 10,
+     "page_end": 10,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Because the Company\u2019s markets are volatile, competitive and subject to rapid technology and price changes, there is a risk the Company will forecast incorrectly and order or produce excess or insuffic"
+    },
+    {
+     "score": 0.6929,
+     "doc_name": "APPLE_2019_10K",
+     "page": 8,
+     "page_end": 8,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Potential effects include financial instability; inability to obtain credit to finance operations and purchases of the Company\u2019s products; and insolvency.\nA downturn in the economic environment could "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7184
+  },
+  {
+   "id": "dev_0029",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why is 3M exposed to economic and political conditions outside the United States, according to its 2019 10-K?",
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 10
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.681,
+     "doc_name": "3M_2019_10K",
+     "page": 179,
+     "page_end": 179,
+     "is_table": false,
+     "section": "Exhibit 21",
+     "text": "3M Japan Products Limited Japan 3M Korea High Tech Limited Korea 3M Korea Ltd Korea 3M Asset Management S.a.r.l. Luxembourg 3M Global Capital S.a.r.l. Luxembourg Medical Holdings Limited Malta 3M Mexi"
+    },
+    {
+     "score": 0.6691,
+     "doc_name": "3M_2019_10K",
+     "page": 34,
+     "page_end": 34,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Operating income margins were also impacted by the restructuring charges initiated in 2019.\nIn January 2020, 3M completed the sale of its advanced ballistic-protection business to Avon Rubber p.l.c fo"
+    },
+    {
+     "score": 0.664,
+     "doc_name": "3M_2019_10K",
+     "page": 30,
+     "page_end": 30,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Currency Effects:\n3M estimates that year-on-year currency effects, including hedging impacts, increased pre-tax income by $1 million in 2019 and decreased pre-tax income by $42 million in 2018. These "
+    },
+    {
+     "score": 0.664,
+     "doc_name": "3M_2019_10K",
+     "page": 23,
+     "page_end": 24,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Managing currency risks:\nThe stronger U.S. dollar had a negative impact on sales in full year 2019 compared to the same period last year. Net of the Company\u2019s hedging strategy, foreign currency was ne"
+    },
+    {
+     "score": 0.6638,
+     "doc_name": "3M_2019_10K",
+     "page": 16,
+     "page_end": 16,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "OVERVIEW\n3M is a diversified global manufacturer, technology innovator and marketer of a wide variety of products and services. As more fully described in both the Performance by Business Segment sect"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5880
+  },
+  {
+   "id": "dev_0030",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why does Costco consider itself highly dependent on its U.S. and Canadian operations?",
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 8
+    }
+   ],
+   "ranks": [
+    2
+   ],
+   "top": [
+    {
+     "score": 0.7476,
+     "doc_name": "COSTCO_2022_10K",
+     "page": 9,
+     "page_end": 9,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Our financial and operational performance is highly dependent on our U.S. and Canadian operations, which comprised 87% and 85% of net sales and operating income in 2022, respectively. Within the U.S.,"
+    },
+    {
+     "score": 0.7449,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 8,
+     "page_end": 8,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Our financial and operational performance is highly dependent on our U.S. and Canadian operations, which comprised 87% and 84% of net sales and operating income in 2019, respectively. Within the U.S.,"
+    },
+    {
+     "score": 0.7447,
+     "doc_name": "COSTCO_2021_10K",
+     "page": 9,
+     "page_end": 9,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Our financial and operational performance is highly dependent on our U.S. and Canadian operations, which comprised 86% and 81% of net sales and operating income in 2021, respectively. Within the U.S.,"
+    },
+    {
+     "score": 0.7436,
+     "doc_name": "COSTCO_2018_10K",
+     "page": 8,
+     "page_end": 8,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Our financial and operational performance is highly dependent on our U.S. and Canadian operations, which comprised 87% and 83% of net sales and operating income in 2018 , respectively. Within the U.S."
+    },
+    {
+     "score": 0.7434,
+     "doc_name": "COSTCO_2017_10K",
+     "page": 8,
+     "page_end": 8,
+     "is_table": false,
+     "section": "Item 1A. Risk Factors",
+     "text": "Our financial and operational performance is highly dependent on our U.S. and Canadian operations, which comprised 87% and 85% of net sales and operating income in 2017 , respectively. Within the U.S."
+    }
+   ],
+   "value_ranks": null,
+   "rank": 2,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7523
+  },
+  {
+   "id": "dev_0031",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "By what percentage did Ulta Beauty's selling, general and administrative expenses grow in the first quarter of fiscal 2023 compared with the year-ago quarter?",
+   "evidence": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7571,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": null,
+     "text": "May 25, 2023\nUlta Beauty Announces First Quarter Fiscal 2023 Results\nNet Sales of $2.6 Billion Compared to $2.3 Billion in the Year-Ago Quarter\nComparable Sales Increased 9.3%\nNet Income of $347.1 Mil"
+    },
+    {
+     "score": 0.755,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "salon expenses, partially offset by strong growth in other revenue and leverage of store fixed costs.\nSelling, general and administrative (\u201cSG&A\u201d) expenses increased 22.2% to $612.1 million compared t"
+    },
+    {
+     "score": 0.7494,
+     "doc_name": "ULTABEAUTY_2024Q2_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "For the First Six Months of Fiscal 2023\nNet sales increased 11.2% to $5.2 billion compared to $4.6 billion in the first six months of fiscal 2022, primarily due to increased comparable sales, strong n"
+    },
+    {
+     "score": 0.7471,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "Comparable sales (sales for stores open at least 14 months and e-commerce sales) increased 9.3% compared to an increase of 18.0% in the first quarter of fiscal 2022, driven by an 11.0% increase in tra"
+    },
+    {
+     "score": 0.7277,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "Net income increased 4.7% to $347.1 million compared to $331.4 million in the first quarter of fiscal 2022.\nDiluted earnings per share increased 9.2% to $6.88, including a $0.14 benefit due to income "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 3610
+  },
+  {
+   "id": "dev_0032",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What was McDonald's operating margin in the first quarter of 2023?",
+   "evidence": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2
+    }
+   ],
+   "ranks": [
+    2
+   ],
+   "top": [
+    {
+     "score": 0.7279,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "Exhibit 99.1\nFOR IMMEDIATE RELEASE FOR MORE INFORMATION CONTACT: 4/25/2023 Investors: Mike Cieplak, investor.relations@us.mcd.com Media: Lauren Altmin, lauren.altmin@us.mcd.com\nMcDONALD'S REPORTS FIRS"
+    },
+    {
+     "score": 0.6739,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": true,
+     "section": "Exhibit 99.1",
+     "text": "COMPARABLE SALES\n                                                                                                                     Increase/(Decrease)\n                                              "
+    },
+    {
+     "score": 0.6572,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "Results for 2023 included the following:\n\u2022 Pre-tax restructuring charges of $180 million, or $0.18 per share, related to Accelerating the Organization Results for 2022 included the following:\n\u2022 Pre-ta"
+    },
+    {
+     "score": 0.6547,
+     "doc_name": "MCDONALDS_8K_dated-2023-08-14",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": "Item 8.01 Other Events",
+     "text": "Item 8.01. Other Events.\nOn August 14, 2023, McDonald\u2019s Corporation (the \u201cCompany\u201d) issued $600.0 million of its 4.800% Medium-Term Notes due 2028 (the \u201c2028 Notes\u201d), $600.0 million of its 4.950% Medi"
+    },
+    {
+     "score": 0.6481,
+     "doc_name": "MCDONALDS_2023Q2_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": true,
+     "section": "Exhibit 99.1",
+     "text": "COMPARABLE SALES\n                                                                                                                     Increase/(Decrease)\n                                              "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 2,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5191
+  },
+  {
+   "id": "dev_0033",
+   "category": "calculate",
+   "answer_source": "text",
+   "question": "What were Adobe's combined federal and state net operating loss carryforwards at the end of fiscal 2018?",
+   "evidence": [
+    {
+     "doc_name": "ADOBE_2018_10K",
+     "page": 86
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7359,
+     "doc_name": "ADOBE_2018_10K",
+     "page": 86,
+     "page_end": 86,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "The unrecognized deferred tax liability for these earnings is approximately $57.8 million.\nAs of November 30, 2018, we have net operating loss carryforwards of approximately $881.1 million for federal"
+    },
+    {
+     "score": 0.707,
+     "doc_name": "ADOBE_2018_10K",
+     "page": 15,
+     "page_end": 15,
+     "is_table": false,
+     "section": "Item 1. BUSINESS",
+     "text": "For fiscal 2018, 2017 and 2016, there were no customers that represented at least 10% of net revenue. As of fiscal year end 2018 and 2017, no single customer was responsible for over 10% of our trade "
+    },
+    {
+     "score": 0.6976,
+     "doc_name": "ADOBE_2018_10K",
+     "page": 41,
+     "page_end": 42,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "Fiscal 2018 Revenue Compared to Fiscal 2017 Revenue\nDigital Media\nRevenue from Digital Media increased $1.31 billion during fiscal 2018 as compared to fiscal 2017, primarily driven by increases in rev"
+    },
+    {
+     "score": 0.6951,
+     "doc_name": "ADOBE_2018_10K",
+     "page": 100,
+     "page_end": 101,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Our fiscal year is a 52- or 53-week year that ends on the Friday closest to November 30. Each of the fiscal quarters presented were comprised of 13 weeks.\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOU"
+    },
+    {
+     "score": 0.6821,
+     "doc_name": "ADOBE_2018_10K",
+     "page": 71,
+     "page_end": 72,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "As a result, we recorded an adjustment to reduce Marketo\u2019s carrying value of deferred revenue to $74.8 million, which represents our estimate of the fair value of the contractual obligations assumed b"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6961
+  },
+  {
+   "id": "dev_0034",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What share of Intel's 2019 income before taxes came from outside the U.S.?",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 88
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.73,
+     "doc_name": "INTEL_2019_10K",
+     "page": 88,
+     "page_end": 88,
+     "is_table": true,
+     "section": null,
+     "text": "Income before taxes and the provision for taxes consisted of the following:\n(In Millions)\n                                                                                                            De"
+    },
+    {
+     "score": 0.6952,
+     "doc_name": "INTEL_2019_10K",
+     "page": 71,
+     "page_end": 71,
+     "is_table": true,
+     "section": null,
+     "text": "CONSOLIDATED STATEMENTS OF INCOME\n(In Millions, Except Per Share Amounts)\n                                                                                                            Dec 28,           "
+    },
+    {
+     "score": 0.6931,
+     "doc_name": "INTEL_2019_10K",
+     "page": 113,
+     "page_end": 113,
+     "is_table": true,
+     "section": null,
+     "text": "(In Millions, Except Per Share Amounts)\n              FINANCIAL INFORMATION BY QUARTER (UNAUDITED)\n       2019 for Quarter Ended\n       (In Millions, Except Per Share Amounts)                         "
+    },
+    {
+     "score": 0.6919,
+     "doc_name": "INTEL_2019_10K",
+     "page": 85,
+     "page_end": 85,
+     "is_table": true,
+     "section": null,
+     "text": "Revenue from unaffiliated customers for each period was as follows:\n(In Millions)\n                                                                                                                 Dec 2"
+    },
+    {
+     "score": 0.6913,
+     "doc_name": "INTEL_2019_10K",
+     "page": 48,
+     "page_end": 48,
+     "is_table": true,
+     "section": null,
+     "text": "GAAP measures to our non-GAAP measures presented:\n(In Millions, Except Per Share Amounts)\n                                                                                                              "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 1,
+   "added_chars": 1898,
+   "top5_chars": 13053
+  },
+  {
+   "id": "dev_0035",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "How much did Lockheed Martin's net sales grow in the second quarter of 2023 compared with the second quarter of 2022?",
+   "evidence": [
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 2
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.836,
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": null,
+     "text": "Lockheed Martin Reports Second Quarter 2023 Financial Results\nNet sales of $16.7 billion, an increase of 8% year-over-year Net earnings of $1.7 billion, or $6.63 per share Cash from operations of $1.1"
+    },
+    {
+     "score": 0.8134,
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 5,
+     "page_end": 5,
+     "is_table": false,
+     "section": null,
+     "text": "Aeronautics' net sales in the second quarter of 2023 increased $1.0 billion, or 17%, compared to the same period in 2022. The increase was primarily attributable to higher net sales of $735 million fo"
+    },
+    {
+     "score": 0.7754,
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 6,
+     "page_end": 6,
+     "is_table": false,
+     "section": null,
+     "text": "Space's net sales in the second quarter of 2023 increased $341 million, or 12%, compared to the same period in 2022. The increase was primarily attributable to higher net sales of $150 million for str"
+    },
+    {
+     "score": 0.7484,
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": null,
+     "text": "Cash Flows and Capital Deployment Activities\nCash from operations in the second quarter of 2023 was $1.1 billion and capital expenditures were $329 million, resulting in free cash flow of $771 million"
+    },
+    {
+     "score": 0.7482,
+     "doc_name": "LOCKHEEDMARTIN_2022Q2_10Q",
+     "page": 38,
+     "page_end": 38,
+     "is_table": false,
+     "section": "Part I, Item 2. Management\u2019s Discussion and Analysis of Financial Condition and Results o\u2026",
+     "text": "Aeronautics\u2019 net sales during the quarter ended June 26, 2022 decreased $804 million, or 12%, compared to the same period in 2021. Net sales decreased by approximately $945 million for the F-35 progra"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5431
+  },
+  {
+   "id": "dev_0036",
+   "category": "calculate",
+   "answer_source": "text",
+   "question": "By what percentage did MGM Resorts' contributions to the UNITE HERE Health fund change from 2015 to 2017?",
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 99
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7068,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 98,
+     "page_end": 99,
+     "is_table": false,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "period from acquisition of Borgata of August 1, 2016 through December 31, 2016 within the 2016 column and a full-year of contributions within the 2017 column. (5) The Company is party to ten collectiv"
+    },
+    {
+     "score": 0.689,
+     "doc_name": "MGMRESORTS_2015_10K",
+     "page": 100,
+     "page_end": 100,
+     "is_table": false,
+     "section": "Exhibit 99.3",
+     "text": "During 2014 an amendment to the collective bargaining agreements to temporarily divert contributions from the Pension Plan to the Health Fund was in effect. As a result contributions to the Pension Pl"
+    },
+    {
+     "score": 0.657,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 189,
+     "page_end": 189,
+     "is_table": true,
+     "section": "Exhibit 99.3",
+     "text": "Supplemental cash flow information consisted of the following:\n(In thousands)\n                                                                                                                  Year End"
+    },
+    {
+     "score": 0.644,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 189,
+     "page_end": 189,
+     "is_table": false,
+     "section": "Exhibit 99.3",
+     "text": "NOTE 13 \u2014 MEMBER CONTRIBUTIONS, DIVIDENDS AND DISTRIBUTIONS TO MEMBERS\nIn April 2017, the Company paid a $600 million dividend, consisting of a $350 million dividend using proceeds from the new senior"
+    },
+    {
+     "score": 0.6397,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 100,
+     "page_end": 101,
+     "is_table": true,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "Net Revenues\n(In thousands)\n        Non-operating items from unconsolidated affiliates                                             (34,751)            (53,139)             (76,462)\n        Other, net "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 2,
+   "added_chars": 4878,
+   "top5_chars": 8037
+  },
+  {
+   "id": "dev_0037",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "By what percentage did Apple's cash generated by operating activities change in fiscal 2019 compared with fiscal 2018?",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 36
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7625,
+     "doc_name": "APPLE_2018_10K",
+     "page": 25,
+     "page_end": 25,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Fiscal Period\nThe Company\u2019s fiscal year is the 52- or 53-week period that ends on the last Saturday of September. The Company\u2019s fiscal years 2018 and 2016 spanned 52 weeks each, whereas fiscal year 20"
+    },
+    {
+     "score": 0.7573,
+     "doc_name": "APPLE_2019_10K",
+     "page": 26,
+     "page_end": 26,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "The Company\u2019s investment policy generally requires securities to be investment grade and limits the amount of credit exposure to any one issuer.\nDuring 2019, cash generated by operating activities of "
+    },
+    {
+     "score": 0.7499,
+     "doc_name": "APPLE_2019_10K",
+     "page": 26,
+     "page_end": 27,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Cash used in financing activities of $91.0 billion during 2019 consisted primarily of cash used to repurchase common stock of $66.9 billion, cash used to pay dividends and dividend equivalents of $14."
+    },
+    {
+     "score": 0.7493,
+     "doc_name": "APPLE_2018_10K",
+     "page": 33,
+     "page_end": 33,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "The Company\u2019s investment policy generally requires securities to be investment grade and limits the amount of credit exposure to any one issuer.\nDuring 2018 , cash generated by operating activities of"
+    },
+    {
+     "score": 0.7358,
+     "doc_name": "APPLE_2019_10K",
+     "page": 21,
+     "page_end": 21,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Fiscal 2019 Highlights\nTotal net sales decreased 2% or $5.4 billion during 2019 compared to 2018, driven by lower net sales of iPhone, partially offset by higher net sales of Wearables, Home and Acces"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5484
+  },
+  {
+   "id": "dev_0038",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What was Apple's free cash flow (operating cash flow minus capital expenditures) for the nine months ended July 1, 2023?",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 8
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7113,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 8,
+     "page_end": 8,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (Unaudited)\n(In millions)\n                                                                         (In millions)\n                                       "
+    },
+    {
+     "score": 0.6949,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 16,
+     "page_end": 16,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "(in millions)\n    ended July 1, 2023 and June 25, 2022 is as follows (in millions):\n                                                                                    Three Months Ended              "
+    },
+    {
+     "score": 0.6874,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 13,
+     "page_end": 13,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "(in millions)\n                                                                                        Three Months Ended                    Nine Months Ended\n                                          "
+    },
+    {
+     "score": 0.6796,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 10,
+     "page_end": 10,
+     "is_table": true,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "(in millions)\n                                                                                           Three Months Ended                     Nine Months Ended\n                                      "
+    },
+    {
+     "score": 0.6719,
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 10,
+     "page_end": 10,
+     "is_table": false,
+     "section": "Part I, Item 1. Financial Statements",
+     "text": "Total net sales include $3.3 billion of revenue recognized in the three months ended July 1, 2023 that was included in deferred revenue as of April 1, 2023, $3.1 billion of revenue recognized in the t"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 5752
+  },
+  {
+   "id": "dev_0039",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What was Walmart's effective income tax rate in fiscal 2023?",
+   "evidence": [
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 56
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.823,
+     "doc_name": "WALMART_2023_10K",
+     "page": 41,
+     "page_end": 41,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026",
+     "text": "The reconciliation from the U.S. statutory rate to the effective income tax rates for fiscal 2023, 2022 and 2021 is presented in Note 9.\nAs a result of the factors discussed above, we reported $11.3 b"
+    },
+    {
+     "score": 0.8131,
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 43,
+     "page_end": 43,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "The reconciliation from the U.S. statutory rate to the effective income tax rates for fiscal 2023, 2022 and 2021 is presented in Note 9.\nAs a result of the factors discussed above, we reported $11.3 b"
+    },
+    {
+     "score": 0.7551,
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 75,
+     "page_end": 75,
+     "is_table": true,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "A reconciliation of the significant differences between the U.S. statutory tax rate and the effective income tax rate on pre-tax income from continuing operations is as follows:\n                      "
+    },
+    {
+     "score": 0.7507,
+     "doc_name": "WALMART_2023_10K",
+     "page": 73,
+     "page_end": 73,
+     "is_table": true,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "A reconciliation of the significant differences between the U.S. statutory tax rate and the effective income tax rate on pre-tax income from continuing operations is as follows:\n                      "
+    },
+    {
+     "score": 0.7416,
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 42,
+     "page_end": 43,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "The net loss in fiscal 2022 primarily consists of net losses associated with the fair value changes of our equity investments, as well as $0.4 billion in incremental losses associated with the divesti"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7056
+  },
+  {
+   "id": "dev_0040",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "How much did FedEx's net lease cost grow in fiscal 2023 compared with fiscal 2022?",
+   "evidence": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 98
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.7201,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 98,
+     "page_end": 98,
+     "is_table": true,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "The following table is a summary of the components of net lease cost for the period ended May 31 (in millions):\n(in millions)\n                                                                          "
+    },
+    {
+     "score": 0.7198,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 98,
+     "page_end": 98,
+     "is_table": true,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Supplemental balance sheet information related to leases as of May 31 is as follows (dollars in millions):\n(dollars in millions)\n                                                                       "
+    },
+    {
+     "score": 0.7174,
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 99,
+     "page_end": 99,
+     "is_table": false,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "While certain of our lease agreements contain covenants governing the use of the leased assets or require us to maintain certain levels of insurance, none of our lease agreements include material fina"
+    },
+    {
+     "score": 0.7135,
+     "doc_name": "FEDEX_2023_10K",
+     "page": 96,
+     "page_end": 96,
+     "is_table": true,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "The following table is a summary of the components of net lease cost for the period ended May 31 (in millions):\n(in millions)\n                                                                          "
+    },
+    {
+     "score": 0.713,
+     "doc_name": "FEDEX_2023_10K",
+     "page": 96,
+     "page_end": 96,
+     "is_table": true,
+     "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+     "text": "Supplemental balance sheet information related to leases as of May 31 is as follows (dollars in millions):\n(dollars in millions)\n                                                                       "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7956
+  },
+  {
+   "id": "dev_0041",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did the operating profit of CVS Health's Retail/LTC segment change from 2016 to 2017?",
+   "evidence": [
+    {
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 59
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7827,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 54,
+     "page_end": 54,
+     "is_table": false,
+     "section": "Exhibit 13",
+     "text": "Please see the Segment Analysis later in this document for additional information about our gross profit.\nOperating expenses increased $537 million, or 2.9%, in the year ended December 31, 2017, as co"
+    },
+    {
+     "score": 0.7777,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 54,
+     "page_end": 54,
+     "is_table": false,
+     "section": "Exhibit 13",
+     "text": "Net revenues increased $7.2 billion in 2017 compared to 2016, and increased $24.2 billion in 2016 compared to 2015. As you review our performance in this area, we believe you should consider the follo"
+    },
+    {
+     "score": 0.7731,
+     "doc_name": "CVSHEALTH_2016_10K",
+     "page": 185,
+     "page_end": 185,
+     "is_table": false,
+     "section": "Exhibit 13",
+     "text": "Operating expenses in our Retail/LTC Segment include store payroll, store employee benefits, store occupancy costs, selling expenses, advertising expenses, depreciation and amortization expense and ce"
+    },
+    {
+     "score": 0.7696,
+     "doc_name": "CVSHEALTH_2016_10K",
+     "page": 242,
+     "page_end": 242,
+     "is_table": true,
+     "section": "Exhibit 13",
+     "text": "     (3)  The Retail/LTC Segment gross profit for the year ended December 31, 2016 includes $46 million of acquisition-related integration costs. The integration costs are related to the acquisitions\n"
+    },
+    {
+     "score": 0.7673,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 60,
+     "page_end": 60,
+     "is_table": false,
+     "section": "Exhibit 13",
+     "text": "Gross profit in our Retail/LTC Segment includes net revenues less the cost of merchandise sold during the reporting period and the related purchasing costs, warehousing costs, delivery costs and actua"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 6996
+  },
+  {
+   "id": "dev_0042",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "Did Oracle's stock beat the S&P 500 Index over the five fiscal years ended May 31, 2020?",
+   "evidence": [
+    {
+     "doc_name": "ORACLE_2020_10K",
+     "page": 37
+    }
+   ],
+   "ranks": [
+    1
+   ],
+   "top": [
+    {
+     "score": 0.6876,
+     "doc_name": "ORACLE_2020_10K",
+     "page": 37,
+     "page_end": 37,
+     "is_table": false,
+     "section": "Item 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Pur\u2026",
+     "text": "Stock Performance Graph and Cumulative Total Return\nThe graph below compares the cumulative total stockholder return on our common stock with the cumulative total return of the S&P 500 Index and the S"
+    },
+    {
+     "score": 0.6777,
+     "doc_name": "ORACLE_2020_10K",
+     "page": 71,
+     "page_end": 71,
+     "is_table": true,
+     "section": "Item 15. Exhibits and Financial Statement Schedules",
+     "text": "           and 3,359 shares as of May 31, 2020 and May 31, 2019, respectively                                                      26,486                26,909\n          Accumulated deficit           "
+    },
+    {
+     "score": 0.6699,
+     "doc_name": "ORACLE_2020_10K",
+     "page": 37,
+     "page_end": 37,
+     "is_table": true,
+     "section": "Item 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Pur\u2026",
+     "text": "*$100 INVESTED ON MAY 31, 2015 IN STOCK Or INDEX-INCLUDING rEINVESTMENT OF DIVIDENDS\n                                                                       5/15          5/16          5/17           5"
+    },
+    {
+     "score": 0.6672,
+     "doc_name": "ORACLE_2020_10K",
+     "page": 105,
+     "page_end": 105,
+     "is_table": false,
+     "section": "Item 15. Exhibits and Financial Statement Schedules",
+     "text": "Stock options outstanding that have vested and that are expected to vest as of May 31, 2020 were as follows:"
+    },
+    {
+     "score": 0.6662,
+     "doc_name": "ORACLE_2020_10K",
+     "page": 105,
+     "page_end": 105,
+     "is_table": false,
+     "section": "Item 15. Exhibits and Financial Statement Schedules",
+     "text": "NOTES TO CONSOLIDATED FINANCIAL STATEMENTS\u2014(Continued)\nMay 31, 2020\nThe following table summarizes stock option activity, including SOs and PSOs, and includes awards granted pursuant to the 2000 Plan "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 1,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 2765
+  },
+  {
+   "id": "dev_0043",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did Ulta Beauty's net cash from operating activities in the first quarter of fiscal 2023 compare with the same quarter a year earlier?",
+   "evidence": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 7
+    }
+   ],
+   "ranks": [
+    5
+   ],
+   "top": [
+    {
+     "score": 0.7916,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": null,
+     "text": "May 25, 2023\nUlta Beauty Announces First Quarter Fiscal 2023 Results\nNet Sales of $2.6 Billion Compared to $2.3 Billion in the Year-Ago Quarter\nComparable Sales Increased 9.3%\nNet Income of $347.1 Mil"
+    },
+    {
+     "score": 0.7861,
+     "doc_name": "ULTABEAUTY_2024Q2_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "For the First Six Months of Fiscal 2023\nNet sales increased 11.2% to $5.2 billion compared to $4.6 billion in the first six months of fiscal 2022, primarily due to increased comparable sales, strong n"
+    },
+    {
+     "score": 0.7797,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "Net income increased 4.7% to $347.1 million compared to $331.4 million in the first quarter of fiscal 2022.\nDiluted earnings per share increased 9.2% to $6.88, including a $0.14 benefit due to income "
+    },
+    {
+     "score": 0.7713,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 2,
+     "is_table": false,
+     "section": null,
+     "text": "Comparable sales (sales for stores open at least 14 months and e-commerce sales) increased 9.3% compared to an increase of 18.0% in the first quarter of fiscal 2022, driven by an 11.0% increase in tra"
+    },
+    {
+     "score": 0.7696,
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 7,
+     "page_end": 7,
+     "is_table": false,
+     "section": null,
+     "text": "Consolidated Statements of Cash Flows\n(In thousands)\n13 Weeks Ended\nApril 29, April 30, 2023 2022\n(Unaudited) (Unaudited) Operating activities\nNet income $ 347,051 $ 331,395 Adjustments to reconcile n"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 5,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 2599
+  },
+  {
+   "id": "dev_0044",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did McDonald's net income in the first quarter of 2023 compare with the first quarter of 2022?",
+   "evidence": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 4
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7725,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "is_table": false,
+     "section": "Exhibit 99.1",
+     "text": "Exhibit 99.1\nFOR IMMEDIATE RELEASE FOR MORE INFORMATION CONTACT: 4/25/2023 Investors: Mike Cieplak, investor.relations@us.mcd.com Media: Lauren Altmin, lauren.altmin@us.mcd.com\nMcDONALD'S REPORTS FIRS"
+    },
+    {
+     "score": 0.7281,
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 8,
+     "page_end": 8,
+     "is_table": false,
+     "section": null,
+     "text": "2022 FINANCIAL PERFORMANCE\nIn 2022, global comparable sales increased 10.9%, primarily due to strong sales performance across all segments from continued execution of the Accelerating the Arches strat"
+    },
+    {
+     "score": 0.7267,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": true,
+     "section": "Exhibit 99.1",
+     "text": "COMPARABLE SALES\n                                                                                                                     Increase/(Decrease)\n                                              "
+    },
+    {
+     "score": 0.7166,
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "is_table": true,
+     "section": "Exhibit 99.1",
+     "text": "NET INCOME AND EARNINGS PER SHARE-DILUTED RECONCILIATION\n(Dollars in millions, except per share data)\n                                                                                 Quarters Ended Ma"
+    },
+    {
+     "score": 0.7159,
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 10,
+     "page_end": 10,
+     "is_table": false,
+     "section": null,
+     "text": "OUTLOOK\nBased on current conditions, the following is provided to assist in forecasting the Company's future results for 2023.\n\u2022 The Company expects net restaurant unit expansion will contribute nearl"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7007
+  },
+  {
+   "id": "dev_0045",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did Adobe's interest expense change in fiscal 2018 compared with fiscal 2017, and why?",
+   "evidence": [
+    {
+     "doc_name": "ADOBE_2018_10K",
+     "page": 47
+    }
+   ],
+   "ranks": [
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7828,
+     "doc_name": "ADOBE_2018_10K",
+     "page": 41,
+     "page_end": 42,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "Fiscal 2018 Revenue Compared to Fiscal 2017 Revenue\nDigital Media\nRevenue from Digital Media increased $1.31 billion during fiscal 2018 as compared to fiscal 2017, primarily driven by increases in rev"
+    },
+    {
+     "score": 0.7718,
+     "doc_name": "ADOBE_2017_10K",
+     "page": 44,
+     "page_end": 45,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "Media costs increased during fiscal 2017 as compared to fiscal 2016 primarily due to our TubeMogul advertising platform offerings, which are part of the Adobe Advertising Cloud and were acquired throu"
+    },
+    {
+     "score": 0.7702,
+     "doc_name": "ADOBE_2018_10K",
+     "page": 39,
+     "page_end": 39,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "The increase was primarily due to the increase in subscription revenue associated with our Creative Cloud offerings.\n\u2022 Adobe Experience Cloud revenue of $2.44 billion increased by $413.4 million, or 2"
+    },
+    {
+     "score": 0.7593,
+     "doc_name": "ADOBE_2017_10K",
+     "page": 41,
+     "page_end": 42,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "Fiscal 2017 Revenue Compared to Fiscal 2016 Revenue\nDigital Media\nRevenue from Digital Media increased $1.07 billion during fiscal 2017 as compared to fiscal 2016, primarily driven by increases in rev"
+    },
+    {
+     "score": 0.7584,
+     "doc_name": "ADOBE_2017_10K",
+     "page": 39,
+     "page_end": 40,
+     "is_table": false,
+     "section": "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF",
+     "text": "The increase was primarily due to the increase in subscription revenue associated with our Creative Cloud offerings.\n\u2022 Adobe Experience Cloud revenue of $2.03 billion increased by $398.9 million, or 2"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7675
+  },
+  {
+   "id": "dev_0046",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did Intel's total inventories change from the end of 2018 to the end of 2019?",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 86
+    }
+   ],
+   "ranks": [
+    3
+   ],
+   "top": [
+    {
+     "score": 0.7338,
+     "doc_name": "INTEL_2018_10K",
+     "page": 84,
+     "page_end": 84,
+     "is_table": false,
+     "section": null,
+     "text": "Additions and adjustments in 2018 include a $1.0 billion reclassification from customer deposits previously included in other long-term liabilities. The long-term supply agreements represent $4.6 bill"
+    },
+    {
+     "score": 0.7323,
+     "doc_name": "INTEL_2018_10K",
+     "page": 84,
+     "page_end": 84,
+     "is_table": true,
+     "section": null,
+     "text": "NOTE 7 : OTHER FINANCIAL STATEMENT DETAILS INVENTORIES\n(In Millions)\n                                                                                                                                   "
+    },
+    {
+     "score": 0.7214,
+     "doc_name": "INTEL_2019_10K",
+     "page": 86,
+     "page_end": 86,
+     "is_table": true,
+     "section": null,
+     "text": "NOTE 7 : OTHER FINANCIAL STATEMENT DETAILS INVENTORIES\n(In Millions)\n                                                                                                                                   "
+    },
+    {
+     "score": 0.716,
+     "doc_name": "INTEL_2019_10K",
+     "page": 74,
+     "page_end": 74,
+     "is_table": true,
+     "section": null,
+     "text": "CONSOLIDATED STATEMENTS OF CASH FLOWS\n(In Millions)\n                                                                                                                 Dec 28,              Dec 29,       "
+    },
+    {
+     "score": 0.7153,
+     "doc_name": "INTEL_2018_10K",
+     "page": 80,
+     "page_end": 80,
+     "is_table": true,
+     "section": null,
+     "text": "The following table summarizes the impacts of adopting the new revenue standard on our consolidated statements of income and balance sheets:\n(In Millions)\n                                             "
+    }
+   ],
+   "value_ranks": null,
+   "rank": 3,
+   "value_rank": null,
+   "added_parts": 0,
+   "added_chars": 0,
+   "top5_chars": 7833
+  },
+  {
+   "id": "dev_0047",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "Which company had more total revenue: Costco in fiscal 2019 or Verizon in 2018?",
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 36
+    },
+    {
+     "doc_name": "VERIZON_2018_10K",
+     "page": 111
+    }
+   ],
+   "ranks": [
+    null,
+    null
+   ],
+   "top": [
+    {
+     "score": 0.6517,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 61,
+     "page_end": 61,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "United States Canadian International Operations Operations Operations Total 2019\n      Total revenue                                                $       111,751   $       21,366   $        19,586  "
+    },
+    {
+     "score": 0.6429,
+     "doc_name": "COSTCO_2018_10K",
+     "page": 59,
+     "page_end": 59,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "United States Canadian International Operations Operations Operations Total 2018\n      Total revenue                                                $       102,286   $       20,689   $        18,601  "
+    },
+    {
+     "score": 0.6399,
+     "doc_name": "COSTCO_2018_10K",
+     "page": 61,
+     "page_end": 61,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "53 Weeks Ended September 3, 2017 First Second Third Fourth Quarter Quarter Quarter Quarter (12 Weeks) (12 Weeks) (12 Weeks) (17 Weeks) Total (53 Weeks)\nREVENUE"
+    },
+    {
+     "score": 0.6352,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 62,
+     "page_end": 62,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "Note 12\u2014Quarterly Financial Data (Unaudited)\nThe two tables that follow reflect the unaudited quarterly results of operations for 2019 and 2018.\n52 Weeks Ended September 1, 2019 First Second Third Fou"
+    },
+    {
+     "score": 0.6302,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": "Item 1. Business",
+     "text": "Item 1\u2014Business\nCostco Wholesale Corporation and its subsidiaries (Costco or the Company) began operations in 1983, in Seattle, Washington. We are principally engaged in the operation of membership wa"
+    },
+    {
+     "score": 0.6628,
+     "doc_name": "VERIZON_2019_10K",
+     "page": 47,
+     "page_end": 47,
+     "is_table": false,
+     "section": "Exhibit 13",
+     "text": "(1) As of end of period (2) Excluding acquisitions and adjustments\nConsumer's total operating revenues increased $1.3 billion, or 1.4%, during 2019 compared to 2018, primarily as a result of increases"
+    },
+    {
+     "score": 0.6605,
+     "doc_name": "VERIZON_2018_10K",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": "Item 1. Business",
+     "text": "Wireless Background\nOur Wireless segment, doing business as Verizon Wireless, provides wireless communications products and services across one of the most extensive wireless networks in the U.S. Veri"
+    },
+    {
+     "score": 0.6445,
+     "doc_name": "VERIZON_2019_10K",
+     "page": 42,
+     "page_end": 42,
+     "is_table": true,
+     "section": "Exhibit 13",
+     "text": "Consolidated Revenues\n(dollars in millions)\n                                                                                                                                                  (dollars i"
+    },
+    {
+     "score": 0.6437,
+     "doc_name": "VERIZON_2018_10K",
+     "page": 128,
+     "page_end": 129,
+     "is_table": false,
+     "section": "Exhibit 13",
+     "text": "Revenue by Category\nWe operate and manage our business in two reportable segments, Wireless and Wireline. Revenue is disaggregated by products and services, and customer groups, respectively, which we"
+    },
+    {
+     "score": 0.6417,
+     "doc_name": "VERIZON_2019_10K",
+     "page": 4,
+     "page_end": 4,
+     "is_table": false,
+     "section": "Item 1. Business",
+     "text": "Item 1. Business\nGeneral\nVerizon Communications Inc. (Verizon or the Company) is a holding company that, acting through its subsidiaries, is one of the world\u2019s leading providers of communications, inf"
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 1,
+   "added_chars": 485,
+   "top5_chars": 13515
+  },
+  {
+   "id": "dev_0048",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "How did Intel's net income in 2019 compare with Costco's net income in fiscal 2019?",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 71
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 36
+    }
+   ],
+   "ranks": [
+    1,
+    null
+   ],
+   "top": [
+    {
+     "score": 0.7156,
+     "doc_name": "INTEL_2019_10K",
+     "page": 71,
+     "page_end": 71,
+     "is_table": true,
+     "section": null,
+     "text": "CONSOLIDATED STATEMENTS OF INCOME\n(In Millions, Except Per Share Amounts)\n                                                                                                            Dec 28,           "
+    },
+    {
+     "score": 0.7112,
+     "doc_name": "INTEL_2019_10K",
+     "page": 113,
+     "page_end": 113,
+     "is_table": true,
+     "section": null,
+     "text": "(In Millions, Except Per Share Amounts)\n              FINANCIAL INFORMATION BY QUARTER (UNAUDITED)\n       2019 for Quarter Ended\n       (In Millions, Except Per Share Amounts)                         "
+    },
+    {
+     "score": 0.7046,
+     "doc_name": "INTEL_2019_10K",
+     "page": 113,
+     "page_end": 113,
+     "is_table": true,
+     "section": null,
+     "text": "(In Millions, Except Per Share Amounts)\n       2018 for Quarter Ended\n       (In Millions, Except Per Share Amounts)                                       December 29          September 29            "
+    },
+    {
+     "score": 0.6993,
+     "doc_name": "INTEL_2019_10K",
+     "page": 49,
+     "page_end": 49,
+     "is_table": true,
+     "section": null,
+     "text": "OTHER KEY INFORMATION SELECTED FINANCIAL DATA\n       Years Ended                                                 Dec 28,              Dec 29,              Dec 30,             Dec 31,              Dec "
+    },
+    {
+     "score": 0.6946,
+     "doc_name": "INTEL_2019_10K",
+     "page": 48,
+     "page_end": 48,
+     "is_table": true,
+     "section": null,
+     "text": "GAAP measures to our non-GAAP measures presented:\n(In Millions, Except Per Share Amounts)\n                                                                                                              "
+    },
+    {
+     "score": 0.6849,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 57,
+     "page_end": 57,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "The following table shows the amounts used in computing net income per share and the weighted average number of shares of basic and of potentially dilutive common shares outstanding (shares\n          "
+    },
+    {
+     "score": 0.6747,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 19,
+     "page_end": 19,
+     "is_table": true,
+     "section": "Item 6. Selected Financial Data",
+     "text": "RESULTS OF OPERATIONS\n         Net sales                                          $     149,351    $      138,434    $     126,172    $     116,073     $     113,666\n         Membership fees          "
+    },
+    {
+     "score": 0.6747,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 37,
+     "page_end": 37,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME\n(amounts in millions)\n                                                          (amounts in millions)\n                                                  "
+    },
+    {
+     "score": 0.6709,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 22,
+     "page_end": 22,
+     "is_table": false,
+     "section": "Item 7. Management's Discussion and Analysis of Financial Conditions and Results of Opera\u2026",
+     "text": "Net Sales\nNet sales increased $10,917 or 8% during 2019, primarily due to a 6% increase in comparable sales and sales at new warehouses opened in 2018 and 2019.\nChanges in foreign currencies relative "
+    },
+    {
+     "score": 0.668,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 61,
+     "page_end": 61,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "United States Canadian International Operations Operations Operations Total 2019\n      Total revenue                                                $       111,751   $       21,366   $        19,586  "
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 4,
+   "added_chars": 5671,
+   "top5_chars": 22221
+  },
+  {
+   "id": "dev_0049",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "Which company spent more on property and equipment: 3M in 2019 or Costco in fiscal 2019?",
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 60
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 39
+    }
+   ],
+   "ranks": [
+    null,
+    null
+   ],
+   "top": [
+    {
+     "score": 0.6664,
+     "doc_name": "3M_2019_10K",
+     "page": 46,
+     "page_end": 46,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Investments in property, plant and equipment enable growth across many diverse markets, helping to meet product demand and increasing manufacturing efficiency. The Company expects 2020 capital spendin"
+    },
+    {
+     "score": 0.6572,
+     "doc_name": "3M_2019_10K",
+     "page": 125,
+     "page_end": 126,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "In the first quarter of 2019, 3M sold and leased-back certain recently constructed machinery and equipment in return for municipal securities, which in aggregate, were recorded as a finance lease asse"
+    },
+    {
+     "score": 0.6542,
+     "doc_name": "3M_2019_10K",
+     "page": 37,
+     "page_end": 37,
+     "is_table": false,
+     "section": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026",
+     "text": "Employment:\nEmployment increased 2,647 positions in 2019 and increased by 1,980 positions in 2018. The above table includes the impact of acquisitions (which involved approximately 5,500 positions in "
+    },
+    {
+     "score": 0.6439,
+     "doc_name": "3M_2019_10K",
+     "page": 126,
+     "page_end": 126,
+     "is_table": false,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "As of December 31, 2019, the Company has additional operating lease commitments that have not yet commenced of approximately $23 million. These commitments pertain to 3M\u2019s right of use buildings.\nDisc"
+    },
+    {
+     "score": 0.6189,
+     "doc_name": "3M_2019_10K",
+     "page": 125,
+     "page_end": 125,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "Supplemental balance sheet information related to leases is as follows:\n(Millions unless noted)\n                                                                                                        "
+    },
+    {
+     "score": 0.6616,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 61,
+     "page_end": 61,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "United States Canadian International Operations Operations Operations Total 2019\n      Total revenue                                                $       111,751   $       21,366   $        19,586  "
+    },
+    {
+     "score": 0.6425,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 27,
+     "page_end": 27,
+     "is_table": true,
+     "section": "Item 7. Management's Discussion and Analysis of Financial Conditions and Results of Opera\u2026",
+     "text": "At September 1, 2019, our commitments to make future payments under contractual obligations were as follows:\n                                                                                     Paymen"
+    },
+    {
+     "score": 0.637,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 35,
+     "page_end": 35,
+     "is_table": true,
+     "section": "Item 8. Financial Statements and Supplementary Data",
+     "text": "ASSETS CURRENT ASSETS\n        Cash and cash equivalents                                                              $           8,384    $            6,055\n        Short-term investments             "
+    },
+    {
+     "score": 0.6334,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 3,
+     "page_end": 3,
+     "is_table": false,
+     "section": "Item 1. Business",
+     "text": "Item 1\u2014Business\nCostco Wholesale Corporation and its subsidiaries (Costco or the Company) began operations in 1983, in Seattle, Washington. We are principally engaged in the operation of membership wa"
+    },
+    {
+     "score": 0.6325,
+     "doc_name": "COSTCO_2019_10K",
+     "page": 24,
+     "page_end": 24,
+     "is_table": true,
+     "section": "Item 7. Management's Discussion and Analysis of Financial Conditions and Results of Opera\u2026",
+     "text": "Selling, General and Administrative Expenses\n                                                                                            2019               2018              2017\n    SG&A expenses    "
+    }
+   ],
+   "value_ranks": null,
+   "rank": null,
+   "value_rank": null,
+   "added_parts": 1,
+   "added_chars": 485,
+   "top5_chars": 18122
+  },
+  {
+   "id": "dev_0050",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "Which company had the higher net profit margin in 2017: CVS Health or MGM Resorts?",
+   "evidence": [
+    {
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 80
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 30
+    }
+   ],
+   "ranks": [
+    2,
+    2
+   ],
+   "top": [
+    {
+     "score": 0.635,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 126,
+     "page_end": 127,
+     "is_table": true,
+     "section": "Exhibit 13",
+     "text": "15 Quarterly Financial Information (Unaudited)\n(In millions, except per share amounts Quarter Quarter Quarter Quarter Year)\n                                                                            "
+    },
+    {
+     "score": 0.6341,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 80,
+     "page_end": 80,
+     "is_table": true,
+     "section": "Exhibit 13",
+     "text": "Consolidated Statements of Income\n(In millions, except per share amounts 2017 2016 2015)\n                                                                                                            Yea"
+    },
+    {
+     "score": 0.6305,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 127,
+     "page_end": 128,
+     "is_table": true,
+     "section": "Exhibit 13",
+     "text": "Income (loss) from discontinued operations\n(In millions, except per share amounts 2017 2016 2015 2014 2013)\n                       attributable to CVS Health                        $       \u2014    $     "
+    },
+    {
+     "score": 0.6256,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 53,
+     "page_end": 53,
+     "is_table": true,
+     "section": "Exhibit 13",
+     "text": "Summary of our Consolidated Financial Results\n(In millions, except per share amounts 2017 2016 2015)\n                                                                                                   "
+    },
+    {
+     "score": 0.6194,
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 127,
+     "page_end": 128,
+     "is_table": true,
+     "section": "Exhibit 13",
+     "text": "Income (loss) from discontinued operations\n(In millions, except per share amounts 2017 2016 2015 2014 2013)\n                       attributable to CVS Health                        $       \u2014    $     "
+    },
+    {
+     "score": 0.6547,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 110,
+     "page_end": 110,
+     "is_table": true,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "NOTE 20 \u2014 SELECTED QUARTERLY FINANCIAL RESULTS (UNAUDITED)\n                                                                                                                Quarter\n                     "
+    },
+    {
+     "score": 0.6431,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 30,
+     "page_end": 30,
+     "is_table": true,
+     "section": "Item 6. SELECTED FINANCIAL DATA",
+     "text": "(In thousands, except per share data)\n                                                                                2017            2016             2015             2014             2013\n          "
+    },
+    {
+     "score": 0.6385,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 100,
+     "page_end": 101,
+     "is_table": true,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "Net Revenues\n(In thousands)\n        Non-operating items from unconsolidated affiliates                                             (34,751)            (53,139)             (76,462)\n        Other, net "
+    },
+    {
+     "score": 0.6379,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 140,
+     "page_end": 141,
+     "is_table": false,
+     "section": "Exhibit 21",
+     "text": "Cayman Islands MGM Hospitality Holdings, LLC Dubai MGM Hospitality Development, LLC Dubai\nMGM Hospitality International Holdings, Ltd. Isle of Man MGM Asia Pacific Limited (f/k/a MGM Resorts China Hol"
+    },
+    {
+     "score": 0.6315,
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 97,
+     "page_end": 97,
+     "is_table": false,
+     "section": "Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+     "text": "MGM Resorts International dividends\nThe Company paid, or will pay, the following dividends:\n\u2022 $68 million quarterly dividend, or $0.12 per share, to be paid on March 15, 2018 to holders of record as o"
+    }
+   ],
+   "value_ranks": null,
+   "rank": 2,
+   "value_rank": null,
+   "added_parts": 6,
+   "added_chars": 11086,
+   "top5_chars": 22610
+  }
+ ]
+}

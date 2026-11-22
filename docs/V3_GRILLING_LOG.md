@@ -465,3 +465,158 @@ Also watch: the 361 PDFs are hosted on company sites (links can break) and Finan
 ### Correction (2026-11-19, M0) — corpus count
 - **Finding:** the document list has 361 rows, but one name (`FOOTLOCKER_2023_annualreport`) appears twice with two periods. Unique PDFs = **360** (269 10-K, 30 8-K, 27 10-Q, 29 earnings, 5 annual reports). The repo also holds 8 PDFs not in the list; they are not in the corpus.
 - **Action (done):** "361" changed to "360" in the specs, ADRs, glossary and V3_DESIGN.md. Pitch now says "360 real company filings", because some documents are earnings reports, not SEC filings. Older entries above keep the original number.
+
+### Q85 (M1a, 2026-11-19) — Which PDF readers to test?
+- **Options shown:** pdfplumber, PyMuPDF (AGPL), Docling, Unstructured, Marker (GPL), cloud services (paid).
+- **Answer:** Start with pdfplumber only. If it breaks, move to another reader.
+- **Rule added:** pdfplumber fails if < 95% of checked table cells are correct (value, row, unit). Next candidate: Docling.
+- **Verdict:** changed (spec said "comparison by test"). Flagged as a portfolio shortcut.
+
+### Q86 (M1a, 2026-11-19) — Which vector store?
+- **Options shown:** pgvector, Qdrant, ChromaDB.
+- **Answer:** pgvector not needed. Use Qdrant.
+- **Side effect:** chats, logs and eval results need a second database (PostgreSQL or SQLite), decided at the API milestone.
+- **Verdict:** changed (spec said "chosen by test").
+- **Also agreed:** the chunk method does not matter for the M1a tests; it is decided in M1b.
+
+### Q87 (M1a, 2026-11-19) — Which embedding models to test?
+- **Options shown:** bge-small, bge-base, bge-m3, nomic-embed v1.5, Qwen3-Embedding-0.6B, gte-modernbert-base; dropped jina-v3 (non-commercial licence) and paid APIs (OpenAI, Voyage).
+- **Answer:** No paid models. Try the free ones.
+- **Test set:** bge-base-en-v1.5 (baseline), bge-m3 (long input + sparse vectors for hybrid), Qwen3-Embedding-0.6B (strongest quality candidate).
+- **Verdict:** confirmed (free local model, Q38).
+
+### Q88 (M1a, 2026-11-19) — How do we store tables?
+- **Finding:** pdfplumber reads all values (100%), but its table finder breaks columns. Word positions keep the columns (96%). See `experiments/m1a/RESULTS_reader.md`.
+- **Options shown:** layout text; own table builder from word positions; Docling; cloud service (paid).
+- **Answer:** layout text (option 1).
+- **Check added:** dev questions tagged `answer_source` = table / text; compare scores. Clearly lower table score → test Docling on the same 77 cells.
+- **Verdict:** new. Portfolio shortcut flagged (production usually stores structured tables).
+
+### Q89 (M1a, 2026-11-19) — Which embedding model?
+- **Finding:** Hit@5 bge-base 55%, bge-m3 55–57.5%, Qwen3-0.6B 52.5–55% on 40 frozen questions → tie. bge-base is ~3× faster than bge-m3 and ~14× faster than Qwen3. See `experiments/m1a/RESULTS_embed.md`.
+- **Options shown:** bge-base-en-v1.5; bge-m3 (recommended for 8k input + sparse vectors); Qwen3-Embedding-0.6B.
+- **Answer:** bge-base-en-v1.5. The 512-token limit is not an issue with small chunks (6% cut in the test).
+- **Rule added:** M1b chunks stay below 512 tokens; log any chunk that is cut. Hybrid search, if needed, uses a separate BM25 index.
+- **Verdict:** new.
+
+### Q90 (M1b prep, 2026-11-20) — One section logic per company, or one general logic?
+- **Finding:** 360 PDFs, 40 companies; 93% are SEC filings printed from HTML. 10-K Items are fixed by law, but simple rules find all key Items in only 196/269 10-Ks. Causes: format (no space after the dot, dashes, non-breaking spaces), content in Exhibit 13 (CVS, older Verizon), own layout (Intel 2017+, MGM 2015–18). Templates change between years for the same company; only 9/40 companies use the same PDF tool every year. Script: `experiments/structure/check_10k_items.py`.
+- **Options shown:** one rule set per company; one general logic per document with a fallback to page headings.
+- **Answer:** one general logic per document (production standard). Company rules only after a measured failure.
+- **Also agreed:** use the document list (not the file name) for company, type and year; period dates from the cover page.
+- **Other types (checked after):** 10-Q Items 1–4 found 24/27; 8-K item codes 28/28 (large 8-Ks are mostly exhibits); earnings have no legal structure but a common pattern; all 5 annual reports contain a full 10-K. The same general logic covers all types. See ingestion.md §10.
+- **Verdict:** new.
+
+### Q91 (M1b, 2026-11-20) — Which documents does M1b use?
+- **Options shown:** ~20 documents chosen to cover all templates; all 360; ~5 easy 10-Ks.
+- **Answer:** ~20 documents that cover all 5 types and the difficult layouts (own layout, Exhibit 13, annual report, large 8-K, landscape earnings, 10-Q). Only documents no locked question uses (same guard as M1a). M1b finalises the logic; M2 runs it unchanged on all 360 and logs weak documents.
+- **Verdict:** new.
+
+### Q92 (M1b, 2026-11-20) — How does Qdrant run?
+- **Options shown:** Qdrant server in Docker; Qdrant local mode (in-process, folder on disk; portfolio shortcut).
+- **Answer:** Qdrant server in Docker (`docker-compose.yml`, `localhost:6333`). Production standard; dashboard; snapshots; API and ingestion can use it at the same time.
+- **Verdict:** new.
+
+### Q93 (M1b, 2026-11-20) — Chunk method and size?
+- **Shown:** chunk types (fixed, recursive, structure-aware, semantic, parent-child, LLM context, page). Production norm: structure-aware + recursive inside long sections, 256–1,024 tokens, tables separate.
+- **Answer:** structure-aware split (Items / item codes / page headings; never across a section), recursive split (paragraph → sentence) inside long sections; join short parts of the same section. Target ~350 tokens, max 480 (bge-base limit 512 incl. the header). Overlap ~50 tokens when a section is split; none across headings. Header on each chunk: "Company type FY › section › subsection".
+- **Later, only on measured need:** parent-child; other sizes (200 / 480) tested on the dev set in M1d.
+- **Verdict:** new.
+
+### Q94 (M1b, 2026-11-20) — Table chunks?
+- **Options shown:** one table = one chunk, large tables split into row groups; tables as normal text; one chunk per table, never split.
+- **Answer:** one table = one chunk with title, unit line and column headers. If > 480 tokens: split into row groups; each group repeats title + headers. Every part carries `table_id` so the answer step can fetch the full table. A table continued on the next page is joined first. Small tables stay as their own chunk.
+- **Verdict:** new.
+
+### Q95 (M1b, 2026-11-20) — Who writes table labels? (closes Q23)
+- **Options shown:** code template; LLM label (one call per table, cost); code template now, LLM later only on measured need.
+- **Answer:** code template now (company, type, year, section, table title, unit, row names, column headers). LLM labels only if table questions score clearly lower on the dev set; cost estimate and approval first.
+- **Verdict:** new (closes Q23).
+
+### Q96 (M1b, 2026-11-20) — Period dates?
+- **Asked:** can the year in the file name be used directly as a filter?
+- **Finding:** not alone. Fiscal ≠ calendar year (Walmart FY2023 ends 2023-01-31); a 10-K holds 2–3 years of numbers (single-10-K companies: Amex, FedEx, PayPal); name year can be wrong (`SALESFORCE_2021_8K_dated-2023-01-04`, `FOOTLOCKER_2022_8K_dated_2023-02-21`) or missing (McDonald's 8-Ks).
+- **Answer:** (1) `fiscal_year` from the document list `doc_period`; (2) exact `period_end` / `report_date` from cover-page patterns per type (earnings: fallback to list year + name quarter, `period_source = estimated`); (3) log list/cover mismatches; (4) store `fiscal_year`, `fiscal_quarter`, `period_end`, `report_date`, `period_source` on every chunk. Search uses the year as a **boost, not a hard filter**. Free (no LLM).
+- **Verdict:** new (refines Q25).
+
+### Q97 (M1b, 2026-11-20) — Document list year vs year in the document?
+- **Finding:** `ULTABEAUTY_2024Q1_EARNINGS` says "First Quarter Fiscal 2023, ended April 29, 2023"; the document list says 2024. Other list errors found: `LOCKHEEDMARTIN_2023Q2_10Q` is an earnings release; `PG_E_2023_EARNINGS-dated-2023-06-01` is an 8-K with debt exhibits.
+- **Options shown:** A. year stated in the document; B. document list year.
+- **Answer:** A. `fiscal_year` = the year stated in the document when found (e.g. "Fiscal 2023"), else the list year; `list_fiscal_year` keeps the list value; the difference is logged. A 10-K cover gives only the end date, so its year stays the list year (some retailers name the fiscal year by its start).
+- **Verdict:** new (refines Q96).
+
+### Q98 (M1b, 2026-11-20) — Why not LangChain or LlamaIndex?
+- **Finding:** not decided before; ingestion was built on direct libraries (pdfplumber, sentence-transformers, qdrant-client). Most of the code is SEC-specific (Items, tables, periods, data checks) and no framework has it.
+- **Options shown:** direct libraries (recommended); a framework for the simple parts (load, embed, store).
+- **Answer:** direct libraries; document the reasons and where the custom code gives an advantage. Look again at the answer/agent milestone.
+- **Record:** ADR-0008 (`docs/adr/0008-no-rag-framework.md`).
+- **Verdict:** new.
+
+### Q99 (M1b, 2026-11-20) — How deep should the embedded label be?
+- **Finding:** label hand-check, 2 rounds × 50 random chunks: company/type/year 100/100, section 94/100, subsection 85/100, minor heading 85/100, full path 66% → 72%. Each fix round found new rare cases (long tail). The section is found by fixed SEC patterns; subsection and heading only by font style, which differs per company.
+- **Asked:** is it worth this effort to get the label right?
+- **Options shown:** A. keep fixing round by round; B. fix the general causes, take the minor heading out; C. accept the labels as they are. Then: stop tuning, embed only the reliable part, measure.
+- **Answer:** embed company, type, period + section only. Subsection, heading and table title are stored fields, not embedded (`context` keeps the full path). Fix the open section causes (cheap). Setting `label_depth` (`none` / `section` / `full`); M1d compares the three on the dev set; the deep levels come back only if `full` clearly wins.
+- **Section fixes done:** Item check runs before the heading word limit (long titles: 10-K Item 5 in 6 documents, Costco Item 7, 8-K Item 5.02, Amcor Item 2.03, Apple 10-Q Item 2); brackets removed before the title word count, limit 24; exhibit heading with a footnote number ("Exhibit 10.5(40)", MGM); an Item followed by lower-case prose is not a heading. Known left: a wrapped sentence line "Exhibit 95 to this annual report." (3M, 1 chunk).
+- **Verdict:** new (refines Q93, Q95).
+
+### Q100 (M1c, 2026-11-20) — Search filters and how to fix eval errors
+- **Asked:** high-level plan check (subset → ingest → metadata filter + vector search → LLM answer → dev set → fix → all 360 → test).
+- **Answer:** (1) the **company is a hard filter**; year, period, doc type and section are optional (boost only). (2) Fixing dev-set errors fixes the **cause** (search, PDF reading, answer step) for a group of questions, never a single question. The final score comes from the locked set.
+- **Record:** `engine.md` §search, `evaluation.md` §5.
+- **Verdict:** confirms Q24, Q25, Q96; new rule for fixes.
+
+### Q101 (M1d, 2026-11-21) — Drop the label-depth test?
+- **Finding:** search test on `chunks` (label `section`): Hit@5 0.48. Doc-filter oracle Hit@5 0.70. Main causes: wrong year or duplicate document of the same company (61% of top-5 chunks), and table pages ranked low. Not the label.
+- **Asked:** why are we still experimenting with the label?
+- **Answer:** drop the `none` / `full` comparison planned in Q99. `section` is final. Look at the label again only if data points to it (tables still weak after the year boost and keyword search).
+- **Also decided:** stop search experiments until the baseline gives a first answer score (walking skeleton first). The year boost comes with the router in M2.
+- **Verdict:** changes Q99 (test dropped).
+
+### Q102 (M1, 2026-11-21) — Baseline output format
+- **Asked by the user:** the LLM call always returns structured JSON, never free text.
+- **Answer:** the baseline returns JSON (`found`, `answer`, `value`, `unit`, `sources`), enforced by the API (`output_config.format`) and checked by code; one retry, then a clear error (Q32). Top 5 chunks, no company filter, Claude Sonnet 5.5 with thinking off (`between_tools`; `disabled` is rejected on this model). Paid runs only with `--allow-paid`; dry run prints tokens + cost; $2 cost limit per run.
+- **Flag:** a classic plain-RAG baseline answers in free text; the README says ours uses JSON.
+- **Verdict:** new (applies Q31 to the baseline).
+
+### Q103 (M1, 2026-11-21) — What is stored as ground truth, and what is checked?
+- **Finding:** the gold number was stored only inside the `gold_answer` text, so the scorer had to parse it.
+- **Answer:** add `gold_value` + `gold_unit` to answerable dev questions (35 of 50 filled; the 15 without are explain-why and choice answers, marked by hand). Checks: number (code), text (hand), evidence page in the chunks (code), the model cited the evidence page (code). Failure tags: `search_miss`, `answer_error`, `broken_json`.
+- **Verdict:** new (refines Q10, Q11).
+
+### Q104 (M2, 2026-11-21) — Router schema and search filters
+- **Finding:** baseline: 13 of 19 wrong answers were search misses; 61% of top-5 chunks came from other documents of the same company (mostly the wrong year). The time fields on a chunk (`fiscal_year`, `period_end`, …) belong to the **document**, not to the chunk's content.
+- **Asked by the user:** if the router extracts the year and the doc type correctly, why not hard filters? That is the purpose of the structured router output.
+- **Issue shown:** the year in the question is the year of the fact; `fiscal_year` is the year of the document. The FY2023 10-K also holds 2022; not every year exists for every company. An exact year filter would miss these.
+- **Answer:**
+  1. Router JSON: `route`, `standalone_question`, `reason`, `companies` (enum of the 40 names), `other_companies` (names not in the collection → `not_covered`), `years`, `doc_type`, `metric`. All fields always present; empty = `[]` / `null`. The LLM gives `answer` / `unrelated` / `advice` / `unclear`; code sets `not_covered`.
+  2. The LLM gives only the years the question names. **Code** chooses the documents from a catalog: year Y, else Y+1 (option A; option B "always Y and Y+1" measured as the alternative); never Y−1. `doc_type` only when the question names it.
+  3. All of these are **hard filters**, applied as one `doc_name` filter. Coverage: company has a document for Y or Y+1.
+  4. Follow-up rewrite folded into the router call (`standalone_question`); history length at M3.
+- **Known limit:** years only in an old 5-year table are not reached; twin documents of the same year are both searched.
+- **Record:** `router.md` §2, `engine.md` §3.2.
+- **Verdict:** changes Q100 (year and doc type: boost → hard filter via document list).
+- **Measured (2026-11-21):** free "perfect router" test: Hit@5 0.48 (no filter) / 0.48 (company only) / **0.62 (rule A)** / 0.62 (rule B, lower Hit@1) / 0.70 (gold document). Rule A kept (rule set before the run: B needed +3 questions). Smoke test (paid, $0.0153): router JSON correct 2/2, answers 1/2 (the miss: right page, the needed table chunk ranked low). Results: `experiments/m2/RESULTS_router_search.md`, `experiments/m2/RESULTS_smoke.md`.
+
+### Q105 (M2, 2026-11-22) — Table title in the embedded text; split tables
+- **Finding:** inside the gold document, table pages Hit@5 0.61 vs text 0.82. Smoke test dev_0032: right page, but the "KEY FINANCIAL METRICS - CONSOLIDATED" table chunk ranked low. Code check: the table title was in the answer text, but not in the embedded text (`label_depth=section` dropped it, Q99). Split tables caused 3 baseline errors (the needed rows in another part).
+- **Asked by the user:** why is something in the LLM text that is not in the embedded text? The embedded text should be the label + the chunk text.
+- **Answer:**
+  1. Rule: **embedded text = label + everything in the answer text.** The table title is part of the table, so it is always embedded. Subsection and minor heading stay out (Q99/Q101 unchanged for them).
+  2. Apply by a normal re-ingestion (38 min, free) into a new collection `chunks_v2` with its own ingest folder; the old `chunks` stays for rollback. Small test first: the dev-set documents in a test collection, compared with `chunks` inside the gold document (page Hit@k and a new "gold number in the top-k chunks" check). Go only if tables improve and text does not drop.
+  3. Split tables: code adds the other parts of a retrieved table (same `table_id`, nearest first, max 3 extra chunks per question).
+- **Record:** `ingestion.md` (Embedded label), `engine.md` §3.2.
+- **Verdict:** changes Q99 (table title embedded); new (split-table expansion).
+- **Measured (2026-11-22, free):** small test (21 dev documents, gold document): table Hit@5 0.607 → 0.607, Hit@10 0.643 → 0.714; text unchanged (text chunks identical). **No gain at Hit@5 → `chunks_v2` not built** (rule set before the run). The split-table expansion does not fix the 3 baseline "split table" errors: those are one table cut into separate tables by the PDF reader, not row groups. Results: `experiments/m2/RESULTS_table_titles.md`. Decision on the next step: open.
+
+### Q106 (M2, 2026-11-22) — PDF reader: tables cut in two, lost table titles
+- **Finding (Q105 hand check + free count on `chunks`):** 9,780 of 29,808 tables (33%, in 344 of 359 documents) have no title. The reader ends a table at the first line without numbers, so a long row name with no numbers (Apple 10-Q p5 "Change in unrealized gains/losses…") cuts one table into two, and the row name becomes the title of the second table. The join rule only joins tables across pages. The title is looked for only in the block just above the table (J&J "Supplementary Sales Data" was lost). 7,589 pages have 2+ tables (upper limit for cuts).
+- **Answer:**
+  1. Same-page join with strict rules (gap 1–2 lines, no numbers, no full stop, not a heading, columns line up, same unit); the gap lines become a row.
+  2. Lost titles: look higher; exact rule after a hand check of about 30 untitled tables. Never a section heading.
+  3. Strict over loose; unit tests check that different tables stay separate.
+  4. Measure: a free count script (untitled tables, probable cuts) before and after on the 21 dev documents + 20 random documents; hand check of 20 changed tables (locked evidence pages skipped). Small test collection `chunks_t106` (folder `data/v3_t106`), compared inside the gold document. **Go only if table Hit@5 goes up from 0.607 and text Hit@5 does not drop** → then full re-ingest into `chunks_v2` (also brings in Q105), keep `chunks` for rollback.
+- **Record:** `ingestion.md` §4 (Table cuts and titles).
+- **Verdict:** new (refines Q94, Q105).
+- **Measured (2026-11-22, free):** cuts 103 → 24 and untitled 972 → 893 (41 documents); most untitled tables were harmless (13/30 not financial tables, 6/30 title text already in the chunk). Hand check of 20 changed tables: 14 better, 0 wrong joins. Small test (gold document): table Hit@5 0.607 → **0.714**, Hit@10 0.643 → 0.821, Value@5 0.60 → 0.80; text unchanged → go. Full `chunks_v2` (rule A): all Hit@5 0.62 → 0.64, Hit@10 0.70 → 0.78, table Hit@5 0.571 → 0.607, Value@5 0.50 → 0.65; text unchanged → **switched to `chunks_v2`** (also brings in Q105). `chunks` kept for rollback. Results: `experiments/m2/RESULTS_table_reader.md`.
+- **Smoke test (2026-11-22, paid $0.0150, approved):** `chunks_v2`, dev_0005 (cut table) and dev_0009 (lost title): 2/2 correct, page seen and cited. `experiments/m2/RESULTS_smoke_q106.md`.

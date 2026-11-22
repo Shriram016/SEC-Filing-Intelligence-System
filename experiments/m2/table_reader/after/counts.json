@@ -1,0 +1,185 @@
+{
+ "documents": 41,
+ "total": {
+  "tables": 2749,
+  "untitled": 893,
+  "cut_A": 20,
+  "cut_B": 4
+ },
+ "per_doc": {
+  "3M_2019_10K": {
+   "tables": 112,
+   "untitled": 42
+  },
+  "ADOBE_2018_10K": {
+   "tables": 80,
+   "untitled": 31
+  },
+  "AMCOR_2022_8K_dated-2022-04-26": {
+   "tables": 11,
+   "untitled": 10
+  },
+  "APPLE_2019_10K": {
+   "tables": 58,
+   "untitled": 22
+  },
+  "APPLE_2023Q3_10Q": {
+   "tables": 28,
+   "untitled": 6
+  },
+  "COSTCO_2019_10K": {
+   "cut_A": 1,
+   "tables": 51,
+   "untitled": 9
+  },
+  "CVSHEALTH_2017_10K": {
+   "tables": 68,
+   "untitled": 16
+  },
+  "EBAY_2023Q1_8K": {
+   "tables": 0
+  },
+  "FEDEX_2023_annualreport": {
+   "cut_A": 3,
+   "tables": 97,
+   "untitled": 31
+  },
+  "INTEL_2019_10K": {
+   "tables": 76,
+   "untitled": 21
+  },
+  "INTEL_2023_8K_dated-2023-02-10": {
+   "tables": 11,
+   "untitled": 9
+  },
+  "JOHNSON_JOHNSON_2023Q1_EARNINGS": {
+   "tables": 16,
+   "untitled": 4
+  },
+  "JPMORGAN_2021Q2_10Q": {
+   "cut_A": 7,
+   "tables": 260,
+   "untitled": 142
+  },
+  "LOCKHEEDMARTIN_2023Q2_10Q": {
+   "tables": 14,
+   "untitled": 4
+  },
+  "MCDONALDS_2023Q1_EARNINGS": {
+   "tables": 4
+  },
+  "MGMRESORTS_2017_10K": {
+   "cut_A": 3,
+   "tables": 108,
+   "untitled": 23
+  },
+  "ORACLE_2020_10K": {
+   "cut_A": 1,
+   "tables": 69,
+   "untitled": 24
+  },
+  "PG_E_2023_EARNINGS-dated-2023-06-01": {
+   "tables": 49,
+   "untitled": 44
+  },
+  "ULTABEAUTY_2024Q1_EARNINGS": {
+   "tables": 5,
+   "untitled": 1
+  },
+  "VERIZON_2018_10K": {
+   "cut_A": 1,
+   "tables": 114,
+   "untitled": 17
+  },
+  "WALMART_2023_annualreport": {
+   "cut_A": 1,
+   "tables": 74,
+   "untitled": 25
+  },
+  "MICROSOFT_2022_10K": {
+   "tables": 70,
+   "untitled": 6
+  },
+  "ACTIVISIONBLIZZARD_2015_10K": {
+   "tables": 77,
+   "untitled": 32
+  },
+  "PEPSICO_2023Q1_EARNINGS": {
+   "tables": 19,
+   "untitled": 7
+  },
+  "ORACLE_2019_10K": {
+   "cut_A": 1,
+   "tables": 74,
+   "untitled": 25
+  },
+  "MICROSOFT_2020_10K": {
+   "tables": 69,
+   "untitled": 5
+  },
+  "AES_2020_10K": {
+   "cut_B": 2,
+   "tables": 152,
+   "untitled": 60
+  },
+  "COSTCO_2023_8K_dated-2023-08-16": {
+   "tables": 0
+  },
+  "AMAZON_2015_10K": {
+   "tables": 65,
+   "untitled": 17
+  },
+  "BOEING_2015_10K": {
+   "cut_A": 1,
+   "cut_B": 1,
+   "tables": 108,
+   "untitled": 31
+  },
+  "NETFLIX_2020_10K": {
+   "tables": 57,
+   "untitled": 17
+  },
+  "JOHNSON_JOHNSON_2021_10K": {
+   "cut_A": 1,
+   "tables": 77,
+   "untitled": 18
+  },
+  "MCDONALDS_2023Q2_EARNINGS": {
+   "tables": 6,
+   "untitled": 2
+  },
+  "MGMRESORTS_2019_10K": {
+   "tables": 87,
+   "untitled": 20
+  },
+  "WALMART_2021_10K": {
+   "tables": 69,
+   "untitled": 22
+  },
+  "EBAY_2019_10K": {
+   "tables": 79,
+   "untitled": 18
+  },
+  "CORNING_2017_10K": {
+   "cut_B": 1,
+   "tables": 113,
+   "untitled": 35
+  },
+  "MICROSOFT_2016_10K": {
+   "tables": 75,
+   "untitled": 10
+  },
+  "EBAY_2017_10K": {
+   "tables": 73,
+   "untitled": 20
+  },
+  "NETFLIX_2015_10K": {
+   "tables": 52,
+   "untitled": 14
+  },
+  "WALMART_2018_10K": {
+   "tables": 122,
+   "untitled": 53
+  }
+ }
+}

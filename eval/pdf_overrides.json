@@ -1,0 +1,19 @@
+{
+  "about": "PDFs that replace a broken file from the pinned FinanceBench commit. The catalog reads the override when present and records its sha256.",
+  "overrides": {
+    "INTEL_2023_8K_dated-2023-02-10": {
+      "source": "doc_link (intc.com)",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0001193125-23-032608/0001193125-23-032608.pdf",
+      "downloaded": "2026-11-20",
+      "bytes": 4165782,
+      "sha256": "dd8623d6bf0b5752376676e0a1fb7f4ef25cd423bdc34c42c98c7fed0bace49b",
+      "pages": 214
+    }
+  },
+  "unrecoverable": {
+    "INTEL_2023_8K_dated-2023-08-16": {
+      "reason": "FinanceBench copy and doc_link copy (212,472 bytes) are both truncated; no PDF reader opens them. Skipped and logged.",
+      "checked": "2026-11-20"
+    }
+  }
+}

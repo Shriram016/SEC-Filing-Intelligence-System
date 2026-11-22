@@ -1,0 +1,3778 @@
+{
+ "meta": {
+  "started": "20261121-130339",
+  "model": "claude-sonnet-5-5",
+  "top_k": 5,
+  "collection": "chunks",
+  "thinking": "between_tools",
+  "max_cost_usd": 2.0,
+  "stopped_by_cost_limit": false,
+  "questions_run": 50,
+  "questions_planned": 50
+ },
+ "questions": [
+  {
+   "id": "dev_0001",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What non-current liability did 3M carry for its U.S. qualified and non-qualified pension plans at the end of 2019?",
+   "gold_answer": "$1,788 million",
+   "gold_value": 1788.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 91
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state the non-current liability for 3M's U.S. qualified and non-qualified pension plans at the end of 2019. They only note that non-qualified unfunded pension and postretirement plans aggregated less than $40 million (as of the 2018 and 2017 year-ends, with the 2019 text truncated), and that these are excluded from the benefit tables, which are not included in the extracts.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "3M_2019_10K",
+      "page": 90
+     },
+     {
+      "doc_name": "3M_2018_10K",
+      "page": 91
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 90,
+     "page_end": 90,
+     "score": 0.7208,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 89,
+     "page_end": 89,
+     "score": 0.7167,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2018_10K",
+     "page": 91,
+     "page_end": 91,
+     "score": 0.7136,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2017_10K",
+     "page": 93,
+     "page_end": 94,
+     "score": 0.7115,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2018_10K",
+     "page": 90,
+     "page_end": 91,
+     "score": 0.7108,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2834,
+   "output_tokens": 201,
+   "cost_usd": 0.007678,
+   "latency_s": 2.501
+  },
+  {
+   "id": "dev_0002",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "If JPMorgan's long-term issuer ratings had been cut by two notches at June 30, 2021, how much extra collateral would the firm have had to post on its OTC and OTC-cleared derivatives?",
+   "gold_answer": "$1,427 million",
+   "gold_value": 1427.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 119
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not contain the two-notch downgrade collateral amounts, and none cover June 30, 2021. They only describe the downgrade table's content and methodology for other dates (June 30, 2022; March 31, 2023; June 30, 2023; September 30, 2022; December 31, 2022), without the dollar figures.",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "JPMORGAN_2023Q2_10Q",
+     "page": 129,
+     "page_end": 129,
+     "score": 0.8296,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022Q2_10Q",
+     "page": 118,
+     "page_end": 118,
+     "score": 0.8249,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2023Q1_10Q",
+     "page": 106,
+     "page_end": 106,
+     "score": 0.8239,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022_10K",
+     "page": 203,
+     "page_end": 203,
+     "score": 0.8221,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022Q3_10Q",
+     "page": 120,
+     "page_end": 120,
+     "score": 0.8207,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2519,
+   "output_tokens": 135,
+   "cost_usd": 0.006388,
+   "latency_s": 2.262
+  },
+  {
+   "id": "dev_0003",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much cash and cash equivalents did MGM Resorts hold at the end of 2017?",
+   "gold_answer": "$1,499,995 thousand (about $1.50 billion)",
+   "gold_value": 1499995.0,
+   "gold_unit": "USD thousand",
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 66
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "The balance sheet in the MGM Resorts FY2017 10-K shows cash and cash equivalents of $208,364 thousand at December 31, 2017 (about $208.4 million). Note that this balance sheet appears to be for a subsidiary entity (it shows members' equity and a due to MGM Resorts International line), not MGM Resorts International consolidated.",
+    "value": 208.364,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "MGMRESORTS_2017_10K",
+      "page": 174
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "MGMRESORTS_2021_10K",
+     "page": 83,
+     "page_end": 83,
+     "score": 0.8,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 174,
+     "page_end": 174,
+     "score": 0.7958,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2020_10K",
+     "page": 80,
+     "page_end": 80,
+     "score": 0.7948,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2018_10K",
+     "page": 174,
+     "page_end": 174,
+     "score": 0.7842,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 311,
+     "page_end": 311,
+     "score": 0.7818,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3051,
+   "output_tokens": 180,
+   "cost_usd": 0.007902,
+   "latency_s": 2.205
+  },
+  {
+   "id": "dev_0004",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much revenue did Apple make from services in fiscal year 2019?",
+   "gold_answer": "$46,291 million",
+   "gold_value": 46291.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 32
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not contain Apple's Services net sales for fiscal 2019. The 2019-2021 10-K extracts cut off before the disaggregated revenue tables, and the only Services figures provided (from the 2018 10-K) cover fiscal 2018 ($37,190 million), 2017 and 2016.",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 40,
+     "page_end": 40,
+     "score": 0.7577,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2020_10K",
+     "page": 42,
+     "page_end": 42,
+     "score": 0.7526,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2021_10K",
+     "page": 40,
+     "page_end": 40,
+     "score": 0.7516,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2018_10K",
+     "page": 67,
+     "page_end": 67,
+     "score": 0.7425,
+     "is_table": true
+    },
+    {
+     "doc_name": "APPLE_2018_10K",
+     "page": 25,
+     "page_end": 25,
+     "score": 0.7406,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2202,
+   "output_tokens": 133,
+   "cost_usd": 0.005734,
+   "latency_s": 2.587
+  },
+  {
+   "id": "dev_0005",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What was Apple's total comprehensive income for the first nine months of fiscal 2023 (nine months ended July 1, 2023)?",
+   "gold_answer": "$73,347 million",
+   "gold_value": 73347.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 5
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state total comprehensive income for the nine months ended July 1, 2023. Net income ($74,039 million), foreign currency translation (-$494 million) and derivative instrument changes (-$2,346 million) are shown, but the extract is cut off before any unrealized gains/losses on marketable debt securities or the total comprehensive income line, so the total cannot be determined.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "APPLE_2023Q3_10Q",
+      "page": 5
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 5,
+     "page_end": 5,
+     "score": 0.7528,
+     "is_table": true
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 13,
+     "page_end": 13,
+     "score": 0.7463,
+     "is_table": true
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 16,
+     "page_end": 16,
+     "score": 0.7431,
+     "is_table": true
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 15,
+     "page_end": 15,
+     "score": 0.7423,
+     "is_table": true
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 10,
+     "page_end": 10,
+     "score": 0.7404,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2054,
+   "output_tokens": 181,
+   "cost_usd": 0.005918,
+   "latency_s": 2.364
+  },
+  {
+   "id": "dev_0006",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much net cash did Walmart use in financing activities in fiscal 2023?",
+   "gold_answer": "$17,039 million (about $17.0 billion)",
+   "gold_value": 17039.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 46
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Walmart used $17,039 million of net cash in financing activities in fiscal 2023 (fiscal year ended January 31, 2023).",
+    "value": 17039.0,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "WALMART_2023_10K",
+      "page": 44
+     },
+     {
+      "doc_name": "WALMART_2023_annualreport",
+      "page": 46
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 46,
+     "page_end": 46,
+     "score": 0.8449,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2023_10K",
+     "page": 44,
+     "page_end": 44,
+     "score": 0.8422,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2022_10K",
+     "page": 42,
+     "page_end": 43,
+     "score": 0.8349,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2020_10K",
+     "page": 40,
+     "page_end": 40,
+     "score": 0.8011,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 45,
+     "page_end": 46,
+     "score": 0.8,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2772,
+   "output_tokens": 126,
+   "cost_usd": 0.006804,
+   "latency_s": 2.295
+  },
+  {
+   "id": "dev_0007",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What was FedEx's diluted earnings per share for fiscal 2023?",
+   "gold_answer": "$15.48",
+   "gold_value": 15.48,
+   "gold_unit": "USD",
+   "evidence": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 102
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state FedEx's total diluted earnings per share for fiscal 2023; they only give per-share impacts of specific items (e.g., $0.81 for DRIVE costs, $0.21 for aircraft impairment charges).",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 58,
+     "page_end": 58,
+     "score": 0.7308,
+     "is_table": false
+    },
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 54,
+     "page_end": 54,
+     "score": 0.7296,
+     "is_table": false
+    },
+    {
+     "doc_name": "FEDEX_2023_10K",
+     "page": 52,
+     "page_end": 52,
+     "score": 0.7289,
+     "is_table": false
+    },
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 54,
+     "page_end": 54,
+     "score": 0.727,
+     "is_table": false
+    },
+    {
+     "doc_name": "FEDEX_2023_10K",
+     "page": 56,
+     "page_end": 56,
+     "score": 0.7258,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3111,
+   "output_tokens": 108,
+   "cost_usd": 0.007302,
+   "latency_s": 2.033
+  },
+  {
+   "id": "dev_0008",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "Under the credit agreement Amcor filed in April 2022, what interest margin applies to term benchmark/RFR loans when Amcor's unsecured rating is Baa2/BBB?",
+   "gold_answer": "112.5 basis points per year",
+   "gold_value": 112.5,
+   "gold_unit": "basis points",
+   "evidence": [
+    {
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 12
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Under the April 2022 credit agreement, the applicable rate for Term Benchmark/RFR loans at a Baa2/BBB unsecured rating (Category 3) is 112.5 basis points per annum (1.125%).",
+    "value": 112.5,
+    "unit": "bps per annum",
+    "sources": [
+     {
+      "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+      "page": 12
+     },
+     {
+      "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+      "page": 131
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 12,
+     "page_end": 12,
+     "score": 0.7582,
+     "is_table": true
+    },
+    {
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 131,
+     "page_end": 131,
+     "score": 0.7445,
+     "is_table": true
+    },
+    {
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7367,
+     "is_table": false
+    },
+    {
+     "doc_name": "AMCOR_2022_8K_dated-2022-04-26",
+     "page": 167,
+     "page_end": 168,
+     "score": 0.7267,
+     "is_table": false
+    },
+    {
+     "doc_name": "AMCOR_2022_10K",
+     "page": 83,
+     "page_end": 83,
+     "score": 0.7226,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2441,
+   "output_tokens": 178,
+   "cost_usd": 0.006662,
+   "latency_s": 2.331
+  },
+  {
+   "id": "dev_0009",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What were Johnson & Johnson's worldwide MedTech sales in the first quarter of 2023?",
+   "gold_answer": "$7,481 million",
+   "gold_value": 7481.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 8
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state the dollar amount of worldwide MedTech sales for Q1 2023. They only give growth rates (adjusted operational growth of 6.4%, operational growth of 11.0%) and total company Q1 2023 sales of $24.7 billion; the MedTech segment table is cut off.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+      "page": 3
+     },
+     {
+      "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+      "page": 16
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "JOHNSON_JOHNSON_2022_10K",
+     "page": 32,
+     "page_end": 33,
+     "score": 0.7199,
+     "is_table": false
+    },
+    {
+     "doc_name": "JOHNSON_JOHNSON_2022Q4_EARNINGS",
+     "page": 4,
+     "page_end": 4,
+     "score": 0.7089,
+     "is_table": false
+    },
+    {
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7045,
+     "is_table": false
+    },
+    {
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 3,
+     "page_end": 4,
+     "score": 0.7015,
+     "is_table": false
+    },
+    {
+     "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+     "page": 16,
+     "page_end": 17,
+     "score": 0.6967,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2445,
+   "output_tokens": 208,
+   "cost_usd": 0.00697,
+   "latency_s": 2.145
+  },
+  {
+   "id": "dev_0010",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How large was the valuation allowance Costco set against its deferred tax assets at the end of fiscal 2019?",
+   "gold_answer": "$76 million",
+   "gold_value": 76.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 56
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Costco recorded a valuation allowance of $76 million at the end of fiscal 2019, primarily related to foreign tax credits it believes will not be realized due to carry forward limitations.",
+    "value": 76.0,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "COSTCO_2019_10K",
+      "page": 56
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "COSTCO_2020_10K",
+     "page": 58,
+     "page_end": 59,
+     "score": 0.7828,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 56,
+     "page_end": 57,
+     "score": 0.7801,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2018_10K",
+     "page": 56,
+     "page_end": 56,
+     "score": 0.7679,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2021_10K",
+     "page": 58,
+     "page_end": 59,
+     "score": 0.7644,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2022_10K",
+     "page": 58,
+     "page_end": 58,
+     "score": 0.7617,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2845,
+   "output_tokens": 116,
+   "cost_usd": 0.00685,
+   "latency_s": 1.834
+  },
+  {
+   "id": "dev_0011",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "According to Intel's 2019 annual report, what share of data traffic did Intel expect to be video by 2022?",
+   "gold_answer": "About 82%",
+   "gold_value": 82.0,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 24
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Intel expected approximately 82% of data traffic to be video by 2022 (per its 2019 annual report).",
+    "value": 82.0,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "INTEL_2019_10K",
+      "page": 24
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 24,
+     "page_end": 24,
+     "score": 0.7101,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 37,
+     "page_end": 37,
+     "score": 0.6508,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 6,
+     "page_end": 6,
+     "score": 0.6504,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2018_10K",
+     "page": 28,
+     "page_end": 29,
+     "score": 0.6483,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2017_10K",
+     "page": 30,
+     "page_end": 30,
+     "score": 0.63,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2267,
+   "output_tokens": 88,
+   "cost_usd": 0.005414,
+   "latency_s": 1.85
+  },
+  {
+   "id": "dev_0012",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "How many shares of common stock is 3M authorized to issue, according to the description of its securities filed with the 2019 10-K?",
+   "gold_answer": "3,000,000,000 shares (par value $0.01 per share)",
+   "gold_value": 3000000000.0,
+   "gold_unit": "shares",
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 142
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "3M is authorized to issue 3.0 billion shares of common stock ($.01 par value per share), with 944,033,056 shares issued as of December 31, 2019.",
+    "value": 3000000000.0,
+    "unit": "shares",
+    "sources": [
+     {
+      "doc_name": "3M_2019_10K",
+      "page": 80
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 4,
+     "page_end": 4,
+     "score": 0.754,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2015_10K",
+     "page": 140,
+     "page_end": 141,
+     "score": 0.75,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2017_10K",
+     "page": 84,
+     "page_end": 84,
+     "score": 0.7498,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 80,
+     "page_end": 80,
+     "score": 0.7475,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2018_10K",
+     "page": 133,
+     "page_end": 134,
+     "score": 0.7449,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2612,
+   "output_tokens": 109,
+   "cost_usd": 0.006314,
+   "latency_s": 1.851
+  },
+  {
+   "id": "dev_0013",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "Under the sixth amendment to Costco's co-branded credit card agreement with Citibank, within how many business days after each calendar quarter must Citibank pay Costco the quarterly amounts?",
+   "gold_answer": "15 business days",
+   "gold_value": 15.0,
+   "gold_unit": "business days",
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 70
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Citibank must pay Costco the paragraph (5) amounts in equal quarterly payments within fifteen (15) Business Days following the end of each calendar quarter (Sixth Amendment, effective January 1, 2020).",
+    "value": 15.0,
+    "unit": "business days",
+    "sources": [
+     {
+      "doc_name": "COSTCO_2019_10K",
+      "page": 70
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 70,
+     "page_end": 70,
+     "score": 0.8016,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2016_10K",
+     "page": 72,
+     "page_end": 73,
+     "score": 0.7556,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 70,
+     "page_end": 70,
+     "score": 0.7427,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2021_10K",
+     "page": 68,
+     "page_end": 68,
+     "score": 0.7419,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2018_10K",
+     "page": 66,
+     "page_end": 66,
+     "score": 0.7384,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2438,
+   "output_tokens": 128,
+   "cost_usd": 0.006156,
+   "latency_s": 1.794
+  },
+  {
+   "id": "dev_0014",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "What principal amount of 6.100% First Mortgage Bonds due 2029 did PG&E issue in June 2023?",
+   "gold_answer": "$850,000,000",
+   "gold_value": 850000000.0,
+   "gold_unit": "USD",
+   "evidence": [
+    {
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 69
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "In June 2023, PG&E (the Utility) completed the sale of $850,000,000 aggregate principal amount of 6.100% First Mortgage Bonds due 2029.",
+    "value": 850.0,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+      "page": 3
+     },
+     {
+      "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+      "page": 35
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 3,
+     "page_end": 3,
+     "score": 0.8114,
+     "is_table": false
+    },
+    {
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 35,
+     "page_end": 36,
+     "score": 0.792,
+     "is_table": false
+    },
+    {
+     "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01",
+     "page": 58,
+     "page_end": 59,
+     "score": 0.7899,
+     "is_table": false
+    },
+    {
+     "doc_name": "PG_E_2020_10K",
+     "page": 147,
+     "page_end": 147,
+     "score": 0.7741,
+     "is_table": false
+    },
+    {
+     "doc_name": "PG_E_2020_10K",
+     "page": 72,
+     "page_end": 72,
+     "score": 0.7638,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3071,
+   "output_tokens": 164,
+   "cost_usd": 0.007782,
+   "latency_s": 2.2
+  },
+  {
+   "id": "dev_0015",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "How many retail stores did Ulta Beauty operate when it reported its first quarter of fiscal 2023 results?",
+   "gold_answer": "1,359 stores (across 50 states)",
+   "gold_value": 1359.0,
+   "gold_unit": "stores",
+   "evidence": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 3
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Ulta Beauty operated 1,359 stores at the end of the first quarter of fiscal 2023 (April 29, 2023).",
+    "value": 1359.0,
+    "unit": "stores",
+    "sources": [
+     {
+      "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+      "page": 2
+     },
+     {
+      "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+      "page": 7
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 7,
+     "page_end": 8,
+     "score": 0.775,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7735,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+     "page": 8,
+     "page_end": 9,
+     "score": 0.7507,
+     "is_table": true
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7448,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q2_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7377,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2161,
+   "output_tokens": 146,
+   "cost_usd": 0.005782,
+   "latency_s": 1.881
+  },
+  {
+   "id": "dev_0016",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "In its second quarter 2023 earnings release, what total CAS pension cost did Lockheed Martin expect for 2023?",
+   "gold_answer": "$1.7 billion",
+   "gold_value": 1.7,
+   "gold_unit": "USD billion",
+   "evidence": [
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 7
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Lockheed Martin expected total CAS pension cost of approximately $1.7 billion for 2023 (the supplemental table shows $1,725 million).",
+    "value": 1725.0,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+      "page": 10
+     },
+     {
+      "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+      "page": 3
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 3,
+     "page_end": 3,
+     "score": 0.7939,
+     "is_table": false
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2021_10K",
+     "page": 57,
+     "page_end": 57,
+     "score": 0.7813,
+     "is_table": false
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2022Q2_10Q",
+     "page": 47,
+     "page_end": 47,
+     "score": 0.778,
+     "is_table": false
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 10,
+     "page_end": 10,
+     "score": 0.7755,
+     "is_table": true
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2022_10K",
+     "page": 40,
+     "page_end": 40,
+     "score": 0.7736,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2403,
+   "output_tokens": 155,
+   "cost_usd": 0.006356,
+   "latency_s": 1.971
+  },
+  {
+   "id": "dev_0017",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "What was JPMorgan's indicative stress capital buffer requirement after the Federal Reserve's 2021 CCAR stress test?",
+   "gold_answer": "3.2% (down from 3.3%)",
+   "gold_value": 3.2,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 8
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "JPMorgan's 2021 indicative Stress Capital Buffer requirement after the Federal Reserve's 2021 CCAR stress test was 3.2% (down from 3.3%), implying a minimum Standardized CET1 capital ratio of 11.2%.",
+    "value": 3.2,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "JPMORGAN_2021Q2_10Q",
+      "page": 8
+     },
+     {
+      "doc_name": "JPMORGAN_2021Q3_10Q",
+      "page": 52
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "JPMORGAN_2021Q1_10Q",
+     "page": 40,
+     "page_end": 40,
+     "score": 0.8387,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2021Q3_10Q",
+     "page": 52,
+     "page_end": 52,
+     "score": 0.8383,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2021_10K",
+     "page": 6,
+     "page_end": 6,
+     "score": 0.819,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022_10K",
+     "page": 6,
+     "page_end": 6,
+     "score": 0.7982,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.7981,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3202,
+   "output_tokens": 181,
+   "cost_usd": 0.008214,
+   "latency_s": 2.084
+  },
+  {
+   "id": "dev_0018",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "At the end of fiscal 2019, within how many years did Apple expect its hedged foreign currency transactions on term debt and marketable securities to be recognized?",
+   "gold_answer": "Within 23 years",
+   "gold_value": 23.0,
+   "gold_unit": "years",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 43
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "As of September 28, 2019 (end of fiscal 2019), Apple's hedged interest rate transactions on its foreign currency-denominated term debt or marketable securities were expected to be recognized within 8 years.",
+    "value": 8.0,
+    "unit": "years",
+    "sources": [
+     {
+      "doc_name": "APPLE_2019_10K",
+      "page": 43
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 11,
+     "page_end": 12,
+     "score": 0.7719,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2020_10K",
+     "page": 44,
+     "page_end": 45,
+     "score": 0.7691,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 43,
+     "page_end": 43,
+     "score": 0.7681,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2018_10K",
+     "page": 51,
+     "page_end": 51,
+     "score": 0.7664,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2022_10K",
+     "page": 42,
+     "page_end": 42,
+     "score": 0.7618,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2112,
+   "output_tokens": 122,
+   "cost_usd": 0.005444,
+   "latency_s": 1.709
+  },
+  {
+   "id": "dev_0019",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "In what denominations are the notes Intel issued in February 2023?",
+   "gold_answer": "$2,000 and multiples of $1,000 above that",
+   "gold_value": 2000.0,
+   "gold_unit": "USD",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 85
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state the denominations of the notes Intel issued in February 2023. They give aggregate principal amounts and note terms, but the denominations section (Section 3.03) appears only as a table-of-contents entry in a 2017 10-K, without its content.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+      "page": 2
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7219,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2017_10K",
+     "page": 121,
+     "page_end": 121,
+     "score": 0.6921,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 170,
+     "page_end": 172,
+     "score": 0.6855,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 93,
+     "page_end": 95,
+     "score": 0.6846,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2023_8K_dated-2023-02-10",
+     "page": 203,
+     "page_end": 205,
+     "score": 0.6831,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2058,
+   "output_tokens": 146,
+   "cost_usd": 0.005576,
+   "latency_s": 2.493
+  },
+  {
+   "id": "dev_0020",
+   "category": "find_number",
+   "answer_source": "text",
+   "question": "How large were Apple's manufacturing purchase obligations as of July 1, 2023?",
+   "gold_answer": "$38.4 billion ($38.1 billion payable within 12 months)",
+   "gold_value": 38.4,
+   "gold_unit": "USD billion",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 22
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "As of July 1, 2023, Apple had manufacturing purchase obligations of $38.4 billion, of which $38.1 billion was payable within 12 months.",
+    "value": 38.4,
+    "unit": "USD billion",
+    "sources": [
+     {
+      "doc_name": "APPLE_2023Q3_10Q",
+      "page": 22
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 22,
+     "page_end": 22,
+     "score": 0.7365,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 15,
+     "page_end": 15,
+     "score": 0.7212,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2021_10K",
+     "page": 51,
+     "page_end": 51,
+     "score": 0.7071,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2022_10K",
+     "page": 28,
+     "page_end": 28,
+     "score": 0.705,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2020_10K",
+     "page": 56,
+     "page_end": 57,
+     "score": 0.7043,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2557,
+   "output_tokens": 114,
+   "cost_usd": 0.006254,
+   "latency_s": 2.429
+  },
+  {
+   "id": "dev_0021",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why could the EPA's proposed rule on PFAS substances create costs for FedEx, according to its 2023 annual report?",
+   "gold_answer": "The proposed rule would classify certain PFAS as hazardous substances under CERCLA. PFAS are used in the firefighting foams approved by the FAA for fuel fires at airports, so airports, airlines and refineries could become liable for cleanup of historical PFAS contamination; FedEx could incur remediation costs for its current and former facilities.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 28
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "In calendar 2022 the EPA proposed regulations to categorize certain PFAS as 'hazardous substances' under CERCLA. Once finalized, the rule could subject airports, airlines, and refineries to potential liability for cleanup of historical PFAS contamination (PFAS are used in FAA-approved firefighting foams), so FedEx could incur remediation costs for currently and formerly operated facilities. The impact cannot currently be predicted, and FedEx is committed to transitioning to PFAS-free fire suppression materials per the FAA's May 2023 framework.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "FEDEX_2023_annualreport",
+      "page": 28
+     },
+     {
+      "doc_name": "FEDEX_2023_10K",
+      "page": 26
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 28,
+     "page_end": 28,
+     "score": 0.75,
+     "is_table": false
+    },
+    {
+     "doc_name": "FEDEX_2023_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.7307,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2023Q2_10Q",
+     "page": 33,
+     "page_end": 33,
+     "score": 0.7213,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2021_10K",
+     "page": 103,
+     "page_end": 103,
+     "score": 0.7179,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2023Q2_10Q",
+     "page": 32,
+     "page_end": 33,
+     "score": 0.7007,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2796,
+   "output_tokens": 269,
+   "cost_usd": 0.008282,
+   "latency_s": 2.773
+  },
+  {
+   "id": "dev_0022",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why did McDonald's leave Argentina and Lebanon out of its comparable sales from the first quarter of 2023?",
+   "gold_answer": "Because of hyperinflation: comparable sales exclude markets considered hyperinflationary (generally cumulative inflation over 100% in three years), which management believes better reflects underlying business trends. Venezuela continues to be excluded too.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 3
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Beginning in the first quarter of 2023, McDonald's excluded Argentina and Lebanon from comparable sales because of hyperinflation (markets whose cumulative inflation rate over a three-year period exceeds 100%); Venezuela continues to be excluded.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "MCDONALDS_2023Q2_EARNINGS",
+      "page": 4
+     },
+     {
+      "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+      "page": 3
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "MCDONALDS_2023Q2_EARNINGS",
+     "page": 4,
+     "page_end": 4,
+     "score": 0.7061,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 3,
+     "page_end": 3,
+     "score": 0.7058,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.6692,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.6617,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 14,
+     "page_end": 14,
+     "score": 0.6525,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3343,
+   "output_tokens": 184,
+   "cost_usd": 0.008526,
+   "latency_s": 1.996
+  },
+  {
+   "id": "dev_0023",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "In mid-2021, why did JPMorgan warn that the COVID-19 pandemic could constrain its liquidity or capital?",
+   "gold_answer": "Because of elevated levels of deposits, increases in risk-weighted assets from supporting client activities, downgrades in client credit ratings, regulatory actions or other factors, which could force the firm to act differently from its liquidity and capital management strategies.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 191
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "In its June 2021 (Q2 2021) 10-Q, JPMorgan warned that the pandemic could constrain liquidity or capital due to elevated levels of deposits, increases in risk-weighted assets (RWA) related to supporting client activities, downgrades in client credit ratings, regulatory actions or other factors. Any of these could require the firm to take or refrain from actions it otherwise would under its liquidity and capital management strategies.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "JPMORGAN_2021Q2_10Q",
+      "page": 191
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 191,
+     "page_end": 191,
+     "score": 0.8192,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2021Q1_10Q",
+     "page": 173,
+     "page_end": 173,
+     "score": 0.8187,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2021Q3_10Q",
+     "page": 195,
+     "page_end": 195,
+     "score": 0.7996,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2021_10K",
+     "page": 12,
+     "page_end": 12,
+     "score": 0.7979,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022_10K",
+     "page": 22,
+     "page_end": 22,
+     "score": 0.7904,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3074,
+   "output_tokens": 204,
+   "cost_usd": 0.008188,
+   "latency_s": 2.289
+  },
+  {
+   "id": "dev_0024",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why does Walmart not record gift card purchases as sales when the card is bought?",
+   "gold_answer": "A gift card purchase is not a sale until the card is redeemed and the customer buys merchandise with it. Walmart estimates balances that will never be redeemed and recognizes that revenue in membership and other income over the expected redemption period.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 66
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Walmart does not recognize gift card purchases as sales at the time of purchase because revenue is only recognized when the card is redeemed and the customer purchases merchandise (or services) using it. Unredeemed balances are estimated by management and recognized as revenue (in membership and other income) over the expected redemption period (earlier filings: when likelihood of redemption is remote).",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "WALMART_2023_10K",
+      "page": 63
+     },
+     {
+      "doc_name": "WALMART_2022_10K",
+      "page": 62
+     },
+     {
+      "doc_name": "WALMART_2018_10K",
+      "page": 66
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 66,
+     "page_end": 67,
+     "score": 0.7004,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2023_10K",
+     "page": 63,
+     "page_end": 64,
+     "score": 0.6847,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2022_10K",
+     "page": 62,
+     "page_end": 62,
+     "score": 0.6831,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2020_10K",
+     "page": 62,
+     "page_end": 63,
+     "score": 0.6825,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2021_10K",
+     "page": 63,
+     "page_end": 64,
+     "score": 0.6823,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3288,
+   "output_tokens": 217,
+   "cost_usd": 0.008746,
+   "latency_s": 2.39
+  },
+  {
+   "id": "dev_0025",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why did MGM Resorts' cash from operating activities rise in 2016 compared with 2015?",
+   "gold_answer": "Because of higher operating income at its domestic resorts and less cash paid for interest, partly offset by more cash paid for taxes.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 46
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Cash provided by operating activities rose to $1.5 billion in 2016 from $1.0 billion in 2015, due to an increase in operating income at MGM's domestic resorts and a decrease in cash paid for interest, partially offset by an increase in cash paid for taxes. The 2015 figure was also depressed by working capital changes related to short-term gaming liabilities.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "MGMRESORTS_2016_10K",
+      "page": 47
+     },
+     {
+      "doc_name": "MGMRESORTS_2017_10K",
+      "page": 45
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 45,
+     "page_end": 46,
+     "score": 0.8061,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 47,
+     "page_end": 48,
+     "score": 0.7996,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2018_10K",
+     "page": 45,
+     "page_end": 45,
+     "score": 0.7769,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2019_10K",
+     "page": 44,
+     "page_end": 44,
+     "score": 0.7766,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2022_10K",
+     "page": 46,
+     "page_end": 46,
+     "score": 0.7766,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2772,
+   "output_tokens": 205,
+   "cost_usd": 0.007594,
+   "latency_s": 2.261
+  },
+  {
+   "id": "dev_0026",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "According to Intel's 2019 10-K, why have cloud service providers become more important customers for Intel?",
+   "gold_answer": "Because of the industry shift of data center workloads to the public cloud and consolidation among cloud service providers, which raises the importance of collaboration and customization with these customers.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 62
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not contain this explanation from Intel's 2019 10-K. The only relevant reasoning (the shift of data center workloads to the public cloud increasing the significance and purchasing power of cloud service providers) comes from Intel's 2020 10-K, not the 2019 10-K.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "INTEL_2020_10K",
+      "page": 66
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 5,
+     "page_end": 5,
+     "score": 0.7559,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2021_10K",
+     "page": 25,
+     "page_end": 26,
+     "score": 0.7415,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2020_10K",
+     "page": 66,
+     "page_end": 66,
+     "score": 0.7338,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2020_10K",
+     "page": 22,
+     "page_end": 22,
+     "score": 0.7335,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2020_10K",
+     "page": 24,
+     "page_end": 24,
+     "score": 0.7277,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2584,
+   "output_tokens": 148,
+   "cost_usd": 0.006648,
+   "latency_s": 2.417
+  },
+  {
+   "id": "dev_0027",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why did eBay eliminate about 500 jobs in February 2023?",
+   "gold_answer": "After reviewing its position in light of the global macroeconomic situation, eBay wanted to evolve its organization for long-term, sustainable growth: to strengthen end-to-end customer experiences, support innovation and scale, focus on its biggest-impact areas (Focus Categories, trusted experiences, new technologies) and simplify its structure for faster decisions. About 500 jobs, about 4% of employees.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "EBAY_2023Q1_8K",
+     "page": 2
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state why eBay eliminated about 500 jobs in February 2023. They only say that in Q1 2023 management announced a reduction in workforce and other exit costs, substantially completed in Q1 2023, with a pre-tax charge of $42 million, but give no reason, no February date, and no headcount of about 500.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "EBAY_2023Q2_10Q",
+      "page": 43
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "EBAY_2023Q2_10Q",
+     "page": 43,
+     "page_end": 43,
+     "score": 0.6611,
+     "is_table": false
+    },
+    {
+     "doc_name": "EBAY_2020_10K",
+     "page": 9,
+     "page_end": 9,
+     "score": 0.6433,
+     "is_table": false
+    },
+    {
+     "doc_name": "EBAY_2020_10K",
+     "page": 34,
+     "page_end": 34,
+     "score": 0.6422,
+     "is_table": false
+    },
+    {
+     "doc_name": "EBAY_2023Q1_EARNINGS",
+     "page": 14,
+     "page_end": 14,
+     "score": 0.6422,
+     "is_table": true
+    },
+    {
+     "doc_name": "EBAY_2022_10K",
+     "page": 8,
+     "page_end": 9,
+     "score": 0.6343,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2464,
+   "output_tokens": 163,
+   "cost_usd": 0.006558,
+   "latency_s": 2.047
+  },
+  {
+   "id": "dev_0028",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why does Apple say in its 2019 10-K that global and regional economic conditions strongly affect its business?",
+   "gold_answer": "Because sales outside the U.S. are a majority of Apple's total net sales, and a majority of its supply chain and manufacturing and assembly activities are outside the U.S.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 8
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "In its 2019 10-K, Apple says its operations and performance depend significantly on global and regional economic conditions because sales outside the U.S. represent a majority of total net sales, and a majority of its supply chain and manufacturing/assembly activities are located outside the U.S. Adverse macroeconomic conditions (inflation, recession, tariffs, tighter credit, higher interest rates, unemployment, currency fluctuations) could reduce demand and hurt suppliers, manufacturers, distributors, carriers and other channel partners.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "APPLE_2019_10K",
+      "page": 8
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.7813,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2018_10K",
+     "page": 11,
+     "page_end": 11,
+     "score": 0.7783,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2016_10K",
+     "page": 11,
+     "page_end": 11,
+     "score": 0.7727,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2017_10K",
+     "page": 11,
+     "page_end": 11,
+     "score": 0.7715,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2015_10K",
+     "page": 10,
+     "page_end": 10,
+     "score": 0.771,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2858,
+   "output_tokens": 227,
+   "cost_usd": 0.007986,
+   "latency_s": 2.411
+  },
+  {
+   "id": "dev_0029",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why is 3M exposed to economic and political conditions outside the United States, according to its 2019 10-K?",
+   "gold_answer": "3M operates in more than 70 countries and gets about 60 percent of its revenues from outside the United States, so it faces global competition and geopolitical risks.",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 10
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not contain the relevant text from 3M's 2019 10-K. The only 2019 10-K extract (page 179) is a list of subsidiaries. The statement that approximately 60 percent of revenues come from outside the United States appears in the 2022 10-K and 2023 Q2 10-Q, not the 2019 10-K.",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "3M_2023Q2_10Q",
+     "page": 78,
+     "page_end": 78,
+     "score": 0.6882,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2023Q2_10Q",
+     "page": 77,
+     "page_end": 78,
+     "score": 0.6866,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2022_10K",
+     "page": 10,
+     "page_end": 11,
+     "score": 0.6813,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 179,
+     "page_end": 179,
+     "score": 0.681,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2020_10K",
+     "page": 18,
+     "page_end": 18,
+     "score": 0.6797,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2911,
+   "output_tokens": 141,
+   "cost_usd": 0.007232,
+   "latency_s": 2.091
+  },
+  {
+   "id": "dev_0030",
+   "category": "explain_why",
+   "answer_source": "text",
+   "question": "Why does Costco consider itself highly dependent on its U.S. and Canadian operations?",
+   "gold_answer": "Because U.S. and Canadian operations made up 87% of net sales and 84% of operating income in fiscal 2019 (and California alone was 30% of U.S. net sales).",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 8
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Costco states its financial and operational performance is highly dependent on its U.S. and Canadian operations because they account for the large majority of its results \u2014 in 2022, 87% of net sales and 85% of operating income. Within the U.S., it is especially reliant on California (28% of U.S. net sales in 2022), which has a larger share of higher-volume warehouses. A substantial slowdown or sustained decline there could materially harm the business, e.g., from weak comparable sales, rising labor/healthcare/energy costs, missed warehouse-opening targets, cannibalization, lower-margin sales mix, or weak economic conditions.",
+    "value": 87.0,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "COSTCO_2022_10K",
+      "page": 9
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "COSTCO_2022_10K",
+     "page": 9,
+     "page_end": 9,
+     "score": 0.7476,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.7449,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2021_10K",
+     "page": 9,
+     "page_end": 9,
+     "score": 0.7447,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2018_10K",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.7436,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2017_10K",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.7434,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2961,
+   "output_tokens": 255,
+   "cost_usd": 0.008472,
+   "latency_s": 3.179
+  },
+  {
+   "id": "dev_0031",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "By what percentage did Ulta Beauty's selling, general and administrative expenses grow in the first quarter of fiscal 2023 compared with the year-ago quarter?",
+   "gold_answer": "About 22.2% ($612.1 million vs $501.0 million)",
+   "gold_value": 22.2,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "SG&A expenses increased 22.2% to $612.1 million in the first quarter of fiscal 2023 compared to $501.0 million in the first quarter of fiscal 2022.",
+    "value": 22.2,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+      "page": 2
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7571,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.755,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q2_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7494,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 2,
+     "score": 0.7471,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7277,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2269,
+   "output_tokens": 127,
+   "cost_usd": 0.005808,
+   "latency_s": 1.806
+  },
+  {
+   "id": "dev_0032",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What was McDonald's operating margin in the first quarter of 2023?",
+   "gold_answer": "About 42.9% (operating income $2,532.4 million / revenues $5,897.8 million)",
+   "gold_value": 42.9,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state McDonald's operating margin for the first quarter of 2023. The Q1 2023 release excerpt gives comparable sales, revenue and Systemwide sales growth but no operating margin; the 10-K only gives a full-year 2023 expectation of about 45% and the 2022 non-GAAP operating margin of 44.8%.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+      "page": 1
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7279,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 10,
+     "page_end": 10,
+     "score": 0.7014,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 18,
+     "page_end": 18,
+     "score": 0.6983,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 12,
+     "page_end": 12,
+     "score": 0.682,
+     "is_table": true
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 17,
+     "page_end": 17,
+     "score": 0.6756,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2852,
+   "output_tokens": 178,
+   "cost_usd": 0.007484,
+   "latency_s": 2.127
+  },
+  {
+   "id": "dev_0033",
+   "category": "calculate",
+   "answer_source": "text",
+   "question": "What were Adobe's combined federal and state net operating loss carryforwards at the end of fiscal 2018?",
+   "gold_answer": "About $1,230.8 million ($881.1 million federal + $349.7 million state)",
+   "gold_value": 1230.8,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "ADOBE_2018_10K",
+     "page": 86
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "At the end of fiscal 2018 (November 30, 2018), Adobe had federal NOL carryforwards of about $881.1 million and state NOL carryforwards of about $349.7 million, combined about $1,230.8 million.",
+    "value": 1230.8,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "ADOBE_2018_10K",
+      "page": 86
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "ADOBE_2019_10K",
+     "page": 77,
+     "page_end": 77,
+     "score": 0.7471,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2018_10K",
+     "page": 86,
+     "page_end": 86,
+     "score": 0.7359,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2022_10K",
+     "page": 78,
+     "page_end": 78,
+     "score": 0.7349,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2017_10K",
+     "page": 82,
+     "page_end": 82,
+     "score": 0.7346,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2019_10K",
+     "page": 90,
+     "page_end": 91,
+     "score": 0.7236,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2858,
+   "output_tokens": 134,
+   "cost_usd": 0.007056,
+   "latency_s": 1.864
+  },
+  {
+   "id": "dev_0034",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What share of Intel's 2019 income before taxes came from outside the U.S.?",
+   "gold_answer": "About 42.9% ($10,329 million non-U.S. / $24,058 million total)",
+   "gold_value": 42.9,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 88
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "In fiscal 2019, Non-U.S. income before taxes was $10,329 million of total income before taxes of $24,058 million, or about 42.9%.",
+    "value": 42.93,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "INTEL_2019_10K",
+      "page": 88
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 88,
+     "page_end": 88,
+     "score": 0.73,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2018_10K",
+     "page": 86,
+     "page_end": 86,
+     "score": 0.7157,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2020_10K",
+     "page": 91,
+     "page_end": 91,
+     "score": 0.7136,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2022_10K",
+     "page": 96,
+     "page_end": 96,
+     "score": 0.7101,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2021_10K",
+     "page": 89,
+     "page_end": 89,
+     "score": 0.7055,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2962,
+   "output_tokens": 106,
+   "cost_usd": 0.006984,
+   "latency_s": 1.883
+  },
+  {
+   "id": "dev_0035",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "How much did Lockheed Martin's net sales grow in the second quarter of 2023 compared with the second quarter of 2022?",
+   "gold_answer": "About 8.1% ($16,693 million vs $15,446 million)",
+   "gold_value": 8.1,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 2
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Lockheed Martin's net sales grew 8% year-over-year in Q2 2023, from $15.4 billion in Q2 2022 to $16.7 billion in Q2 2023.",
+    "value": 8.0,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+      "page": 1
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.836,
+     "is_table": false
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 5,
+     "page_end": 5,
+     "score": 0.8134,
+     "is_table": false
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 6,
+     "page_end": 6,
+     "score": 0.7754,
+     "is_table": false
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q",
+     "page": 3,
+     "page_end": 3,
+     "score": 0.7484,
+     "is_table": false
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2022Q2_10Q",
+     "page": 38,
+     "page_end": 38,
+     "score": 0.7482,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2699,
+   "output_tokens": 128,
+   "cost_usd": 0.006678,
+   "latency_s": 1.995
+  },
+  {
+   "id": "dev_0036",
+   "category": "calculate",
+   "answer_source": "text",
+   "question": "By what percentage did MGM Resorts' contributions to the UNITE HERE Health fund change from 2015 to 2017?",
+   "gold_answer": "A decrease of about 4.7% ($192 million in 2015 to $183 million in 2017)",
+   "gold_value": -4.7,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 99
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "MGM Resorts' contributions to the UNITE HERE Health Fund decreased from $192 million in 2015 to $183 million in 2017, a change of about -4.7%.",
+    "value": -4.7,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "MGMRESORTS_2017_10K",
+      "page": 99
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "MGMRESORTS_2018_10K",
+     "page": 89,
+     "page_end": 89,
+     "score": 0.724,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 109,
+     "page_end": 109,
+     "score": 0.7096,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 98,
+     "page_end": 99,
+     "score": 0.7068,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2019_10K",
+     "page": 92,
+     "page_end": 92,
+     "score": 0.7049,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2021_10K",
+     "page": 102,
+     "page_end": 103,
+     "score": 0.7027,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2572,
+   "output_tokens": 121,
+   "cost_usd": 0.006354,
+   "latency_s": 2.308
+  },
+  {
+   "id": "dev_0037",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "By what percentage did Apple's cash generated by operating activities change in fiscal 2019 compared with fiscal 2018?",
+   "gold_answer": "A decrease of about 10.4% ($69,391 million vs $77,434 million)",
+   "gold_value": -10.4,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 36
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Apple's cash generated by operating activities decreased about 10.3% in fiscal 2019 ($69.4 billion) compared with fiscal 2018 ($77.4 billion).",
+    "value": -10.3,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "APPLE_2019_10K",
+      "page": 26
+     },
+     {
+      "doc_name": "APPLE_2019_10K",
+      "page": 27
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "APPLE_2018_10K",
+     "page": 25,
+     "page_end": 25,
+     "score": 0.7625,
+     "is_table": false
+    },
+    {
+     "doc_name": "NIKE_2019_10K",
+     "page": 40,
+     "page_end": 40,
+     "score": 0.7589,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.7573,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2019_10K",
+     "page": 26,
+     "page_end": 27,
+     "score": 0.7499,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2018_10K",
+     "page": 33,
+     "page_end": 33,
+     "score": 0.7493,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2908,
+   "output_tokens": 139,
+   "cost_usd": 0.007206,
+   "latency_s": 2.134
+  },
+  {
+   "id": "dev_0038",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What was Apple's free cash flow (operating cash flow minus capital expenditures) for the nine months ended July 1, 2023?",
+   "gold_answer": "About $80,149 million ($88,945 million operating cash flow - $8,796 million for property, plant and equipment)",
+   "gold_value": 80149.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 8
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not contain Apple's operating cash flow total or capital expenditures for the nine months ended July 1, 2023 (the cash flow statement excerpt is cut off after net income), so free cash flow cannot be computed.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "APPLE_2023Q3_10Q",
+      "page": 8
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.7113,
+     "is_table": true
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 16,
+     "page_end": 16,
+     "score": 0.6949,
+     "is_table": true
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 13,
+     "page_end": 13,
+     "score": 0.6874,
+     "is_table": true
+    },
+    {
+     "doc_name": "LOCKHEEDMARTIN_2023Q1_10Q",
+     "page": 12,
+     "page_end": 12,
+     "score": 0.682,
+     "is_table": false
+    },
+    {
+     "doc_name": "APPLE_2023Q3_10Q",
+     "page": 10,
+     "page_end": 10,
+     "score": 0.6796,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2020,
+   "output_tokens": 131,
+   "cost_usd": 0.00535,
+   "latency_s": 1.935
+  },
+  {
+   "id": "dev_0039",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What was Walmart's effective income tax rate in fiscal 2023?",
+   "gold_answer": "About 33.6% (provision $5,724 million / income before income taxes $17,016 million)",
+   "gold_value": 33.6,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 56
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state Walmart's effective income tax rate for fiscal 2023. The fiscal 2023 and 2022 filings only refer to Note 9 for the reconciliation, and the rates given in other extracts cover fiscal 2017-2020 only.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "WALMART_2023_10K",
+      "page": 41
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "WALMART_2023_10K",
+     "page": 41,
+     "page_end": 41,
+     "score": 0.823,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2023_annualreport",
+     "page": 43,
+     "page_end": 43,
+     "score": 0.8131,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2019_10K",
+     "page": 34,
+     "page_end": 34,
+     "score": 0.7959,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2022_10K",
+     "page": 39,
+     "page_end": 39,
+     "score": 0.7932,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2020_10K",
+     "page": 36,
+     "page_end": 37,
+     "score": 0.7911,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2540,
+   "output_tokens": 139,
+   "cost_usd": 0.00647,
+   "latency_s": 2.937
+  },
+  {
+   "id": "dev_0040",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "How much did FedEx's net lease cost grow in fiscal 2023 compared with fiscal 2022?",
+   "gold_answer": "About 5.0% ($5,320 million vs $5,066 million)",
+   "gold_value": 5.0,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 98
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "FedEx's net lease cost rose by $254 million in fiscal 2023, from $5,066 million in fiscal 2022 to $5,320 million (about 5.0% growth).",
+    "value": 254.0,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "FEDEX_2023_10K",
+      "page": 96
+     },
+     {
+      "doc_name": "FEDEX_2023_annualreport",
+      "page": 98
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 98,
+     "page_end": 98,
+     "score": 0.7201,
+     "is_table": true
+    },
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 98,
+     "page_end": 98,
+     "score": 0.7198,
+     "is_table": true
+    },
+    {
+     "doc_name": "FEDEX_2023_annualreport",
+     "page": 99,
+     "page_end": 99,
+     "score": 0.7174,
+     "is_table": false
+    },
+    {
+     "doc_name": "FEDEX_2023_10K",
+     "page": 96,
+     "page_end": 96,
+     "score": 0.7135,
+     "is_table": true
+    },
+    {
+     "doc_name": "FEDEX_2023_10K",
+     "page": 96,
+     "page_end": 96,
+     "score": 0.713,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2314,
+   "output_tokens": 141,
+   "cost_usd": 0.006038,
+   "latency_s": 2.079
+  },
+  {
+   "id": "dev_0041",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did the operating profit of CVS Health's Retail/LTC segment change from 2016 to 2017?",
+   "gold_answer": "Down about 11.4% ($6,469 million in 2017 vs $7,302 million in 2016)",
+   "gold_value": -11.4,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 59
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not provide Retail/LTC segment operating profit figures for 2016 and 2017. The 2018 10-K page 275 shows only a table header with no data, and the other extracts cover revenues, operating expenses, and one-off items rather than the segment's operating profit.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "CVSHEALTH_2018_10K",
+      "page": 275
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 54,
+     "page_end": 54,
+     "score": 0.7827,
+     "is_table": false
+    },
+    {
+     "doc_name": "CVSHEALTH_2018_10K",
+     "page": 275,
+     "page_end": 275,
+     "score": 0.7783,
+     "is_table": false
+    },
+    {
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 54,
+     "page_end": 54,
+     "score": 0.7777,
+     "is_table": false
+    },
+    {
+     "doc_name": "CVSHEALTH_2016_10K",
+     "page": 185,
+     "page_end": 185,
+     "score": 0.7731,
+     "is_table": false
+    },
+    {
+     "doc_name": "CVSHEALTH_2016_10K",
+     "page": 242,
+     "page_end": 242,
+     "score": 0.7696,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2724,
+   "output_tokens": 147,
+   "cost_usd": 0.006918,
+   "latency_s": 2.209
+  },
+  {
+   "id": "dev_0042",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "Did Oracle's stock beat the S&P 500 Index over the five fiscal years ended May 31, 2020?",
+   "gold_answer": "No. It trailed by about 26.1 points ($100 invested on May 31, 2015 grew to $134.0 for Oracle vs $160.1 for the S&P 500 Index)",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "ORACLE_2020_10K",
+     "page": 37
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts describe the stock performance graph comparing Oracle with the S&P 500 Index for the five fiscal years ended May 31, 2020, but they do not include the actual cumulative return values, so it cannot be determined whether Oracle beat the S&P 500.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "ORACLE_2020_10K",
+      "page": 37
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "ORACLE_2017_10K",
+     "page": 122,
+     "page_end": 122,
+     "score": 0.7047,
+     "is_table": false
+    },
+    {
+     "doc_name": "ORACLE_2020_10K",
+     "page": 37,
+     "page_end": 37,
+     "score": 0.6876,
+     "is_table": false
+    },
+    {
+     "doc_name": "ORACLE_2017_10K",
+     "page": 42,
+     "page_end": 42,
+     "score": 0.6864,
+     "is_table": false
+    },
+    {
+     "doc_name": "ORACLE_2018_10K",
+     "page": 36,
+     "page_end": 36,
+     "score": 0.6834,
+     "is_table": false
+    },
+    {
+     "doc_name": "ORACLE_2018_10K",
+     "page": 36,
+     "page_end": 36,
+     "score": 0.6825,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 1591,
+   "output_tokens": 140,
+   "cost_usd": 0.004582,
+   "latency_s": 2.081
+  },
+  {
+   "id": "dev_0043",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did Ulta Beauty's net cash from operating activities in the first quarter of fiscal 2023 compare with the same quarter a year earlier?",
+   "gold_answer": "Down about 28.5% ($304,901 thousand vs $426,303 thousand; 13 weeks ended April 29, 2023 vs April 30, 2022)",
+   "gold_value": -28.5,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 7
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not contain net cash provided by operating activities for either period. The cash flow statement excerpt (page 7) shows only the net income line ($347,051 thousand in Q1 fiscal 2023 vs $331,395 thousand a year earlier) before it is cut off.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+      "page": 7
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7916,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q2_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7861,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7797,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 1,
+     "page_end": 2,
+     "score": 0.7713,
+     "is_table": false
+    },
+    {
+     "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+     "page": 7,
+     "page_end": 7,
+     "score": 0.7696,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 1922,
+   "output_tokens": 155,
+   "cost_usd": 0.005394,
+   "latency_s": 2.115
+  },
+  {
+   "id": "dev_0044",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did McDonald's net income in the first quarter of 2023 compare with the first quarter of 2022?",
+   "gold_answer": "Up about 63% ($1,802.3 million vs $1,104.4 million)",
+   "gold_value": 63.0,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 4
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "McDonald's GAAP net income rose 63% year over year, from $1,104.4 million in Q1 2022 to $1,802.3 million in Q1 2023 (69% excluding currency translation). Non-GAAP net income rose 13%, from $1,706.5 million to $1,936.7 million.",
+    "value": 63.0,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+      "page": 2
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7725,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 8,
+     "page_end": 8,
+     "score": 0.7281,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7267,
+     "is_table": true
+    },
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.7166,
+     "is_table": true
+    },
+    {
+     "doc_name": "MCDONALDS_2022_10K",
+     "page": 10,
+     "page_end": 10,
+     "score": 0.7159,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2968,
+   "output_tokens": 162,
+   "cost_usd": 0.007556,
+   "latency_s": 2.006
+  },
+  {
+   "id": "dev_0045",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did Adobe's interest expense change in fiscal 2018 compared with fiscal 2017, and why?",
+   "gold_answer": "Up about 20% ($89.2 million vs $74.4 million), mainly due to higher short-term floating interest rates on interest rate swaps and higher average debt balances",
+   "gold_value": 20.0,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "ADOBE_2018_10K",
+     "page": 47
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not discuss Adobe's interest expense or its change in fiscal 2018 versus fiscal 2017; they cover revenue, deferred revenue, cost of revenue and operating expenses only.",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "ADOBE_2018_10K",
+     "page": 41,
+     "page_end": 42,
+     "score": 0.7828,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2017_10K",
+     "page": 44,
+     "page_end": 45,
+     "score": 0.7718,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2018_10K",
+     "page": 39,
+     "page_end": 39,
+     "score": 0.7702,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2017_10K",
+     "page": 41,
+     "page_end": 42,
+     "score": 0.7593,
+     "is_table": false
+    },
+    {
+     "doc_name": "ADOBE_2017_10K",
+     "page": 39,
+     "page_end": 40,
+     "score": 0.7584,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3511,
+   "output_tokens": 98,
+   "cost_usd": 0.008002,
+   "latency_s": 2.054
+  },
+  {
+   "id": "dev_0046",
+   "category": "compare_years",
+   "answer_source": "table",
+   "question": "How did Intel's total inventories change from the end of 2018 to the end of 2019?",
+   "gold_answer": "Up about 20.6% ($8,744 million at December 28, 2019 vs $7,253 million at December 29, 2018)",
+   "gold_value": 20.6,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 86
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Intel's total inventories increased by $1,491 million, from $7,253 million at Dec 29, 2018 to $8,744 million at Dec 28, 2019.",
+    "value": 1491.0,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "INTEL_2019_10K",
+      "page": 86
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "INTEL_2018_10K",
+     "page": 84,
+     "page_end": 84,
+     "score": 0.7338,
+     "is_table": false
+    },
+    {
+     "doc_name": "INTEL_2018_10K",
+     "page": 84,
+     "page_end": 84,
+     "score": 0.7323,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 86,
+     "page_end": 86,
+     "score": 0.7214,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2020_10K",
+     "page": 95,
+     "page_end": 95,
+     "score": 0.7209,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2022_10K",
+     "page": 100,
+     "page_end": 100,
+     "score": 0.7194,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 1762,
+   "output_tokens": 110,
+   "cost_usd": 0.004624,
+   "latency_s": 1.733
+  },
+  {
+   "id": "dev_0047",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "Which company had more total revenue: Costco in fiscal 2019 or Verizon in 2018?",
+   "gold_answer": "Costco, by about $21,840 million ($152,703 million vs Verizon's $130,863 million)",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 36
+    },
+    {
+     "doc_name": "VERIZON_2018_10K",
+     "page": 111
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "Costco's fiscal 2019 total revenue is $152,703 million, but Verizon's total 2018 revenue is not stated directly. It can only be roughly inferred: Wireless 2018 revenue of ~$91.7 billion was ~70% of Verizon's aggregate revenues, implying about $131 billion. That implied figure is below Costco's $152.7 billion, but the extracts give no exact Verizon total, so the comparison is only approximate.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "COSTCO_2019_10K",
+      "page": 61
+     },
+     {
+      "doc_name": "VERIZON_2018_10K",
+      "page": 3
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "VERIZON_2019_10K",
+     "page": 47,
+     "page_end": 47,
+     "score": 0.6628,
+     "is_table": false
+    },
+    {
+     "doc_name": "VERIZON_2018_10K",
+     "page": 3,
+     "page_end": 3,
+     "score": 0.6605,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 61,
+     "page_end": 61,
+     "score": 0.6517,
+     "is_table": true
+    },
+    {
+     "doc_name": "VERIZON_2017_10K",
+     "page": 3,
+     "page_end": 3,
+     "score": 0.6497,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2020_10K",
+     "page": 65,
+     "page_end": 65,
+     "score": 0.6479,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2676,
+   "output_tokens": 228,
+   "cost_usd": 0.007632,
+   "latency_s": 3.197
+  },
+  {
+   "id": "dev_0048",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "How did Intel's net income in 2019 compare with Costco's net income in fiscal 2019?",
+   "gold_answer": "Intel's was about 5.8 times larger ($21,048 million vs Costco's $3,659 million attributable to Costco)",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 71
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 36
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts contain only Intel's financials (2019 net income of $21,048 million) and no Costco data, so the comparison with Costco's fiscal 2019 net income cannot be made.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "INTEL_2019_10K",
+      "page": 71
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 71,
+     "page_end": 71,
+     "score": 0.7156,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 113,
+     "page_end": 113,
+     "score": 0.7112,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2019_10K",
+     "page": 113,
+     "page_end": 113,
+     "score": 0.7046,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2018_10K",
+     "page": 80,
+     "page_end": 80,
+     "score": 0.7027,
+     "is_table": true
+    },
+    {
+     "doc_name": "INTEL_2020_10K",
+     "page": 39,
+     "page_end": 39,
+     "score": 0.7,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3359,
+   "output_tokens": 113,
+   "cost_usd": 0.007848,
+   "latency_s": 2.003
+  },
+  {
+   "id": "dev_0049",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "Which company spent more on property and equipment: 3M in 2019 or Costco in fiscal 2019?",
+   "gold_answer": "Costco, by about $1,299 million ($2,998 million vs 3M's $1,699 million)",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 60
+    },
+    {
+     "doc_name": "COSTCO_2019_10K",
+     "page": 39
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not give actual 2019 capital spending for either company. 3M's 2019 figure is only a forecast ($1.7-$1.9 billion expected, from the 2018 10-K), and Costco's FY2019 additions to property and equipment are not stated (only 2015-2017 additions and net balances for 2019/2020 are shown), so a comparison cannot be made.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "3M_2018_10K",
+      "page": 47
+     },
+     {
+      "doc_name": "COSTCO_2020_10K",
+      "page": 43
+     },
+     {
+      "doc_name": "COSTCO_2017_10K",
+      "page": 67
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "COSTCO_2021_10K",
+     "page": 44,
+     "page_end": 44,
+     "score": 0.675,
+     "is_table": true
+    },
+    {
+     "doc_name": "3M_2018_10K",
+     "page": 47,
+     "page_end": 47,
+     "score": 0.674,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2020_10K",
+     "page": 48,
+     "page_end": 48,
+     "score": 0.6729,
+     "is_table": false
+    },
+    {
+     "doc_name": "COSTCO_2020_10K",
+     "page": 43,
+     "page_end": 43,
+     "score": 0.6726,
+     "is_table": true
+    },
+    {
+     "doc_name": "COSTCO_2017_10K",
+     "page": 67,
+     "page_end": 67,
+     "score": 0.6695,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2596,
+   "output_tokens": 222,
+   "cost_usd": 0.007412,
+   "latency_s": 2.443
+  },
+  {
+   "id": "dev_0050",
+   "category": "compare_companies",
+   "answer_source": "table",
+   "question": "Which company had the higher net profit margin in 2017: CVS Health or MGM Resorts?",
+   "gold_answer": "MGM Resorts, about 18.2% vs 3.6% (MGM $1,960,286 thousand / $10,773,904 thousand; CVS $6,622 million / $184,765 million)",
+   "gold_value": null,
+   "gold_unit": null,
+   "evidence": [
+    {
+     "doc_name": "CVSHEALTH_2017_10K",
+     "page": 80
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 30
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "Cannot be determined. The extracts give MGM Resorts' 2017 net income ($1,960,286 thousand attributable to MGM, on net revenues of $10,773,904 thousand, about 18.2%), but contain no 2017 revenue or net income figures for CVS Health (only a 2022 10-K excerpt on executive officers), so the two margins cannot be compared.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "MGMRESORTS_2017_10K",
+      "page": 110
+     }
+    ]
+   },
+   "error": null,
+   "mark": "hand",
+   "failure_tag": null,
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "MGMRESORTS_2023_8K_dated-2023-09-12",
+     "page": 4,
+     "page_end": 4,
+     "score": 0.6704,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2023_8K_dated-2023-03-01",
+     "page": 4,
+     "page_end": 4,
+     "score": 0.6665,
+     "is_table": false
+    },
+    {
+     "doc_name": "CVSHEALTH_2022_10K",
+     "page": 66,
+     "page_end": 68,
+     "score": 0.6664,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2022Q4_EARNINGS",
+     "page": 10,
+     "page_end": 10,
+     "score": 0.6631,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 110,
+     "page_end": 110,
+     "score": 0.6547,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3583,
+   "output_tokens": 181,
+   "cost_usd": 0.008976,
+   "latency_s": 2.59
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "note": "Q105 small test: every evidence document of the dev set",
+ "documents": [
+  {
+   "doc_name": "3M_2019_10K"
+  },
+  {
+   "doc_name": "ADOBE_2018_10K"
+  },
+  {
+   "doc_name": "AMCOR_2022_8K_dated-2022-04-26"
+  },
+  {
+   "doc_name": "APPLE_2019_10K"
+  },
+  {
+   "doc_name": "APPLE_2023Q3_10Q"
+  },
+  {
+   "doc_name": "COSTCO_2019_10K"
+  },
+  {
+   "doc_name": "CVSHEALTH_2017_10K"
+  },
+  {
+   "doc_name": "EBAY_2023Q1_8K"
+  },
+  {
+   "doc_name": "FEDEX_2023_annualreport"
+  },
+  {
+   "doc_name": "INTEL_2019_10K"
+  },
+  {
+   "doc_name": "INTEL_2023_8K_dated-2023-02-10"
+  },
+  {
+   "doc_name": "JOHNSON_JOHNSON_2023Q1_EARNINGS"
+  },
+  {
+   "doc_name": "JPMORGAN_2021Q2_10Q"
+  },
+  {
+   "doc_name": "LOCKHEEDMARTIN_2023Q2_10Q"
+  },
+  {
+   "doc_name": "MCDONALDS_2023Q1_EARNINGS"
+  },
+  {
+   "doc_name": "MGMRESORTS_2017_10K"
+  },
+  {
+   "doc_name": "ORACLE_2020_10K"
+  },
+  {
+   "doc_name": "PG_E_2023_EARNINGS-dated-2023-06-01"
+  },
+  {
+   "doc_name": "ULTABEAUTY_2024Q1_EARNINGS"
+  },
+  {
+   "doc_name": "VERIZON_2018_10K"
+  },
+  {
+   "doc_name": "WALMART_2023_annualreport"
+  }
+ ]
+}

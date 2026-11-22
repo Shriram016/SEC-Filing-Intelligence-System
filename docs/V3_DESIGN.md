@@ -54,12 +54,12 @@ Observability: Langfuse traces + metrics/alerts tool. Evaluation runner: dev set
 
 | Part | Spec | Key choices |
 |---|---|---|
-| Ingestion | [ingestion.md](v3/ingestion.md) | PDF reader by test (no FinanceBench evidence); period dates from cover page; one chunk per table + search label; free local embeddings; store by test |
-| Router | [router.md](v3/router.md) | One Haiku call (JSON) + code coverage check. Routes: unrelated, advice, not_covered, unclear, answer. [ADR-0004](adr/0004-router-before-search.md) |
-| Answering engine | [engine.md](v3/engine.md) | Plan first, max one re-plan ([ADR-0002](adr/0002-plan-first.md)); semantic search + filters + fallback; calculator in code; JSON claims + quotes checked by code ([ADR-0003](adr/0003-code-maths-and-quote-checks.md)); answer / partial / refuse rule |
+| Ingestion | [ingestion.md](v3/ingestion.md) | pdfplumber (tested, no FinanceBench evidence; Docling if it fails); period dates from cover page; sections by one general logic per document with fallback to page headings (Q90); structure-aware chunks ~350 tokens (max 480) + overlap; one chunk per table (row groups if large) + code-template label; a long row name does not cut a table, lost titles found above the header lines (Q106); embedded label = company, type, period + section, deeper levels stored only (Q99; final, label test dropped Q101); embedded text = label + all of the answer text, so the table title is always embedded (Q105); collection `chunks_v2`; bge-base-en-v1.5 embeddings; Qdrant in Docker; direct libraries, no RAG framework ([ADR-0008](adr/0008-no-rag-framework.md)) |
+| Router | [router.md](v3/router.md) | One Haiku call (JSON: route, companies as an enum, years, doc type, stand-alone question) + code coverage check. Routes: unrelated, advice, not_covered (code), unclear, answer. Code chooses the documents (year Y, else Y+1; doc type only when named) (Q104). Built 2026-11-21. [ADR-0004](adr/0004-router-before-search.md) |
+| Answering engine | [engine.md](v3/engine.md) | Plan first, max one re-plan ([ADR-0002](adr/0002-plan-first.md)); semantic search + one hard `doc_name` filter from the router (Q104; free test Hit@5 0.48 → 0.62); calculator in code; JSON claims + quotes checked by code ([ADR-0003](adr/0003-code-maths-and-quote-checks.md)); answer / partial / refuse rule |
 | API | [api.md](v3/api.md) | Only front door; SSE progress then checked answer; Keycloak tokens ([ADR-0006](adr/0006-keycloak-login.md)); full rate limits; chats per user, 30-day deletion |
 | UI | [ui.md](v3/ui.md) | React ([ADR-0007](adr/0007-react-ui.md)); ChatGPT-style sidebar; citation details only (no PDF viewer) |
-| Evaluation | [evaluation.md](v3/evaluation.md) | Locked FinanceBench 150 + held-out behaviour subset; dev set (Claude drafts, user confirms); plain-RAG baseline; code + OpenAI judge; failure causes; 3 repeat runs |
+| Evaluation | [evaluation.md](v3/evaluation.md) | Locked FinanceBench 150 + held-out behaviour subset; dev set (Claude drafts, user confirms; `gold_value` + `gold_unit` for code marking, Q103); free search test (Hit@k, MRR); plain-RAG baseline with JSON answers (Q102); code + OpenAI judge; failure causes; 3 repeat runs |
 | Safety | [safety.md](v3/safety.md) | 9 threats, each with a defence and a test |
 | Observability | [observability.md](v3/observability.md) | Logs, Langfuse traces, metrics + alerts, quality monitoring |
 | Tests and CI | [testing-ci.md](v3/testing-ci.md) | Free layers on every push; real-AI runs manual with cost shown |
@@ -73,7 +73,7 @@ Observability: Langfuse traces + metrics/alerts tool. Evaluation runner: dev set
 | Planner, fact reading, answer writer | Claude Sonnet 5.5 (for now) |
 | Eval judge | OpenAI model (build time) |
 | Backup when Claude is down | OpenAI model (build time) |
-| Embeddings | Free local model (build time) |
+| Embeddings | Free local model: bge-base-en-v1.5 (Q89) |
 
 One swappable model layer. [ADR-0005](adr/0005-model-providers.md)
 
@@ -165,7 +165,7 @@ Also: PDFs hosted on company sites can disappear → download once in M0, keep c
 
 | Item | Spec |
 |---|---|
-| PDF reader; table-label method; chunk sizes; embedding model; vector store | ingestion.md |
+| App database (chats, logs, eval) | ingestion.md, api.md |
 | Follow-up rewrite location; router prompt and schema | router.md |
 | JSON schemas and length limits per question type; search settings | engine.md |
 | Dev set size and categories; judge model; quality-gate margin | evaluation.md |

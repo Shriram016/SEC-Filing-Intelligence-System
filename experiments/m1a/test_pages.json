@@ -1,0 +1,227 @@
+[
+  {
+    "doc_name": "ADOBE_2018_10K",
+    "company": "Adobe",
+    "doc_type": "10k",
+    "page_index": 17,
+    "page_number": 18,
+    "kind": "text",
+    "numbers": 0,
+    "words": 730
+  },
+  {
+    "doc_name": "ADOBE_2018_10K",
+    "company": "Adobe",
+    "doc_type": "10k",
+    "page_index": 44,
+    "page_number": 45,
+    "kind": "table",
+    "numbers": 39,
+    "words": 420
+  },
+  {
+    "doc_name": "ADOBE_2018_10K",
+    "company": "Adobe",
+    "doc_type": "10k",
+    "page_index": 85,
+    "page_number": 86,
+    "kind": "table",
+    "numbers": 21,
+    "words": 710
+  },
+  {
+    "doc_name": "ADOBE_2018_10K",
+    "company": "Adobe",
+    "doc_type": "10k",
+    "page_index": 88,
+    "page_number": 89,
+    "kind": "table",
+    "numbers": 46,
+    "words": 429,
+    "kind_auto": "table_multipage"
+  },
+  {
+    "doc_name": "ADOBE_2018_10K",
+    "company": "Adobe",
+    "doc_type": "10k",
+    "page_index": 89,
+    "page_number": 90,
+    "kind": "table",
+    "numbers": 53,
+    "words": 509,
+    "kind_auto": "table_multipage"
+  },
+  {
+    "doc_name": "ADOBE_2018_10K",
+    "company": "Adobe",
+    "doc_type": "10k",
+    "page_index": 95,
+    "page_number": 96,
+    "kind": "table",
+    "numbers": 21,
+    "words": 714
+  },
+  {
+    "doc_name": "JPMORGAN_2021Q2_10Q",
+    "company": "JPMorgan",
+    "doc_type": "10q",
+    "page_index": 53,
+    "page_number": 54,
+    "kind": "table",
+    "numbers": 73,
+    "words": 564
+  },
+  {
+    "doc_name": "JPMORGAN_2021Q2_10Q",
+    "company": "JPMorgan",
+    "doc_type": "10q",
+    "page_index": 93,
+    "page_number": 94,
+    "kind": "text",
+    "numbers": 0,
+    "words": 561
+  },
+  {
+    "doc_name": "JPMORGAN_2021Q2_10Q",
+    "company": "JPMorgan",
+    "doc_type": "10q",
+    "page_index": 106,
+    "page_number": 107,
+    "kind": "table",
+    "numbers": 36,
+    "words": 543
+  },
+  {
+    "doc_name": "JPMORGAN_2021Q2_10Q",
+    "company": "JPMorgan",
+    "doc_type": "10q",
+    "page_index": 134,
+    "page_number": 135,
+    "kind": "table",
+    "numbers": 31,
+    "words": 549
+  },
+  {
+    "doc_name": "LOCKHEEDMARTIN_2023_8K_dated-2023-05-25",
+    "company": "Lockheed Martin",
+    "doc_type": "8k",
+    "page_index": 21,
+    "page_number": 22,
+    "kind": "table_multipage",
+    "numbers": 51,
+    "words": 149,
+    "kind_auto": "table"
+  },
+  {
+    "doc_name": "LOCKHEEDMARTIN_2023_8K_dated-2023-05-25",
+    "company": "Lockheed Martin",
+    "doc_type": "8k",
+    "page_index": 22,
+    "page_number": 23,
+    "kind": "table_multipage",
+    "numbers": 33,
+    "words": 73,
+    "kind_auto": "table"
+  },
+  {
+    "doc_name": "LOCKHEEDMARTIN_2023_8K_dated-2023-05-25",
+    "company": "Lockheed Martin",
+    "doc_type": "8k",
+    "page_index": 24,
+    "page_number": 25,
+    "kind": "table",
+    "numbers": 27,
+    "words": 372
+  },
+  {
+    "doc_name": "LOCKHEEDMARTIN_2023_8K_dated-2023-05-25",
+    "company": "Lockheed Martin",
+    "doc_type": "8k",
+    "page_index": 35,
+    "page_number": 36,
+    "kind": "text",
+    "numbers": 3,
+    "words": 618
+  },
+  {
+    "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+    "company": "Ulta Beauty",
+    "doc_type": "Earnings",
+    "page_index": 0,
+    "page_number": 1,
+    "kind": "table",
+    "numbers": 24,
+    "words": 374
+  },
+  {
+    "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+    "company": "Ulta Beauty",
+    "doc_type": "Earnings",
+    "page_index": 1,
+    "page_number": 2,
+    "kind": "text_numbers",
+    "numbers": 27,
+    "words": 437,
+    "kind_auto": "table"
+  },
+  {
+    "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+    "company": "Ulta Beauty",
+    "doc_type": "Earnings",
+    "page_index": 3,
+    "page_number": 4,
+    "kind": "text",
+    "numbers": 0,
+    "words": 404
+  },
+  {
+    "doc_name": "ULTABEAUTY_2024Q1_EARNINGS",
+    "company": "Ulta Beauty",
+    "doc_type": "Earnings",
+    "page_index": 4,
+    "page_number": 5,
+    "kind": "table",
+    "numbers": 48,
+    "words": 125
+  },
+  {
+    "doc_name": "WALMART_2023_annualreport",
+    "company": "Walmart",
+    "doc_type": "10k_annualreport",
+    "page_index": 55,
+    "page_number": 56,
+    "kind": "table",
+    "numbers": 64,
+    "words": 202
+  },
+  {
+    "doc_name": "WALMART_2023_annualreport",
+    "company": "Walmart",
+    "doc_type": "10k_annualreport",
+    "page_index": 62,
+    "page_number": 63,
+    "kind": "table",
+    "numbers": 22,
+    "words": 814
+  },
+  {
+    "doc_name": "WALMART_2023_annualreport",
+    "company": "Walmart",
+    "doc_type": "10k_annualreport",
+    "page_index": 63,
+    "page_number": 64,
+    "kind": "text",
+    "numbers": 0,
+    "words": 825
+  },
+  {
+    "doc_name": "WALMART_2023_annualreport",
+    "company": "Walmart",
+    "doc_type": "10k_annualreport",
+    "page_index": 80,
+    "page_number": 81,
+    "kind": "table",
+    "numbers": 100,
+    "words": 406
+  }
+]

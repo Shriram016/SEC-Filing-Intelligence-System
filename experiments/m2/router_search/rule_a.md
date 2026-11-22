@@ -1,0 +1,65 @@
+# M2 router search test: rule_a
+
+| Group | n | Hit@1 | Hit@5 | Hit@10 | MRR |
+|---|---|---|---|---|---|
+| all | 50 | 0.38 | 0.62 | 0.7 | 0.48 |
+| answer_source=table | 28 | 0.357 | 0.571 | 0.607 | 0.443 |
+| answer_source=text | 22 | 0.409 | 0.682 | 0.818 | 0.528 |
+| category=calculate | 10 | 0.6 | 0.7 | 0.7 | 0.65 |
+| category=compare_companies | 4 | 0.0 | 0.25 | 0.25 | 0.125 |
+| category=compare_years | 6 | 0.167 | 0.5 | 0.5 | 0.256 |
+| category=explain_why | 10 | 0.3 | 0.7 | 0.8 | 0.483 |
+| category=find_number | 20 | 0.45 | 0.65 | 0.8 | 0.532 |
+
+| ID | Category | Source | Rank | Evidence |
+|---|---|---|---|---|
+| dev_0001 | find_number | table | 4 | 3M_2019_10K p91 |
+| dev_0002 | find_number | table | 1 | JPMORGAN_2021Q2_10Q p119 |
+| dev_0003 | find_number | table | 2 | MGMRESORTS_2017_10K p66 |
+| dev_0004 | find_number | table | - | APPLE_2019_10K p32 |
+| dev_0005 | find_number | table | 1 | APPLE_2023Q3_10Q p5 |
+| dev_0006 | find_number | table | 1 | WALMART_2023_annualreport p46 |
+| dev_0007 | find_number | table | 9 | FEDEX_2023_annualreport p102 |
+| dev_0008 | find_number | table | 1 | AMCOR_2022_8K_dated-2022-04-26 p12 |
+| dev_0009 | find_number | table | - | JOHNSON_JOHNSON_2023Q1_EARNINGS p8 |
+| dev_0010 | find_number | table | 1 | COSTCO_2019_10K p56 |
+| dev_0011 | find_number | text | 1 | INTEL_2019_10K p24 |
+| dev_0012 | find_number | text | 4 | 3M_2019_10K p142 |
+| dev_0013 | find_number | text | 1 | COSTCO_2019_10K p70 |
+| dev_0014 | find_number | text | 7 | PG_E_2023_EARNINGS-dated-2023-06-01 p69 |
+| dev_0015 | find_number | text | 7 | ULTABEAUTY_2024Q1_EARNINGS p3 |
+| dev_0016 | find_number | text | - | LOCKHEEDMARTIN_2023Q2_10Q p7 |
+| dev_0017 | find_number | text | 4 | JPMORGAN_2021Q2_10Q p8 |
+| dev_0018 | find_number | text | 1 | APPLE_2019_10K p43 |
+| dev_0019 | find_number | text | - | INTEL_2023_8K_dated-2023-02-10 p85 |
+| dev_0020 | find_number | text | 1 | APPLE_2023Q3_10Q p22 |
+| dev_0021 | explain_why | text | 1 | FEDEX_2023_annualreport p28 |
+| dev_0022 | explain_why | text | 2 | MCDONALDS_2023Q1_EARNINGS p3 |
+| dev_0023 | explain_why | text | 1 | JPMORGAN_2021Q2_10Q p191 |
+| dev_0024 | explain_why | text | 6 | WALMART_2023_annualreport p66 |
+| dev_0025 | explain_why | text | - | MGMRESORTS_2017_10K p46 |
+| dev_0026 | explain_why | text | 3 | INTEL_2019_10K p62 |
+| dev_0027 | explain_why | text | 3 | EBAY_2023Q1_8K p2 |
+| dev_0028 | explain_why | text | 1 | APPLE_2019_10K p8 |
+| dev_0029 | explain_why | text | - | 3M_2019_10K p10 |
+| dev_0030 | explain_why | text | 2 | COSTCO_2019_10K p8 |
+| dev_0031 | calculate | table | 1 | ULTABEAUTY_2024Q1_EARNINGS p1 |
+| dev_0032 | calculate | table | 2 | MCDONALDS_2023Q1_EARNINGS p2 |
+| dev_0033 | calculate | text | 1 | ADOBE_2018_10K p86 |
+| dev_0034 | calculate | table | 1 | INTEL_2019_10K p88 |
+| dev_0035 | calculate | table | - | LOCKHEEDMARTIN_2023Q2_10Q p2 |
+| dev_0036 | calculate | text | 1 | MGMRESORTS_2017_10K p99 |
+| dev_0037 | calculate | table | - | APPLE_2019_10K p36 |
+| dev_0038 | calculate | table | 1 | APPLE_2023Q3_10Q p8 |
+| dev_0039 | calculate | table | - | WALMART_2023_annualreport p56 |
+| dev_0040 | calculate | table | 1 | FEDEX_2023_annualreport p98 |
+| dev_0041 | compare_years | table | - | CVSHEALTH_2017_10K p59 |
+| dev_0042 | compare_years | table | 1 | ORACLE_2020_10K p37 |
+| dev_0043 | compare_years | table | 5 | ULTABEAUTY_2024Q1_EARNINGS p7 |
+| dev_0044 | compare_years | table | - | MCDONALDS_2023Q1_EARNINGS p4 |
+| dev_0045 | compare_years | table | - | ADOBE_2018_10K p47 |
+| dev_0046 | compare_years | table | 3 | INTEL_2019_10K p86 |
+| dev_0047 | compare_companies | table | - | COSTCO_2019_10K p36; VERIZON_2018_10K p111 |
+| dev_0048 | compare_companies | table | - | INTEL_2019_10K p71; COSTCO_2019_10K p36 |
+| dev_0049 | compare_companies | table | - | 3M_2019_10K p60; COSTCO_2019_10K p39 |
+| dev_0050 | compare_companies | table | 2 | CVSHEALTH_2017_10K p80; MGMRESORTS_2017_10K p30 |

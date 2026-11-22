@@ -1,0 +1,5480 @@
+{
+ "documents": 360,
+ "ok": 358,
+ "skipped": {
+  "INTEL_2023_8K_dated-2023-08-16": "unrecoverable: FinanceBench copy and doc_link copy (212,472 bytes) are both truncated; no PDF reader opens them. Skipped and logged.",
+  "MCDONALDS_2022Q4_EARNINGS": "worker failed: RecursionError: maximum recursion depth exceeded"
+ },
+ "chunks": 189671,
+ "table_chunks": 33181,
+ "tokens": {
+  "median": 239,
+  "max": 480,
+  "over_limit": 0
+ },
+ "checks": {
+  "duplicate_chunk_ids": 0,
+  "chunks_over_limit": 0,
+  "chunks_without_period_date": 750,
+  "chunks_without_section": 13042
+ },
+ "per_document": {
+  "APPLE_2023Q3_10Q": {
+   "status": "ok",
+   "pages": 29,
+   "chunks": 105,
+   "table_chunks": 35,
+   "items": 7,
+   "period_end": "2023-07-01",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2023_8K_dated-2023-08-16": {
+   "status": "ok",
+   "pages": 3,
+   "chunks": 6,
+   "table_chunks": 0,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-08-16",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "EBAY_2023Q1_8K": {
+   "status": "ok",
+   "pages": 3,
+   "chunks": 7,
+   "table_chunks": 0,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-02-07",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2023_8K_dated-2023-08-16": {
+   "status": "skipped",
+   "pages": 0,
+   "chunks": 0,
+   "table_chunks": 0,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": null,
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "3M_2020_10K": {
+   "status": "ok",
+   "pages": 165,
+   "chunks": 637,
+   "table_chunks": 132,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "3M_2015_10K": {
+   "status": "ok",
+   "pages": 158,
+   "chunks": 620,
+   "table_chunks": 134,
+   "items": 19,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 18,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "3M_2018_10K": {
+   "status": "ok",
+   "pages": 160,
+   "chunks": 617,
+   "table_chunks": 128,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "3M_2019_10K": {
+   "status": "ok",
+   "pages": 186,
+   "chunks": 705,
+   "table_chunks": 132,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "3M_2017_10K": {
+   "status": "ok",
+   "pages": 176,
+   "chunks": 656,
+   "table_chunks": 140,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "3M_2016_10K": {
+   "status": "ok",
+   "pages": 233,
+   "chunks": 772,
+   "table_chunks": 144,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 28,
+   "label_flags": {
+    "table_title_shape": 1
+   }
+  },
+  "ACTIVISIONBLIZZARD_2015_10K": {
+   "status": "ok",
+   "pages": 182,
+   "chunks": 615,
+   "table_chunks": 84,
+   "items": 19,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {
+    "item_backwards": 247,
+    "long_span": 1
+   }
+  },
+  "ACTIVISIONBLIZZARD_2017_10K": {
+   "status": "ok",
+   "pages": 163,
+   "chunks": 515,
+   "table_chunks": 90,
+   "items": 16,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 64,
+   "label_flags": {
+    "item_backwards": 13,
+    "long_span": 2
+   }
+  },
+  "3M_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 92,
+   "chunks": 375,
+   "table_chunks": 62,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "3M_2021_10K": {
+   "status": "ok",
+   "pages": 161,
+   "chunks": 630,
+   "table_chunks": 130,
+   "items": 21,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ACTIVISIONBLIZZARD_2016_10K": {
+   "status": "ok",
+   "pages": 250,
+   "chunks": 882,
+   "table_chunks": 96,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 16,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "ACTIVISIONBLIZZARD_2020_10K": {
+   "status": "ok",
+   "pages": 154,
+   "chunks": 494,
+   "table_chunks": 75,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 25,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "ACTIVISIONBLIZZARD_2019_10K": {
+   "status": "ok",
+   "pages": 198,
+   "chunks": 657,
+   "table_chunks": 85,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 26,
+   "label_flags": {}
+  },
+  "ACTIVISIONBLIZZARD_2018_10K": {
+   "status": "ok",
+   "pages": 305,
+   "chunks": 846,
+   "table_chunks": 100,
+   "items": 16,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 24,
+   "label_flags": {
+    "item_backwards": 11,
+    "long_span": 1
+   }
+  },
+  "3M_2022_10K": {
+   "status": "ok",
+   "pages": 252,
+   "chunks": 927,
+   "table_chunks": 108,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "ACTIVSIONBLIZZARD_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 75,
+   "chunks": 240,
+   "table_chunks": 61,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ADOBE_2015_10K": {
+   "status": "ok",
+   "pages": 116,
+   "chunks": 544,
+   "table_chunks": 200,
+   "items": 20,
+   "period_end": "2015-11-27",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ADOBE_2016_10K": {
+   "status": "ok",
+   "pages": 112,
+   "chunks": 414,
+   "table_chunks": 85,
+   "items": 20,
+   "period_end": "2016-12-02",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ADOBE_2017_10K": {
+   "status": "ok",
+   "pages": 107,
+   "chunks": 401,
+   "table_chunks": 84,
+   "items": 21,
+   "period_end": "2017-12-01",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ADOBE_2018_10K": {
+   "status": "ok",
+   "pages": 112,
+   "chunks": 424,
+   "table_chunks": 88,
+   "items": 21,
+   "period_end": "2018-11-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ACTIVISIONBLIZZARD_2021_10K": {
+   "status": "ok",
+   "pages": 346,
+   "chunks": 984,
+   "table_chunks": 84,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 21,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "ACTIVISIONBLIZZARD_2022_10K": {
+   "status": "ok",
+   "pages": 312,
+   "chunks": 857,
+   "table_chunks": 81,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 21,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "ADOBE_2019_10K": {
+   "status": "ok",
+   "pages": 113,
+   "chunks": 444,
+   "table_chunks": 85,
+   "items": 21,
+   "period_end": "2019-11-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ADOBE_2020_10K": {
+   "status": "ok",
+   "pages": 117,
+   "chunks": 452,
+   "table_chunks": 81,
+   "items": 21,
+   "period_end": "2020-11-27",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ADOBE_2021_10K": {
+   "status": "ok",
+   "pages": 102,
+   "chunks": 384,
+   "table_chunks": 67,
+   "items": 21,
+   "period_end": "2021-12-03",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "ADOBE_2022_10K": {
+   "status": "ok",
+   "pages": 99,
+   "chunks": 380,
+   "table_chunks": 67,
+   "items": 22,
+   "period_end": "2022-12-02",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AES_2017_10K": {
+   "status": "ok",
+   "pages": 184,
+   "chunks": 827,
+   "table_chunks": 185,
+   "items": 12,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 39,
+   "label_flags": {
+    "heading_shape": 3,
+    "item_backwards": 2
+   }
+  },
+  "AES_2018_10K": {
+   "status": "ok",
+   "pages": 182,
+   "chunks": 827,
+   "table_chunks": 187,
+   "items": 12,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 40,
+   "label_flags": {
+    "heading_shape": 3,
+    "item_backwards": 2
+   }
+  },
+  "AES_2019_10K": {
+   "status": "ok",
+   "pages": 199,
+   "chunks": 818,
+   "table_chunks": 167,
+   "items": 12,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 39,
+   "label_flags": {
+    "heading_shape": 3,
+    "item_backwards": 2
+   }
+  },
+  "AES_2020_10K": {
+   "status": "ok",
+   "pages": 203,
+   "chunks": 860,
+   "table_chunks": 182,
+   "items": 19,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 4,
+   "label_flags": {
+    "heading_shape": 3
+   }
+  },
+  "AMAZON_2015_10K": {
+   "status": "ok",
+   "pages": 85,
+   "chunks": 331,
+   "table_chunks": 70,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AES_2015_10K": {
+   "status": "ok",
+   "pages": 286,
+   "chunks": 1156,
+   "table_chunks": 238,
+   "items": 15,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 6,
+   "label_flags": {
+    "heading_shape": 1,
+    "item_backwards": 8
+   }
+  },
+  "AES_2016_10K": {
+   "status": "ok",
+   "pages": 390,
+   "chunks": 1303,
+   "table_chunks": 214,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 12,
+   "label_flags": {
+    "heading_shape": 4
+   }
+  },
+  "AMAZON_2016_10K": {
+   "status": "ok",
+   "pages": 85,
+   "chunks": 323,
+   "table_chunks": 66,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMAZON_2017_10K": {
+   "status": "ok",
+   "pages": 85,
+   "chunks": 325,
+   "table_chunks": 64,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "AMAZON_2018_10K": {
+   "status": "ok",
+   "pages": 89,
+   "chunks": 345,
+   "table_chunks": 63,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "AMAZON_2019_10K": {
+   "status": "ok",
+   "pages": 83,
+   "chunks": 323,
+   "table_chunks": 64,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMAZON_2020_10K": {
+   "status": "ok",
+   "pages": 80,
+   "chunks": 301,
+   "table_chunks": 62,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AES_2021_10K": {
+   "status": "ok",
+   "pages": 267,
+   "chunks": 1056,
+   "table_chunks": 180,
+   "items": 21,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 31,
+   "label_flags": {
+    "heading_shape": 3
+   }
+  },
+  "AMAZON_2022_10K": {
+   "status": "ok",
+   "pages": 81,
+   "chunks": 317,
+   "table_chunks": 61,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMAZON_2021_10K": {
+   "status": "ok",
+   "pages": 194,
+   "chunks": 623,
+   "table_chunks": 72,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "AMCOR_2019_10K": {
+   "status": "ok",
+   "pages": 115,
+   "chunks": 436,
+   "table_chunks": 117,
+   "items": 21,
+   "period_end": "2019-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "AMCOR_2020_10K": {
+   "status": "ok",
+   "pages": 195,
+   "chunks": 679,
+   "table_chunks": 125,
+   "items": 21,
+   "period_end": "2020-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "AMCOR_2022_8K_dated-2022-07-01": {
+   "status": "ok",
+   "pages": 9,
+   "chunks": 25,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2022-07-01",
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AES_2022_10K": {
+   "status": "ok",
+   "pages": 257,
+   "chunks": 970,
+   "table_chunks": 181,
+   "items": 21,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "4 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {
+    "heading_shape": 3,
+    "long_span": 1
+   }
+  },
+  "AMCOR_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 57,
+   "chunks": 166,
+   "table_chunks": 50,
+   "items": 7,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2022-12-31 does not match fiscal year 2023"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMCOR_2023Q4_EARNINGS": {
+   "status": "ok",
+   "pages": 14,
+   "chunks": 49,
+   "table_chunks": 17,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMCOR_2021_10K": {
+   "status": "ok",
+   "pages": 156,
+   "chunks": 558,
+   "table_chunks": 107,
+   "items": 20,
+   "period_end": "2021-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "AMCOR_2022_10K": {
+   "status": "ok",
+   "pages": 144,
+   "chunks": 524,
+   "table_chunks": 102,
+   "items": 21,
+   "period_end": "2022-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMCOR_2023_10K": {
+   "status": "ok",
+   "pages": 156,
+   "chunks": 530,
+   "table_chunks": 90,
+   "items": 21,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMCOR_2022_8K_dated-2022-04-26": {
+   "status": "ok",
+   "pages": 248,
+   "chunks": 730,
+   "table_chunks": 13,
+   "items": 4,
+   "period_end": null,
+   "report_date": "2022-04-26",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 2
+   }
+  },
+  "AMD_2015_10K": {
+   "status": "ok",
+   "pages": 215,
+   "chunks": 761,
+   "table_chunks": 73,
+   "items": 20,
+   "period_end": "2015-12-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "AMD_2016_10K": {
+   "status": "ok",
+   "pages": 225,
+   "chunks": 800,
+   "table_chunks": 68,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "5 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "AMD_2019_10K": {
+   "status": "ok",
+   "pages": 109,
+   "chunks": 415,
+   "table_chunks": 61,
+   "items": 21,
+   "period_end": "2019-12-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMD_2018_10K": {
+   "status": "ok",
+   "pages": 150,
+   "chunks": 611,
+   "table_chunks": 67,
+   "items": 21,
+   "period_end": "2018-12-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "AMD_2022_annualreport": {
+   "status": "ok",
+   "pages": 122,
+   "chunks": 524,
+   "table_chunks": 94,
+   "items": 15,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 7,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "AMD_2017_10K": {
+   "status": "ok",
+   "pages": 231,
+   "chunks": 882,
+   "table_chunks": 68,
+   "items": 21,
+   "period_end": "2017-12-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "4 two-column pages read column by column"
+   ],
+   "rejected_headings": 16,
+   "label_flags": {}
+  },
+  "AMD_2021_10K": {
+   "status": "ok",
+   "pages": 118,
+   "chunks": 410,
+   "table_chunks": 54,
+   "items": 22,
+   "period_end": "2021-12-25",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 9,
+   "label_flags": {}
+  },
+  "AMD_2020_10K": {
+   "status": "ok",
+   "pages": 140,
+   "chunks": 510,
+   "table_chunks": 56,
+   "items": 21,
+   "period_end": "2020-12-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "AMD_2022_10K": {
+   "status": "ok",
+   "pages": 121,
+   "chunks": 438,
+   "table_chunks": 63,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2016_10K": {
+   "status": "ok",
+   "pages": 136,
+   "chunks": 539,
+   "table_chunks": 101,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2017_10K": {
+   "status": "ok",
+   "pages": 154,
+   "chunks": 596,
+   "table_chunks": 102,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2015_10K": {
+   "status": "ok",
+   "pages": 242,
+   "chunks": 827,
+   "table_chunks": 121,
+   "items": 18,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 29,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "AMERICANEXPRESS_2022_10K": {
+   "status": "ok",
+   "pages": 260,
+   "chunks": 833,
+   "table_chunks": 115,
+   "items": 18,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 7,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2018_10K": {
+   "status": "ok",
+   "pages": 221,
+   "chunks": 830,
+   "table_chunks": 104,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2019_10K": {
+   "status": "ok",
+   "pages": 326,
+   "chunks": 1015,
+   "table_chunks": 124,
+   "items": 20,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 12,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 82,
+   "chunks": 253,
+   "table_chunks": 47,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2020_10K": {
+   "status": "ok",
+   "pages": 152,
+   "chunks": 640,
+   "table_chunks": 98,
+   "items": 20,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2021_10K": {
+   "status": "ok",
+   "pages": 181,
+   "chunks": 690,
+   "table_chunks": 106,
+   "items": 21,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 4,
+   "label_flags": {}
+  },
+  "APPLE_2015_10K": {
+   "status": "ok",
+   "pages": 84,
+   "chunks": 341,
+   "table_chunks": 77,
+   "items": 20,
+   "period_end": "2015-09-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "APPLE_2016_10K": {
+   "status": "ok",
+   "pages": 104,
+   "chunks": 387,
+   "table_chunks": 76,
+   "items": 20,
+   "period_end": "2016-09-24",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "APPLE_2018_10K": {
+   "status": "ok",
+   "pages": 96,
+   "chunks": 380,
+   "table_chunks": 72,
+   "items": 21,
+   "period_end": "2018-09-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "APPLE_2017_10K": {
+   "status": "ok",
+   "pages": 123,
+   "chunks": 462,
+   "table_chunks": 80,
+   "items": 21,
+   "period_end": "2017-09-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "APPLE_2019_10K": {
+   "status": "ok",
+   "pages": 101,
+   "chunks": 379,
+   "table_chunks": 64,
+   "items": 21,
+   "period_end": "2019-09-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "APPLE_2020_10K": {
+   "status": "ok",
+   "pages": 105,
+   "chunks": 399,
+   "table_chunks": 68,
+   "items": 21,
+   "period_end": "2020-09-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "APPLE_2021_10K": {
+   "status": "ok",
+   "pages": 82,
+   "chunks": 314,
+   "table_chunks": 55,
+   "items": 22,
+   "period_end": "2021-09-25",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "APPLE_2022_10K": {
+   "status": "ok",
+   "pages": 80,
+   "chunks": 311,
+   "table_chunks": 55,
+   "items": 22,
+   "period_end": "2022-09-24",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BESTBUY_2016_10K": {
+   "status": "ok",
+   "pages": 113,
+   "chunks": 418,
+   "table_chunks": 105,
+   "items": 20,
+   "period_end": "2016-01-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BESTBUY_2017_10K": {
+   "status": "ok",
+   "pages": 109,
+   "chunks": 407,
+   "table_chunks": 102,
+   "items": 21,
+   "period_end": "2017-01-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "AMERICANWATERWORKS_2022_10K": {
+   "status": "ok",
+   "pages": 306,
+   "chunks": 1040,
+   "table_chunks": 127,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 9,
+   "label_flags": {
+    "heading_shape": 1
+   }
+  },
+  "BESTBUY_2018_10K": {
+   "status": "ok",
+   "pages": 109,
+   "chunks": 418,
+   "table_chunks": 101,
+   "items": 19,
+   "period_end": "2018-02-03",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "BESTBUY_2015_10K": {
+   "status": "ok",
+   "pages": 147,
+   "chunks": 508,
+   "table_chunks": 108,
+   "items": 17,
+   "period_end": "2015-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 6,
+   "label_flags": {
+    "item_backwards": 117
+   }
+  },
+  "BESTBUY_2023_8K_dated-2023-04-24": {
+   "status": "ok",
+   "pages": 2,
+   "chunks": 4,
+   "table_chunks": 0,
+   "items": 1,
+   "period_end": null,
+   "report_date": "2023-04-24",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BESTBUY_2019_10K": {
+   "status": "ok",
+   "pages": 107,
+   "chunks": 426,
+   "table_chunks": 106,
+   "items": 21,
+   "period_end": "2019-02-02",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BESTBUY_2023Q4_EARNINGS": {
+   "status": "ok",
+   "pages": 13,
+   "chunks": 40,
+   "table_chunks": 17,
+   "items": 0,
+   "period_end": "2023-01-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "BESTBUY_2024Q2_10Q": {
+   "status": "ok",
+   "pages": 30,
+   "chunks": 130,
+   "table_chunks": 40,
+   "items": 6,
+   "period_end": "2023-07-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2023-07-29 does not match fiscal year 2024"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BESTBUY_2023_10K": {
+   "status": "ok",
+   "pages": 75,
+   "chunks": 349,
+   "table_chunks": 77,
+   "items": 22,
+   "period_end": "2023-01-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BESTBUY_2024Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 12,
+   "chunks": 37,
+   "table_chunks": 14,
+   "items": 0,
+   "period_end": "2023-07-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2023-07-29 does not match fiscal year 2024"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "BESTBUY_2020_10K": {
+   "status": "ok",
+   "pages": 71,
+   "chunks": 360,
+   "table_chunks": 87,
+   "items": 13,
+   "period_end": "2020-02-01",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 8,
+   "label_flags": {
+    "item_backwards": 4
+   }
+  },
+  "BESTBUY_2021_10K": {
+   "status": "ok",
+   "pages": 108,
+   "chunks": 437,
+   "table_chunks": 76,
+   "items": 20,
+   "period_end": "2021-01-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 6,
+   "label_flags": {
+    "heading_shape": 2
+   }
+  },
+  "BESTBUY_2022_10K": {
+   "status": "ok",
+   "pages": 111,
+   "chunks": 433,
+   "table_chunks": 70,
+   "items": 22,
+   "period_end": "2022-01-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "BESTBUY_2023_8K_dated-2023-04-12": {
+   "status": "ok",
+   "pages": 148,
+   "chunks": 376,
+   "table_chunks": 7,
+   "items": 3,
+   "period_end": null,
+   "report_date": "2023-04-12",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {
+    "long_span": 2
+   }
+  },
+  "BLOCK_2016_10K": {
+   "status": "ok",
+   "pages": 121,
+   "chunks": 418,
+   "table_chunks": 80,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BLOCK_2015_10K": {
+   "status": "ok",
+   "pages": 129,
+   "chunks": 502,
+   "table_chunks": 80,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BLOCK_2017_10K": {
+   "status": "ok",
+   "pages": 138,
+   "chunks": 494,
+   "table_chunks": 85,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "BLOCK_2018_10K": {
+   "status": "ok",
+   "pages": 138,
+   "chunks": 499,
+   "table_chunks": 94,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BLOCK_2019_10K": {
+   "status": "ok",
+   "pages": 141,
+   "chunks": 489,
+   "table_chunks": 96,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "BLOCK_2020_10K": {
+   "status": "ok",
+   "pages": 158,
+   "chunks": 572,
+   "table_chunks": 106,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "BOEING_2017_10K": {
+   "status": "ok",
+   "pages": 127,
+   "chunks": 439,
+   "table_chunks": 115,
+   "items": 20,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 22,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "BOEING_2015_10K": {
+   "status": "ok",
+   "pages": 174,
+   "chunks": 566,
+   "table_chunks": 120,
+   "items": 19,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 24,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "BOEING_2016_10K": {
+   "status": "ok",
+   "pages": 200,
+   "chunks": 641,
+   "table_chunks": 126,
+   "items": 19,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 26,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "BOEING_2018_10K": {
+   "status": "ok",
+   "pages": 136,
+   "chunks": 461,
+   "table_chunks": 128,
+   "items": 20,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 24,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "BOEING_2019_10K": {
+   "status": "ok",
+   "pages": 144,
+   "chunks": 496,
+   "table_chunks": 124,
+   "items": 20,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 24,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "BOEING_2020_10K": {
+   "status": "ok",
+   "pages": 161,
+   "chunks": 537,
+   "table_chunks": 120,
+   "items": 20,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 23,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "BLOCK_2022_10K": {
+   "status": "ok",
+   "pages": 196,
+   "chunks": 669,
+   "table_chunks": 99,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 18,
+   "label_flags": {}
+  },
+  "BLOCK_2021_10K": {
+   "status": "ok",
+   "pages": 410,
+   "chunks": 1335,
+   "table_chunks": 117,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 6,
+   "label_flags": {}
+  },
+  "BOEING_2021_10K": {
+   "status": "ok",
+   "pages": 215,
+   "chunks": 682,
+   "table_chunks": 129,
+   "items": 20,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 30,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "BOEING_2022_10K": {
+   "status": "ok",
+   "pages": 190,
+   "chunks": 606,
+   "table_chunks": 127,
+   "items": 21,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 28,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "COCACOLA_2015_10K": {
+   "status": "ok",
+   "pages": 218,
+   "chunks": 817,
+   "table_chunks": 140,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "COCACOLA_2017_10K": {
+   "status": "ok",
+   "pages": 197,
+   "chunks": 768,
+   "table_chunks": 132,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 5,
+   "label_flags": {}
+  },
+  "COCACOLA_2016_10K": {
+   "status": "ok",
+   "pages": 205,
+   "chunks": 792,
+   "table_chunks": 138,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "COCACOLA_2020_10K": {
+   "status": "ok",
+   "pages": 194,
+   "chunks": 736,
+   "table_chunks": 113,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COCACOLA_2019_10K": {
+   "status": "ok",
+   "pages": 214,
+   "chunks": 816,
+   "table_chunks": 124,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "COCACOLA_2018_10K": {
+   "status": "ok",
+   "pages": 201,
+   "chunks": 785,
+   "table_chunks": 137,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "CORNING_2018_10K": {
+   "status": "ok",
+   "pages": 141,
+   "chunks": 481,
+   "table_chunks": 117,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 58,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "CORNING_2017_10K": {
+   "status": "ok",
+   "pages": 154,
+   "chunks": 573,
+   "table_chunks": 124,
+   "items": 20,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 61,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "CORNING_2016_10K": {
+   "status": "ok",
+   "pages": 171,
+   "chunks": 624,
+   "table_chunks": 140,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 60,
+   "label_flags": {}
+  },
+  "CORNING_2015_10K": {
+   "status": "ok",
+   "pages": 273,
+   "chunks": 973,
+   "table_chunks": 215,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COCACOLA_2022_10K": {
+   "status": "ok",
+   "pages": 183,
+   "chunks": 700,
+   "table_chunks": 118,
+   "items": 21,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 20,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "COCACOLA_2021_10K": {
+   "status": "ok",
+   "pages": 183,
+   "chunks": 715,
+   "table_chunks": 110,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "CORNING_2019_10K": {
+   "status": "ok",
+   "pages": 142,
+   "chunks": 518,
+   "table_chunks": 134,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 58,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "CORNING_2020_10K": {
+   "status": "ok",
+   "pages": 138,
+   "chunks": 499,
+   "table_chunks": 143,
+   "items": 20,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 18,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "CORNING_2021_10K": {
+   "status": "ok",
+   "pages": 125,
+   "chunks": 483,
+   "table_chunks": 129,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 56,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "CORNING_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 46,
+   "chunks": 162,
+   "table_chunks": 51,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2015_10K": {
+   "status": "ok",
+   "pages": 84,
+   "chunks": 300,
+   "table_chunks": 61,
+   "items": 20,
+   "period_end": "2015-08-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2016_10K": {
+   "status": "ok",
+   "pages": 80,
+   "chunks": 279,
+   "table_chunks": 61,
+   "items": 19,
+   "period_end": "2016-08-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 8,
+   "label_flags": {}
+  },
+  "COSTCO_2017_10K": {
+   "status": "ok",
+   "pages": 75,
+   "chunks": 265,
+   "table_chunks": 58,
+   "items": 21,
+   "period_end": "2017-09-03",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 28,
+   "label_flags": {}
+  },
+  "COSTCO_2018_10K": {
+   "status": "ok",
+   "pages": 74,
+   "chunks": 251,
+   "table_chunks": 57,
+   "items": 21,
+   "period_end": "2018-09-02",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2023_8K_dated-2023-01-19": {
+   "status": "ok",
+   "pages": 3,
+   "chunks": 7,
+   "table_chunks": 0,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-01-19",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "COSTCO_2019_10K": {
+   "status": "ok",
+   "pages": 76,
+   "chunks": 258,
+   "table_chunks": 58,
+   "items": 21,
+   "period_end": "2019-09-01",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 4,
+   "label_flags": {}
+  },
+  "COSTCO_2023Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 4,
+   "chunks": 13,
+   "table_chunks": 5,
+   "items": 0,
+   "period_end": "2022-11-20",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2022-11-20 does not match fiscal year 2023"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2023Q3_EARNINGS": {
+   "status": "ok",
+   "pages": 4,
+   "chunks": 12,
+   "table_chunks": 4,
+   "items": 0,
+   "period_end": "2023-05-07",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2020_10K": {
+   "status": "ok",
+   "pages": 80,
+   "chunks": 277,
+   "table_chunks": 63,
+   "items": 21,
+   "period_end": "2020-08-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2023_8K_dated-2023-08-09": {
+   "status": "ok",
+   "pages": 34,
+   "chunks": 108,
+   "table_chunks": 4,
+   "items": 3,
+   "period_end": null,
+   "report_date": "2023-08-09",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "CORNING_2022_10K": {
+   "status": "ok",
+   "pages": 159,
+   "chunks": 561,
+   "table_chunks": 128,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 50,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "COSTCO_2021_10K": {
+   "status": "ok",
+   "pages": 76,
+   "chunks": 259,
+   "table_chunks": 55,
+   "items": 21,
+   "period_end": "2021-08-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "COSTCO_2022_10K": {
+   "status": "ok",
+   "pages": 86,
+   "chunks": 280,
+   "table_chunks": 57,
+   "items": 22,
+   "period_end": "2022-08-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "CVSHEALTH_2017_10K": {
+   "status": "ok",
+   "pages": 135,
+   "chunks": 540,
+   "table_chunks": 85,
+   "items": 20,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "CVSHEALTH_2015_10K": {
+   "status": "ok",
+   "pages": 198,
+   "chunks": 734,
+   "table_chunks": 112,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 10,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "CVSHEALTH_2016_10K": {
+   "status": "ok",
+   "pages": 252,
+   "chunks": 981,
+   "table_chunks": 112,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 48,
+   "label_flags": {
+    "heading_shape": 1,
+    "long_span": 1
+   }
+  },
+  "CVSHEALTH_2020_10K": {
+   "status": "ok",
+   "pages": 226,
+   "chunks": 889,
+   "table_chunks": 120,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {
+    "long_span": 2
+   }
+  },
+  "CVSHEALTH_2019_10K": {
+   "status": "ok",
+   "pages": 297,
+   "chunks": 1062,
+   "table_chunks": 156,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "EBAY_2015_10K": {
+   "status": "ok",
+   "pages": 116,
+   "chunks": 421,
+   "table_chunks": 76,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {
+    "item_backwards": 179
+   }
+  },
+  "CVSHEALTH_2018_10K": {
+   "status": "ok",
+   "pages": 392,
+   "chunks": 1363,
+   "table_chunks": 127,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 7,
+   "label_flags": {}
+  },
+  "CVSHEALTH_2021_10K": {
+   "status": "ok",
+   "pages": 257,
+   "chunks": 1006,
+   "table_chunks": 174,
+   "items": 21,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 2
+   }
+  },
+  "EBAY_2016_10K": {
+   "status": "ok",
+   "pages": 117,
+   "chunks": 420,
+   "table_chunks": 79,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {
+    "item_backwards": 173
+   }
+  },
+  "EBAY_2017_10K": {
+   "status": "ok",
+   "pages": 117,
+   "chunks": 413,
+   "table_chunks": 82,
+   "items": 20,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {
+    "item_backwards": 180
+   }
+  },
+  "EBAY_2019_10K": {
+   "status": "ok",
+   "pages": 148,
+   "chunks": 543,
+   "table_chunks": 89,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 4,
+   "label_flags": {
+    "item_backwards": 194
+   }
+  },
+  "EBAY_2018_10K": {
+   "status": "ok",
+   "pages": 187,
+   "chunks": 675,
+   "table_chunks": 100,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {
+    "item_backwards": 186
+   }
+  },
+  "EBAY_2023Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 15,
+   "chunks": 44,
+   "table_chunks": 14,
+   "items": 0,
+   "period_end": "2023-03-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "EBAY_2023Q2_8K": {
+   "status": "ok",
+   "pages": 3,
+   "chunks": 5,
+   "table_chunks": 0,
+   "items": 1,
+   "period_end": null,
+   "report_date": "2023-03-14",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "EBAY_2020_10K": {
+   "status": "ok",
+   "pages": 131,
+   "chunks": 472,
+   "table_chunks": 89,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 6,
+   "label_flags": {
+    "item_backwards": 210
+   }
+  },
+  "EBAY_2023Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 15,
+   "chunks": 42,
+   "table_chunks": 13,
+   "items": 0,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "EBAY_2021_10K": {
+   "status": "ok",
+   "pages": 155,
+   "chunks": 528,
+   "table_chunks": 100,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 19,
+   "label_flags": {}
+  },
+  "CVSHEALTH_2022_10K": {
+   "status": "ok",
+   "pages": 213,
+   "chunks": 853,
+   "table_chunks": 132,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 2
+   }
+  },
+  "FOOTLOCKER_2023Q3_10Q": {
+   "status": "ok",
+   "pages": 42,
+   "chunks": 157,
+   "table_chunks": 50,
+   "items": 5,
+   "period_end": "2022-10-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2022-10-29 does not match fiscal year 2023"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "EBAY_2022_10K": {
+   "status": "ok",
+   "pages": 133,
+   "chunks": 459,
+   "table_chunks": 84,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 19,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "FOOTLOCKER_2022_8K_dated_2023-02-21": {
+   "status": "ok",
+   "pages": 3,
+   "chunks": 5,
+   "table_chunks": 0,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-02-21",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "FOOTLOCKER_2022_8K_dated-2022-05-20": {
+   "status": "ok",
+   "pages": 4,
+   "chunks": 8,
+   "table_chunks": 1,
+   "items": 3,
+   "period_end": null,
+   "report_date": "2022-05-20",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "FOOTLOCKER_2022_8K_dated_2022-08-19": {
+   "status": "ok",
+   "pages": 31,
+   "chunks": 76,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2022-08-19",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "FEDEX_2023_annualreport": {
+   "status": "ok",
+   "pages": 139,
+   "chunks": 583,
+   "table_chunks": 105,
+   "items": 22,
+   "period_end": "2023-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "EBAY_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 188,
+   "chunks": 556,
+   "table_chunks": 69,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "FOOTLOCKER_2022_10K": {
+   "status": "ok",
+   "pages": 121,
+   "chunks": 460,
+   "table_chunks": 103,
+   "items": 21,
+   "period_end": "2022-01-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "FOOTLOCKER_2023_10K": {
+   "status": "ok",
+   "pages": 96,
+   "chunks": 383,
+   "table_chunks": 91,
+   "items": 22,
+   "period_end": "2023-01-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "FOOTLOCKER_2023_annualreport": {
+   "status": "ok",
+   "pages": 100,
+   "chunks": 373,
+   "table_chunks": 97,
+   "items": 22,
+   "period_end": "2023-01-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2015_10K": {
+   "status": "ok",
+   "pages": 143,
+   "chunks": 480,
+   "table_chunks": 115,
+   "items": 20,
+   "period_end": "2015-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2016_10K": {
+   "status": "ok",
+   "pages": 126,
+   "chunks": 439,
+   "table_chunks": 118,
+   "items": 20,
+   "period_end": "2016-05-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2017_10K": {
+   "status": "ok",
+   "pages": 135,
+   "chunks": 454,
+   "table_chunks": 122,
+   "items": 21,
+   "period_end": "2017-05-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "FEDEX_2023_10K": {
+   "status": "ok",
+   "pages": 223,
+   "chunks": 806,
+   "table_chunks": 113,
+   "items": 22,
+   "period_end": "2023-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2019_10K": {
+   "status": "ok",
+   "pages": 140,
+   "chunks": 509,
+   "table_chunks": 121,
+   "items": 21,
+   "period_end": "2019-05-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2021_10K": {
+   "status": "ok",
+   "pages": 122,
+   "chunks": 480,
+   "table_chunks": 109,
+   "items": 20,
+   "period_end": "2021-05-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2020_10K": {
+   "status": "ok",
+   "pages": 127,
+   "chunks": 489,
+   "table_chunks": 113,
+   "items": 21,
+   "period_end": "2020-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2018_10K": {
+   "status": "ok",
+   "pages": 208,
+   "chunks": 683,
+   "table_chunks": 128,
+   "items": 21,
+   "period_end": "2018-05-27",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2023_annualreport": {
+   "status": "ok",
+   "pages": 99,
+   "chunks": 401,
+   "table_chunks": 106,
+   "items": 21,
+   "period_end": "2023-05-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2022_10K": {
+   "status": "ok",
+   "pages": 127,
+   "chunks": 474,
+   "table_chunks": 105,
+   "items": 21,
+   "period_end": "2022-05-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "INTEL_2017_10K": {
+   "status": "ok",
+   "pages": 185,
+   "chunks": 548,
+   "table_chunks": 89,
+   "items": 0,
+   "period_end": "2017-12-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "few sections found (0 Items); page headings used",
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 19,
+   "label_flags": {}
+  },
+  "INTEL_2018_10K": {
+   "status": "ok",
+   "pages": 138,
+   "chunks": 476,
+   "table_chunks": 98,
+   "items": 0,
+   "period_end": "2018-12-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "few sections found (0 Items); page headings used",
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2015_10K": {
+   "status": "ok",
+   "pages": 149,
+   "chunks": 576,
+   "table_chunks": 137,
+   "items": 20,
+   "period_end": "2015-12-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2016_10K": {
+   "status": "ok",
+   "pages": 147,
+   "chunks": 556,
+   "table_chunks": 134,
+   "items": 19,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 19,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "INTEL_2019_10K": {
+   "status": "ok",
+   "pages": 129,
+   "chunks": 430,
+   "table_chunks": 84,
+   "items": 0,
+   "period_end": "2019-12-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "few sections found (0 Items); page headings used",
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2020_10K": {
+   "status": "ok",
+   "pages": 122,
+   "chunks": 477,
+   "table_chunks": 105,
+   "items": 0,
+   "period_end": "2020-12-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "few sections found (0 Items); page headings used",
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2022Q4_EARNINGS": {
+   "status": "ok",
+   "pages": 17,
+   "chunks": 55,
+   "table_chunks": 18,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list",
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2023Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 15,
+   "chunks": 42,
+   "table_chunks": 14,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list",
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2021_10K": {
+   "status": "ok",
+   "pages": 123,
+   "chunks": 478,
+   "table_chunks": 94,
+   "items": 22,
+   "period_end": "2021-12-25",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "GENERALMILLS_2023_10K": {
+   "status": "ok",
+   "pages": 236,
+   "chunks": 820,
+   "table_chunks": 109,
+   "items": 21,
+   "period_end": "2023-05-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "INTEL_2022_10K": {
+   "status": "ok",
+   "pages": 134,
+   "chunks": 483,
+   "table_chunks": 81,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2023_8K_dated-2022-11-22": {
+   "status": "ok",
+   "pages": 103,
+   "chunks": 241,
+   "table_chunks": 7,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2022-11-22",
+   "period_source": "cover",
+   "warnings": [
+    "report date 2022-11-22 does not match fiscal year 2023"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "INTEL_2023_8K_dated-2023-02-10": {
+   "status": "ok",
+   "pages": 214,
+   "chunks": 380,
+   "table_chunks": 13,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-02-07",
+   "period_source": "cover",
+   "warnings": [
+    "cover date 2023-02-07 differs from file name date 2023-02-10"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2015_10K": {
+   "status": "ok",
+   "pages": 111,
+   "chunks": 441,
+   "table_chunks": 87,
+   "items": 20,
+   "period_end": "2016-01-03",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "period end 2016-01-03 is not in document list year 2015",
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2016_10K": {
+   "status": "ok",
+   "pages": 110,
+   "chunks": 443,
+   "table_chunks": 86,
+   "items": 21,
+   "period_end": "2017-01-01",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "period end 2017-01-01 is not in document list year 2016",
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2017_10K": {
+   "status": "ok",
+   "pages": 115,
+   "chunks": 452,
+   "table_chunks": 90,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2022Q4_EARNINGS": {
+   "status": "ok",
+   "pages": 24,
+   "chunks": 77,
+   "table_chunks": 42,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2018_10K": {
+   "status": "ok",
+   "pages": 126,
+   "chunks": 483,
+   "table_chunks": 106,
+   "items": 21,
+   "period_end": "2018-12-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2023Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 22,
+   "chunks": 57,
+   "table_chunks": 26,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30": {
+   "status": "ok",
+   "pages": 27,
+   "chunks": 89,
+   "table_chunks": 44,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-08-30",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2023_8K_dated-2023-08-23": {
+   "status": "ok",
+   "pages": 3,
+   "chunks": 4,
+   "table_chunks": 0,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-08-23",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2019_10K": {
+   "status": "ok",
+   "pages": 136,
+   "chunks": 521,
+   "table_chunks": 103,
+   "items": 21,
+   "period_end": "2019-12-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2023Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 24,
+   "chunks": 77,
+   "table_chunks": 41,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2020_10K": {
+   "status": "ok",
+   "pages": 157,
+   "chunks": 544,
+   "table_chunks": 96,
+   "items": 21,
+   "period_end": "2021-01-03",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "period end 2021-01-03 is not in document list year 2020"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2021_10K": {
+   "status": "ok",
+   "pages": 135,
+   "chunks": 514,
+   "table_chunks": 92,
+   "items": 22,
+   "period_end": "2022-01-02",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "period end 2022-01-02 is not in document list year 2021"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JOHNSON_JOHNSON_2022_10K": {
+   "status": "ok",
+   "pages": 151,
+   "chunks": 562,
+   "table_chunks": 92,
+   "items": 22,
+   "period_end": "2023-01-01",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "period end 2023-01-01 is not in document list year 2022",
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JPMORGAN_2021Q1_10Q": {
+   "status": "ok",
+   "pages": 179,
+   "chunks": 778,
+   "table_chunks": 286,
+   "items": 4,
+   "period_end": "2021-03-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "30 two-column pages read column by column"
+   ],
+   "rejected_headings": 5,
+   "label_flags": {}
+  },
+  "JPMORGAN_2021Q2_10Q": {
+   "status": "ok",
+   "pages": 197,
+   "chunks": 843,
+   "table_chunks": 316,
+   "items": 4,
+   "period_end": "2021-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "30 two-column pages read column by column"
+   ],
+   "rejected_headings": 6,
+   "label_flags": {}
+  },
+  "JPMORGAN_2021Q3_10Q": {
+   "status": "ok",
+   "pages": 201,
+   "chunks": 837,
+   "table_chunks": 307,
+   "items": 4,
+   "period_end": "2021-09-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "27 two-column pages read column by column"
+   ],
+   "rejected_headings": 5,
+   "label_flags": {}
+  },
+  "JPMORGAN_2022Q1_10Q": {
+   "status": "ok",
+   "pages": 181,
+   "chunks": 772,
+   "table_chunks": 289,
+   "items": 7,
+   "period_end": "2022-03-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "14 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "JPMORGAN_2022Q2_10Q": {
+   "status": "ok",
+   "pages": 197,
+   "chunks": 857,
+   "table_chunks": 327,
+   "items": 7,
+   "period_end": "2022-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "20 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JPMORGAN_2022Q3_10Q": {
+   "status": "ok",
+   "pages": 199,
+   "chunks": 855,
+   "table_chunks": 322,
+   "items": 7,
+   "period_end": "2022-09-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "21 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JPMORGAN_2021_10K": {
+   "status": "ok",
+   "pages": 393,
+   "chunks": 1667,
+   "table_chunks": 373,
+   "items": 16,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "52 two-column pages read column by column"
+   ],
+   "rejected_headings": 5,
+   "label_flags": {}
+  },
+  "JPMORGAN_2023Q1_10Q": {
+   "status": "ok",
+   "pages": 184,
+   "chunks": 799,
+   "table_chunks": 295,
+   "items": 7,
+   "period_end": "2023-03-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "23 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "JPMORGAN_2022_10K": {
+   "status": "ok",
+   "pages": 382,
+   "chunks": 1637,
+   "table_chunks": 378,
+   "items": 15,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "44 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "JPMORGAN_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 217,
+   "chunks": 932,
+   "table_chunks": 337,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "28 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "KRAFTHEINZ_2015_10K": {
+   "status": "ok",
+   "pages": 156,
+   "chunks": 565,
+   "table_chunks": 157,
+   "items": 20,
+   "period_end": "2016-01-03",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "period end 2016-01-03 is not in document list year 2015",
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "KRAFTHEINZ_2016_10K": {
+   "status": "ok",
+   "pages": 150,
+   "chunks": 586,
+   "table_chunks": 132,
+   "items": 19,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {
+    "heading_shape": 4
+   }
+  },
+  "KRAFTHEINZ_2017_10K": {
+   "status": "ok",
+   "pages": 171,
+   "chunks": 639,
+   "table_chunks": 136,
+   "items": 21,
+   "period_end": "2017-12-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {
+    "heading_shape": 3
+   }
+  },
+  "KRAFTHEINZ_2019_10K": {
+   "status": "ok",
+   "pages": 152,
+   "chunks": 630,
+   "table_chunks": 139,
+   "items": 16,
+   "period_end": "2019-12-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 6,
+   "label_flags": {
+    "item_backwards": 10
+   }
+  },
+  "KRAFTHEINZ_2020_10K": {
+   "status": "ok",
+   "pages": 145,
+   "chunks": 610,
+   "table_chunks": 125,
+   "items": 20,
+   "period_end": "2020-12-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {
+    "heading_shape": 3
+   }
+  },
+  "KRAFTHEINZ_2021_10K": {
+   "status": "ok",
+   "pages": 139,
+   "chunks": 593,
+   "table_chunks": 115,
+   "items": 21,
+   "period_end": "2021-12-25",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {
+    "heading_shape": 2
+   }
+  },
+  "LOCKHEEDMARTIN_2015_10K": {
+   "status": "ok",
+   "pages": 147,
+   "chunks": 563,
+   "table_chunks": 63,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "KRAFTHEINZ_2018_10K": {
+   "status": "ok",
+   "pages": 419,
+   "chunks": 1481,
+   "table_chunks": 295,
+   "items": 16,
+   "period_end": "2018-12-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 9,
+   "label_flags": {
+    "heading_shape": 3,
+    "item_backwards": 11,
+    "long_span": 1
+   }
+  },
+  "KRAFTHEINZ_2022_10K": {
+   "status": "ok",
+   "pages": 294,
+   "chunks": 1067,
+   "table_chunks": 129,
+   "items": 21,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 87,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2018_10K": {
+   "status": "ok",
+   "pages": 205,
+   "chunks": 732,
+   "table_chunks": 74,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2017_10K": {
+   "status": "ok",
+   "pages": 216,
+   "chunks": 833,
+   "table_chunks": 101,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2016_10K": {
+   "status": "ok",
+   "pages": 289,
+   "chunks": 865,
+   "table_chunks": 70,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {
+    "heading_shape": 7
+   }
+  },
+  "LOCKHEEDMARTIN_2019_10K": {
+   "status": "ok",
+   "pages": 175,
+   "chunks": 645,
+   "table_chunks": 62,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 6,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2023_8K_dated-2023-08-24": {
+   "status": "ok",
+   "pages": 8,
+   "chunks": 10,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-08-24",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2023Q1_10Q": {
+   "status": "ok",
+   "pages": 22,
+   "chunks": 49,
+   "table_chunks": 13,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "no 'quarterly period ended' date on the cover; earnings rule used",
+    "earnings period end not found; year from document list",
+    "few sections found (0 Items); page headings used"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 14,
+   "chunks": 46,
+   "table_chunks": 15,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "no 'quarterly period ended' date on the cover; earnings rule used",
+    "earnings period end not found; year from document list",
+    "few sections found (0 Items); page headings used"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2023_8K_dated-2023-05-25": {
+   "status": "ok",
+   "pages": 76,
+   "chunks": 178,
+   "table_chunks": 4,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-05-25",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "MCDONALDS_2022Q4_EARNINGS": {
+   "status": "skipped",
+   "pages": 0,
+   "chunks": 0,
+   "table_chunks": 0,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": null,
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MCDONALDS_2023Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 4,
+   "chunks": 13,
+   "table_chunks": 4,
+   "items": 0,
+   "period_end": "2023-03-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MCDONALDS_2023Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 6,
+   "chunks": 19,
+   "table_chunks": 8,
+   "items": 0,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2022_10K": {
+   "status": "ok",
+   "pages": 130,
+   "chunks": 517,
+   "table_chunks": 67,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "MCDONALDS_8K_dated-2023-02-13": {
+   "status": "ok",
+   "pages": 3,
+   "chunks": 8,
+   "table_chunks": 1,
+   "items": 1,
+   "period_end": null,
+   "report_date": "2023-02-13",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "MCDONALDS_8K_dated-2023-01-06": {
+   "status": "ok",
+   "pages": 7,
+   "chunks": 12,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-01-06",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2022Q2_10Q": {
+   "status": "ok",
+   "pages": 58,
+   "chunks": 223,
+   "table_chunks": 37,
+   "items": 6,
+   "period_end": "2022-06-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MCDONALDS_8K_dated-2023-08-14": {
+   "status": "ok",
+   "pages": 6,
+   "chunks": 12,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-08-14",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "LOCKHEEDMARTIN_2020_10K": {
+   "status": "ok",
+   "pages": 132,
+   "chunks": 520,
+   "table_chunks": 61,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "LOCKHEEDMARTIN_2021_10K": {
+   "status": "ok",
+   "pages": 136,
+   "chunks": 534,
+   "table_chunks": 64,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "MCDONALDS_2022_10K": {
+   "status": "ok",
+   "pages": 104,
+   "chunks": 368,
+   "table_chunks": 74,
+   "items": 0,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "few sections found (0 Items); page headings used",
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 26,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2017_10K": {
+   "status": "ok",
+   "pages": 190,
+   "chunks": 767,
+   "table_chunks": 139,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2020_10K": {
+   "status": "ok",
+   "pages": 150,
+   "chunks": 599,
+   "table_chunks": 91,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2018_10K": {
+   "status": "ok",
+   "pages": 188,
+   "chunks": 715,
+   "table_chunks": 136,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2015_10K": {
+   "status": "ok",
+   "pages": 231,
+   "chunks": 898,
+   "table_chunks": 144,
+   "items": 19,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2023_8K_dated-2023-03-01": {
+   "status": "ok",
+   "pages": 5,
+   "chunks": 13,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-03-01",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2023_8K_dated-2023-09-12": {
+   "status": "ok",
+   "pages": 4,
+   "chunks": 11,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-09-12",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2022Q4_EARNINGS": {
+   "status": "ok",
+   "pages": 15,
+   "chunks": 59,
+   "table_chunks": 19,
+   "items": 0,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2016_10K": {
+   "status": "ok",
+   "pages": 328,
+   "chunks": 1110,
+   "table_chunks": 160,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 35,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 62,
+   "chunks": 217,
+   "table_chunks": 59,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2019_10K": {
+   "status": "ok",
+   "pages": 289,
+   "chunks": 994,
+   "table_chunks": 125,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "MICROSOFT_2015_10K": {
+   "status": "ok",
+   "pages": 134,
+   "chunks": 466,
+   "table_chunks": 84,
+   "items": 20,
+   "period_end": "2015-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2021_10K": {
+   "status": "ok",
+   "pages": 210,
+   "chunks": 814,
+   "table_chunks": 97,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "MICROSOFT_2016_10K": {
+   "status": "ok",
+   "pages": 121,
+   "chunks": 441,
+   "table_chunks": 80,
+   "items": 20,
+   "period_end": "2016-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MICROSOFT_2017_10K": {
+   "status": "ok",
+   "pages": 116,
+   "chunks": 429,
+   "table_chunks": 86,
+   "items": 21,
+   "period_end": "2017-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MGMRESORTS_2022_10K": {
+   "status": "ok",
+   "pages": 220,
+   "chunks": 726,
+   "table_chunks": 91,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 4,
+   "label_flags": {
+    "heading_shape": 2
+   }
+  },
+  "MICROSOFT_2018_10K": {
+   "status": "ok",
+   "pages": 129,
+   "chunks": 458,
+   "table_chunks": 91,
+   "items": 21,
+   "period_end": "2018-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MICROSOFT_2020_10K": {
+   "status": "ok",
+   "pages": 118,
+   "chunks": 391,
+   "table_chunks": 73,
+   "items": 21,
+   "period_end": "2020-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MICROSOFT_2021_10K": {
+   "status": "ok",
+   "pages": 116,
+   "chunks": 403,
+   "table_chunks": 76,
+   "items": 21,
+   "period_end": "2021-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MICROSOFT_2019_10K": {
+   "status": "ok",
+   "pages": 146,
+   "chunks": 506,
+   "table_chunks": 83,
+   "items": 21,
+   "period_end": "2019-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NETFLIX_2015_10K": {
+   "status": "ok",
+   "pages": 72,
+   "chunks": 264,
+   "table_chunks": 55,
+   "items": 18,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "NETFLIX_2016_10K": {
+   "status": "ok",
+   "pages": 73,
+   "chunks": 259,
+   "table_chunks": 54,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 11,
+   "label_flags": {}
+  },
+  "NETFLIX_2017_10K": {
+   "status": "ok",
+   "pages": 73,
+   "chunks": 262,
+   "table_chunks": 51,
+   "items": 17,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 15,
+   "label_flags": {
+    "item_backwards": 11
+   }
+  },
+  "NETFLIX_2019_10K": {
+   "status": "ok",
+   "pages": 78,
+   "chunks": 270,
+   "table_chunks": 61,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 10,
+   "label_flags": {}
+  },
+  "NETFLIX_2018_10K": {
+   "status": "ok",
+   "pages": 82,
+   "chunks": 287,
+   "table_chunks": 69,
+   "items": 17,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 16,
+   "label_flags": {
+    "item_backwards": 9,
+    "long_span": 1
+   }
+  },
+  "MICROSOFT_2022_10K": {
+   "status": "ok",
+   "pages": 116,
+   "chunks": 398,
+   "table_chunks": 77,
+   "items": 22,
+   "period_end": "2022-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "MICROSOFT_2023_10K": {
+   "status": "ok",
+   "pages": 116,
+   "chunks": 389,
+   "table_chunks": 76,
+   "items": 22,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NETFLIX_2020_10K": {
+   "status": "ok",
+   "pages": 95,
+   "chunks": 310,
+   "table_chunks": 62,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 24,
+   "label_flags": {}
+  },
+  "NETFLIX_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 38,
+   "chunks": 158,
+   "table_chunks": 62,
+   "items": 7,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NETFLIX_2021_10K": {
+   "status": "ok",
+   "pages": 92,
+   "chunks": 299,
+   "table_chunks": 57,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "NETFLIX_2022_10K": {
+   "status": "ok",
+   "pages": 87,
+   "chunks": 304,
+   "table_chunks": 58,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 11,
+   "label_flags": {}
+  },
+  "NIKE_2016_10K": {
+   "status": "ok",
+   "pages": 99,
+   "chunks": 433,
+   "table_chunks": 80,
+   "items": 20,
+   "period_end": "2016-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "NIKE_2017_10K": {
+   "status": "ok",
+   "pages": 98,
+   "chunks": 423,
+   "table_chunks": 78,
+   "items": 21,
+   "period_end": "2017-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "NIKE_2018_10K": {
+   "status": "ok",
+   "pages": 97,
+   "chunks": 423,
+   "table_chunks": 77,
+   "items": 21,
+   "period_end": "2018-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NIKE_2019_10K": {
+   "status": "ok",
+   "pages": 104,
+   "chunks": 396,
+   "table_chunks": 75,
+   "items": 21,
+   "period_end": "2019-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NIKE_2015_10K": {
+   "status": "ok",
+   "pages": 193,
+   "chunks": 716,
+   "table_chunks": 90,
+   "items": 20,
+   "period_end": "2015-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "NIKE_2020_10K": {
+   "status": "ok",
+   "pages": 110,
+   "chunks": 423,
+   "table_chunks": 83,
+   "items": 21,
+   "period_end": "2020-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NIKE_2023_10K": {
+   "status": "ok",
+   "pages": 106,
+   "chunks": 401,
+   "table_chunks": 81,
+   "items": 22,
+   "period_end": "2023-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NIKE_2021_10K": {
+   "status": "ok",
+   "pages": 109,
+   "chunks": 420,
+   "table_chunks": 82,
+   "items": 21,
+   "period_end": "2021-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "NIKE_2022_10K": {
+   "status": "ok",
+   "pages": 108,
+   "chunks": 411,
+   "table_chunks": 78,
+   "items": 22,
+   "period_end": "2022-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ORACLE_2016_10K": {
+   "status": "ok",
+   "pages": 155,
+   "chunks": 564,
+   "table_chunks": 93,
+   "items": 20,
+   "period_end": "2016-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ORACLE_2015_10K": {
+   "status": "ok",
+   "pages": 165,
+   "chunks": 585,
+   "table_chunks": 96,
+   "items": 20,
+   "period_end": "2015-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ORACLE_2017_10K": {
+   "status": "ok",
+   "pages": 144,
+   "chunks": 524,
+   "table_chunks": 87,
+   "items": 19,
+   "period_end": "2017-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ORACLE_2018_10K": {
+   "status": "ok",
+   "pages": 138,
+   "chunks": 502,
+   "table_chunks": 84,
+   "items": 21,
+   "period_end": "2018-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ORACLE_2019_10K": {
+   "status": "ok",
+   "pages": 149,
+   "chunks": 524,
+   "table_chunks": 86,
+   "items": 21,
+   "period_end": "2019-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "ORACLE_2020_10K": {
+   "status": "ok",
+   "pages": 129,
+   "chunks": 449,
+   "table_chunks": 81,
+   "items": 21,
+   "period_end": "2020-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ORACLE_2021_10K": {
+   "status": "ok",
+   "pages": 123,
+   "chunks": 453,
+   "table_chunks": 80,
+   "items": 21,
+   "period_end": "2021-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PAYPAL_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 82,
+   "chunks": 307,
+   "table_chunks": 74,
+   "items": 6,
+   "period_end": "2023-06-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 4,
+   "label_flags": {}
+  },
+  "ORACLE_2023_10K": {
+   "status": "ok",
+   "pages": 131,
+   "chunks": 482,
+   "table_chunks": 81,
+   "items": 21,
+   "period_end": "2023-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ORACLE_2022_10K": {
+   "status": "ok",
+   "pages": 132,
+   "chunks": 513,
+   "table_chunks": 79,
+   "items": 21,
+   "period_end": "2022-05-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PAYPAL_2022_10K": {
+   "status": "ok",
+   "pages": 134,
+   "chunks": 517,
+   "table_chunks": 89,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PEPSICO_2015_10K": {
+   "status": "ok",
+   "pages": 168,
+   "chunks": 523,
+   "table_chunks": 96,
+   "items": 20,
+   "period_end": "2015-12-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 14,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "PEPSICO_2016_10K": {
+   "status": "ok",
+   "pages": 527,
+   "chunks": 1181,
+   "table_chunks": 153,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 17,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "PEPSICO_2018_10K": {
+   "status": "ok",
+   "pages": 479,
+   "chunks": 1012,
+   "table_chunks": 119,
+   "items": 20,
+   "period_end": "2018-12-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 15,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "PEPSICO_2017_10K": {
+   "status": "ok",
+   "pages": 516,
+   "chunks": 1135,
+   "table_chunks": 120,
+   "items": 20,
+   "period_end": "2017-12-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 20,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "PEPSICO_2023_8K_dated-2023-05-05": {
+   "status": "ok",
+   "pages": 5,
+   "chunks": 22,
+   "table_chunks": 9,
+   "items": 1,
+   "period_end": null,
+   "report_date": "2023-05-03",
+   "period_source": "cover",
+   "warnings": [
+    "cover date 2023-05-03 differs from file name date 2023-05-05"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "PEPSICO_2022Q4_EARNINGS": {
+   "status": "ok",
+   "pages": 24,
+   "chunks": 68,
+   "table_chunks": 28,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PEPSICO_2023Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 16,
+   "chunks": 51,
+   "table_chunks": 21,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PEPSICO_2023Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 19,
+   "chunks": 60,
+   "table_chunks": 28,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PEPSICO_2021_10K": {
+   "status": "ok",
+   "pages": 549,
+   "chunks": 1123,
+   "table_chunks": 128,
+   "items": 20,
+   "period_end": "2021-12-25",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 14,
+   "label_flags": {
+    "long_span": 3
+   }
+  },
+  "PEPSICO_2020_10K": {
+   "status": "ok",
+   "pages": 586,
+   "chunks": 1213,
+   "table_chunks": 133,
+   "items": 18,
+   "period_end": "2020-12-26",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 16,
+   "label_flags": {
+    "long_span": 5
+   }
+  },
+  "PEPSICO_2019_10K": {
+   "status": "ok",
+   "pages": 667,
+   "chunks": 1405,
+   "table_chunks": 151,
+   "items": 20,
+   "period_end": "2019-12-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 20,
+   "label_flags": {
+    "long_span": 4
+   }
+  },
+  "PEPSICO_2023_8K_dated-2023-05-30": {
+   "status": "ok",
+   "pages": 172,
+   "chunks": 465,
+   "table_chunks": 7,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-05-26",
+   "period_source": "cover",
+   "warnings": [
+    "cover date 2023-05-26 differs from file name date 2023-05-30"
+   ],
+   "rejected_headings": 7,
+   "label_flags": {}
+  },
+  "PEPSICO_2022_10K": {
+   "status": "ok",
+   "pages": 503,
+   "chunks": 1178,
+   "table_chunks": 129,
+   "items": 20,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 14,
+   "label_flags": {
+    "long_span": 2
+   }
+  },
+  "PFIZER_2015_10K": {
+   "status": "ok",
+   "pages": 224,
+   "chunks": 961,
+   "table_chunks": 138,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "PFIZER_2016_10K": {
+   "status": "ok",
+   "pages": 222,
+   "chunks": 995,
+   "table_chunks": 147,
+   "items": 21,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PFIZER_2017_10K": {
+   "status": "ok",
+   "pages": 298,
+   "chunks": 1282,
+   "table_chunks": 178,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "5 two-column pages read column by column"
+   ],
+   "rejected_headings": 18,
+   "label_flags": {
+    "item_backwards": 772
+   }
+  },
+  "PFIZER_2020_10K": {
+   "status": "ok",
+   "pages": 175,
+   "chunks": 809,
+   "table_chunks": 135,
+   "items": 18,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 4,
+   "label_flags": {}
+  },
+  "PFIZER_2023Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 33,
+   "chunks": 119,
+   "table_chunks": 37,
+   "items": 0,
+   "period_end": null,
+   "report_date": null,
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PFIZER_2021_10K": {
+   "status": "ok",
+   "pages": 143,
+   "chunks": 719,
+   "table_chunks": 121,
+   "items": 18,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "Pfizer_2023Q2_10Q": {
+   "status": "ok",
+   "pages": 72,
+   "chunks": 339,
+   "table_chunks": 78,
+   "items": 7,
+   "period_end": "2023-07-02",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {
+    "item_backwards": 294
+   }
+  },
+  "PFIZER_2019_10K": {
+   "status": "ok",
+   "pages": 246,
+   "chunks": 1118,
+   "table_chunks": 190,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 23,
+   "label_flags": {
+    "item_backwards": 730,
+    "long_span": 1
+   }
+  },
+  "PFIZER_2018_10K": {
+   "status": "ok",
+   "pages": 455,
+   "chunks": 1675,
+   "table_chunks": 188,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 2
+   }
+  },
+  "PFIZER_2022_10K": {
+   "status": "ok",
+   "pages": 159,
+   "chunks": 782,
+   "table_chunks": 112,
+   "items": 18,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PG_E_2015_10K": {
+   "status": "ok",
+   "pages": 232,
+   "chunks": 838,
+   "table_chunks": 126,
+   "items": 20,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 13,
+   "label_flags": {
+    "heading_shape": 4,
+    "item_backwards": 485
+   }
+  },
+  "PG_E_2016_10K": {
+   "status": "ok",
+   "pages": 263,
+   "chunks": 948,
+   "table_chunks": 124,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 6,
+   "label_flags": {
+    "item_backwards": 588
+   }
+  },
+  "PG_E_2018_10K": {
+   "status": "ok",
+   "pages": 230,
+   "chunks": 872,
+   "table_chunks": 117,
+   "items": 21,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 14,
+   "label_flags": {
+    "item_backwards": 735
+   }
+  },
+  "PG_E_2023_EARNINGS_dated-2023-05-04": {
+   "status": "ok",
+   "pages": 13,
+   "chunks": 42,
+   "table_chunks": 16,
+   "items": 0,
+   "period_end": null,
+   "report_date": "2023-05-04",
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PG_E_2023_EARNINGS_dated-2023-05-31": {
+   "status": "ok",
+   "pages": 6,
+   "chunks": 10,
+   "table_chunks": 0,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-05-31",
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PG_E_2017_10K": {
+   "status": "ok",
+   "pages": 267,
+   "chunks": 925,
+   "table_chunks": 127,
+   "items": 21,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 7,
+   "label_flags": {
+    "item_backwards": 649
+   }
+  },
+  "PG_E_2023_EARNINGS-dated-2023-07-27": {
+   "status": "ok",
+   "pages": 13,
+   "chunks": 42,
+   "table_chunks": 16,
+   "items": 0,
+   "period_end": null,
+   "report_date": "2023-07-27",
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PG_E_2023_EARNINGS-dated-2023-06-01": {
+   "status": "ok",
+   "pages": 106,
+   "chunks": 284,
+   "table_chunks": 66,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-06-01",
+   "period_source": "estimated",
+   "warnings": [
+    "earnings period end not found; year from document list"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "SALESFORCE_2021_8K_dated-2021-07-21": {
+   "status": "ok",
+   "pages": 13,
+   "chunks": 35,
+   "table_chunks": 1,
+   "items": 5,
+   "period_end": null,
+   "report_date": "2021-07-21",
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "SALESFORCE_2021_8K_dated-2023-01-04": {
+   "status": "ok",
+   "pages": 4,
+   "chunks": 13,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-01-04",
+   "period_source": "cover",
+   "warnings": [
+    "report date 2023-01-04 does not match fiscal year 2021"
+   ],
+   "rejected_headings": 2,
+   "label_flags": {}
+  },
+  "PG_E_2019_10K": {
+   "status": "ok",
+   "pages": 493,
+   "chunks": 1523,
+   "table_chunks": 129,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "5 two-column pages read column by column"
+   ],
+   "rejected_headings": 20,
+   "label_flags": {
+    "item_backwards": 896,
+    "long_span": 1
+   }
+  },
+  "PG_E_2020_10K": {
+   "status": "ok",
+   "pages": 403,
+   "chunks": 1382,
+   "table_chunks": 131,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "3 two-column pages read column by column"
+   ],
+   "rejected_headings": 15,
+   "label_flags": {
+    "item_backwards": 913,
+    "long_span": 1
+   }
+  },
+  "SALESFORCE_2024Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 16,
+   "chunks": 53,
+   "table_chunks": 21,
+   "items": 0,
+   "period_end": "2023-04-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2023-04-30 does not match fiscal year 2024"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "SALESFORCE_2023Q3_10Q": {
+   "status": "ok",
+   "pages": 77,
+   "chunks": 309,
+   "table_chunks": 52,
+   "items": 7,
+   "period_end": "2022-10-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2022-10-31 does not match fiscal year 2023"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "SALESFORCE_2024Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 16,
+   "chunks": 50,
+   "table_chunks": 20,
+   "items": 0,
+   "period_end": "2023-07-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2023-07-31 does not match fiscal year 2024"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ULTABEAUTY_2023_8K_dated-2023-06-07": {
+   "status": "ok",
+   "pages": 39,
+   "chunks": 110,
+   "table_chunks": 4,
+   "items": 3,
+   "period_end": null,
+   "report_date": "2023-06-01",
+   "period_source": "cover",
+   "warnings": [
+    "cover date 2023-06-01 differs from file name date 2023-06-07"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ULTABEAUTY_2023_8K_dated-2023-09-18": {
+   "status": "ok",
+   "pages": 5,
+   "chunks": 12,
+   "table_chunks": 1,
+   "items": 2,
+   "period_end": null,
+   "report_date": "2023-09-13",
+   "period_source": "cover",
+   "warnings": [
+    "cover date 2023-09-13 differs from file name date 2023-09-18"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "SALESFORCE_2023_10K": {
+   "status": "ok",
+   "pages": 152,
+   "chunks": 553,
+   "table_chunks": 93,
+   "items": 22,
+   "period_end": "2023-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "ULTABEAUTY_2024Q1_EARNINGS": {
+   "status": "ok",
+   "pages": 8,
+   "chunks": 23,
+   "table_chunks": 6,
+   "items": 0,
+   "period_end": "2023-04-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "fiscal year in text (2023) differs from document list (2024); text year used"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ULTABEAUTY_2024Q2_EARNINGS": {
+   "status": "ok",
+   "pages": 10,
+   "chunks": 28,
+   "table_chunks": 9,
+   "items": 0,
+   "period_end": "2023-07-29",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "fiscal year in text (2023) differs from document list (2024); text year used"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "ULTABEAUTY_2023Q4_EARNINGS": {
+   "status": "ok",
+   "pages": 9,
+   "chunks": 26,
+   "table_chunks": 9,
+   "items": 0,
+   "period_end": "2023-01-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "fiscal year in text (2022) differs from document list (2023); text year used"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PG_E_2021_10K": {
+   "status": "ok",
+   "pages": 588,
+   "chunks": 1803,
+   "table_chunks": 141,
+   "items": 22,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "6 two-column pages read column by column"
+   ],
+   "rejected_headings": 36,
+   "label_flags": {
+    "item_backwards": 791,
+    "long_span": 1
+   }
+  },
+  "ULTABEAUTY_2023_10K": {
+   "status": "ok",
+   "pages": 105,
+   "chunks": 364,
+   "table_chunks": 60,
+   "items": 22,
+   "period_end": "2023-01-28",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {
+    "heading_shape": 3
+   }
+  },
+  "PG_E_2023Q3_10Q": {
+   "status": "ok",
+   "pages": 498,
+   "chunks": 1439,
+   "table_chunks": 106,
+   "items": 6,
+   "period_end": "2022-09-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2022-09-30 does not match fiscal year 2023"
+   ],
+   "rejected_headings": 22,
+   "label_flags": {
+    "long_span": 3
+   }
+  },
+  "VERIZON_2015_10K": {
+   "status": "ok",
+   "pages": 127,
+   "chunks": 546,
+   "table_chunks": 108,
+   "items": 18,
+   "period_end": "2015-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "VERIZON_2016_10K": {
+   "status": "ok",
+   "pages": 131,
+   "chunks": 560,
+   "table_chunks": 102,
+   "items": 20,
+   "period_end": "2016-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "PG_E_2022_10K": {
+   "status": "ok",
+   "pages": 352,
+   "chunks": 1303,
+   "table_chunks": 151,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "4 two-column pages read column by column"
+   ],
+   "rejected_headings": 13,
+   "label_flags": {
+    "item_backwards": 865,
+    "long_span": 1
+   }
+  },
+  "VERIZON_2017_10K": {
+   "status": "ok",
+   "pages": 177,
+   "chunks": 709,
+   "table_chunks": 102,
+   "items": 20,
+   "period_end": "2017-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "VERIZON_2019_10K": {
+   "status": "ok",
+   "pages": 143,
+   "chunks": 626,
+   "table_chunks": 117,
+   "items": 21,
+   "period_end": "2019-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "VERIZON_2021_10K": {
+   "status": "ok",
+   "pages": 120,
+   "chunks": 560,
+   "table_chunks": 116,
+   "items": 18,
+   "period_end": "2021-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 4,
+   "label_flags": {
+    "item_backwards": 12
+   }
+  },
+  "VERIZON_2018_10K": {
+   "status": "ok",
+   "pages": 185,
+   "chunks": 833,
+   "table_chunks": 121,
+   "items": 20,
+   "period_end": "2018-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "2 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "VERIZON_2020_10K": {
+   "status": "ok",
+   "pages": 154,
+   "chunks": 673,
+   "table_chunks": 116,
+   "items": 21,
+   "period_end": "2020-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "VERIZON_2022_10K": {
+   "status": "ok",
+   "pages": 124,
+   "chunks": 557,
+   "table_chunks": 115,
+   "items": 22,
+   "period_end": "2022-12-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "WALMART_2015_10K": {
+   "status": "ok",
+   "pages": 138,
+   "chunks": 486,
+   "table_chunks": 106,
+   "items": 20,
+   "period_end": "2015-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 16,
+   "label_flags": {
+    "item_backwards": 256,
+    "long_span": 1
+   }
+  },
+  "WALMART_2019_10K": {
+   "status": "ok",
+   "pages": 155,
+   "chunks": 520,
+   "table_chunks": 85,
+   "items": 21,
+   "period_end": "2019-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {
+    "long_span": 1
+   }
+  },
+  "WALMART_2017_10K": {
+   "status": "ok",
+   "pages": 207,
+   "chunks": 670,
+   "table_chunks": 100,
+   "items": 20,
+   "period_end": "2017-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 23,
+   "label_flags": {
+    "heading_shape": 1,
+    "item_backwards": 252,
+    "long_span": 1
+   }
+  },
+  "WALMART_2021_10K": {
+   "status": "ok",
+   "pages": 106,
+   "chunks": 477,
+   "table_chunks": 77,
+   "items": 21,
+   "period_end": "2021-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "WALMART_2016_10K": {
+   "status": "ok",
+   "pages": 264,
+   "chunks": 846,
+   "table_chunks": 112,
+   "items": 20,
+   "period_end": "2016-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 15,
+   "label_flags": {
+    "item_backwards": 257,
+    "long_span": 1
+   }
+  },
+  "WALMART_2020_10K": {
+   "status": "ok",
+   "pages": 170,
+   "chunks": 645,
+   "table_chunks": 83,
+   "items": 21,
+   "period_end": "2020-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 3,
+   "label_flags": {}
+  },
+  "WALMART_2018_10K": {
+   "status": "ok",
+   "pages": 304,
+   "chunks": 985,
+   "table_chunks": 135,
+   "items": 18,
+   "period_end": "2018-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 33,
+   "label_flags": {}
+  },
+  "WALMART_2024Q1_10Q": {
+   "status": "ok",
+   "pages": 44,
+   "chunks": 209,
+   "table_chunks": 33,
+   "items": 7,
+   "period_end": "2023-04-30",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "quarter end 2023-04-30 does not match fiscal year 2024"
+   ],
+   "rejected_headings": 0,
+   "label_flags": {}
+  },
+  "WALMART_2023_annualreport": {
+   "status": "ok",
+   "pages": 100,
+   "chunks": 420,
+   "table_chunks": 83,
+   "items": 22,
+   "period_end": "2023-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 1,
+   "label_flags": {}
+  },
+  "WALMART_2022_10K": {
+   "status": "ok",
+   "pages": 173,
+   "chunks": 647,
+   "table_chunks": 86,
+   "items": 22,
+   "period_end": "2022-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 8,
+   "label_flags": {
+    "heading_shape": 1
+   }
+  },
+  "WALMART_2023_10K": {
+   "status": "ok",
+   "pages": 215,
+   "chunks": 770,
+   "table_chunks": 97,
+   "items": 22,
+   "period_end": "2023-01-31",
+   "report_date": null,
+   "period_source": "cover",
+   "warnings": [
+    "1 two-column pages read column by column"
+   ],
+   "rejected_headings": 5,
+   "label_flags": {
+    "heading_shape": 6
+   }
+  }
+ },
+ "label_checks": {
+  "heading_shape": {
+   "count": 66,
+   "examples": [
+    {
+     "rule": "heading_shape",
+     "chunk_id": "d9894dfbe744e9744174",
+     "page": 172,
+     "detail": "heading: Securities Authorized for Issuance under Equity Compensation Plans (As of December 31, 20\u2026",
+     "doc_name": "AES_2017_10K"
+    },
+    {
+     "rule": "heading_shape",
+     "chunk_id": "98d8296cac896ac89c69",
+     "page": 172,
+     "detail": "heading: Securities Authorized for Issuance under Equity Compensation Plans (As of December 31, 20\u2026",
+     "doc_name": "AES_2017_10K"
+    },
+    {
+     "rule": "heading_shape",
+     "chunk_id": "bd3cecc6ce51cf97f244",
+     "page": 173,
+     "detail": "heading: Securities Authorized for Issuance under Equity Compensation Plans (As of December 31, 20\u2026",
+     "doc_name": "AES_2017_10K"
+    },
+    {
+     "rule": "heading_shape",
+     "chunk_id": "07abb3f379aada1c5720",
+     "page": 170,
+     "detail": "heading: Securities Authorized for Issuance under Equity Compensation Plans (As of December 31, 20\u2026",
+     "doc_name": "AES_2018_10K"
+    },
+    {
+     "rule": "heading_shape",
+     "chunk_id": "44a94f5301ba70f18696",
+     "page": 170,
+     "detail": "heading: Securities Authorized for Issuance under Equity Compensation Plans (As of December 31, 20\u2026",
+     "doc_name": "AES_2018_10K"
+    }
+   ]
+  },
+  "item_backwards": {
+   "count": 10064,
+   "examples": [
+    {
+     "rule": "item_backwards",
+     "chunk_id": "a1cd01e446abd3f82d78",
+     "page": 16,
+     "detail": "Item 1A. RISK FACTORS",
+     "doc_name": "ACTIVISIONBLIZZARD_2015_10K"
+    },
+    {
+     "rule": "item_backwards",
+     "chunk_id": "d19415bfe440e2492958",
+     "page": 16,
+     "detail": "Item 1A. RISK FACTORS",
+     "doc_name": "ACTIVISIONBLIZZARD_2015_10K"
+    },
+    {
+     "rule": "item_backwards",
+     "chunk_id": "6a6452dc82c38b0f74f6",
+     "page": 16,
+     "detail": "Item 1A. RISK FACTORS",
+     "doc_name": "ACTIVISIONBLIZZARD_2015_10K"
+    },
+    {
+     "rule": "item_backwards",
+     "chunk_id": "12955a4fd1815f6585ed",
+     "page": 17,
+     "detail": "Item 1A. RISK FACTORS",
+     "doc_name": "ACTIVISIONBLIZZARD_2015_10K"
+    },
+    {
+     "rule": "item_backwards",
+     "chunk_id": "72e1a4eb2487b18531bd",
+     "page": 17,
+     "detail": "Item 1A. RISK FACTORS",
+     "doc_name": "ACTIVISIONBLIZZARD_2015_10K"
+    }
+   ]
+  },
+  "long_span": {
+   "count": 80,
+   "examples": [
+    {
+     "rule": "long_span",
+     "chunk_id": null,
+     "page": 55,
+     "detail": "Item 7A. Quantitative and Qualitative Disclosures About Market Risk \u203a Notes to Consolidated Financial Statements NOTE 1. Significant Accounting Policies: pages 55-84",
+     "doc_name": "3M_2015_10K"
+    },
+    {
+     "rule": "long_span",
+     "chunk_id": null,
+     "page": 53,
+     "detail": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026 \u203a Consolidated Statements of Operations Data: pages 53-84",
+     "doc_name": "ACTIVISIONBLIZZARD_2015_10K"
+    },
+    {
+     "rule": "long_span",
+     "chunk_id": null,
+     "page": 47,
+     "detail": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026 \u203a Consolidated Statements of Operations Data: pages 47-81",
+     "doc_name": "ACTIVISIONBLIZZARD_2017_10K"
+    },
+    {
+     "rule": "long_span",
+     "chunk_id": null,
+     "page": 95,
+     "detail": "Item 16. FORM 10-K SUMMARY \u203a Notes to Consolidated Financial Statements 1. Description of Business: pages 95-146",
+     "doc_name": "ACTIVISIONBLIZZARD_2017_10K"
+    },
+    {
+     "rule": "long_span",
+     "chunk_id": null,
+     "page": 42,
+     "detail": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026 \u203a Consolidated Statements of Operations Data: pages 42-76",
+     "doc_name": "ACTIVISIONBLIZZARD_2016_10K"
+    }
+   ]
+  },
+  "table_title_shape": {
+   "count": 1,
+   "examples": [
+    {
+     "rule": "table_title_shape",
+     "chunk_id": "ff37dd2aaab7f4c3cb91",
+     "page": 203,
+     "detail": "1.12. Plan Administrator 1.13. Retirement; Retire 1.14. Separation from Service ",
+     "doc_name": "3M_2016_10K"
+    }
+   ]
+  }
+ }
+}

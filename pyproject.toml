@@ -6,9 +6,12 @@ readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.13,<3.14"
 dependencies = [
+    "anthropic>=2.12.0",
     "httpx>=0.28.1",
+    "pdfplumber>=0.11.10",
     "pydantic>=2.14.3",
     "pydantic-settings>=2.16.3",
+    "qdrant-client>=1.20.0,<1.21",
 ]
 
 [build-system]
@@ -30,12 +33,21 @@ python_version = "3.13"
 strict = true
 files = ["src", "tests", "scripts"]
 
+# Optional `embed` group (not installed in CI)
+[[tool.mypy.overrides]]
+module = ["torch", "torch.*", "sentence_transformers", "sentence_transformers.*", "transformers", "transformers.*"]
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = [
     "integration: needs real services or data; not run in CI by default",
 ]
 addopts = "-m 'not integration'"
+filterwarnings = [
+    # in-memory Qdrant used by unit tests ignores payload indexes (the server uses them)
+    "ignore:Payload indexes have no effect in the local Qdrant:UserWarning",
+]
 
 [dependency-groups]
 dev = [
@@ -44,3 +56,16 @@ dev = [
     "pytest>=9.2.0",
     "ruff>=0.17.5",
 ]
+# Local embedding models (GPU). Not installed in CI: `uv sync --group embed`.
+embed = [
+    "sentence-transformers>=6.3.0",
+    "torch>=2.14.1",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }

@@ -37,6 +37,13 @@ class Route(StrEnum):
     UNCLEAR = "unclear"
 
 
+class AnswerSource(StrEnum):
+    """Where the answer is on the evidence page (evaluation.md §5)."""
+
+    TABLE = "table"
+    TEXT = "text"
+
+
 class Status(StrEnum):
     DRAFT = "draft"
     CONFIRMED = "confirmed"
@@ -44,7 +51,7 @@ class Status(StrEnum):
 
 class Evidence(BaseModel):
     doc_name: str
-    page: int = Field(ge=0)
+    page: int = Field(ge=1)  # PDF page number as a PDF viewer shows it (starts at 1)
 
 
 # Categories whose correct outcome is a non-answer route.
@@ -64,6 +71,10 @@ class DevQuestion(BaseModel):
     expected_route: Route
     gold_answer: str | None = None
     evidence: list[Evidence] = Field(default_factory=list)
+    answer_source: AnswerSource | None = None  # answerable questions only
+    # The gold number for code marking (Q103). None = marked by hand (text answers, choices).
+    gold_value: float | None = None
+    gold_unit: str | None = None  # for example "USD million", "%", "shares"
     status: Status = Status.DRAFT
     held_out: bool = False  # kept unseen until M6 (Q8)
     notes: str = ""
@@ -78,6 +89,12 @@ class DevQuestion(BaseModel):
                 raise ValueError("answerable questions need a gold_answer")
             if not self.evidence:
                 raise ValueError("answerable questions need evidence pages")
+            if self.answer_source is None:
+                raise ValueError("answerable questions need answer_source (table or text)")
+        if (self.gold_value is None) != (self.gold_unit is None):
+            raise ValueError("gold_value and gold_unit must be set together")
+        if self.gold_value is not None and self.expected_route != Route.ANSWER:
+            raise ValueError("only answerable questions can have a gold_value")
         if self.category == Category.MULTI_TURN and len(self.turns) < 2:
             raise ValueError("multi_turn questions need at least 2 turns")
         return self
@@ -87,6 +104,11 @@ class DevSetReport(BaseModel):
     questions: list[DevQuestion] = Field(default_factory=list)
     errors: list[str] = Field(default_factory=list)
     locked_page_overlaps: list[str] = Field(default_factory=list)  # warnings, not errors
+
+
+# The base (0 or 1) of FinanceBench evidence pages is not checked yet: treat the pages
+# next to a locked page as locked too.
+LOCKED_PAGE_MARGIN = 1
 
 
 def validate_dev_set(path: Path, locked_pages: set[tuple[str, int]] | None = None) -> DevSetReport:
@@ -109,6 +131,7 @@ def validate_dev_set(path: Path, locked_pages: set[tuple[str, int]] | None = Non
         report.questions.append(q)
         if locked_pages:
             for ev in q.evidence:
-                if (ev.doc_name, ev.page) in locked_pages:
+                near = range(ev.page - LOCKED_PAGE_MARGIN, ev.page + LOCKED_PAGE_MARGIN + 1)
+                if any((ev.doc_name, p) in locked_pages for p in near):
                     report.locked_page_overlaps.append(f"{q.id}: {ev.doc_name} p{ev.page}")
     return report

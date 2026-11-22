@@ -28,7 +28,10 @@ router output → planner → for each step: search → read fact → (calculato
 
 ### 3.2 Search
 - Semantic search (embeddings) + metadata filters (company, doc type, period, section) from the router output. Shared store: V3 searches all chunks; nobody gives it the document. Q24.
-- **Fallback:** if the filtered search finds nothing, search again with fewer filters. Q25.
+- **Filter rule (Q104, replaces the boost in Q100):** company, year and doc type are **hard filters**, applied as one filter: `doc_name` is one of the documents chosen by code from the catalog (`router.md` §2.2: year Y, else Y+1; doc type only when the question names it). No company named → no filter. Section is not filtered.
+- **Fallback:** no document matches → the route is `not_covered` before any search (coverage check). If a covered search returns nothing useful, the answer says "could not find" (retrieval failure, not a correct refusal). Q25, Q33.
+- **Built (2026-11-21):** `Searcher.search(..., doc_names=...)` (Qdrant `MatchAny` on the indexed `doc_name`); routed pipeline in `src/filing_rag/engine/routed.py`. Free test Hit@5 0.48 → 0.62 (`experiments/m2/RESULTS_router_search.md`).
+- **Split tables (Q105):** a table above the token limit is stored as row groups with one `table_id`. When the search returns one part, code adds the other parts of the same table (nearest parts first, at most `table_parts_max_extra` = 3 extra chunks per question), so the answer step reads the whole table. No LLM call.
 - **BM25 keyword search and a reranker:** added only when dev evals show the need, each with a before/after eval recorded. Q26, Q27.
 
 ### 3.3 Calculator tool

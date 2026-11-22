@@ -1,0 +1,236 @@
+{
+ "meta": {
+  "started": "20261121-130306",
+  "model": "claude-sonnet-5-5",
+  "top_k": 5,
+  "collection": "chunks",
+  "thinking": "between_tools",
+  "max_cost_usd": 2.0,
+  "stopped_by_cost_limit": false,
+  "questions_run": 3,
+  "questions_planned": 3
+ },
+ "questions": [
+  {
+   "id": "dev_0001",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "What non-current liability did 3M carry for its U.S. qualified and non-qualified pension plans at the end of 2019?",
+   "gold_answer": "$1,788 million",
+   "gold_value": 1788.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 91
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not state the non-current liability for 3M's U.S. qualified and non-qualified pension plans at the end of 2019. They only note that certain non-qualified unfunded pension and postretirement plans aggregated less than $40 million (in other liabilities), and that the benefit-obligation tables are not included in the excerpts.",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "3M_2019_10K",
+      "page": 90
+     },
+     {
+      "doc_name": "3M_2019_10K",
+      "page": 89
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 90,
+     "page_end": 90,
+     "score": 0.7208,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2019_10K",
+     "page": 89,
+     "page_end": 89,
+     "score": 0.7167,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2018_10K",
+     "page": 91,
+     "page_end": 91,
+     "score": 0.7136,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2017_10K",
+     "page": 93,
+     "page_end": 94,
+     "score": 0.7115,
+     "is_table": false
+    },
+    {
+     "doc_name": "3M_2018_10K",
+     "page": 90,
+     "page_end": 91,
+     "score": 0.7108,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2834,
+   "output_tokens": 179,
+   "cost_usd": 0.007458,
+   "latency_s": 3.517
+  },
+  {
+   "id": "dev_0002",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "If JPMorgan's long-term issuer ratings had been cut by two notches at June 30, 2021, how much extra collateral would the firm have had to post on its OTC and OTC-cleared derivatives?",
+   "gold_answer": "$1,427 million",
+   "gold_value": 1427.0,
+   "gold_unit": "USD million",
+   "evidence": [
+    {
+     "doc_name": "JPMORGAN_2021Q2_10Q",
+     "page": 119
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts describe the downgrade-impact table but do not include its figures, and none covers June 30, 2021 (they cover periods from December 31, 2021 through June 30, 2023). The two-notch collateral amount at June 30, 2021 cannot be determined.",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "JPMORGAN_2023Q2_10Q",
+     "page": 129,
+     "page_end": 129,
+     "score": 0.8296,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022Q2_10Q",
+     "page": 118,
+     "page_end": 118,
+     "score": 0.8249,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2023Q1_10Q",
+     "page": 106,
+     "page_end": 106,
+     "score": 0.8239,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022_10K",
+     "page": 203,
+     "page_end": 203,
+     "score": 0.8221,
+     "is_table": false
+    },
+    {
+     "doc_name": "JPMORGAN_2022Q3_10Q",
+     "page": 120,
+     "page_end": 120,
+     "score": 0.8207,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 2519,
+   "output_tokens": 115,
+   "cost_usd": 0.006188,
+   "latency_s": 2.134
+  },
+  {
+   "id": "dev_0003",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much cash and cash equivalents did MGM Resorts hold at the end of 2017?",
+   "gold_answer": "$1,499,995 thousand (about $1.50 billion)",
+   "gold_value": 1499995.0,
+   "gold_unit": "USD thousand",
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 66
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Cash and cash equivalents were $208,364 thousand at December 31, 2017 (per the balance sheet in the 2017 10-K, which appears to be a subsidiary-level balance sheet with Members' equity, not MGM Resorts International consolidated).",
+    "value": 208.364,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "MGMRESORTS_2017_10K",
+      "page": 174
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "MGMRESORTS_2021_10K",
+     "page": 83,
+     "page_end": 83,
+     "score": 0.8,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 174,
+     "page_end": 174,
+     "score": 0.7958,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2020_10K",
+     "page": 80,
+     "page_end": 80,
+     "score": 0.7948,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2018_10K",
+     "page": 174,
+     "page_end": 174,
+     "score": 0.7842,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2016_10K",
+     "page": 311,
+     "page_end": 311,
+     "score": 0.7818,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 1,
+   "input_tokens": 3051,
+   "output_tokens": 146,
+   "cost_usd": 0.007562,
+   "latency_s": 2.042
+  }
+ ]
+}

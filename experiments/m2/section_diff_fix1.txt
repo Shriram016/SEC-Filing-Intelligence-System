@@ -1,0 +1,154 @@
+ACTIVISIONBLIZZARD_2015_10K: 15 pages changed
+   first p1: ['-', 'Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA'] -> ['-']
+   last  p16: ['Item 1A. RISK FACTORS', 'Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA'] -> ['-', 'Item 1A. RISK FACTORS']
+ADOBE_2016_10K: 1 pages changed
+   first p36: ['Item 6. SELECTED FINANCIAL DATA', 'Item 7. , Management’s Discussion and Analysis of Financial Condition and Results of Oper…'] -> ['Item 6. SELECTED FINANCIAL DATA']
+ADOBE_2017_10K: 1 pages changed
+   first p34: ['Item 6. SELECTED FINANCIAL DATA', 'Item 7. , Management’s Discussion and Analysis of Financial Condition and Results of Oper…'] -> ['Item 6. SELECTED FINANCIAL DATA']
+ADOBE_2018_10K: 1 pages changed
+   first p35: ['Item 6. SELECTED FINANCIAL DATA', 'Item 7. , Management’s Discussion and Analysis of Financial Condition and Results of Oper…'] -> ['Item 6. SELECTED FINANCIAL DATA']
+AMD_2022_annualreport: 3 pages changed
+   first p120: ['Item 16. FORM10-KSUMMARY'] -> ['Exhibit 10.1']
+   last  p122: None -> ['Exhibit 10.1']
+BESTBUY_2015_10K: 12 pages changed
+   first p9: ['Item 1. Business', 'Item 1A. , Risk Factors , for additional discussion'] -> ['Item 1. Business']
+   last  p55: ['Item 8. , Financial Statements and Supplementary Data , we sold our interest in Best Buy…'] -> ['Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+BESTBUY_2018_10K: 24 pages changed
+   first p28: ['Item 6. Selected Financial Data', 'Item 8. , Financial Statements and Supplementary Data , of this Annual Report on Form 10-K'] -> ['Item 6. Selected Financial Data', "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operat…"]
+   last  p51: ['Item 8. , Financial Statements and Supplementary Data , of this Annual Report on Form 10-K'] -> ["Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operat…", 'Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+BESTBUY_2020_10K: 31 pages changed
+   first p4: ['-', 'Item 1. Business', 'Item 8. , Financial Statements and Supplementary Data , of this Annual Report on Form 10-K'] -> ['-', 'Item 1. Business']
+   last  p34: ['Item 8. , Financial Statements and Supplementary Data , of this Annual Report on Form 10-…'] -> ["Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operat…", 'Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+BESTBUY_2021_10K: 8 pages changed
+   first p29: ["Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operat…", 'Item 8. , Financial Statements and Supplementary Data , of this Annual Report on Form 10-…'] -> ["Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operat…"]
+   last  p36: ['Item 8. , Financial Statements and Supplementary Data , of this Annual Report on Form 10-…'] -> ['Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+BOEING_2020_10K: 1 pages changed
+   first p155: ['Item 16. Form 10-K Summary'] -> ['Exhibit 101']
+BOEING_2021_10K: 3 pages changed
+   first p144: ['Exhibit 101', 'Item 15. Exhibits, Financial Statement Schedules', 'Item 16. Form 10-K Summary'] -> ['Exhibit 101', 'Item 15. Exhibits, Financial Statement Schedules']
+   last  p147: ['Exhibit 10.14'] -> ['Exhibit 10.14', 'Exhibit 101']
+BOEING_2022_10K: 3 pages changed
+   first p135: ['Exhibit 101', 'Item 15. Exhibits and Financial Statement Schedules', 'Item 16. Form 10-K Summary'] -> ['Exhibit 101', 'Item 15. Exhibits and Financial Statement Schedules']
+   last  p138: ['Exhibit 10.13'] -> ['Exhibit 10.13', 'Exhibit 101']
+COSTCO_2016_10K: 7 pages changed
+   first p26: ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…', 'Item 8. , Note 1 of this Report'] -> ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…']
+   last  p32: ['Item 8. , Note 1 of this Report'] -> ['Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+INTEL_2021_10K: 1 pages changed
+   first p123: ['Item 16. Form 10-K Summary Not applicable'] -> ['-']
+JPMORGAN_2022Q1_10Q: 2 pages changed
+   first p176: ['Part II, Item 2. Unregistered Sales of Equity Securities and Use of', 'Part II, Item 3. Defaults Upon Senior Securities', 'Part II, Item 4. Mine Safety Disclosures', 'Part II, Item 5. Other Information', 'Part II, Item 6. Exhibits'] -> ['-', 'Item 3. Defaults Upon Senior Securities', 'Item 4. Mine Safety Disclosures', 'Item 5. Other Information', 'Item 6. Exhibits']
+   last  p177: ['Part II, Item 6. Exhibits'] -> ['Item 6. Exhibits']
+JPMORGAN_2022Q2_10Q: 2 pages changed
+   first p192: ['Part II, Item 2. Unregistered Sales of Equity Securities and Use of', 'Part II, Item 3. Defaults Upon Senior Securities', 'Part II, Item 4. Mine Safety Disclosures', 'Part II, Item 5. Other Information', 'Part II, Item 6. Exhibits'] -> ['-', 'Item 3. Defaults Upon Senior Securities', 'Item 4. Mine Safety Disclosures', 'Item 5. Other Information', 'Item 6. Exhibits']
+   last  p193: ['Part II, Item 6. Exhibits'] -> ['Item 6. Exhibits']
+JPMORGAN_2022Q3_10Q: 2 pages changed
+   first p194: ['Part II, Item 2. Unregistered Sales of Equity Securities and Use of', 'Part II, Item 3. Defaults Upon Senior Securities', 'Part II, Item 4. Mine Safety Disclosures', 'Part II, Item 5. Other Information', 'Part II, Item 6. Exhibits'] -> ['-', 'Item 3. Defaults Upon Senior Securities', 'Item 4. Mine Safety Disclosures', 'Item 5. Other Information', 'Item 6. Exhibits']
+   last  p195: ['Part II, Item 6. Exhibits'] -> ['Item 6. Exhibits']
+JPMORGAN_2023Q1_10Q: 2 pages changed
+   first p178: ['Part II, Item 2. Unregistered Sales of Equity Securities and Use of', 'Part II, Item 3. Defaults Upon Senior Securities', 'Part II, Item 4. Mine Safety Disclosures', 'Part II, Item 5. Other Information', 'Part II, Item 6. Exhibits'] -> ['-', 'Part I, Item 3. Defaults Upon Senior Securities', 'Part I, Item 4. Mine Safety Disclosures', 'Part I, Item 5. Other Information', 'Part I, Item 6. Exhibits']
+   last  p179: ['Part II, Item 6. Exhibits'] -> ['Part I, Item 6. Exhibits']
+JPMORGAN_2023Q2_10Q: 3 pages changed
+   first p210: ['Part II, Item 2. Unregistered Sales of Equity Securities and Use of', 'Part II, Item 3. Defaults Upon Senior Securities', 'Part II, Item 4. Mine Safety Disclosures', 'Part II, Item 5. Other Information'] -> ['-', 'Part I, Item 3. Defaults Upon Senior Securities', 'Part I, Item 4. Mine Safety Disclosures', 'Part I, Item 5. Other Information']
+   last  p212: ['Part II, Item 6. Exhibits'] -> ['Part I, Item 6. Exhibits']
+KRAFTHEINZ_2016_10K: 14 pages changed
+   first p9: ['Item 1. Business', 'Item 2. , Properties , for more information on our manufacturing and other facilities. Fo…'] -> ['Item 1. Business']
+   last  p22: ['Item 2. , Properties , for more information on our manufacturing and other facilities. Fo…', 'Item 2. Properties', 'Item 3. Legal Proceedings', 'Item 4. Mine Safety Disclosures'] -> ['Item 1B. Unresolved Staff Comments', 'Item 2. Properties', 'Item 3. Legal Proceedings', 'Item 4. Mine Safety Disclosures']
+KRAFTHEINZ_2018_10K: 17 pages changed
+   first p11: ['Item 1. Business', 'Item 7. , Management’s Discussion and Analysis of Financial Condition and Results of Oper…'] -> ['Item 1. Business']
+   last  p27: ["Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Pur…", 'Item 7. , Management’s Discussion and Analysis of Financial Condition and Results of Oper…'] -> ['Item 1A. Risk Factors', 'Item 1B. Unresolved Staff Comments', 'Item 2. Properties', 'Item 3. Legal Proceedings', 'Item 4. Mine Safety Disclosures', "Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Pur…"]
+KRAFTHEINZ_2019_10K: 17 pages changed
+   first p8: ['Item 1. Business', 'Item 7. , Management’s Discussion and Analysis of Financial Condition and Results of Oper…'] -> ['Item 1. Business']
+   last  p24: ["Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Pur…", 'Item 7. , Management’s Discussion and Analysis of Financial Condition and Results of Oper…'] -> ['Item 1A. Risk Factors', 'Item 1B. Unresolved Staff Comments', 'Item 2. Properties', 'Item 3. Legal Proceedings', 'Item 4. Mine Safety Disclosures', "Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Pur…"]
+KRAFTHEINZ_2020_10K: 8 pages changed
+   first p42: ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…', 'Item 8. , Financial Statements and Supplementary Data , for additional descriptions of th…'] -> ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…']
+   last  p49: ['Item 8. , Financial Statements and Supplementary Data , for additional descriptions of th…'] -> ['Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+KRAFTHEINZ_2021_10K: 13 pages changed
+   first p38: ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…', 'Item 8. , Financial Statements and Supplementary Data , for additional descriptions of th…'] -> ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…']
+   last  p50: ['Item 8. , Financial Statements and Supplementary Data , for additional descriptions of th…'] -> ['Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+KRAFTHEINZ_2022_10K: 12 pages changed
+   first p37: ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…', 'Item 8. , Financial Statements and Supplementary Data , for additional descriptions of th…'] -> ['Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operat…']
+   last  p48: ['Item 8. , Financial Statements and Supplementary Data , for additional descriptions of th…'] -> ['Item 7A. Quantitative and Qualitative Disclosures About Market Risk']
+MCDONALDS_2022Q4_EARNINGS: 9 pages changed
+   first p1: None -> ['-']
+   last  p9: None -> ['-']
+MGMRESORTS_2016_10K: 4 pages changed
+   first p122: ['Exhibit 99.3', 'Item 16. FORM 10K SUMMARY'] -> ['Exhibit 99.3']
+   last  p125: ['Item 16. FORM 10K SUMMARY'] -> ['Exhibit 99.3']
+MICROSOFT_2015_10K: 17 pages changed
+   first p18: ['Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1A. RISK FACTORS']
+   last  p101: ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9B. , 10, 11, 12, 13, 14', 'Item 9B. OTHER INFORMATION'] -> ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9B. OTHER INFORMATION']
+MICROSOFT_2016_10K: 18 pages changed
+   first p17: ['Item 1. , 1A', 'Item 1. BUSINESS', 'Item 1A. RISK FACTORS'] -> ['Item 1. BUSINESS', 'Item 1A. RISK FACTORS']
+   last  p99: ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9B. , 10, 11, 12, 13, 14', 'Item 9B. OTHER INFORMATION'] -> ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9B. OTHER INFORMATION']
+MICROSOFT_2017_10K: 16 pages changed
+   first p17: ['Item 1. BUSINESS', 'Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1. BUSINESS', 'Item 1A. RISK FACTORS']
+   last  p103: ['Item 15. , 16', 'Item 16. FORM 10-K SUMMARY'] -> ['Item 16. FORM 10-K SUMMARY']
+MICROSOFT_2018_10K: 18 pages changed
+   first p17: ['Item 1. BUSINESS', 'Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1. BUSINESS', 'Item 1A. RISK FACTORS']
+   last  p105: ['Item 15. , 16', 'Item 16. FORM 10-K SUMMARY'] -> ['Item 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES', 'Item 16. FORM 10-K SUMMARY']
+MICROSOFT_2019_10K: 17 pages changed
+   first p17: ['Item 1. BUSINESS', 'Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1. BUSINESS', 'Item 1A. RISK FACTORS']
+   last  p98: ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9A', 'Item 9B. , 10, 11, 12, 13, 14', 'Item 9B. OTHER INFORMATION'] -> ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9A. CONTROLS AND PROCEDURES', 'Item 9B. OTHER INFORMATION']
+MICROSOFT_2020_10K: 18 pages changed
+   first p19: ['Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1A. RISK FACTORS']
+   last  p99: ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9A', 'Item 9B. , 10, 11, 12, 13, 14', 'Item 9B. OTHER INFORMATION'] -> ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9A. CONTROLS AND PROCEDURES', 'Item 9B. OTHER INFORMATION']
+MICROSOFT_2021_10K: 36 pages changed
+   first p22: ['Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1A. RISK FACTORS']
+   last  p101: ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9A', 'Item 9B. , 10, 11, 12, 13, 14', 'Item 9B. OTHER INFORMATION'] -> ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTING FEES AND SERVICES', 'Item 9A. CONTROLS AND PROCEDURES', 'Item 9B. OTHER INFORMATION']
+MICROSOFT_2022_10K: 19 pages changed
+   first p23: ['Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1A. RISK FACTORS']
+   last  p101: ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTANT FEES AND SERVICES', 'Item 9A', 'Item 9B. , 9C, 10, 11, 12, 13, 14', 'Item 9B. OTHER INFORMATION', 'Item 9C. DISCLOSURE REGARDING FOREIGN JURISDICTIONS THAT PREVENT INSPECTIONS'] -> ['Item 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTANT FEES AND SERVICES', 'Item 9A. CONTROLS AND PROCEDURES', 'Item 9B. OTHER INFORMATION', 'Item 9C. DISCLOSURE REGARDING FOREIGN JURISDICTIONS THAT PREVENT INSPECTIONS']
+MICROSOFT_2023_10K: 19 pages changed
+   first p23: ['Item 1A', 'Item 1A. RISK FACTORS'] -> ['Item 1A. RISK FACTORS']
+   last  p101: ['Item 10. DIRECTORS, EXECUTIVE OFFICERS, AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTANT FEES AND SERVICES', 'Item 9A', 'Item 9B. , 9C, 10, 11, 12, 13, 14', 'Item 9B. OTHER INFORMATION', 'Item 9C. DISCLOSURE REGARDING FOREIGN JURISDICTIONS THAT PREVENT INSPECTIONS'] -> ['Item 10. DIRECTORS, EXECUTIVE OFFICERS, AND CORPORATE GOVERNANCE', 'Item 11. EXECUTIVE COMPENSATION', 'Item 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED', 'Item 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE', 'Item 14. PRINCIPAL ACCOUNTANT FEES AND SERVICES', 'Item 9A. CONTROLS AND PROCEDURES', 'Item 9B. OTHER INFORMATION', 'Item 9C. DISCLOSURE REGARDING FOREIGN JURISDICTIONS THAT PREVENT INSPECTIONS']
+NETFLIX_2015_10K: 15 pages changed
+   first p18: ['Item 8. , Financial Statements and Supplementary Data for further detail'] -> ['Item 6. Selected Financial Data']
+   last  p32: ['Item 8. , Financial Statements and Supplementary Data for further detail'] -> ['Item 7A. Quantitative and Qualitative Disclosures about Market Risk']
+NETFLIX_2017_10K: 11 pages changed
+   first p6: ['Item 7. , "Management\'s Discussion and Analysis of Financial Condition and Results of Ope…'] -> ['Item 1A. Risk Factors']
+   last  p16: ['Item 7. , "Management\'s Discussion and Analysis of Financial Condition and Results of Ope…'] -> ['Item 2. Properties', 'Item 3. Legal Proceedings', 'Item 4. Mine Safety Disclosures']
+NETFLIX_2018_10K: 11 pages changed
+   first p6: ['Item 7. , "Management\'s Discussion and Analysis of Financial Condition and Results of Ope…'] -> ['Item 1A. Risk Factors']
+   last  p16: ['Item 7. , "Management\'s Discussion and Analysis of Financial Condition and Results of Ope…'] -> ['Item 2. Properties', 'Item 3. Legal Proceedings', 'Item 4. Mine Safety Disclosures']
+PFIZER_2017_10K: 147 pages changed
+   first p131: ['Exhibit 13', 'Item 1A. , “Risk Factors,” of our 2017 Form 10-K'] -> ['Exhibit 13']
+   last  p282: ['Item 1A. , “Risk Factors,” of our 2017 Form 10-K'] -> ['Exhibit 13']
+PFIZER_2019_10K: 130 pages changed
+   first p89: ['Exhibit 13', 'Item 1. , “Business” of our 2019 Form 10-K. For additional information about our operatin…'] -> ['Exhibit 13']
+   last  p230: ['Item 1. , “Business” of our 2019 Form 10-K. For additional information about our operatin…'] -> ['Exhibit 13']
+PG_E_2015_10K: 34 pages changed
+   first p5: None -> ['-']
+   last  p68: None -> ['Item 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK']
+PG_E_2016_10K: 3 pages changed
+   first p5: None -> ['-']
+   last  p7: ['Item 15. EXHIBITS AND FINANCIAL STATEMENT SCHEDULES'] -> ['-']
+PG_E_2017_10K: 39 pages changed
+   first p9: ['Item 16. FORM 10-K SUMMARY'] -> ['-']
+   last  p117: ['Item 8'] -> ['Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT…', 'Item 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK']
+PG_E_2018_10K: 81 pages changed
+   first p6: ['Item 16. FORM 10-K SUMMARY'] -> ['-']
+   last  p94: ['Item 8'] -> ['Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT…', 'Item 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK']
+PG_E_2019_10K: 101 pages changed
+   first p6: None -> ['-']
+   last  p114: ['Item 8. )'] -> ['Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT…', 'Item 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK']
+PG_E_2020_10K: 93 pages changed
+   first p6: None -> ['-']
+   last  p108: ['Item 8'] -> ['Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT…', 'Item 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK']
+PG_E_2021_10K: 72 pages changed
+   first p6: None -> ['-']
+   last  p99: ['Item 8'] -> ['Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT…', 'Item 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK']
+PG_E_2022_10K: 43 pages changed
+   first p6: ['Item 16. FORM 10-K SUMMARY'] -> ['-']
+   last  p60: ['Item 5. MARKET FOR REGISTRANT’S COMMON EQUITY, RELATED SHAREHOLDER MATTERS AND ISSUER PUR…', 'Item 6. [RESERVED]', 'Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT…', 'Item 8. ). Such payment may have a material adverse impact on PG&E Corporation’s and the…'] -> ['Item 4. MINE SAFETY DISCLOSURES', 'Item 5. MARKET FOR REGISTRANT’S COMMON EQUITY, RELATED SHAREHOLDER MATTERS AND ISSUER PUR…', 'Item 6. [RESERVED]', 'Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT…']
+Pfizer_2023Q2_10Q: 2 pages changed
+   first p4: ['Part II, Item 6'] -> ['-']
+   last  p6: ['Part II, Item 6'] -> ['-']
+WALMART_2015_10K: 64 pages changed
+   first p67: ["Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operat…"] -> ['Exhibit 12.1']
+   last  p132: ["Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operat…"] -> ['Exhibit 12.1']
+WALMART_2016_10K: 61 pages changed
+   first p195: ["Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operat…"] -> ['Exhibit 12.1']
+   last  p258: ["Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operat…"] -> ['Exhibit 12.1']
+WALMART_2017_10K: 63 pages changed
+   first p136: ["Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operat…"] -> ['Exhibit 12.1']
+   last  p201: ["Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operat…"] -> ['Exhibit 12.1']

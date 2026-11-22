@@ -1,0 +1,217 @@
+{
+ "meta": {
+  "started": "20261121-192619",
+  "model": "claude-sonnet-5-5",
+  "top_k": 5,
+  "collection": "chunks",
+  "thinking": "between_tools",
+  "max_cost_usd": 0.05,
+  "stopped_by_cost_limit": false,
+  "questions_run": 2,
+  "questions_planned": 2,
+  "router_model": "claude-haiku-5-5",
+  "router_effort": "low",
+  "year_rule": "A"
+ },
+ "questions": [
+  {
+   "id": "dev_0003",
+   "category": "find_number",
+   "answer_source": "table",
+   "question": "How much cash and cash equivalents did MGM Resorts hold at the end of 2017?",
+   "gold_answer": "$1,499,995 thousand (about $1.50 billion)",
+   "gold_value": 1499995.0,
+   "gold_unit": "USD thousand",
+   "evidence": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 66
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "MGM Resorts held cash and cash equivalents of $1,499,995 thousand (about $1.5 billion) at December 31, 2017.",
+    "value": 1499.995,
+    "unit": "USD million",
+    "sources": [
+     {
+      "doc_name": "MGMRESORTS_2017_10K",
+      "page": 66
+     },
+     {
+      "doc_name": "MGMRESORTS_2017_10K",
+      "page": 45
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 174,
+     "page_end": 174,
+     "score": 0.7958,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 66,
+     "page_end": 66,
+     "score": 0.7648,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 45,
+     "page_end": 45,
+     "score": 0.7641,
+     "is_table": false
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 70,
+     "page_end": 70,
+     "score": 0.7574,
+     "is_table": true
+    },
+    {
+     "doc_name": "MGMRESORTS_2017_10K",
+     "page": 83,
+     "page_end": 83,
+     "score": 0.7456,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 2,
+   "input_tokens": 5620,
+   "output_tokens": 262,
+   "cost_usd": 0.009245,
+   "latency_s": 4.97,
+   "route": "answer",
+   "router_output": {
+    "route": "answer",
+    "standalone_question": "How much cash and cash equivalents did MGM Resorts hold at the end of 2017?",
+    "reason": "A factual question about a listed company's year-end cash balance from its filings.",
+    "companies": [
+     "MGM Resorts"
+    ],
+    "other_companies": [],
+    "years": [
+     2017
+    ],
+    "doc_type": null,
+    "metric": "cash and cash equivalents"
+   },
+   "router_error": null,
+   "doc_names": [
+    "MGMRESORTS_2017_10K"
+   ],
+   "missing": [],
+   "reply": null,
+   "router_cost_usd": 0.000243,
+   "answer_cost_usd": 0.009002,
+   "router_latency_s": 2.732
+  },
+  {
+   "id": "dev_0032",
+   "category": "calculate",
+   "answer_source": "table",
+   "question": "What was McDonald's operating margin in the first quarter of 2023?",
+   "gold_answer": "About 42.9% (operating income $2,532.4 million / revenues $5,897.8 million)",
+   "gold_value": 42.9,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "The extracts do not provide McDonald's operating margin (or operating income and revenue figures needed to compute it) for the first quarter of 2023. They only give comparable sales growth, revenue growth, and restructuring charges.",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 1,
+     "page_end": 1,
+     "score": 0.7279,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.6739,
+     "is_table": true
+    },
+    {
+     "doc_name": "MCDONALDS_2023Q1_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.6572,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_8K_dated-2023-08-14",
+     "page": 3,
+     "page_end": 3,
+     "score": 0.6547,
+     "is_table": false
+    },
+    {
+     "doc_name": "MCDONALDS_2023Q2_EARNINGS",
+     "page": 2,
+     "page_end": 2,
+     "score": 0.6481,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 2,
+   "input_tokens": 4216,
+   "output_tokens": 211,
+   "cost_usd": 0.006092,
+   "latency_s": 6.773,
+   "route": "answer",
+   "router_output": {
+    "route": "answer",
+    "standalone_question": "What was McDonald's operating margin in the first quarter of 2023?",
+    "reason": "Factual question about a company's reported financial metric for a specific period.",
+    "companies": [
+     "McDonalds"
+    ],
+    "other_companies": [],
+    "years": [
+     2023
+    ],
+    "doc_type": null,
+    "metric": "operating margin"
+   },
+   "router_error": null,
+   "doc_names": [
+    "MCDONALDS_2023Q1_EARNINGS",
+    "MCDONALDS_2023Q2_EARNINGS",
+    "MCDONALDS_8K_dated-2023-01-06",
+    "MCDONALDS_8K_dated-2023-02-13",
+    "MCDONALDS_8K_dated-2023-08-14"
+   ],
+   "missing": [],
+   "reply": null,
+   "router_cost_usd": 0.000234,
+   "answer_cost_usd": 0.005858,
+   "router_latency_s": 4.808
+  }
+ ]
+}

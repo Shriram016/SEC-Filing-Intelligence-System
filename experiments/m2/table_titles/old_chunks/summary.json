@@ -1,0 +1,176 @@
+{
+ "collection": "chunks",
+ "number_not_printed": [],
+ "gold_doc": {
+  "scores": {
+   "all": {
+    "n": 50,
+    "hit@1": 0.52,
+    "hit@5": 0.7,
+    "hit@10": 0.74,
+    "mrr@10": 0.586,
+    "value_n": 20,
+    "value_hit@1": 0.3,
+    "value_hit@5": 0.65,
+    "value_hit@10": 0.7
+   },
+   "answer_source": {
+    "table": {
+     "n": 28,
+     "hit@1": 0.393,
+     "hit@5": 0.607,
+     "hit@10": 0.643,
+     "mrr@10": 0.477,
+     "value_n": 10,
+     "value_hit@1": 0.3,
+     "value_hit@5": 0.6,
+     "value_hit@10": 0.6
+    },
+    "text": {
+     "n": 22,
+     "hit@1": 0.682,
+     "hit@5": 0.818,
+     "hit@10": 0.864,
+     "mrr@10": 0.725,
+     "value_n": 10,
+     "value_hit@1": 0.3,
+     "value_hit@5": 0.7,
+     "value_hit@10": 0.8
+    }
+   },
+   "category": {
+    "calculate": {
+     "n": 10,
+     "hit@1": 0.6,
+     "hit@5": 0.7,
+     "hit@10": 0.7,
+     "mrr@10": 0.65
+    },
+    "compare_companies": {
+     "n": 4,
+     "hit@1": 0.0,
+     "hit@5": 0.25,
+     "hit@10": 0.25,
+     "mrr@10": 0.125
+    },
+    "compare_years": {
+     "n": 6,
+     "hit@1": 0.333,
+     "hit@5": 0.5,
+     "hit@10": 0.667,
+     "mrr@10": 0.399
+    },
+    "explain_why": {
+     "n": 10,
+     "hit@1": 0.8,
+     "hit@5": 0.9,
+     "hit@10": 0.9,
+     "mrr@10": 0.833
+    },
+    "find_number": {
+     "n": 20,
+     "hit@1": 0.5,
+     "hit@5": 0.75,
+     "hit@10": 0.8,
+     "mrr@10": 0.578,
+     "value_n": 20,
+     "value_hit@1": 0.3,
+     "value_hit@5": 0.65,
+     "value_hit@10": 0.7
+    }
+   }
+  },
+  "expansion": {
+   "questions_with_added_parts": 9,
+   "added_parts": 22,
+   "added_chars": 43530,
+   "top5_chars": 357134
+  }
+ },
+ "rule_a": {
+  "scores": {
+   "all": {
+    "n": 50,
+    "hit@1": 0.38,
+    "hit@5": 0.62,
+    "hit@10": 0.7,
+    "mrr@10": 0.48,
+    "value_n": 20,
+    "value_hit@1": 0.25,
+    "value_hit@5": 0.5,
+    "value_hit@10": 0.7
+   },
+   "answer_source": {
+    "table": {
+     "n": 28,
+     "hit@1": 0.357,
+     "hit@5": 0.571,
+     "hit@10": 0.607,
+     "mrr@10": 0.443,
+     "value_n": 10,
+     "value_hit@1": 0.3,
+     "value_hit@5": 0.4,
+     "value_hit@10": 0.6
+    },
+    "text": {
+     "n": 22,
+     "hit@1": 0.409,
+     "hit@5": 0.682,
+     "hit@10": 0.818,
+     "mrr@10": 0.528,
+     "value_n": 10,
+     "value_hit@1": 0.2,
+     "value_hit@5": 0.6,
+     "value_hit@10": 0.8
+    }
+   },
+   "category": {
+    "calculate": {
+     "n": 10,
+     "hit@1": 0.6,
+     "hit@5": 0.7,
+     "hit@10": 0.7,
+     "mrr@10": 0.65
+    },
+    "compare_companies": {
+     "n": 4,
+     "hit@1": 0.0,
+     "hit@5": 0.25,
+     "hit@10": 0.25,
+     "mrr@10": 0.125
+    },
+    "compare_years": {
+     "n": 6,
+     "hit@1": 0.167,
+     "hit@5": 0.5,
+     "hit@10": 0.5,
+     "mrr@10": 0.256
+    },
+    "explain_why": {
+     "n": 10,
+     "hit@1": 0.3,
+     "hit@5": 0.7,
+     "hit@10": 0.8,
+     "mrr@10": 0.483
+    },
+    "find_number": {
+     "n": 20,
+     "hit@1": 0.45,
+     "hit@5": 0.65,
+     "hit@10": 0.8,
+     "mrr@10": 0.532,
+     "value_n": 20,
+     "value_hit@1": 0.25,
+     "value_hit@5": 0.5,
+     "value_hit@10": 0.7
+    }
+   }
+  },
+  "expansion": {
+   "questions_with_added_parts": 8,
+   "added_parts": 19,
+   "added_chars": 36262,
+   "top5_chars": 361597
+  }
+ }
+}
