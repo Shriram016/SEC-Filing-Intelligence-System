@@ -52,6 +52,7 @@ class Item:
     failure: Failure | None
     detail: str | None = None  # calc error or formula
     hit: Hit | None = None
+    quote: str | None = None  # the claim's exact quote (for citations, Q108)
 
     @property
     def ok(self) -> bool:
@@ -116,7 +117,8 @@ def _items(out: WriterOutput, hits: list[Hit]) -> dict[str, Item]:
     items: dict[str, Item] = {}
     for chk in check_claims(out.claims, hits):
         c = chk.claim
-        items[c.id] = Item(c.id, "claim", c.label, c.value, c.unit, chk.failure, None, chk.hit)
+        items[c.id] = Item(c.id, "claim", c.label, c.value, c.unit, chk.failure, None, chk.hit,
+                           c.quote)  # fmt: skip
     for k in out.calculations:
         inputs = [items.get(i) for i in k.inputs]
         if any(i is None or not i.ok or i.value is None for i in inputs):

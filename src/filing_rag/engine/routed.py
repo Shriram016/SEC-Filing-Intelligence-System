@@ -11,7 +11,7 @@ Split tables (Q105): after the search, code adds the missing parts of a retrieve
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
@@ -34,10 +34,15 @@ class FilteredSearch(Protocol):
     def table_parts(self, table_id: str) -> list[Hit]: ...
 
 
+Progress = Callable[[str], None]  # called with a stage name (Q108 API progress events)
+
+
 class AnswerStep(Protocol):
     """The baseline answer (frozen) or the checked answer (Q107)."""
 
-    def answer(self, question: str, hits: list[Hit]) -> BaselineResult: ...
+    def answer(
+        self, question: str, hits: list[Hit], on_progress: Progress | None = None
+    ) -> BaselineResult: ...
 
 
 @dataclass
@@ -47,6 +52,7 @@ class RoutedResult(BaselineResult):
     router_calls: list[LLMResult] = field(default_factory=list)
     added_table_parts: int = 0  # chunks added by the split-table expansion (not searched)
     checked: Any = None  # CheckedAnswer from the checked answer step (Q107), else None
+    writer: Any = None  # WriterOutput of the checked answer step (for the logs), else None
 
     @property
     def router_cost_usd(self) -> float:
@@ -81,7 +87,20 @@ class RoutedPipeline:
         hits = self.searcher.search(query, k=self.top_k, doc_names=doc_names)
         return expand_tables(hits, self.searcher, self.max_extra_parts)
 
-    def answer(self, question: str, history: Sequence[Turn] = ()) -> RoutedResult:
+    def answer(
+        self,
+        question: str,
+        history: Sequence[Turn] = (),
+        on_progress: Progress | None = None,
+    ) -> RoutedResult:
+        """Stages sent to `on_progress`: routing, searching, answering, checking (checked
+        answers only). A route that stops early sends only `routing`."""
+
+        def stage(name: str) -> None:
+            if on_progress is not None:
+                on_progress(name)
+
+        stage("routing")
         decision = self.router.decide(question, history)
         router_calls = list(decision.calls)
         if decision.route != Route.ANSWER:
@@ -96,8 +115,10 @@ class RoutedPipeline:
                 router_calls=router_calls,
             )
         query = decision.search_question
+        stage("searching")
         hits, added = self.retrieve(query, decision.doc_names)
-        base = self.answerer.answer(query, hits)
+        stage("answering")
+        base = self.answerer.answer(query, hits, on_progress=on_progress)
         return RoutedResult(
             question=question,
             hits=hits,
@@ -108,4 +129,5 @@ class RoutedPipeline:
             router_calls=router_calls,
             added_table_parts=added,
             checked=getattr(base, "checked", None),
+            writer=getattr(base, "writer", None),
         )

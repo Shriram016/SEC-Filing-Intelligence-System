@@ -632,3 +632,17 @@ Also watch: the 361 PDFs are hosted on company sites (links can break) and Finan
 - **Record:** `engine.md` §3.3–3.6.
 - **Verdict:** changes the milestone of the calculator (M3 → M2); details the schema (Q30, Q31).
 - **Smoke (2026-11-22, $0.0206):** dev_0005 and dev_0038 both correct, claims 3/3 passed, calculator used on dev_0038. Code replaced the model's sentence on dev_0038 (reason not logged) → rows now save `model_sentence` + `sentence_used`; negative inputs shown in parentheses. `experiments/m2/RESULTS_smoke_q107.md`.
+
+### Q108 (M2, 2026-11-22) — API service: ask + SSE + health
+- **Finding:** the engine runs only from the command line; M2 needs "API with SSE".
+- **Answer:**
+  1. Stateless `POST /v1/ask` (question + at most 6 recent turns) now; M4 adds `/v1/chats/{id}/messages` on the same ask service (saved chats need login and a database).
+  2. One `answer` event after the checks, not the answer in parts (parts would only look like streaming); progress events (routing, searching, answering, checking) give the live feedback. Citations carry the quote (new `Item.quote`).
+  3. The engine stays synchronous: worker thread + progress queue (`on_progress` callback on `RoutedPipeline.answer`).
+  4. `/health` (alive) and `/ready` (catalog, Qdrant collection, key); no AI-provider call in readiness.
+  5. M2 guards in settings: length limits (422), 2 at a time (503 + Retry-After), 60 s, $1/day cost cap in memory; real LLM only with `FILING_RAG_ALLOW_PAID=true`, else demo mode.
+  6. One JSON log line per question.
+- **Record:** `api.md` §3, §10.
+- **Verdict:** changes the ask path (chat paths → M4) and "answer sent in parts" (→ one event). Portfolio shortcuts: in-memory cost cap (M5: shared store); embedding model in the API process.
+- **Free check (2026-11-22):** 341 tests; real server in demo mode: `/health` ok, `/ready` all true, SSE `progress → answer → done`, empty question → 422.
+- **Smoke (2026-11-22, paid $0.0164, approved):** dev_0005 correct via the API (first event 0.3 s, total 4.3 s, citation with quote); follow-up "net income, same period" routed correctly with history but refused: search miss (5 chunks hold the row, none in top 5; net sales tables ranked higher). Log line now has search question, pages, claim counts and failure reasons. `experiments/m2/RESULTS_smoke_api.md`.

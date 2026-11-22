@@ -1,0 +1,134 @@
+[
+ {
+  "question": "What was Apple's total comprehensive income for the first nine months of fiscal 2023 (nine months ended July 1, 2023)?",
+  "history": [],
+  "http_status": 200,
+  "events": [
+   {
+    "t_s": 0.318,
+    "event": "progress",
+    "data": {
+     "stage": "routing"
+    }
+   },
+   {
+    "t_s": 1.93,
+    "event": "progress",
+    "data": {
+     "stage": "searching"
+    }
+   },
+   {
+    "t_s": 2.318,
+    "event": "progress",
+    "data": {
+     "stage": "answering"
+    }
+   },
+   {
+    "t_s": 4.641,
+    "event": "progress",
+    "data": {
+     "stage": "checking"
+    }
+   },
+   {
+    "t_s": 4.641,
+    "event": "answer",
+    "data": {
+     "status": "answer",
+     "route": "answer",
+     "text": "Apple's total comprehensive income for the nine months ended July 1, 2023 was $73,347 million. Source: Apple 10-Q (period ended 01 Jul 2023).",
+     "value": 73347.0,
+     "unit": "USD million",
+     "period": "Apple 10-Q (period ended 01 Jul 2023)",
+     "citations": [
+      {
+       "doc_name": "APPLE_2023Q3_10Q",
+       "company": "Apple",
+       "doc_type": "10-Q",
+       "period_end": "2023-07-01",
+       "page": 5,
+       "quote": "Total comprehensive income $ 19,826 $ 16,639 $ 73,347 $ 69,622"
+      }
+     ]
+    }
+   },
+   {
+    "t_s": 4.641,
+    "event": "done",
+    "data": {
+     "request_id": "16702720df704cf2bc76891152baa805",
+     "cost_usd": 0.008805,
+     "latency_s": 4.324
+    }
+   }
+  ]
+ },
+ {
+  "question": "And what was its net income for the same period?",
+  "history": [
+   {
+    "role": "user",
+    "text": "What was Apple's total comprehensive income for the first nine months of fiscal 2023 (nine months ended July 1, 2023)?"
+   },
+   {
+    "role": "assistant",
+    "text": "Apple's total comprehensive income for the nine months ended July 1, 2023 was $73,347 million. Source: Apple 10-Q (period ended 01 Jul 2023)."
+   }
+  ],
+  "http_status": 200,
+  "events": [
+   {
+    "t_s": 0.196,
+    "event": "progress",
+    "data": {
+     "stage": "routing"
+    }
+   },
+   {
+    "t_s": 2.756,
+    "event": "progress",
+    "data": {
+     "stage": "searching"
+    }
+   },
+   {
+    "t_s": 2.825,
+    "event": "progress",
+    "data": {
+     "stage": "answering"
+    }
+   },
+   {
+    "t_s": 5.108,
+    "event": "progress",
+    "data": {
+     "stage": "checking"
+    }
+   },
+   {
+    "t_s": 5.108,
+    "event": "answer",
+    "data": {
+     "status": "refused",
+     "route": "answer",
+     "text": "I could not find this in the filings searched.",
+     "value": null,
+     "unit": null,
+     "period": "",
+     "citations": []
+    }
+   },
+   {
+    "t_s": 5.108,
+    "event": "done",
+    "data": {
+     "request_id": "83a8a2716bbb49639759d79a8cf73379",
+     "cost_usd": 0.00759,
+     "latency_s": 4.913
+    }
+   }
+  ]
+ }
+]

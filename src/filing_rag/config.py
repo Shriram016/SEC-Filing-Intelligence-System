@@ -66,6 +66,17 @@ class Settings(BaseSettings):
     table_parts_max_extra: int = 3  # Q105: parts of a split table added after the search
     baseline_max_cost_usd: float = 2.0  # a run stops when its cost goes above this
 
+    # API service (docs/v3/api.md, Q108). M2 guards; full rate limits come in M5.
+    # The server makes real (paid) LLM calls only when allow_paid is true; else demo mode.
+    allow_paid: bool = False
+    api_max_question_chars: int = 1000
+    api_max_turn_chars: int = 2000
+    api_max_history_turns: int = 6
+    api_max_concurrent: int = 2  # questions at the same time; more gives HTTP 503
+    api_timeout_s: float = 60.0  # total time per question
+    api_daily_cost_cap_usd: float = 1.0  # in memory (one process); M5: shared store
+    api_retry_after_s: int = 5
+
     # API keys: optional until the components that need them exist. Read without the prefix.
     anthropic_api_key: SecretStr | None = Field(default=None, validation_alias="ANTHROPIC_API_KEY")
     openai_api_key: SecretStr | None = Field(default=None, validation_alias="OPENAI_API_KEY")

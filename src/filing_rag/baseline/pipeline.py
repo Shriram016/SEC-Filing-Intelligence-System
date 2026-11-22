@@ -7,6 +7,7 @@ API and checked again by code. A broken reply gets one retry, then a clear error
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
@@ -131,7 +132,12 @@ class BaselinePipeline:
     def retrieve(self, question: str) -> list[Hit]:
         return self.searcher.search(question, company=None, k=self.top_k)
 
-    def answer(self, question: str, hits: list[Hit] | None = None) -> BaselineResult:
+    def answer(
+        self,
+        question: str,
+        hits: list[Hit] | None = None,
+        on_progress: Callable[[str], None] | None = None,  # unused (Q108 API interface)
+    ) -> BaselineResult:
         hits = self.retrieve(question) if hits is None else hits
         prompt = build_prompt(question, hits)
         res = BaselineResult(question=question, hits=hits, answer=None, error=None)

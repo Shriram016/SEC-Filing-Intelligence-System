@@ -7,6 +7,7 @@ sources), so the scorer is unchanged; the checked details are in `checked`.
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
 
 from filing_rag.baseline.pipeline import BaselineResult
@@ -27,7 +28,12 @@ class CheckedAnswerer:
         self.llm = llm
         self.max_tokens = max_tokens
 
-    def answer(self, question: str, hits: list[Hit]) -> CheckedResult:
+    def answer(
+        self,
+        question: str,
+        hits: list[Hit],
+        on_progress: Callable[[str], None] | None = None,
+    ) -> CheckedResult:
         prompt = build_prompt(question, hits)
         res = CheckedResult(question=question, hits=hits, answer=None, error=None)
         for _attempt in range(2):  # one retry on a broken reply (Q32); none for failed checks
@@ -39,6 +45,8 @@ class CheckedAnswerer:
                 res.error = str(exc)
                 continue
             res.error = None
+            if on_progress is not None:
+                on_progress("checking")
             res.checked = decide(res.writer, hits)
             res.answer = res.checked.to_baseline()
             return res
