@@ -27,6 +27,8 @@ from pathlib import Path
 from typing import Any, Protocol
 
 from filing_rag.evaluation.dev_set import Category, DevQuestion, Route
+from filing_rag.numbers import has_number as has_number
+from filing_rag.numbers import number_patterns as number_patterns
 from filing_rag.search.searcher import Hit
 
 KS = (1, 5, 10)
@@ -75,35 +77,6 @@ def page_rank(hits: list[Hit], doc_name: str, page: int) -> int | None:
 
 # ---------- chunk-level check: is the gold number in the retrieved chunk? (Q105) ----------
 
-_SCALES = ((1e9, "billion"), (1e6, "million"))
-
-
-def _num_forms(x: float) -> set[str]:
-    """How a number can be printed: 1788 -> {"1,788", "1788"}; 15.48 -> {"15.48"}."""
-    x = abs(x)
-    if float(x).is_integer():
-        n = int(x)
-        return {f"{n:,}", str(n)} | ({f"{n}.0"} if n < 1000 else set())
-    text = f"{x:.6f}".rstrip("0").rstrip(".")
-    whole, _, frac = text.partition(".")
-    return {text, f"{int(whole):,}.{frac}"}
-
-
-def number_patterns(value: float) -> list[re.Pattern[str]]:
-    """Patterns that find `value` as printed in a filing.
-
-    The plain forms ("1,788", "15.48") must not be part of a longer number. Large values also
-    match the short forms ("850 million", "3 billion"). A negative value matches its absolute
-    value, because tables print a decrease as "(1,234)"."""
-    edge_l, edge_r = r"(?<![\d.,])", r"(?![\d]|[.,]\d)"
-    forms = _num_forms(value)
-    out = [re.compile(edge_l + re.escape(f) + edge_r) for f in sorted(forms)]
-    for scale, word in _SCALES:
-        if abs(value) >= scale:
-            for f in sorted(_num_forms(abs(value) / scale)):
-                out.append(re.compile(edge_l + re.escape(f) + r"\s*" + word, re.IGNORECASE))
-    return out
-
 
 def checkable(q: DevQuestion) -> bool:
     """Only find-number questions: their gold number is printed on the evidence page. For
@@ -119,10 +92,6 @@ def number_rank(
         if h.covers(doc_name, page) and has_number(str(h.payload.get("text", "")), patterns):
             return i
     return None
-
-
-def has_number(text: str, patterns: list[re.Pattern[str]]) -> bool:
-    return any(p.search(text) for p in patterns)
 
 
 def _summary(h: Hit) -> dict[str, Any]:

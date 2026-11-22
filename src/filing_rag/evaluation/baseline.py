@@ -10,7 +10,8 @@ Each paid run writes a new folder `experiments/m1/baseline/<time>/` (never overw
 results.json, scorecard.md, text_answers_to_mark.md. The run stops when its cost goes above
 `baseline_max_cost_usd` (default $2).
 
-`--router` runs the routed pipeline (M2: router → document list → filtered search → answer);
+`--router` runs the routed pipeline (M2: router → document list → filtered search → checked
+answer, Q107);
 its runs go to `experiments/m2/smoke/`. `--ids dev_0001,dev_0041` picks questions by ID.
 """
 
@@ -33,12 +34,17 @@ from filing_rag.baseline.pipeline import (
     BaselineResult,
     build_prompt,
 )
+from filing_rag.engine.answer import SYSTEM as WRITER_SYSTEM
+from filing_rag.engine.answer import WRITER_SCHEMA
+from filing_rag.engine.answer import build_prompt as writer_prompt
+from filing_rag.engine.checked import CheckedAnswerer
 from filing_rag.engine.routed import RoutedResult
 from filing_rag.evaluation.dev_set import DevQuestion, Route
 from filing_rag.evaluation.scoring import Mark, score
 from filing_rag.llm.client import cost_usd
 
 EST_OUTPUT_TOKENS = 300  # per question, for the estimate only
+EST_CHECKED_OUTPUT_TOKENS = 700  # claims with quotes + calculations (Q107), estimate only
 EST_ROUTER_OUTPUT_TOKENS = 400  # JSON + low-effort thinking, for the estimate only
 TokenCounter = Callable[[str, str], int]
 
@@ -88,13 +94,14 @@ def estimate(
     count: TokenCounter,
     price_in: float,
     price_out: float,
+    system: str = SYSTEM,
+    prompt: Callable[[str, list[Any]], str] = build_prompt,
+    out_tokens: int = EST_OUTPUT_TOKENS,
 ) -> dict[str, Any]:
     """Build the real prompts (search runs, no LLM call) and estimate tokens and cost."""
-    tokens = [
-        count(SYSTEM, build_prompt(q.turns[-1], pipeline.retrieve(q.turns[-1]))) for q in questions
-    ]
+    tokens = [count(system, prompt(q.turns[-1], pipeline.retrieve(q.turns[-1]))) for q in questions]
     n = len(tokens)
-    tin, tout = sum(tokens), n * EST_OUTPUT_TOKENS
+    tin, tout = sum(tokens), n * out_tokens
     expected = cost_usd(tin, tout, price_in, price_out)
     return {
         "questions": n,
@@ -127,7 +134,24 @@ def _routed_fields(r: BaselineResult) -> dict[str, Any]:
         "answer_cost_usd": round(r.answer_cost_usd, 6),
         "router_latency_s": round(r.router_latency_s, 3),
         "added_table_parts": r.added_table_parts,
-    }
+    } | _checked_fields(r.checked)
+
+
+def _checked_fields(c: Any) -> dict[str, Any]:
+    """Q107: status, claim checks and failure reasons of a checked answer."""
+    if c is None:
+        return {}
+    return {
+        "status": str(c.status),
+        "claims_total": c.claims_total,
+        "claims_passed": c.claims_passed,
+        "check_failures": c.failures,
+        "model_sentence": c.model_sentence,
+        "sentence_used": c.sentence_used,
+        "items": [{"id": i.id, "kind": i.kind, "label": i.label, "value": i.value,
+                   "unit": i.unit, "failure": str(i.failure) if i.failure else None,
+                   "detail": i.detail} for i in c.items],
+    }  # fmt: skip
 
 
 def run(
@@ -237,6 +261,20 @@ def scorecard(rows: list[dict[str, Any]], meta: dict[str, Any]) -> str:
                 f"| {r['id']} | {r.get('route')} | {companies} | {o.get('years', '')} | "
                 f"{doc_type} | {shown} |"
             )
+    checked = [r for r in rows if "status" in r]
+    if checked:
+        status = Counter(r["status"] for r in checked)
+        total = sum(r["claims_total"] for r in checked)
+        ok = sum(r["claims_passed"] for r in checked)
+        reasons: Counter[str] = Counter()
+        for r in checked:
+            reasons.update(r["check_failures"])
+        why = ", ".join(f"{k} {n}" for k, n in sorted(reasons.items())) or "none"
+        lines += ["", "## Checked answers (Q107)", "",
+                  "- Status: " + ", ".join(f"{k} {n}" for k, n in sorted(status.items())),
+                  f"- Claims passed the quote check: {ok}/{total}"
+                  + (f" ({ok / total:.0%})" if total else ""),
+                  f"- Failure reasons: {why}"]  # fmt: skip
     lines += ["", "## Per question", "", "| ID | Mark | Tag | Page seen | Value | Gold |",
               "|---|---|---|---|---|---|"]  # fmt: skip
     for r in rows:
@@ -322,7 +360,8 @@ def main(argv: list[str] | None = None) -> int:
             from anthropic import Anthropic
 
             api = Anthropic(api_key=s.anthropic_api_key.get_secret_value())
-            schema_tokens = len(json.dumps(ANSWER_SCHEMA)) // 4
+            schema = WRITER_SCHEMA if catalog is not None else ANSWER_SCHEMA
+            schema_tokens = len(json.dumps(schema)) // 4
 
             def counter(model: str, extra: int) -> TokenCounter:
                 def api_count(system: str, user: str) -> int:
@@ -339,10 +378,17 @@ def main(argv: list[str] | None = None) -> int:
                 rschema = len(json.dumps(build_schema(catalog.companies()))) // 4
                 router_count = counter(s.router_model, rschema)
             how = "Anthropic token counting endpoint (no answer is generated)"
-        # with --router the answer prompt is estimated from unfiltered chunks (same size: top-k)
-        est = estimate(
-            questions, dry, count, s.answer_price_in_per_mtok, s.answer_price_out_per_mtok
-        )
+        # with --router the answer prompt is estimated from unfiltered chunks (same size: top-k);
+        # the split-table expansion (up to 3 more chunks) is not in the estimate
+        if catalog is not None:
+            est = estimate(
+                questions, dry, count, s.answer_price_in_per_mtok, s.answer_price_out_per_mtok,
+                WRITER_SYSTEM, writer_prompt, EST_CHECKED_OUTPUT_TOKENS,
+            )  # fmt: skip
+        else:
+            est = estimate(
+                questions, dry, count, s.answer_price_in_per_mtok, s.answer_price_out_per_mtok
+            )
         if catalog is not None:
             from filing_rag.router.router import SYSTEM as ROUTER_SYSTEM
             from filing_rag.router.router import build_user
@@ -376,8 +422,9 @@ def main(argv: list[str] | None = None) -> int:
 
         router_llm = AnthropicLLM(s, allow_paid=True, role="router")
         router = Router(router_llm, catalog, s.router_max_tokens, s.router_year_rule)
+        checked = CheckedAnswerer(llm, s.checked_max_tokens)
         pipeline = RoutedPipeline(
-            router, searcher, base_pipeline, s.baseline_top_k, s.table_parts_max_extra
+            router, searcher, checked, s.baseline_top_k, s.table_parts_max_extra
         )
     max_cost = args.max_cost if args.max_cost is not None else s.baseline_max_cost_usd
     started = datetime.now().strftime("%Y%m%d-%H%M%S")

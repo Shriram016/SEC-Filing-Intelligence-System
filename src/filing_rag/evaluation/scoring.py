@@ -17,12 +17,10 @@ from enum import StrEnum
 
 from filing_rag.baseline.pipeline import BaselineAnswer
 from filing_rag.evaluation.dev_set import DevQuestion
+from filing_rag.numbers import normalise as normalise
 from filing_rag.search.searcher import Hit
 
 REL_TOLERANCE = 0.01
-SCALES = {"thousand": 1e3, "million": 1e6, "billion": 1e9, "trillion": 1e12}
-SCALE_RE = re.compile(r"\b(thousands?|millions?|billions?|trillions?|k|mn|m|bn|b)\b")
-SCALE_ALIASES = {"k": "thousand", "mn": "million", "m": "million", "bn": "billion", "b": "billion"}
 DECREASE_RE = re.compile(
     r"\b(decrease[sd]?|declined?|down|lower|fell|drop(ped)?|reduction)\b", re.I
 )
@@ -38,22 +36,6 @@ class FailureTag(StrEnum):
     BROKEN_JSON = "broken_json"
     SEARCH_MISS = "search_miss"
     ANSWER_ERROR = "answer_error"
-
-
-def normalise(value: float, unit: str | None) -> tuple[str, float]:
-    """Return (family, value in the base unit). Families: pct, usd, count."""
-    u = (unit or "").lower().strip()
-    if "%" in u or "percent" in u:
-        return "pct", value
-    if "basis point" in u or "bps" in u:
-        return "pct", value / 100
-    m = SCALE_RE.search(u)
-    scale = 1.0
-    if m:
-        word = m.group(1).rstrip("s")
-        scale = SCALES[SCALE_ALIASES.get(word, word)]
-    family = "usd" if ("usd" in u or "$" in u or "dollar" in u) else "count"
-    return family, value * scale
 
 
 def numbers_match(gold: tuple[str, float], got: tuple[str, float]) -> bool:

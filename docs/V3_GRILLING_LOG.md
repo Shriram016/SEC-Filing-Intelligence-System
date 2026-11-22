@@ -620,3 +620,15 @@ Also watch: the 361 PDFs are hosted on company sites (links can break) and Finan
 - **Verdict:** new (refines Q94, Q105).
 - **Measured (2026-11-22, free):** cuts 103 → 24 and untitled 972 → 893 (41 documents); most untitled tables were harmless (13/30 not financial tables, 6/30 title text already in the chunk). Hand check of 20 changed tables: 14 better, 0 wrong joins. Small test (gold document): table Hit@5 0.607 → **0.714**, Hit@10 0.643 → 0.821, Value@5 0.60 → 0.80; text unchanged → go. Full `chunks_v2` (rule A): all Hit@5 0.62 → 0.64, Hit@10 0.70 → 0.78, table Hit@5 0.571 → 0.607, Value@5 0.50 → 0.65; text unchanged → **switched to `chunks_v2`** (also brings in Q105). `chunks` kept for rollback. Results: `experiments/m2/RESULTS_table_reader.md`.
 - **Smoke test (2026-11-22, paid $0.0150, approved):** `chunks_v2`, dev_0005 (cut table) and dev_0009 (lost title): 2/2 correct, page seen and cited. `experiments/m2/RESULTS_smoke_q106.md`.
+
+### Q107 (M2, 2026-11-22) — Checked answers: claims, quote check, calculator, final rule
+- **Finding:** the routed pipeline uses the baseline answer (one sentence, one value, cited pages). Nothing checks that a page says what is claimed (ADR-0003 not built).
+- **Answer:**
+  1. One Sonnet call returns claims (label, extract number, exact quote, value as printed, unit, period), calculations (op + input IDs), `main`, and a sentence with placeholders only.
+  2. Code checks each quote in its extract (whitespace, case, quote marks and dashes forgiven; 3+ words) and each value in its quote (number matcher shared with the search test, `filing_rag/numbers.py`). Failed claims removed; no retry.
+  3. **Calculator moved from M3 to M2:** add, subtract, divide, ratio_pct, pct_change; scale conversion; different families refused. Without it, 16/50 dev questions (calculate, compare) could never pass. The planner stays in M3.
+  4. Final rule: answer / partial / refuse; no number reaches the user unless checked or calculated; the period line comes from chunk metadata.
+  5. The baseline keeps its old format (frozen comparison). The checked answer also gives the old fields (value, unit, sources), so the scorer is unchanged.
+- **Record:** `engine.md` §3.3–3.6.
+- **Verdict:** changes the milestone of the calculator (M3 → M2); details the schema (Q30, Q31).
+- **Smoke (2026-11-22, $0.0206):** dev_0005 and dev_0038 both correct, claims 3/3 passed, calculator used on dev_0038. Code replaced the model's sentence on dev_0038 (reason not logged) → rows now save `model_sentence` + `sentence_used`; negative inputs shown in parentheses. `experiments/m2/RESULTS_smoke_q107.md`.

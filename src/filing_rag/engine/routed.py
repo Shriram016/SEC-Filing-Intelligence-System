@@ -1,9 +1,9 @@
 """Routed RAG: router (Haiku) → coverage + document list (code) → filtered search → answer.
 
-The first M2 engine step (router.md, engine.md §3.2, Q104). The answer step is the baseline's
-JSON answer (Sonnet). A route other than `answer` stops before the search: no search and no
-answer call, so no extra cost. If the router fails (broken JSON twice), the result is a clear
-error, never an unfiltered guess.
+The M2 engine (router.md, engine.md §3.2, Q104). The answer step is the checked answer
+(Q107: claims + quote check + calculator + final rule), or the frozen baseline answer. A route
+other than `answer` stops before the search: no search and no answer call, so no extra cost.
+If the router fails (broken JSON twice), the result is a clear error, never an unfiltered guess.
 
 Split tables (Q105): after the search, code adds the missing parts of a retrieved split table
 (`engine/tables.py`, at most `max_extra_parts` chunks), so the answer step reads the whole table.
@@ -13,9 +13,9 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 from dataclasses import dataclass, field
-from typing import Protocol
+from typing import Any, Protocol
 
-from filing_rag.baseline.pipeline import BaselinePipeline, BaselineResult
+from filing_rag.baseline.pipeline import BaselineResult
 from filing_rag.engine.tables import expand_tables
 from filing_rag.llm.client import LLMResult
 from filing_rag.router.router import Route, RouteDecision, Router, Turn, reply_text
@@ -34,12 +34,19 @@ class FilteredSearch(Protocol):
     def table_parts(self, table_id: str) -> list[Hit]: ...
 
 
+class AnswerStep(Protocol):
+    """The baseline answer (frozen) or the checked answer (Q107)."""
+
+    def answer(self, question: str, hits: list[Hit]) -> BaselineResult: ...
+
+
 @dataclass
 class RoutedResult(BaselineResult):
     decision: RouteDecision | None = None
     reply: str | None = None  # the reply for a route that stops before search
     router_calls: list[LLMResult] = field(default_factory=list)
     added_table_parts: int = 0  # chunks added by the split-table expansion (not searched)
+    checked: Any = None  # CheckedAnswer from the checked answer step (Q107), else None
 
     @property
     def router_cost_usd(self) -> float:
@@ -59,7 +66,7 @@ class RoutedPipeline:
         self,
         router: Router,
         searcher: FilteredSearch,
-        answerer: BaselinePipeline,
+        answerer: AnswerStep,
         top_k: int = 5,
         max_extra_parts: int = 3,
     ) -> None:
@@ -100,4 +107,5 @@ class RoutedPipeline:
             decision=decision,
             router_calls=router_calls,
             added_table_parts=added,
+            checked=getattr(base, "checked", None),
         )

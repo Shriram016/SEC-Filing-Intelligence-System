@@ -234,3 +234,60 @@ def test_split_table_parts_reach_the_answer_prompt(cap: int, expected_parts: int
     prompt = answer_llm.calls[-1]["user"]
     assert "Americas 100" in prompt
     assert ("Services 200" in prompt) == (cap > 0)
+
+
+# ---------- Q107: the routed pipeline with checked answers ----------
+
+
+def checked_reply(value: float = 100, quote: str = "Revenue 100 for the year") -> str:
+    return json.dumps({
+        "found": True,
+        "claims": [{"id": "c1", "label": "Apple revenue, FY2022", "extract": 1, "quote": quote,
+                    "value": value, "unit": "USD million", "period": "FY2022"}],
+        "calculations": [], "main": "c1", "answer": "Apple's revenue was {c1} in FY2022.",
+    })  # fmt: skip
+
+
+class RevenueSearcher(RecordingSearcher):
+    def search(
+        self,
+        query: str,
+        company: str | None = None,
+        k: int = 10,
+        doc_names: Sequence[str] | None = None,
+    ) -> list[Hit]:
+        self.calls.append({"query": query, "k": k, "doc_names": doc_names})
+        return [Hit(0.9, {"doc_name": "APPLE_2022_10K", "page": 3, "page_end": 3,
+                          "text": "Revenue 100 for the year", "company": "Apple",
+                          "doc_type": "10-K", "period_end": "2022-09-24"})]  # fmt: skip
+
+
+@pytest.mark.parametrize(
+    ("reply", "status", "mark"),
+    [
+        (checked_reply(), "answer", "correct"),
+        (checked_reply(value=120, quote="Revenue 120 for the year"), "refused", "wrong"),
+    ],
+)
+def test_checked_answer_runs_end_to_end(reply: str, status: str, mark: str) -> None:
+    from filing_rag.engine.checked import CheckedAnswerer
+
+    searcher = RevenueSearcher()
+    pipe = RoutedPipeline(
+        Router(FakeLLM([route_reply()], price_in=0.10, price_out=0.50), CATALOG),
+        searcher, CheckedAnswerer(FakeLLM([reply])), top_k=5,
+    )  # fmt: skip
+    rows, _ = run([question("dev_0001")], pipe, max_cost_usd=1.0)
+    row = rows[0]
+    assert row["status"] == status and row["mark"] == mark
+    assert row["claims_total"] == 1 and row["claims_passed"] == (1 if status == "answer" else 0)
+    if status == "answer":
+        assert row["answer"]["answer"].startswith("Apple's revenue was $100 million in FY2022.")
+        assert row["sources_ok"]
+    else:
+        assert row["check_failures"] == {"quote_not_found": 1}
+        assert "120" not in row["answer"]["answer"]
+    meta = {"started": "x", "model": "fake", "top_k": 5, "collection": "c",
+            "stopped_by_cost_limit": False, "router_model": "fake", "year_rule": "A"}  # fmt: skip
+    card = scorecard(rows, meta)
+    assert "## Checked answers (Q107)" in card and f"Status: {status} 1" in card

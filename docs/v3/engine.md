@@ -1,6 +1,6 @@
 # Spec — Answering engine
 
-**Status:** design approved (grilling 2026-11-18 → 2026-11-19). Not built.
+**Status:** design approved (grilling 2026-11-18 → 2026-11-19). Router + search built (M2); checked answers built (Q107, 2026-11-22).
 **Milestones:** M2 (simple questions), M3 (hard questions).
 **Sources:** `docs/V3_GRILLING_LOG.md` Q15, Q16, Q24–Q32, Q35, Q36, Q64, Q65. ADR-0002, ADR-0003, ADR-0005.
 
@@ -37,22 +37,27 @@ router output → planner → for each step: search → read fact → (calculato
 ### 3.3 Calculator tool
 - The LLM picks the formula and the cited inputs. Code does the arithmetic.
 - Returns result + formula + inputs. Units handled explicitly (millions vs billions, %). Q29, ADR-0003.
+- **Built in M2 (Q107), not M3:** without it, every calculate / compare question fails the number check. The calculations are part of the answer JSON (no extra LLM call). Ops: `add` (2+ inputs), `subtract` (a − b), `divide` (a / b, a ratio), `ratio_pct` (a / b × 100), `pct_change` ((b − a) / |a| × 100). Inputs are claim IDs or earlier calculation IDs. Code converts the scale (thousand / million / billion) and refuses inputs of different families (USD vs % vs count) and a division by zero. The planner (several searches) stays in M3.
 
 ### 3.4 Answer writer
 - Structured JSON always. No free text from the LLM. Code validates the JSON, then renders text. Q31.
-- Each claim = text + exact quote + chunk ID (+ calculator result ID for computed numbers).
-- Answers show the period dates (for example "Apple FY2022, ended Sep 2022"). Q25.
+- **Schema (Q107):** `found`, `claims` (each: `id`, `label`, `extract` = the number of the extract in the prompt, `quote` = exact text copied from that extract, `value` as printed or null, `unit` with its scale, `period`), `calculations` (each: `id`, `op`, `inputs`, `label`, `unit`), `main` = the claim or calculation ID that answers the question (or null), `answer` = a short sentence that uses **placeholders** (`{c1}`, `{k1}`) and never writes a number itself.
+- The model cites the extract number; code maps it to the chunk ID (fewer copy errors than long IDs).
+- Answers show the period: code adds the company, document type and period end from the chunk metadata of the checked claims, not from the LLM. Q25.
 - Broken JSON (invalid, missing field, cut off): retry once, then a clear error. Log every retry; track the structure-valid rate. Q32.
 
 ### 3.5 Claim + quote check (code)
-- Quote must exist in the cited chunk (small whitespace differences allowed).
-- Each number must appear in the quote or come from the calculator.
-- Failed claims are removed. Q30, ADR-0003.
+- Quote must exist in the cited extract. Allowed differences: whitespace (aligned table columns), case, curly quotes, dashes, non-breaking spaces. A quote needs at least 3 words, one with letters (a bare number proves nothing).
+- The claim value must appear in the quote as printed ("1,788", "(1,788)" for a negative, decimals, "1.8 billion").
+- A calculation passes only when all its inputs passed and the calculator accepts it.
+- Failed claims are removed, with the reason logged (`bad_extract`, `quote_not_found`, `quote_too_short`, `value_not_in_quote`, `calc_error`). No retry for a failed check (minimum LLM calls). Q30, ADR-0003.
 
 ### 3.6 Final rule (code)
 - Every step found a checked fact → answer.
 - Some steps failed → partial answer that says exactly what was not found.
 - Nothing passed → refuse with the reason ("could not find").
+- **Rules (Q107):** `found` false or no claim passed → refuse. The `main` item passed and every placeholder in the sentence passed → answer, with the sentence filled by code. The sentence is used only when it has no digits outside placeholders (years and dates allowed); otherwise code writes a plain sentence from the checked items. The `main` item failed, or a used item failed → partial: the checked items + "could not check: <label>". No number reaches the user unless it passed the check or came from the calculator.
+- The plain-RAG baseline keeps its old answer format (frozen for the comparison).
 
 ## 4. Multi-turn chat
 - The engine receives the stand-alone question (rewritten from the follow-up) plus the chat history. Q64.

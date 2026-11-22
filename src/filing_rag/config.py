@@ -44,6 +44,7 @@ class Settings(BaseSettings):
     answer_price_in_per_mtok: float = 2.0
     answer_price_out_per_mtok: float = 10.0
     answer_max_tokens: int = 1024
+    checked_max_tokens: int = 2048  # Q107: claims with quotes are longer than the baseline answer
     # Sonnet 5.5: "between_tools" is the lowest thinking setting (no extended thinking);
     # "disabled" is rejected on this model. None = do not send the field.
     answer_thinking: str | None = "between_tools"
