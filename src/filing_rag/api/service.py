@@ -31,7 +31,7 @@ from filing_rag.api.schemas import (
 from filing_rag.api.sse import sse_event
 from filing_rag.engine.final import CheckedAnswer
 from filing_rag.engine.routed import Progress, RoutedResult
-from filing_rag.router.router import Turn
+from filing_rag.router.router import Turn, step_rows
 
 log = logging.getLogger("filing_rag.api")
 AnswerStatus = Literal["answer", "partial", "refused"]
@@ -222,6 +222,7 @@ def _summary(r: RoutedResult) -> dict[str, Any]:
         "route": str(d.route) if d and d.route else None,
         "search_question": d.search_question if d and d.route else None,
         "doc_names": list(d.doc_names or []) if d else [],
+        "steps": step_rows(d) if d else [],
         "pages": [h.page for h in r.hits],
         "status": str(c.status) if checked else None,
         "writer_found": writer.found if writer is not None else None,

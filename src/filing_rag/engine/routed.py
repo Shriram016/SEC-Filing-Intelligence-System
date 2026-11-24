@@ -7,6 +7,10 @@ If the router fails (broken JSON twice), the result is a clear error, never an u
 
 Split tables (Q105): after the search, code adds the missing parts of a retrieved split table
 (`engine/tables.py`, at most `max_extra_parts` chunks), so the answer step reads the whole table.
+
+Steps (Q109): the router gives one step per company + year pair. Code runs one filtered search
+per step (top `top_k` each, split-table parts per step), then merges the chunks in step order
+without duplicates. The answer step runs once on the merged chunks.
 """
 
 from __future__ import annotations
@@ -16,7 +20,7 @@ from dataclasses import dataclass, field
 from typing import Any, Protocol
 
 from filing_rag.baseline.pipeline import BaselineResult
-from filing_rag.engine.tables import expand_tables
+from filing_rag.engine.tables import chunk_key, expand_tables
 from filing_rag.llm.client import LLMResult
 from filing_rag.router.router import Route, RouteDecision, Router, Turn, reply_text
 from filing_rag.search.searcher import Hit
@@ -53,6 +57,7 @@ class RoutedResult(BaselineResult):
     added_table_parts: int = 0  # chunks added by the split-table expansion (not searched)
     checked: Any = None  # CheckedAnswer from the checked answer step (Q107), else None
     writer: Any = None  # WriterOutput of the checked answer step (for the logs), else None
+    step_hits: list[list[Hit]] = field(default_factory=list)  # Q109: chunks found per step
 
     @property
     def router_cost_usd(self) -> float:
@@ -87,6 +92,25 @@ class RoutedPipeline:
         hits = self.searcher.search(query, k=self.top_k, doc_names=doc_names)
         return expand_tables(hits, self.searcher, self.max_extra_parts)
 
+    def retrieve_steps(self, decision: RouteDecision) -> tuple[list[Hit], int, list[list[Hit]]]:
+        """One search per step, merged in step order without duplicates.
+
+        Returns (merged chunks, added table parts, chunks per step)."""
+        merged: list[Hit] = []
+        seen: set[str] = set()
+        added_total = 0
+        per_step: list[list[Hit]] = []
+        for query, doc_names in decision.searches():
+            hits, added = self.retrieve(query, doc_names)
+            per_step.append(hits)
+            added_total += added
+            for h in hits:
+                key = chunk_key(h)
+                if key not in seen:
+                    seen.add(key)
+                    merged.append(h)
+        return merged, added_total, per_step
+
     def answer(
         self,
         question: str,
@@ -116,7 +140,7 @@ class RoutedPipeline:
             )
         query = decision.search_question
         stage("searching")
-        hits, added = self.retrieve(query, decision.doc_names)
+        hits, added, per_step = self.retrieve_steps(decision)
         stage("answering")
         base = self.answerer.answer(query, hits, on_progress=on_progress)
         return RoutedResult(
@@ -130,4 +154,5 @@ class RoutedPipeline:
             added_table_parts=added,
             checked=getattr(base, "checked", None),
             writer=getattr(base, "writer", None),
+            step_hits=per_step,
         )

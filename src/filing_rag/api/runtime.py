@@ -22,7 +22,7 @@ DEMO_MESSAGE = (
 )
 DEMO_ROUTER_REPLY = json.dumps({
     "route": "unclear", "standalone_question": "demo", "reason": DEMO_MESSAGE,
-    "companies": [], "other_companies": [], "years": [], "doc_type": None, "metric": None,
+    "steps": [], "other_companies": [], "doc_type": None, "metric": None,
 })  # fmt: skip
 
 

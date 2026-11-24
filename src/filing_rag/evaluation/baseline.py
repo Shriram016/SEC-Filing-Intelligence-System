@@ -42,6 +42,7 @@ from filing_rag.engine.routed import RoutedResult
 from filing_rag.evaluation.dev_set import DevQuestion, Route
 from filing_rag.evaluation.scoring import Mark, score
 from filing_rag.llm.client import cost_usd
+from filing_rag.router.router import step_rows
 
 EST_OUTPUT_TOKENS = 300  # per question, for the estimate only
 EST_CHECKED_OUTPUT_TOKENS = 700  # claims with quotes + calculations (Q107), estimate only
@@ -127,6 +128,8 @@ def _routed_fields(r: BaselineResult) -> dict[str, Any]:
         "router_output": d.output.model_dump(mode="json") if d.output else None,
         "router_error": d.error,
         "doc_names": d.doc_names,
+        "steps": step_rows(d),
+        "too_many_steps": d.too_many_steps,
         "missing": d.selection.missing if d.selection else [],
         "reply": r.reply,
         "router_llm_calls": len(r.router_calls),
@@ -249,18 +252,16 @@ def scorecard(rows: list[dict[str, Any]], meta: dict[str, Any]) -> str:
                   f"- Router time: median {statistics.median(rlat):.2f} s",
                   "", "## Routes", ""]  # fmt: skip
         lines += [f"- {k}: {n}" for k, n in sorted(routes.items())]
-        lines += ["", "| ID | Route | Companies | Years | Doc type | Documents searched |",
-                  "|---|---|---|---|---|---|"]  # fmt: skip
+        lines += ["", "| ID | Route | Steps (company year) | Doc type | Documents searched |",
+                  "|---|---|---|---|---|"]  # fmt: skip
         for r in rows:
             o = r.get("router_output") or {}
             docs = r.get("doc_names")
             shown = "all (no filter)" if docs is None else ", ".join(docs) or "-"
-            companies = ", ".join(o.get("companies", []))
+            steps = "; ".join(f"{s.get('company') or '-'} {s.get('year') or '-'}"
+                              for s in r.get("steps") or [])  # fmt: skip
             doc_type = o.get("doc_type") or ""
-            lines.append(
-                f"| {r['id']} | {r.get('route')} | {companies} | {o.get('years', '')} | "
-                f"{doc_type} | {shown} |"
-            )
+            lines.append(f"| {r['id']} | {r.get('route')} | {steps} | {doc_type} | {shown} |")
     checked = [r for r in rows if "status" in r]
     if checked:
         status = Counter(r["status"] for r in checked)

@@ -37,10 +37,13 @@ class Searcher:
         return []
 
 
+STEP = {"company": "Apple", "year": 2022, "search": "Apple net sales 2022"}
+
+
 def route_reply(**kw: Any) -> str:
     base = {"route": "answer", "standalone_question": "What were Apple's net sales in FY2022?",
-            "reason": "factual", "companies": ["Apple"], "other_companies": [], "years": [2022],
-            "doc_type": None, "metric": "net sales"}  # fmt: skip
+            "reason": "factual", "other_companies": [], "doc_type": None, "metric": "net sales",
+            "steps": [STEP]}  # fmt: skip
     return json.dumps(base | kw)
 
 
@@ -122,7 +125,7 @@ def test_a_failed_quote_check_is_a_refused_answer_without_citations() -> None:
     ("route", "expected"),
     [
         (route_reply(route="advice"), "advice"),
-        (route_reply(companies=[], other_companies=["Tesla"]), "not_covered"),
+        (route_reply(steps=[], other_companies=["Tesla"]), "not_covered"),
         (route_reply(route="unclear", reason="Which company?"), "unclear"),
     ],
 )
@@ -259,6 +262,7 @@ def test_one_json_log_line_per_question(caplog: pytest.LogCaptureFixture) -> Non
     assert lines[0]["status"] == "answer" and lines[0]["cost_usd"] > 0
     assert lines[0]["search_question"] == "What were Apple's net sales in FY2022?"
     assert lines[0]["pages"] == [25] and lines[0]["writer_found"] is True
+    assert lines[0]["steps"] == [STEP | {"doc_names": ["APPLE_2022_10K"]}]
     assert lines[0]["claims_passed"] == 1 and lines[0]["check_failures"] == {}
 
 

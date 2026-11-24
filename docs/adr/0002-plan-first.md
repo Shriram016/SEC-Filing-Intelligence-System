@@ -17,5 +17,8 @@ Plan first: one LLM call writes the steps; code runs them; at most one re-plan. 
 ## Consequences
 Less flexible for unusual questions. No up-front plan-first vs agent-loop test (comparison only on need).
 
+## Amendment (Q109, 2026-11-23)
+The plan is part of the router call (`steps`: one per company + year, max 4), not a separate planner call. No re-plan for now (it would need a second router call; add on measured need). The calculation is chosen by the answer writer and computed by code. Plan-first and "plan from the question alone" still hold.
+
 ## Rejected
 Agent loop as default (variable cost, can loop, harder to test); fixed template (cannot do calculate / explain why).

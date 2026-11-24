@@ -23,7 +23,8 @@ class TablePartsFetch(Protocol):
     def table_parts(self, table_id: str) -> list[Hit]: ...
 
 
-def _key(h: Hit) -> str:
+def chunk_key(h: Hit) -> str:
+    """A stable identity of a chunk (for duplicate removal)."""
     return str(h.payload.get("chunk_id") or (h.doc_name, h.page, h.payload.get("table_part")))
 
 
@@ -41,7 +42,7 @@ def expand_tables(
     """Return (hits with the added parts, number of added chunks)."""
     if max_extra <= 0 or not any(_is_split(h) for h in hits):
         return list(hits), 0
-    present = {_key(h) for h in hits}
+    present = {chunk_key(h) for h in hits}
     added: dict[str, list[Hit]] = {}  # table_id -> added parts
     budget = max_extra
     for h in hits:  # rank order: the best-ranked table gets its parts first
@@ -49,7 +50,7 @@ def expand_tables(
         if budget == 0 or not _is_split(h) or not table_id or table_id in added:
             continue
         found = [_part(x) for x in hits if x.payload.get("table_id") == table_id]
-        missing = [p for p in fetch.table_parts(str(table_id)) if _key(p) not in present]
+        missing = [p for p in fetch.table_parts(str(table_id)) if chunk_key(p) not in present]
         missing.sort(key=lambda p: (min(abs(_part(p) - f) for f in found), _part(p)))
         take = missing[:budget]
         added[str(table_id)] = [Hit(0.0, {**p.payload, ADDED_FLAG: True}) for p in take]

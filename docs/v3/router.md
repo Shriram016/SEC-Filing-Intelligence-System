@@ -13,9 +13,11 @@ Decide what to do with a question **before** any search. The router stops off-to
 | | Value |
 |---|---|
 | Input | The user question + the chat history (multi-turn) |
-| Output | JSON (schema below): `route`, `standalone_question`, `reason`, `companies`, `other_companies`, `years`, `doc_type`, `metric` |
+| Output | JSON (schema below): `route`, `standalone_question`, `reason`, `steps`, `other_companies`, `doc_type`, `metric` |
 
-### 2.1 JSON schema (Q104)
+### 2.1 JSON schema (Q104, steps Q109)
+
+**Q109 change (2026-11-23):** `companies` and `years` are replaced by `steps` (the plan, `engine.md` §3.1). Each step is `{company, year, search}`: `company` from the 40-name enum or `null` (no company named), `year` 2000–2030 or `null` ("latest" / no year), `search` = short search text for that one fact. One step per company + year pair the question names; at least 1 step for route `answer`; duplicate pairs removed by code. More than 4 steps → code sets route `unclear` with "Please ask about at most 4 company-year pairs." The companies of a decision = the step companies. The rows below for `companies` / `years` describe the M2 schema (kept for the record).
 
 Every field is always present (strict schema, `additionalProperties: false`). "Optional" means the value can be empty (`[]`) or `null`.
 
@@ -41,6 +43,8 @@ The LLM gives only the years the question names. **Code** chooses the documents 
 3. `doc_type` set → keep only that type.
 4. Twin documents of the same year (for example a 10-K and an annual report) → both kept.
 5. No company → no document filter (search everything).
+
+**Q109:** the selection runs once per step (the step's company and year), so each step has its own document list and its own search. The decision's `doc_names` (logs, coverage) is the union of the step lists. A step without a company has no filter.
 
 The search then uses one **hard filter**: `doc_name` is one of the chosen documents. So company, year and doc type are all hard filters, applied through the document list. Known limit: a year reported only in an older 5-year table (for example 2015 from a FY2020 10-K) is not reached.
 
@@ -73,6 +77,7 @@ The search then uses one **hard filter**: `doc_name` is one of the chosen docume
 | Follow-up rewrite ("And FY2021?") | Folded into the router call: the router gets the recent chat history and returns `standalone_question`; search uses it. No extra LLM call. History length tested at M3 | Q65, Q104 |
 | Filters | Company, year (Y else Y+1) and named doc type are hard filters, applied as a list of documents chosen by code | Q104 (replaces the boost in Q100) |
 | Jev / other decision models | Not used | Q34 |
+| Planner | Folded into the router call as `steps` (one per company + year, max 4, no re-plan). No extra LLM call | Q109 |
 
 ## 6. After search (not the router)
 
@@ -94,6 +99,7 @@ Open causes: twin documents of the same year; the fiscal quarter is not used ("Q
 - Unit: catalog lookup, route rendering, JSON validation (with fake LLM replies).
 - Dev evals: off-topic caught, injection caught, advice route correct, coverage correct, clarify correct. Part of these questions stay held out until M6. Q7, Q8.
 - Repeat runs check that route decisions do not flip.
+- Router check (Q109, `evaluation/router_check.py`): route vs `expected_route`; step pairs vs `gold_steps`; gold documents covered by the step documents; gold page in the top 5 of a step. Router calls only (no writer).
 
 ## 8. Open at build time
 

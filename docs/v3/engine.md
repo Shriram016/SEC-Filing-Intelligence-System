@@ -1,6 +1,6 @@
 # Spec — Answering engine
 
-**Status:** design approved (grilling 2026-11-18 → 2026-11-19). Router + search built (M2); checked answers built (Q107, 2026-11-22).
+**Status:** design approved (grilling 2026-11-18 → 2026-11-19). Router + search built (M2); checked answers built (Q107, 2026-11-22); planner steps in the router call (Q109, 2026-11-23).
 **Milestones:** M2 (simple questions), M3 (hard questions).
 **Sources:** `docs/V3_GRILLING_LOG.md` Q15, Q16, Q24–Q32, Q35, Q36, Q64, Q65. ADR-0002, ADR-0003, ADR-0005.
 
@@ -13,18 +13,22 @@ The engine is a **self-contained library**. It has no web or UI code, so it can 
 ## 2. Flow
 
 ```
-router output → planner → for each step: search → read fact → (calculator) → answer writer (JSON)
-              → claim + quote check (code) → answer / partial answer / refuse
+router output (with steps) → for each step: catalog → filtered search → merge chunks
+              → answer writer (JSON, with calculations) → claim + quote check (code) → answer / partial answer / refuse
 ```
 
 ## 3. Parts
 
-### 3.1 Planner (plan first)
-- One LLM call writes a plan: a list of small steps (for example "find AWS revenue FY2021", "find AWS revenue FY2022", "calculate growth").
-- Code runs the steps in order.
-- If a step fails, the plan can be revised **once**. Hard limit: never loops.
+### 3.1 Planner (plan first) — part of the router call (Q109)
+- **No separate planner call.** The router JSON holds the plan: `steps`, each with `company`, `year` (or null for "latest") and `search` text (`router.md` §2.1). The calculation is not a step: the answer writer picks it and code computes it (§3.3).
+- **Rule:** one step for each company + year pair the question names. The router does not guess what a filing contains (it reads no document), so "FY2021 vs FY2022" is always 2 steps, even when one 10-K holds both years.
+- At most **4 steps**. More → route `unclear` with "Please ask about at most 4 company-year pairs." Steps are never dropped silently.
+- Code runs the steps in order: catalog documents for the step (§3.2 rule), filtered search, top 5 per step, split-table parts per step. Then code merges the chunks (duplicates removed) and calls the writer once.
+- One step → the search text is the `standalone_question` (same as M2). Two or more steps → each step's `search` text.
+- **No plan revision.** A step that finds nothing gives a partial answer or a refusal through the final rule; it never guesses. A revision needs a second router call; add it only on measured need.
 - The plan is made from the question alone, before any document is read (safety, see `safety.md`).
 - Agent loop: only if plan-first fails for most cases. No comparison test up front. Q28, ADR-0002.
+- **Test:** dev questions have `gold_steps` (company + year pairs); the router check compares the set of pairs, the document coverage and the gold page per step (`evaluation/router_check.py`).
 
 ### 3.2 Search
 - Semantic search (embeddings) + metadata filters (company, doc type, period, section) from the router output. Shared store: V3 searches all chunks; nobody gives it the document. Q24.
@@ -37,7 +41,7 @@ router output → planner → for each step: search → read fact → (calculato
 ### 3.3 Calculator tool
 - The LLM picks the formula and the cited inputs. Code does the arithmetic.
 - Returns result + formula + inputs. Units handled explicitly (millions vs billions, %). Q29, ADR-0003.
-- **Built in M2 (Q107), not M3:** without it, every calculate / compare question fails the number check. The calculations are part of the answer JSON (no extra LLM call). Ops: `add` (2+ inputs), `subtract` (a − b), `divide` (a / b, a ratio), `ratio_pct` (a / b × 100), `pct_change` ((b − a) / |a| × 100). Inputs are claim IDs or earlier calculation IDs. Code converts the scale (thousand / million / billion) and refuses inputs of different families (USD vs % vs count) and a division by zero. The planner (several searches) stays in M3.
+- **Built in M2 (Q107), not M3:** without it, every calculate / compare question fails the number check. The calculations are part of the answer JSON (no extra LLM call). Ops: `add` (2+ inputs), `subtract` (a − b), `divide` (a / b, a ratio), `ratio_pct` (a / b × 100), `pct_change` ((b − a) / |a| × 100). Inputs are claim IDs or earlier calculation IDs. Code converts the scale (thousand / million / billion) and refuses inputs of different families (USD vs % vs count) and a division by zero. The planner (several searches) is the router steps (Q109, §3.1).
 
 ### 3.4 Answer writer
 - Structured JSON always. No free text from the LLM. Code validates the JSON, then renders text. Q31.
@@ -67,7 +71,8 @@ router output → planner → for each step: search → read fact → (calculato
 
 | Job | Model | Ref |
 |---|---|---|
-| Planner, fact reading, answer writer | Claude Sonnet 5.5 (for now; re-tune by cost-vs-accuracy test) | Q36 |
+| Planner (steps) | Part of the router call: Claude Haiku 5.5. A stronger model only on measured need | Q109 |
+| Fact reading, answer writer | Claude Sonnet 5.5 (for now; re-tune by cost-vs-accuracy test) | Q36 |
 | Backup when Claude is down | An OpenAI model (build time) | Q53 |
 
 One swappable model layer: a model change is a config change. Q35, ADR-0005.
@@ -78,6 +83,7 @@ One swappable model layer: a model change is a config change. Q35, ADR-0005.
 
 ## 7. Tests
 - Unit: calculator, quote checker, JSON validator, final rule, plan step runner (fake LLM).
+- Router check (paid, router calls only): route, steps vs `gold_steps`, document coverage, gold page per step.
 - Integration: fake LLM with recorded replies + a real local store.
 - Dev evals: accuracy per question type, claim-check failure rate, structure-valid rate.
 

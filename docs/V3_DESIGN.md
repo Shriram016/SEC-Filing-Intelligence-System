@@ -42,8 +42,8 @@ V3 is not framed as an alternative to commercial tools (Bloomberg, AlphaSense). 
 Keycloak ◄──┤                      API service (FastAPI, SSE, rate limits, chats)          │
             │                                     │                                        │
             │                       Answering engine (library)                             │
-            │   Router (Haiku) → coverage check (catalog) → Planner (Sonnet) → steps:      │
-            │   search (vectors + filters) → read fact → calculator (code)                 │
+            │   Router + plan steps (Haiku) → coverage check (catalog) → for each step:    │
+            │   search (vectors + filters) → merge chunks → calculator (code)              │
             │   → answer writer (JSON, Sonnet) → claim + quote check (code) → final rule   │
             │                                     │                                        │
             │        Vector store + database (chunks, catalog, chats, logs)                │
@@ -55,8 +55,8 @@ Observability: Langfuse traces + metrics/alerts tool. Evaluation runner: dev set
 | Part | Spec | Key choices |
 |---|---|---|
 | Ingestion | [ingestion.md](v3/ingestion.md) | pdfplumber (tested, no FinanceBench evidence; Docling if it fails); period dates from cover page; sections by one general logic per document with fallback to page headings (Q90); structure-aware chunks ~350 tokens (max 480) + overlap; one chunk per table (row groups if large) + code-template label; a long row name does not cut a table, lost titles found above the header lines (Q106); embedded label = company, type, period + section, deeper levels stored only (Q99; final, label test dropped Q101); embedded text = label + all of the answer text, so the table title is always embedded (Q105); collection `chunks_v2`; bge-base-en-v1.5 embeddings; Qdrant in Docker; direct libraries, no RAG framework ([ADR-0008](adr/0008-no-rag-framework.md)) |
-| Router | [router.md](v3/router.md) | One Haiku call (JSON: route, companies as an enum, years, doc type, stand-alone question) + code coverage check. Routes: unrelated, advice, not_covered (code), unclear, answer. Code chooses the documents (year Y, else Y+1; doc type only when named) (Q104). Built 2026-11-21. [ADR-0004](adr/0004-router-before-search.md) |
-| Answering engine | [engine.md](v3/engine.md) | Plan first, max one re-plan ([ADR-0002](adr/0002-plan-first.md)); semantic search + one hard `doc_name` filter from the router (Q104; free test Hit@5 0.48 → 0.62); calculator in code (built in M2, Q107); JSON claims + quotes checked by code, numbers in the answer only through placeholders ([ADR-0003](adr/0003-code-maths-and-quote-checks.md), Q107); answer / partial / refuse rule |
+| Router | [router.md](v3/router.md) | One Haiku call (JSON: route, steps of company (enum) + year + search text, doc type, stand-alone question; Q109) + code coverage check. Routes: unrelated, advice, not_covered (code), unclear, answer. Code chooses the documents (year Y, else Y+1; doc type only when named) (Q104). Built 2026-11-21. [ADR-0004](adr/0004-router-before-search.md) |
+| Answering engine | [engine.md](v3/engine.md) | Plan first: the steps are part of the router JSON, one step per company + year, max 4, no re-plan (Q109, [ADR-0002](adr/0002-plan-first.md)); one filtered search per step, chunks merged; semantic search + one hard `doc_name` filter from the router (Q104; free test Hit@5 0.48 → 0.62); calculator in code (built in M2, Q107); JSON claims + quotes checked by code, numbers in the answer only through placeholders ([ADR-0003](adr/0003-code-maths-and-quote-checks.md), Q107); answer / partial / refuse rule |
 | API | [api.md](v3/api.md) | Only front door; SSE progress then one checked `answer` event (M2 built: stateless `POST /v1/ask` with recent turns, `/health`, `/ready`, M2 guards, Q108); Keycloak tokens ([ADR-0006](adr/0006-keycloak-login.md)); full rate limits; chats per user, 30-day deletion |
 | UI | [ui.md](v3/ui.md) | React ([ADR-0007](adr/0007-react-ui.md)); ChatGPT-style sidebar; citation details only (no PDF viewer) |
 | Evaluation | [evaluation.md](v3/evaluation.md) | Locked FinanceBench 150 + held-out behaviour subset; dev set (Claude drafts, user confirms; `gold_value` + `gold_unit` for code marking, Q103); free search test (Hit@k, MRR); plain-RAG baseline with JSON answers (Q102); code + OpenAI judge; failure causes; 3 repeat runs |
@@ -70,7 +70,8 @@ Observability: Langfuse traces + metrics/alerts tool. Evaluation runner: dev set
 | Job | Model |
 |---|---|
 | Router | Claude Haiku 5.5 |
-| Planner, fact reading, answer writer | Claude Sonnet 5.5 (for now) |
+| Planner (steps) | Part of the router call: Claude Haiku 5.5 (Q109) |
+| Fact reading, answer writer | Claude Sonnet 5.5 (for now) |
 | Eval judge | OpenAI model (build time) |
 | Backup when Claude is down | OpenAI model (build time) |
 | Embeddings | Free local model: bge-base-en-v1.5 (Q89) |

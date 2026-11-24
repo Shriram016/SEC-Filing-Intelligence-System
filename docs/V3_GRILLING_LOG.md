@@ -646,3 +646,17 @@ Also watch: the 361 PDFs are hosted on company sites (links can break) and Finan
 - **Verdict:** changes the ask path (chat paths → M4) and "answer sent in parts" (→ one event). Portfolio shortcuts: in-memory cost cap (M5: shared store); embedding model in the API process.
 - **Free check (2026-11-22):** 341 tests; real server in demo mode: `/health` ok, `/ready` all true, SSE `progress → answer → done`, empty question → 422.
 - **Smoke (2026-11-22, paid $0.0164, approved):** dev_0005 correct via the API (first event 0.3 s, total 4.3 s, citation with quote); follow-up "net income, same period" routed correctly with history but refused: search miss (5 chunks hold the row, none in top 5; net sales tables ranked higher). Log line now has search question, pages, claim counts and failure reasons. `experiments/m2/RESULTS_smoke_api.md`.
+
+### Q109 (M3, 2026-11-23) — Planner steps inside the router call
+- **Finding:** M2 makes one search per question. For "Apple FY2021 vs FY2022" code already lists both 10-Ks, but one search over both can return the top 5 from one filing only. The spec planned a separate planner call (Sonnet), which adds a third LLM call per question.
+- **Answer (user proposal, accepted):**
+  1. The router JSON gets `steps` (`company`, `year`, `search`); `companies` and `years` are removed. No separate planner call: 2 LLM calls per question stay.
+  2. One step per company + year pair the question names. The router reads no document, so it does not guess which filing holds both years: "FY2021 vs FY2022" = 2 steps. A single plan per question → it can be tested exactly.
+  3. At most 4 steps; more → `unclear` ("ask about at most 4 company-year pairs"); steps are never dropped.
+  4. Code: catalog selection per step, top 5 per step, split-table parts per step, merge without duplicates, one writer call. One step → search text = `standalone_question` (M2 behaviour kept).
+  5. No plan revision (needs a second router call); calculation stays with the writer + code calculator.
+  6. Dev set: `gold_steps` (company + year pairs) per question, filled by code from `evidence` (single-fact) and by hand (compare questions), status draft. Router check: route, steps, document coverage, gold page per step (router calls only).
+  7. Fiscal quarter: not in this change (user decision); stays on the pending list ("twin documents").
+- **Record:** `engine.md` §3.1, `router.md` §2.1–2.2, ADR-0002 amendment.
+- **Verdict:** changes ADR-0002 (separate planner call, one re-plan) and the planner model (Sonnet → part of the Haiku router call). Risk: Haiku plans worse than Sonnet; measured by the router check.
+- **Built (2026-11-23, free):** router `steps`, step loop in `engine/routed.py`, `gold_steps` in the dev set (50, draft), `evaluation/router_check.py`; 357 tests. Free "perfect plan" test: all gold pages 32 → 33 of 50 (gain dev_0047, Costco vs Verizon; no loss); two-step questions send about 2× the chunks. Small gain because most two-year questions have both years in one filing. `experiments/m3/RESULTS_router_steps.md`. Paid router check (estimate $0.018) waits for approval.

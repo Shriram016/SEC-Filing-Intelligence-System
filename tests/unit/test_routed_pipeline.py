@@ -48,14 +48,17 @@ class RecordingSearcher:
         return []
 
 
+def step(year: int | None, company: str | None = "Apple") -> dict[str, Any]:
+    return {"company": company, "year": year, "search": f"{company} revenue {year}"}
+
+
 def route_reply(**kw: Any) -> str:
     base: dict[str, Any] = {
         "route": "answer",
         "standalone_question": "What was Apple's revenue in FY2022?",
         "reason": "factual",
-        "companies": ["Apple"],
+        "steps": [step(2022)],
         "other_companies": [],
-        "years": [2022],
         "doc_type": None,
         "metric": "revenue",
     }
@@ -102,8 +105,8 @@ def test_answer_route_searches_chosen_documents_with_standalone_question() -> No
         route_reply(route="unrelated"),
         route_reply(route="advice"),
         route_reply(route="unclear", reason="Which company?"),
-        route_reply(years=[2019]),  # not covered
-        route_reply(companies=[], other_companies=["Tesla"]),  # not covered
+        route_reply(steps=[step(2019)]),  # not covered
+        route_reply(steps=[], other_companies=["Tesla"]),  # not covered
     ],
 )
 def test_stop_routes_make_no_search_and_no_answer_call(text: str) -> None:
@@ -133,9 +136,60 @@ def test_step_costs_add_up() -> None:
 
 
 def test_history_reaches_router() -> None:
-    pipe, rllm, _, _ = make(route_reply(years=[2021]))
+    pipe, rllm, _, _ = make(route_reply(steps=[step(2021)]))
     pipe.answer("And 2021?", [Turn("user", "Apple revenue 2022?")])
     assert "user: Apple revenue 2022?" in rllm.calls[0]["user"]
+
+
+# ---------- steps (Q109) ----------
+
+
+class PerDocSearcher(RecordingSearcher):
+    """One hit per allowed document, plus a chunk that every search returns."""
+
+    def search(
+        self,
+        query: str,
+        company: str | None = None,
+        k: int = 10,
+        doc_names: Sequence[str] | None = None,
+    ) -> list[Hit]:
+        self.calls.append({"query": query, "k": k, "doc_names": doc_names})
+        hits = [Hit(0.9, {"chunk_id": f"{d}-p5", "doc_name": d, "page": 5, "text": f"{d} sales"})
+                for d in doc_names or []]  # fmt: skip
+        return hits + [Hit(0.1, {"chunk_id": "shared", "doc_name": "APPLE_2022_10K",
+                                 "page": 9, "text": "shared"})]  # fmt: skip
+
+
+def test_two_steps_make_two_filtered_searches_and_one_answer_call() -> None:
+    answer_llm = FakeLLM([ANSWER])
+    searcher = PerDocSearcher()
+    route = route_reply(steps=[step(2021), step(2022)])
+    pipe = RoutedPipeline(
+        Router(FakeLLM([route], price_in=0.10, price_out=0.50), CATALOG),
+        searcher, BaselinePipeline(searcher, answer_llm), top_k=5,
+    )  # fmt: skip
+    r = pipe.answer("Apple revenue 2021 vs 2022?")
+    assert searcher.calls == [
+        {"query": "Apple revenue 2021", "k": 5, "doc_names": ["APPLE_2021_10K"]},
+        {"query": "Apple revenue 2022", "k": 5, "doc_names": ["APPLE_2022_10K"]},
+    ]
+    # merged in step order; the shared chunk only once
+    assert [h.payload["chunk_id"] for h in r.hits] == [
+        "APPLE_2021_10K-p5", "shared", "APPLE_2022_10K-p5"]  # fmt: skip
+    assert [len(s) for s in r.step_hits] == [2, 2]
+    assert len(answer_llm.calls) == 1
+    prompt = answer_llm.calls[0]["user"]
+    assert "APPLE_2021_10K sales" in prompt and "APPLE_2022_10K sales" in prompt
+    assert "Question: What was Apple's revenue in FY2022?" in prompt  # the standalone question
+
+
+def test_too_many_steps_stop_before_any_search() -> None:
+    steps = [step(y) for y in (2018, 2019, 2020, 2021, 2022)]
+    pipe, _, allm, searcher = make(route_reply(steps=steps))
+    r = pipe.answer("Apple revenue 2018 to 2022?")
+    assert searcher.calls == [] and allm.calls == []
+    assert r.reply and "at most 4" in r.reply
 
 
 # ---------- runner ----------
@@ -167,7 +221,9 @@ def test_runner_records_route_documents_and_step_costs(tmp_path: Path) -> None:
     row = rows[0]
     assert row["mark"] == "correct" and row["evidence_seen"]
     assert row["route"] == "answer" and row["doc_names"] == ["APPLE_2022_10K"]
-    assert row["router_output"]["years"] == [2022]
+    assert row["steps"] == [{"company": "Apple", "year": 2022, "search": "Apple revenue 2022",
+                            "doc_names": ["APPLE_2022_10K"]}]  # fmt: skip
+    assert row["too_many_steps"] is False
     assert row["router_cost_usd"] > 0 and row["answer_cost_usd"] > 0
     meta = {
         "started": "20261121-150000",

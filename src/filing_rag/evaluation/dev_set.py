@@ -54,6 +54,17 @@ class Evidence(BaseModel):
     page: int = Field(ge=1)  # PDF page number as a PDF viewer shows it (starts at 1)
 
 
+class GoldStep(BaseModel):
+    """One gold router step (Q109): a company + year pair the question names. null = none."""
+
+    company: str | None
+    year: int | None
+
+    @property
+    def pair(self) -> tuple[str | None, int | None]:
+        return self.company, self.year
+
+
 # Categories whose correct outcome is a non-answer route.
 _ROUTE_FOR = {
     Category.UNRELATED: Route.UNRELATED,
@@ -75,6 +86,8 @@ class DevQuestion(BaseModel):
     # The gold number for code marking (Q103). None = marked by hand (text answers, choices).
     gold_value: float | None = None
     gold_unit: str | None = None  # for example "USD million", "%", "shares"
+    # Q109: the router plan, one step per company + year pair (answer route only). Draft.
+    gold_steps: list[GoldStep] | None = None
     status: Status = Status.DRAFT
     held_out: bool = False  # kept unseen until M6 (Q8)
     notes: str = ""
@@ -95,6 +108,12 @@ class DevQuestion(BaseModel):
             raise ValueError("gold_value and gold_unit must be set together")
         if self.gold_value is not None and self.expected_route != Route.ANSWER:
             raise ValueError("only answerable questions can have a gold_value")
+        if self.gold_steps is not None and self.expected_route != Route.ANSWER:
+            raise ValueError("only answerable questions can have gold_steps")
+        if self.gold_steps is not None:
+            pairs = [s.pair for s in self.gold_steps]
+            if not pairs or len(set(pairs)) != len(pairs):
+                raise ValueError("gold_steps must be non-empty, without duplicate pairs")
         if self.category == Category.MULTI_TURN and len(self.turns) < 2:
             raise ValueError("multi_turn questions need at least 2 turns")
         return self
