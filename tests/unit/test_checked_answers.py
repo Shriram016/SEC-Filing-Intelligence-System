@@ -390,3 +390,14 @@ def test_writer_schema_and_prompt_have_the_q113_inputs() -> None:
     assert '{"ref": null, "const": 3}' in build_prompt("q", HITS)
     assert Calculation.model_validate({"id": "k1", "op": "add", "inputs": ["c1", "c2"],
                                        "label": "x"}).refs == ["c1", "c2"]  # fmt: skip
+
+
+def test_an_empty_ref_counts_as_null() -> None:
+    assert CalcInput.model_validate({"ref": "", "const": 3}) == CalcInput(const=3)
+    assert CalcInput.model_validate({"ref": "  ", "const": 3}).ref is None
+    assert CalcInput.model_validate({"ref": "k4", "const": None}).ref == "k4"
+
+
+def test_prompt_shows_the_average_example() -> None:
+    p = build_prompt("q", HITS)
+    assert '{"ref": null, "const": 3}' in p and 'never ""' in p

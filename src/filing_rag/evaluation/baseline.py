@@ -137,6 +137,8 @@ def _routed_fields(r: BaselineResult) -> dict[str, Any]:
         "answer_cost_usd": round(r.answer_cost_usd, 6),
         "router_latency_s": round(r.router_latency_s, 3),
         "added_table_parts": r.added_table_parts,
+        # the raw writer replies (one per attempt), to see a failed calculation's input
+        "writer_replies": [c.text for c in r.calls[len(r.router_calls) :]],
     } | _checked_fields(r.checked)
 
 

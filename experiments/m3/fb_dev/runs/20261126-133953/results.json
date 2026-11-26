@@ -1,0 +1,389 @@
+{
+ "meta": {
+  "started": "20261126-133953",
+  "dev_set": "fb",
+  "model": "claude-sonnet-5-5",
+  "top_k": 5,
+  "collection": "chunks_v2",
+  "thinking": "between_tools",
+  "max_cost_usd": 2.0,
+  "stopped_by_cost_limit": false,
+  "questions_run": 1,
+  "questions_planned": 1,
+  "router_model": "claude-haiku-5-5",
+  "router_effort": "low",
+  "year_rule": "A",
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "reranker_candidates": 100
+ },
+ "questions": [
+  {
+   "id": "fb_02608",
+   "category": "fb_metrics",
+   "answer_source": "None",
+   "question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+   "gold_answer": "2.8%",
+   "gold_value": 2.8,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 56
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Best Buy's average net profit margin over fiscal 2015 to fiscal 2017 was 2.8%, based on margins of 3.1%, 2.3% and 3.1%. Computed: net profit margin FY2015 = 1,235 / 40,339 x 100 = 3.1%; net profit margin FY2016 = 897 / 39,528 x 100 = 2.3%; net profit margin FY2017 = 1,228 / 39,403 x 100 = 3.1%; 3-year average net profit margin FY2015-FY2017 = 8.45 / 3 = 2.8%. Source: Best Buy 10-K (period ended 28 Jan 2017).",
+    "value": 2.8157815935649118,
+    "unit": "%",
+    "sources": [
+     {
+      "doc_name": "BESTBUY_2017_10K",
+      "page": 56
+     }
+    ]
+   },
+   "error": null,
+   "mark": "correct",
+   "failure_tag": null,
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 32,
+     "page_end": 33,
+     "score": 0.9985,
+     "is_table": false
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.9968,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 99,
+     "page_end": 100,
+     "score": 0.9962,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 99,
+     "page_end": 100,
+     "score": 0.9941,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 26,
+     "page_end": 27,
+     "score": 0.9932,
+     "is_table": false
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 32,
+     "page_end": 33,
+     "score": 0.9983,
+     "is_table": false
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 27,
+     "page_end": 27,
+     "score": 0.9968,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 27,
+     "page_end": 27,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 95,
+     "page_end": 95,
+     "score": 0.9947,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 95,
+     "page_end": 95,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 33,
+     "page_end": 33,
+     "score": 0.9947,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 59,
+     "page_end": 59,
+     "score": 0.9942,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 59,
+     "page_end": 59,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.9982,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 91,
+     "page_end": 91,
+     "score": 0.9972,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 91,
+     "page_end": 91,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 56,
+     "page_end": 56,
+     "score": 0.9963,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 56,
+     "page_end": 56,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 88,
+     "page_end": 88,
+     "score": 0.9955,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 57,
+     "page_end": 57,
+     "score": 0.9936,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 2,
+   "input_tokens": 16670,
+   "output_tokens": 1338,
+   "cost_usd": 0.039548,
+   "latency_s": 8.279,
+   "route": "answer",
+   "router_output": {
+    "route": "answer",
+    "standalone_question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+    "reason": "Factual question about Best Buy's income statement figures across fiscal years 2015 to 2017.",
+    "steps": [
+     {
+      "company": "Best Buy",
+      "year": 2015,
+      "search": "Best Buy net income and total revenue fiscal 2015 income statement"
+     },
+     {
+      "company": "Best Buy",
+      "year": 2016,
+      "search": "Best Buy net income and total revenue fiscal 2016 income statement"
+     },
+     {
+      "company": "Best Buy",
+      "year": 2017,
+      "search": "Best Buy net income and total revenue fiscal 2017 income statement"
+     }
+    ],
+    "doc_type": null,
+    "metric": "net profit margin"
+   },
+   "router_error": null,
+   "doc_names": [
+    "BESTBUY_2015_10K",
+    "BESTBUY_2016_10K",
+    "BESTBUY_2017_10K"
+   ],
+   "steps": [
+    {
+     "company": "Best Buy",
+     "year": 2015,
+     "search": "Best Buy net income and total revenue fiscal 2015 income statement",
+     "doc_names": [
+      "BESTBUY_2015_10K"
+     ]
+    },
+    {
+     "company": "Best Buy",
+     "year": 2016,
+     "search": "Best Buy net income and total revenue fiscal 2016 income statement",
+     "doc_names": [
+      "BESTBUY_2016_10K"
+     ]
+    },
+    {
+     "company": "Best Buy",
+     "year": 2017,
+     "search": "Best Buy net income and total revenue fiscal 2017 income statement",
+     "doc_names": [
+      "BESTBUY_2017_10K"
+     ]
+    }
+   ],
+   "too_many_steps": false,
+   "missing": [],
+   "reply": null,
+   "router_llm_calls": 1,
+   "router_cost_usd": 0.000378,
+   "answer_cost_usd": 0.03917,
+   "router_latency_s": 1.769,
+   "added_table_parts": 7,
+   "writer_replies": [
+    "{\"found\":true,\"claims\":[{\"id\":\"c1\",\"label\":\"Best Buy net earnings including noncontrolling interests, FY2015\",\"extract\":19,\"quote\":\"Net earnings including noncontrolling interests                                                            1,228             897              1,235\",\"value\":1235,\"unit\":\"USD million\",\"period\":\"fiscal year ended January 31, 2015\"},{\"id\":\"c2\",\"label\":\"Best Buy net earnings including noncontrolling interests, FY2016\",\"extract\":19,\"quote\":\"Net earnings including noncontrolling interests                                                            1,228             897              1,235\",\"value\":897,\"unit\":\"USD million\",\"period\":\"fiscal year ended January 30, 2016\"},{\"id\":\"c3\",\"label\":\"Best Buy net earnings including noncontrolling interests, FY2017\",\"extract\":19,\"quote\":\"Net earnings including noncontrolling interests                                                            1,228             897              1,235\",\"value\":1228,\"unit\":\"USD million\",\"period\":\"fiscal year ended January 28, 2017\"},{\"id\":\"c4\",\"label\":\"Best Buy revenue, FY2015\",\"extract\":19,\"quote\":\"Revenue                                                                                          $       39,403    $        39,528   $        40,339\",\"value\":40339,\"unit\":\"USD million\",\"period\":\"fiscal year ended January 31, 2015\"},{\"id\":\"c5\",\"label\":\"Best Buy revenue, FY2016\",\"extract\":19,\"quote\":\"Revenue                                                                                          $       39,403    $        39,528   $        40,339\",\"value\":39528,\"unit\":\"USD million\",\"period\":\"fiscal year ended January 30, 2016\"},{\"id\":\"c6\",\"label\":\"Best Buy revenue, FY2017\",\"extract\":19,\"quote\":\"Revenue                                                                                          $       39,403    $        39,528   $        40,339\",\"value\":39403,\"unit\":\"USD million\",\"period\":\"fiscal year ended January 28, 2017\"}],\"calculations\":[{\"id\":\"k1\",\"op\":\"ratio_pct\",\"inputs\":[{\"ref\":\"c1\",\"const\":null},{\"ref\":\"c4\",\"const\":null}],\"label\":\"net profit margin FY2015\",\"unit\":\"%\"},{\"id\":\"k2\",\"op\":\"ratio_pct\",\"inputs\":[{\"ref\":\"c2\",\"const\":null},{\"ref\":\"c5\",\"const\":null}],\"label\":\"net profit margin FY2016\",\"unit\":\"%\"},{\"id\":\"k3\",\"op\":\"ratio_pct\",\"inputs\":[{\"ref\":\"c3\",\"const\":null},{\"ref\":\"c6\",\"const\":null}],\"label\":\"net profit margin FY2017\",\"unit\":\"%\"},{\"id\":\"k4\",\"op\":\"add\",\"inputs\":[{\"ref\":\"k1\",\"const\":null},{\"ref\":\"k2\",\"const\":null},{\"ref\":\"k3\",\"const\":null}],\"label\":\"sum of margins\",\"unit\":\"%\"},{\"id\":\"k5\",\"op\":\"divide\",\"inputs\":[{\"ref\":\"k4\",\"const\":null},{\"ref\":null,\"const\":3}],\"label\":\"3-year average net profit margin FY2015-FY2017\",\"unit\":\"%\"}],\"main\":\"k5\",\"answer\":\"Best Buy's average net profit margin over fiscal 2015 to fiscal 2017 was {k5}, based on margins of {k1}, {k2} and {k3}.\"}"
+   ],
+   "status": "answer",
+   "claims_total": 6,
+   "claims_passed": 6,
+   "check_failures": {},
+   "model_sentence": "Best Buy's average net profit margin over fiscal 2015 to fiscal 2017 was {k5}, based on margins of {k1}, {k2} and {k3}.",
+   "sentence_used": true,
+   "items": [
+    {
+     "id": "c1",
+     "kind": "claim",
+     "label": "Best Buy net earnings including noncontrolling interests, FY2015",
+     "value": 1235.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c2",
+     "kind": "claim",
+     "label": "Best Buy net earnings including noncontrolling interests, FY2016",
+     "value": 897.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c3",
+     "kind": "claim",
+     "label": "Best Buy net earnings including noncontrolling interests, FY2017",
+     "value": 1228.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c4",
+     "kind": "claim",
+     "label": "Best Buy revenue, FY2015",
+     "value": 40339.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c5",
+     "kind": "claim",
+     "label": "Best Buy revenue, FY2016",
+     "value": 39528.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c6",
+     "kind": "claim",
+     "label": "Best Buy revenue, FY2017",
+     "value": 39403.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "k1",
+     "kind": "calc",
+     "label": "net profit margin FY2015",
+     "value": 3.0615533354817916,
+     "unit": "%",
+     "failure": null,
+     "detail": "1,235 / 40,339 x 100"
+    },
+    {
+     "id": "k2",
+     "kind": "calc",
+     "label": "net profit margin FY2016",
+     "value": 2.269277474195507,
+     "unit": "%",
+     "failure": null,
+     "detail": "897 / 39,528 x 100"
+    },
+    {
+     "id": "k3",
+     "kind": "calc",
+     "label": "net profit margin FY2017",
+     "value": 3.116513971017435,
+     "unit": "%",
+     "failure": null,
+     "detail": "1,228 / 39,403 x 100"
+    },
+    {
+     "id": "k4",
+     "kind": "calc",
+     "label": "sum of margins",
+     "value": 8.447344780694735,
+     "unit": "%",
+     "failure": null,
+     "detail": "3.06 + 2.27 + 3.12"
+    },
+    {
+     "id": "k5",
+     "kind": "calc",
+     "label": "3-year average net profit margin FY2015-FY2017",
+     "value": 2.8157815935649118,
+     "unit": "%",
+     "failure": null,
+     "detail": "8.45 / 3"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,617 @@
+{
+ "meta": {
+  "started": "20261126-133536",
+  "dev_set": "fb",
+  "model": "claude-sonnet-5-5",
+  "top_k": 5,
+  "collection": "chunks_v2",
+  "thinking": "between_tools",
+  "max_cost_usd": 2.0,
+  "stopped_by_cost_limit": false,
+  "questions_run": 2,
+  "questions_planned": 2,
+  "router_model": "claude-haiku-5-5",
+  "router_effort": "low",
+  "year_rule": "A",
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "reranker_candidates": 100
+ },
+ "questions": [
+  {
+   "id": "fb_02608",
+   "category": "fb_metrics",
+   "answer_source": "None",
+   "question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+   "gold_answer": "2.8%",
+   "gold_value": 2.8,
+   "gold_unit": "%",
+   "evidence": [
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 56
+    }
+   ],
+   "answer": {
+    "found": true,
+    "answer": "Checked facts: Best Buy net earnings attributable to shareholders, FY2015: $1,233 million; Best Buy net earnings attributable to shareholders, FY2016: $897 million; Best Buy net earnings attributable to shareholders, FY2017: $1,228 million; Best Buy revenue, FY2015: $40,339 million; Best Buy revenue, FY2016: $39,528 million; Best Buy revenue, FY2017: $39,403 million; net profit margin FY2015: 3.1%; net profit margin FY2016: 2.3%; net profit margin FY2017: 3.1%; sum of three annual net profit margins: 8.4%. Could not check: FY2015-FY2017 average net profit margin. Source: Best Buy 10-K (period ended 28 Jan 2017).",
+    "value": null,
+    "unit": null,
+    "sources": [
+     {
+      "doc_name": "BESTBUY_2017_10K",
+      "page": 56
+     }
+    ]
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "answer_error",
+   "evidence_seen": true,
+   "sources_ok": true,
+   "hits": [
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 32,
+     "page_end": 33,
+     "score": 0.9981,
+     "is_table": false
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.9943,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 99,
+     "page_end": 100,
+     "score": 0.9941,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 99,
+     "page_end": 100,
+     "score": 0.9925,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 61,
+     "page_end": 61,
+     "score": 0.9913,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2015_10K",
+     "page": 61,
+     "page_end": 61,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 32,
+     "page_end": 33,
+     "score": 0.9978,
+     "is_table": false
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 27,
+     "page_end": 27,
+     "score": 0.9941,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 27,
+     "page_end": 27,
+     "score": 0.9928,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 92,
+     "page_end": 92,
+     "score": 0.9928,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 92,
+     "page_end": 92,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 59,
+     "page_end": 59,
+     "score": 0.9924,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2016_10K",
+     "page": 59,
+     "page_end": 59,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.9968,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 26,
+     "page_end": 26,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 91,
+     "page_end": 91,
+     "score": 0.9961,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 91,
+     "page_end": 91,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 88,
+     "page_end": 88,
+     "score": 0.9956,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 88,
+     "page_end": 88,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 56,
+     "page_end": 56,
+     "score": 0.9943,
+     "is_table": true
+    },
+    {
+     "doc_name": "BESTBUY_2017_10K",
+     "page": 57,
+     "page_end": 57,
+     "score": 0.9933,
+     "is_table": true
+    }
+   ],
+   "llm_calls": 2,
+   "input_tokens": 16449,
+   "output_tokens": 1363,
+   "cost_usd": 0.039384,
+   "latency_s": 9.884,
+   "route": "answer",
+   "router_output": {
+    "route": "answer",
+    "standalone_question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+    "reason": "Factual question about Best Buy's income statement figures across fiscal years 2015 to 2017.",
+    "steps": [
+     {
+      "company": "Best Buy",
+      "year": 2015,
+      "search": "Best Buy net income total revenue fiscal 2015 income statement"
+     },
+     {
+      "company": "Best Buy",
+      "year": 2016,
+      "search": "Best Buy net income total revenue fiscal 2016 income statement"
+     },
+     {
+      "company": "Best Buy",
+      "year": 2017,
+      "search": "Best Buy net income total revenue fiscal 2017 income statement"
+     }
+    ],
+    "doc_type": null,
+    "metric": "net profit margin"
+   },
+   "router_error": null,
+   "doc_names": [
+    "BESTBUY_2015_10K",
+    "BESTBUY_2016_10K",
+    "BESTBUY_2017_10K"
+   ],
+   "steps": [
+    {
+     "company": "Best Buy",
+     "year": 2015,
+     "search": "Best Buy net income total revenue fiscal 2015 income statement",
+     "doc_names": [
+      "BESTBUY_2015_10K"
+     ]
+    },
+    {
+     "company": "Best Buy",
+     "year": 2016,
+     "search": "Best Buy net income total revenue fiscal 2016 income statement",
+     "doc_names": [
+      "BESTBUY_2016_10K"
+     ]
+    },
+    {
+     "company": "Best Buy",
+     "year": 2017,
+     "search": "Best Buy net income total revenue fiscal 2017 income statement",
+     "doc_names": [
+      "BESTBUY_2017_10K"
+     ]
+    }
+   ],
+   "too_many_steps": false,
+   "missing": [],
+   "reply": null,
+   "router_llm_calls": 1,
+   "router_cost_usd": 0.000376,
+   "answer_cost_usd": 0.039008,
+   "router_latency_s": 2.025,
+   "added_table_parts": 7,
+   "status": "partial",
+   "claims_total": 6,
+   "claims_passed": 6,
+   "check_failures": {
+    "calc_error": 1
+   },
+   "model_sentence": "Best Buy's average net profit margin over fiscal 2015 to fiscal 2017 was {k5}.",
+   "sentence_used": false,
+   "items": [
+    {
+     "id": "c1",
+     "kind": "claim",
+     "label": "Best Buy net earnings attributable to shareholders, FY2015",
+     "value": 1233.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c2",
+     "kind": "claim",
+     "label": "Best Buy net earnings attributable to shareholders, FY2016",
+     "value": 897.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c3",
+     "kind": "claim",
+     "label": "Best Buy net earnings attributable to shareholders, FY2017",
+     "value": 1228.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c4",
+     "kind": "claim",
+     "label": "Best Buy revenue, FY2015",
+     "value": 40339.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c5",
+     "kind": "claim",
+     "label": "Best Buy revenue, FY2016",
+     "value": 39528.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c6",
+     "kind": "claim",
+     "label": "Best Buy revenue, FY2017",
+     "value": 39403.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "k1",
+     "kind": "calc",
+     "label": "net profit margin FY2015",
+     "value": 3.0565953543716997,
+     "unit": "%",
+     "failure": null,
+     "detail": "1,233 / 40,339 x 100"
+    },
+    {
+     "id": "k2",
+     "kind": "calc",
+     "label": "net profit margin FY2016",
+     "value": 2.269277474195507,
+     "unit": "%",
+     "failure": null,
+     "detail": "897 / 39,528 x 100"
+    },
+    {
+     "id": "k3",
+     "kind": "calc",
+     "label": "net profit margin FY2017",
+     "value": 3.116513971017435,
+     "unit": "%",
+     "failure": null,
+     "detail": "1,228 / 39,403 x 100"
+    },
+    {
+     "id": "k4",
+     "kind": "calc",
+     "label": "sum of three annual net profit margins",
+     "value": 8.442386799584643,
+     "unit": "%",
+     "failure": null,
+     "detail": "3.06 + 2.27 + 3.12"
+    },
+    {
+     "id": "k5",
+     "kind": "calc",
+     "label": "FY2015-FY2017 average net profit margin",
+     "value": null,
+     "unit": "%",
+     "failure": "calc_error",
+     "detail": "an input must have exactly one of ref or const"
+    }
+   ]
+  },
+  {
+   "id": "fb_06247",
+   "category": "fb_metrics",
+   "answer_source": "None",
+   "question": "What is FY2018 days payable outstanding (DPO) for Walmart? DPO is defined as: 365 * (average accounts payable between FY2017 and FY2018) / (FY2018 COGS + change in inventory between FY2017 and FY2018). Round your answer to two decimal places. Please base your judgments on the information provided primarily in the statement of financial position and the P&L statement.",
+   "gold_answer": "42.69",
+   "gold_value": 42.69,
+   "gold_unit": "ratio",
+   "evidence": [
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 57
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 59
+    }
+   ],
+   "answer": {
+    "found": false,
+    "answer": "I could not find this in the filings searched.",
+    "value": null,
+    "unit": null,
+    "sources": []
+   },
+   "error": null,
+   "mark": "wrong",
+   "failure_tag": "search_miss",
+   "evidence_seen": false,
+   "sources_ok": false,
+   "hits": [
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 41,
+     "page_end": 41,
+     "score": 0.947,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 57,
+     "page_end": 57,
+     "score": 0.946,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 57,
+     "page_end": 57,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 43,
+     "page_end": 43,
+     "score": 0.9419,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 87,
+     "page_end": 87,
+     "score": 0.9398,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 87,
+     "page_end": 87,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2018_10K",
+     "page": 41,
+     "page_end": 42,
+     "score": 0.9369,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 167,
+     "page_end": 167,
+     "score": 0.9835,
+     "is_table": false
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 162,
+     "page_end": 162,
+     "score": 0.9814,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 162,
+     "page_end": 162,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 165,
+     "page_end": 165,
+     "score": 0.979,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 165,
+     "page_end": 165,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 134,
+     "page_end": 135,
+     "score": 0.0,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 134,
+     "page_end": 135,
+     "score": 0.9373,
+     "is_table": true
+    },
+    {
+     "doc_name": "WALMART_2017_10K",
+     "page": 6,
+     "page_end": 6,
+     "score": 0.9318,
+     "is_table": false
+    }
+   ],
+   "llm_calls": 2,
+   "input_tokens": 12554,
+   "output_tokens": 660,
+   "cost_usd": 0.024195,
+   "latency_s": 5.207,
+   "route": "answer",
+   "router_output": {
+    "route": "answer",
+    "standalone_question": "What is FY2018 days payable outstanding (DPO) for Walmart? DPO is defined as: 365 * (average accounts payable between FY2017 and FY2018) / (FY2018 COGS + change in inventory between FY2017 and FY2018). Round your answer to two decimal places. Please base your judgments on the information provided primarily in the statement of financial position and the P&L statement.",
+    "reason": "The question asks for a financial ratio computed from Walmart's FY2018 and FY2017 filings, which is a factual question about company financials.",
+    "steps": [
+     {
+      "company": "Walmart",
+      "year": 2018,
+      "search": "Walmart accounts payable cost of sales inventory fiscal 2018"
+     },
+     {
+      "company": "Walmart",
+      "year": 2017,
+      "search": "Walmart accounts payable inventory fiscal 2017"
+     }
+    ],
+    "doc_type": null,
+    "metric": "days payable outstanding"
+   },
+   "router_error": null,
+   "doc_names": [
+    "WALMART_2017_10K",
+    "WALMART_2018_10K"
+   ],
+   "steps": [
+    {
+     "company": "Walmart",
+     "year": 2018,
+     "search": "Walmart accounts payable cost of sales inventory fiscal 2018",
+     "doc_names": [
+      "WALMART_2018_10K"
+     ]
+    },
+    {
+     "company": "Walmart",
+     "year": 2017,
+     "search": "Walmart accounts payable inventory fiscal 2017",
+     "doc_names": [
+      "WALMART_2017_10K"
+     ]
+    }
+   ],
+   "too_many_steps": false,
+   "missing": [],
+   "reply": null,
+   "router_llm_calls": 1,
+   "router_cost_usd": 0.000395,
+   "answer_cost_usd": 0.0238,
+   "router_latency_s": 1.712,
+   "added_table_parts": 5,
+   "status": "refused",
+   "claims_total": 3,
+   "claims_passed": 3,
+   "check_failures": {},
+   "model_sentence": "The extracts do not include the FY2018 (January 31, 2018) balance sheet, so FY2018 accounts payable and inventories are missing and DPO cannot be computed.",
+   "sentence_used": false,
+   "items": [
+    {
+     "id": "c1",
+     "kind": "claim",
+     "label": "Walmart accounts payable, FY2017 (Jan 31, 2017)",
+     "value": 41433.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c2",
+     "kind": "claim",
+     "label": "Walmart inventories, FY2017 (Jan 31, 2017)",
+     "value": 43046.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    },
+    {
+     "id": "c3",
+     "kind": "claim",
+     "label": "Walmart cost of sales, FY2018",
+     "value": 373396.0,
+     "unit": "USD million",
+     "failure": null,
+     "detail": null
+    }
+   ]
+  }
+ ]
+}

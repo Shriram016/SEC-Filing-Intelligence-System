@@ -224,6 +224,8 @@ def test_runner_records_route_documents_and_step_costs(tmp_path: Path) -> None:
                             "doc_names": ["APPLE_2022_10K"]}]  # fmt: skip
     assert row["too_many_steps"] is False
     assert row["router_cost_usd"] > 0 and row["answer_cost_usd"] > 0
+    # the raw writer reply is saved; the router reply is not in this list
+    assert len(row["writer_replies"]) == 1 and '"route"' not in row["writer_replies"][0]
     meta = {
         "started": "20261121-150000",
         "model": "fake",

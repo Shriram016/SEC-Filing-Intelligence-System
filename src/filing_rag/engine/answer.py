@@ -31,7 +31,11 @@ class CalcInput(BaseModel):
     @model_validator(mode="before")
     @classmethod
     def _from_id(cls, v: Any) -> Any:
-        return {"ref": v, "const": None} if isinstance(v, str) else v
+        if isinstance(v, str):
+            return {"ref": v, "const": None}
+        if isinstance(v, dict) and isinstance(v.get("ref"), str) and not v["ref"].strip():
+            return v | {"ref": None}  # "" means empty, the same as null
+        return v
 
 
 class Claim(BaseModel):
@@ -148,7 +152,12 @@ RULES = """Answer from the extracts only, as JSON:
     {"ref": null, "const": 3} for a fixed number. Use a fixed number only when it is written in
     the question (e.g. 365 in a formula) or for a count or factor such as 1, 2, 3, 4, 12, 100
     (e.g. an average = add the values, then divide by the count). Every value from the
-    filings must be a claim, never a fixed number.
+    filings must be a claim, never a fixed number. Set exactly one of the two fields; the
+    other is null (never ""). Example, the average of three margins k1, k2, k3:
+      {"id": "k4", "op": "add", "inputs": [{"ref": "k1", "const": null},
+        {"ref": "k2", "const": null}, {"ref": "k3", "const": null}], ...}
+      {"id": "k5", "op": "divide", "inputs": [{"ref": "k4", "const": null},
+        {"ref": null, "const": 3}], ...}
   - label: what the result is, e.g. "free cash flow, nine months FY2023"; unit: the unit you
     expect, or null.
 - main: the id of the claim or calculation that answers the question; null for an answer
