@@ -14,7 +14,7 @@ from datetime import date
 from enum import StrEnum
 
 from filing_rag.baseline.pipeline import BaselineAnswer, Source
-from filing_rag.engine.answer import WriterOutput
+from filing_rag.engine.answer import Calculation, WriterOutput
 from filing_rag.engine.calculator import CalcError, Quantity, calculate, fmt_number
 from filing_rag.engine.checks import Failure, check_claims
 from filing_rag.numbers import unit_family, unit_scale
@@ -113,22 +113,50 @@ def fmt_value(value: float, unit: str | None) -> str:
     return f"{sign}{num} {unit}"
 
 
-def _items(out: WriterOutput, hits: list[Hit]) -> dict[str, Item]:
+ALLOWED_CONSTANTS = frozenset({1.0, 2.0, 3.0, 4.0, 12.0, 100.0})  # Q113: counts and factors
+
+
+def const_allowed(value: float, question: str) -> bool:
+    """Q113 guard: a fixed number from the small list, or one written in the question."""
+    if float(value) in ALLOWED_CONSTANTS:
+        return True
+    return any(float(n.replace(",", "")) == float(value)
+               for n in re.findall(r"\d[\d,]*\.?\d*", question))  # fmt: skip
+
+
+def _calc_inputs(
+    k: Calculation, items: dict[str, Item], question: str
+) -> tuple[list[Quantity] | None, str | None]:
+    """The calculator inputs of one calculation, or (None, reason) when an input is wrong."""
+    out: list[Quantity] = []
+    for inp in k.inputs:
+        if (inp.ref is None) == (inp.const is None):
+            return None, "an input must have exactly one of ref or const"
+        if inp.const is not None:
+            if not const_allowed(inp.const, question):
+                return None, f"fixed number {fmt_number(inp.const)} is not allowed"
+            out.append(Quantity(float(inp.const), None, const=True))
+            continue
+        it = items.get(inp.ref or "")
+        if it is None or not it.ok or it.value is None:
+            return None, "an input is missing or failed the check"
+        out.append(Quantity(it.value, it.unit))
+    return out, None
+
+
+def _items(out: WriterOutput, hits: list[Hit], question: str = "") -> dict[str, Item]:
     items: dict[str, Item] = {}
     for chk in check_claims(out.claims, hits):
         c = chk.claim
         items[c.id] = Item(c.id, "claim", c.label, c.value, c.unit, chk.failure, None, chk.hit,
                            c.quote)  # fmt: skip
     for k in out.calculations:
-        inputs = [items.get(i) for i in k.inputs]
-        if any(i is None or not i.ok or i.value is None for i in inputs):
-            items[k.id] = Item(k.id, "calc", k.label, None, k.unit, Failure.CALC_ERROR,
-                               "an input is missing or failed the check")  # fmt: skip
+        quantities, why = _calc_inputs(k, items, question)
+        if quantities is None:
+            items[k.id] = Item(k.id, "calc", k.label, None, k.unit, Failure.CALC_ERROR, why)
             continue
         try:
-            res = calculate(
-                k.op, [Quantity(i.value, i.unit) for i in inputs if i and i.value is not None]
-            )
+            res = calculate(k.op, quantities)
         except CalcError as exc:
             items[k.id] = Item(k.id, "calc", k.label, None, k.unit, Failure.CALC_ERROR, str(exc))
             continue
@@ -194,14 +222,15 @@ def _claims_behind(it: Item, items: dict[str, Item], out: WriterOutput) -> list[
         return [it]
     calc = next(k for k in out.calculations if k.id == it.id)
     found: list[Item] = []
-    for i in calc.inputs:
+    for i in calc.refs:
         if i in items:
             found += _claims_behind(items[i], items, out)
     return found
 
 
-def decide(out: WriterOutput, hits: list[Hit]) -> CheckedAnswer:
-    items = _items(out, hits)
+def decide(out: WriterOutput, hits: list[Hit], question: str = "") -> CheckedAnswer:
+    """`question` feeds the fixed-number guard (Q113); without it only the small list passes."""
+    items = _items(out, hits, question)
     passed = [i for i in items.values() if i.ok]
     if not out.found or not any(i.kind == "claim" for i in passed):
         reason = "I could not find this in the filings searched."

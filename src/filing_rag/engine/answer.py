@@ -12,13 +12,26 @@ from __future__ import annotations
 import json
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, Field, ValidationError, model_validator
 
 from filing_rag.llm.client import LLMResult
 from filing_rag.search.searcher import Hit
 
-Op = Literal["add", "subtract", "divide", "ratio_pct", "pct_change"]
-OPS: tuple[str, ...] = ("add", "subtract", "divide", "ratio_pct", "pct_change")
+Op = Literal["add", "subtract", "multiply", "divide", "ratio_pct", "pct_change"]
+OPS: tuple[str, ...] = ("add", "subtract", "multiply", "divide", "ratio_pct", "pct_change")
+
+
+class CalcInput(BaseModel):
+    """Q113: a reference to a claim / earlier calculation, or a fixed number. Code checks that
+    exactly one is set (a wrong input fails that calculation, not the whole answer)."""
+
+    ref: str | None = None
+    const: float | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def _from_id(cls, v: Any) -> Any:
+        return {"ref": v, "const": None} if isinstance(v, str) else v
 
 
 class Claim(BaseModel):
@@ -34,7 +47,12 @@ class Claim(BaseModel):
 class Calculation(BaseModel):
     id: str
     op: Op
-    inputs: list[str]
+    inputs: list[CalcInput]
+
+    @property
+    def refs(self) -> list[str]:
+        return [i.ref for i in self.inputs if i.ref is not None]
+
     label: str
     unit: str | None = None
 
@@ -78,7 +96,15 @@ WRITER_SCHEMA: dict[str, Any] = {
                 "properties": {
                     "id": {"type": "string"},
                     "op": {"type": "string", "enum": list(OPS)},
-                    "inputs": {"type": "array", "items": {"type": "string"}},
+                    "inputs": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {"ref": _NULLABLE_STR, "const": _NULLABLE_NUM},
+                            "required": ["ref", "const"],
+                            "additionalProperties": False,
+                        },
+                    },
                     "label": {"type": "string"},
                     "unit": _NULLABLE_STR,
                 },
@@ -113,9 +139,16 @@ RULES = """Answer from the extracts only, as JSON:
     "%", "shares"; null when value is null.
   - period: the period of the value, e.g. "nine months ended July 1, 2023".
 - calculations: only when the answer must be computed. Code does the arithmetic. For each:
-  - id: "k1", "k2", ...; inputs: claim IDs or earlier calculation IDs.
-  - op: "add" (2 or more inputs), "subtract" (first minus second), "divide" (first / second),
-    "ratio_pct" (first / second x 100, e.g. a margin), "pct_change" (from first to second, in %).
+  - id: "k1", "k2", ...
+  - op, with its inputs in order:
+    "add" (2 or more), "subtract" (first minus second), "multiply" (2 or more),
+    "divide" (first / second), "ratio_pct" (first / second x 100, e.g. a margin),
+    "pct_change" (from first to second, in %).
+  - inputs: each is {"ref": "c1", "const": null} for a claim or an earlier calculation, or
+    {"ref": null, "const": 3} for a fixed number. Use a fixed number only when it is written in
+    the question (e.g. 365 in a formula) or for a count or factor such as 1, 2, 3, 4, 12, 100
+    (e.g. an average = add the values, then divide by the count). Every value from the
+    filings must be a claim, never a fixed number.
   - label: what the result is, e.g. "free cash flow, nine months FY2023"; unit: the unit you
     expect, or null.
 - main: the id of the claim or calculation that answers the question; null for an answer

@@ -5,11 +5,18 @@ from typing import Any
 
 import pytest
 
-from filing_rag.engine.answer import Calculation, Claim, WriterOutput
+from filing_rag.engine.answer import (
+    WRITER_SCHEMA,
+    CalcInput,
+    Calculation,
+    Claim,
+    WriterOutput,
+    build_prompt,
+)
 from filing_rag.engine.calculator import CalcError, Quantity, calculate
 from filing_rag.engine.checked import CheckedAnswerer
 from filing_rag.engine.checks import Failure, check_claim, quote_in_text
-from filing_rag.engine.final import Status, decide, fmt_value
+from filing_rag.engine.final import Status, const_allowed, decide, fmt_value
 from filing_rag.llm.fake import FakeLLM
 from filing_rag.search.searcher import Hit
 
@@ -31,6 +38,14 @@ def hit(text: str, page: int = 8, doc: str = "APPLE_2023Q3_10Q") -> Hit:
 
 
 HITS = [hit(TEXT, 20), hit(CASH_FLOW, 8)]
+
+
+def ref(i: str) -> CalcInput:
+    return CalcInput(ref=i)
+
+
+def const(x: float) -> CalcInput:
+    return CalcInput(const=x)
 
 
 def claim(cid: str, quote: str, value: float | None, extract: int = 2, **kw: Any) -> Claim:
@@ -156,8 +171,8 @@ def test_fmt_value() -> None:
 
 
 def fcf(answer: str = "Free cash flow was {k1}.", **kw: Any) -> WriterOutput:
-    calc = Calculation(id="k1", op="subtract", inputs=["c1", "c2"], label="free cash flow",
-                       unit="USD million")  # fmt: skip
+    calc = Calculation(id="k1", op="subtract", inputs=[ref("c1"), ref("c2")],
+                       label="free cash flow", unit="USD million")  # fmt: skip
     base: dict[str, Any] = {"found": True, "claims": [OCF, claim(
         "c2", "Payments for acquisition of property, plant and equipment (8,796)", 8796,
         label="capex")], "calculations": [calc], "main": "k1", "answer": answer}  # fmt: skip
@@ -288,3 +303,90 @@ def test_the_prompt_numbers_the_extracts() -> None:
     user = llm.calls[0]["user"]
     assert "[1] APPLE_2023Q3_10Q, page 20" in user and "[2] APPLE_2023Q3_10Q, page 8" in user
     assert "Question: FCF?" in user
+
+
+# ---------- Q113: fixed operations + fixed numbers ----------
+
+
+def test_multiply_keeps_the_one_unit_and_refuses_two() -> None:
+    r = calculate("multiply", [Quantity(365, None, const=True), Quantity(42.5, "USD million")])
+    assert (r.value, r.unit, r.formula) == (365 * 42.5, "USD million", "365 x 42.5")
+    with pytest.raises(CalcError, match="at most one input with a unit"):
+        calculate("multiply", [Quantity(2, "USD million"), Quantity(3, "USD million")])
+    with pytest.raises(CalcError, match="2 or more"):
+        calculate("multiply", [Quantity(2, "USD")])
+
+
+def test_divide_by_a_fixed_number_keeps_the_unit_and_ratio_has_none() -> None:
+    r = calculate("divide", [Quantity(300, "USD million"), Quantity(3, None, const=True)])
+    assert (r.value, r.unit) == (100, "USD million")
+    assert (
+        calculate("divide", [Quantity(2, "USD billion"), Quantity(500, "USD million")]).unit is None
+    )
+    with pytest.raises(CalcError, match="division by zero"):
+        calculate("divide", [Quantity(3, "USD"), Quantity(0, None, const=True)])
+
+
+def test_one_minus_a_ratio_and_only_fixed_numbers_fail() -> None:
+    payout = calculate("divide", [Quantity(46, "USD million"), Quantity(100, "USD million")])
+    r = calculate("subtract", [Quantity(1, None, const=True), Quantity(payout.value, None)])
+    assert r.value == pytest.approx(0.54)
+    with pytest.raises(CalcError, match="at least one must be a filing value"):
+        calculate("add", [Quantity(1, None, const=True), Quantity(2, None, const=True)])
+    with pytest.raises(CalcError, match="unknown op"):
+        calculate("power", [Quantity(1, None), Quantity(2, None)])
+
+
+def test_const_guard_list_and_question_numbers() -> None:
+    assert const_allowed(3, "") and const_allowed(100, "")
+    assert const_allowed(365, "DPO is defined as: 365 * (average AP) / COGS")
+    assert const_allowed(1500, "a threshold of 1,500 stores")
+    assert not const_allowed(365, "What is DPO?")
+    assert not const_allowed(1577, "What is capex?")
+
+
+def two_year_average(divisor: float) -> WriterOutput:
+    calcs = [Calculation(id="k1", op="add", inputs=[ref("c1"), ref("c2")], label="sum",
+                         unit="USD million"),
+             Calculation(id="k2", op="divide", inputs=[ref("k1"), const(divisor)],
+                         label="average operating cash flow", unit="USD million")]  # fmt: skip
+    c2 = claim("c2", "Payments for acquisition of property, plant and equipment (8,796)", 8796,
+               label="capex")  # fmt: skip
+    return WriterOutput(found=True, claims=[OCF, c2], calculations=calcs, main="k2",
+                        answer="The average was {k2}.")  # fmt: skip
+
+
+def test_an_average_with_an_allowed_fixed_number_is_answered() -> None:
+    a = decide(two_year_average(2), HITS, "q")
+    assert a.status == Status.ANSWER
+    assert a.main_value == pytest.approx((88945 + 8796) / 2)
+    assert "97,741 / 2" in a.text  # the main formula; k1 = 88,945 + 8,796
+
+
+def test_a_filing_number_given_as_a_fixed_number_fails_the_calculation() -> None:
+    a = decide(two_year_average(8796), HITS, "What was the average?")
+    assert a.status != Status.ANSWER
+    k2 = next(i for i in a.items if i.id == "k2")
+    assert k2.failure == Failure.CALC_ERROR and "not allowed" in (k2.detail or "")
+    ok = decide(two_year_average(8796), HITS, "Divide by 8796 as the formula says.")
+    assert ok.status == Status.ANSWER  # written in the question → allowed
+
+
+def test_an_input_with_both_ref_and_const_fails_only_that_calculation() -> None:
+    out = fcf()
+    bad = Calculation(id="k9", op="add", inputs=[CalcInput(ref="c1", const=2), ref("c2")],
+                      label="bad", unit=None)  # fmt: skip
+    a = decide(out.model_copy(update={"calculations": [*out.calculations, bad]}), HITS)
+    k9 = next(i for i in a.items if i.id == "k9")
+    assert "exactly one of ref or const" in (k9.detail or "")
+    assert a.main_value == 80149  # the main calculation still works
+
+
+def test_writer_schema_and_prompt_have_the_q113_inputs() -> None:
+    calc = WRITER_SCHEMA["properties"]["calculations"]["items"]["properties"]
+    assert calc["op"]["enum"] == ["add", "subtract", "multiply", "divide", "ratio_pct",
+                                  "pct_change"]  # fmt: skip
+    assert set(calc["inputs"]["items"]["required"]) == {"ref", "const"}
+    assert '{"ref": null, "const": 3}' in build_prompt("q", HITS)
+    assert Calculation.model_validate({"id": "k1", "op": "add", "inputs": ["c1", "c2"],
+                                       "label": "x"}).refs == ["c1", "c2"]  # fmt: skip

@@ -47,7 +47,7 @@ class CheckedAnswerer:
             res.error = None
             if on_progress is not None:
                 on_progress("checking")
-            res.checked = decide(res.writer, hits)
+            res.checked = decide(res.writer, hits, question)
             res.answer = res.checked.to_baseline()
             return res
         return res
