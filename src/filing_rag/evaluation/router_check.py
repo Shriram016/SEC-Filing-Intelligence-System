@@ -191,6 +191,7 @@ def main(argv: list[str] | None = None) -> int:
     from filing_rag.llm.client import AnthropicLLM
     from filing_rag.router.catalog import DocCatalog
     from filing_rag.router.router import SYSTEM, build_schema, build_user
+    from filing_rag.search.reranker import build_searcher
     from filing_rag.search.searcher import Searcher
 
     ap = argparse.ArgumentParser(prog="filing_rag.evaluation.router_check")
@@ -237,7 +238,10 @@ def main(argv: list[str] | None = None) -> int:
 
     embedder = BgeEmbedder(s.embedding_model, s.embedding_query_prefix)
     client = QdrantClient(url=s.qdrant_url, timeout=s.qdrant_timeout_s)
-    searcher = Searcher(client, s.qdrant_collection, embedder)
+    searcher = build_searcher(Searcher(client, s.qdrant_collection, embedder),
+                              s.reranker_model, s.reranker_candidates,
+                              max_length=s.reranker_max_length,
+                              batch_size=s.reranker_batch_size)  # fmt: skip
     router = Router(AnthropicLLM(s, allow_paid=True, role="router"), catalog,
                     s.router_max_tokens, s.router_year_rule)  # fmt: skip
     pipe = RoutedPipeline(router, searcher, _NoAnswer(), s.baseline_top_k,
@@ -247,7 +251,8 @@ def main(argv: list[str] | None = None) -> int:
                               args.max_cost)  # fmt: skip
     meta = {"started": started, "router_model": s.router_model, "router_effort": s.router_effort,
             "year_rule": s.router_year_rule, "collection": s.qdrant_collection,
-            "top_k": s.baseline_top_k, "max_cost_usd": args.max_cost,
+            "top_k": s.baseline_top_k, "reranker": s.reranker_model or None,
+            "reranker_candidates": s.reranker_candidates, "max_cost_usd": args.max_cost,
             "stopped_by_cost_limit": stopped, "questions_run": len(rows),
             "questions_planned": len(questions)}  # fmt: skip
     folder = write_check(args.out_dir, rows, meta)

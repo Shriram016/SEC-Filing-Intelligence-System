@@ -1,0 +1,2143 @@
+{
+ "none": {
+  "dev_0001": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 6
+  },
+  "dev_0002": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0003": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 8
+  },
+  "dev_0004": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0005": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0006": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0007": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0008": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0009": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 6
+  },
+  "dev_0010": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0011": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0012": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0013": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0014": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0015": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0016": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0017": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0018": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0019": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0020": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0021": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0022": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0023": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0024": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0025": {
+   "page": false,
+   "all": false,
+   "pool": false,
+   "chunks": 14
+  },
+  "dev_0026": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0027": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0028": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0029": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0030": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0031": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 10
+  },
+  "dev_0032": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 6
+  },
+  "dev_0033": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0034": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 6
+  },
+  "dev_0035": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 10
+  },
+  "dev_0036": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 10
+  },
+  "dev_0037": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 14
+  },
+  "dev_0038": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0039": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0040": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 6
+  },
+  "dev_0041": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 11
+  },
+  "dev_0042": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 5
+  },
+  "dev_0043": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 12
+  },
+  "dev_0044": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 10
+  },
+  "dev_0045": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 10
+  },
+  "dev_0046": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 12
+  },
+  "dev_0047": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 12
+  },
+  "dev_0048": {
+   "page": true,
+   "all": false,
+   "pool": true,
+   "chunks": 14
+  },
+  "dev_0049": {
+   "page": false,
+   "all": false,
+   "pool": true,
+   "chunks": 11
+  },
+  "dev_0050": {
+   "page": true,
+   "all": true,
+   "pool": true,
+   "chunks": 14
+  },
+  "_seconds": {
+   "search_total": 4.6
+  }
+ },
+ "bge-reranker-base@20": {
+  "dev_0001": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0002": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0003": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0004": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0005": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0006": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0007": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0008": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0009": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0010": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0011": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0012": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0013": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0014": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0015": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0016": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0017": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0018": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0019": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0020": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0021": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0022": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0023": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0024": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0025": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0026": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0027": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0028": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0029": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0030": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0031": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0032": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0033": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0034": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0035": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0036": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0037": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0038": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0039": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0040": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0041": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0042": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0043": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0044": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0045": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0046": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0047": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0048": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0049": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0050": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 16
+  },
+  "_seconds": {
+   "per_step_median": 0.092,
+   "per_step_max": 0.133
+  }
+ },
+ "bge-reranker-base@50": {
+  "dev_0001": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0002": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0003": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0004": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0005": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0006": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0007": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0008": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0009": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0010": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0011": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0012": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0013": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0014": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0015": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0016": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0017": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0018": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0019": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0020": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0021": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0022": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0023": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0024": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0025": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0026": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0027": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0028": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0029": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0030": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0031": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0032": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0033": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0034": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0035": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0036": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0037": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0038": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0039": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0040": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0041": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0042": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0043": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0044": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0045": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0046": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 14
+  },
+  "dev_0047": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0048": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0049": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0050": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 14
+  },
+  "_seconds": {
+   "per_step_median": 0.193,
+   "per_step_max": 0.236
+  }
+ },
+ "bge-reranker-base@100": {
+  "dev_0001": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0002": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0003": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0004": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0005": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0006": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0007": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0008": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0009": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0010": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0011": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0012": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0013": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0014": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0015": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0016": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0017": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0018": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0019": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0020": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0021": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0022": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0023": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0024": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0025": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0026": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0027": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0028": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0029": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0030": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0031": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0032": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0033": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0034": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0035": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0036": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0037": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0038": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0039": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0040": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0041": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0042": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0043": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0044": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0045": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0046": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0047": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0048": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0049": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0050": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 14
+  },
+  "_seconds": {
+   "per_step_median": 0.354,
+   "per_step_max": 0.433
+  }
+ },
+ "bge-reranker-v2-m3@20": {
+  "dev_0001": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0002": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0003": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0004": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0005": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0006": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0007": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0008": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0009": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0010": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0011": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0012": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0013": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0014": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0015": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0016": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0017": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0018": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0019": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0020": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0021": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0022": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0023": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0024": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0025": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 15
+  },
+  "dev_0026": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0027": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0028": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0029": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0030": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0031": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0032": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0033": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0034": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0035": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0036": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0037": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0038": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0039": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0040": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0041": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0042": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0043": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0044": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0045": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0046": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0047": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 15
+  },
+  "dev_0048": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 14
+  },
+  "dev_0049": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0050": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 14
+  },
+  "_seconds": {
+   "per_step_median": 0.27,
+   "per_step_max": 0.322
+  }
+ },
+ "bge-reranker-v2-m3@50": {
+  "dev_0001": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0002": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0003": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0004": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0005": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0006": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0007": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0008": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0009": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0010": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0011": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0012": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0013": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0014": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0015": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0016": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0017": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0018": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0019": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0020": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0021": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0022": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0023": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0024": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0025": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 15
+  },
+  "dev_0026": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0027": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0028": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0029": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0030": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0031": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0032": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0033": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0034": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0035": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0036": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0037": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0038": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0039": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0040": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0041": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0042": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0043": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0044": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0045": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0046": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 16
+  },
+  "dev_0047": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0048": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 14
+  },
+  "dev_0049": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0050": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 16
+  },
+  "_seconds": {
+   "per_step_median": 0.59,
+   "per_step_max": 0.731
+  }
+ },
+ "bge-reranker-v2-m3@100": {
+  "dev_0001": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0002": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0003": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0004": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0005": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0006": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 7
+  },
+  "dev_0007": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0008": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0009": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 8
+  },
+  "dev_0010": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0011": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0012": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0013": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0014": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0015": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0016": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0017": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0018": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0019": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0020": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0021": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0022": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0023": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0024": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0025": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 15
+  },
+  "dev_0026": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0027": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0028": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0029": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0030": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0031": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0032": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0033": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0034": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0035": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0036": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 10
+  },
+  "dev_0037": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0038": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0039": {
+   "page": false,
+   "all": false,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0040": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 6
+  },
+  "dev_0041": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 12
+  },
+  "dev_0042": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 5
+  },
+  "dev_0043": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0044": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0045": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0046": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 15
+  },
+  "dev_0047": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 13
+  },
+  "dev_0048": {
+   "page": true,
+   "all": true,
+   "pool": null,
+   "chunks": 14
+  },
+  "dev_0049": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 11
+  },
+  "dev_0050": {
+   "page": true,
+   "all": false,
+   "pool": null,
+   "chunks": 16
+  },
+  "_seconds": {
+   "per_step_median": 1.086,
+   "per_step_max": 1.341
+  }
+ }
+}

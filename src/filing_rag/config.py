@@ -64,6 +64,15 @@ class Settings(BaseSettings):
     # Plain-RAG baseline (docs/v3/evaluation.md §3)
     baseline_top_k: int = 5
     table_parts_max_extra: int = 3  # Q105: parts of a split table added after the search
+    # Reranker (Q111): a local cross-encoder sorts `reranker_candidates` search results per
+    # step and keeps the best top_k. On by default (user decision 2026-11-26, Q111);
+    # FILING_RAG_RERANKER_MODEL="" turns it off (for example a server without a GPU: about
+    # 1 s per step on the RTX 3060, much slower on a CPU). Used by the routed engine only
+    # (the M1 baseline stays frozen).
+    reranker_model: str = "BAAI/bge-reranker-v2-m3"
+    reranker_candidates: int = 100
+    reranker_max_length: int = 512
+    reranker_batch_size: int = 32
     baseline_max_cost_usd: float = 2.0  # a run stops when its cost goes above this
 
     # API service (docs/v3/api.md, Q108). M2 guards; full rate limits come in M5.

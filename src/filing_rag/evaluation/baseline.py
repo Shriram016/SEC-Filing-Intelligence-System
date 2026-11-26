@@ -214,6 +214,8 @@ def scorecard(rows: list[dict[str, Any]], meta: dict[str, Any]) -> str:
         if router
         else "no company filter"
     )
+    if meta.get("reranker"):
+        setup += f", reranker `{meta['reranker']}` over {meta.get('reranker_candidates')}"
     title = "Routed scorecard" if router else "Baseline scorecard"
     lines = [f"# {title} ({meta['started']})", "",
              f"Model `{meta['model']}`, top-k {meta['top_k']}, collection `{meta['collection']}`, "
@@ -420,12 +422,16 @@ def main(argv: list[str] | None = None) -> int:
     if catalog is not None:
         from filing_rag.engine.routed import RoutedPipeline
         from filing_rag.router.router import Router
+        from filing_rag.search.reranker import build_searcher
 
         router_llm = AnthropicLLM(s, allow_paid=True, role="router")
         router = Router(router_llm, catalog, s.router_max_tokens, s.router_year_rule)
         checked = CheckedAnswerer(llm, s.checked_max_tokens)
+        routed_searcher = build_searcher(searcher, s.reranker_model, s.reranker_candidates,
+                                         max_length=s.reranker_max_length,
+                                         batch_size=s.reranker_batch_size)  # fmt: skip
         pipeline = RoutedPipeline(
-            router, searcher, checked, s.baseline_top_k, s.table_parts_max_extra
+            router, routed_searcher, checked, s.baseline_top_k, s.table_parts_max_extra
         )
     max_cost = args.max_cost if args.max_cost is not None else s.baseline_max_cost_usd
     started = datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -436,7 +442,8 @@ def main(argv: list[str] | None = None) -> int:
             "questions_run": len(rows), "questions_planned": len(questions)}  # fmt: skip
     if catalog is not None:
         meta |= {"router_model": s.router_model, "router_effort": s.router_effort,
-                 "year_rule": s.router_year_rule}  # fmt: skip
+                 "year_rule": s.router_year_rule, "reranker": s.reranker_model or None,
+                 "reranker_candidates": s.reranker_candidates}  # fmt: skip
     folder = write_run(out_dir, rows, meta)
     print(f"results: {folder}")
     print(f"number answers correct: {_acc(rows)}; cost ${sum(r['cost_usd'] for r in rows):.4f}")

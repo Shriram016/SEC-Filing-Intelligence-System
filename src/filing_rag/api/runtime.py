@@ -43,12 +43,16 @@ def build_runtime(s: Settings) -> Runtime:
     from filing_rag.llm.fake import FakeLLM
     from filing_rag.router.catalog import DocCatalog
     from filing_rag.router.router import Router
+    from filing_rag.search.reranker import build_searcher
     from filing_rag.search.searcher import Searcher
 
     catalog = DocCatalog.from_settings(s)
     client = QdrantClient(url=s.qdrant_url, timeout=s.qdrant_timeout_s)
     embedder = BgeEmbedder(s.embedding_model, s.embedding_query_prefix)
-    searcher = Searcher(client, s.qdrant_collection, embedder)
+    searcher = build_searcher(Searcher(client, s.qdrant_collection, embedder),
+                              s.reranker_model, s.reranker_candidates,
+                              max_length=s.reranker_max_length,
+                              batch_size=s.reranker_batch_size)  # fmt: skip
     router_llm: LLM
     answer_llm: LLM
     if s.allow_paid:
