@@ -3,13 +3,13 @@
 Flow: question (+ recent chat history) → LLM JSON (route, steps, doc type, ...) → code checks
 the JSON → code chooses the documents of each step from the catalog → final route.
 
-- The LLM gives `answer`, `unrelated`, `advice` or `unclear`. Code sets `not_covered` (the LLM
-  cannot know the catalog).
+- The LLM gives `answer`, `unrelated`, `advice`, `unclear` or `not_covered` (the question asks
+  about a company that is not in the list). Code also sets `not_covered` when a step has no
+  document in the catalog (the LLM cannot know the years).
 - Q109: the plan is part of this call. `steps` = one step per company + year pair that the
   question names (`company`, `year`, `search`). At most `max_steps`; more → `unclear` with a
   fixed reply (steps are never dropped). No separate planner call, no re-plan.
-- A step company is an enum of the catalog names, so code needs no name matching. Names that
-  are not in the collection go to `other_companies` → `not_covered`.
+- A step company is an enum of the catalog names, so code needs no name matching.
 - Follow-ups: the router rewrites the question as `standalone_question` (Q65: no extra call).
 """
 
@@ -36,6 +36,7 @@ class LLMRoute(StrEnum):
     UNRELATED = "unrelated"
     ADVICE = "advice"
     UNCLEAR = "unclear"
+    NOT_COVERED = "not_covered"
 
 
 class Route(StrEnum):
@@ -72,7 +73,6 @@ class RouterOutput(BaseModel):
     standalone_question: str = Field(min_length=1)
     reason: str
     steps: list[Step]
-    other_companies: list[str]
     doc_type: str | None
     metric: str | None
 
@@ -107,7 +107,7 @@ class RouterOutput(BaseModel):
     def _unclear_needs_question(self) -> RouterOutput:
         if self.route == LLMRoute.UNCLEAR and not self.reason.strip():
             raise ValueError("route 'unclear' needs the clarifying question in 'reason'")
-        if self.route == LLMRoute.ANSWER and not self.steps and not self.other_companies:
+        if self.route == LLMRoute.ANSWER and not self.steps:
             raise ValueError("route 'answer' needs at least one step")
         return self
 
@@ -131,7 +131,6 @@ def build_schema(companies: Sequence[str]) -> dict[str, Any]:
             "standalone_question": {"type": "string"},
             "reason": {"type": "string"},
             "steps": {"type": "array", "items": step},
-            "other_companies": {"type": "array", "items": {"type": "string"}},
             "doc_type": {"anyOf": [{"type": "string", "enum": DOC_TYPES}, {"type": "null"}]},
             "metric": nullable_str,
         },
@@ -140,7 +139,6 @@ def build_schema(companies: Sequence[str]) -> dict[str, Any]:
             "standalone_question",
             "reason",
             "steps",
-            "other_companies",
             "doc_type",
             "metric",
         ],
@@ -162,6 +160,10 @@ RULES = """Fill the JSON fields:
   - "advice": asks for investment advice (buy, sell, hold, price targets).
   - "unclear": too vague to search (for example no company and no clear subject, or
     "calendar year" / "last 12 months" with no fiscal period).
+  - "not_covered": the question asks about the data of a company that is not in the list
+    below (for example Tesla). Only the company whose filings or figures the question asks
+    about counts. A regulator, partner, bank, fund or union that the question only mentions
+    (for example "the EPA rule" in a question about FedEx) does not make it "not_covered".
 - standalone_question: the question rewritten so that it makes sense alone. For a follow-up,
   use the chat history to fill in the company, the year and the metric. Otherwise repeat it.
 - reason: one short sentence on why you chose the route. For "unclear", write the one short
@@ -183,7 +185,6 @@ RULES = """Fill the JSON fields:
     Do not add years the question does not name or imply.
   - search: a short search text for this one fact, with the company, the item and the year
     (for example "Apple total net sales fiscal 2021").
-- other_companies: named companies that are not in the list (they get no step).
 - doc_type: only when the question names the filing type ("10-K", "10-Q", "8-K", "earnings
   release", "annual report"). Otherwise null. Do not guess it from the metric.
 - metric: the financial item asked about, in a few words (for example "revenue"), or null."""
@@ -280,14 +281,15 @@ ADVICE_REPLY = (
 TOO_MANY_STEPS_REPLY = f"Please ask about at most {MAX_STEPS} company-year pairs in one question."
 
 
+NO_COMPANY_REPLY = (
+    "I do not have data for that company. I can only answer questions about the companies "
+    "in the collection."
+)
+
+
 def _missing_text(decision: RouteDecision) -> str:
-    out = decision.output
-    if out and out.other_companies:
-        return ", ".join(out.other_companies) + " (not in the collection)"
     missing = decision.selection.missing if decision.selection else []
     items = [f"{c} FY{y}" if y is not None else c for c, y in missing]
-    if out and out.doc_type:
-        items = [f"{i} ({out.doc_type})" for i in items]
     return ", ".join(items) or "that period"
 
 
@@ -304,6 +306,8 @@ def reply_text(decision: RouteDecision) -> str | None:
             return TOO_MANY_STEPS_REPLY
         return decision.output.reason if decision.output else None
     if decision.route == Route.NOT_COVERED:
+        if decision.selection is None:  # the LLM: a company outside the collection
+            return NO_COMPANY_REPLY
         return f"No filing for {_missing_text(decision)} in the collection."
     return None
 
@@ -350,7 +354,7 @@ class Router:
             return
         decision.steps = self.plan_steps(out)
         decision.selection = combine([p.selection for p in decision.steps])
-        covered = decision.selection.covered and not out.other_companies
+        covered = decision.selection.covered
         decision.route = Route.ANSWER if covered else Route.NOT_COVERED
 
     def decide(self, question: str, history: Sequence[Turn] = ()) -> RouteDecision:

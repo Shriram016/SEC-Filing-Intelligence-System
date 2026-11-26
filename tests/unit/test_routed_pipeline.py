@@ -58,7 +58,6 @@ def route_reply(**kw: Any) -> str:
         "standalone_question": "What was Apple's revenue in FY2022?",
         "reason": "factual",
         "steps": [step(2022)],
-        "other_companies": [],
         "doc_type": None,
         "metric": "revenue",
     }
@@ -106,7 +105,7 @@ def test_answer_route_searches_chosen_documents_with_standalone_question() -> No
         route_reply(route="advice"),
         route_reply(route="unclear", reason="Which company?"),
         route_reply(steps=[step(2019)]),  # not covered
-        route_reply(steps=[], other_companies=["Tesla"]),  # not covered
+        route_reply(route="not_covered", steps=[]),  # company outside the list
     ],
 )
 def test_stop_routes_make_no_search_and_no_answer_call(text: str) -> None:

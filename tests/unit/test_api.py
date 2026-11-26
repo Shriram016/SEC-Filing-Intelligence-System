@@ -42,7 +42,7 @@ STEP = {"company": "Apple", "year": 2022, "search": "Apple net sales 2022"}
 
 def route_reply(**kw: Any) -> str:
     base = {"route": "answer", "standalone_question": "What were Apple's net sales in FY2022?",
-            "reason": "factual", "other_companies": [], "doc_type": None, "metric": "net sales",
+            "reason": "factual", "doc_type": None, "metric": "net sales",
             "steps": [STEP]}  # fmt: skip
     return json.dumps(base | kw)
 
@@ -125,7 +125,7 @@ def test_a_failed_quote_check_is_a_refused_answer_without_citations() -> None:
     ("route", "expected"),
     [
         (route_reply(route="advice"), "advice"),
-        (route_reply(steps=[], other_companies=["Tesla"]), "not_covered"),
+        (route_reply(route="not_covered", steps=[]), "not_covered"),
         (route_reply(route="unclear", reason="Which company?"), "unclear"),
     ],
 )

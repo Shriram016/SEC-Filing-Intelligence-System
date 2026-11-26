@@ -8,6 +8,7 @@ from filing_rag.llm.fake import FakeLLM
 from filing_rag.router.catalog import CatalogDoc, DocCatalog, Selection
 from filing_rag.router.router import (
     ADVICE_REPLY,
+    NO_COMPANY_REPLY,
     TOO_MANY_STEPS_REPLY,
     UNRELATED_REPLY,
     LLMRoute,
@@ -46,7 +47,6 @@ def reply(**kw: Any) -> str:
         "standalone_question": "What was Apple's revenue in FY2022?",
         "reason": "Factual question about a filing.",
         "steps": [step()],
-        "other_companies": [],
         "doc_type": None,
         "metric": "revenue",
     }
@@ -74,7 +74,8 @@ def test_schema_holds_exactly_the_catalog_companies() -> None:
     assert set(schema["required"]) == set(schema["properties"])
     assert set(item["required"]) == set(item["properties"]) == {"company", "year", "search"}
     assert schema["additionalProperties"] is False and item["additionalProperties"] is False
-    assert "not_covered" not in schema["properties"]["route"]["enum"]  # set by code only
+    assert "other_companies" not in schema["properties"]  # removed: the list is the scope
+    assert "not_covered" in schema["properties"]["route"]["enum"]  # company outside the list
 
 
 def test_prompt_lists_companies_and_question() -> None:
@@ -143,10 +144,11 @@ def test_unclear_route_asks_back() -> None:
 
 
 def test_company_outside_collection_not_covered() -> None:
-    r, _ = router(reply(steps=[], other_companies=["Tesla"]))
+    r, fake = router(reply(route="not_covered", steps=[]))
     d = r.decide("Tesla revenue 2022?")
-    assert d.route == Route.NOT_COVERED
-    assert reply_text(d) == "No filing for Tesla (not in the collection) in the collection."
+    assert d.route == Route.NOT_COVERED and d.selection is None
+    assert reply_text(d) == NO_COMPANY_REPLY
+    assert "regulator, partner, bank, fund or union" in fake.calls[0]["user"]
 
 
 def test_year_outside_catalog_not_covered() -> None:
@@ -160,10 +162,11 @@ def test_doc_type_named_is_a_filter() -> None:
     r, _ = router(reply(steps=[step(year=2023)], doc_type="10-Q"))
     d = r.decide("Apple 10-Q 2023 revenue?")
     assert d.doc_names == ["APPLE_2023_10Q"]
+    # no Costco 8-K → all Costco documents (the named type is a preference, not a refusal)
     r2, _ = router(reply(steps=[step("Costco", None)], doc_type="8-K"))
     d2 = r2.decide("Costco 8-K?")
-    assert d2.route == Route.NOT_COVERED
-    assert reply_text(d2) == "No filing for Costco (8-K) in the collection."
+    assert d2.route == Route.ANSWER
+    assert d2.doc_names == ["COSTCO_2024_10K"]
 
 
 def test_no_company_means_no_filter() -> None:

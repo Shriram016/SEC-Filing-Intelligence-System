@@ -41,7 +41,7 @@ def question(
 def reply(steps: list[tuple[str | None, int | None]], **kw: Any) -> str:
     return json.dumps({
         "route": "answer", "standalone_question": "Apple operating cash flow FY2019 vs FY2018?",
-        "reason": "factual", "other_companies": [], "doc_type": None, "metric": "cash",
+        "reason": "factual", "doc_type": None, "metric": "cash",
         "steps": [{"company": c, "year": y, "search": f"{c} cash {y}"} for c, y in steps],
     } | kw)  # fmt: skip
 
@@ -61,6 +61,14 @@ def test_correct_plan_documents_and_page() -> None:
     assert row["missing_pairs"] == [] and row["extra_pairs"] == []
     assert row["step_pages"] == [["APPLE_2018_10K p3"], ["APPLE_2019_10K p40"]]
     assert row["cost_usd"] > 0 and row["llm_calls"] == 1
+    assert row["doc_type"] is None and row["router_reason"] == "factual"
+
+
+def test_row_saves_the_router_doc_type_and_reason() -> None:
+    d = decide(reply([("Apple", 2019)], doc_type="10-K", reason="named the 10-K"))
+    row = check_one(question(), d, [[hit("APPLE_2019_10K", 7)]])
+    assert row["doc_type"] == "10-K" and row["router_reason"] == "named the 10-K"
+    assert "named the 10-K" in summary([row], {"started": "t"})
 
 
 def test_a_missing_step_is_a_wrong_plan_but_documents_can_still_be_covered() -> None:

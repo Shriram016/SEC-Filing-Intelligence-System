@@ -136,7 +136,18 @@ def _items(out: WriterOutput, hits: list[Hit]) -> dict[str, Item]:
     return items
 
 
+# A unit or scale next to a placeholder: `fmt_value` already writes it ("$152,703 million").
+_UNIT_NEXT_TO_PLACEHOLDER = re.compile(
+    r"[$€£]\s*\{[A-Za-z]+\d+\}"
+    r"|\{[A-Za-z]+\d+\}\s*(%|percent\b|thousand\b|million\b|billion\b|trillion\b|bn\b|mn\b"
+    r"|USD\b|dollars?\b|shares\b)",
+    re.IGNORECASE,
+)
+
+
 def _sentence_safe(sentence: str) -> bool:
+    if _UNIT_NEXT_TO_PLACEHOLDER.search(sentence):
+        return False
     rest = PLACEHOLDER_RE.sub(" ", sentence)
     for pat in _ALLOWED_NUMBERS:
         rest = pat.sub(" ", rest)

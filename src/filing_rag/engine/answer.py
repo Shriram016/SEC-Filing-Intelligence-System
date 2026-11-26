@@ -121,7 +121,9 @@ RULES = """Answer from the extracts only, as JSON:
 - main: the id of the claim or calculation that answers the question; null for an answer
   without a single number.
 - answer: one or two short sentences. Never write a number yourself: use the placeholders
-  {c1}, {k1}, ... for every value. Years in words such as "fiscal 2023" are allowed."""
+  {c1}, {k1}, ... for every value. Years in words such as "fiscal 2023" are allowed. Code
+  writes each value with its unit and scale ("$152,703 million", "12.5%"), so write no unit,
+  scale or currency sign next to a placeholder: "revenue was {c1}", not "{c1} million USD"."""
 
 
 def build_prompt(question: str, hits: list[Hit]) -> str:

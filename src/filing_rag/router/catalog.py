@@ -109,20 +109,24 @@ class DocCatalog:
         doc_type: str | None = None,
         rule: YearRule = "A",
     ) -> Selection:
+        """Rule A: year Y, else Y+1. A named doc type comes first; when it has no document for
+        the company (and year), all types are used ("annual report" = the 10-K for most)."""
         if not companies:
             return Selection(doc_names=None)
         chosen: set[str] = set()
         missing: list[tuple[str, int | None]] = []
         for company in dict.fromkeys(companies):
             docs = self.documents(company, doc_type)
+            every = self.documents(company)
             if not years:
+                docs = docs or every  # named type missing → all types
                 if docs:
                     chosen.update(d.doc_name for d in docs)
                 else:
                     missing.append((company, None))
                 continue
             for year in dict.fromkeys(years):
-                picked = self._for_year(docs, year, rule)
+                picked = self._for_year(docs, year, rule) or self._for_year(every, year, rule)
                 if picked:
                     chosen.update(d.doc_name for d in picked)
                 else:

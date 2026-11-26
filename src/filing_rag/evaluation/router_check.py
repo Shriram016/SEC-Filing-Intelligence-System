@@ -56,6 +56,8 @@ def check_one(
         "route": route,
         "route_ok": route == str(q.expected_route),
         "router_error": d.error,
+        "router_reason": d.output.reason if d.output else None,
+        "doc_type": d.output.doc_type if d.output else None,
         "too_many_steps": d.too_many_steps,
         "steps": step_rows(d),
         "gold_steps": [{"company": c, "year": y} for c, y in sorted(gold, key=_pair_text)],
@@ -147,12 +149,13 @@ def summary(rows: Sequence[dict[str, Any]], meta: dict[str, Any]) -> str:
     if not bad:
         lines.append("None.")
     else:
-        lines += ["| ID | Route | Missing pairs | Extra pairs | Missing documents |",
-                  "|---|---|---|---|---|"]  # fmt: skip
+        lines += ["| ID | Route | Missing pairs | Extra pairs | Missing documents | Doc type "
+                  "| Router reason |", "|---|---|---|---|---|---|---|"]  # fmt: skip
         for r in bad:
             cells = [r["id"], str(r["route"])] + [
                 ", ".join(r[k]) for k in ("missing_pairs", "extra_pairs", "missing_docs")
-            ]
+            ] + [str(r.get("doc_type") or ""),
+                 str(r.get("router_reason") or "").replace("|", "/")]  # fmt: skip
             lines.append("| " + " | ".join(cells) + " |")
     misses = [r for r in rows if r["page_found"] is False]
     reasons = Counter("route" if not r["route_ok"] else "documents" if r["docs_ok"] is False

@@ -185,6 +185,28 @@ def test_a_number_written_by_the_model_is_never_shown() -> None:
     assert decide(fcf(), HITS).sentence_used
 
 
+@pytest.mark.parametrize(
+    "answer",
+    [
+        "Free cash flow was {k1} million USD.",
+        "Free cash flow was {k1} million.",
+        "Free cash flow was ${k1}.",
+        "Free cash flow was {k1}%.",
+        "Free cash flow was {k1} dollars.",
+    ],
+)
+def test_a_unit_next_to_a_placeholder_is_not_doubled(answer: str) -> None:
+    a = decide(fcf(answer=answer), HITS)
+    assert a.status == Status.ANSWER and not a.sentence_used
+    assert "million million" not in a.text and "$$" not in a.text
+    assert a.text.startswith("free cash flow: $80,149 million.")
+
+
+def test_a_unit_word_away_from_a_placeholder_is_allowed() -> None:
+    a = decide(fcf(answer="In USD, free cash flow was {k1} for the nine months."), HITS)
+    assert a.sentence_used
+
+
 def test_years_and_dates_in_the_sentence_are_allowed() -> None:
     a = decide(fcf(answer="For the nine months ended July 1, 2023 (Q3 of fiscal 2023), "
                           "free cash flow was {k1} (FY2023, FY 23)."), HITS)  # fmt: skip

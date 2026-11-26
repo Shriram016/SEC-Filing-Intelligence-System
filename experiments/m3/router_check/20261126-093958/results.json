@@ -1,0 +1,2575 @@
+{
+ "meta": {
+  "started": "20261126-093958",
+  "router_model": "claude-haiku-5-5",
+  "router_effort": "low",
+  "year_rule": "A",
+  "collection": "chunks_v2",
+  "top_k": 5,
+  "max_cost_usd": 0.1,
+  "stopped_by_cost_limit": false,
+  "questions_run": 50,
+  "questions_planned": 50
+ },
+ "questions": [
+  {
+   "id": "dev_0001",
+   "category": "find_number",
+   "question": "What non-current liability did 3M carry for its U.S. qualified and non-qualified pension plans at the end of 2019?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "3M",
+     "year": 2019,
+     "search": "3M non-current liability U.S. qualified and non-qualified pension plans end of 2019",
+     "doc_names": [
+      "3M_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "3M",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "3M_2019_10K p90",
+     "3M_2019_10K p89",
+     "3M_2019_10K p90",
+     "3M_2019_10K p90",
+     "3M_2019_10K p91",
+     "3M_2019_10K p91"
+    ]
+   ],
+   "cost_usd": 0.000313,
+   "llm_calls": 1,
+   "latency_s": 3.069
+  },
+  {
+   "id": "dev_0002",
+   "category": "find_number",
+   "question": "If JPMorgan's long-term issuer ratings had been cut by two notches at June 30, 2021, how much extra collateral would the firm have had to post on its OTC and OTC-cleared derivatives?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "JPMorgan",
+     "year": 2021,
+     "search": "JPMorgan additional collateral ratings downgrade two notches OTC derivatives 2021",
+     "doc_names": [
+      "JPMORGAN_2021Q1_10Q",
+      "JPMORGAN_2021Q2_10Q",
+      "JPMORGAN_2021Q3_10Q",
+      "JPMORGAN_2021_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "JPMorgan",
+     "year": 2021
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "JPMORGAN_2021Q2_10Q p119",
+     "JPMORGAN_2021Q3_10Q p121",
+     "JPMORGAN_2021Q1_10Q p105",
+     "JPMORGAN_2021_10K p205",
+     "JPMORGAN_2021Q2_10Q p119"
+    ]
+   ],
+   "cost_usd": 0.000358,
+   "llm_calls": 1,
+   "latency_s": 3.608
+  },
+  {
+   "id": "dev_0003",
+   "category": "find_number",
+   "question": "How much cash and cash equivalents did MGM Resorts hold at the end of 2017?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "MGM Resorts",
+     "year": 2017,
+     "search": "MGM Resorts cash and cash equivalents end of fiscal 2017",
+     "doc_names": [
+      "MGMRESORTS_2017_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "MGM Resorts",
+     "year": 2017
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "MGMRESORTS_2017_10K p174",
+     "MGMRESORTS_2017_10K p66",
+     "MGMRESORTS_2017_10K p66",
+     "MGMRESORTS_2017_10K p45",
+     "MGMRESORTS_2017_10K p70",
+     "MGMRESORTS_2017_10K p70",
+     "MGMRESORTS_2017_10K p70",
+     "MGMRESORTS_2017_10K p70"
+    ]
+   ],
+   "cost_usd": 0.000308,
+   "llm_calls": 1,
+   "latency_s": 1.895
+  },
+  {
+   "id": "dev_0004",
+   "category": "find_number",
+   "question": "How much revenue did Apple make from services in fiscal year 2019?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Apple",
+     "year": 2019,
+     "search": "Apple services revenue fiscal 2019",
+     "doc_names": [
+      "APPLE_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Apple",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "APPLE_2019_10K p40",
+     "APPLE_2019_10K p22",
+     "APPLE_2019_10K p40",
+     "APPLE_2019_10K p22",
+     "APPLE_2019_10K p21"
+    ]
+   ],
+   "cost_usd": 0.000293,
+   "llm_calls": 1,
+   "latency_s": 1.353
+  },
+  {
+   "id": "dev_0005",
+   "category": "find_number",
+   "question": "What was Apple's total comprehensive income for the first nine months of fiscal 2023 (nine months ended July 1, 2023)?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Apple",
+     "year": 2023,
+     "search": "Apple total comprehensive income first nine months fiscal 2023 ended July 1, 2023",
+     "doc_names": [
+      "APPLE_2023Q3_10Q"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Apple",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "APPLE_2023Q3_10Q p5",
+     "APPLE_2023Q3_10Q p16",
+     "APPLE_2023Q3_10Q p10",
+     "APPLE_2023Q3_10Q p21",
+     "APPLE_2023Q3_10Q p21"
+    ]
+   ],
+   "cost_usd": 0.000318,
+   "llm_calls": 1,
+   "latency_s": 1.751
+  },
+  {
+   "id": "dev_0006",
+   "category": "find_number",
+   "question": "How much net cash did Walmart use in financing activities in fiscal 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Walmart",
+     "year": 2023,
+     "search": "Walmart net cash used in financing activities fiscal 2023",
+     "doc_names": [
+      "WALMART_2023_10K",
+      "WALMART_2023_annualreport"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Walmart",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "WALMART_2023_annualreport p46",
+     "WALMART_2023_10K p44",
+     "WALMART_2023_10K p44",
+     "WALMART_2023_10K p43",
+     "WALMART_2023_annualreport p46"
+    ]
+   ],
+   "cost_usd": 0.000304,
+   "llm_calls": 1,
+   "latency_s": 1.499
+  },
+  {
+   "id": "dev_0007",
+   "category": "find_number",
+   "question": "What was FedEx's diluted earnings per share for fiscal 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "FedEx",
+     "year": 2023,
+     "search": "FedEx diluted earnings per share fiscal 2023",
+     "doc_names": [
+      "FEDEX_2023_10K",
+      "FEDEX_2023_annualreport"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "FedEx",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "FEDEX_2023_annualreport p58",
+     "FEDEX_2023_annualreport p54",
+     "FEDEX_2023_10K p52",
+     "FEDEX_2023_annualreport p54",
+     "FEDEX_2023_10K p56"
+    ]
+   ],
+   "cost_usd": 0.000302,
+   "llm_calls": 1,
+   "latency_s": 2.126
+  },
+  {
+   "id": "dev_0008",
+   "category": "find_number",
+   "question": "Under the credit agreement Amcor filed in April 2022, what interest margin applies to term benchmark/RFR loans when Amcor's unsecured rating is Baa2/BBB?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Amcor",
+     "year": 2022,
+     "search": "Amcor credit agreement April 2022 interest margin term benchmark RFR loans Baa2/BBB unsecured rating",
+     "doc_names": [
+      "AMCOR_2022_10K",
+      "AMCOR_2022_8K_dated-2022-04-26",
+      "AMCOR_2022_8K_dated-2022-07-01"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Amcor",
+     "year": 2022
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "AMCOR_2022_8K_dated-2022-04-26 p12",
+     "AMCOR_2022_8K_dated-2022-04-26 p131",
+     "AMCOR_2022_8K_dated-2022-04-26 p2",
+     "AMCOR_2022_8K_dated-2022-04-26 p167",
+     "AMCOR_2022_10K p83"
+    ]
+   ],
+   "cost_usd": 0.000338,
+   "llm_calls": 1,
+   "latency_s": 1.637
+  },
+  {
+   "id": "dev_0009",
+   "category": "find_number",
+   "question": "What were Johnson & Johnson's worldwide MedTech sales in the first quarter of 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Johnson & Johnson",
+     "year": 2023,
+     "search": "Johnson & Johnson worldwide MedTech sales first quarter 2023",
+     "doc_names": [
+      "JOHNSON_JOHNSON_2023Q1_EARNINGS",
+      "JOHNSON_JOHNSON_2023Q2_EARNINGS",
+      "JOHNSON_JOHNSON_2023_8K_dated-2023-08-23",
+      "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Johnson & Johnson",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "JOHNSON_JOHNSON_2023Q1_EARNINGS p1",
+     "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30 p19",
+     "JOHNSON_JOHNSON_2023Q1_EARNINGS p3",
+     "JOHNSON_JOHNSON_2023Q1_EARNINGS p8",
+     "JOHNSON_JOHNSON_2023Q1_EARNINGS p8",
+     "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30 p4"
+    ]
+   ],
+   "cost_usd": 0.000308,
+   "llm_calls": 1,
+   "latency_s": 1.366
+  },
+  {
+   "id": "dev_0010",
+   "category": "find_number",
+   "question": "How large was the valuation allowance Costco set against its deferred tax assets at the end of fiscal 2019?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Costco",
+     "year": 2019,
+     "search": "Costco valuation allowance deferred tax assets fiscal 2019",
+     "doc_names": [
+      "COSTCO_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Costco",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "COSTCO_2019_10K p56",
+     "COSTCO_2019_10K p56",
+     "COSTCO_2019_10K p47",
+     "COSTCO_2019_10K p55",
+     "COSTCO_2019_10K p43"
+    ]
+   ],
+   "cost_usd": 0.000309,
+   "llm_calls": 1,
+   "latency_s": 2.506
+  },
+  {
+   "id": "dev_0011",
+   "category": "find_number",
+   "question": "According to Intel's 2019 annual report, what share of data traffic did Intel expect to be video by 2022?",
+   "expected_route": "answer",
+   "route": "not_covered",
+   "route_ok": false,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Intel",
+     "year": 2019,
+     "search": "Intel 2019 annual report expected share of data traffic that is video",
+     "doc_names": []
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Intel",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": false,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [],
+   "cost_usd": 0.000314,
+   "llm_calls": 1,
+   "latency_s": 1.717
+  },
+  {
+   "id": "dev_0012",
+   "category": "find_number",
+   "question": "How many shares of common stock is 3M authorized to issue, according to the description of its securities filed with the 2019 10-K?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "3M",
+     "year": 2019,
+     "search": "3M authorized shares of common stock description of securities 10-K 2019",
+     "doc_names": [
+      "3M_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "3M",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "3M_2019_10K p4",
+     "3M_2019_10K p80",
+     "3M_2019_10K p185",
+     "3M_2019_10K p142",
+     "3M_2019_10K p140"
+    ]
+   ],
+   "cost_usd": 0.000311,
+   "llm_calls": 1,
+   "latency_s": 1.857
+  },
+  {
+   "id": "dev_0013",
+   "category": "find_number",
+   "question": "Under the sixth amendment to Costco's co-branded credit card agreement with Citibank, within how many business days after each calendar quarter must Citibank pay Costco the quarterly amounts?",
+   "expected_route": "answer",
+   "route": "not_covered",
+   "route_ok": false,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Costco",
+     "year": null,
+     "search": "Costco sixth amendment co-branded credit card agreement Citibank quarterly payment business days",
+     "doc_names": [
+      "COSTCO_2015_10K",
+      "COSTCO_2016_10K",
+      "COSTCO_2017_10K",
+      "COSTCO_2018_10K",
+      "COSTCO_2019_10K",
+      "COSTCO_2020_10K",
+      "COSTCO_2021_10K",
+      "COSTCO_2022_10K",
+      "COSTCO_2023Q1_EARNINGS",
+      "COSTCO_2023Q3_EARNINGS",
+      "COSTCO_2023_8K_dated-2023-01-19",
+      "COSTCO_2023_8K_dated-2023-08-09",
+      "COSTCO_2023_8K_dated-2023-08-16"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Costco",
+     "year": null
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": false,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [],
+   "cost_usd": 0.000333,
+   "llm_calls": 1,
+   "latency_s": 3.045
+  },
+  {
+   "id": "dev_0014",
+   "category": "find_number",
+   "question": "What principal amount of 6.100% First Mortgage Bonds due 2029 did PG&E issue in June 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "PG&E Corporation",
+     "year": 2023,
+     "search": "PG&E 6.100% First Mortgage Bonds due 2029 principal amount issued June 2023",
+     "doc_names": [
+      "PG_E_2023Q3_10Q",
+      "PG_E_2023_EARNINGS-dated-2023-06-01",
+      "PG_E_2023_EARNINGS-dated-2023-07-27",
+      "PG_E_2023_EARNINGS_dated-2023-05-04",
+      "PG_E_2023_EARNINGS_dated-2023-05-31"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "PG&E Corporation",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "PG_E_2023_EARNINGS-dated-2023-06-01 p3",
+     "PG_E_2023_EARNINGS-dated-2023-06-01 p35",
+     "PG_E_2023_EARNINGS-dated-2023-06-01 p58",
+     "PG_E_2023_EARNINGS-dated-2023-06-01 p74",
+     "PG_E_2023Q3_10Q p72"
+    ]
+   ],
+   "cost_usd": 0.000323,
+   "llm_calls": 1,
+   "latency_s": 1.959
+  },
+  {
+   "id": "dev_0015",
+   "category": "find_number",
+   "question": "How many retail stores did Ulta Beauty operate when it reported its first quarter of fiscal 2023 results?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Ulta Beauty",
+     "year": 2023,
+     "search": "Ulta Beauty number of retail stores first quarter fiscal 2023",
+     "doc_names": [
+      "ULTABEAUTY_2023_10K",
+      "ULTABEAUTY_2023_8K_dated-2023-06-07",
+      "ULTABEAUTY_2023_8K_dated-2023-09-18",
+      "ULTABEAUTY_2024Q1_EARNINGS",
+      "ULTABEAUTY_2024Q2_EARNINGS"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Ulta Beauty",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "ULTABEAUTY_2024Q1_EARNINGS p7",
+     "ULTABEAUTY_2024Q1_EARNINGS p1",
+     "ULTABEAUTY_2024Q1_EARNINGS p2",
+     "ULTABEAUTY_2024Q2_EARNINGS p1",
+     "ULTABEAUTY_2024Q2_EARNINGS p2"
+    ]
+   ],
+   "cost_usd": 0.000316,
+   "llm_calls": 1,
+   "latency_s": 2.036
+  },
+  {
+   "id": "dev_0016",
+   "category": "find_number",
+   "question": "In its second quarter 2023 earnings release, what total CAS pension cost did Lockheed Martin expect for 2023?",
+   "expected_route": "answer",
+   "route": "not_covered",
+   "route_ok": false,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Lockheed Martin",
+     "year": 2023,
+     "search": "Lockheed Martin total CAS pension cost expected 2023 second quarter earnings release",
+     "doc_names": []
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Lockheed Martin",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": false,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [],
+   "cost_usd": 0.000514,
+   "llm_calls": 1,
+   "latency_s": 4.809
+  },
+  {
+   "id": "dev_0017",
+   "category": "find_number",
+   "question": "What was JPMorgan's indicative stress capital buffer requirement after the Federal Reserve's 2021 CCAR stress test?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "JPMorgan",
+     "year": 2021,
+     "search": "JPMorgan indicative stress capital buffer requirement after 2021 CCAR stress test",
+     "doc_names": [
+      "JPMORGAN_2021Q1_10Q",
+      "JPMORGAN_2021Q2_10Q",
+      "JPMORGAN_2021Q3_10Q",
+      "JPMORGAN_2021_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "JPMorgan",
+     "year": 2021
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "JPMORGAN_2021Q1_10Q p40",
+     "JPMORGAN_2021Q3_10Q p52",
+     "JPMORGAN_2021_10K p6",
+     "JPMORGAN_2021Q2_10Q p8",
+     "JPMORGAN_2021_10K p88"
+    ]
+   ],
+   "cost_usd": 0.000322,
+   "llm_calls": 1,
+   "latency_s": 2.823
+  },
+  {
+   "id": "dev_0018",
+   "category": "find_number",
+   "question": "At the end of fiscal 2019, within how many years did Apple expect its hedged foreign currency transactions on term debt and marketable securities to be recognized?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Apple",
+     "year": 2019,
+     "search": "Apple hedged foreign currency transactions term debt marketable securities expected recognition period fiscal 2019",
+     "doc_names": [
+      "APPLE_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Apple",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "APPLE_2019_10K p43",
+     "APPLE_2019_10K p43",
+     "APPLE_2019_10K p41",
+     "APPLE_2019_10K p50",
+     "APPLE_2019_10K p70"
+    ]
+   ],
+   "cost_usd": 0.000328,
+   "llm_calls": 1,
+   "latency_s": 2.687
+  },
+  {
+   "id": "dev_0019",
+   "category": "find_number",
+   "question": "In what denominations are the notes Intel issued in February 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Intel",
+     "year": 2023,
+     "search": "Intel notes issued February 2023 denominations",
+     "doc_names": [
+      "INTEL_2023Q1_EARNINGS",
+      "INTEL_2023_8K_dated-2022-11-22",
+      "INTEL_2023_8K_dated-2023-02-10"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Intel",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "INTEL_2023_8K_dated-2023-02-10 p2",
+     "INTEL_2023_8K_dated-2023-02-10 p170",
+     "INTEL_2023_8K_dated-2023-02-10 p93",
+     "INTEL_2023_8K_dated-2023-02-10 p203",
+     "INTEL_2023_8K_dated-2023-02-10 p148"
+    ]
+   ],
+   "cost_usd": 0.000293,
+   "llm_calls": 1,
+   "latency_s": 1.585
+  },
+  {
+   "id": "dev_0020",
+   "category": "find_number",
+   "question": "How large were Apple's manufacturing purchase obligations as of July 1, 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Apple",
+     "year": 2023,
+     "search": "Apple manufacturing purchase obligations as of July 1, 2023",
+     "doc_names": [
+      "APPLE_2023Q3_10Q"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Apple",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "APPLE_2023Q3_10Q p22",
+     "APPLE_2023Q3_10Q p15",
+     "APPLE_2023Q3_10Q p14",
+     "APPLE_2023Q3_10Q p10",
+     "APPLE_2023Q3_10Q p10"
+    ]
+   ],
+   "cost_usd": 0.000307,
+   "llm_calls": 1,
+   "latency_s": 1.592
+  },
+  {
+   "id": "dev_0021",
+   "category": "explain_why",
+   "question": "Why could the EPA's proposed rule on PFAS substances create costs for FedEx, according to its 2023 annual report?",
+   "expected_route": "answer",
+   "route": "not_covered",
+   "route_ok": false,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "FedEx",
+     "year": 2023,
+     "search": "FedEx EPA proposed rule PFAS substances costs fiscal 2023 annual report",
+     "doc_names": [
+      "FEDEX_2023_annualreport"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "FedEx",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": false,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [],
+   "cost_usd": 0.000326,
+   "llm_calls": 1,
+   "latency_s": 1.756
+  },
+  {
+   "id": "dev_0022",
+   "category": "explain_why",
+   "question": "Why did McDonald's leave Argentina and Lebanon out of its comparable sales from the first quarter of 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "McDonalds",
+     "year": 2023,
+     "search": "McDonalds comparable sales exclusion Argentina Lebanon first quarter 2023",
+     "doc_names": [
+      "MCDONALDS_2023Q1_EARNINGS",
+      "MCDONALDS_2023Q2_EARNINGS",
+      "MCDONALDS_8K_dated-2023-01-06",
+      "MCDONALDS_8K_dated-2023-02-13",
+      "MCDONALDS_8K_dated-2023-08-14"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "McDonalds",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "MCDONALDS_2023Q2_EARNINGS p4",
+     "MCDONALDS_2023Q1_EARNINGS p3",
+     "MCDONALDS_2023Q1_EARNINGS p1",
+     "MCDONALDS_2023Q1_EARNINGS p2",
+     "MCDONALDS_2023Q2_EARNINGS p4"
+    ]
+   ],
+   "cost_usd": 0.000318,
+   "llm_calls": 1,
+   "latency_s": 2.631
+  },
+  {
+   "id": "dev_0023",
+   "category": "explain_why",
+   "question": "In mid-2021, why did JPMorgan warn that the COVID-19 pandemic could constrain its liquidity or capital?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "JPMorgan",
+     "year": 2021,
+     "search": "JPMorgan COVID-19 pandemic liquidity capital risk warning 2021",
+     "doc_names": [
+      "JPMORGAN_2021Q1_10Q",
+      "JPMORGAN_2021Q2_10Q",
+      "JPMORGAN_2021Q3_10Q",
+      "JPMORGAN_2021_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "JPMorgan",
+     "year": 2021
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "JPMORGAN_2021Q2_10Q p191",
+     "JPMORGAN_2021Q1_10Q p173",
+     "JPMORGAN_2021Q3_10Q p195",
+     "JPMORGAN_2021_10K p12",
+     "JPMORGAN_2021Q2_10Q p190"
+    ]
+   ],
+   "cost_usd": 0.000324,
+   "llm_calls": 1,
+   "latency_s": 1.951
+  },
+  {
+   "id": "dev_0024",
+   "category": "explain_why",
+   "question": "Why does Walmart not record gift card purchases as sales when the card is bought?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Walmart",
+     "year": null,
+     "search": "Walmart gift card revenue recognition policy when card is purchased",
+     "doc_names": [
+      "WALMART_2015_10K",
+      "WALMART_2016_10K",
+      "WALMART_2017_10K",
+      "WALMART_2018_10K",
+      "WALMART_2019_10K",
+      "WALMART_2020_10K",
+      "WALMART_2021_10K",
+      "WALMART_2022_10K",
+      "WALMART_2023_10K",
+      "WALMART_2023_annualreport",
+      "WALMART_2024Q1_10Q"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Walmart",
+     "year": null
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "WALMART_2018_10K p66",
+     "WALMART_2023_10K p63",
+     "WALMART_2022_10K p62",
+     "WALMART_2020_10K p62",
+     "WALMART_2021_10K p63"
+    ]
+   ],
+   "cost_usd": 0.000303,
+   "llm_calls": 1,
+   "latency_s": 1.496
+  },
+  {
+   "id": "dev_0025",
+   "category": "explain_why",
+   "question": "Why did MGM Resorts' cash from operating activities rise in 2016 compared with 2015?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "MGM Resorts",
+     "year": 2016,
+     "search": "MGM Resorts cash from operating activities fiscal 2016",
+     "doc_names": [
+      "MGMRESORTS_2016_10K"
+     ]
+    },
+    {
+     "company": "MGM Resorts",
+     "year": 2015,
+     "search": "MGM Resorts cash from operating activities fiscal 2015",
+     "doc_names": [
+      "MGMRESORTS_2015_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "MGM Resorts",
+     "year": 2015
+    },
+    {
+     "company": "MGM Resorts",
+     "year": 2016
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": false,
+   "missing_docs": [
+    "MGMRESORTS_2017_10K"
+   ],
+   "page_found": false,
+   "step_pages": [
+    [
+     "MGMRESORTS_2016_10K p72",
+     "MGMRESORTS_2016_10K p72",
+     "MGMRESORTS_2016_10K p72",
+     "MGMRESORTS_2016_10K p72",
+     "MGMRESORTS_2016_10K p313",
+     "MGMRESORTS_2016_10K p121",
+     "MGMRESORTS_2016_10K p47",
+     "MGMRESORTS_2016_10K p117"
+    ],
+    [
+     "MGMRESORTS_2015_10K p31",
+     "MGMRESORTS_2015_10K p2",
+     "MGMRESORTS_2015_10K p216",
+     "MGMRESORTS_2015_10K p216",
+     "MGMRESORTS_2015_10K p2",
+     "MGMRESORTS_2015_10K p43"
+    ]
+   ],
+   "cost_usd": 0.000333,
+   "llm_calls": 1,
+   "latency_s": 1.338
+  },
+  {
+   "id": "dev_0026",
+   "category": "explain_why",
+   "question": "According to Intel's 2019 10-K, why have cloud service providers become more important customers for Intel?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Intel",
+     "year": 2019,
+     "search": "Intel cloud service providers customers importance 10-K fiscal 2019",
+     "doc_names": [
+      "INTEL_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Intel",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "INTEL_2019_10K p5",
+     "INTEL_2019_10K p21",
+     "INTEL_2019_10K p62",
+     "INTEL_2019_10K p18",
+     "INTEL_2019_10K p24"
+    ]
+   ],
+   "cost_usd": 0.000313,
+   "llm_calls": 1,
+   "latency_s": 2.234
+  },
+  {
+   "id": "dev_0027",
+   "category": "explain_why",
+   "question": "Why did eBay eliminate about 500 jobs in February 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "eBay",
+     "year": 2023,
+     "search": "eBay workforce reduction about 500 jobs February 2023",
+     "doc_names": [
+      "EBAY_2023Q1_8K",
+      "EBAY_2023Q1_EARNINGS",
+      "EBAY_2023Q2_10Q",
+      "EBAY_2023Q2_8K",
+      "EBAY_2023Q2_EARNINGS"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "eBay",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "EBAY_2023Q2_10Q p43",
+     "EBAY_2023Q1_8K p2",
+     "EBAY_2023Q2_10Q p44",
+     "EBAY_2023Q2_EARNINGS p5",
+     "EBAY_2023Q2_10Q p39"
+    ]
+   ],
+   "cost_usd": 0.0003,
+   "llm_calls": 1,
+   "latency_s": 1.401
+  },
+  {
+   "id": "dev_0028",
+   "category": "explain_why",
+   "question": "Why does Apple say in its 2019 10-K that global and regional economic conditions strongly affect its business?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Apple",
+     "year": 2019,
+     "search": "Apple 2019 10-K global and regional economic conditions affect business",
+     "doc_names": [
+      "APPLE_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Apple",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "APPLE_2019_10K p8",
+     "APPLE_2019_10K p23",
+     "APPLE_2019_10K p23",
+     "APPLE_2019_10K p10",
+     "APPLE_2019_10K p8"
+    ]
+   ],
+   "cost_usd": 0.00031,
+   "llm_calls": 1,
+   "latency_s": 1.24
+  },
+  {
+   "id": "dev_0029",
+   "category": "explain_why",
+   "question": "Why is 3M exposed to economic and political conditions outside the United States, according to its 2019 10-K?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "3M",
+     "year": 2019,
+     "search": "3M exposure to economic and political conditions outside the United States 2019 10-K",
+     "doc_names": [
+      "3M_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "3M",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "3M_2019_10K p179",
+     "3M_2019_10K p34",
+     "3M_2019_10K p30",
+     "3M_2019_10K p23",
+     "3M_2019_10K p16"
+    ]
+   ],
+   "cost_usd": 0.000312,
+   "llm_calls": 1,
+   "latency_s": 1.584
+  },
+  {
+   "id": "dev_0030",
+   "category": "explain_why",
+   "question": "Why does Costco consider itself highly dependent on its U.S. and Canadian operations?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Costco",
+     "year": null,
+     "search": "Costco dependence on U.S. and Canadian operations risk factors",
+     "doc_names": [
+      "COSTCO_2015_10K",
+      "COSTCO_2016_10K",
+      "COSTCO_2017_10K",
+      "COSTCO_2018_10K",
+      "COSTCO_2019_10K",
+      "COSTCO_2020_10K",
+      "COSTCO_2021_10K",
+      "COSTCO_2022_10K",
+      "COSTCO_2023Q1_EARNINGS",
+      "COSTCO_2023Q3_EARNINGS",
+      "COSTCO_2023_8K_dated-2023-01-19",
+      "COSTCO_2023_8K_dated-2023-08-09",
+      "COSTCO_2023_8K_dated-2023-08-16"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Costco",
+     "year": null
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "COSTCO_2022_10K p9",
+     "COSTCO_2019_10K p8",
+     "COSTCO_2021_10K p9",
+     "COSTCO_2018_10K p8",
+     "COSTCO_2017_10K p8"
+    ]
+   ],
+   "cost_usd": 0.000298,
+   "llm_calls": 1,
+   "latency_s": 1.06
+  },
+  {
+   "id": "dev_0031",
+   "category": "calculate",
+   "question": "By what percentage did Ulta Beauty's selling, general and administrative expenses grow in the first quarter of fiscal 2023 compared with the year-ago quarter?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Ulta Beauty",
+     "year": 2023,
+     "search": "Ulta Beauty selling, general and administrative expenses first quarter fiscal 2023",
+     "doc_names": [
+      "ULTABEAUTY_2023_10K",
+      "ULTABEAUTY_2023_8K_dated-2023-06-07",
+      "ULTABEAUTY_2023_8K_dated-2023-09-18",
+      "ULTABEAUTY_2024Q1_EARNINGS",
+      "ULTABEAUTY_2024Q2_EARNINGS"
+     ]
+    },
+    {
+     "company": "Ulta Beauty",
+     "year": 2022,
+     "search": "Ulta Beauty selling, general and administrative expenses first quarter fiscal 2022",
+     "doc_names": [
+      "ULTABEAUTY_2023Q4_EARNINGS"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Ulta Beauty",
+     "year": 2022
+    },
+    {
+     "company": "Ulta Beauty",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "ULTABEAUTY_2024Q1_EARNINGS p2",
+     "ULTABEAUTY_2023_10K p38",
+     "ULTABEAUTY_2024Q1_EARNINGS p2",
+     "ULTABEAUTY_2024Q1_EARNINGS p1",
+     "ULTABEAUTY_2024Q1_EARNINGS p2"
+    ],
+    [
+     "ULTABEAUTY_2023Q4_EARNINGS p1",
+     "ULTABEAUTY_2023Q4_EARNINGS p2",
+     "ULTABEAUTY_2023Q4_EARNINGS p2",
+     "ULTABEAUTY_2023Q4_EARNINGS p2",
+     "ULTABEAUTY_2023Q4_EARNINGS p1"
+    ]
+   ],
+   "cost_usd": 0.000362,
+   "llm_calls": 1,
+   "latency_s": 1.384
+  },
+  {
+   "id": "dev_0032",
+   "category": "calculate",
+   "question": "What was McDonald's operating margin in the first quarter of 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "McDonalds",
+     "year": 2023,
+     "search": "McDonalds operating margin first quarter 2023",
+     "doc_names": [
+      "MCDONALDS_2023Q1_EARNINGS",
+      "MCDONALDS_2023Q2_EARNINGS",
+      "MCDONALDS_8K_dated-2023-01-06",
+      "MCDONALDS_8K_dated-2023-02-13",
+      "MCDONALDS_8K_dated-2023-08-14"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "McDonalds",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "MCDONALDS_2023Q1_EARNINGS p1",
+     "MCDONALDS_2023Q1_EARNINGS p4",
+     "MCDONALDS_2023Q1_EARNINGS p4",
+     "MCDONALDS_2023Q1_EARNINGS p2",
+     "MCDONALDS_2023Q1_EARNINGS p2",
+     "MCDONALDS_8K_dated-2023-08-14 p3"
+    ]
+   ],
+   "cost_usd": 0.000294,
+   "llm_calls": 1,
+   "latency_s": 1.332
+  },
+  {
+   "id": "dev_0033",
+   "category": "calculate",
+   "question": "What were Adobe's combined federal and state net operating loss carryforwards at the end of fiscal 2018?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Adobe",
+     "year": 2018,
+     "search": "Adobe combined federal and state net operating loss carryforwards end of fiscal 2018",
+     "doc_names": [
+      "ADOBE_2018_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Adobe",
+     "year": 2018
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "ADOBE_2018_10K p86",
+     "ADOBE_2018_10K p15",
+     "ADOBE_2018_10K p41",
+     "ADOBE_2018_10K p100",
+     "ADOBE_2018_10K p71"
+    ]
+   ],
+   "cost_usd": 0.000318,
+   "llm_calls": 1,
+   "latency_s": 1.463
+  },
+  {
+   "id": "dev_0034",
+   "category": "calculate",
+   "question": "What share of Intel's 2019 income before taxes came from outside the U.S.?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Intel",
+     "year": 2019,
+     "search": "Intel income before taxes outside U.S. fiscal 2019",
+     "doc_names": [
+      "INTEL_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Intel",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "INTEL_2019_10K p88",
+     "INTEL_2019_10K p87",
+     "INTEL_2019_10K p113",
+     "INTEL_2019_10K p113",
+     "INTEL_2019_10K p49",
+     "INTEL_2019_10K p49"
+    ]
+   ],
+   "cost_usd": 0.000305,
+   "llm_calls": 1,
+   "latency_s": 1.129
+  },
+  {
+   "id": "dev_0035",
+   "category": "calculate",
+   "question": "How much did Lockheed Martin's net sales grow in the second quarter of 2023 compared with the second quarter of 2022?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Lockheed Martin",
+     "year": 2023,
+     "search": "Lockheed Martin net sales second quarter 2023",
+     "doc_names": [
+      "LOCKHEEDMARTIN_2023Q1_10Q",
+      "LOCKHEEDMARTIN_2023Q2_10Q",
+      "LOCKHEEDMARTIN_2023_8K_dated-2023-05-25",
+      "LOCKHEEDMARTIN_2023_8K_dated-2023-08-24"
+     ]
+    },
+    {
+     "company": "Lockheed Martin",
+     "year": 2022,
+     "search": "Lockheed Martin net sales second quarter 2022",
+     "doc_names": [
+      "LOCKHEEDMARTIN_2022Q2_10Q",
+      "LOCKHEEDMARTIN_2022_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Lockheed Martin",
+     "year": 2022
+    },
+    {
+     "company": "Lockheed Martin",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "LOCKHEEDMARTIN_2023Q2_10Q p1",
+     "LOCKHEEDMARTIN_2023Q2_10Q p5",
+     "LOCKHEEDMARTIN_2023Q2_10Q p6",
+     "LOCKHEEDMARTIN_2023Q2_10Q p3",
+     "LOCKHEEDMARTIN_2023Q2_10Q p1"
+    ],
+    [
+     "LOCKHEEDMARTIN_2022Q2_10Q p38",
+     "LOCKHEEDMARTIN_2022Q2_10Q p38",
+     "LOCKHEEDMARTIN_2022Q2_10Q p39",
+     "LOCKHEEDMARTIN_2022Q2_10Q p41",
+     "LOCKHEEDMARTIN_2022Q2_10Q p45"
+    ]
+   ],
+   "cost_usd": 0.000333,
+   "llm_calls": 1,
+   "latency_s": 1.919
+  },
+  {
+   "id": "dev_0036",
+   "category": "calculate",
+   "question": "By what percentage did MGM Resorts' contributions to the UNITE HERE Health fund change from 2015 to 2017?",
+   "expected_route": "answer",
+   "route": "not_covered",
+   "route_ok": false,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "MGM Resorts",
+     "year": 2015,
+     "search": "MGM Resorts contributions UNITE HERE Health fund 2015",
+     "doc_names": [
+      "MGMRESORTS_2015_10K"
+     ]
+    },
+    {
+     "company": "MGM Resorts",
+     "year": 2017,
+     "search": "MGM Resorts contributions UNITE HERE Health fund 2017",
+     "doc_names": [
+      "MGMRESORTS_2017_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "MGM Resorts",
+     "year": 2015
+    },
+    {
+     "company": "MGM Resorts",
+     "year": 2017
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": false,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [],
+   "cost_usd": 0.000354,
+   "llm_calls": 1,
+   "latency_s": 1.676
+  },
+  {
+   "id": "dev_0037",
+   "category": "calculate",
+   "question": "By what percentage did Apple's cash generated by operating activities change in fiscal 2019 compared with fiscal 2018?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Apple",
+     "year": 2019,
+     "search": "Apple cash generated by operating activities fiscal 2019",
+     "doc_names": [
+      "APPLE_2019_10K"
+     ]
+    },
+    {
+     "company": "Apple",
+     "year": 2018,
+     "search": "Apple cash generated by operating activities fiscal 2018",
+     "doc_names": [
+      "APPLE_2018_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Apple",
+     "year": 2018
+    },
+    {
+     "company": "Apple",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "APPLE_2019_10K p26",
+     "APPLE_2019_10K p26",
+     "APPLE_2019_10K p26",
+     "APPLE_2019_10K p22",
+     "APPLE_2019_10K p36",
+     "APPLE_2019_10K p36",
+     "APPLE_2019_10K p36"
+    ],
+    [
+     "APPLE_2018_10K p33",
+     "APPLE_2018_10K p33",
+     "APPLE_2018_10K p33",
+     "APPLE_2018_10K p25",
+     "APPLE_2018_10K p45",
+     "APPLE_2018_10K p45",
+     "APPLE_2018_10K p45"
+    ]
+   ],
+   "cost_usd": 0.000334,
+   "llm_calls": 1,
+   "latency_s": 1.672
+  },
+  {
+   "id": "dev_0038",
+   "category": "calculate",
+   "question": "What was Apple's free cash flow (operating cash flow minus capital expenditures) for the nine months ended July 1, 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Apple",
+     "year": 2023,
+     "search": "Apple free cash flow operating cash flow minus capital expenditures nine months ended July 1, 2023",
+     "doc_names": [
+      "APPLE_2023Q3_10Q"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Apple",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "APPLE_2023Q3_10Q p21",
+     "APPLE_2023Q3_10Q p8",
+     "APPLE_2023Q3_10Q p8",
+     "APPLE_2023Q3_10Q p16",
+     "APPLE_2023Q3_10Q p10"
+    ]
+   ],
+   "cost_usd": 0.000319,
+   "llm_calls": 1,
+   "latency_s": 1.993
+  },
+  {
+   "id": "dev_0039",
+   "category": "calculate",
+   "question": "What was Walmart's effective income tax rate in fiscal 2023?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Walmart",
+     "year": 2023,
+     "search": "Walmart effective income tax rate fiscal 2023",
+     "doc_names": [
+      "WALMART_2023_10K",
+      "WALMART_2023_annualreport"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Walmart",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "WALMART_2023_10K p41",
+     "WALMART_2023_annualreport p43",
+     "WALMART_2023_annualreport p75",
+     "WALMART_2023_10K p73",
+     "WALMART_2023_annualreport p42"
+    ]
+   ],
+   "cost_usd": 0.000298,
+   "llm_calls": 1,
+   "latency_s": 1.615
+  },
+  {
+   "id": "dev_0040",
+   "category": "calculate",
+   "question": "How much did FedEx's net lease cost grow in fiscal 2023 compared with fiscal 2022?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "FedEx",
+     "year": 2023,
+     "search": "FedEx net lease cost fiscal 2023",
+     "doc_names": [
+      "FEDEX_2023_10K",
+      "FEDEX_2023_annualreport"
+     ]
+    },
+    {
+     "company": "FedEx",
+     "year": 2022,
+     "search": "FedEx net lease cost fiscal 2022",
+     "doc_names": [
+      "FEDEX_2023_10K",
+      "FEDEX_2023_annualreport"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "FedEx",
+     "year": 2022
+    },
+    {
+     "company": "FedEx",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "FEDEX_2023_annualreport p98",
+     "FEDEX_2023_10K p96",
+     "FEDEX_2023_annualreport p98",
+     "FEDEX_2023_10K p96",
+     "FEDEX_2023_annualreport p99"
+    ],
+    [
+     "FEDEX_2023_annualreport p98",
+     "FEDEX_2023_10K p96",
+     "FEDEX_2023_annualreport p98",
+     "FEDEX_2023_10K p96",
+     "FEDEX_2023_10K p96"
+    ]
+   ],
+   "cost_usd": 0.000324,
+   "llm_calls": 1,
+   "latency_s": 1.932
+  },
+  {
+   "id": "dev_0041",
+   "category": "compare_years",
+   "question": "How did the operating profit of CVS Health's Retail/LTC segment change from 2016 to 2017?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "CVS Health",
+     "year": 2016,
+     "search": "CVS Health Retail/LTC segment operating profit fiscal 2016",
+     "doc_names": [
+      "CVSHEALTH_2016_10K"
+     ]
+    },
+    {
+     "company": "CVS Health",
+     "year": 2017,
+     "search": "CVS Health Retail/LTC segment operating profit fiscal 2017",
+     "doc_names": [
+      "CVSHEALTH_2017_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "CVS Health",
+     "year": 2016
+    },
+    {
+     "company": "CVS Health",
+     "year": 2017
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "CVSHEALTH_2016_10K p185",
+     "CVSHEALTH_2016_10K p242",
+     "CVSHEALTH_2016_10K p180",
+     "CVSHEALTH_2016_10K p180",
+     "CVSHEALTH_2016_10K p178"
+    ],
+    [
+     "CVSHEALTH_2017_10K p54",
+     "CVSHEALTH_2017_10K p60",
+     "CVSHEALTH_2017_10K p56",
+     "CVSHEALTH_2017_10K p61",
+     "CVSHEALTH_2017_10K p59",
+     "CVSHEALTH_2017_10K p59"
+    ]
+   ],
+   "cost_usd": 0.000335,
+   "llm_calls": 1,
+   "latency_s": 1.912
+  },
+  {
+   "id": "dev_0042",
+   "category": "compare_years",
+   "question": "Did Oracle's stock beat the S&P 500 Index over the five fiscal years ended May 31, 2020?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Oracle",
+     "year": 2020,
+     "search": "Oracle stock performance graph five years ended May 31, 2020 versus S&P 500 Index",
+     "doc_names": [
+      "ORACLE_2020_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Oracle",
+     "year": 2020
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "ORACLE_2020_10K p37",
+     "ORACLE_2020_10K p37",
+     "ORACLE_2020_10K p71",
+     "ORACLE_2020_10K p105",
+     "ORACLE_2020_10K p105"
+    ]
+   ],
+   "cost_usd": 0.000324,
+   "llm_calls": 1,
+   "latency_s": 1.243
+  },
+  {
+   "id": "dev_0043",
+   "category": "compare_years",
+   "question": "How did Ulta Beauty's net cash from operating activities in the first quarter of fiscal 2023 compare with the same quarter a year earlier?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Ulta Beauty",
+     "year": 2023,
+     "search": "Ulta Beauty net cash from operating activities first quarter fiscal 2023",
+     "doc_names": [
+      "ULTABEAUTY_2023_10K",
+      "ULTABEAUTY_2023_8K_dated-2023-06-07",
+      "ULTABEAUTY_2023_8K_dated-2023-09-18",
+      "ULTABEAUTY_2024Q1_EARNINGS",
+      "ULTABEAUTY_2024Q2_EARNINGS"
+     ]
+    },
+    {
+     "company": "Ulta Beauty",
+     "year": 2022,
+     "search": "Ulta Beauty net cash from operating activities first quarter fiscal 2022",
+     "doc_names": [
+      "ULTABEAUTY_2023Q4_EARNINGS"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Ulta Beauty",
+     "year": 2022
+    },
+    {
+     "company": "Ulta Beauty",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "ULTABEAUTY_2024Q1_EARNINGS p1",
+     "ULTABEAUTY_2024Q1_EARNINGS p2",
+     "ULTABEAUTY_2024Q1_EARNINGS p7",
+     "ULTABEAUTY_2024Q1_EARNINGS p7",
+     "ULTABEAUTY_2024Q2_EARNINGS p2",
+     "ULTABEAUTY_2024Q2_EARNINGS p1"
+    ],
+    [
+     "ULTABEAUTY_2023Q4_EARNINGS p2",
+     "ULTABEAUTY_2023Q4_EARNINGS p1",
+     "ULTABEAUTY_2023Q4_EARNINGS p1",
+     "ULTABEAUTY_2023Q4_EARNINGS p8",
+     "ULTABEAUTY_2023Q4_EARNINGS p8",
+     "ULTABEAUTY_2023Q4_EARNINGS p2"
+    ]
+   ],
+   "cost_usd": 0.000349,
+   "llm_calls": 1,
+   "latency_s": 1.37
+  },
+  {
+   "id": "dev_0044",
+   "category": "compare_years",
+   "question": "How did McDonald's net income in the first quarter of 2023 compare with the first quarter of 2022?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "McDonalds",
+     "year": 2023,
+     "search": "McDonalds net income first quarter 2023",
+     "doc_names": [
+      "MCDONALDS_2023Q1_EARNINGS",
+      "MCDONALDS_2023Q2_EARNINGS",
+      "MCDONALDS_8K_dated-2023-01-06",
+      "MCDONALDS_8K_dated-2023-02-13",
+      "MCDONALDS_8K_dated-2023-08-14"
+     ]
+    },
+    {
+     "company": "McDonalds",
+     "year": 2022,
+     "search": "McDonalds net income first quarter 2022",
+     "doc_names": [
+      "MCDONALDS_2022Q4_EARNINGS",
+      "MCDONALDS_2022_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "McDonalds",
+     "year": 2022
+    },
+    {
+     "company": "McDonalds",
+     "year": 2023
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "MCDONALDS_2023Q1_EARNINGS p1",
+     "MCDONALDS_2023Q1_EARNINGS p2",
+     "MCDONALDS_2023Q2_EARNINGS p2",
+     "MCDONALDS_2023Q1_EARNINGS p2",
+     "MCDONALDS_2023Q2_EARNINGS p3"
+    ],
+    [
+     "MCDONALDS_2022Q4_EARNINGS p5",
+     "MCDONALDS_2022Q4_EARNINGS p4",
+     "MCDONALDS_2022_10K p12",
+     "MCDONALDS_2022_10K p8",
+     "MCDONALDS_2022_10K p13"
+    ]
+   ],
+   "cost_usd": 0.000321,
+   "llm_calls": 1,
+   "latency_s": 2.139
+  },
+  {
+   "id": "dev_0045",
+   "category": "compare_years",
+   "question": "How did Adobe's interest expense change in fiscal 2018 compared with fiscal 2017, and why?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Adobe",
+     "year": 2018,
+     "search": "Adobe interest expense fiscal 2018",
+     "doc_names": [
+      "ADOBE_2018_10K"
+     ]
+    },
+    {
+     "company": "Adobe",
+     "year": 2017,
+     "search": "Adobe interest expense fiscal 2017",
+     "doc_names": [
+      "ADOBE_2017_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Adobe",
+     "year": 2017
+    },
+    {
+     "company": "Adobe",
+     "year": 2018
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "ADOBE_2018_10K p41",
+     "ADOBE_2018_10K p39",
+     "ADOBE_2018_10K p39",
+     "ADOBE_2018_10K p83",
+     "ADOBE_2018_10K p82"
+    ],
+    [
+     "ADOBE_2017_10K p44",
+     "ADOBE_2017_10K p41",
+     "ADOBE_2017_10K p39",
+     "ADOBE_2017_10K p39",
+     "ADOBE_2017_10K p96"
+    ]
+   ],
+   "cost_usd": 0.000322,
+   "llm_calls": 1,
+   "latency_s": 1.412
+  },
+  {
+   "id": "dev_0046",
+   "category": "compare_years",
+   "question": "How did Intel's total inventories change from the end of 2018 to the end of 2019?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Intel",
+     "year": 2019,
+     "search": "Intel total inventories end of 2019",
+     "doc_names": [
+      "INTEL_2019_10K"
+     ]
+    },
+    {
+     "company": "Intel",
+     "year": 2018,
+     "search": "Intel total inventories end of 2018",
+     "doc_names": [
+      "INTEL_2018_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Intel",
+     "year": 2018
+    },
+    {
+     "company": "Intel",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "INTEL_2019_10K p86",
+     "INTEL_2019_10K p49",
+     "INTEL_2019_10K p49",
+     "INTEL_2019_10K p73",
+     "INTEL_2019_10K p95",
+     "INTEL_2019_10K p87"
+    ],
+    [
+     "INTEL_2018_10K p84",
+     "INTEL_2018_10K p84",
+     "INTEL_2018_10K p47",
+     "INTEL_2018_10K p47",
+     "INTEL_2018_10K p69",
+     "INTEL_2018_10K p73"
+    ]
+   ],
+   "cost_usd": 0.000309,
+   "llm_calls": 1,
+   "latency_s": 1.395
+  },
+  {
+   "id": "dev_0047",
+   "category": "compare_companies",
+   "question": "Which company had more total revenue: Costco in fiscal 2019 or Verizon in 2018?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Costco",
+     "year": 2019,
+     "search": "Costco total revenue fiscal 2019",
+     "doc_names": [
+      "COSTCO_2019_10K"
+     ]
+    },
+    {
+     "company": "Verizon",
+     "year": 2018,
+     "search": "Verizon total revenue 2018",
+     "doc_names": [
+      "VERIZON_2018_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Costco",
+     "year": 2019
+    },
+    {
+     "company": "Verizon",
+     "year": 2018
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "COSTCO_2019_10K p61",
+     "COSTCO_2019_10K p61",
+     "COSTCO_2019_10K p62",
+     "COSTCO_2019_10K p62",
+     "COSTCO_2019_10K p63",
+     "COSTCO_2019_10K p63",
+     "COSTCO_2019_10K p36"
+    ],
+    [
+     "VERIZON_2018_10K p83",
+     "VERIZON_2018_10K p128",
+     "VERIZON_2018_10K p83",
+     "VERIZON_2018_10K p111",
+     "VERIZON_2018_10K p165"
+    ]
+   ],
+   "cost_usd": 0.000316,
+   "llm_calls": 1,
+   "latency_s": 1.759
+  },
+  {
+   "id": "dev_0048",
+   "category": "compare_companies",
+   "question": "How did Intel's net income in 2019 compare with Costco's net income in fiscal 2019?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "Intel",
+     "year": 2019,
+     "search": "Intel net income 2019",
+     "doc_names": [
+      "INTEL_2019_10K"
+     ]
+    },
+    {
+     "company": "Costco",
+     "year": 2019,
+     "search": "Costco net income fiscal 2019",
+     "doc_names": [
+      "COSTCO_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "Costco",
+     "year": 2019
+    },
+    {
+     "company": "Intel",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "INTEL_2019_10K p113",
+     "INTEL_2019_10K p64",
+     "INTEL_2019_10K p49",
+     "INTEL_2019_10K p49",
+     "INTEL_2019_10K p113",
+     "INTEL_2019_10K p84"
+    ],
+    [
+     "COSTCO_2019_10K p63",
+     "COSTCO_2019_10K p63",
+     "COSTCO_2019_10K p62",
+     "COSTCO_2019_10K p62",
+     "COSTCO_2019_10K p36",
+     "COSTCO_2019_10K p57",
+     "COSTCO_2019_10K p19",
+     "COSTCO_2019_10K p19"
+    ]
+   ],
+   "cost_usd": 0.000318,
+   "llm_calls": 1,
+   "latency_s": 1.463
+  },
+  {
+   "id": "dev_0049",
+   "category": "compare_companies",
+   "question": "Which company spent more on property and equipment: 3M in 2019 or Costco in fiscal 2019?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "3M",
+     "year": 2019,
+     "search": "3M purchases of property, plant and equipment 2019",
+     "doc_names": [
+      "3M_2019_10K"
+     ]
+    },
+    {
+     "company": "Costco",
+     "year": 2019,
+     "search": "Costco purchases of property and equipment fiscal 2019",
+     "doc_names": [
+      "COSTCO_2019_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "3M",
+     "year": 2019
+    },
+    {
+     "company": "Costco",
+     "year": 2019
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": false,
+   "step_pages": [
+    [
+     "3M_2019_10K p46",
+     "3M_2019_10K p37",
+     "3M_2019_10K p125",
+     "3M_2019_10K p126",
+     "3M_2019_10K p71"
+    ],
+    [
+     "COSTCO_2019_10K p27",
+     "COSTCO_2019_10K p61",
+     "COSTCO_2019_10K p61",
+     "COSTCO_2019_10K p35",
+     "COSTCO_2019_10K p52",
+     "COSTCO_2019_10K p42"
+    ]
+   ],
+   "cost_usd": 0.000328,
+   "llm_calls": 1,
+   "latency_s": 2.349
+  },
+  {
+   "id": "dev_0050",
+   "category": "compare_companies",
+   "question": "Which company had the higher net profit margin in 2017: CVS Health or MGM Resorts?",
+   "expected_route": "answer",
+   "route": "answer",
+   "route_ok": true,
+   "router_error": null,
+   "too_many_steps": false,
+   "steps": [
+    {
+     "company": "CVS Health",
+     "year": 2017,
+     "search": "CVS Health net profit margin fiscal 2017",
+     "doc_names": [
+      "CVSHEALTH_2017_10K"
+     ]
+    },
+    {
+     "company": "MGM Resorts",
+     "year": 2017,
+     "search": "MGM Resorts net profit margin fiscal 2017",
+     "doc_names": [
+      "MGMRESORTS_2017_10K"
+     ]
+    }
+   ],
+   "gold_steps": [
+    {
+     "company": "CVS Health",
+     "year": 2017
+    },
+    {
+     "company": "MGM Resorts",
+     "year": 2017
+    }
+   ],
+   "steps_ok": true,
+   "missing_pairs": [],
+   "extra_pairs": [],
+   "docs_ok": true,
+   "missing_docs": [],
+   "page_found": true,
+   "step_pages": [
+    [
+     "CVSHEALTH_2017_10K p126",
+     "CVSHEALTH_2017_10K p126",
+     "CVSHEALTH_2017_10K p126",
+     "CVSHEALTH_2017_10K p126",
+     "CVSHEALTH_2017_10K p126",
+     "CVSHEALTH_2017_10K p53",
+     "CVSHEALTH_2017_10K p80",
+     "CVSHEALTH_2017_10K p39"
+    ],
+    [
+     "MGMRESORTS_2017_10K p110",
+     "MGMRESORTS_2017_10K p38",
+     "MGMRESORTS_2017_10K p30",
+     "MGMRESORTS_2017_10K p30",
+     "MGMRESORTS_2017_10K p38",
+     "MGMRESORTS_2017_10K p35"
+    ]
+   ],
+   "cost_usd": 0.000327,
+   "llm_calls": 1,
+   "latency_s": 1.157
+  }
+ ]
+}
