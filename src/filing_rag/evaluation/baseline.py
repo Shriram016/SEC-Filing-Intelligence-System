@@ -331,17 +331,31 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out-dir", type=Path, help="default: m1/baseline, or m2/smoke with router")
     ap.add_argument("--router", action="store_true", help="routed pipeline (M2)")
     ap.add_argument("--ids", help="comma-separated question IDs, for example dev_0001,dev_0041")
+    ap.add_argument(
+        "--dev-set",
+        choices=["claude", "fb"],
+        default="claude",
+        help="claude = eval/dev_set.jsonl; fb = the 50 FB-dev questions (Q112)",
+    )
     args = ap.parse_args(argv)
     default_out = "experiments/m2/smoke" if args.router else "experiments/m1/baseline"
+    if args.dev_set == "fb":
+        default_out = "experiments/m3/fb_dev/runs"
     out_dir: Path = args.out_dir or Path(default_out)
 
     s = get_settings()
-    report = validate_dev_set(s.eval_dir / "dev_set.jsonl")
-    if report.errors:
-        print("dev set has errors:", *report.errors, sep="\n")
-        return 1
+    if args.dev_set == "fb":
+        from filing_rag.evaluation.fb_dev import load_fb_dev_questions
+
+        pool = load_fb_dev_questions(s)
+    else:
+        report = validate_dev_set(s.eval_dir / "dev_set.jsonl")
+        if report.errors:
+            print("dev set has errors:", *report.errors, sep="\n")
+            return 1
+        pool = report.questions
     ids = [i.strip() for i in args.ids.split(",")] if args.ids else None
-    questions = answerable(report.questions, args.limit, ids)
+    questions = answerable(pool, args.limit, ids)
     if ids and len(questions) != len(ids):
         print(f"some IDs are not answerable dev questions: {ids}")
         return 1
@@ -436,7 +450,8 @@ def main(argv: list[str] | None = None) -> int:
     max_cost = args.max_cost if args.max_cost is not None else s.baseline_max_cost_usd
     started = datetime.now().strftime("%Y%m%d-%H%M%S")
     rows, stopped = run(questions, pipeline, max_cost)
-    meta = {"started": started, "model": s.answer_model, "top_k": s.baseline_top_k,
+    meta = {"started": started, "dev_set": args.dev_set, "model": s.answer_model,
+            "top_k": s.baseline_top_k,
             "collection": s.qdrant_collection, "thinking": s.answer_thinking,
             "max_cost_usd": max_cost, "stopped_by_cost_limit": stopped,
             "questions_run": len(rows), "questions_planned": len(questions)}  # fmt: skip

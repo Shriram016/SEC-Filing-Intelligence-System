@@ -197,17 +197,26 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="filing_rag.evaluation.router_check")
     ap.add_argument("--allow-paid", action="store_true", help="make real (paid) router calls")
     ap.add_argument("--ids", help="comma-separated question IDs")
+    ap.add_argument("--dev-set", choices=["claude", "fb"], default="claude",
+                    help="fb = the 50 FB-dev questions (Q112; no gold steps: route, documents "
+                    "and page only)")  # fmt: skip
     ap.add_argument("--max-cost", type=float, default=0.10, help="stop above this cost in USD")
     ap.add_argument("--out-dir", type=Path, default=Path("experiments/m3/router_check"))
     args = ap.parse_args(argv)
 
     s = get_settings()
-    report = validate_dev_set(s.eval_dir / "dev_set.jsonl")
-    if report.errors:
-        print("dev set has errors:", *report.errors, sep="\n")
-        return 1
     ids = [i.strip() for i in args.ids.split(",")] if args.ids else None
-    questions = [q for q in answerable(report.questions, ids=ids) if q.gold_steps is not None]
+    if args.dev_set == "fb":
+        from filing_rag.evaluation.fb_dev import load_fb_dev_questions
+
+        questions = answerable(load_fb_dev_questions(s), ids=ids)
+        args.out_dir = args.out_dir / "fb_dev"
+    else:
+        report = validate_dev_set(s.eval_dir / "dev_set.jsonl")
+        if report.errors:
+            print("dev set has errors:", *report.errors, sep="\n")
+            return 1
+        questions = [q for q in answerable(report.questions, ids=ids) if q.gold_steps is not None]
     catalog = DocCatalog.from_settings(s)
     names = catalog.companies()
 

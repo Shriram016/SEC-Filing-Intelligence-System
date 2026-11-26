@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 from enum import StrEnum
 from pathlib import Path
+from typing import Literal
 
 from pydantic import BaseModel, Field, ValidationError, model_validator
 
@@ -25,6 +26,10 @@ class Category(StrEnum):
     NOT_COVERED = "not_covered"
     UNCLEAR = "unclear"
     PLANTED_DOCUMENT = "planted_document"
+    # Q112: the FB-dev 50 keep the FinanceBench question type as their category.
+    FB_METRICS = "fb_metrics"
+    FB_DOMAIN = "fb_domain"
+    FB_NOVEL = "fb_novel"
 
 
 class Route(StrEnum):
@@ -76,7 +81,8 @@ _ROUTE_FOR = {
 
 
 class DevQuestion(BaseModel):
-    id: str = Field(pattern=r"^dev_\d{4}$")
+    id: str = Field(pattern=r"^(dev_\d{4}|fb_\d{5})$")  # fb_ = FB-dev (Q112)
+    source: Literal["claude", "financebench"] = "claude"
     category: Category
     turns: list[str] = Field(min_length=1)  # the last turn is the question to answer
     expected_route: Route
@@ -102,7 +108,7 @@ class DevQuestion(BaseModel):
                 raise ValueError("answerable questions need a gold_answer")
             if not self.evidence:
                 raise ValueError("answerable questions need evidence pages")
-            if self.answer_source is None:
+            if self.answer_source is None and self.source == "claude":
                 raise ValueError("answerable questions need answer_source (table or text)")
         if (self.gold_value is None) != (self.gold_unit is None):
             raise ValueError("gold_value and gold_unit must be set together")
@@ -125,8 +131,8 @@ class DevSetReport(BaseModel):
     locked_page_overlaps: list[str] = Field(default_factory=list)  # warnings, not errors
 
 
-# The base (0 or 1) of FinanceBench evidence pages is not checked yet: treat the pages
-# next to a locked page as locked too.
+# FinanceBench evidence pages are 0-based (checked on the FB-dev 50, Q112): the locked page
+# file holds raw 0-based numbers, so the margin of 1 covers the viewer page (num + 1).
 LOCKED_PAGE_MARGIN = 1
 
 
