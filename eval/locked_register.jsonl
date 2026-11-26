@@ -1,0 +1,2 @@
+{"opened_at": "2026-11-26T06:09:39+00:00", "milestone": "Q112-labels", "reason": "Q112 stratified split 50/100 from labels only", "git_commit": "cd2c1adf2c518e3fe4d3e2f8105f0ab309216928"}
+{"opened_at": "2026-11-26T06:15:38+00:00", "milestone": "Q112-fb-dev", "reason": "Q112: copy the 50 FB-dev questions once", "git_commit": "cd2c1adf2c518e3fe4d3e2f8105f0ab309216928"}

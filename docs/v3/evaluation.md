@@ -12,13 +12,15 @@ Measure V3 honestly: against a human-written benchmark, against a baseline, with
 
 | Set | Contents | Use | Ref |
 |---|---|---|---|
-| **Locked benchmark** | All 150 open-source FinanceBench questions | Only at M3 and M6. Never used to tune anything | Q4, Q7 |
+| **Locked benchmark** | All 150 open-source FinanceBench questions. **Q112 (2026-11-26):** split by code into **50 dev (FB-dev)** + **100 closed** | FB-dev 50: open, used like the dev set (study failures, fix causes, Q100 rule). Closed 100: only at the final runs; never read; the reported score | Q4, Q7, Q112 |
 | **Held-out behaviour subset** | A small part of the dev behaviour questions (refuse, unclear, unrelated, advice, hidden instructions), unseen until M6 | Only at M6 | Q8 |
 | **Dev set** | Claude drafts questions + answers from the corpus; the user checks and confirms each one. Includes refusing, unclear, unrelated, advice, injection, multi-turn and company-comparison questions | Every day while building | Q5, Q7, Q16, Q43, Q45, Q64 |
 
 Dev set size and categories: decided at build time. Q6.
 
-**No-leakage rule:** no tool, setting or prompt is chosen using locked questions or their evidence pages. Q21.
+**No-leakage rule:** no tool, setting or prompt is chosen using the **closed 100** questions or their evidence pages. Q21, changed by Q112: the FB-dev 50 may be read and used for tuning.
+
+**Split rule (Q112):** before the split, code reads **only the label fields** of the 150 (question type, question reasoning, doc type, sector, period, company, number of evidence pages); it never returns or prints the question, answer, justification or evidence text. Code picks 50 with a fixed seed: proportional per question type (largest remainder), and inside each type a systematic pick over the questions sorted by the other labels, so the 50 have the same mix. The split is saved once (`eval/locked_split.json`, with the label counts of both parts) and never redone. Every read of the file is on the open register. After the split: the 50 FB-dev rows are copied once to `data/fb_dev/fb_dev_50.jsonl` (`write_fb_dev`; dev work reads only this file, `load_fb_dev`), and the file of the 150 is moved **out of the project** (`E:/RAG_locked_vault/`). The final runs set `FILING_RAG_LOCKED_VAULT_DIR`; without it `open_locked` fails with a clear error. The 150 are public on GitHub, so the move guards against accidents, not against intent. Flag: labels balance only the label categories; finer groups (lookup vs calculation) are known only inside the 50.
 
 ## 3. Baseline
 
@@ -51,7 +53,7 @@ Each dev question also has an `answer_source` tag: `table` or `text`. Report the
 
 ## 6. Repeat runs
 
-Locked results: **3 runs**, report mean with a range. A comparison is a win only when the gap is larger than the noise. Q12.
+Locked results (closed 100 after Q112): **3 runs**, report mean with a range. A comparison is a win only when the gap is larger than the noise. Q12.
 
 ## 7. Runs that cost money
 

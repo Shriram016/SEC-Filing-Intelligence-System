@@ -86,6 +86,10 @@ class Settings(BaseSettings):
     api_daily_cost_cap_usd: float = 1.0  # in memory (one process); M5: shared store
     api_retry_after_s: int = 5
 
+    # Q112: the file of the 150 locked questions lives outside the project after the split.
+    # Set FILING_RAG_LOCKED_VAULT_DIR only for the final (closed 100) runs.
+    locked_vault_dir: Path | None = None
+
     # API keys: optional until the components that need them exist. Read without the prefix.
     anthropic_api_key: SecretStr | None = Field(default=None, validation_alias="ANTHROPIC_API_KEY")
     openai_api_key: SecretStr | None = Field(default=None, validation_alias="OPENAI_API_KEY")
@@ -108,7 +112,12 @@ class Settings(BaseSettings):
 
     @property
     def locked_dir(self) -> Path:
-        return self.data_dir / "locked"
+        return self.locked_vault_dir or self.data_dir / "locked"
+
+    @property
+    def fb_dev_file(self) -> Path:
+        """Q112: the 50 FB-dev questions (full rows), copied once from the locked file."""
+        return self.data_dir / "fb_dev" / "fb_dev_50.jsonl"
 
 
 @lru_cache

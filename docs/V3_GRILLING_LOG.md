@@ -671,3 +671,20 @@ Also watch: the 361 PDFs are hosted on company sites (links can break) and Finan
   4. Router check rows save `doc_type` and the router `reason`.
 - **Record:** `router.md` §2.1, §2.2, §3, §4, §5; `engine.md` §3; `V3_DESIGN.md`.
 - **Built (2026-11-26, free):** 366 tests. **Router check after the fixes ($0.016):** route 45 → 50/50, documents 44 → 49/50 (left: dev_0025, rule A limit), gold page 32 → 36/50 (13 search misses). `experiments/m3/RESULTS_router_check.md` §4.
+
+### Q111 (M3, 2026-11-26) — Reranker for the search
+- **Finding:** after Q110, the router chooses the gold documents for 49/50 questions, but for 13 the gold page is not in the top 5 chunks (mostly big table pages). This is now the main cause of misses.
+- **Options:** (a) BM25 hybrid (keyword + vector search; needs sparse vectors, so a re-ingest); (b) a cross-encoder reranker over more candidates (no re-ingest); (c) both.
+- **Answer (user choice):** (b) reranker. Local `BAAI/bge-reranker-v2-m3` on the GPU (also test `bge-reranker-base`); candidates 20 / 50 / 100 per step → top 5; the reranker reads `context` + chunk text; split-table parts added after the rerank. Off switch in the settings. Kept only on a clear gain in the free search test (real Q110 router plans, no LLM call); then a 2-question smoke test (approval).
+- **Record:** `engine.md` §3.2.
+- **Built + measured (2026-11-26, free):** `search/reranker.py` (`RerankingSearcher`, `build_searcher`), settings `reranker_*`, wired into the API, the routed runner and the router check; 375 tests. Free search test (real Q110 router plans): gold page in chunks 36/50 (none) → base 38/35/37 (20/50/100) → **v2-m3 38/41/43** (20/50/100); v2-m3 @100 = 1.1 s per step on the GPU; losses dev_0001, dev_0030. `experiments/m3/RESULTS_reranker.md`.
+- **Decision (user, 2026-11-26):** lock the reranker on (v2-m3, 100 candidates) as the default; no more with/without tests. Keep the off switch (`FILING_RAG_RERANKER_MODEL=""`) for a server without a GPU; the server option is an M5 item.
+
+### Q112 (M3, 2026-11-26) — Split the 150 locked questions: 50 open dev + 100 closed
+- **Asked (user):** do people treat the 150 as an unseen test set, or run them, study failures and fix the system in a generic way? Was it right to isolate all 150?
+- **Finding:** both practices exist. "Look, fix, run again" on the same questions makes the final score too high. Strict isolation keeps the score honest, but our Claude-written dev set is probably easier than the real questions, and the old plan had a contradiction: locked run 1 at M3 shows failures, so fixes after it make locked run 2 at M6 unclean.
+- **Answer (user, accepted):** stratified split. Code reads only the label fields of the 150, picks 50 with a fixed seed so that each label category keeps its share, and saves the two ID lists once. The 50 (FB-dev) are open and used for tuning (fix causes, Q100). The 100 are closed until the final runs and give the reported score. The 50 Claude-written dev questions stay (router checks, behaviour).
+- **Trade-off:** 100 closed questions give a noisier score (about ±5 points vs ±4); in return tuning uses real FinanceBench questions.
+- **Verdict:** changes Q4 (all 150 = test) and Q21 (no locked question used for tuning → no closed question). Record: `evaluation.md` §2.
+- **Split made (2026-11-26, labels only, seed 20261126):** `eval/locked_split.json` + `.md`. Question type 17/17/16 dev (of 50/50/50); reasoning and evidence-page counts keep their shares (1 page 39 vs 115, 2 pages 10 vs 31, 3 pages 1 vs 4). Companies: 32 in the 150, 24 in dev, 30 in closed. Gap: `doc_type`, `gics_sector`, `doc_period` are empty in the question file (they live in the document list), so the split did not balance doc type, sector or year.
+- **Separated (2026-11-26):** the 50 FB-dev rows copied once to `data/fb_dev/fb_dev_50.jsonl` (register line `Q112-fb-dev`); the 150 file moved out of the project to `E:/RAG_locked_vault/`; setting `locked_vault_dir` (`FILING_RAG_LOCKED_VAULT_DIR`) for the final runs only. 385 tests.
