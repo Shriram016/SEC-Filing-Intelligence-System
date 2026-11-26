@@ -1,0 +1,1668 @@
+[
+ {
+  "id": "fb_00206",
+  "type": "domain-relevant",
+  "reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+  "pages": [
+   {
+    "doc": "JPMORGAN_2022_10K",
+    "page": 3,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 1. Business",
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00215",
+  "type": "domain-relevant",
+  "reasoning": "Logical reasoning (based on numerical reasoning)",
+  "pages": [
+   {
+    "doc": "VERIZON_2022_10K",
+    "page": 56,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   },
+   {
+    "doc": "VERIZON_2022_10K",
+    "page": 23,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 7,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operat\u2026"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00299",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "JPMORGAN_2021Q1_10Q",
+    "page": 19,
+    "in_collection": true,
+    "doc_type": "10-Q",
+    "fiscal_year": 2021,
+    "quarter": 1,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": true,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00394",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "JPMORGAN_2022Q2_10Q",
+    "page": 21,
+    "in_collection": true,
+    "doc_type": "10-Q",
+    "fiscal_year": 2022,
+    "quarter": 2,
+    "chunks": 6,
+    "table_chunks": 4,
+    "split_table": false,
+    "untitled_table": true,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00464",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "BOEING_2022_10K",
+    "page": 8,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 1. Business",
+     "Item 1A. Risk Factors"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00517",
+  "type": "domain-relevant",
+  "reasoning": "Logical reasoning (based on numerical reasoning)",
+  "pages": [
+   {
+    "doc": "BOEING_2022_10K",
+    "page": 62,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 7A. Quantitative and Qualitative Disclosures About Market Risk"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00521",
+  "type": "domain-relevant",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "ULTABEAUTY_2023_10K",
+    "page": 57,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 15. Exhibits and Financial Statement Schedules"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00552",
+  "type": "domain-relevant",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "MICROSOFT_2023_10K",
+    "page": 60,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [
+   "balance"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_00585",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "BOEING_2022_10K",
+    "page": 55,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 7A. Quantitative and Qualitative Disclosures About Market Risk"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00603",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "ULTABEAUTY_2023Q4_EARNINGS",
+    "page": 3,
+    "in_collection": true,
+    "doc_type": "earnings",
+    "fiscal_year": 2022,
+    "quarter": 4,
+    "chunks": 4,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00651",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "JOHNSON_JOHNSON_2022Q4_EARNINGS",
+    "page": 1,
+    "in_collection": true,
+    "doc_type": "earnings",
+    "fiscal_year": 2022,
+    "quarter": 4,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00684",
+  "type": "domain-relevant",
+  "reasoning": "Numerical reasoning OR information extraction",
+  "pages": [
+   {
+    "doc": "AMCOR_2023_10K",
+    "page": 50,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00685",
+  "type": "domain-relevant",
+  "reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+  "pages": [
+   {
+    "doc": "BESTBUY_2023_10K",
+    "page": 40,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00711",
+  "type": "domain-relevant",
+  "reasoning": "Numerical reasoning OR Logical reasoning",
+  "pages": [
+   {
+    "doc": "JOHNSON_JOHNSON_2022_10K",
+    "page": 46,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 6,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   },
+   {
+    "doc": "JOHNSON_JOHNSON_2022_10K",
+    "page": 47,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00720",
+  "type": "domain-relevant",
+  "reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+  "pages": [
+   {
+    "doc": "AMERICANEXPRESS_2022_10K",
+    "page": 96,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00724",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "Pfizer_2023Q2_10Q",
+    "page": 38,
+    "in_collection": true,
+    "doc_type": "10-Q",
+    "fiscal_year": 2023,
+    "quarter": 2,
+    "chunks": 6,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Part I, Item 1. FINANCIAL STATEMENTS"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00799",
+  "type": "domain-relevant",
+  "reasoning": "Numerical reasoning OR Logical reasoning",
+  "pages": [
+   {
+    "doc": "AMCOR_2023_10K",
+    "page": 52,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 6,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00839",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "FOOTLOCKER_2022_8K_dated_2022-08-19",
+    "page": 2,
+    "in_collection": true,
+    "doc_type": "8-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 5.02 Departure of Directors or Certain Officers; Election of Directors; Appointment\u2026"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_00941",
+  "type": "domain-relevant",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "3M_2023Q2_10Q",
+    "page": 1,
+    "in_collection": true,
+    "doc_type": "10-Q",
+    "fiscal_year": 2023,
+    "quarter": 2,
+    "chunks": 4,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01077",
+  "type": "domain-relevant",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "BESTBUY_2023_10K",
+    "page": 51,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 7,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01107",
+  "type": "domain-relevant",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "CVSHEALTH_2022_10K",
+    "page": 173,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 6,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   },
+   {
+    "doc": "CVSHEALTH_2022_10K",
+    "page": 174,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 7,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01198",
+  "type": "domain-relevant",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "AMD_2022_10K",
+    "page": 43,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAT\u2026"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01275",
+  "type": "domain-relevant",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "BESTBUY_2023_10K",
+    "page": 42,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [
+   "cash_flow"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_01319",
+  "type": "domain-relevant",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "AES_2022_10K",
+    "page": 132,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [
+   "income"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_01351",
+  "type": "domain-relevant",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "AMERICANEXPRESS_2022_10K",
+    "page": 44,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01476",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "PEPSICO_2023Q1_EARNINGS",
+    "page": 1,
+    "in_collection": true,
+    "doc_type": "earnings",
+    "fiscal_year": 2023,
+    "quarter": 1,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": true,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01487",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "JOHNSON_JOHNSON_2023Q2_EARNINGS",
+    "page": 10,
+    "in_collection": true,
+    "doc_type": "earnings",
+    "fiscal_year": 2023,
+    "quarter": 2,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01491",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+    "page": 4,
+    "in_collection": true,
+    "doc_type": "8-K",
+    "fiscal_year": 2023,
+    "quarter": null,
+    "chunks": 2,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Exhibit 99.1"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01902",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "BESTBUY_2024Q2_10Q",
+    "page": 18,
+    "in_collection": true,
+    "doc_type": "10-Q",
+    "fiscal_year": 2024,
+    "quarter": 2,
+    "chunks": 5,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Part I, Item 2. Management's Discussion and Analysis of Financial Condition and Results o\u2026"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01930",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "AMCOR_2023Q4_EARNINGS",
+    "page": 10,
+    "in_collection": true,
+    "doc_type": "earnings",
+    "fiscal_year": 2023,
+    "quarter": 4,
+    "chunks": 2,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_01964",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "AMERICANEXPRESS_2022_10K",
+    "page": 98,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 7,
+    "table_chunks": 3,
+    "split_table": false,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [
+   "balance"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_02024",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "VERIZON_2021_10K",
+    "page": 63,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2021,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 0,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 15. In our opinion, the consolidated financial statements present"
+    ]
+   },
+   {
+    "doc": "VERIZON_2021_10K",
+    "page": 94,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2021,
+    "quarter": null,
+    "chunks": 9,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 15. In our opinion, the consolidated financial statements present"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_02119",
+  "type": "novel-generated",
+  "reasoning": null,
+  "pages": [
+   {
+    "doc": "JPMORGAN_2021Q1_10Q",
+    "page": 6,
+    "in_collection": true,
+    "doc_type": "10-Q",
+    "fiscal_year": 2021,
+    "quarter": 1,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "None"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": false,
+  "statements_named": [],
+  "average": false
+ },
+ {
+  "id": "fb_02608",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "BESTBUY_2017_10K",
+    "page": 56,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2017,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": true,
+  "statements_named": [
+   "income"
+  ],
+  "average": true
+ },
+ {
+  "id": "fb_03029",
+  "type": "metrics-generated",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "3M_2018_10K",
+    "page": 60,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2018,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "cash_flow"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_03471",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "GENERALMILLS_2020_10K",
+    "page": 50,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2020,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": true,
+  "unit_instruction": false,
+  "rounding": true,
+  "statements_named": [
+   "balance"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_03473",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "COCACOLA_2017_10K",
+    "page": 74,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2017,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   },
+   {
+    "doc": "COCACOLA_2017_10K",
+    "page": 76,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2017,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": true,
+  "unit_instruction": false,
+  "rounding": true,
+  "statements_named": [
+   "income",
+   "balance"
+  ],
+  "average": true
+ },
+ {
+  "id": "fb_03856",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "ADOBE_2017_10K",
+    "page": 57,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2017,
+    "quarter": null,
+    "chunks": 6,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   },
+   {
+    "doc": "ADOBE_2017_10K",
+    "page": 61,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2017,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": true,
+  "unit_instruction": false,
+  "rounding": true,
+  "statements_named": [
+   "balance",
+   "cash_flow"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_03882",
+  "type": "metrics-generated",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "AMCOR_2020_10K",
+    "page": 50,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2020,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "balance"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_04209",
+  "type": "metrics-generated",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "COSTCO_2021_10K",
+    "page": 38,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2021,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "balance"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_04254",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "AMERICANWATERWORKS_2021_10K",
+    "page": 86,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2021,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   },
+   {
+    "doc": "AMERICANWATERWORKS_2021_10K",
+    "page": 88,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2021,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 2,
+    "split_table": false,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "income",
+   "cash_flow"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_04302",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "NIKE_2018_10K",
+    "page": 46,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2018,
+    "quarter": null,
+    "chunks": 2,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": true,
+  "statements_named": [
+   "income"
+  ],
+  "average": true
+ },
+ {
+  "id": "fb_04481",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "PEPSICO_2022_10K",
+    "page": 62,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 2,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Pur\u2026"
+    ]
+   },
+   {
+    "doc": "PEPSICO_2022_10K",
+    "page": 64,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Pur\u2026"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "income",
+   "cash_flow"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_04700",
+  "type": "metrics-generated",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "MICROSOFT_2016_10K",
+    "page": 52,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2016,
+    "quarter": null,
+    "chunks": 2,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "income"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_04854",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "GENERALMILLS_2020_10K",
+    "page": 52,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2020,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": true,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "cash_flow"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_06247",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "WALMART_2018_10K",
+    "page": 57,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2018,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   },
+   {
+    "doc": "WALMART_2018_10K",
+    "page": 59,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2018,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": true,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": true,
+  "unit_instruction": false,
+  "rounding": true,
+  "statements_named": [
+   "income",
+   "balance"
+  ],
+  "average": true
+ },
+ {
+  "id": "fb_06741",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "WALMART_2020_10K",
+    "page": 51,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2020,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   },
+   {
+    "doc": "WALMART_2020_10K",
+    "page": 56,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2020,
+    "quarter": null,
+    "chunks": 4,
+    "table_chunks": 2,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": true,
+  "unit_instruction": true,
+  "rounding": true,
+  "statements_named": [
+   "income",
+   "cash_flow"
+  ],
+  "average": true
+ },
+ {
+  "id": "fb_07661",
+  "type": "metrics-generated",
+  "reasoning": "Information extraction",
+  "pages": [
+   {
+    "doc": "BLOCK_2020_10K",
+    "page": 90,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2020,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "cash_flow"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_09724",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "COCACOLA_2021_10K",
+    "page": 62,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2021,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
+    ]
+   }
+  ],
+  "n_pages": 1,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": true,
+  "rounding": false,
+  "statements_named": [
+   "income"
+  ],
+  "average": false
+ },
+ {
+  "id": "fb_10136",
+  "type": "metrics-generated",
+  "reasoning": "Numerical reasoning",
+  "pages": [
+   {
+    "doc": "GENERALMILLS_2022_10K",
+    "page": 45,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 3,
+    "table_chunks": 1,
+    "split_table": false,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   },
+   {
+    "doc": "GENERALMILLS_2022_10K",
+    "page": 49,
+    "in_collection": true,
+    "doc_type": "10-K",
+    "fiscal_year": 2022,
+    "quarter": null,
+    "chunks": 5,
+    "table_chunks": 3,
+    "split_table": true,
+    "untitled_table": false,
+    "sections": [
+     "Item 8. Financial Statements and Supplementary Data"
+    ]
+   }
+  ],
+  "n_pages": 2,
+  "n_docs": 1,
+  "formula_given": false,
+  "unit_instruction": false,
+  "rounding": true,
+  "statements_named": [
+   "income",
+   "cash_flow"
+  ],
+  "average": false
+ }
+]
